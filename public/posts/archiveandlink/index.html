@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <meta name="description" content="上一次写博客装修笔记还是上一次，竟然是2022年12月的事情了。
+一年半来倒也没有什么大装修，我对现在这个主题的满意度很高，因为它已经有了我所有想要的特性，不太满意的地方也自己改掉了。没有写备忘纯粹是因为懒。不过近期比较多，还是写一下比较好。
+前段时间我的同人博客换成了Diary主题，完成了自己比较想实现的Fandom和Series区分，应该今年都不会再修改了。由于过去的时间比较长，前几天刚好有人留言问了，也在这里做一个简单的回顾。
+Archive页面的实现
+这个Archive页面是抄了浣心的归档页面，他的主题和配置文件是开源的，给我这段时间的装修提供了非常多的参考。
+以下代码来自于浣心的Github。仅做了文字部分的改动，感谢他。
+
+
+在目录layouts\_default中增添文件archive.html。
+
+
+代码部分
+{{ define &#34;main&#34; }}
+&lt;div class=&#34;post-list-container post-list-container-shadow&#34;&gt;
+&lt;div class=&#34;post&#34;&gt;
+
+{{/* begin of archive heading */}}
+&lt;div class=&#34;post-head-wrapper-text-only&#34;&gt;
+&lt;div class=&#34;post-title&#34;&gt;&lt;h1 class=&#34;post-title-main&#34;&gt;{{ .Title }}&lt;/h1&gt;&lt;/div&gt;
+
+{{- $type := .Type -}}
+
+{{/* **** Category-wide stats **** */}}
+{{- $scratch := newScratch -}}
+{{- $articles_cat := (where .Site.RegularPages &#34;Type&#34; $type) -}}
+{{- $articles_cat_count := len $articles_cat -}}
+
+{{- range (where .Site.RegularPages &#34;Type&#34; $type) -}}
+{{- $scratch.Add &#34;allwordcount&#34; .WordCount -}}
+{{- end -}}
+
+&lt;div class=&#34;post-subtitle&#34;&gt;
+  
+归档页面堂堂上新！这主题用了一年半我终于也有了归档页面。
+
+&lt;/div&gt;
+
+{{/* end of archive heading */}}
+&lt;/div&gt;
+
+&lt;div class=&#34;post-body-wrapper&#34;&gt;
+&lt;div class=&#34;post-body archive-body&#34;&gt;
+
+{{/* **** Yearly archive **** */}}
+
+{{/* Group articles by year and loop through them */}}
+{{- range (.Site.RegularPages.GroupByDate &#34;2006&#34;) -}}
+{{/* Get articles to display */}}
+{{- $articles_yearly := (where .Pages &#34;Type&#34; $type) -}}
+{{/* Count articles returned */}}
+{{- $articles_yearly_count := len $articles_yearly -}}
+{{/* Check if a proper year is returned and if it contains any articles */}}
+{{ if and (gt .Key 1) (gt $articles_yearly_count 0) }}
+{{- range $index, $value := (where .Pages &#34;Type&#34; $type) -}}
+  {{ if not $index }}
+  {{/* Display a header in the first loop */}}
+  &lt;h3 class=&#34;archive--year&#34;&gt;{{ .Date.Format &#34;2006&#34; }} / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}&lt;/h2&gt;
+  &lt;ul class=&#34;article--list&#34;&gt;
+  {{ end }}
+  {{/* Display articles here */}}
+  &lt;li class=&#34;archive--list-item&#34;&gt;
+    &lt;a href=&#34;{{ .RelPermalink }}&#34;&gt;
+    &lt;span class=&#34;archive--date&#34;&gt;{{ .Date.Format &#34;Jan 02&#34; }}&lt;/span&gt;　　{{ if .Draft }}&lt;span class=&#34;draft-label&#34;&gt;{{ i18n &#34;draft&#34; }}&lt;/span&gt;&amp;nbsp;{{ end }}{{ .Title  }}
+    &lt;/a&gt;
+  &lt;/li&gt;
+  {{ end }}
+  &lt;/ul&gt;
+{{ end }}
+{{ end }}
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+{{ end }}
+
+
+在content\archives中增添文件posts.md，如下内容：
+
+
+代码部分
+---
+title: &#34;Archive✨&#34;
+layout: archive
+type: posts
+summary: This page contains an archive of all posts.
+_build:
+  list: never
+menu:
+  main:
+    weight: -90
+    params:
+      icon: fail
+toc: false
+---
+
+其中关于menu的部分是我的主题把独立页面放在导航栏的方式，如果你的主题是通过在config.toml增添内容实现，则忽略这一段即可。">  
+
+  <title>
+    
+      鱼鱼小家的装修笔记
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.4acb107cbba8d20413e381d5d0b4e389d6985d9b06bea6f113ec434e9d7725f5054543ad560a70d523b7e996f54422cbcf5b39ac77e3c8b0d384f02a42121b00.css" integrity="sha512-SssQfLuo0gQT44HV0LTjidaYXZsGvqbxE&#43;xDTp13JfUFRUOtVgpw1SO36Zb1RCLLz1s5rHfjyLDThPAqQhIbAA==" />
+  
+
+
+</head>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <a id="back-link" href="/">Back</a>
+<script>
+    window.addEventListener("load", function() {
+        const backLink = document.getElementById("back-link");
+
+        
+        const referrer = document.referrer;
+
+        
+        const currentURL = window.location.pathname;
+
+        
+        if (currentURL === "/posts" || currentURL === "/posts/") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        }
+        
+        else if (referrer.includes("/posts")) {
+            backLink.href = "/posts";  
+            backLink.textContent = "Back to All Posts";  
+        } else if (referrer === window.location.origin || referrer === "") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        } else {
+            backLink.href = referrer;  
+            backLink.textContent = "Back";  
+        }
+    });
+</script>
+
+
+
+                </div>
+    <head>
+        <style type="text/css">
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            ::-webkit-scrollbar-thumb {
+                height: 40px;
+                background-color: #eee;
+                border-radius: 16px;
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+
+        </style>
+
+    </head>
+<article>
+    <h1>鱼鱼小家的装修笔记</h1>
+    <p>
+        <time datetime="2024-06-23 00:00:00 &#43;0000 UTC">
+            2024-06-23
+        </time>
+    </p>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#archive页面的实现">Archive页面的实现</a></li>
+    <li><a href="#友情链接的样式">友情链接的样式</a>
+      <ul>
+        <li><a href="#之前的友链">之前的友链</a></li>
+        <li><a href="#目前的友链">目前的友链</a></li>
+      </ul>
+    </li>
+    <li><a href="#全站字体修改">全站字体修改</a></li>
+    <li><a href="#同人博客的魔改笔记">同人博客的魔改笔记</a>
+      <ul>
+        <li><a href="#fandom与series区分的实现过程">Fandom与Series区分的实现过程</a></li>
+        <li><a href="#效果展示">效果展示</a></li>
+      </ul>
+    </li>
+    <li><a href="#最后的话">最后的话</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+
+    <p>上一次写博客装修笔记还是<a href="/posts/gruvbox/">上一次</a>，竟然是2022年12月的事情了。</p>
+<p>一年半来倒也没有什么大装修，我对现在这个主题的满意度很高，因为它已经有了我所有想要的特性，不太满意的地方也自己改掉了。没有写备忘纯粹是因为懒。不过近期比较多，还是写一下比较好。</p>
+<p>前段时间我的<a href="https://written.gregueria.icu/">同人博客</a>换成了Diary主题，完成了自己比较想实现的Fandom和Series区分，应该今年都不会再修改了。由于过去的时间比较长，前几天刚好有人留言问了，也在这里做一个简单的回顾。</p>
+<h2 id="archive页面的实现">Archive页面的实现</h2>
+<p>这个<a href="/archives/posts/">Archive</a>页面是抄了<a href="https://blog.loikein.one/archives/posts/">浣心</a>的归档页面，他的主题和配置文件是开源的，给我这段时间的装修提供了非常多的参考。</p>
+<p>以下代码来自于浣心的<a href="https://github.com/loikein/hugo-theme-diary/blob/b460bf3906fd7558c14257ea9a4f283ba86427bd/layouts/_default/archive.html">Github</a>。仅做了文字部分的改动，感谢他。</p>
+<hr>
+<ol>
+<li>在目录<code>layouts\_default</code>中增添文件<code>archive.html</code>。</li>
+</ol>
+<details>
+<summary>代码部分</summary>
+<pre tabindex="0"><code>{{ define &#34;main&#34; }}
+&lt;div class=&#34;post-list-container post-list-container-shadow&#34;&gt;
+&lt;div class=&#34;post&#34;&gt;
+
+{{/* begin of archive heading */}}
+&lt;div class=&#34;post-head-wrapper-text-only&#34;&gt;
+&lt;div class=&#34;post-title&#34;&gt;&lt;h1 class=&#34;post-title-main&#34;&gt;{{ .Title }}&lt;/h1&gt;&lt;/div&gt;
+
+{{- $type := .Type -}}
+
+{{/* **** Category-wide stats **** */}}
+{{- $scratch := newScratch -}}
+{{- $articles_cat := (where .Site.RegularPages &#34;Type&#34; $type) -}}
+{{- $articles_cat_count := len $articles_cat -}}
+
+{{- range (where .Site.RegularPages &#34;Type&#34; $type) -}}
+{{- $scratch.Add &#34;allwordcount&#34; .WordCount -}}
+{{- end -}}
+
+&lt;div class=&#34;post-subtitle&#34;&gt;
+  
+归档页面堂堂上新！这主题用了一年半我终于也有了归档页面。
+
+&lt;/div&gt;
+
+{{/* end of archive heading */}}
+&lt;/div&gt;
+
+&lt;div class=&#34;post-body-wrapper&#34;&gt;
+&lt;div class=&#34;post-body archive-body&#34;&gt;
+
+{{/* **** Yearly archive **** */}}
+
+{{/* Group articles by year and loop through them */}}
+{{- range (.Site.RegularPages.GroupByDate &#34;2006&#34;) -}}
+{{/* Get articles to display */}}
+{{- $articles_yearly := (where .Pages &#34;Type&#34; $type) -}}
+{{/* Count articles returned */}}
+{{- $articles_yearly_count := len $articles_yearly -}}
+{{/* Check if a proper year is returned and if it contains any articles */}}
+{{ if and (gt .Key 1) (gt $articles_yearly_count 0) }}
+{{- range $index, $value := (where .Pages &#34;Type&#34; $type) -}}
+  {{ if not $index }}
+  {{/* Display a header in the first loop */}}
+  &lt;h3 class=&#34;archive--year&#34;&gt;{{ .Date.Format &#34;2006&#34; }} / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}&lt;/h2&gt;
+  &lt;ul class=&#34;article--list&#34;&gt;
+  {{ end }}
+  {{/* Display articles here */}}
+  &lt;li class=&#34;archive--list-item&#34;&gt;
+    &lt;a href=&#34;{{ .RelPermalink }}&#34;&gt;
+    &lt;span class=&#34;archive--date&#34;&gt;{{ .Date.Format &#34;Jan 02&#34; }}&lt;/span&gt;　　{{ if .Draft }}&lt;span class=&#34;draft-label&#34;&gt;{{ i18n &#34;draft&#34; }}&lt;/span&gt;&amp;nbsp;{{ end }}{{ .Title  }}
+    &lt;/a&gt;
+  &lt;/li&gt;
+  {{ end }}
+  &lt;/ul&gt;
+{{ end }}
+{{ end }}
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+{{ end }}
+</code></pre></details>
+<ol start="2">
+<li>在<code>content\archives</code>中增添文件<code>posts.md</code>，如下内容：</li>
+</ol>
+<details>
+<summary>代码部分</summary>
+<pre tabindex="0"><code>---
+title: &#34;Archive✨&#34;
+layout: archive
+type: posts
+summary: This page contains an archive of all posts.
+_build:
+  list: never
+menu:
+  main:
+    weight: -90
+    params:
+      icon: fail
+toc: false
+---
+</code></pre></details>
+<p>其中关于<code>menu</code>的部分是我的主题把独立页面放在导航栏的方式，如果你的主题是通过在<code>config.toml</code>增添内容实现，则忽略这一段即可。</p>
+<ol start="3">
+<li>然后我做了一些样式的修改，恐怕没有参考的意义。这个直接写在主题的CSS文件即可，例如我的目录是<code>assets\css\critical\10-custom-media.css</code>。</li>
+</ol>
+<details>
+<summary>代码部分</summary>
+<pre tabindex="0"><code>.archive--list-item {
+  margin-bottom: 8px; /* 修改列表项的底部间距 */
+  padding-left: 0px; /* 移除圆点位置，这个数值可以根据需要调整 */
+}
+
+.archive--list-item:hover,
+.archive--list-item:focus {
+  color: var(--primary); /* 选中时的文字颜色 */
+}
+
+.archive--date {
+  color: var(--fg); /* 使用前景颜色 */
+}
+
+.draft-label {
+  color: var(--red1); /* 草稿使用红色 */
+}
+
+.archive--list-item:hover .archive--date,
+.archive--list-item:focus .archive--date {
+    color: var(--primary); /* 选中时日期的颜色和文字一致 */
+}
+</code></pre></details>
+<h2 id="友情链接的样式">友情链接的样式</h2>
+<p>本段写于2024年6月23日。因为最近和毛象上的大家交换了友链，大家的友链都会放描述或头像，也会有友友写自己的描述，但当时我的友链是没有描述的纯URL，感觉还是想更认真地对待这件事，就给每个友友都有比较正式的介绍——但这样页面就变得超级漫长欸！所以我对友链样式重新做了修改。</p>
+<h3 id="之前的友链">之前的友链</h3>
+<p>之前的友链样式如下。如果有人想知道实现方式的话，正巧之前在毛象上写过一次，涉及到无序列表的更改，这个方式不需要手动分隔号和调整间距。</p>
+<details>
+<summary>样式及代码部分</summary>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/2.png" alt=""></p>
+<pre tabindex="0"><code>&lt;style&gt;
+.content li::marker {
+  content: &#34;♡  &#34;; 
+  color: var(--primary-alt); 
+}
+/* 让无序列表前的圆点变成爱心 */
+
+a.link--external::after {
+    content: &#34; | &#34;;
+    padding: 0 0.1em;
+}
+/* 让每个超链接后都有个分隔号，并调整间距大小*/
+
+a.link--external:last-child::after {
+    content: none;
+}
+/* 最后一个链接不需要分隔号 */
+&lt;/style&gt;
+
+/* 之后这样就可以显示出来了！ */
+
+- [name](link.com) [name2](link2.com)
+- ....
+</code></pre></details>
+<p>因为它只用在友链的文件里嘛，所以这些代码我是直接添加进友链文件的正文的。进而导致RSS阅读器中阅读会看见代码本身……不过没事啦（擦汗）因为我一直都只在一个文件里修改更新，应该不会有人重复的到RSS提醒，搬家感觉也很方便。</p>
+<h3 id="目前的友链">目前的友链</h3>
+<p>目前的页面是这样的：无序列表，博客名称的链接，加以一段文字描述。同时无序列表的黑色圆点修改成了爱心，并且每一次刷新得到的排列顺序不同，每7个列表项后增添一个分割线，以提升阅读的舒适程度。</p>
+<p>于是效果如下：</p>
+<details>
+<summary>效果及代码部分</summary>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/1.png" alt=""></p>
+<pre tabindex="0"><code>&lt;style&gt;
+.post-meta {
+  display: none;
+}
+.post div[style] {
+  display: none;
+}
+
+.content li::marker {
+  content: &#34;♡  &#34;;
+  color: var(--primary-alt);
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
+    // 获取带有 post-content 类的文章内容
+    var articleContent = document.querySelector(&#34;.post-content&#34;);
+
+    // 获取文章内容内部的所有列表项
+    var items = articleContent.querySelectorAll(&#34;ul li&#34;);
+
+    // 将列表项转换为数组
+    var itemsArray = Array.from(items);
+
+    // 随机排列数组中的元素
+    for (var i = itemsArray.length - 1; i &gt; 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = itemsArray[i].innerHTML;
+        itemsArray[i].innerHTML = itemsArray[j].innerHTML;
+        itemsArray[j].innerHTML = temp;
+    }
+
+    // 获取每隔6个项后的分割线
+    for (var i = 6; i &lt; itemsArray.length; i += 7) {
+        var hr = document.createElement(&#34;hr&#34;);
+        itemsArray[i].parentNode.insertBefore(hr, itemsArray[i].nextSibling);
+    }
+});
+&lt;/script&gt;
+</code></pre></details>
+<p>标签<code>&lt;script&gt;</code>内的部分是用来实现无序列表随机排列的，它会对当前整个网站页面包括导航栏等等的无序列表生效。所以为了限定它只对文章内的无序列表生效，在第一段注释中有一个<code>获取带有 post-content 类的文章内容</code>的步骤，这是因为我网站主题中，文章正文的类是<code>post-content</code>，这是根据我的主题的情况写的。</p>
+<p>如果你不知道应该怎么做和修改这部分，请在自己的网站上按<code>F12</code>，查看主题的源代码，点进去用选择器查找和看自己文章部分的所属的类是什么，然后替换掉上述代码里我的<code>post-content</code>部分即可。</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/3.png" alt=""></p>
+<h2 id="全站字体修改">全站字体修改</h2>
+<p>大家应该都注意到了吧！我把网站的主题修改成了霞鹜文楷，由于我不知道怎么样引入非Google字体的字体，就在网上找了一下。发现了这个仓库：<a href="https://github.com/satouriko/LxgwWenKai_Webfonts">霞鹜文楷Web字体</a>。它的简介表示使用与Google Fonts相同的技术对中文字体进行分包和压缩，以便于用于网页端分发——</p>
+<p>什么意思？我是看不懂啦，但会用能用就行。根据使用说明具体操作如下：</p>
+<ol>
+<li>在网站的<code>Head</code>部分引入CSS文件。</li>
+</ol>
+<p>在我的文件路径<code>layouts\partials\head\head_start.html</code>中写入下面内容：</p>
+<pre tabindex="0"><code>&lt;!-- 霞鹜文楷 Regular --&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css&#34; /&gt;
+</code></pre><ol start="2">
+<li>应用字体样式。</li>
+</ol>
+<p>寻找一下你的网站字体部分在哪里。然后把字体<code>LXGWWenKai</code>放到最前面。</p>
+<p>在我的文件<code>assets\css\critical\20-base.css</code>中做了如下修改：</p>
+<pre tabindex="0"><code>:root {
+  --font-monospace: LXGWWenKai, &#34;Fira Code&#34;, &#34;Lucida Console&#34;, Monaco, monospace;
+  --font-sans-serif: LXGWWenKai, Verdana, Helvetica, sans-serif;
+  --font-serif: LXGWWenKai, &#34;Fira Code&#34;,&#34;Roboto Slab&#34;, Georgia, serif;
+}
+</code></pre><ol start="3">
+<li>刷新一下，能用欸！好耶！</li>
+</ol>
+<h2 id="同人博客的魔改笔记">同人博客的魔改笔记</h2>
+<p>首先声明，我的博客是在浣心的魔改Diary主题基础上做的修改，他魔改后也对自己的主题进行开源：<a href="https://github.com/loikein/hugo-theme-diary/tree/b460bf3906fd7558c14257ea9a4f283ba86427bd">仓库</a>。</p>
+<p>我使用后发现，这个主题的基础就是Series、Tag和Categories都是不进行区分的，都是相同的样式。</p>
+<p>但我希望Category可以呈现我同人的“原作（Fandom）”，而Series则呈现我同人故事的“系列（Series）”。那么就必须对它进行区分了。魔改后的效果已放在文末。</p>
+<p>我的实现步骤如下文，全靠ChatGPT写的，请灵活参考。</p>
+<h3 id="fandom与series区分的实现过程">Fandom与Series区分的实现过程</h3>
+<ol>
+<li>修改<code>/layouts/_default/terms.html</code>文件内容如下：</li>
+</ol>
+<details>
+<summary>代码部分</summary>
+<pre tabindex="0"><code>{{ define &#34;main&#34; }} 
+
+&lt;div class=&#34;post-list-container post-list-container-shadow&#34; data-pagefind-ignore&gt;
+  &lt;a class=&#34;a-block&#34;&gt;
+    &lt;div class=&#34;post-item-wrapper post-item-wrapper-no-hover&#34;&gt;
+      &lt;div class=&#34;post-item post-item-no-gaps&#34;&gt;
+        &lt;div class=&#34;post-item-info-wrapper&#34;&gt;
+          &lt;div class=&#34;post-item-title post-item-title-small&#34;&gt;
+            {{ .Title }} /&amp;#32; 
+            &lt;!-- 显示页面标题 --&gt;
+            {{- $pageCount := len .Data.Terms -}}
+            {{- $pageCount -}}&amp;#32;{{- if ne $pageCount 1 -}}entries{{- else -}}entry{{- end -}} 
+            &lt;!-- 显示条目数 --&gt;
+          &lt;/div&gt;
+          &lt;span class=&#34;post-content&#34;&gt;
+            {{.Content}} 
+            &lt;!-- 显示页面内容 --&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+  &lt;!-- 区分 tags, series 和 categories --&gt;
+  {{ if eq $.Section &#34;tags&#34; }}
+  &lt;div class=&#34;tags&#34;&gt;
+    {{ range .Data.Terms.ByCount }} 
+    &lt;!-- 遍历 tags，并按计数排序显示 --&gt;
+    &lt;div class=&#34;tag&#34;&gt;
+      &lt;a href=&#34;{{.Page.RelPermalink}}&#34; class=&#34;btn btn-outline-secondary position-relative rounded-pill&#34;&gt;
+        {{ .Page.Title }} 
+        &lt;!-- 显示 tag 标题 --&gt;
+        &lt;span class=&#34;badge&#34;&gt;({{ .Count }})&lt;/span&gt; 
+        &lt;!-- 显示 tag 数量 --&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    {{ end }}
+  &lt;/div&gt;
+
+  {{ else if eq $.Section &#34;series&#34; }}
+  &lt;div class=&#34;series&#34;&gt;
+    {{ range sort .Data.Terms.ByCount &#34;.Page.Params.weight&#34; &#34;desc&#34; }} 
+    &lt;!-- 遍历 series，并按 weight 参数降序排列显示 --&gt;
+    &lt;div class=&#34;series-tag&#34;&gt;
+      &lt;a href=&#34;{{.Page.RelPermalink}}&#34; class=&#34;a-block&#34;&gt;
+        &lt;div class=&#34;post-item-wrapper&#34;&gt;
+          &lt;div class=&#34;post-item post-item-no-divider&#34;&gt;
+            &lt;div class=&#34;post-item-info-wrapper&#34;&gt;
+              &lt;div class=&#34;post-item-title&#34;&gt;{{ .Page.Title }}（{{ .Count }}）&lt;/div&gt; 
+              &lt;!-- 显示 series 标题和数量 --&gt;
+              {{ if .Page.Params.description }}
+              &lt;div class=&#34;post-item-summary term-summary&#34;&gt;{{ .Page.Params.description }}&lt;/div&gt; 
+              &lt;!-- 显示 series 描述 --&gt;
+              {{ end }}
+              {{ if .Page.Params.warn }}&lt;span class=&#34;warn&#34;&gt;{{ .Page.Params.warn }}&lt;/span&gt;{{ end }} 
+              &lt;!-- 显示警告信息 --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    {{ end }}
+  &lt;/div&gt;
+
+  {{ else if eq $.Section &#34;categories&#34; }}
+  &lt;div class=&#34;categories&#34;&gt;
+    {{ range sort .Data.Terms.ByCount &#34;.Page.Params.weight&#34; &#34;desc&#34; }} 
+    &lt;!-- 遍历 categories，并按 weight 参数降序排列显示 --&gt;
+    {{ if not .Page.Params.hidden }}
+    &lt;div class=&#34;category-tag&#34;&gt;
+      &lt;a href=&#34;{{.Page.RelPermalink}}&#34; class=&#34;a-block&#34;&gt;
+        &lt;div class=&#34;post-item-wrapper&#34;&gt;
+          &lt;div class=&#34;post-item post-item-no-divider&#34;&gt;
+            &lt;div class=&#34;post-item-info-wrapper&#34;&gt;
+              &lt;div class=&#34;post-item-title&#34;&gt;{{ .Page.Title }}（{{ .Count }}）&lt;/div&gt; 
+              &lt;!-- 显示 category 标题和数量 --&gt;
+              {{ if .Page.Params.description }}
+              &lt;div class=&#34;post-item-summary term-summary&#34;&gt;{{ .Page.Params.description }}&lt;/div&gt; 
+              &lt;!-- 显示 category 描述 --&gt;
+              {{ end }}
+              {{ if .Page.Params.warn }}&lt;span class=&#34;warn&#34;&gt;{{ .Page.Params.warn }}&lt;/span&gt;{{ end }} 
+              &lt;!-- 显示警告信息 --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    {{ end }}
+    {{ end }}
+  &lt;/div&gt;
+  {{ end }}
+&lt;/div&gt;
+
+{{ end }}
+</code></pre></details>
+<ol start="2">
+<li>创建<code>categories\_index.md</code>文件。内容如下。</li>
+</ol>
+<pre tabindex="0"><code>---
+title: &#34;Fandom&#34;
+slug: categories
+---
+根据原作进行分类，并未列出所有作品，可以在系列合集里面看看。
+</code></pre><p>正文内容会显示为对页面的描述。这时候你的网站<code>/categories/</code>就会显示出目前所有的分类列表。</p>
+<ol start="3">
+<li>对分类信息进行自定义。</li>
+</ol>
+<p>假如我希望自定义<code>《无间道2》</code>这个分类，那么我所需要做的是创建文件<code>categories\无间道2\_index.md</code>，并在内容中写入如下内容。</p>
+<pre tabindex="0"><code>---
+title: &#34;无间道 Infernal Affairs&#34;
+description: 如果这次被我搞定，我们倪家从此就可以抬头做人。
+warn: 哥攻抚慰Only
+type: series
+weight: 99
+---
+</code></pre><p>于是我所有打上了<code>categories: [&quot;《无间道2》&quot;]</code>的文章内容都会显示在这个<code>/categories/无间道2/</code>（<a href="https://written.gregueria.icu/categories/%E6%97%A0%E9%97%B4%E9%81%932/">示例</a>）这个链接下。</p>
+<p>此示例中的书名号并不是失误，在此是希望提醒，你的本地文件夹的名字是什么，Slug/短链就是什么。书名号并不会体现在短链中，所以无论你文章的Categories是<code>无间道2</code>还是<code>《无间道2》</code>都会出现在同一个页面。如果搞不太清楚自己文件夹的命名，那么就和文章填写的Categories保持一致即可。</p>
+<ol start="4">
+<li>Series的实现方式同上。</li>
+</ol>
+<p>创建<code>series\_index.md</code>文件。为你的每一个Series创建一个文件夹，如如<code>series\香港电影同人\</code>，并放入<code>_index.md</code>文件（无论下划线还是命名都不可以更改）。</p>
+<p>在<code>_index.md</code>正文填入相应的信息。然后你想放进这个Series的文章，就在Metadata的部分写进<code>series: [&quot;香港电影同人&quot;]</code>。之后文章就会显示出来。</p>
+<p>如果不显示的话，关闭本地预览，重新开启，一般就可以看见了。</p>
+<p>应该没有别的需要补充的部分了，遇事不决可以询问ChatGPT老师。</p>
+<h3 id="效果展示">效果展示</h3>
+<p>然后放一下我的同人博客更新后的样子。</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/5.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/4.png" alt=""></p>
+<p>浣心魔改后的主题本身对处于一个Series的文章做了新的显示效果如下，如果想要实现，具体请看他的文章：<a href="https://blog.loikein.one/posts/2021-05-28-hugo-series/">在Hugo里显示系列文章</a>。</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/6.png" alt=""></p>
+<h2 id="最后的话">最后的话</h2>
+<p>其实还做了一些很多其他的改动。因为每次装修都在无关紧要的细节上进行长时间的大思考，所以暂时不打算再对博客做其他修改了……下一次写装修笔记应该又是明年了。</p>
+<p>如果您对本站及同人站的特性感到好奇，欢迎在这一篇文章的评论区留言！我会很乐意分享的。</p>
+
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/all-about-rss/">Prev：关于RSS订阅二三事</a>
+        
+
+        
+
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/2024-07-28/">Next：搬进新的生活</a>
+
+        
+
+    </div>
+    <br>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+    <div id="comments" class="comments">
+        <style>
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+    </div>
+
+    <div>
+    
+        
+        <footer class="site-footer">
+            <p>&copy; 2024 再會，謝謝所有的魚</p>
+        </footer>
+    
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script></div>
+
+            </div>
+        </main>
+    </body></html>

@@ -1,0 +1,71 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ .Content }}
+
+    <body>
+    <div id="page_posts" class="window active page_posts" style="">
+        <div class="window-title" style="">
+            <div class="buttons">
+                <div class="button" style="background: #ffff4d;" onclick="history.back()"></div>
+                <div class="button" style="background: #ff6b6b;" onclick="history.back()"></div>
+            </div></div>
+        <div class="window-content">
+            <div class="postslist">
+                {{/* begin of archive heading */}}
+                <div class="post-head-wrapper-text-only">
+                    {{- $type := .Type -}}
+                    {{/* **** Category-wide stats **** */}}
+                    {{- $scratch := newScratch -}}
+                    {{- $articles_cat := (where .Site.RegularPages "Type" $type) -}}
+                    {{- $articles_cat_count := len $articles_cat -}}
+                    {{- range (where .Site.RegularPages "Type" $type) -}}
+                        {{- $scratch.Add "allwordcount" .WordCount -}}
+                    {{- end -}}
+                    {{/* end of archive heading */}}
+                </div>
+                <div class="content">
+                    <div class="">
+                        <div class="">
+                            {{/* **** Yearly archive **** */}}
+                            {{/* Group articles by year and loop through them */}}
+                            {{- range (.Site.RegularPages.GroupByDate "2006") -}}
+                                {{/* Get articles to display, excluding hidden ones */}}
+                                {{- $articles_yearly := (where (where .Pages "Type" $type) "Params.hidden" "!=" true) -}}
+                                {{/* Count articles returned */}}
+                                {{- $articles_yearly_count := len $articles_yearly -}}
+                                {{/* Check if a proper year is returned and if it contains any articles */}}
+                                {{ if and (gt .Key 1) (gt $articles_yearly_count 0) }}
+                                    {{- range $index, $value := $articles_yearly -}}
+                                        {{ if not $index }}
+                                            {{/* Display a header in the first loop */}}
+                                            <h3 class="archive--year">{{ .Date.Format "2006" }}
+                                                / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}</h3>
+                                            <ul>
+                                        {{ end }}
+                                        {{/* Display articles here */}}
+                                        <li>
+                                            <span class="">{{ .Date.Format "01-02" }}</span>&emsp;
+                                            <a href="{{ .RelPermalink }}">
+                                                {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
+                                            </a>
+                                        </li>
+                                    {{ end }}
+                                    </ul>
+                                {{ end }}
+                            {{ end }}
+
+                        </div>
+                        <div id="index-content">
+                        </div>
+                    </div>
+                    {{ $randomcat := resources.Get "js/randomcat.js" }}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </body>
+    {{- partial "footer.html" . -}}
+{{ end }}

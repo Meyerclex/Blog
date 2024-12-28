@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <meta name="description" content="历时一周总算把我的博客建好并搬运完文章，此前的随笔基本都挂靠在网络上，没有任何备份可言。同人文好一点儿，60%左右进行了本地备份，其余的要么备份在写字的平台上，要么直接发上网络以后没有再进行任何备份。
+毕竟经历过Pome提问箱直接挂掉的惨状，我该小心些的。关于我的互联网写作简史可以追溯回——不知道。不记得了，Lofter之前应该还用过贴吧和简书之类的网站，账号找不回来，算了。
+我从2016年4月开始在Lofter上面写东西，没有任何分类意识，上面写同人也写随笔，凌乱不堪。90篇文章主动或被动地锁来锁去，似乎还余下19篇放在了主页上，随笔尽数锁掉，因为不能面对这么青涩的心。
+我是在2020年初把文章从Lofter转移到Wordpress的，确实用它来写过一段时间博客。它的后台功能强大，所以也复杂，我常常对着菜单栏不知该点哪里，它的庞杂让我感到每一次打开都是巨兽向前走了一步，缓慢，隆重。相较于它，我更喜欢Lofter一点，它很轻，很简单。但我从未把主页当作一个需要装饰的地方，我想：大多数人都是用手机APP看文，它至多只是一个存放文章的地方，而我心中，博客应该更加美丽。
+但Lofter无疑是一个很糟糕的平台，自2020年开始，令人愤怒的审查机制，糟糕的市场倾向，广告，商店，无法屏蔽的平台通知，还有它给我与许多创作者都带来过热度焦虑。多么令人恼火，我不愿意忍受它，但多年的积累，两千条评论，于我而言：它不是一个可以轻易割舍的地方，但也不是一个应该继续倾注感情的地方。于是我很少再继续再上面记录心情与事件，它的功能只是让别人能读到我的作品。
+我的同人文可谓狡兔三窟。早年是写过某个热门本土作品的（这个表述我写完后大笑三声）它们令人尴尬，除了Lofter我没有再做存档。但欧美同人存放在了AO3和随缘居，AO3很纯粹干净，我很喜欢，随缘居的互动真诚清脆，也是桃花源。但它们依然只是存放作品的地方，对吧？
+我最后一个书写自己的地方是公众号。这个地方洛阳亲友来相问，但我书写的事件也仅半年。它其实还不错的：打开编辑器就写，还有美丽的排版。但是它不支持评论，性质也很尴尬奇怪，常让我感到我在写学校推文。在这里我总是忍不住放上很多图片，而且束手束脚。几次去写，都在酒后。开始往博客搬家时，我发现它居然没有任何导出功能！天哪。它拥有我的文章却不允许我带走？什么道理！
+我承认：它其实还是个不错的平台，只是我对腾讯充满敌视。
+最后我来到了自建博客这一站。首先我不止一次尝试过用Github搭建博客，但是找到的教程都轻便简单，我始终卡在文章这一步，直到看了象友的教程才知道如何操作。搭建好这里，实在是我今年的一件大好事，我很喜欢。我很喜欢！
+这个沙滩几乎拥有了我对一个博客所期待的所有功能：夜间模式、分类、标签、匿名评论、随心所欲的写作页面与无审核机制。我想它已最大限度地属于了我，只有我能关停它（如果Vercel或者Github没了另当别论）。它没有流量或数据统计功能，我不会知道有谁愿意点下Kudos、爱心或是推荐，作为一个如此小众的场域，我亦不担心没有评论或者转发。它是一片沙滩，热度取决于我的太阳。它很美丽。我对它甚至充满感激，为了丰富这个沙滩，我做了很多收集、备份与总结，互联网上再也没有别的地方如此完备地拥有我的文字了。
+这几天我也与朋友交流了用Notion&#43;Nobelium搭建博客，下面是我的不完全比较（当然是基于我已有的、近乎于没有的技术，后加代码的问题必然是我搞不定的路径）：
+
+  
+      
+          
+          Hugo
+          Notion&#43;Nobelium
+      
+  
+  
+      
+          匿名评论
+          √
+          ×
+      
+      
+          全局搜索
+          ×
+          √
+      
+      
+          图片
+          √
+          上限5M
+      
+      
+          自定义菜单栏
+          √
+          ×
+      
+      
+          移动端发布
+          ×
+          √
+      
+  
+
+事实上用Notion搭建博客还有许多别的方案，但目前Nobelium是我觉得最漂亮的一种，我钟情于单栏博客，而这似乎与其他Notion搭建方案相悖。
+看到的几种搭建方案：
+
+
+nextjs-notion-starter-kit 尝试过，最终觉得不够漂亮而放弃。
+
+
+NotionNext 上手操作和Nobelium基本一致，因为不是非常喜欢侧边栏&#43;多图的设计而没有尝试。
+
+
+[Notion变博客]-Fruition绑定域名，笔记变独立站 看起来好难！没有尝试！
+
+
+Notablog 界面美丽。Getting Start里的“Make sure you have Node.js v12.0.0 or higher”使我未能开始。事实上看到的时候我已经搭建好了Nobelium所以没有试试，我觉得它应该会是很不错的方案。
+
+
+奉上Notablog相关的几个页面：
+
+Making a blog from Notion &amp; Github Pages
+使用 Notion 搭建个人静态 Blog
+根据comments发现似乎它们并不能通过Notion 编辑直接发布，而我猜这可以帮助解决这个问题的：trigger-webhook-from-notion
+
+不过这些是后话，博客写作当然要高于装修，我已然对先有的沙滩满意了。至于用Notion搭建的博客，它有强大的实时同步Notion的功能，我想到了另一种相当好的用途：写笔记。它太私密，不能示众，因而不在这里放出链接。总而言之，沙滩与笔记本，都是书写的地方，归置妥当，令人欢喜。
+这是否会是我的最后一站？我猜会的。">  
+
+  <title>
+    
+      互联网搬家记：沙滩会是鱼的最后一站吗？
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.4acb107cbba8d20413e381d5d0b4e389d6985d9b06bea6f113ec434e9d7725f5054543ad560a70d523b7e996f54422cbcf5b39ac77e3c8b0d384f02a42121b00.css" integrity="sha512-SssQfLuo0gQT44HV0LTjidaYXZsGvqbxE&#43;xDTp13JfUFRUOtVgpw1SO36Zb1RCLLz1s5rHfjyLDThPAqQhIbAA==" />
+  
+
+
+</head>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <a id="back-link" href="/">Back</a>
+<script>
+    window.addEventListener("load", function() {
+        const backLink = document.getElementById("back-link");
+
+        
+        const referrer = document.referrer;
+
+        
+        const currentURL = window.location.pathname;
+
+        
+        if (currentURL === "/posts" || currentURL === "/posts/") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        }
+        
+        else if (referrer.includes("/posts")) {
+            backLink.href = "/posts";  
+            backLink.textContent = "Back to All Posts";  
+        } else if (referrer === window.location.origin || referrer === "") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        } else {
+            backLink.href = referrer;  
+            backLink.textContent = "Back";  
+        }
+    });
+</script>
+
+
+
+                </div>
+    <head>
+        <style type="text/css">
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            ::-webkit-scrollbar-thumb {
+                height: 40px;
+                background-color: #eee;
+                border-radius: 16px;
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+
+        </style>
+
+    </head>
+<article>
+    <h1>互联网搬家记：沙滩会是鱼的最后一站吗？</h1>
+    <p>
+        <time datetime="2021-11-17 00:00:00 &#43;0000 UTC">
+            2021-11-17
+        </time>
+    </p>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents"></nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+
+    <p>历时一周总算把我的博客建好并搬运完文章，此前的随笔基本都挂靠在网络上，没有任何备份可言。同人文好一点儿，60%左右进行了本地备份，其余的要么备份在写字的平台上，要么直接发上网络以后没有再进行任何备份。</p>
+<p>毕竟经历过Pome提问箱直接挂掉的惨状，我该小心些的。关于我的互联网写作简史可以追溯回——不知道。不记得了，Lofter之前应该还用过贴吧和简书之类的网站，账号找不回来，算了。</p>
+<p>我从2016年4月开始在Lofter上面写东西，没有任何分类意识，上面写同人也写随笔，凌乱不堪。90篇文章主动或被动地锁来锁去，似乎还余下19篇放在了主页上，随笔尽数锁掉，因为不能面对这么青涩的心。</p>
+<p>我是在2020年初把文章从Lofter转移到Wordpress的，确实用它来写过一段时间博客。它的后台功能强大，所以也复杂，我常常对着菜单栏不知该点哪里，它的庞杂让我感到每一次打开都是巨兽向前走了一步，缓慢，隆重。相较于它，我更喜欢Lofter一点，它很轻，很简单。但我从未把主页当作一个需要装饰的地方，我想：大多数人都是用手机APP看文，它至多只是一个存放文章的地方，而我心中，博客应该更加美丽。</p>
+<p>但Lofter无疑是一个很糟糕的平台，自2020年开始，令人愤怒的审查机制，糟糕的市场倾向，广告，商店，无法屏蔽的平台通知，还有它给我与许多创作者都带来过热度焦虑。多么令人恼火，我不愿意忍受它，但多年的积累，两千条评论，于我而言：它不是一个可以轻易割舍的地方，但也不是一个应该继续倾注感情的地方。于是我很少再继续再上面记录心情与事件，它的功能只是让别人能读到我的作品。</p>
+<p>我的同人文可谓狡兔三窟。早年是写过某个热门本土作品的（这个表述我写完后大笑三声）它们令人尴尬，除了Lofter我没有再做存档。但欧美同人存放在了AO3和随缘居，AO3很纯粹干净，我很喜欢，随缘居的互动真诚清脆，也是桃花源。但它们依然只是存放作品的地方，对吧？</p>
+<p>我最后一个书写自己的地方是公众号。这个地方洛阳亲友来相问，但我书写的事件也仅半年。它其实还不错的：打开编辑器就写，还有美丽的排版。但是它不支持评论，性质也很尴尬奇怪，常让我感到我在写学校推文。在这里我总是忍不住放上很多图片，而且束手束脚。几次去写，都在酒后。开始往博客搬家时，我发现它居然没有任何导出功能！天哪。它拥有我的文章却不允许我带走？什么道理！</p>
+<p>我承认：它其实还是个不错的平台，只是我对腾讯充满敌视。</p>
+<p>最后我来到了自建博客这一站。首先我不止一次尝试过用Github搭建博客，但是找到的教程都轻便简单，我始终卡在文章这一步，直到看了象友的教程才知道如何操作。搭建好这里，实在是我今年的一件大好事，我很喜欢。我很喜欢！</p>
+<p>这个沙滩几乎拥有了我对一个博客所期待的所有功能：夜间模式、分类、标签、匿名评论、随心所欲的写作页面与无审核机制。我想它已最大限度地属于了我，只有我能关停它（如果Vercel或者Github没了另当别论）。它没有流量或数据统计功能，我不会知道有谁愿意点下Kudos、爱心或是推荐，作为一个如此小众的场域，我亦不担心没有评论或者转发。它是一片沙滩，热度取决于我的太阳。它很美丽。我对它甚至充满感激，为了丰富这个沙滩，我做了很多收集、备份与总结，互联网上再也没有别的地方如此完备地拥有我的文字了。</p>
+<p>这几天我也与朋友交流了用Notion+Nobelium搭建博客，下面是我的不完全比较（当然是基于我已有的、近乎于没有的技术，后加代码的问题必然是我搞不定的路径）：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Hugo</th>
+          <th style="text-align: center">Notion+Nobelium</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">匿名评论</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">×</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">全局搜索</td>
+          <td style="text-align: center">×</td>
+          <td style="text-align: center">√</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">图片</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">上限5M</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">自定义菜单栏</td>
+          <td style="text-align: center">√</td>
+          <td style="text-align: center">×</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">移动端发布</td>
+          <td style="text-align: center">×</td>
+          <td style="text-align: center">√</td>
+      </tr>
+  </tbody>
+</table>
+<p>事实上用Notion搭建博客还有许多别的方案，但目前Nobelium是我觉得最漂亮的一种，我钟情于单栏博客，而这似乎与其他Notion搭建方案相悖。</p>
+<p>看到的几种搭建方案：</p>
+<ol>
+<li>
+<p><a href="https://github.com/transitive-bullshit/nextjs-notion-starter-kit">nextjs-notion-starter-kit</a> 尝试过，最终觉得不够漂亮而放弃。</p>
+</li>
+<li>
+<p><a href="https://github.com/tangly1024/NotionNext">NotionNext</a> 上手操作和Nobelium基本一致，因为不是非常喜欢侧边栏+多图的设计而没有尝试。</p>
+</li>
+<li>
+<p><a href="https://www.tangly1024.com/article/fruition-notion">[Notion变博客]-Fruition绑定域名，笔记变独立站</a> 看起来好难！没有尝试！</p>
+</li>
+<li>
+<p><a href="https://github.com/dragonman225/notablog">Notablog</a> 界面美丽。Getting Start里的“Make sure you have Node.js v12.0.0 or higher”使我未能开始。事实上看到的时候我已经搭建好了Nobelium所以没有试试，我觉得它应该会是很不错的方案。</p>
+</li>
+</ol>
+<p>奉上Notablog相关的几个页面：</p>
+<ol>
+<li><a href="https://aptrinh.js.org/notion-blogging.html">Making a blog from Notion &amp; Github Pages</a></li>
+<li><a href="https://emergencyexit.xyz/use-notion-as-blog.html">使用 Notion 搭建个人静态 Blog</a></li>
+<li>根据comments发现似乎它们并不能通过Notion 编辑直接发布，而我猜这可以帮助解决这个问题的：<a href="https://github.com/dragonman225/trigger-webhook-from-notion">trigger-webhook-from-notion</a></li>
+</ol>
+<p>不过这些是后话，博客写作当然要高于装修，我已然对先有的沙滩满意了。至于用Notion搭建的博客，它有强大的实时同步Notion的功能，我想到了另一种<strong>相当好</strong>的用途：写笔记。它太私密，不能示众，因而不在这里放出链接。总而言之，沙滩与笔记本，都是书写的地方，归置妥当，令人欢喜。</p>
+<p>这是否会是我的最后一站？我猜会的。</p>
+
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/cannot-breath/">Prev：在尘土中呼吸</a>
+        
+
+        
+
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/november2021/">Next：十一月份花天酒地</a>
+
+        
+
+    </div>
+    <br>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+    <div id="comments" class="comments">
+        <style>
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+    </div>
+
+    <div>
+    
+        
+        <footer class="site-footer">
+            <p>&copy; 2024 再會，謝謝所有的魚</p>
+        </footer>
+    
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script></div>
+
+            </div>
+        </main>
+    </body></html>

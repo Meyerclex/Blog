@@ -1,0 +1,12 @@
+{{ $name := .Get "name" }}
+<img
+    src="/img/emoji/{{ $name }}.{{ with .Get "ext" }}{{ . }}{{ else }}png{{ end }}"
+    title="{{ with .Get "title" }}{{ . }}{{ else }}{{ $name }}{{ end }}"
+    alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ $name }}{{ end }}"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>

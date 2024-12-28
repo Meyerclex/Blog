@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <meta name="description" content="TODO
+
+ 适配移动端（只能说微微适配啦…）
+ 修改夜晚主题配色
+ 增加图片点击放大
+ 修改鼠标指针
+ 修改表格之类的基础样式问题
+ 增加一个喜报通知条幅（这什么东西？）
+
+2024/12/03
+新增了Cafe页面，用的是Status Cafe挂件。
+参考了这个教程：Creating a Feed Reader from StatusCafe
+
+2024/11/23
+博客大装修了一番。
+
+Resource Credit
+
+
+图标来源Pixel Safari
+
+
+页面设计来源aeon flexx
+
+
+
+装修笔记索引
+
+1. 鱼鱼小家的装修笔记
+2. Stack 主题及 Waline 评论区装修笔记
+3. Luna 主题装修笔记
+
+2022-12-17
+主题更换为Gruvbox，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：
+
+将目录修改为默认显示
+配置了 Waline 评论区并修改了配色
+为文章配置了中文字数显示，增加页脚统计
+成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在layouts\partials\comments.html里加了&lt;style&gt;标签写样式来解决的这个问题
+
+因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲hugo生成新的public文件夹，建一个 Public 仓库，把public文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。
+2022-09-14
+文章页面打开时实在过分卡顿，排查原因，查到一篇文章谈到是背景图片显示方式background-attachment: fixed;导致的，一口气注释掉。
+原文提供的优化方法试了几次都会导致字重显示有误（怀疑是::before的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行will-change: auto;应付一下就算完事了，谁知道起不起效果，不管你了！
+不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢咖啡冰河的文章：
+    img.wl-emoji,
+    img.vemoji {
+        width: 38px;
+        vertical-align: sub;
+        transition: ease-out .6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.75);
+    }
+2022-09-10
+由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。">  
+
+  <title>
+    
+      💎站点更新日志 Changelog
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.4acb107cbba8d20413e381d5d0b4e389d6985d9b06bea6f113ec434e9d7725f5054543ad560a70d523b7e996f54422cbcf5b39ac77e3c8b0d384f02a42121b00.css" integrity="sha512-SssQfLuo0gQT44HV0LTjidaYXZsGvqbxE&#43;xDTp13JfUFRUOtVgpw1SO36Zb1RCLLz1s5rHfjyLDThPAqQhIbAA==" />
+  
+
+
+</head>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a id="back-link" href="/">Back</a>
+<script>
+    window.addEventListener("load", function() {
+        const backLink = document.getElementById("back-link");
+
+        
+        const referrer = document.referrer;
+
+        
+        const currentURL = window.location.pathname;
+
+        
+        if (currentURL === "/posts" || currentURL === "/posts/") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        }
+        
+        else if (referrer.includes("/posts")) {
+            backLink.href = "/posts";  
+            backLink.textContent = "Back to All Posts";  
+        } else if (referrer === window.location.origin || referrer === "") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        } else {
+            backLink.href = referrer;  
+            backLink.textContent = "Back";  
+        }
+    });
+</script>
+
+
+
+
+<article>
+    <p class="post-meta">
+        <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
+            2021-06-28
+        </time>
+    </p>
+
+    <h1>💎站点更新日志 Changelog</h1>
+
+    
+        <aside >
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#todo">TODO</a></li>
+    <li><a href="#20241203">2024/12/03</a></li>
+    <li><a href="#20241123">2024/11/23</a></li>
+    <li><a href="#装修笔记索引">装修笔记索引</a></li>
+    <li><a href="#2022-12-17">2022-12-17</a></li>
+    <li><a href="#2022-09-14">2022-09-14</a></li>
+    <li><a href="#2022-09-10">2022-09-10</a>
+      <ul>
+        <li><a href="#关于版权">关于版权</a></li>
+      </ul>
+    </li>
+    <li><a href="#2022-08-30">2022-08-30</a></li>
+    <li><a href="#2022-07-24">2022-07-24</a></li>
+    <li><a href="#2022-05-24">2022-05-24</a></li>
+    <li><a href="#2022-05-22">2022-05-22</a></li>
+    <li><a href="#2022-05-19">2022-05-19</a></li>
+    <li><a href="#2022-05-05">2022-05-05</a></li>
+    <li><a href="#2021-11-14">2021-11-14</a></li>
+  </ul>
+</nav>
+        </aside>
+    
+
+    <h2 id="todo">TODO</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 适配移动端（只能说微微适配啦…）</li>
+<li><input checked="" disabled="" type="checkbox"> 修改夜晚主题配色</li>
+<li><input disabled="" type="checkbox"> 增加图片点击放大</li>
+<li><input disabled="" type="checkbox"> 修改鼠标指针</li>
+<li><input disabled="" type="checkbox"> 修改表格之类的基础样式问题</li>
+<li><input disabled="" type="checkbox"> 增加一个喜报通知条幅（这什么东西？）</li>
+</ul>
+<h2 id="20241203">2024/12/03</h2>
+<p>新增了Cafe页面，用的是<a href="">Status Cafe</a>挂件。</p>
+<p>参考了这个教程：<a href="https://bechnokid.neocities.org/resources/tut_statuscafefeed">Creating a Feed Reader from StatusCafe
+</a></p>
+<h2 id="20241123">2024/11/23</h2>
+<p>博客大装修了一番。</p>
+<blockquote>
+<p><strong>Resource Credit</strong></p>
+<ul>
+<li>
+<p>图标来源<a href="https://pixelsafari.neocities.org/favicon/">Pixel Safari</a></p>
+</li>
+<li>
+<p>页面设计来源<a href="https://codepen.io/aeon-flexx-dead-girl/pen/RwXmbdQ">aeon flexx</a></p>
+</li>
+</ul>
+</blockquote>
+<h2 id="装修笔记索引">装修笔记索引</h2>
+<blockquote>
+<p><a href="/posts/archiveandlink/">1. 鱼鱼小家的装修笔记</a></p>
+<p><a href="/posts/decoration/">2. Stack 主题及 Waline 评论区装修笔记</a></p>
+<p><a href="/posts/hugo-luna/">3. Luna 主题装修笔记</a></p>
+</blockquote>
+<h2 id="2022-12-17">2022-12-17</h2>
+<p>主题更换为<a href="https://github.com/schnerring/hugo-theme-gruvbox">Gruvbox</a>，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：</p>
+<ol>
+<li>将目录修改为默认显示</li>
+<li>配置了 Waline 评论区并修改了配色</li>
+<li>为文章配置了中文字数显示，增加页脚统计</li>
+<li>成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在<code>layouts\partials\comments.html</code>里加了<code>&lt;style&gt;</code>标签写样式来解决的这个问题</li>
+</ol>
+<p>因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲<code>hugo</code>生成新的<code>public</code>文件夹，建一个 Public 仓库，把<code>public</code>文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。</p>
+<h2 id="2022-09-14">2022-09-14</h2>
+<p>文章页面打开时实在过分卡顿，排查原因，查到<a href="https://segmentfault.com/a/1190000002970056">一篇文章</a>谈到是背景图片显示方式<code>background-attachment: fixed;</code>导致的，一口气注释掉。</p>
+<p>原文提供的优化方法试了几次都会导致字重显示有误（怀疑是<code>::before</code>的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行<code>will-change: auto;</code>应付一下就算完事了，谁知道起不起效果，不管你了！</p>
+<p>不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢<a href="https://blog.mysto.cyou/posts/211028-blognewtheme/">咖啡冰河的文章</a>：</p>
+<pre tabindex="0"><code>    img.wl-emoji,
+    img.vemoji {
+        width: 38px;
+        vertical-align: sub;
+        transition: ease-out .6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.75);
+    }
+</code></pre><h2 id="2022-09-10">2022-09-10</h2>
+<p>由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。</p>
+<h3 id="关于版权">关于版权</h3>
+<ol>
+<li>感谢又快又好用的<a href="https://github.com/CaiJimmy/hugo-theme-stack">Stack</a>主题</li>
+<li>感谢 Home 页的九十年代小猫咪：<a href="https://webneko.net/?white">It&rsquo;s Neko!</a></li>
+<li>如果你也想要一个站点标题图片：<a href="https://textanim.com/">textanim</a></li>
+<li>背景与页脚图片（一个美丽的站点）：<a href="https://cinni.net/web.html#blinkies">cinni.net</a></li>
+</ol>
+<h2 id="2022-08-30">2022-08-30</h2>
+<p>取消了 Channel.io 聊天气泡.</p>
+<h2 id="2022-07-24">2022-07-24</h2>
+<p>根据芋阿圆的笔记增加了文章段首空两格的 Feature.</p>
+<h2 id="2022-05-24">2022-05-24</h2>
+<p>终于把消失很久的聊天小气泡加上，虽然没有人找我聊天啦 💬</p>
+<h2 id="2022-05-22">2022-05-22</h2>
+<p>终于把页脚的心头大患 Run Time 给改了实现了所有想要的 Feature 了，小鸟立誓再也不会打开装修页面了 😤VS code 也卸载了（假的），再见！</p>
+<h2 id="2022-05-19">2022-05-19</h2>
+<p>经过爆破艰难地更新了船新版本的 Luna，获取了浮动 Toc 并立誓再也不更新主题了</p>
+<h2 id="2022-05-05">2022-05-05</h2>
+<p>站点主题从 Stack 更换为 Luna</p>
+<h2 id="2021-11-14">2021-11-14</h2>
+<p>小鸟拥有了自己的第一个私人博客</p>
+
+</article>
+
+                
+    
+        
+        <footer class="site-footer">
+            <p>&copy; 2024 再會，謝謝所有的魚</p>
+        </footer>
+    
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <meta name="description" content="事情要从 Checker Plus for Gmail 这个浏览器插件开始讲起，它是一个可以提醒你 Gmail 收到新邮件、并且不需要点开新的网页就能直接查看邮件的插件。
+不知什么时候我安装了这个它，它的图标小小一个，挂在我浏览器的右上角，非常十分之特别好用。因为实在太方便了，导致我后来很多网站都直接用了 Gmail 的邮箱来注册。
+但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。
+事实上 Checker 插件似乎是能够做到这个功能的，我后来在他们的帮助页面找到了这方面的内容：Check mail from other accounts or using POP，但当时我并不知道。
+我后来选用了另一个办法，在邮箱设置里面我看到了查收其他帐号的邮件：这似乎就是我想要的，用我现有的 Gmail 邮箱来收网易邮箱的邮件。
+
+官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：
+
+跑去被查收的邮箱的网页里找到设置。
+找到开启POP3/SMTP相关的选项，打开它。这时多半需要你的手机发送一个验证码什么的。开启后，如果设置中有授权密码管理（在 QQ 邮箱中叫授权码），请新增一个密码。往往会给你一个十六位的乱码，它只会出现一次，请把它背下来，或者记在你的password.txt中，事实上我感到这辈子都不需要再看它们第二眼，所以我复制了下来就关掉了。
+如果被查收邮箱的设置中可以选择收取选项：收取最近30天邮件/收取全部邮件，请务必选择 30 天，我当时完全不理解这个选项，选了后者，上个洗手间回来的功夫它把新旧约莫四百封邮件全部导入了进来，我才知道它是什么意思。
+回到你用来查收邮件的Gmail邮箱的网页里找到设置→账号和导入→查收其他账号的邮件，也即上面截图中的那个地方。
+选择添加邮件账号，填入邮件地址，下一步，下一步，填上刚才的授权密码。然后勾选前三个复选框：保留副本和添加标签。（勾选后者十分必要，一个标签代表一个邮箱，这样你的邮箱才不会乱糟糟）。
+大功告成。
+
+如果是查收与被查收的都是 Gmail，你大概率会卡在“服务器拒绝 POP3 访问”上。去Google 账号设置中找到安全性→登录Google→ 新建一个应用专用密码。然后在第五步中填上它。大功再次告成——发现了吗？似乎要成功用上 POP3/IMAP/SMTP 总是需要一个更复杂的专用密码，如果你卡在了这一步，请再去检查一下你的邮箱设置中有没有相似的东西。
+
+
+
+Post Office Protocol 3，邮局协定第 3 个版本：它是因特网电子邮件的第一个离线协议标准，POP3 允许用户从服务器上把邮件存储到本地主机（即自己的计算机）上，同时删除保存在邮件服务器上的邮件，而 POP3 服务器则是遵循 POP3 协议的接收邮件服务器，用来接收电子邮件的。
+
+
+IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是跟 POP3 类似邮件访问标准协议之一。不同的是，开启了 IMAP 后，您在电子邮件客户端收取的邮件仍然保留在服务器上，同时在客户端上的操作都会反馈到服务器上，如：删除邮件，标记已读等，服务器上的邮件也会做相应的动作。所以无论从浏览器登录邮箱或者客户端软件登录邮箱，看到的邮件以及状态都是一致的。">  
+
+  <title>
+    
+      Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.4acb107cbba8d20413e381d5d0b4e389d6985d9b06bea6f113ec434e9d7725f5054543ad560a70d523b7e996f54422cbcf5b39ac77e3c8b0d384f02a42121b00.css" integrity="sha512-SssQfLuo0gQT44HV0LTjidaYXZsGvqbxE&#43;xDTp13JfUFRUOtVgpw1SO36Zb1RCLLz1s5rHfjyLDThPAqQhIbAA==" />
+  
+
+
+</head>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <a id="back-link" href="/">Back</a>
+<script>
+    window.addEventListener("load", function() {
+        const backLink = document.getElementById("back-link");
+
+        
+        const referrer = document.referrer;
+
+        
+        const currentURL = window.location.pathname;
+
+        
+        if (currentURL === "/posts" || currentURL === "/posts/") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        }
+        
+        else if (referrer.includes("/posts")) {
+            backLink.href = "/posts";  
+            backLink.textContent = "Back to All Posts";  
+        } else if (referrer === window.location.origin || referrer === "") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        } else {
+            backLink.href = referrer;  
+            backLink.textContent = "Back";  
+        }
+    });
+</script>
+
+
+
+                </div>
+    <head>
+        <style type="text/css">
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            ::-webkit-scrollbar-thumb {
+                height: 40px;
+                background-color: #eee;
+                border-radius: 16px;
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+
+        </style>
+
+    </head>
+<article>
+    <h1>Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件</h1>
+    <p>
+        <time datetime="2022-04-20 00:00:00 &#43;0000 UTC">
+            2022-04-20
+        </time>
+    </p>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents"></nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+
+    <p>事情要从 Checker Plus for Gmail 这个浏览器插件开始讲起，它是一个可以提醒你 Gmail 收到新邮件、并且不需要点开新的网页就能直接查看邮件的插件。</p>
+<p>不知什么时候我安装了这个它，它的图标小小一个，挂在我浏览器的右上角，非常十分之特别好用。因为实在太方便了，导致我后来很多网站都直接用了 Gmail 的邮箱来注册。</p>
+<p>但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。</p>
+<p>事实上 Checker 插件似乎是能够做到这个功能的，我后来在他们的帮助页面找到了这方面的内容：<a href="https://jasonsavard.com/wiki/Check_mail_from_other_accounts_or_using_POP">Check mail from other accounts or using POP</a>，但当时我并不知道。</p>
+<p>我后来选用了另一个办法，在邮箱设置里面我看到了<strong>查收其他帐号的邮件</strong>：这似乎就是我想要的，用我现有的 Gmail 邮箱来收网易邮箱的邮件。</p>
+<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png" alt=""></p>
+<p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p>
+<ol>
+<li>跑去<code>被查收的邮箱</code>的网页里找到<code>设置</code>。</li>
+<li>找到<code>开启POP3/SMTP</code>相关的选项，打开它。这时多半需要你的手机发送一个验证码什么的。开启后，如果设置中有<code>授权密码管理</code>（在 QQ 邮箱中叫<code>授权码</code>），请新增一个密码。往往会给你一个十六位的乱码，它只会出现一次，请把它背下来，或者记在你的<code>password.txt</code>中，事实上我感到这辈子都不需要再看它们第二眼，所以我复制了下来就关掉了。</li>
+<li>如果被查收邮箱的设置中可以选择<code>收取选项：收取最近30天邮件/收取全部邮件</code>，请务必选择 30 天，我当时完全不理解这个选项，选了后者，上个洗手间回来的功夫它把新旧约莫四百封邮件全部导入了进来，我才知道它是什么意思。</li>
+<li>回到你用来<code>查收邮件的Gmail邮箱</code>的网页里找到<code>设置</code>→<code>账号和导入</code>→<code>查收其他账号的邮件</code>，也即上面截图中的那个地方。</li>
+<li>选择<code>添加邮件账号</code>，填入邮件地址，下一步，下一步，填上刚才的授权密码。然后勾选前三个复选框：<code>保留副本</code>和<code>添加标签</code>。（勾选后者十分必要，一个标签代表一个邮箱，这样你的邮箱才不会乱糟糟）。</li>
+<li>大功告成。</li>
+</ol>
+<p>如果是查收与被查收的都是 Gmail，你大概率会卡在“服务器拒绝 POP3 访问”上。去<a href="https://myaccount.google.com/">Google 账号设置</a>中找到<code>安全性</code>→<code>登录Google</code>→ 新建一个<code>应用专用密码</code>。然后在第五步中填上它。大功再次告成——发现了吗？似乎要成功用上 POP3/IMAP/SMTP 总是需要一个更复杂的专用密码，如果你卡在了这一步，请再去检查一下你的邮箱设置中有没有相似的东西。</p>
+<blockquote>
+<ul>
+<li>
+<p>Post Office Protocol 3，邮局协定第 3 个版本：它是因特网电子邮件的第一个离线协议标准，POP3 允许用户从服务器上把邮件存储到本地主机（即自己的计算机）上，同时删除保存在邮件服务器上的邮件，而 POP3 服务器则是遵循 POP3 协议的接收邮件服务器，用来接收电子邮件的。</p>
+</li>
+<li>
+<p>IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是跟 POP3 类似邮件访问标准协议之一。不同的是，开启了 IMAP 后，您在电子邮件客户端收取的邮件仍然保留在服务器上，同时在客户端上的操作都会反馈到服务器上，如：删除邮件，标记已读等，服务器上的邮件也会做相应的动作。所以无论从浏览器登录邮箱或者客户端软件登录邮箱，看到的邮件以及状态都是一致的。</p>
+</li>
+</ul>
+</blockquote>
+<p>总而言之，到这一步，我们已经可以用 Gmail 邮箱来查看 QQ 邮箱、网易邮箱和 Outlook 的垃圾邮件，并且用它来发送更多。当然，反过来也一样。至于 Gmail 删除网易的邮件的操作是否会同步到网易中，我还没有尝试，也许可以，也许不行。我已经不在乎了，在我心中，网易邮箱不再是一个具体的产品，只是我 Gmail 邮箱中一个微不足道的标签（冷淡.jpg）。</p>
+<p>如果有用其他邮箱来发件的需求，还可以在<code>用这个地址发送邮件</code>中添加它，相比前者，这个要容易许多，只需要发一个验证邮件，点击链接即可完成设置。</p>
+<p>于是我终于摆脱掉了网易邮箱大师 APP 和要点开 QQ、打开不同网页去看一封邮件的苦恼，实现了文章开头的构想：从此打扰我的只有 Checker Plugin。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png" alt="设置好“用这个地址发送邮件”之后发新邮件时的样子"></p>
+<p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p>
+<blockquote>
+<p>《送东阳马生序》：每假借于藏书之家，手自笔录，计日以还。</p>
+</blockquote>
+<p>想起高中寒暑假回来常被教训“学的东西全还给老师了是吧”。是的。计日以还不过三天还还是两天还的区别，手自笔录，也不过为了还掉还能再找回来。于是以后实在不知道<code>|</code>前加什么内容的文章，一律用<code>手自笔录</code>占位。</p>
+
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/april2022-02/">Prev：关于她与她的生活的侧写</a>
+        
+
+        
+
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/repo/">Next：《肉身神像》的长评、Repo、Q&amp;A、段落Reaction、导言、安利</a>
+
+        
+
+    </div>
+    <br>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+    <div id="comments" class="comments">
+        <style>
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+    </div>
+
+    <div>
+    
+        
+        <footer class="site-footer">
+            <p>&copy; 2024 再會，謝謝所有的魚</p>
+        </footer>
+    
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script></div>
+
+            </div>
+        </main>
+    </body></html>

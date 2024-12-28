@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <meta name="description" content="
+来更新两件关于小说的大事。
+小说博客装修
+一件事是我前夜终于给我的小说博客（Write in Water）换了新主题。
+这件事一直在我的待办上，非常想要完成但又嫌麻烦。原因是我希望找到一个好看的主题，同时它又可以根据作品（Fandom）和Tags两种方式进行分类。又由于评论与文章slug关联，原本文章上面已经有珍惜的朋友的留言，我希望重新构建的博客可以不扰乱自己现有的slug格式，同时最好具备搜索功能。
+搜寻了一大圈后，始终没有找到满意的，实在太商务风了……直到后来逛到友邻Kraka的博客，她自己写了一个Libris的Hugo小说主题！她做了一些类似文前高亮预警、按照书籍分类的适配，都是非常之实用的功能，而且博客本身的字体、字间距等等我都非常喜欢，果然写小说的最懂小说博客需要什么！
+我一直很苦恼于目前乱七八糟的归档页面，一眼看中了Libris完美的可以自己书写信息的归档列表，于是连夜搬家，并使唤ChatGPT帮我改了一晚上代码。
+搬家后也做了一些重新的改动：
+
+让归档页面按照Categories列表，Categories即为原作Fandom或我的归类（例如港影同人放在同一个Category）。重新整理，而不改动原文件在本地的位置，以令作品Slug不会变动。对这样的分类做了字数统计。
+对图标脸盲，为导航栏加上文字。
+配置评论区，修改引用、分割线等各种各样CSS样式。
+
+本来是没有打算好好装修的，毕竟实话说连维护的心情都有点懒散。我的同人放在两个地方，小说博客相比于AO3的唯一优越性在于只属于我，而无论是文章上传修改、分类、阅读体验还是交互都完全没有成熟的存档网站那么好，但晚上摸到博客的评论看了半天，虽然留言不多但看得非常开心。果然我还是很喜欢和人交流，喜欢自己写出来的东西得到别人的喜爱与称赞，看到自己写出的猫狗贴贴被人喜欢就会高兴！
+总而言之果然还是一块很值得珍惜的地方！精装修后感到非常满意
+
+请参观：">  
+
+  <title>
+    
+      小说大事记事簿
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.4acb107cbba8d20413e381d5d0b4e389d6985d9b06bea6f113ec434e9d7725f5054543ad560a70d523b7e996f54422cbcf5b39ac77e3c8b0d384f02a42121b00.css" integrity="sha512-SssQfLuo0gQT44HV0LTjidaYXZsGvqbxE&#43;xDTp13JfUFRUOtVgpw1SO36Zb1RCLLz1s5rHfjyLDThPAqQhIbAA==" />
+  
+
+
+</head>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <a id="back-link" href="/">Back</a>
+<script>
+    window.addEventListener("load", function() {
+        const backLink = document.getElementById("back-link");
+
+        
+        const referrer = document.referrer;
+
+        
+        const currentURL = window.location.pathname;
+
+        
+        if (currentURL === "/posts" || currentURL === "/posts/") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        }
+        
+        else if (referrer.includes("/posts")) {
+            backLink.href = "/posts";  
+            backLink.textContent = "Back to All Posts";  
+        } else if (referrer === window.location.origin || referrer === "") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        } else {
+            backLink.href = referrer;  
+            backLink.textContent = "Back";  
+        }
+    });
+</script>
+
+
+
+                </div>
+    <head>
+        <style type="text/css">
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            ::-webkit-scrollbar-thumb {
+                height: 40px;
+                background-color: #eee;
+                border-radius: 16px;
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+
+        </style>
+
+    </head>
+<article>
+    <h1>小说大事记事簿</h1>
+    <p>
+        <time datetime="2024-04-08 00:00:00 &#43;0000 UTC">
+            2024-04-08
+        </time>
+    </p>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#小说博客装修">小说博客装修</a></li>
+    <li><a href="#写了新故事">写了新故事</a></li>
+    <li><a href="#关于地头蛇的qa与思路备忘">关于《地头蛇》的Q&amp;A与思路备忘</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+
+    <style>
+    .image-container {
+        display: flex;
+    }
+    .image-container .image-wrapper {
+        width: 50%;
+        padding: 5px; /* 调整间隔大小 */
+        box-sizing: border-box; /* 保证内边距不会增加元素宽度 */
+        text-align: center;
+    }
+    .image-container .image-wrapper img {
+        max-width: 100%;
+    }
+    .image-container .image-wrapper p {
+        margin-top: -10px; /* 调整文字与图片的距离 */
+        font-size: 15px; /* 调整文字字号 */
+    }
+</style>
+<p>来更新两件关于小说的大事。</p>
+<h2 id="小说博客装修">小说博客装修</h2>
+<p>一件事是我前夜终于给我的小说博客（<a href="https://written.gregueria.icu/">Write in Water</a>）换了新主题。</p>
+<p>这件事一直在我的待办上，非常想要完成但又嫌麻烦。原因是我希望找到一个好看的主题，同时它又可以根据作品（Fandom）和Tags两种方式进行分类。又由于评论与文章slug关联，原本文章上面已经有珍惜的朋友的留言，我希望重新构建的博客可以不扰乱自己现有的slug格式，同时最好具备搜索功能。</p>
+<p>搜寻了一大圈后，始终没有找到满意的，实在太商务风了……直到后来逛到友邻Kraka的博客，她自己写了一个<a href="https://blog.mysto.cyou/posts/230526-libristheme/">Libris</a>的Hugo小说主题！她做了一些类似文前高亮预警、按照书籍分类的适配，都是非常之实用的功能，而且博客本身的字体、字间距等等我都非常喜欢，果然写小说的最懂小说博客需要什么！</p>
+<p>我一直很苦恼于目前乱七八糟的归档页面，一眼看中了Libris完美的可以自己书写信息的归档列表，于是连夜搬家，并使唤ChatGPT帮我改了一晚上代码。</p>
+<p>搬家后也做了一些重新的改动：</p>
+<ol>
+<li>让归档页面按照Categories列表，Categories即为原作Fandom或我的归类（例如港影同人放在同一个Category）。重新整理，而不改动原文件在本地的位置，以令作品Slug不会变动。对这样的分类做了字数统计。</li>
+<li>对图标脸盲，为导航栏加上文字。</li>
+<li>配置评论区，修改引用、分割线等各种各样CSS样式。</li>
+</ol>
+<p>本来是没有打算好好装修的，毕竟实话说连维护的心情都有点懒散。我的同人放在两个地方，小说博客相比于AO3的唯一优越性在于只属于我，而无论是文章上传修改、分类、阅读体验还是交互都完全没有成熟的存档网站那么好，但晚上摸到博客的评论看了半天，虽然留言不多但看得非常开心。果然我还是很喜欢和人交流，喜欢自己写出来的东西得到别人的喜爱与称赞，看到自己写出的猫狗贴贴被人喜欢就会高兴！</p>
+<p>总而言之果然还是一块很值得珍惜的地方！精装修后感到非常满意
+<img
+    src="/img/emoji/meow_smile.png"
+    title="meow_smile"
+    alt="meow_smile"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+请参观：</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%E5%B0%8F%E8%AF%B4%E5%A4%A7%E4%BA%8B/2.png" alt="1"></p>
+<div class="image-container">
+        <div class="image-wrapper">
+            <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/小说大事/3.png" alt="About">
+            <p>About</p>
+        </div>
+        <div class="image-wrapper">
+            <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/小说大事/4.png" alt="正文">
+            <p>正文</p>
+        </div>
+</div>
+<h2 id="写了新故事">写了新故事</h2>
+<p>会搞精装修当然是因为我最近写完了新的故事，是《无间道》的同人小说：<a href="https://written.gregueria.icu/posts/tyrant/">《地头蛇》</a>。自我第一次看这个片片已经一年半过去，我还在时而为这个故事头晕脑胀，常常想大概难以再遇到这样有情美丽的黑社会片片，前一阵综艺翻拍它的片段，让故事主人公在我信息瀑布流的出现频率大增。故事已经二十多年过去，仍看到主演为他说话：所以在你的心目中已有黑白之分，正派反派是两个面孔吗？</p>
+<p>我对这个情义与因果的故事念念不忘，大概因为无论故事内外都始终没有人去破坏它的氛围。</p>
+<p>之前虽然也写过无间道，但因为我十足胆小怕事，始终无法破坏无间道整个故事榫卯结构般严密的逻辑，故事里的死亡简直像多米诺骨牌一样一旦开始了就停止不住，看过很多遍2之后仍然会为最后一幕伤心得不得了，连同无间道1一起，如此坚不可摧的遗憾。在这个新故事中我尝试写Fix-It：如果，如果，是否能够。</p>
+<p>整个故事写下来非常开心，因为是哥哥没有死在那个夜晚的What if，虽然偶有吵架，偶有斗嘴，但他和弟宝小仁还是过着平静而又安稳的生活。写故事就是这样好，可以偷天换日般将人拉进不同的命运中去。我是那种非常信奉于写下即真实的那种人，相信遗憾能够经过自己的书写弥补，所以写完之后真的很幸福很幸福，到了念念不忘的程度，一连几个夜晚都晕眩，简直像哥们写出了无间道4一样成就感爆棚（？</p>
+<p>因为这样幸福实在久违，而有很多想法不写下来就会忘记，所以总之我又来给自己写反馈和备忘了（上一篇请见<a href="/posts/repo/">《肉身神像》的反馈和Q&amp;A</a>）。</p>
+<h2 id="关于地头蛇的qa与思路备忘">关于《地头蛇》的Q&amp;A与思路备忘</h2>
+<p><strong>Q：最喜欢的片段。</strong></p>
+<p>A：弟宝奚落哥哥，哥和弟讲道理的片段。还很喜欢弟宝去接哥哥下班但迟到了很久，哥在那里等他，低头看表发现没表，站在一个矮一点的邮筒旁边，“他俩一高一低的错落着，在这样没人接的画面里，连倪永孝都看起来有些傻气”。特别萌……</p>
+<p><strong>Q：最难写的部分。</strong></p>
+<p>A：都难写，反正每一Part都卡文。黄色部分也写得超级卡手，这么性欲爆棚的时候，不应该的啊！卡得比较久的应该是小仁迟到给哥送表那段。想了很久，不过最后完成体很喜欢。手表是俺们无间道宇宙最好的礼物，哥也要收到弟弟的手表！以及后面两人都不安的疑似分手Scene我也很喜欢，我实在是很喜欢分手心情但不喜欢真的分手！最后其实没有分手的分手心情完全就是搞笑心情！</p>
+<p><strong>Q：写起来最幸福的部分。</strong></p>
+<p>A：那必然是写我哥！哥攻抚慰写这个故事真的写得超级开心啊，性癖真的是一些遥远的东西。就是要看哥温柔又美丽，水中明月般遥远，有时真如幻觉，幻觉，所谓拥有得到，全是痴人碗中看月。对弟宝来讲，这人都在怀中死过一次，复生后的每秒大概都是Bonus time，就算从此以后没有一丁点儿瓜葛，弟宝大概也能开心地活下去，可此时得到的却是一枚恐怖的机会，漂漂亮亮的我哥，伸手一捞就能摸到口袋里去啦！多好啊。</p>
+<p>这次真让我写哥写了个爽，狂涂乱抹，哪管得了读者嫌多。就要写哥漂亮温柔，遥远的东西多么美妙，就要弟去看哥哥：他看起来比他死去那年要老了一些。可此时此地，仍如梦中之人。多好啊……还想看他时而露出一点点残忍，冷硬，他不记得了，但他不是一个新的人，时而露出一些前世般冷调的底色，明明看起来很好接近，凑过前了却被轻轻推远。是碗中月又成了天上月。</p>
+<p>总之哥攻抚慰属性大爆发！超级幸福！</p>
+<p><strong>Q：关于这个故事的一些事。</strong></p>
+<p>A：这个故事其实是送给我的友人小派的，我在无间道这个冷门Fandom能吃这么好完全仰仗她。去年中时就想过要把下一篇故事送给她，没料竟然就到2024年了。虽然互相联系不多，但交流始终非常幸福。我这几年搞同人基本没有社交啦，全靠去吃朋友的安利跟朋友玩到一起，反正就是只和安全的人玩就够了……但认识小派很开心。会怕打扰对方和紧张。但是很开心。</p>
+<p>我因为她和她的故事而幸福，因此也希望她有得到类似的快乐。</p>
+<p><strong>Q：写的思路。</strong></p>
+<p>A：整个故事就是希望哥和弟活下来。哥的What if在故事开始就完成：他从枪击之下活下来，摘掉一颗眼球，从此以后什么都没了，连记忆也没有。他被弟宝捡走，一起生活好一段时间呢，故事自然不会从医院啦一起住啦开始聊，故事开始在他们生活发生改变的第一个动作：哥讲我揾咗一份新工，往后考虑搬走。那好那好，弟宝嘲笑，弟宝妥协，弟宝开始接女仔上下班一样接哥。</p>
+<p>第二个需要考虑的问题是，故事再这样走下去就要到《无间道1》的悲剧世界线里了。而1是非常严密难以破坏的故事，因为它整个剧情期都非常短而紧凑，也就不到十天，死亡和相遇都像命运，我最初的设想是希望在小仁谎称按摩其实是去和黄志诚碰头那一幕安插新的剧情，让他们最后没有在那个高楼相见，进而避免第一场死亡的发生。但最后没有，一是因为这个时候整个齿轮已经开始转了，查内鬼的小明还会有下一步动作，二是我又不是真来写无间道4的我是来写我CP贴贴的，搞这么复杂！不就是弟和哥要永远在一起吗犯什么天条了吗？！谁敢妨碍我哥弟安稳生活，看我不全部杀掉。</p>
+<p>所以最终决定要在《无间道1》的时间线开始之前让韩琛死掉，这一点在故事中的安排是有天韩琛偶遇了我哥，被小仁知道炸毛了。之后的某天韩琛（在报纸里，通过本宝的冷酷剧情杀）死在了泰国人手里。本来很想写明是弟宝自己动手，但最终纠结：1991年的小仁迷信程序正义，迷信人必须成为好人，而哥哥被程序不正义地杀害（哪怕是意外），那么十年后的小仁呢？当心仪之人受到威胁，还要怎样才能做好人呢？最终没有写，故事就停在了这里。</p>
+<p>关于脱离了原剧情的世界线后，也即韩琛死后，他真的能回去正正当当做差人，拥有海景办公室吗？这个问题只在我心里停了一下下。根本不愿意去细想，这根本就不是什么安稳或光辉的美差事。只给小仁留下一句“我准备抬头做人”就完了。除此外就没有别的太要紧的事了：时间自1997后飞逝，哥和弟住在一个有小小片海景的房子。</p>
+<p><strong>Q：是否写得更好了？</strong></p>
+<p>A：是的。经常会想这个问题。最近自我高度认可，前一阵子回去读一篇一年前的故事，发现读起来像热刀切黄油一样，有一点点阅读的阻力，读出来却很顺滑。语感陌生又美妙，所以开始觉得自己应该写得不错。</p>
+<p>这一篇故事基本是短句构成，语感倒是没什么好讲，但我觉得很萌。非要说的话我写起来没有更聪明，但比过去要诚恳一点，而且克制了许多。</p>
+<p>写这个故事的时候想到了《麦兜和妈妈》中关于马尔代夫的那个故事：麦兜想去马尔代夫，妈妈就带他去了一个海边，告诉他是马尔代夫，她们度过了非常好的一天，然后就一起回家了。</p>
+<p>水清沙白，树林椰影，童话一般，你可以感觉到作者有一百种伤害观众的方法，一百种让你伤心难忘的技巧，最后却只是轻轻放下了……我对故事的审美真的被这部动画片影响或者显化。非常温柔，非常的童话，我第一次看的时候很担心和不安，总觉得故事不会这么简单，哪怕童话也会有转折和伤害，而最后被轻轻安放在陆地上的时候真的非常鼻酸。有过这样的故事体验，就会产生那种感受：我也想要写这样的故事。我也要这样去保护我的读者，没事了，在我的故事里你不会再受伤了。</p>
+<p>地头蛇这个故事也就是这样，没事了，再也不会受伤了。这搞不好是我这辈子能写出来的最幸福的东西。船沉了，变天了，时间像一支箭一样快速地飞离了1997，这香港似已不是我地头。可人死可以复生，停止的时间转动，故事中我们哥和弟仍在一起，在洪水浪尖上安稳地住进了一枚小小的海螺里。</p>
+<p>就到这里吧。关于这篇小说的话真的讲得好多。因为好喜欢，因为纯然幸福。这个月是我开始写第一篇故事以来的第十年纪念月！我喜欢故事，以后也会一直喜欢下去的
+<img
+    src="/img/emoji/face.gif"
+    title="face"
+    alt="face"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+</p>
+
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/maco/">Prev：神压在了你身上</a>
+        
+
+        
+
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/8tips/">Next：生活的撇步也应逐一记录</a>
+
+        
+
+    </div>
+    <br>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+    <div id="comments" class="comments">
+        <style>
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+    </div>
+
+    <div>
+    
+        
+        <footer class="site-footer">
+            <p>&copy; 2024 再會，謝謝所有的魚</p>
+        </footer>
+    
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script></div>
+
+            </div>
+        </main>
+    </body></html>

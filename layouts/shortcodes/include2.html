@@ -1,0 +1,24 @@
+{{- /*
+Usage
+-----
+Write the title (slug) of file to include. No path or extension is needed
+as long as it is unique across the site.
+
+Should be called with %% delimiters.
+
+If do not want the included file to show up as a stand-alone page,
+use headless _build options on the included file found in
+https://gohugo.io/content-management/build-options/
+
+References
+----------
+https://roneo.org/en/hugo-include-another-file-with-a-shortcode/
+https://discourse.gohugo.io/t/export-to-markdown-with-shortcodes/39590/5
+https://github.com/gohugoio/hugo/issues/7297
+
+Note
+----
+After updating to v0.117.0, try again with RawContent --> RenderShortcodes
+*/ -}}
+{{ $file := .Get 0 }}
+{{ (site.GetPage $file).Content | safeHTML }}

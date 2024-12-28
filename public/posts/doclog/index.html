@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <meta name="description" content="总而言之，某日逛到一个Docsify笔记库，简洁干净又漂亮，看了一下教程似乎并不难，我对自己的前笔记库不满很久（因为没有办法检索），于是摸鱼事件着手折腾Docsify，竟然成了（竟然成了）。
+参考资料
+
+Docsify的配置&#43;全插件列表
+Docsify的配置中文文档
+Docsify | 搭建个人静态笔记库
+
+主题修改
+配置是网上搜了一个随便复制下来用了（竟然成了），主要使用到的插件：字数统计、全文搜索、翻页、页面右侧TOC。
+参考了塔塔的教程中CSS的修改办法。
+参照了教程修改了字体，还将默认的引用样式修改成了我喜欢的样子：
+.markdown-section blockquote {
+ background: rgba(235, 236, 237, 0.3);
+ border-left: 5px solid currentcolor;
+ border-radius: 5px;
+ margin: 0.5rem 0;
+ padding: 0.1em 1em;
+ font-size: 1em;
+ display: block;
+ margin-block-start: 1em;
+ margin-block-end: 2em;
+ margin-inline-end: 40px;
+}
+注意事项
+Docsify的侧边栏功能是由插件实现的，并且并不是自动生成的，你需要添加了一个Markdown文件后，在_sidebar.md文件中列出这个文档的名字和路径，例如[受戒](Books\受戒.md)，之后这个文件才会被读到侧边栏中。
+在文档很多的情况下，手动录入变得非常麻烦。最终我用Auto Sidebar For Docsify解决了这个问题！
+铛啷！
+Welcome to 鱼’s Repository！
+最近到了晚上约莫十点前后，眼皮就开始打架，今天振作起来打开文档，以超快速度并超不详细地写一篇超短的更新（我意识到这几个月我每次写博客都大动干戈企图翻出最内在的情绪宣泄，然后导致一些长篇累牍连篇废话，这不是一个正常的状态，对我这等超强表演欲的精神暴露狂来讲凡是超过3000字都是危险的，所以我决定最近的计划是缩短更新间隔，删减更新篇幅，所以我这次写了这个没有感情色彩的折腾笔记。靠，可我甚至都不是一个正常人，我哪来的正常的状态？像个大疯狗一样站在网页中央刨水坑就是我的一个天然自然正常的形态）。这个笔记库是上周建的，其实只是个一成放读书笔记、九成放小说摘抄的整理库，整理起来倒也很快：一键导出电子书划线部分，SNS的俏皮话复制粘贴一下，调整格式，放进Markdown文档里，丢进Docsify，上传，即成。Docsify的好处在于它没有Front-matter之类的东西，完美实现所见即所得。目前为止，我都喜爱它。">  
+
+  <title>
+    
+      Docsify | 花哨文具码在案前，用不用另说
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.4acb107cbba8d20413e381d5d0b4e389d6985d9b06bea6f113ec434e9d7725f5054543ad560a70d523b7e996f54422cbcf5b39ac77e3c8b0d384f02a42121b00.css" integrity="sha512-SssQfLuo0gQT44HV0LTjidaYXZsGvqbxE&#43;xDTp13JfUFRUOtVgpw1SO36Zb1RCLLz1s5rHfjyLDThPAqQhIbAA==" />
+  
+
+
+</head>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <a id="back-link" href="/">Back</a>
+<script>
+    window.addEventListener("load", function() {
+        const backLink = document.getElementById("back-link");
+
+        
+        const referrer = document.referrer;
+
+        
+        const currentURL = window.location.pathname;
+
+        
+        if (currentURL === "/posts" || currentURL === "/posts/") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        }
+        
+        else if (referrer.includes("/posts")) {
+            backLink.href = "/posts";  
+            backLink.textContent = "Back to All Posts";  
+        } else if (referrer === window.location.origin || referrer === "") {
+            backLink.href = "/";  
+            backLink.textContent = "Back to Home";  
+        } else {
+            backLink.href = referrer;  
+            backLink.textContent = "Back";  
+        }
+    });
+</script>
+
+
+
+                </div>
+    <head>
+        <style type="text/css">
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            ::-webkit-scrollbar-thumb {
+                height: 40px;
+                background-color: #eee;
+                border-radius: 16px;
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+
+        </style>
+
+    </head>
+<article>
+    <h1>Docsify | 花哨文具码在案前，用不用另说</h1>
+    <p>
+        <time datetime="2022-07-07 00:00:00 &#43;0000 UTC">
+            2022-07-07
+        </time>
+    </p>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#参考资料">参考资料</a></li>
+    <li><a href="#主题修改">主题修改</a></li>
+    <li><a href="#注意事项">注意事项</a></li>
+    <li><a href="#铛啷">铛啷！</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+
+    <p>总而言之，某日逛到一个Docsify笔记库，简洁干净又漂亮，看了一下教程似乎并不难，我对自己的<a href="https://teetotaler.vercel.app/">前笔记库</a>不满很久（因为没有办法检索），于是摸鱼事件着手折腾Docsify，竟然成了（竟然成了）。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol>
+<li><a href="https://xhhdd.cc/archives/80/comment-page-1">Docsify的配置+全插件列表</a></li>
+<li><a href="https://docsify.js.org/#/zh-cn/">Docsify的配置中文文档</a></li>
+<li><a href="https://mantyke.icu/posts/2021/docsify-build/">Docsify | 搭建个人静态笔记库</a></li>
+</ol>
+<h2 id="主题修改">主题修改</h2>
+<p>配置是网上搜了一个随便复制下来用了（竟然成了），主要使用到的插件：字数统计、全文搜索、翻页、页面右侧TOC。</p>
+<p>参考了塔塔的教程中<a href="https://mantyke.icu/posts/2021/docsify-build/#%E6%9C%AC%E5%9C%B0%E5%BC%95%E7%94%A8css">CSS的修改办法</a>。</p>
+<p>参照了教程修改了字体，还将默认的引用样式修改成了我喜欢的样子：</p>
+<pre tabindex="0"><code>.markdown-section blockquote {
+ background: rgba(235, 236, 237, 0.3);
+ border-left: 5px solid currentcolor;
+ border-radius: 5px;
+ margin: 0.5rem 0;
+ padding: 0.1em 1em;
+ font-size: 1em;
+ display: block;
+ margin-block-start: 1em;
+ margin-block-end: 2em;
+ margin-inline-end: 40px;
+}
+</code></pre><h2 id="注意事项">注意事项</h2>
+<p>Docsify的侧边栏功能是由插件实现的，并且并不是自动生成的，你需要添加了一个Markdown文件后，在<code>_sidebar.md</code>文件中列出这个文档的名字和路径，例如<code>[受戒](Books\受戒.md)</code>，之后这个文件才会被读到侧边栏中。</p>
+<p>在文档很多的情况下，手动录入变得非常麻烦。最终我用<a href="https://gitee.com/vaguelycloud/auto-sidebar-for-docsify">Auto Sidebar For Docsify</a>解决了这个问题！</p>
+<h2 id="铛啷">铛啷！</h2>
+<p><a href="https://note.gregueria.icu/">Welcome to 鱼’s Repository！</a></p>
+<p>最近到了晚上约莫十点前后，眼皮就开始打架，今天振作起来打开文档，以超快速度并超不详细地写一篇超短的更新（我意识到这几个月我每次写博客都大动干戈企图翻出最内在的情绪宣泄，然后导致一些长篇累牍连篇废话，这不是一个正常的状态，对我这等超强表演欲的精神暴露狂来讲凡是超过3000字都是危险的，所以我决定最近的计划是缩短更新间隔，删减更新篇幅，所以我这次写了这个没有感情色彩的折腾笔记。靠，可我甚至都不是一个正常人，我哪来的正常的状态？像个大疯狗一样站在网页中央刨水坑就是我的一个天然自然正常的形态）。这个笔记库是上周建的，其实只是个一成放读书笔记、九成放小说摘抄的整理库，整理起来倒也很快：一键导出电子书划线部分，SNS的俏皮话复制粘贴一下，调整格式，放进Markdown文档里，丢进Docsify，上传，即成。Docsify的好处在于它没有Front-matter之类的东西，完美实现所见即所得。目前为止，我都喜爱它。</p>
+
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/deathlove/">Prev：死亡的拟态色泽璀璨</a>
+        
+
+        
+
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/hades/">Next：In the Name of Hades！</a>
+
+        
+
+    </div>
+    <br>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+    <div id="comments" class="comments">
+        <style>
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+    </div>
+
+    <div>
+    
+        
+        <footer class="site-footer">
+            <p>&copy; 2024 再會，謝謝所有的魚</p>
+        </footer>
+    
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script></div>
+
+            </div>
+        </main>
+    </body></html>
