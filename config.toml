@@ -47,6 +47,3 @@ date_format       = "2006-01-02"
 isListGroupByDate = true
 isShowFooter      = true
 
-[params]
-favicon = "/favicon.ico"   # 如果你的站点根目录下有这个图标文件
-mathjax = true             # 启用 MathJax 解析
