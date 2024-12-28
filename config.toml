@@ -46,6 +46,3 @@ back_home_text    = "Back"
 date_format       = "2006-01-02"
 isListGroupByDate = true
 isShowFooter      = true
-
-[params]
-use_sass          = true

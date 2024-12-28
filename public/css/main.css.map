@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "E:/newspaper",
+	"sourceRoot": "E:/hugo-newspaper",
 	"sources": [
 		"assets/css/main.scss"
 	],
