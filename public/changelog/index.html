@@ -88,7 +88,8 @@ Resource Credit
 <body a="light">
         <main class="page-content" aria-label="Content">
             <div class="w">
-<a id="back-link" href="/">Back</a>
+    <div class="post-meta">
+        <a id="back-link" href="/">Back</a>
 <script>
     window.addEventListener("load", function() {
         const backLink = document.getElementById("back-link");
@@ -120,18 +121,23 @@ Resource Credit
 
 
 
-
-<article>
-    <p class="post-meta">
-        <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
-            2021-06-28
-        </time>
-    </p>
-
-    <h1>💎站点更新日志 Changelog</h1>
-
-    
-        <aside >
+    </div>
+    <article>
+        <h1>💎站点更新日志 Changelog</h1>
+        <p>
+            <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
+                2021-06-28
+            </time>
+        </p>
+        <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+            
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
             <nav id="TableOfContents">
   <ul>
     <li><a href="#todo">TODO</a></li>
@@ -154,10 +160,16 @@ Resource Credit
     <li><a href="#2021-11-14">2021-11-14</a></li>
   </ul>
 </nav>
+            
+            
         </aside>
-    
+        <a href="#" id="toc-toggle"></a>
+    </div>
 
-    <h2 id="todo">TODO</h2>
+
+
+        </div>
+        <h2 id="todo">TODO</h2>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 适配移动端（只能说微微适配啦…）</li>
 <li><input checked="" disabled="" type="checkbox"> 修改夜晚主题配色</li>
@@ -237,7 +249,9 @@ Resource Credit
 <h2 id="2021-11-14">2021-11-14</h2>
 <p>小鸟拥有了自己的第一个私人博客</p>
 
-</article>
+        <br>
+        <div style="padding-bottom:3px;"></div>
+    </article>
 
                 
     
