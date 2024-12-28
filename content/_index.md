@@ -6,7 +6,7 @@ draft = false
 
 欢迎光临一位是吗里面请，这里是鱼鱼的博客。
 
-**⛳ 猜你爱看：**
+**⛳ 猜你在找（？：**
 - [Friends](/links)：也在写博客的朋友们
 - [Write in Water](https://written.gregueria.icu/)：我的同人站
 - [AO3](https://archiveofourown.org/users/timuk/)：我就是我，不一样的烟火.mp3
@@ -14,7 +14,7 @@ draft = false
 
 **🔮 关于我：**
 
-<del>*过去带刀的时候，他们都称呼我为傅鱼鱼…*</del>
+<del>*从前带刀的时候，他们都称呼我为傅鱼鱼…*</del>
 
 是鱼鱼，爱与和平同人女一枚无需多言！
 

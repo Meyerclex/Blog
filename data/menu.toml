@@ -10,7 +10,7 @@
 #
 
 [[entries]]
-title = "All Posts"
+title = "📚 All Posts"
 
   [entries.post_list]
   limit = 6
@@ -27,9 +27,9 @@ title = "All Posts"
 #  show_more_text = "See more posts..."
 #  show_more_url = "posts"
 
-#[[entries]]
-#title = "RSS"
-#url = "index.xml"
+[[entries]]
+title = "🔔 RSS"
+url = "index.xml"
 
 #[[entries]]
 #title = "another list"

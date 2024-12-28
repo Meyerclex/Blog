@@ -4,10 +4,12 @@
     {{ else }}
         {{ warnf "layouts/footer.md file is not found, fallback to the default copyright" }}
         <footer class="site-footer">
-            <p>&copy; {{ now.Format "2006" }} {{ site.Title }}</p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - {{ now.Format "2006" }} | {{ site.Title }}</a></p>
         </footer>
     {{ end }}
 {{ end }}
+
+
 <script>
     ;(function () {
         const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
