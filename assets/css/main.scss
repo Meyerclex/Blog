@@ -338,6 +338,15 @@ article img.float-img50 {
     width: 100%; /* 菜单占满宽度 */
     box-shadow: none; /* 去掉阴影 */
   }
+  body {
+    padding: 0 5px;
+  }
+  .w {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+  }
+
 }
 
 
