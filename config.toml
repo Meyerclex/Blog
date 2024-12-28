@@ -1,4 +1,4 @@
-baseURL = 'https://gregueria.icu/'
+baseURL = 'https://hugo-newspaper.pages.dev/'
 languageCode = 'zh-cn'
 title = '再會，謝謝所有的魚'
 theme = 'nostyleplease'
