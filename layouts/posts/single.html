@@ -13,31 +13,31 @@
     {{ .Content }}
     <br>
     <div style="padding-bottom:3px;"></div>
-{{/*</article>*/}}
-{{/*    <div class="pre-next">*/}}
-{{/*        {{with .PrevInSection}}*/}}
-{{/*            <a class="pre-next-btn bg" href="{{.Permalink}}">Prev：{{ .Title }}</a>*/}}
-{{/*        {{end}}*/}}
-{{/**/}}
-{{/*        {{with .NextInSection}}*/}}
-{{/**/}}
-{{/*            <a class="pre-next-btn bg" href="{{.Permalink}}">Next：{{ .Title }}</a>*/}}
-{{/**/}}
-{{/*        {{end}}*/}}
-{{/**/}}
-{{/*    </div>*/}}
-{{/*    <br>*/}}
-{{/*    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>*/}}
-{{/*    <link*/}}
-{{/*            rel="stylesheet"*/}}
-{{/*            href="https://unpkg.com/@waline/client@v2/dist/waline.css"*/}}
-{{/*    />*/}}
-{{/*    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />*/}}
-{{/*    <div id="comments" class="comments">*/}}
-{{/*        {{ partial "comment.html" . }}*/}}
-{{/*    </div>*/}}
-{{/**/}}
-{{/*    <div>*/}}
-{{/*    {{- partial "footer.html" . -}}*/}}
-{{/*    </div>*/}}
+</article>
+    <div class="pre-next">
+        {{with .PrevInSection}}
+            <a class="pre-next-btn bg" href="{{.Permalink}}">Prev：{{ .Title }}</a>
+        {{end}}
+
+        {{with .NextInSection}}
+
+            <a class="pre-next-btn bg" href="{{.Permalink}}">Next：{{ .Title }}</a>
+
+        {{end}}
+
+    </div>
+    <br>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+    <div id="comments" class="comments">
+        {{ partial "comment.html" . }}
+    </div>
+
+    <div>
+    {{- partial "footer.html" . -}}
+    </div>
 {{ end }}
