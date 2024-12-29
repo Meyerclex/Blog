@@ -19,7 +19,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.e19abe3e1807453162d1de253b365af866587d18031bd94b1099a36c3b22bde0a17053ed555fb3c34ec7b80ba9bb85a2bdf98bdaa616fed1e4c1d41acecf406e.css" integrity="sha512-4Zq&#43;PhgHRTFi0d4lOzZa&#43;GZYfRgDG9lLEJmjbDsiveChcFPtVV&#43;zw07HuAupu4WivfmL2qYW/tHkwdQazs9Abg==" />
+    <link rel="stylesheet" href="/css/main.ad695b86b394ece8c645058df850410e486595d29438cf2aa02ce6358925753d386b772ed06ebb90a16e021ac2286b9d557929aa6e4932464f379905227230ea.css" integrity="sha512-rWlbhrOU7OjGRQWN&#43;FBBDkhlldKUOM8qoCzmNYkldT04a3cu0G67kKFuAhrCKGudVXkpqm5JMkZPN5kFInIw6g==" />
   
 
   
@@ -63,11 +63,12 @@
 
 
                 </div>
-<h1>Posts</h1>
+<h1><img style="width: 15%; margin: 0 0;" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/8fd02c72ea9ae1442c54e990ae50d595.gif">Posts</h1>
 
 
 
     <body>
+    <div class="main-container">
     <div id="page_posts" class="window active page_posts" style="">
         <div class="window-title" style="">
             <div class="buttons">
@@ -447,6 +448,84 @@
 
 
     </div>
+
+    <div class="note menu-float" style="flex: 0 0 45%;">
+                <div class="note__item">
+                    <div class="note__day">碎碎念啦，唔使理我</div>
+                    <div class="note__list" style="font-size: 80%;">
+                        <details class="mumble">
+                            <summary>Mumble...</summary>
+                            <div id="feed-reader" ></div>
+                            <script>
+                                const feedURL = 'https://status.cafe/users/lyin.atom';
+
+                                function timeAgo(publishedDate) {
+                                    const now = new Date();
+                                    const published = new Date(publishedDate);
+                                    const diff = now - published; 
+
+                                    const seconds = Math.floor(diff / 1000);
+                                    const minutes = Math.floor(seconds / 60);
+                                    const hours = Math.floor(minutes / 60);
+                                    const days = Math.floor(hours / 24);
+
+                                    if (days > 0) {
+                                        return `${days} day${days > 1 ? 's' : ''} ago`;
+                                    } else if (hours > 0) {
+                                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                                    } else if (minutes > 0) {
+                                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                                    } else {
+                                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+                                    }
+                                }
+
+                                fetch(feedURL)
+                                    .then(response => response.text())
+                                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                                    .then(data => {
+                                        const entries = data.querySelectorAll("entry");
+                                        let html = ``;
+                                        entries.forEach(el => {
+                                            let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+                                            let content = el.querySelector("content").textContent.trim();
+                                            let publishedDate = el.querySelector("published").innerHTML;
+                                            let relativeTime = timeAgo(publishedDate);
+
+                                            html += `
+              <div class="statuscafe-entry">
+                <p class="statuscafe-username">${title} - ${relativeTime}</p>
+                <p class="statuscafe-content">${content}</p>
+              </div>
+            `;
+                                        });
+                                        document.getElementById("feed-reader").innerHTML = html;
+                                    });
+                            </script>
+                        </details>
+                    </div>
+                </div>
+        <blockquote style="font-size: 90%;">
+            这么长的网页看起来很麻烦吧？<br>所以附赠一张宝宝可爱小卡，见者有份🥰<br>请查收！
+        </blockquote>
+            <div class="main-container">
+                <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+                    <div style="height: 50%; max-width: 80%; align-items: center;">
+                        <div class="polaroid-frame">
+                            <div class="polaroid-image">
+                                <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/e5b786e27835fd295754ce15d32f9654.jpg">
+                            </div>
+                            <div class="polaroid-caption">
+                              🤍 宝宝我们喜欢你！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            </div>
+
+
+    </div>
+    </div>
     </body>
     
         
@@ -532,6 +611,8 @@
         }
     })()
 </script>
+
+
             </div>
         </main>
     </body></html>
