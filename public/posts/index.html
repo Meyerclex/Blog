@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ad695b86b394ece8c645058df850410e486595d29438cf2aa02ce6358925753d386b772ed06ebb90a16e021ac2286b9d557929aa6e4932464f379905227230ea.css" integrity="sha512-rWlbhrOU7OjGRQWN&#43;FBBDkhlldKUOM8qoCzmNYkldT04a3cu0G67kKFuAhrCKGudVXkpqm5JMkZPN5kFInIw6g==" />
+    <link rel="stylesheet" href="/css/main.ee30964c05381d1e5bbfe056097bf5ccf08e7017227d3473d74ca16c2df5ad8a5d8eedc70024f28853df5d77531ffe853b4398783d3cddfe3c51522c517229fe.css" integrity="sha512-7jCWTAU4HR5bv&#43;BWCXv1zPCOcBcifTRz10yhbC31rYpdju3HACTyiFPfXXdTH/6FO0OYeD083f48UVIsUXIp/g==" />
   
 
   
@@ -450,6 +450,108 @@
     </div>
 
     <div class="note menu-float" style="flex: 0 0 45%;">
+        
+        <div class="note__item">
+            <div class="note__day">更新日志</div>
+            <div class="note__list" style="font-size: 80%;">
+                <details class="mumble" style="max-height: 200px;">
+                    <summary>Changelog...</summary>
+                    
+                        <h2 id="20241229">2024/12/29</h2>
+<p>又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？</p>
+<h3 id="往期主题">往期主题</h3>
+<ul>
+<li><a href="https://rainy-9ie.pages.dev/">桌面风格</a>：与当前主题一起，魔改自No Style Please主题。</li>
+<li><a href="https://luna-gregueria.vercel.app/">适合野餐的春天</a>：非常美丽的 Luna 主题。</li>
+<li><a href="https://shining.vercel.app/">闪闪惹人爱</a>：由 Stack 主题魔改。</li>
+<li><a href="https://gruvbox-theme.vercel.app">秋冬落叶一般</a>：Gruvbox 主题。</li>
+</ul>
+<h2 id="todo">TODO</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 适配移动端（只能说微微适配啦…）</li>
+<li><input checked="" disabled="" type="checkbox"> 修改夜晚主题配色</li>
+<li><input disabled="" type="checkbox"> 增加图片点击放大</li>
+<li><input disabled="" type="checkbox"> 修改鼠标指针</li>
+<li><input disabled="" type="checkbox"> 修改表格之类的基础样式问题</li>
+<li><input disabled="" type="checkbox"> 增加一个喜报通知条幅（这什么东西？）</li>
+</ul>
+<h2 id="20241203">2024/12/03</h2>
+<p>新增了Cafe页面，用的是<a href="">Status Cafe</a>挂件。</p>
+<p>参考了这个教程：<a href="https://bechnokid.neocities.org/resources/tut_statuscafefeed">Creating a Feed Reader from StatusCafe
+</a></p>
+<h2 id="20241123">2024/11/23</h2>
+<p>博客大装修了一番。</p>
+<blockquote>
+<p><strong>Resource Credit</strong></p>
+<ul>
+<li>
+<p>图标来源<a href="https://pixelsafari.neocities.org/favicon/">Pixel Safari</a></p>
+</li>
+<li>
+<p>页面设计来源<a href="https://codepen.io/aeon-flexx-dead-girl/pen/RwXmbdQ">aeon flexx</a></p>
+</li>
+</ul>
+</blockquote>
+<h2 id="装修笔记索引">装修笔记索引</h2>
+<blockquote>
+<p><a href="/posts/archiveandlink/">1. 鱼鱼小家的装修笔记</a></p>
+<p><a href="/posts/decoration/">2. Stack 主题及 Waline 评论区装修笔记</a></p>
+<p><a href="/posts/hugo-luna/">3. Luna 主题装修笔记</a></p>
+</blockquote>
+<h2 id="2022-12-17">2022-12-17</h2>
+<p>主题更换为<a href="https://github.com/schnerring/hugo-theme-gruvbox">Gruvbox</a>，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：</p>
+<ol>
+<li>将目录修改为默认显示</li>
+<li>配置了 Waline 评论区并修改了配色</li>
+<li>为文章配置了中文字数显示，增加页脚统计</li>
+<li>成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在<code>layouts\partials\comments.html</code>里加了<code>&lt;style&gt;</code>标签写样式来解决的这个问题</li>
+</ol>
+<p>因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲<code>hugo</code>生成新的<code>public</code>文件夹，建一个 Public 仓库，把<code>public</code>文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。</p>
+<h2 id="2022-09-14">2022-09-14</h2>
+<p>文章页面打开时实在过分卡顿，排查原因，查到<a href="https://segmentfault.com/a/1190000002970056">一篇文章</a>谈到是背景图片显示方式<code>background-attachment: fixed;</code>导致的，一口气注释掉。</p>
+<p>原文提供的优化方法试了几次都会导致字重显示有误（怀疑是<code>::before</code>的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行<code>will-change: auto;</code>应付一下就算完事了，谁知道起不起效果，不管你了！</p>
+<p>不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢<a href="https://blog.mysto.cyou/posts/211028-blognewtheme/">咖啡冰河的文章</a>：</p>
+<pre tabindex="0"><code>    img.wl-emoji,
+    img.vemoji {
+        width: 38px;
+        vertical-align: sub;
+        transition: ease-out .6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.75);
+    }
+</code></pre><h2 id="2022-09-10">2022-09-10</h2>
+<p>由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。</p>
+<h3 id="关于版权">关于版权</h3>
+<ol>
+<li>感谢又快又好用的<a href="https://github.com/CaiJimmy/hugo-theme-stack">Stack</a>主题</li>
+<li>感谢 Home 页的九十年代小猫咪：<a href="https://webneko.net/?white">It&rsquo;s Neko!</a></li>
+<li>如果你也想要一个站点标题图片：<a href="https://textanim.com/">textanim</a></li>
+<li>背景与页脚图片（一个美丽的站点）：<a href="https://cinni.net/web.html#blinkies">cinni.net</a></li>
+</ol>
+<h2 id="2022-08-30">2022-08-30</h2>
+<p>取消了 Channel.io 聊天气泡.</p>
+<h2 id="2022-07-24">2022-07-24</h2>
+<p>根据芋阿圆的笔记增加了文章段首空两格的 Feature.</p>
+<h2 id="2022-05-24">2022-05-24</h2>
+<p>终于把消失很久的聊天小气泡加上，虽然没有人找我聊天啦 💬</p>
+<h2 id="2022-05-22">2022-05-22</h2>
+<p>终于把页脚的心头大患 Run Time 给改了实现了所有想要的 Feature 了，小鸟立誓再也不会打开装修页面了 😤VS code 也卸载了（假的），再见！</p>
+<h2 id="2022-05-19">2022-05-19</h2>
+<p>经过爆破艰难地更新了船新版本的 Luna，获取了浮动 Toc 并立誓再也不更新主题了</p>
+<h2 id="2022-05-05">2022-05-05</h2>
+<p>站点主题从 Stack 更换为 Luna</p>
+<h2 id="2021-11-14">2021-11-14</h2>
+<p>小鸟拥有了自己的第一个私人博客</p>
+
+                    
+                </details>
+            </div>
+        </div>
+        
+
                 <div class="note__item">
                     <div class="note__day">碎碎念啦，唔使理我</div>
                     <div class="note__list" style="font-size: 80%;">
@@ -505,6 +607,8 @@
                         </details>
                     </div>
                 </div>
+
+        
         <blockquote style="font-size: 90%;">
             这么长的网页看起来很麻烦吧？<br>所以附赠一张宝宝可爱小卡，见者有份🥰<br>请查收！
         </blockquote>
@@ -522,6 +626,7 @@
                     </div>
                 </div>
                             </div>
+
 
 
     </div>

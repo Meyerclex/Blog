@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   
-    <meta name="description" content="TODO
+    <meta name="description" content="2024/12/29
+又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？
+往期主题
+
+桌面风格：与当前主题一起，魔改自No Style Please主题。
+适合野餐的春天：非常美丽的 Luna 主题。
+闪闪惹人爱：由 Stack 主题魔改。
+秋冬落叶一般：Gruvbox 主题。
+
+TODO
 
  适配移动端（只能说微微适配啦…）
  修改夜晚主题配色
@@ -45,24 +54,7 @@ Resource Credit
 为文章配置了中文字数显示，增加页脚统计
 成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在layouts\partials\comments.html里加了&lt;style&gt;标签写样式来解决的这个问题
 
-因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲hugo生成新的public文件夹，建一个 Public 仓库，把public文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。
-2022-09-14
-文章页面打开时实在过分卡顿，排查原因，查到一篇文章谈到是背景图片显示方式background-attachment: fixed;导致的，一口气注释掉。
-原文提供的优化方法试了几次都会导致字重显示有误（怀疑是::before的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行will-change: auto;应付一下就算完事了，谁知道起不起效果，不管你了！
-不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢咖啡冰河的文章：
-    img.wl-emoji,
-    img.vemoji {
-        width: 38px;
-        vertical-align: sub;
-        transition: ease-out .6s;
-    }
-
-    img.wl-emoji:hover,
-    img.vemoji:hover {
-        transform: scale(1.75);
-    }
-2022-09-10
-由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。">
+因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲hugo生成新的public文件夹，建一个 Public 仓库，把public文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。">
   
 
   <title>
@@ -78,7 +70,7 @@ Resource Credit
   
     
     
-    <link rel="stylesheet" href="/css/main.ad695b86b394ece8c645058df850410e486595d29438cf2aa02ce6358925753d386b772ed06ebb90a16e021ac2286b9d557929aa6e4932464f379905227230ea.css" integrity="sha512-rWlbhrOU7OjGRQWN&#43;FBBDkhlldKUOM8qoCzmNYkldT04a3cu0G67kKFuAhrCKGudVXkpqm5JMkZPN5kFInIw6g==" />
+    <link rel="stylesheet" href="/css/main.ee30964c05381d1e5bbfe056097bf5ccf08e7017227d3473d74ca16c2df5ad8a5d8eedc70024f28853df5d77531ffe853b4398783d3cddfe3c51522c517229fe.css" integrity="sha512-7jCWTAU4HR5bv&#43;BWCXv1zPCOcBcifTRz10yhbC31rYpdju3HACTyiFPfXXdTH/6FO0OYeD083f48UVIsUXIp/g==" />
   
 
   
@@ -140,6 +132,11 @@ Resource Credit
             
             <nav id="TableOfContents">
   <ul>
+    <li><a href="#20241229">2024/12/29</a>
+      <ul>
+        <li><a href="#往期主题">往期主题</a></li>
+      </ul>
+    </li>
     <li><a href="#todo">TODO</a></li>
     <li><a href="#20241203">2024/12/03</a></li>
     <li><a href="#20241123">2024/11/23</a></li>
@@ -169,7 +166,16 @@ Resource Credit
 
 
         </div>
-        <h2 id="todo">TODO</h2>
+        <h2 id="20241229">2024/12/29</h2>
+<p>又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？</p>
+<h3 id="往期主题">往期主题</h3>
+<ul>
+<li><a href="https://rainy-9ie.pages.dev/">桌面风格</a>：与当前主题一起，魔改自No Style Please主题。</li>
+<li><a href="https://luna-gregueria.vercel.app/">适合野餐的春天</a>：非常美丽的 Luna 主题。</li>
+<li><a href="https://shining.vercel.app/">闪闪惹人爱</a>：由 Stack 主题魔改。</li>
+<li><a href="https://gruvbox-theme.vercel.app">秋冬落叶一般</a>：Gruvbox 主题。</li>
+</ul>
+<h2 id="todo">TODO</h2>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 适配移动端（只能说微微适配啦…）</li>
 <li><input checked="" disabled="" type="checkbox"> 修改夜晚主题配色</li>

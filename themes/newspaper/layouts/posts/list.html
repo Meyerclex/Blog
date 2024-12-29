@@ -69,6 +69,22 @@
     </div>
 
     <div class="note menu-float" style="flex: 0 0 45%;">
+        {{/*        changelog*/}}
+        <div class="note__item">
+            <div class="note__day">更新日志</div>
+            <div class="note__list" style="font-size: 80%;">
+                <details class="mumble" style="max-height: 200px;">
+                    <summary>Changelog...</summary>
+                    {{ with site.GetPage "changelog" }}
+                        {{ .Content | safeHTML }}
+                    {{ else }}
+                        <p>404 Not Found</p>
+                    {{ end }}
+                </details>
+            </div>
+        </div>
+        {{/*changelog*/}}
+{{/*        碎碎念*/}}
                 <div class="note__item">
                     <div class="note__day">碎碎念啦，唔使理我</div>
                     <div class="note__list" style="font-size: 80%;">
@@ -124,6 +140,8 @@
                         </details>
                     </div>
                 </div>
+{{/*碎碎念*/}}
+        {{/*        小卡*/}}
         <blockquote style="font-size: 90%;">
             这么长的网页看起来很麻烦吧？<br>所以附赠一张宝宝可爱小卡，见者有份🥰<br>请查收！
         </blockquote>
@@ -141,6 +159,7 @@
                     </div>
                 </div>
                             </div>
+{{/*        小卡*/}}
 
 
     </div>

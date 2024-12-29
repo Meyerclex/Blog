@@ -6,6 +6,17 @@ slug: changelog
 toc: true
 ---
 
+## 2024/12/29
+
+又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？
+
+### 往期主题
+
+- [桌面风格](https://rainy-9ie.pages.dev/)：与当前主题一起，魔改自No Style Please主题。
+- [适合野餐的春天](https://luna-gregueria.vercel.app/)：非常美丽的 Luna 主题。
+- [闪闪惹人爱](https://shining.vercel.app/)：由 Stack 主题魔改。
+- [秋冬落叶一般](https://gruvbox-theme.vercel.app)：Gruvbox 主题。
+
 ## TODO
 
 - [x] 适配移动端（只能说微微适配啦…）
