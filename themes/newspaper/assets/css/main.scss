@@ -382,7 +382,11 @@ ul {
 }
 
 li {
-  padding: 0 0.5rem; /* 可选：调整列表项的间距 */
+  padding: 0rem 0.5rem; /* 可选：调整列表项的间距 */
+}
+
+article li {
+  padding: 0.5rem 0.5rem; /* 可选：调整列表项的间距 */
 }
 
 ul li:before {
@@ -390,6 +394,11 @@ ul li:before {
   content: "·";
   font-weight: bold;
   margin-right: 3px;
+}
+
+ul p {
+  display: inline;
+  margin: 10px 5px;
 }
 
 .pre-next {
