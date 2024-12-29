@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 - [珊瑚阁 GoldMaple](https://goldmaple.info/)：是世界公民小金，正在写着关于驻西非的生活。她正在用特别而珍贵的视角，坦率地记录着自己的人生。
 
-- [Kawa1Planet](https://kawa1planet.fun/)：今年做了非常多漂亮本本封面的友友！
+- [Kawa1Planet](https://kawa1planet.fun/)：今年做了非常多漂亮本本封面的友友！（而我似乎即将拥有其所作封面的两本🤲
 
 - [Shadows of the Sun](https://rovingsun.wordpress.com/)：很好的、优美的写作，与一个火热的真心，来自新朋友Rovingsun。你也会喜欢她的。
 
