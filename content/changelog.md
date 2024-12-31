@@ -10,6 +10,8 @@ toc: true
 
 又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？
 
+> - [ ] 要不加一个导航栏替代back to home吧
+
 ### 往期主题
 
 - [桌面风格](https://rainy-9ie.pages.dev/)：与当前主题一起，魔改自No Style Please主题。
