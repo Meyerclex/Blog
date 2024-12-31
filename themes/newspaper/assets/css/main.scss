@@ -484,3 +484,7 @@ body[a="light"] code:not(pre>code) {
     color: #212121;
   font-family: "Clear Han Serif";
 }
+
+body[a="light"] pre {
+    background: #ebe5d2d9;
+}
