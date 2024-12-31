@@ -5,7 +5,6 @@ date: 2021-06-28
 toc: false
 ---
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     // 获取带有 post-content 类的文章内容
@@ -33,9 +32,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+> {{< emoji name="blobcatflower" ext="">}}基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！
+> 
+> 每一次刷新，排列顺序都会被打乱。
+
+---
+
 - [Missing](https://www.missingid.online/)：重新点亮域名的年更选手宝宝！！
 
-- [Mengru](https://mengru.space/)：她的空间很棒，有又妙又可爱的画作与工具，还有她的摄影。
+- [Mengru](https://mengru.space/)：她的空间很棒，爱看周记栏目！
 
 - [Muko](https://oaad.iceco.icu/)：很有活力的Kpop选手，不管学习记录还是旅行记录都很好看。
 
@@ -113,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
 > 
 > 名称：谢谢所有的鱼
 > 
-> 简介（如需）：您的奶牛猫图片转发大使
+> 简介（如需）：您首页的奶牛猫图片转发大使
 
 很珍惜博客这样的连结，因而暂时不希望是单向链接。 虽然新主题暂时没办法打开友链评论区，但仍然欢迎和我说过话/有毛毛象联系方式的朋友交换链接，Guest Book和毛象联系都OK！
 
