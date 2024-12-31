@@ -10,7 +10,7 @@
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         {{ partial "toc.html" . }}
     </div>
-    {{ .Content }}
+    {{ .Content | safeHTML }}
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
