@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 - [山茶花舍](https://irithys.com/)：是吕楪喔。非常好读可爱的文字风格。关于她的生活与经验。
 
-- [白花恋诗](https://trails-of-isara.vercel.app/)：是小鲨。很了不起地书写着自己的探索，在一个有很多星星的地方生活。
+- [深海鱼拒绝触礁](https://trails-of-isara.vercel.app/)：鲨鲨！我们海底世界朋友（？是坦诚自由的书写。
 
 - [东俄勒冈群山](https://houdini.eu.org/)：小迪独特的书写，字里行间藏满像风一样的思绪。
 
