@@ -416,7 +416,10 @@ ul p {
   align-items: center;
 }
 
-
+.pre-next-btn {
+  font-size: 1rem;
+  transition: font-size 0.3s ease; /* 添加平滑过渡效果 */
+}
 
 .mumble {
   max-height: 300px;  /* 设置最大高度 */
