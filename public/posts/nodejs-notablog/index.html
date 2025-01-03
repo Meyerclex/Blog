@@ -6,30 +6,7 @@
 
   
     <meta name="description" content="
-在我敲完这篇的四天后（2022年1月16日）我忽然瞧见了另一个博客，TA也写了如何自己的搭建流程，我想TA的方案显然比我的更简洁也更好，虽然我想不到有谁会认真参考我的博客内容，但还是一并贴来：Making a Github blog from Notion pages
-2022年4月7日 Update：增加了一个简陋的更新方法。
-
-这段时间有一搭没一搭地学FreeCodeCamp，CSS学到一半的路上被最后的项目困住，苦恼了几秒之后我开始试吃别的课程，在互联网乱序游荡，点开了Node.js的课，一步一步跟着先下载各种安装包，在Install按下没多久忽然发现——
-咦。我本来就有Node.js环境？
-大概是过去哪一回互联网试吃失败遗留下来的东西吧，实在不知道什么时候我试图挑战过这个了。但我完全不知道这个怎么用，这在FCC也是很后面的课程，而我Javascript都还只试吃了小半口，跟着敲了一下查看版本的代码都不是很顺利，于是去找了一个手把手的教程：Node.js全套入门教程，它的分集目录很明确完整，非常有利于精准试吃，于是我这才终于明白：原来你想在哪里敲代码，就应该在目录那里打开终端——这样的表述也不知道对不对，总之就是按一下路径然后敲cmd回车。嗯！我会了！这就完成了第一步！
-试吃到这里我忽然想起来Node.js这个东西我在哪里见过：沙滩会是鱼的最后一站吗？
-
-📌前情回顾
-Notablog：界面美丽。但Getting Start里的“Make sure you have Node.js v12.0.0 or higher”使我未能开始。
-
-……原来在这儿呢。现在我已经有了Node.js v12.0.0 or higher啦😝虽然用Notion搭东西的愿望已经没有那么强烈了，但既然我都学到这里了（刚学完npm怎么用的地步）那我就一定要试试！Let&rsquo;s get started！
-Let&rsquo;s get started!
-接下来的活动也没有那么激动，就是按照Notablog的文档一步步敲下来就好啦（这一步我直接在磁盘路径下的cmd敲的）：npm i -g notablog
-然后在新建的notablog-starter文件夹里的cmd中继续敲：git clone https://github.com/dragonman225/notablog-starter.git
-然后像其他用Notion搭的博客一样，去把作者提供的模板Duplicate回自己的Notion里，然后把它设为公开，接着把自己那串网址复制下来，把notablog-starter文件夹中的config-json里的url值替换成自己的。
-然后在notablog-starter目录里敲命令行：notablog generate .——很快你的Notion中的内容就被拉下来形成了一个网站，存放在了notablog-starter/public/里。而之后每一次在Notion上做了调整更新，都可以用这个命令行读取并划拉下来。
-根据我稀薄的Html知识大概明白了网站就在这个public文件夹里了，作者是这么说的：
-
-open index.html with a browser to preview your site.
-
-嗯，对index.html右键用浏览器打开，确实是那个漂亮样子！Congratulations！等一下，可是这样不行呀！😫我不能让它放在硬盘里孤芳自赏对不对？根据作者的建议：
-
-You can copy files in notablog-starter/public/ directory to a server or upload them to any static hosting service to share your content with the world.">
+在我敲完这篇的四天后（2022年1月16日）我忽然瞧见了另一个博客，TA也写了如何自己的搭建流程，我想TA的方案显然比我的更简洁也更好，虽然我想不到有谁会认真参考我的博客内容，但还是一并贴来：Making a Github blog from Notion pages">
   
 
   <title>
@@ -45,7 +22,7 @@ You can copy files in notablog-starter/public/ directory to a server or upload t
   
     
     
-    <link rel="stylesheet" href="/css/main.c421aacbae4e110de760a759c53736f601a4f5327a9f652a8f959fd5eb68f6908f83e36c90b30324bb2625a06931ca493d3dd1cf585610cf23437701bcb93809.css" integrity="sha512-xCGqy65OEQ3nYKdZxTc29gGk9TJ6n2Uqj5Wf1eto9pCPg&#43;NskLMDJLsmJaBpMcpJPT3Rz1hWEM8jQ3cBvLk4CQ==" />
+    <link rel="stylesheet" href="/css/main.d41a8f542fd66923d8d3eb84f71fd7ba3b42115cfce4a3e32db61c5c2c749f010c9b974c3df720197db788861ab7322aa93a0ea208147d480c81af2dced15753.css" integrity="sha512-1BqPVC/WaSPY0&#43;uE9x/XujtCEVz85KPjLbYcXCx0nwEMm5dMPfcgGX23iIYatzIqqToOoggUfUgMga8tztFXUw==" />
   
 
   
@@ -187,7 +164,10 @@ You can copy files in notablog-starter/public/ directory to a server or upload t
     <p>
         <time datetime="2022-01-11 16:00:00 &#43;0000 UTC">
             2022-01-11
+            <span style=""> | 2876</span>
+            <span>words</span>
         </time>
+
     </p>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         
@@ -349,12 +329,183 @@ pause
     </div>
 
     <div>
-    
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 谢谢所有的鱼 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
         
-        <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
-        </footer>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了244.3k字 · 共 73篇文章
+    </section>
+
     
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+</footer>
 
 
 

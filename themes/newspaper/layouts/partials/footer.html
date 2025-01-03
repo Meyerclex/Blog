@@ -1,14 +1,36 @@
-{{ if site.Params.theme_config.isShowFooter }}
-    {{ with resources.Get "layouts/footer.md" }}
-        {{ .Content | markdownify }}
-    {{ else }}
-        {{ warnf "layouts/footer.md file is not found, fallback to the default copyright" }}
-        <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - {{ now.Format "2006" }} | {{ site.Title }}</a></p>
-        </footer>
-    {{ end }}
-{{ end }}
+{{ if .Site.Params.theme_config.isShowFooter }}
+{{ with resources.Get "layouts/footer.md" }}
+<!-- 如果有自定义的 footer.md -->
+{{ .Content | markdownify }}
+{{ else }}
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 -{{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }} {{ .Site.Params.footer.since }} - {{ end }} {{ now.Format "2006" }}
+        <a href="https://gregueria.icu/"> 谢谢所有的鱼 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        {{$scratch := newScratch}}
+        {{ range (where .Site.Pages "Kind" "page") }}
+        {{$scratch.Add "total" .WordCount}}
+        {{ end }}
+        {{$var := $scratch.Get "total"}}
+        {{$var = div $var 100.0}}
+        {{$var = math.Ceil $var}}
+        {{$var = div $var 10.0}}
+        共书写了{{$var}}k字 · 共 {{ len (where .Site.RegularPages "Section" "posts") }}篇文章
+    </section>
 
+    <!-- 计算网站启动以来的天数 -->
+    <script>
+        var s1 = '2021-11-12'; // 设置建站日期
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+</footer>
+{{ end }}
+{{ end }}
 
 <script>
     ;(function () {

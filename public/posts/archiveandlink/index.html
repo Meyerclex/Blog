@@ -6,102 +6,7 @@
 
   
     <meta name="description" content="上一次写博客装修笔记还是上一次，竟然是2022年12月的事情了。
-一年半来倒也没有什么大装修，我对现在这个主题的满意度很高，因为它已经有了我所有想要的特性，不太满意的地方也自己改掉了。没有写备忘纯粹是因为懒。不过近期比较多，还是写一下比较好。
-前段时间我的同人博客换成了Diary主题，完成了自己比较想实现的Fandom和Series区分，应该今年都不会再修改了。由于过去的时间比较长，前几天刚好有人留言问了，也在这里做一个简单的回顾。
-Archive页面的实现
-这个Archive页面是抄了浣心的归档页面，他的主题和配置文件是开源的，给我这段时间的装修提供了非常多的参考。
-以下代码来自于浣心的Github。仅做了文字部分的改动，感谢他。
-
-
-在目录layouts\_default中增添文件archive.html。
-
-
-代码部分
-{{ define &#34;main&#34; }}
-&lt;div class=&#34;post-list-container post-list-container-shadow&#34;&gt;
-&lt;div class=&#34;post&#34;&gt;
-
-{{/* begin of archive heading */}}
-&lt;div class=&#34;post-head-wrapper-text-only&#34;&gt;
-&lt;div class=&#34;post-title&#34;&gt;&lt;h1 class=&#34;post-title-main&#34;&gt;{{ .Title }}&lt;/h1&gt;&lt;/div&gt;
-
-{{- $type := .Type -}}
-
-{{/* **** Category-wide stats **** */}}
-{{- $scratch := newScratch -}}
-{{- $articles_cat := (where .Site.RegularPages &#34;Type&#34; $type) -}}
-{{- $articles_cat_count := len $articles_cat -}}
-
-{{- range (where .Site.RegularPages &#34;Type&#34; $type) -}}
-{{- $scratch.Add &#34;allwordcount&#34; .WordCount -}}
-{{- end -}}
-
-&lt;div class=&#34;post-subtitle&#34;&gt;
-  
-归档页面堂堂上新！这主题用了一年半我终于也有了归档页面。
-
-&lt;/div&gt;
-
-{{/* end of archive heading */}}
-&lt;/div&gt;
-
-&lt;div class=&#34;post-body-wrapper&#34;&gt;
-&lt;div class=&#34;post-body archive-body&#34;&gt;
-
-{{/* **** Yearly archive **** */}}
-
-{{/* Group articles by year and loop through them */}}
-{{- range (.Site.RegularPages.GroupByDate &#34;2006&#34;) -}}
-{{/* Get articles to display */}}
-{{- $articles_yearly := (where .Pages &#34;Type&#34; $type) -}}
-{{/* Count articles returned */}}
-{{- $articles_yearly_count := len $articles_yearly -}}
-{{/* Check if a proper year is returned and if it contains any articles */}}
-{{ if and (gt .Key 1) (gt $articles_yearly_count 0) }}
-{{- range $index, $value := (where .Pages &#34;Type&#34; $type) -}}
-  {{ if not $index }}
-  {{/* Display a header in the first loop */}}
-  &lt;h3 class=&#34;archive--year&#34;&gt;{{ .Date.Format &#34;2006&#34; }} / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}&lt;/h2&gt;
-  &lt;ul class=&#34;article--list&#34;&gt;
-  {{ end }}
-  {{/* Display articles here */}}
-  &lt;li class=&#34;archive--list-item&#34;&gt;
-    &lt;a href=&#34;{{ .RelPermalink }}&#34;&gt;
-    &lt;span class=&#34;archive--date&#34;&gt;{{ .Date.Format &#34;Jan 02&#34; }}&lt;/span&gt;　　{{ if .Draft }}&lt;span class=&#34;draft-label&#34;&gt;{{ i18n &#34;draft&#34; }}&lt;/span&gt;&amp;nbsp;{{ end }}{{ .Title  }}
-    &lt;/a&gt;
-  &lt;/li&gt;
-  {{ end }}
-  &lt;/ul&gt;
-{{ end }}
-{{ end }}
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-{{ end }}
-
-
-在content\archives中增添文件posts.md，如下内容：
-
-
-代码部分
----
-title: &#34;Archive✨&#34;
-layout: archive
-type: posts
-summary: This page contains an archive of all posts.
-_build:
-  list: never
-menu:
-  main:
-    weight: -90
-    params:
-      icon: fail
-toc: false
----
-
-其中关于menu的部分是我的主题把独立页面放在导航栏的方式，如果你的主题是通过在config.toml增添内容实现，则忽略这一段即可。">
+一年半来倒也没有什么大装修，我对现在这个主题的满意度很高，因为它已经有了我所有想要的特性，不太满意的地方也自己改掉了。没有写备忘纯粹是因为懒。不过近期比较多，还是写一下比较好。">
   
 
   <title>
@@ -117,7 +22,7 @@ toc: false
   
     
     
-    <link rel="stylesheet" href="/css/main.c421aacbae4e110de760a759c53736f601a4f5327a9f652a8f959fd5eb68f6908f83e36c90b30324bb2625a06931ca493d3dd1cf585610cf23437701bcb93809.css" integrity="sha512-xCGqy65OEQ3nYKdZxTc29gGk9TJ6n2Uqj5Wf1eto9pCPg&#43;NskLMDJLsmJaBpMcpJPT3Rz1hWEM8jQ3cBvLk4CQ==" />
+    <link rel="stylesheet" href="/css/main.d41a8f542fd66923d8d3eb84f71fd7ba3b42115cfce4a3e32db61c5c2c749f010c9b974c3df720197db788861ab7322aa93a0ea208147d480c81af2dced15753.css" integrity="sha512-1BqPVC/WaSPY0&#43;uE9x/XujtCEVz85KPjLbYcXCx0nwEMm5dMPfcgGX23iIYatzIqqToOoggUfUgMga8tztFXUw==" />
   
 
   
@@ -259,7 +164,10 @@ toc: false
     <p>
         <time datetime="2024-06-23 00:00:00 &#43;0000 UTC">
             2024-06-23
+            <span style=""> | 3952</span>
+            <span>words</span>
         </time>
+
     </p>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         
@@ -737,12 +645,183 @@ weight: 99
     </div>
 
     <div>
-    
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 谢谢所有的鱼 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
         
-        <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
-        </footer>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了244.3k字 · 共 73篇文章
+    </section>
+
     
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+</footer>
 
 
 

@@ -5,7 +5,10 @@
     <p>
         <time datetime="{{ .Date }}">
             {{ .Date | time.Format site.Params.theme_config.date_format }}
+            <span style=""> | {{ .WordCount }}</span>
+            <span>words</span>
         </time>
+
     </p>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         {{ partial "toc.html" . }}

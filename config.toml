@@ -1,8 +1,8 @@
 baseURL = 'https://gregueria.icu/'
-languageCode = 'zh-cn'
 title = '再會，謝謝所有的魚'
 theme = 'newspaper'
-defaultContentLanguage = "zh"
+languageCode = "zh-cn"
+hasCJKLanguage = true
 
 [module]
 [module.hugoVersion]

@@ -9,6 +9,7 @@
 又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？
 
  要不加一个导航栏替代back to home吧
+ 增加字数统计
 
 往期主题
 
@@ -28,37 +29,7 @@ TODO
  修改夜晚主题配色
 
 2024/12/03
-新增了Cafe页面，用的是Status Cafe挂件。
-参考了这个教程：Creating a Feed Reader from StatusCafe
-
-2024/11/23
-博客大装修了一番。
-
-Resource Credit
-
-
-图标来源Pixel Safari
-
-
-页面设计来源aeon flexx
-
-
-
-装修笔记索引
-
-1. 鱼鱼小家的装修笔记
-2. Stack 主题及 Waline 评论区装修笔记
-3. Luna 主题装修笔记
-
-2022-12-17
-主题更换为Gruvbox，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：
-
-将目录修改为默认显示
-配置了 Waline 评论区并修改了配色
-为文章配置了中文字数显示，增加页脚统计
-成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在layouts\partials\comments.html里加了&lt;style&gt;标签写样式来解决的这个问题
-
-因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲hugo生成新的public文件夹，建一个 Public 仓库，把public文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。">
+新增了Cafe页面，用的是Status Cafe挂件。">
   
 
   <title>
@@ -74,7 +45,7 @@ Resource Credit
   
     
     
-    <link rel="stylesheet" href="/css/main.c421aacbae4e110de760a759c53736f601a4f5327a9f652a8f959fd5eb68f6908f83e36c90b30324bb2625a06931ca493d3dd1cf585610cf23437701bcb93809.css" integrity="sha512-xCGqy65OEQ3nYKdZxTc29gGk9TJ6n2Uqj5Wf1eto9pCPg&#43;NskLMDJLsmJaBpMcpJPT3Rz1hWEM8jQ3cBvLk4CQ==" />
+    <link rel="stylesheet" href="/css/main.428ce686092f837b0e99da674d4402494db2901cc08eff15c9a7fc989a2181cbdf0db6fc0f94ee7be8b4f80ee0323169670fd05e45086f03ac91fed46f3eb56e.css" integrity="sha512-Qozmhgkvg3sOmdpnTUQCSU2ykBzAjv8Vyaf8mJohgcvfDbb8D5Tue&#43;i0&#43;A7gMjFpZw/QXkUIbwOskf7Ubz61bg==" />
   
 
   
@@ -265,7 +236,8 @@ Resource Credit
         <h2 id="20241229">2024/12/29</h2>
 <p>又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？</p>
 <ul>
-<li><input disabled="" type="checkbox"> 要不加一个导航栏替代back to home吧</li>
+<li><input checked="" disabled="" type="checkbox"> 要不加一个导航栏替代back to home吧</li>
+<li><input checked="" disabled="" type="checkbox"> 增加字数统计</li>
 </ul>
 <h3 id="往期主题">往期主题</h3>
 <ul>
@@ -277,7 +249,7 @@ Resource Credit
 <h2 id="todo">TODO</h2>
 <ul>
 <li><input disabled="" type="checkbox"> 增加图片点击放大</li>
-<li><input disabled="" type="checkbox"> 无序列表错行问题</li>
+<li><input checked="" disabled="" type="checkbox"> 无序列表错行问题</li>
 <li><input disabled="" type="checkbox"> 修改鼠标指针</li>
 <li><input disabled="" type="checkbox"> 修改表格之类的基础样式问题</li>
 <li><input disabled="" type="checkbox"> 多张图片显示问题（不想用灯箱……</li>
@@ -360,14 +332,6 @@ Resource Credit
     </article>
 
                 
-    
-        
-        <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
-        </footer>
-    
-
-
 
 <script>
     ;(function () {

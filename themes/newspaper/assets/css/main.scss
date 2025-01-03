@@ -280,10 +280,12 @@ details[open] summary {
 }
 
 .site-footer {
+  font-family: "Huiwen-mincho";
   display: flex;
   justify-content: center; /* 将内容水平居中 */
   align-items: center;    /* 将内容垂直居中 */
   text-align: center;     /* 确保文本在子元素内居中 */
+  margin-top: 2rem;
 }
 
 .posts-list-ul span {margin-right: 15px}
