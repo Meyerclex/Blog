@@ -2,13 +2,18 @@
 
 <article>
     <h1>{{ .Title }}</h1>
-    <p>
+    <p id="post-meta">
         <time datetime="{{ .Date }}">
             {{ .Date | time.Format site.Params.theme_config.date_format }}
-            <span style=""> | {{ .WordCount }}</span>
+            <span> ‧ {{ .WordCount }}</span>
             <span>words</span>
+<!--            ‧ <span>tags : </span>-->
+<!--            {{ if .Params.tags }}-->
+<!--                    {{ range .Params.tags }}-->
+<!--                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>-->
+<!--                    {{ end }}-->
+<!--            {{ end }}-->
         </time>
-
     </p>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         {{ partial "toc.html" . }}
