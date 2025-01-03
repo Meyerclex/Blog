@@ -3,7 +3,6 @@ title = '再會，謝謝所有的魚'
 theme = 'newspaper'
 languageCode = "zh-cn"
 hasCJKLanguage = true
-title_eng = 'Thanks for All the fish'
 
 [module]
 [module.hugoVersion]
@@ -18,7 +17,7 @@ block = true
 title = true
 
 [markup.goldmark.renderer]
-unsafe = true  # 确保只在此位置设置
+unsafe = true
 
 [markup.highlight]
 anchorLineNos      = false
