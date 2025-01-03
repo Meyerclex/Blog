@@ -3,6 +3,7 @@ title = '再會，謝謝所有的魚'
 theme = 'newspaper'
 languageCode = "zh-cn"
 hasCJKLanguage = true
+title_eng = 'Thanks for All the fish'
 
 [module]
 [module.hugoVersion]
@@ -44,6 +45,7 @@ ordered    = false
 appearance        = "light"
 back_home_text    = "Back"
 date_format       = "2006-01-02"
+#  "02 Jan 2006"
 isListGroupByDate = true
 isShowFooter      = true
 

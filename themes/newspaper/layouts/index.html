@@ -1,6 +1,14 @@
 {{ define "main" }}
     <header>
-        <h1><img src="/cat/tuxicon2.gif">{{ $.Site.Title }}</h1>
+        <div class="header">
+            <div class="header-image">
+                <img src="/cat/tuxicon2.gif" alt="Icon">
+            </div>
+            <div class="header-content">
+                <h1>{{ $.Site.Title }}</h1>
+                {{ partial "back_link.html" . }}
+            </div>
+        </div>
         {{- if $.Site.Params.theme_config.show_description -}}
             <p>{{ $.Site.Params.description }}</p>
         {{- end -}}

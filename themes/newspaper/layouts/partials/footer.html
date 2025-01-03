@@ -6,7 +6,7 @@
 <footer class="site-footer">
     <section class="copyright">
         &copy; 2021 -{{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }} {{ .Site.Params.footer.since }} - {{ end }} {{ now.Format "2006" }}
-        <a href="https://gregueria.icu/"> 谢谢所有的鱼 </a> · <i class="fas fa-bell"> </i>
+        <a href="https://gregueria.icu/"> {{ $.Site.Title }} </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
         {{$scratch := newScratch}}
         {{ range (where .Site.Pages "Kind" "page") }}
