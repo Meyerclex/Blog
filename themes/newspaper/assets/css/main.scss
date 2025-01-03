@@ -19,6 +19,7 @@ $color-pink: #efb8ba;
 $color-pink2: #e79598;
 $color-pink3: #db6165;
 $color-mark: #b2d8d8;
+$color-mark-dark: #83a598;
 $color-blockquote: #466060;
 $link-hover: #FFD09B;
 
@@ -78,11 +79,11 @@ $link-hover: #FFD09B;
 }
 
 @mixin dark-appearance {
-  @include theme(#212121, #fafafa, #000000, #0071bc, #a359e9, #FFFF00);
+  @include theme(#282828, #ebdbb2, #000000, #0071bc, #a359e9, #FFFF00);
 }
 
 @mixin light-appearance {
-  @include theme(#f9f7f1, #212121, #666666, #1a89ae, #921292, #FFFF00);
+  @include theme(#f9f7f1, #38383c, #666666, #1a89ae, #921292, #FFFF00);
 }
 
 body[a="dark"] { @include dark-appearance; }
@@ -487,4 +488,36 @@ body[a="light"] code:not(pre>code) {
 
 body[a="light"] pre {
     background: #ebe5d2d9;
+}
+
+::selection {
+  background-color: rgba(251, 230, 189, 0.6); /* 设置选中的背景颜色 */
+}
+
+/* 整个滚动条 */
+::-webkit-scrollbar {
+  width: 12px; /* 设置滚动条的宽度（竖直滚动条） */
+  height: 12px; /* 设置滚动条的高度（水平滚动条） */
+}
+
+/* 滚动条的轨道（背景） */
+::-webkit-scrollbar-track {
+  background: rgba(220, 213, 207, 0.66); /* 设置滚动条轨道的背景颜色 */
+  border-radius: 10px; /* 设置轨道的圆角 */
+}
+
+/* 滚动条的滑块（可以拖动的部分） */
+::-webkit-scrollbar-thumb {
+  background: $color-mark-dark; /* 设置滑块的颜色 */
+  border: 2px solid #f1f1f1; /* 可选：为滑块添加边框，与轨道的颜色匹配 */
+}
+
+/* 滚动条滑块被鼠标悬停时的样式 */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 鼠标悬停时滑块的颜色 */
+}
+
+/* 可选：滚动条角落的部分 */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1; /* 设置滚动条角落的背景颜色 */
 }

@@ -49,7 +49,7 @@ Welcome to 鱼’s Repository！
   
     
     
-    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
+    <link rel="stylesheet" href="/css/main.c421aacbae4e110de760a759c53736f601a4f5327a9f652a8f959fd5eb68f6908f83e36c90b30324bb2625a06931ca493d3dd1cf585610cf23437701bcb93809.css" integrity="sha512-xCGqy65OEQ3nYKdZxTc29gGk9TJ6n2Uqj5Wf1eto9pCPg&#43;NskLMDJLsmJaBpMcpJPT3Rz1hWEM8jQ3cBvLk4CQ==" />
   
 
   
@@ -115,7 +115,7 @@ Welcome to 鱼’s Repository！
     right: 0;  
     display: inline-block;
     z-index: 100;  
-    background: rgba(244, 219, 159, 0.85);
+    background: rgb(249, 247, 241);
     backdrop-filter: blur(5px);  
     padding: 0.1rem 0.1rem;  
     width: auto;  
@@ -167,18 +167,18 @@ Welcome to 鱼’s Repository！
         
         if (scrollPercentage <= 0.4) {
             headerPost.style.opacity = 1;
-            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
+            headerPost.style.background = 'rgba(249, 247, 241, 0.8)'; 
         }
         
-        else if (scrollPercentage <= 0.5) {
+        else if (scrollPercentage <= 0.6) {
             const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
             headerPost.style.opacity = opacity;
-            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+            headerPost.style.background = `rgba(249, 247, 241, ${opacity * 0.8})`; 
         }
         
         else {
             headerPost.style.opacity = 0;
-            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
+            headerPost.style.background = 'rgba(249, 247, 241, 0)'; 
         }
     });
 
