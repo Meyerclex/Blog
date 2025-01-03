@@ -119,8 +119,7 @@ Dettol滴露洗衣机清洁剂： 买的人貌似会少一点，但我自己用�
 搬到安静的新家，换了一份不再加班、工作和生活真的平衡的工作，可以很悠闲地度过生活。我现在幸福地度过着平静的时间，我不知道这样的时间还有多少，也不知道这样的平静是否终有一日会被打破。而在这些好的时间里，我对自己的生命的使用方式有了新的念头。
 前段时间，我前所未有地感受到，我最好的创作年龄好像开始了。我说的并非是一个具体的年龄，而是一个时段的开始。如今我不管是精力还是审美，还是书写的能力，都比念书时要好。
 今年我身上发生的重要的事件之一是，我意识到自己属于A-spectrum的一员，这件事对我最重大的影响是：我不能再花费时间将自己融入到主流中心议题的框架下了。
-如果这事强求可以得到，那为了大家都开心一点，我再努力一下，再等一等或试一试，其实是可以接受的。可是，如果我在这件事情上根本不可能得到成功或进展，那我就不能再在这上面花时间了。
-过去我花了太多的时间和我家人交涉一些想法，在浪漫关系与性的探索也苦闷而困窘，但既然现况如此，那我就不能再在这事上努力了，我不能一直花时间做没有用的事情的。现在我不再作任何的努力，连解释的时间也不花费。甚至在看了很多A-spectrum的讨论后，我对解释我在光谱中的位置也失去了兴趣，我找到它，它解释我，而我不想向人去解释。起初我非常困扰：尽管没有人要求我自证，但我仍认为自己作为Aroace似乎是有瑕的。但现在已经无所谓了。">
+如果这事强求可以得到，那为了大家都开心一点，我再努力一下，再等一等或试一试，其实是可以接受的。可是，如果我在这件事情上根本不可能得到成功或进展，那我就不能再在这上面花时间了。">
   
 
   <title>
@@ -136,7 +135,7 @@ Dettol滴露洗衣机清洁剂： 买的人貌似会少一点，但我自己用�
   
     
     
-    <link rel="stylesheet" href="/css/main.2e4a4ab8db91856604f83e78511f710e02ad08f6159eb18acd8465ac682b9d74a76811bf9d7917ae217a4ccb9bd610ee09f7ced4567c5edf63a14326c20ce9f2.css" integrity="sha512-LkpKuNuRhWYE&#43;D54UR9xDgKtCPYVnrGKzYRlrGgrnXSnaBG/nXkXriF6TMub1hDuCffO1FZ8Xt9joUMmwgzp8g==" />
+    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
   
 
   
@@ -147,37 +146,129 @@ Dettol滴露洗衣机清洁剂： 买的人貌似会少一点，但我自己用�
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <a id="back-link" href="/">Back</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+<style> 
+
+ 
+#header-post {
+    position: fixed;  
+    top: 0;  
+    left: 100;  
+    right: 0;  
+    display: inline-block;
+    z-index: 100;  
+    background: rgba(244, 219, 159, 0.85);
+    backdrop-filter: blur(5px);  
+    padding: 0.1rem 0.1rem;  
+    width: auto;  
+    border-bottom-left-radius: 10px;
+}
+
+ 
+#header-post #nav ul {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none!important;
+    display: flex;  
+    justify-content: flex-end;  
+}
+
+ 
+#header-post ul li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+ 
+#header-post #nav a {
+    color: rgb(74, 60, 53);
+    letter-spacing: .01em;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+ 
+#nav ul li:before {
+    content: "";
+    font-weight: bold;
+    margin-right: 3px;
+}
+</style>
+
 <script>
-    window.addEventListener("load", function() {
-        const backLink = document.getElementById("back-link");
+    window.addEventListener('scroll', function () {
+        const headerPost = document.getElementById('header-post');
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight; 
+        const scrollPercentage = scrollPosition / maxScroll;
 
         
-        const referrer = document.referrer;
-
-        
-        const currentURL = window.location.pathname;
-
-        
-        if (currentURL === "/posts" || currentURL === "/posts/") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
+        if (scrollPercentage <= 0.4) {
+            headerPost.style.opacity = 1;
+            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
         }
         
-        else if (referrer.includes("/posts")) {
-            backLink.href = "/posts";  
-            backLink.textContent = "Back to All Posts";  
-        } else if (referrer === window.location.origin || referrer === "") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
-        } else {
-            backLink.href = referrer;  
-            backLink.textContent = "Back";  
+        else if (scrollPercentage <= 0.5) {
+            const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
+            headerPost.style.opacity = opacity;
+            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+        }
+        
+        else {
+            headerPost.style.opacity = 0;
+            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
         }
     });
+
 </script>
-
-
 
                 </div>
 
@@ -327,7 +418,7 @@ Dettol滴露洗衣机清洁剂： 买的人貌似会少一点，但我自己用�
 <p>Dettol滴露洗衣机清洁剂： 买的人貌似会少一点，但我自己用觉得效果也很好，因为洗衣机尽管拆洗过后，重新机洗还是会略有味道（类似洗完衣服刚打开盖后…热热的感觉）。这个和上面的消毒液不同，是空机使用的，并且使用的时候是柠檬味。我用它洗了一次之后洗衣机就没有上述的气味了。</p>
 </li>
 </ol>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/%E8%B4%AD%E7%89%A9.jpeg" alt=""></p>
 <h3 id="搬家之后">搬家之后</h3>
 <p>搬家打扫干净后的第一件事是整理出了赏心悦目的角落，将朋友们送的明信片贴到墙上，作为新家第一又或唯一的装饰物。我大概花了两个星期，一直到现在都没有真正把物品归置妥帖，搬家实在是一项浩大的工程，但目前来看，我还是自己一个人搞定了。</p>
 <p>毕业以后我做的很多事情都是这样，一个人就把事情做完。我非常相信脱口而出的话语最终会成为人，因而很长一段时间里都在对自己讲：我是可以做好很多事情的人，也说自己是没有拖延症的人。在做事情以前不喜欢抱怨和说烦躁的话也是因为此，甚至针对未来的恐慌，也因为缄口不言而消失许多。</p>
@@ -343,12 +434,12 @@ Dettol滴露洗衣机清洁剂： 买的人貌似会少一点，但我自己用�
 <p>我渐渐发现，人生的规划一旦脱离了主流中心议题后，时间和金钱都会开始余裕许多。因为我所真正关心的事情是故事，我做的事情也应该与故事有关。我应该把时间更多地花在故事上，这是我真正关心的事。过去人们认为我应该关心的，与所谓的社会化，其实都是最无关紧要的事。因为是另一种人，所以事情会是另一种面貌。在此之前我并不清楚。</p>
 <p>另外，这个周末我与好朋友度过了非常好的时间，因而得到了一鼓作气把文章写完的能量。那么就在这里收尾好了。</p>
 <hr>
-<p>
-
-
-
-
-</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_2873.JPG" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_2913.JPG" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/milk.jpg" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_3030.JPG" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_3102.jpg" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_2742.jpg" alt=""></p>
 <style>
 .page-class .post-content > p {
   flex-basis: 100%;
@@ -441,7 +532,7 @@ Dettol滴露洗衣机清洁剂： 买的人貌似会少一点，但我自己用�
     
         
         <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2024 | 再會，謝謝所有的魚</a></p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
         </footer>
     
 

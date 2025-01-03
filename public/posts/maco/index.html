@@ -46,9 +46,7 @@
 
 但我不知道原来山门前的天后圣像只是第一座，往后的献殿和正殿有贴金的天后像和木雕神龛。我和朋友一起爬上去，光是爬到献殿就以为到了终点，不知为什么，明明看起来阶梯并不多也并不高，爬起来却非常累，也许是因为整个建筑群的设计都非常陡峭，只爬到三分之一，就可以远眺到宽阔的海。在很厚的香火气息前，我爬得很累，气喘不已，大张着嘴还没调整好就开始祷念。
 到了下午，温度升高，眼下都出现汗水，湿漉漉的，连颈后都很沉重。我没有很多的虔诚，但却有很多希望解决的事情，如释重负的同时，又觉得很悲伤。贴金神像前的跪垫，经年累月地承受人的重量，已经陈旧又破损，跪下去时，膝盖触到了比想象中更深的位置，那种比预期中要更坍塌一点的感觉，仿佛神压在了你身上。
-也许是因为大脑供氧不足，已经记不得那么多的事，在山门石像面前还能絮絮叨叨，爬到贴金像的时候，由于阿宅体力不支，于是只是在非常简单地把事情说了一遍。我真的以为到了终点，贪念一万，到了半山，还剩一千。
-祷念完和朋友在石椅上坐了一会儿吹风，手机信号也没多少，往旁边走了走，发现紫荆花非常茂密，望一望，发现还有阶梯能继续爬。歇了一会儿跟朋友说去看看吗，实在不行到中间的时候坐一会儿。
-到了阶梯中间拍拍照，旁边一大爷抽着烟上来的，肺活量真是非我阿宅能及也。从半腰望去，可以看见石像的背影，与一小片朦胧的海面。">
+也许是因为大脑供氧不足，已经记不得那么多的事，在山门石像面前还能絮絮叨叨，爬到贴金像的时候，由于阿宅体力不支，于是只是在非常简单地把事情说了一遍。我真的以为到了终点，贪念一万，到了半山，还剩一千。">
   
 
   <title>
@@ -64,7 +62,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.2e4a4ab8db91856604f83e78511f710e02ad08f6159eb18acd8465ac682b9d74a76811bf9d7917ae217a4ccb9bd610ee09f7ced4567c5edf63a14326c20ce9f2.css" integrity="sha512-LkpKuNuRhWYE&#43;D54UR9xDgKtCPYVnrGKzYRlrGgrnXSnaBG/nXkXriF6TMub1hDuCffO1FZ8Xt9joUMmwgzp8g==" />
+    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
   
 
   
@@ -75,37 +73,129 @@
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <a id="back-link" href="/">Back</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+<style> 
+
+ 
+#header-post {
+    position: fixed;  
+    top: 0;  
+    left: 100;  
+    right: 0;  
+    display: inline-block;
+    z-index: 100;  
+    background: rgba(244, 219, 159, 0.85);
+    backdrop-filter: blur(5px);  
+    padding: 0.1rem 0.1rem;  
+    width: auto;  
+    border-bottom-left-radius: 10px;
+}
+
+ 
+#header-post #nav ul {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none!important;
+    display: flex;  
+    justify-content: flex-end;  
+}
+
+ 
+#header-post ul li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+ 
+#header-post #nav a {
+    color: rgb(74, 60, 53);
+    letter-spacing: .01em;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+ 
+#nav ul li:before {
+    content: "";
+    font-weight: bold;
+    margin-right: 3px;
+}
+</style>
+
 <script>
-    window.addEventListener("load", function() {
-        const backLink = document.getElementById("back-link");
+    window.addEventListener('scroll', function () {
+        const headerPost = document.getElementById('header-post');
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight; 
+        const scrollPercentage = scrollPosition / maxScroll;
 
         
-        const referrer = document.referrer;
-
-        
-        const currentURL = window.location.pathname;
-
-        
-        if (currentURL === "/posts" || currentURL === "/posts/") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
+        if (scrollPercentage <= 0.4) {
+            headerPost.style.opacity = 1;
+            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
         }
         
-        else if (referrer.includes("/posts")) {
-            backLink.href = "/posts";  
-            backLink.textContent = "Back to All Posts";  
-        } else if (referrer === window.location.origin || referrer === "") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
-        } else {
-            backLink.href = referrer;  
-            backLink.textContent = "Back";  
+        else if (scrollPercentage <= 0.5) {
+            const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
+            headerPost.style.opacity = opacity;
+            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+        }
+        
+        else {
+            headerPost.style.opacity = 0;
+            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
         }
     });
+
 </script>
-
-
 
                 </div>
 
@@ -168,14 +258,14 @@
 <p>看海这件事情不带有很多情绪，面对海面，几乎没有想得太多，只是抑郁情绪的温和释放，以及萌我CP之情的时而超级大爆发。到了下午，和朋友碰面，一起去天后宫。</p>
 <p>天后宫是一座妈祖庙，路上和朋友讨论，谈及伊的家乡（内陆省份）从来没听过拜妈祖这件事，家里也没有什么拜神的习俗。这是因为妈祖是一个海上的神。我也是第一次来，临时起意时才得知南沙天后宫原来是省内最大的一座妈祖庙，建在海边，最近家中不少事情，我想来求签，但最后没有求成，因为到了顶上，发现已经没有这样的需要。</p>
 <p>我提前做过攻略，知道网上购入门票20元，提前2小时预约可劲省2元。据言完整参观下来只需要40分钟左右，其间有不少阶梯要爬，也可花20元搭乘电梯，而我年富力强女青年一个，何须电梯？爬之。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/20240328/%E8%BF%91%E5%83%8F.jpg" alt=""></p>
 <p>在我参观下来，天后宫并不是一个非常大的庙，我当天走了很多路，到天后宫时下午三点，应该已经走了一万多步，光是到正门就已经气喘不匀了（柔弱阿宅一个让您见笑了），几乎还没进门，就能远远看见高耸的妈祖圣像屹立在不远处。迫不及待跑到近前，发现可以上香，我摸遍了单肩包，只有一枚硬币，默默投入箱中。</p>
 <p>天后圣像本身很高，似乎是我见过最高的石像。虽然之前有看过照片，但亲眼见到雕塑的时候仍被这种美丽与庄严所惊讶，那是非常温厚仁慈的形象，海上女神像就站在山门往前，高高地远眺着海面。我脑海中觉得她面上带笑，但后来看照片时发现其实没有。她发髻上生长着小小一枝植物，微弱的绿意，迎着风晃晃，入门口时拿的宣传册说意外长出的这枝植物也叫作妈祖灵钗。</p>
 <p>在来之前，在看海时，我已经想好要说的话。拿香，跪拜，祷念。我们家也没有拜神的传统，仅仅只是虔信。在前一晚和妈妈电话中我大哭不已，我指责她做了不对的事，我反复质问她，你做错了，你承不承认你是错的。她说她做错了，这就是我唯一能得到的。这件事情没有报偿或改正的方式，因此我和她都无法得到更多，事情就这样结束了，我们都无法做得更好。</p>
 <p>我感到自己这五年来一直执着于，这是一个对的事情，还是错的事情。我过很简单的生活，我做对的事情，我不做错的事情。就只是这样而已，我都时而会觉得难过和辛苦。</p>
 <p>我对家人有很多怨怼，还有很多令我困闷不休的念头。</p>
 <p>在天后圣像前，我向妈祖谈论了这件事。但没有深入，因为她是石像，没法给我谈论下去的正反馈。之后我开始向她提出一些愿望，关于家人的和朋友的，关于健康和生活和学业工作顺遂各个方面的，内容之多，堪称海量。我甚至跟她说，希望自己写得更好。如今写下这些我都有些想笑：喂，这也太贪心了吧！我还跟她讲了好多，比如身份证号云云，以便妈祖可以精准锁定施加祝福Buff。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/20240328/%E5%8D%8A%E5%B1%B1.jpg" alt=""></p>
 <p>但我不知道原来山门前的天后圣像只是第一座，往后的献殿和正殿有贴金的天后像和木雕神龛。我和朋友一起爬上去，光是爬到献殿就以为到了终点，不知为什么，明明看起来阶梯并不多也并不高，爬起来却非常累，也许是因为整个建筑群的设计都非常陡峭，只爬到三分之一，就可以远眺到宽阔的海。在很厚的香火气息前，我爬得很累，气喘不已，大张着嘴还没调整好就开始祷念。</p>
 <p>到了下午，温度升高，眼下都出现汗水，湿漉漉的，连颈后都很沉重。我没有很多的虔诚，但却有很多希望解决的事情，如释重负的同时，又觉得很悲伤。贴金神像前的跪垫，经年累月地承受人的重量，已经陈旧又破损，跪下去时，膝盖触到了比想象中更深的位置，那种比预期中要更坍塌一点的感觉，仿佛神压在了你身上。</p>
 <p>也许是因为大脑供氧不足，已经记不得那么多的事，在山门石像面前还能絮絮叨叨，爬到贴金像的时候，由于阿宅体力不支，于是只是在非常简单地把事情说了一遍。我真的以为到了终点，贪念一万，到了半山，还剩一千。</p>
@@ -277,7 +367,7 @@
     
         
         <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2024 | 再會，謝謝所有的魚</a></p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
         </footer>
     
 

@@ -43,7 +43,7 @@ IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是�
   
     
     
-    <link rel="stylesheet" href="/css/main.2e4a4ab8db91856604f83e78511f710e02ad08f6159eb18acd8465ac682b9d74a76811bf9d7917ae217a4ccb9bd610ee09f7ced4567c5edf63a14326c20ce9f2.css" integrity="sha512-LkpKuNuRhWYE&#43;D54UR9xDgKtCPYVnrGKzYRlrGgrnXSnaBG/nXkXriF6TMub1hDuCffO1FZ8Xt9joUMmwgzp8g==" />
+    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
   
 
   
@@ -54,37 +54,129 @@ IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是�
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <a id="back-link" href="/">Back</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+<style> 
+
+ 
+#header-post {
+    position: fixed;  
+    top: 0;  
+    left: 100;  
+    right: 0;  
+    display: inline-block;
+    z-index: 100;  
+    background: rgba(244, 219, 159, 0.85);
+    backdrop-filter: blur(5px);  
+    padding: 0.1rem 0.1rem;  
+    width: auto;  
+    border-bottom-left-radius: 10px;
+}
+
+ 
+#header-post #nav ul {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none!important;
+    display: flex;  
+    justify-content: flex-end;  
+}
+
+ 
+#header-post ul li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+ 
+#header-post #nav a {
+    color: rgb(74, 60, 53);
+    letter-spacing: .01em;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+ 
+#nav ul li:before {
+    content: "";
+    font-weight: bold;
+    margin-right: 3px;
+}
+</style>
+
 <script>
-    window.addEventListener("load", function() {
-        const backLink = document.getElementById("back-link");
+    window.addEventListener('scroll', function () {
+        const headerPost = document.getElementById('header-post');
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight; 
+        const scrollPercentage = scrollPosition / maxScroll;
 
         
-        const referrer = document.referrer;
-
-        
-        const currentURL = window.location.pathname;
-
-        
-        if (currentURL === "/posts" || currentURL === "/posts/") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
+        if (scrollPercentage <= 0.4) {
+            headerPost.style.opacity = 1;
+            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
         }
         
-        else if (referrer.includes("/posts")) {
-            backLink.href = "/posts";  
-            backLink.textContent = "Back to All Posts";  
-        } else if (referrer === window.location.origin || referrer === "") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
-        } else {
-            backLink.href = referrer;  
-            backLink.textContent = "Back";  
+        else if (scrollPercentage <= 0.5) {
+            const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
+            headerPost.style.opacity = opacity;
+            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+        }
+        
+        else {
+            headerPost.style.opacity = 0;
+            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
         }
     });
+
 </script>
-
-
 
                 </div>
 
@@ -119,7 +211,7 @@ IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是�
 <p>但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。</p>
 <p>事实上 Checker 插件似乎是能够做到这个功能的，我后来在他们的帮助页面找到了这方面的内容：<a href="https://jasonsavard.com/wiki/Check_mail_from_other_accounts_or_using_POP">Check mail from other accounts or using POP</a>，但当时我并不知道。</p>
 <p>我后来选用了另一个办法，在邮箱设置里面我看到了<strong>查收其他帐号的邮件</strong>：这似乎就是我想要的，用我现有的 Gmail 邮箱来收网易邮箱的邮件。</p>
-<p></p>
+<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png" alt=""></p>
 <p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p>
 <ol>
 <li>跑去<code>被查收的邮箱</code>的网页里找到<code>设置</code>。</li>
@@ -143,7 +235,7 @@ IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是�
 <p>总而言之，到这一步，我们已经可以用 Gmail 邮箱来查看 QQ 邮箱、网易邮箱和 Outlook 的垃圾邮件，并且用它来发送更多。当然，反过来也一样。至于 Gmail 删除网易的邮件的操作是否会同步到网易中，我还没有尝试，也许可以，也许不行。我已经不在乎了，在我心中，网易邮箱不再是一个具体的产品，只是我 Gmail 邮箱中一个微不足道的标签（冷淡.jpg）。</p>
 <p>如果有用其他邮箱来发件的需求，还可以在<code>用这个地址发送邮件</code>中添加它，相比前者，这个要容易许多，只需要发一个验证邮件，点击链接即可完成设置。</p>
 <p>于是我终于摆脱掉了网易邮箱大师 APP 和要点开 QQ、打开不同网页去看一封邮件的苦恼，实现了文章开头的构想：从此打扰我的只有 Checker Plugin。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png" alt="设置好“用这个地址发送邮件”之后发新邮件时的样子"></p>
 <p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p>
 <blockquote>
 <p>《送东阳马生序》：每假借于藏书之家，手自笔录，计日以还。</p>
@@ -218,7 +310,7 @@ IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是�
     
         
         <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2024 | 再會，謝謝所有的魚</a></p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
         </footer>
     
 

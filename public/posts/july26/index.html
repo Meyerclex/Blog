@@ -48,7 +48,7 @@ Xbox Game Bar竟离奇卡死，而我更新系统最大的原因是Win11支持�
   
     
     
-    <link rel="stylesheet" href="/css/main.2e4a4ab8db91856604f83e78511f710e02ad08f6159eb18acd8465ac682b9d74a76811bf9d7917ae217a4ccb9bd610ee09f7ced4567c5edf63a14326c20ce9f2.css" integrity="sha512-LkpKuNuRhWYE&#43;D54UR9xDgKtCPYVnrGKzYRlrGgrnXSnaBG/nXkXriF6TMub1hDuCffO1FZ8Xt9joUMmwgzp8g==" />
+    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
   
 
   
@@ -59,37 +59,129 @@ Xbox Game Bar竟离奇卡死，而我更新系统最大的原因是Win11支持�
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <a id="back-link" href="/">Back</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+<style> 
+
+ 
+#header-post {
+    position: fixed;  
+    top: 0;  
+    left: 100;  
+    right: 0;  
+    display: inline-block;
+    z-index: 100;  
+    background: rgba(244, 219, 159, 0.85);
+    backdrop-filter: blur(5px);  
+    padding: 0.1rem 0.1rem;  
+    width: auto;  
+    border-bottom-left-radius: 10px;
+}
+
+ 
+#header-post #nav ul {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none!important;
+    display: flex;  
+    justify-content: flex-end;  
+}
+
+ 
+#header-post ul li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+ 
+#header-post #nav a {
+    color: rgb(74, 60, 53);
+    letter-spacing: .01em;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+ 
+#nav ul li:before {
+    content: "";
+    font-weight: bold;
+    margin-right: 3px;
+}
+</style>
+
 <script>
-    window.addEventListener("load", function() {
-        const backLink = document.getElementById("back-link");
+    window.addEventListener('scroll', function () {
+        const headerPost = document.getElementById('header-post');
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight; 
+        const scrollPercentage = scrollPosition / maxScroll;
 
         
-        const referrer = document.referrer;
-
-        
-        const currentURL = window.location.pathname;
-
-        
-        if (currentURL === "/posts" || currentURL === "/posts/") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
+        if (scrollPercentage <= 0.4) {
+            headerPost.style.opacity = 1;
+            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
         }
         
-        else if (referrer.includes("/posts")) {
-            backLink.href = "/posts";  
-            backLink.textContent = "Back to All Posts";  
-        } else if (referrer === window.location.origin || referrer === "") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
-        } else {
-            backLink.href = referrer;  
-            backLink.textContent = "Back";  
+        else if (scrollPercentage <= 0.5) {
+            const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
+            headerPost.style.opacity = opacity;
+            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+        }
+        
+        else {
+            headerPost.style.opacity = 0;
+            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
         }
     });
+
 </script>
-
-
 
                 </div>
 
@@ -127,7 +219,7 @@ Xbox Game Bar竟离奇卡死，而我更新系统最大的原因是Win11支持�
 <li>本人副业电子吸血鬼，手机24小时暗夜模式，Win11的全局暗夜模式很漂亮，但开许多软件之前都会闪现1秒没加载好的全白画面刺杀我的双眼。</li>
 </ul>
 <p>我通过重启、升级到Dev版本、重启10次、重置无法打开的应用、安装新软件、再重启4次解决了大部分问题，又安装了MyDockFinder的美化应用消弭了我对新系统的仇恨，再将没解决掉的问题忽略不计，目前为之我还……蛮喜欢新系统的！非常漂亮！非常开心！输入法也变好看了一点，打字都开心了很多，但是好像变卡了，但我又担心是记忆将过去这台笔记本的流畅度进行了修饰与美化——好吧好像就是比较卡了一点！可是……人家又有什么办法当然是选择原谅它啊！</p>
-<p></p>
+<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220731181211.png" alt="新Emoji"></p>
 <p>和电子设备斗殴系列似乎还可以写另一件事：我读了<a href="https://blog.plaskier.ga/posts/add-text-indent-and-headline-centering-for-your-blog-with-frontmatter/">芋阿圆的笔记</a>，给博客增加了文章段首空两格的Feature，我的梦中情Feature，一举解决了我对Markdown写作最大的不满。（但是这一篇没有设成首段空格，究其原因是我还没有解决这个主题的一些奇妙问题）</p>
 <p>追求首段空格这件事实在是给我的人生造成很多不必要的烦恼，因此下载又卸载的编辑器已经攒满一打，最近小半年的新宠是<a href="https://www.tominlab.com/wonderpen">WonderPen</a>，但它并不支持移动端。但赶巧我最近也不太移动（也不太写作），所以暂且将这个需求放在一边。</p>
 <p>这篇其实是七月末开始写的，放在硬盘里一周都还没有丢出来，再打开时已经八月。我的生活上的烦恼和好事已经播掉两三季，重心与追求也飞快迭代了一轮，以至于看到前文中关于人生时区的思虑已经不明白在讲些什么，连真心话的更迭都快到上一个版本像是盗版。以后这样的事情实在是不能拖延。</p>
@@ -201,7 +293,7 @@ Xbox Game Bar竟离奇卡死，而我更新系统最大的原因是Win11支持�
     
         
         <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2024 | 再會，謝謝所有的魚</a></p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
         </footer>
     
 

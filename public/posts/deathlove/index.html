@@ -44,21 +44,7 @@ Firewatch
 坚持了不到两个小时晕头转向整个人如同坐了两个小时公交车且是最后一排。很美的风景但因为本人的大巴游客视角口含晕车片无法欣赏，据说是很好的文本，但正在考虑退款。
 
 逆转裁判 Phoenix Wright: Ace Attorney Trilogy
-鼎鼎有名嘛所以就买了！只玩了一个章节没有发言权！可是角色蛮可爱的，所以接下来应该会主要打这个。
-
-
-
-📑清单：买了还没有玩的，无参考意义所以折叠
-
-- Hollow Knight：是的谁这么铁石心肠刷了那么多安利贴才在2022年为了消掉余额买了它。
-- Raging Loop 人狼村之谜
-- Sudoku Universe 数独宇宙
-- Ken Follett&#39;s The Pillars of the Earth 圣殿春秋
-- Arcade Spirits：这和下面两个都是刷到推荐才买的视觉小说，虽然时长不长但不知道自己能不能玩下去。
-- Demonheart
-- ATRI -My Dear Moments-
-
-我的游戏完成率很低，成就系统更是于我如无物，至今也没有摸索出特别喜爱的游戏类型，能坚持打下一个游戏常常不是剧情格外出色，而是因为里面塑造了某些我特别喜欢的角色。虽然轰轰烈烈地列出了自己的清单，但大概率最后还是会回到舒适区 Hades 的怀抱：角色可爱，语音好听，一轮不需花很大力气 25 分钟打完便可毫无留恋地关掉睡觉。这篇记录写了两天，断断续续在办公室写了一点，在寝室写了一点，似乎有些个主题被我遗忘（想写的是诗歌，和看的书）或是突然不想写了，竟然改弦易辙写到了游戏上去。">
+鼎鼎有名嘛所以就买了！只玩了一个章节没有发言权！可是角色蛮可爱的，所以接下来应该会主要打这个。">
   
 
   <title>
@@ -74,7 +60,7 @@ Firewatch
   
     
     
-    <link rel="stylesheet" href="/css/main.2e4a4ab8db91856604f83e78511f710e02ad08f6159eb18acd8465ac682b9d74a76811bf9d7917ae217a4ccb9bd610ee09f7ced4567c5edf63a14326c20ce9f2.css" integrity="sha512-LkpKuNuRhWYE&#43;D54UR9xDgKtCPYVnrGKzYRlrGgrnXSnaBG/nXkXriF6TMub1hDuCffO1FZ8Xt9joUMmwgzp8g==" />
+    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
   
 
   
@@ -85,37 +71,129 @@ Firewatch
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <a id="back-link" href="/">Back</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+<style> 
+
+ 
+#header-post {
+    position: fixed;  
+    top: 0;  
+    left: 100;  
+    right: 0;  
+    display: inline-block;
+    z-index: 100;  
+    background: rgba(244, 219, 159, 0.85);
+    backdrop-filter: blur(5px);  
+    padding: 0.1rem 0.1rem;  
+    width: auto;  
+    border-bottom-left-radius: 10px;
+}
+
+ 
+#header-post #nav ul {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none!important;
+    display: flex;  
+    justify-content: flex-end;  
+}
+
+ 
+#header-post ul li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+ 
+#header-post #nav a {
+    color: rgb(74, 60, 53);
+    letter-spacing: .01em;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+ 
+#nav ul li:before {
+    content: "";
+    font-weight: bold;
+    margin-right: 3px;
+}
+</style>
+
 <script>
-    window.addEventListener("load", function() {
-        const backLink = document.getElementById("back-link");
+    window.addEventListener('scroll', function () {
+        const headerPost = document.getElementById('header-post');
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight; 
+        const scrollPercentage = scrollPosition / maxScroll;
 
         
-        const referrer = document.referrer;
-
-        
-        const currentURL = window.location.pathname;
-
-        
-        if (currentURL === "/posts" || currentURL === "/posts/") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
+        if (scrollPercentage <= 0.4) {
+            headerPost.style.opacity = 1;
+            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
         }
         
-        else if (referrer.includes("/posts")) {
-            backLink.href = "/posts";  
-            backLink.textContent = "Back to All Posts";  
-        } else if (referrer === window.location.origin || referrer === "") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
-        } else {
-            backLink.href = referrer;  
-            backLink.textContent = "Back";  
+        else if (scrollPercentage <= 0.5) {
+            const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
+            headerPost.style.opacity = opacity;
+            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+        }
+        
+        else {
+            headerPost.style.opacity = 0;
+            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
         }
     });
+
 </script>
-
-
 
                 </div>
 
@@ -183,21 +261,21 @@ Firewatch
 <p>其实我还没打完《巫师 3》，这游戏我隔三岔五打开玩半个小时，两周都未必跑得完一个支线任务，但也没断过。可总归怵了这种流程超长的游戏，因而夏促选了些小游戏。其实这部分原本想独立篇章，可又觉得没有那么大的参考意义，再者我喜欢把事情一口气说完，所以就算了。这次夏促购物车如下：</p>
 <h3 id="ravenous-devils">Ravenous Devils</h3>
 <p>一个杀人夫妻店模拟经营类游戏，经营模式是这样的：丈夫二楼开杀人裁缝店，尸体通过暗门丢到负一楼，妻子在负一楼做好了人肉派，送到一楼餐厅去卖。就猎奇心理买了下来，玩了玩觉得就蛮好笑的。玩了两个小时，手柄不太玩得来，而我的鼠标有点坏了所以搁置没玩下去。其实游戏机制有点问题，但因为我不是太在乎这些只要让我把时间杀掉就好了。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220625002330_1.jpg" alt="随便截了一张感受一下游戏的美术风格"></p>
 <h3 id="travellers-rest-旅者之憩">Travellers Rest 旅者之憩</h3>
 <p>也玩了两个小时，是开小酒馆的模拟经营，除了随时可以赶客关店以外暂时没有玩出什么出彩的地方。另外，一个猫水盆子卖 20 银币也太贵了吧！</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220620230655_1.jpg" alt="《旅者之憩》"></p>
 <h3 id="the-crown-of-leaves">The Crown of Leaves</h3>
 <p>连夜玩了五个小时，在玩之前我还想不就是猫猫狗狗什么的嘛我见得多了——玩了之后，我：这世界上只有两种人，一种是 Furry 控，另一种是暂时还没发现自己是 Furry 控的 Furry 控……这是款视觉小说来着……视觉小说重要的一般是小说吧可这视觉也太漂亮了！</p>
 <p>这游戏目前只做了两章，有民间翻译无官方中文（民间汉化压缩包需要密码而我实在解不开）。第一章靠蒙蒙猜猜还蛮好看懂的，第二章解密部分就有点吃力了，一些神秘学，一些谜题，一些可爱迷人的动物。没有办法介绍剧情，我是一边玩一边截图一边流口水……真好呀。</p>
-<p></p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626010753_1.jpg" alt="左下角就是主角！"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626001948_1.jpg" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/21.jpg" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626003621_1.jpg" alt=""></p>
 <h3 id="firewatch">Firewatch</h3>
 <p>坚持了不到两个小时晕头转向整个人如同坐了两个小时公交车且是最后一排。很美的风景但因为本人的大巴游客视角口含晕车片无法欣赏，据说是很好的文本，但正在考虑退款。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/2.jpg" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/1.jpg" alt=""></p>
 <h3 id="逆转裁判-phoenix-wright-ace-attorney-trilogy">逆转裁判 Phoenix Wright: Ace Attorney Trilogy</h3>
 <p>鼎鼎有名嘛所以就买了！只玩了一个章节没有发言权！可是角色蛮可爱的，所以接下来应该会主要打这个。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220619220035_1.jpg" alt=""></p>
 <detail>
 <summary>
 📑清单：买了还没有玩的，无参考意义所以折叠
@@ -283,7 +361,7 @@ Firewatch
     
         
         <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2024 | 再會，謝謝所有的魚</a></p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
         </footer>
     
 

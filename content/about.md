@@ -8,11 +8,6 @@ aliases:
   - about-hugo
   - contact
 lastmod: 2021-11-25
-menu:
-  main:
-    weight: -90
-    params:
-      icon: fail
 ---
 
 <style>

@@ -75,9 +75,7 @@ Finally
 我的每一年，都有不同程度的，对于人际交往的烦恼。现实中的人也好，网络世界的人也好，都会让我在欢欣鼓舞与沮丧之中时常摇摆。我不知道要怎么说……我在投入许多的感情以后，当然也会得到很多，很好的、感情的回馈，我当然到这一刻也仍认为，真心的交往没有问题。只是有时候仍会面对，情感的快速退潮与冷却。我不知道应该要怎么样说。
 我恐惧着情感的冷却。其实，有某样东西正在改变，但我恐怕还没有能力向任何人解释这时的，复杂的心境。大概次世代版本都还需要再打上1000多个更新补丁才能见人。
 但今天我坐在那里，忽然想说：我决定，以后，即使我和人分开，即使我和谁闹得很难看之后，我也不会去毁掉或者收回那些，我给过别人的美好的东西。无论记忆，故事，甚至只是我写给你的一张字条，还是别的什么。我都不会收回。只要是有过爱和真心的，无论和谁的交往。我没法证明，这只是一个you have my word的事情。
-我从前与人的分别也同样的决绝，但最近我慢慢感到，那种美好的东西缺失，被人在心里留下一个洞的感觉很可怕。我已经不想再这样了。
-
-忘了说了，网还是很好上的。这个月换了路由器之后我又开始唰唰上网。">
+我从前与人的分别也同样的决绝，但最近我慢慢感到，那种美好的东西缺失，被人在心里留下一个洞的感觉很可怕。我已经不想再这样了。">
   
 
   <title>
@@ -93,7 +91,7 @@ Finally
   
     
     
-    <link rel="stylesheet" href="/css/main.188c47b70b0e8facb5fa866390a6e8fe3fcb9bf099a33ca926488503c3aad7d2b41bc47d3a90166bcc5e13a9b1e416d898800f7396ad5a861c8b82ee1ad04e3b.css" integrity="sha512-GIxHtwsOj6y1&#43;oZjkKbo/j/Lm/CZozypJkiFA8Oq19K0G8R9OpAWa8xeE6mx5BbYmIAPc5atWoYci4LuGtBOOw==" />
+    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
   
 
   
@@ -104,37 +102,129 @@ Finally
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <a id="back-link" href="/">Back</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+<style> 
+
+ 
+#header-post {
+    position: fixed;  
+    top: 0;  
+    left: 100;  
+    right: 0;  
+    display: inline-block;
+    z-index: 100;  
+    background: rgba(244, 219, 159, 0.85);
+    backdrop-filter: blur(5px);  
+    padding: 0.1rem 0.1rem;  
+    width: auto;  
+    border-bottom-left-radius: 10px;
+}
+
+ 
+#header-post #nav ul {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none!important;
+    display: flex;  
+    justify-content: flex-end;  
+}
+
+ 
+#header-post ul li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+ 
+#header-post #nav a {
+    color: rgb(74, 60, 53);
+    letter-spacing: .01em;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+ 
+#nav ul li:before {
+    content: "";
+    font-weight: bold;
+    margin-right: 3px;
+}
+</style>
+
 <script>
-    window.addEventListener("load", function() {
-        const backLink = document.getElementById("back-link");
+    window.addEventListener('scroll', function () {
+        const headerPost = document.getElementById('header-post');
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight; 
+        const scrollPercentage = scrollPosition / maxScroll;
 
         
-        const referrer = document.referrer;
-
-        
-        const currentURL = window.location.pathname;
-
-        
-        if (currentURL === "/posts" || currentURL === "/posts/") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
+        if (scrollPercentage <= 0.4) {
+            headerPost.style.opacity = 1;
+            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
         }
         
-        else if (referrer.includes("/posts")) {
-            backLink.href = "/posts";  
-            backLink.textContent = "Back to All Posts";  
-        } else if (referrer === window.location.origin || referrer === "") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
-        } else {
-            backLink.href = referrer;  
-            backLink.textContent = "Back";  
+        else if (scrollPercentage <= 0.5) {
+            const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
+            headerPost.style.opacity = opacity;
+            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+        }
+        
+        else {
+            headerPost.style.opacity = 0;
+            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
         }
     });
+
 </script>
-
-
 
                 </div>
 
@@ -227,7 +317,7 @@ Finally
 </li>
 </ol>
 <p>上述谈到的那一层做咖啡的地方，目前是我家最幸福的角落。也不是什么重要的分享，就先说到这里。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%E5%9B%BE%E7%89%87/IMG_5818.jpg" alt=""></p>
 <h2 id="kindle-for-pc">Kindle for PC</h2>
 <p>我为阅读器的事纠结了很久。我手上这一台Kindle到现在为止响应流畅，外观完美，在解决掉传书延迟的问题之后简直没有问题。最大的问题是我自己。</p>
 <p>我垂涎于微信阅读网页版已久，因为想要有在PC端可以同步阅读进度的阅读器，所以才想要换Kindle。但经过一番追索，发现微信阅读的已经开始限制免费导入次数了，直接打消了我换安卓阅读器的热情。</p>
@@ -331,7 +421,7 @@ Finally
     
         
         <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2024 | 再會，謝謝所有的魚</a></p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
         </footer>
     
 

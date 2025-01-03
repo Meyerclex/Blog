@@ -78,7 +78,7 @@ RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八�
   
     
     
-    <link rel="stylesheet" href="/css/main.2e4a4ab8db91856604f83e78511f710e02ad08f6159eb18acd8465ac682b9d74a76811bf9d7917ae217a4ccb9bd610ee09f7ced4567c5edf63a14326c20ce9f2.css" integrity="sha512-LkpKuNuRhWYE&#43;D54UR9xDgKtCPYVnrGKzYRlrGgrnXSnaBG/nXkXriF6TMub1hDuCffO1FZ8Xt9joUMmwgzp8g==" />
+    <link rel="stylesheet" href="/css/main.0023ac9b718fd2911aa3788d72b5b56bbc6f4bd1eacb5aed4e729cb84842cd51221338be1839a610c7b2e238ad40fd7f93961f4e0a7ccaa7bd14fd8a89e0b1b6.css" integrity="sha512-ACOsm3GP0pEao3iNcrW1a7xvS9Hqy1rtTnKcuEhCzVEiEzi&#43;GDmmEMey4jitQP1/k5YfTgp8yqe9FP2KieCxtg==" />
   
 
   
@@ -89,37 +89,129 @@ RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八�
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <a id="back-link" href="/">Back</a>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+<style> 
+
+ 
+#header-post {
+    position: fixed;  
+    top: 0;  
+    left: 100;  
+    right: 0;  
+    display: inline-block;
+    z-index: 100;  
+    background: rgba(244, 219, 159, 0.85);
+    backdrop-filter: blur(5px);  
+    padding: 0.1rem 0.1rem;  
+    width: auto;  
+    border-bottom-left-radius: 10px;
+}
+
+ 
+#header-post #nav ul {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none!important;
+    display: flex;  
+    justify-content: flex-end;  
+}
+
+ 
+#header-post ul li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+ 
+#header-post #nav a {
+    color: rgb(74, 60, 53);
+    letter-spacing: .01em;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+ 
+#nav ul li:before {
+    content: "";
+    font-weight: bold;
+    margin-right: 3px;
+}
+</style>
+
 <script>
-    window.addEventListener("load", function() {
-        const backLink = document.getElementById("back-link");
+    window.addEventListener('scroll', function () {
+        const headerPost = document.getElementById('header-post');
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight; 
+        const scrollPercentage = scrollPosition / maxScroll;
 
         
-        const referrer = document.referrer;
-
-        
-        const currentURL = window.location.pathname;
-
-        
-        if (currentURL === "/posts" || currentURL === "/posts/") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
+        if (scrollPercentage <= 0.4) {
+            headerPost.style.opacity = 1;
+            headerPost.style.background = 'rgba(255, 255, 255, 0.8)'; 
         }
         
-        else if (referrer.includes("/posts")) {
-            backLink.href = "/posts";  
-            backLink.textContent = "Back to All Posts";  
-        } else if (referrer === window.location.origin || referrer === "") {
-            backLink.href = "/";  
-            backLink.textContent = "Back to Home";  
-        } else {
-            backLink.href = referrer;  
-            backLink.textContent = "Back";  
+        else if (scrollPercentage <= 0.5) {
+            const opacity = 1 - (scrollPercentage - 0.4) / 0.2; 
+            headerPost.style.opacity = opacity;
+            headerPost.style.background = `rgba(255, 255, 255, ${opacity * 0.8})`; 
+        }
+        
+        else {
+            headerPost.style.opacity = 0;
+            headerPost.style.background = 'rgba(255, 255, 255, 0)'; 
         }
     });
+
 </script>
-
-
 
                 </div>
 
@@ -172,13 +264,13 @@ RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八�
 <p>非常多的博客都提供RSS订阅链接，例如本站的导航栏上就有<a href="/index.xml/">订阅链接</a>，这就是一个订阅源。你的订阅对对方的网站没有任何影响，也不会有任何量化反馈。</p>
 <p>有了订阅源以后，你还需要一个阅读器。把这个源添加进入，之后每当有更新，你的阅读器中就会有所显示。关于阅读器的选择，我个人觉得是不需要太纠结精美的形式，不用搞那些花哨的。只是获取信息然后读而已。</p>
 <p>我之前在电脑上下载的是Inoreader，漂亮赏心，不过重装了一次系统后也没有想过下载回来。我发现最好的RSS阅读器还是融入到日常每天都会打开的浏览器中，我后来安装的是浏览器插件<a href="https://chromewebstore.google.com/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp">RSS Feed Reader</a>。</p>
-<p></p>
+<p><img src="https://lh3.googleusercontent.com/rQfCS1nX6ltv30swrcNCdwTUheBXSGOkrrmdYmCEMvRf8xfFhk8xu9IyZm-4K3Cv041jG3XGlSdw45g_JxUBboR_vQ=s800-w800-h500" alt=""></p>
 <p>图片来源于官方的截图，不知道能不能顺利显示。我日常把它固定在了浏览器右上角，有更新就会冒出蓝点和数字。因为我至少每天都会打开浏览器，一有更新都会很快地看到。在不同的设备登录浏览器账号的话也会自动同步。所以对我来说非常实用。</p>
 <p>免费版可以添加200个订阅源，有30分钟的更新延迟。但我使用下来好像还是即时更新的。以及下面这个图是它的阅读器页面。只是希望读到想读的内容而已，我没有很高的要求：</p>
-<p></p>
+<p><img src="https://lh3.googleusercontent.com/_UzgCk7-i1b_1Mv4W-REYumd6Jc9VAYPuDuMTLvvUUpjlIeeVrhCe5oA3YJ_iRLoed74SKR0BDBKppOZ17KZsVzvlQ=s800-w800-h500" alt=""></p>
 <h2 id="更重要的其实是rss订阅源">更重要的其实是RSS订阅源</h2>
 <p>类似我和很多友邻用的都是Hugo博客，是自带订阅源的。顺带一提，<strong>AO3只要是Tag都是有RSS订阅源提供的</strong>，对于想第一时间知道自家Fandom/CP有没有新故事的人来说非常方便。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/1.png" alt=""></p>
 <p>但是还有非常多的信息源是不提供订阅源的，现在的社交平台的现状就是非常封闭，例如微信公众号，它都希望你能在它的APP上进行阅读。但事实上是我既不想打开手机微信，也不想看电脑微信，我只想读特定的内容，不想被瀑布流的内容夺走注意力。</p>
 <p>那么<a href="https://docs.rsshub.app/zh/">RSSHub</a>项目就是来解决订阅源获取的问题的。</p>
 <h3 id="rsshub的使用方法">RSSHub的使用方法</h3>
@@ -192,7 +284,7 @@ RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八�
 <blockquote>
 <p>RSSHub的官方文档地址：<a href="https://docs.rsshub.app/zh/guide/">https://docs.rsshub.app/zh/guide/</a></p>
 </blockquote>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/2.png" alt=""></p>
 <p>仔细阅读上述内容，你就得到了如上图所示的路由（Route）：<code>/lofter/tag/:name?/:type?</code>，与一些使用的方式。</p>
 <ol start="2">
 <li>将它们按照<strong>实例+路由</strong>的形式组装成你想要订阅的内容。</li>
@@ -200,7 +292,7 @@ RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八�
 <p>我们使用的是公共实例<code>https://rsshub.app/</code>，我要订阅的是Lofter的Tag名是“逆转裁判”的“最新”内容，所以根据使用方法，我需要的路由是<code>/lofter/tag/逆转裁判/new</code>。</p>
 <p>然后进行组装后就得到了订阅源：<code>https://rsshub.app/lofter/tag/逆转裁判/new</code>。</p>
 <p>丢进浏览器里看看能不能顺利显示出RSS的页面（这个页面是因为安装了RSS Feed Reader才这么显示，很可能你看到的页面是一堆代码）。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/3.png" alt=""></p>
 <p>（其实我不看逆转裁判Tag，我只是随便想到了就用了。）</p>
 <ol start="3">
 <li>
@@ -214,7 +306,7 @@ RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八�
 <p>除了获取订阅源以外，还想提及一点是，导入进RSS阅读器中的订阅源是可以汇总导出的。</p>
 <p>前篇谈及了我重装一次系统，更换了阅读器。这事发生的很突然，不过因为我偶尔会备份一下，只丢失了后来添加的少部分订阅源。</p>
 <p>订阅源恐怕是你长期收集得来的珍贵宝物与图书馆，如果你的阅读器没有线上同步功能，我个人还是建议大家偶尔可以随手备份一下。现在订阅源的格式一般都是XLS/OPML，想换阅读器了也就是导出导入随手的事。</p>
-<p></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/4.png" alt=""></p>
 <h2 id="其他的话">其他的话</h2>
 <p>RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八门的路由。我在用的还有微博，因为有段时间不想上微博但是想看特定的女网友，以及噗浪和推，我实在是用得不顺手但是有网友只玩这个。只能说也算是一个网友订阅器。我订阅器里最多的还是博客，然后就是我CP的Tag。</p>
 <p>顺便一提，因为这种RSS订阅方式一般只能订阅公开内容信息流，像是微博粉丝可见是无法收到的，而很多自定义操作例如屏蔽，也是没有办法做到的。简单来说如果你订阅了AO3上逆转裁判的Tag，但你用自己的账号屏蔽掉了某个作者，但RSS这种方式是不知道的，这个作者在你订阅的Tag下发文了，你照样会收到消息。但无所谓，只是一种信息获取方式，这种小事我不在乎。只要我感兴趣的内容我可以第一时间收到就可以了。</p>
@@ -288,7 +380,7 @@ RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八�
     
         
         <footer class="site-footer">
-            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2024 | 再會，謝謝所有的魚</a></p>
+            <p><a href="/" style="text-decoration:none; color: inherit;">© 2021 - 2025 | 再會，謝謝所有的魚</a></p>
         </footer>
     
 
