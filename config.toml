@@ -65,6 +65,11 @@ url = "/links"
 weight = 3
 
 [[menu.main]]
+name = "Collection"
+url = "/collection"
+weight = 4
+
+[[menu.main]]
 name = "RSS"
 url = "/index.xml"
 weight = 4
