@@ -2,6 +2,7 @@
 title: Collection
 slug: collection
 date: 2025-01-05
+toc: false
 ---
 > 欸？这是什么。
 > 
