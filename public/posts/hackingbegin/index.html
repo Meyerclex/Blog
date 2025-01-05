@@ -25,8 +25,170 @@
   
 
   
-  
+  <style>
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .image-row img {
+      flex-grow: 1;
+      max-width: calc(100% / 3 - 20px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .image-row.two-columns img {
+      max-width: calc(50% - 10px);
+    }
+
+    .image-row.three-columns img {
+      max-width: calc(33.33% - 10px);
+    }
+
+    .image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .image-overlay.active {
+      display: flex;
+    }
+
+    .image-overlay img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+
+      console.log(`Found ${images.length} images.`);
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+
+      paragraphs.forEach((paragraph, pIndex) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+        if (paragraphImages.length === 1) {
+          
+          const img = paragraphImages[0];
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+              overlayImage.src = img.src;
+              overlay.classList.add('active');
+            });
+          }
+          return; 
+        }
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        } else if (paragraphImages.length === 4) {
+          imageRow.classList.add('two-rows');
+        } else if (paragraphImages.length === 5) {
+          imageRow.classList.add('three-two-columns');
+        } else if (paragraphImages.length === 6) {
+          imageRow.classList.add('three-columns');
+        }
+
+        
+        paragraphImages.forEach((img) => {
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+              overlayImage.src = img.src;
+              overlay.classList.add('active');
+            });
+          }
+
+          
+          imageRow.appendChild(img);
+        });
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
+      });
+
+      
+      images.forEach((img, index) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        if (naturalWidth > 200 && naturalHeight > 200) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+
+        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      });
+    });
+  </script>
+
+  
+  
 
 
 </head>
@@ -80,167 +242,7 @@
 </div>
 
                 </div>
-    <style>
-        .image-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-        }
 
-        .image-row img {
-            flex-grow: 1;
-            max-width: calc(100% / 3 - 20px);
-            height: auto;
-            object-fit: contain;
-        }
-
-        .image-row.two-columns img {
-            max-width: calc(50% - 10px);
-        }
-
-        .image-row.three-columns img {
-            max-width: calc(33.33% - 10px);
-        }
-
-        .image-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .image-overlay.active {
-            display: flex;
-        }
-
-        .image-overlay img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('JavaScript loaded and DOMContentLoaded event fired.');
-
-            const postContent = document.querySelector('#post-content');
-            if (!postContent) {
-                console.error('Error: #post-content not found!');
-                return;
-            }
-
-            
-            const images = Array.from(postContent.querySelectorAll('img'));
-
-            if (images.length === 0) {
-                console.log('No images found.');
-                return;
-            }
-
-            console.log(`Found ${images.length} images.`);
-
-            
-            const overlay = document.createElement('div');
-            overlay.className = 'image-overlay';
-            document.body.appendChild(overlay);
-
-            const overlayImage = document.createElement('img');
-            overlay.appendChild(overlayImage);
-
-            overlay.addEventListener('click', () => {
-                overlay.classList.remove('active');
-            });
-
-            
-            const paragraphs = postContent.querySelectorAll('p');
-
-            paragraphs.forEach((paragraph, pIndex) => {
-                const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-                if (paragraphImages.length === 0) {
-                    return; 
-                }
-
-                console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-                if (paragraphImages.length === 1) {
-                    
-                    const img = paragraphImages[0];
-                    const naturalWidth = img.naturalWidth || img.width;
-                    const naturalHeight = img.naturalHeight || img.height;
-
-                    if (naturalWidth > 200 && naturalHeight > 200) {
-                        img.style.cursor = 'zoom-in';
-                        img.addEventListener('click', () => {
-                            overlayImage.src = img.src;
-                            overlay.classList.add('active');
-                        });
-                    }
-                    return; 
-                }
-
-                
-                const imageRow = document.createElement('div');
-                imageRow.classList.add('image-row');
-
-                
-                if (paragraphImages.length === 2) {
-                    imageRow.classList.add('two-columns');
-                } else if (paragraphImages.length === 3) {
-                    imageRow.classList.add('three-columns');
-                } else if (paragraphImages.length === 4) {
-                    imageRow.classList.add('two-rows');
-                } else if (paragraphImages.length === 5) {
-                    imageRow.classList.add('three-two-columns');
-                } else if (paragraphImages.length === 6) {
-                    imageRow.classList.add('three-columns');
-                }
-
-                
-                paragraphImages.forEach((img) => {
-                    const naturalWidth = img.naturalWidth || img.width;
-                    const naturalHeight = img.naturalHeight || img.height;
-
-                    if (naturalWidth > 200 && naturalHeight > 200) {
-                        img.style.cursor = 'zoom-in';
-                        img.addEventListener('click', () => {
-                            overlayImage.src = img.src;
-                            overlay.classList.add('active');
-                        });
-                    }
-
-                    
-                    imageRow.appendChild(img);
-                });
-
-                
-                paragraph.innerHTML = '';
-                paragraph.appendChild(imageRow);
-            });
-
-            
-            images.forEach((img, index) => {
-                const naturalWidth = img.naturalWidth || img.width;
-                const naturalHeight = img.naturalHeight || img.height;
-
-                if (naturalWidth > 200 && naturalHeight > 200) {
-                    img.style.cursor = 'zoom-in';
-                    img.addEventListener('click', () => {
-                        overlayImage.src = img.src;
-                        overlay.classList.add('active');
-                    });
-                }
-
-                console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
-            });
-        });
-    </script>
 <article>
     <h1>Let the Hacking begin！</h1>
     <p id="post-meta">
