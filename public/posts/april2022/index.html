@@ -21,11 +21,13 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.bc386ca095bd355029b76db123575da32bdbb97d2ab3a451835535b67b51dd02314acccd126af20293467619a986fdd08a1b44730eb5e1aab9e2e02fa68c625b.css" integrity="sha512-vDhsoJW9NVApt22xI1ddoyvbuX0qs6RRg1U1tntR3QIxSszNEmryApNGdhmphv3QihtEcw614aq54uAvpoxiWw==" />
+    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
   
 
   
   
+
+
 
 </head>
 <body a="light">
@@ -78,7 +80,167 @@
 </div>
 
                 </div>
+    <style>
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .image-row img {
+            flex-grow: 1;
+            max-width: calc(100% / 3 - 20px);
+            height: auto;
+            object-fit: contain;
+        }
+
+        .image-row.two-columns img {
+            max-width: calc(50% - 10px);
+        }
+
+        .image-row.three-columns img {
+            max-width: calc(33.33% - 10px);
+        }
+
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+            const postContent = document.querySelector('#post-content');
+            if (!postContent) {
+                console.error('Error: #post-content not found!');
+                return;
+            }
+
+            
+            const images = Array.from(postContent.querySelectorAll('img'));
+
+            if (images.length === 0) {
+                console.log('No images found.');
+                return;
+            }
+
+            console.log(`Found ${images.length} images.`);
+
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+            document.body.appendChild(overlay);
+
+            const overlayImage = document.createElement('img');
+            overlay.appendChild(overlayImage);
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('active');
+            });
+
+            
+            const paragraphs = postContent.querySelectorAll('p');
+
+            paragraphs.forEach((paragraph, pIndex) => {
+                const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+                if (paragraphImages.length === 0) {
+                    return; 
+                }
+
+                console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+                if (paragraphImages.length === 1) {
+                    
+                    const img = paragraphImages[0];
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+                    return; 
+                }
+
+                
+                const imageRow = document.createElement('div');
+                imageRow.classList.add('image-row');
+
+                
+                if (paragraphImages.length === 2) {
+                    imageRow.classList.add('two-columns');
+                } else if (paragraphImages.length === 3) {
+                    imageRow.classList.add('three-columns');
+                } else if (paragraphImages.length === 4) {
+                    imageRow.classList.add('two-rows');
+                } else if (paragraphImages.length === 5) {
+                    imageRow.classList.add('three-two-columns');
+                } else if (paragraphImages.length === 6) {
+                    imageRow.classList.add('three-columns');
+                }
+
+                
+                paragraphImages.forEach((img) => {
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+
+                    
+                    imageRow.appendChild(img);
+                });
+
+                
+                paragraph.innerHTML = '';
+                paragraph.appendChild(imageRow);
+            });
+
+            
+            images.forEach((img, index) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+
+                if (naturalWidth > 200 && naturalHeight > 200) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        overlayImage.src = img.src;
+                        overlay.classList.add('active');
+                    });
+                }
+
+                console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+            });
+        });
+    </script>
 <article>
     <h1>病情反复，仍需酒神庇护</h1>
     <p id="post-meta">
@@ -113,6 +275,7 @@
 
 
     </div>
+    <div id="post-content">
     <p>最近心情不好，缘由是懈怠。懈怠没有给我带来松绑的愉快，反倒加重病情，开始怀疑我是否已经不能享受空白闲暇的本身（我总觉得我有更重要的事情须得去做），这太糟糕。</p>
 <p>清明假期头天与室友吃饭喝酒，次日胃疼了一整天，教练说他休假回来，召我去学车，于是隔天又去练车，早八点到晚五点，趁其他学车的人练车睡了二十分钟，醒来教练从副驾探头看我：醒了没，醒了就到你了。回来时头痛欲裂，当晚睡得神魂颠倒次日正午才爬得起来。</p>
 <p>那天天气特别好，广州难有这样不冷不热不潮湿的时日，阳光晒得万物干爽，这光景太好了，都觉得难得，和室友都想出去散步，于是近六点时一起出门，室友发消息给宿舍的朋友，撒娇说已经不晒了，快下楼骑车顺便帮她拿个快递，对面悠悠回复：骗人。太阳都晒进宿舍里了。</p>
@@ -127,6 +290,7 @@
 <p>整个世界都不好，闭目塞听也无法阻止绝望钻入感官。始终没有勇气在生活博客谈到这些，在这里书写的一切像是半成品游戏的房间，道具、光线与一切模组加载完毕，舒适宜人，可我心里太清楚，一旦拉开房门，外面的世界像个优化不好的烂游戏一样坑坑洼洼，残肢穿墙而过，光线断在天边，遥远的求救断断续续，跳出的字幕都残缺不全。丰县被拐女子究竟如何，一个月前被捕的乌衣现在怎么样了？课上关于俄乌战争的讨论点到即止，任谁都知道空气中的分歧太多，“谈论这些……不太安全。”我明白。上海疫情势同水火，对自由的渴望要如何控制，下午谈到埃利诺·奥斯特罗姆的公共池塘资源，不由聊到上海这次疫情（这似乎是我们能够讨论的最重要的话题），说为什么会表现得那么糟糕，这次疫情失控中被诟病很多说这城市所谓浮华表面掩藏的不过仍是虱子，事实上在这次疫情以前上海都是社区高度自治的城市，精准防控运作良好的那段时间可以知道，很多社区从人员出入到物资供应都有自己的运转网络，它的基层治理走在前列毋庸置疑，问题出在哪里？如今刷到首页一边断粮、一边物资又阻塞在路上，病人得不到救治，恍然间像是回到2020那个春晚，人间如同炼狱。我不明白为什么会这样。我想要回我自由迁徙的权利，想要不受阉割的人权，想要我和我的家人和我的猫都安全，疾病难道是唯一的祸因？不想再思考，喝完酒了。</p>
 <p>只想干脆放任自己昏睡。</p>
 
+    </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
@@ -443,6 +607,8 @@
         }
     })()
 </script>
+
+
 
 </div>
 

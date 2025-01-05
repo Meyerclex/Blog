@@ -21,11 +21,13 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.bc386ca095bd355029b76db123575da32bdbb97d2ab3a451835535b67b51dd02314acccd126af20293467619a986fdd08a1b44730eb5e1aab9e2e02fa68c625b.css" integrity="sha512-vDhsoJW9NVApt22xI1ddoyvbuX0qs6RRg1U1tntR3QIxSszNEmryApNGdhmphv3QihtEcw614aq54uAvpoxiWw==" />
+    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
   
 
   
   
+
+
 
 </head>
 <body a="light">
@@ -78,7 +80,167 @@
 </div>
 
                 </div>
+    <style>
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .image-row img {
+            flex-grow: 1;
+            max-width: calc(100% / 3 - 20px);
+            height: auto;
+            object-fit: contain;
+        }
+
+        .image-row.two-columns img {
+            max-width: calc(50% - 10px);
+        }
+
+        .image-row.three-columns img {
+            max-width: calc(33.33% - 10px);
+        }
+
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+            const postContent = document.querySelector('#post-content');
+            if (!postContent) {
+                console.error('Error: #post-content not found!');
+                return;
+            }
+
+            
+            const images = Array.from(postContent.querySelectorAll('img'));
+
+            if (images.length === 0) {
+                console.log('No images found.');
+                return;
+            }
+
+            console.log(`Found ${images.length} images.`);
+
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+            document.body.appendChild(overlay);
+
+            const overlayImage = document.createElement('img');
+            overlay.appendChild(overlayImage);
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('active');
+            });
+
+            
+            const paragraphs = postContent.querySelectorAll('p');
+
+            paragraphs.forEach((paragraph, pIndex) => {
+                const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+                if (paragraphImages.length === 0) {
+                    return; 
+                }
+
+                console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+                if (paragraphImages.length === 1) {
+                    
+                    const img = paragraphImages[0];
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+                    return; 
+                }
+
+                
+                const imageRow = document.createElement('div');
+                imageRow.classList.add('image-row');
+
+                
+                if (paragraphImages.length === 2) {
+                    imageRow.classList.add('two-columns');
+                } else if (paragraphImages.length === 3) {
+                    imageRow.classList.add('three-columns');
+                } else if (paragraphImages.length === 4) {
+                    imageRow.classList.add('two-rows');
+                } else if (paragraphImages.length === 5) {
+                    imageRow.classList.add('three-two-columns');
+                } else if (paragraphImages.length === 6) {
+                    imageRow.classList.add('three-columns');
+                }
+
+                
+                paragraphImages.forEach((img) => {
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+
+                    
+                    imageRow.appendChild(img);
+                });
+
+                
+                paragraph.innerHTML = '';
+                paragraph.appendChild(imageRow);
+            });
+
+            
+            images.forEach((img, index) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+
+                if (naturalWidth > 200 && naturalHeight > 200) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        overlayImage.src = img.src;
+                        overlay.classList.add('active');
+                    });
+                }
+
+                console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+            });
+        });
+    </script>
 <article>
     <h1>In the Name of Hades！</h1>
     <p id="post-meta">
@@ -98,6 +260,7 @@
         
 
     </div>
+    <div id="post-content">
     <p>2022 年 7 月 17 日，周日，本小鸟 11 点钟起床，泡面，泡咖啡，《神烦警探》第 8 集。12 点 00 分结束午饭，Hades 启动！痛扁哈迪斯八小时，20 点 00 分关闭游戏，欣赏塔纳托斯美丽截图 20 张，拔掉硬盘按灭手柄。坐在案前一时间头晕目眩，眼冒金星，忽然发现自己明镜止水心无旁骛，八小时里什么也没想，顿时定住：Deep Work 番茄钟 Forest 算什么，想要专注，你要从游戏里找。</p>
 <p>月记向来就这几件事。首先简单更新我的心境状态：仍然介意、烦躁、难放下，但是我也同意，糊弄一下就好了。紧接着更重要的是：In the Name of Hades！！</p>
 <p>已经介绍过我的夏促购物车，买的游戏基本都玩了两个小时以上——然后如前篇预言，我又回来打 Hades 了。Hades 的游戏机制很妙，一局三十分钟左右打完就可以毫不留恋地关游戏，打开只是听扎格列欧斯碎碎念也很开心，虽然游戏是去年买的，但因为我游戏兴致规律宛如果农，一年也就最热那三个月份会打打游戏，所以打到今天也才刚完成主线故事。</p>
@@ -147,6 +310,7 @@
 <p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/hades/3.png" alt=""></p>
 <p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/hades/4.png" alt=""></p>
 
+    </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
@@ -463,6 +627,8 @@
         }
     })()
 </script>
+
+
 
 </div>
 

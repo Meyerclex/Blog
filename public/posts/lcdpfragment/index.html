@@ -22,11 +22,13 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.bc386ca095bd355029b76db123575da32bdbb97d2ab3a451835535b67b51dd02314acccd126af20293467619a986fdd08a1b44730eb5e1aab9e2e02fa68c625b.css" integrity="sha512-vDhsoJW9NVApt22xI1ddoyvbuX0qs6RRg1U1tntR3QIxSszNEmryApNGdhmphv3QihtEcw614aq54uAvpoxiWw==" />
+    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
   
 
   
   
+
+
 
 </head>
 <body a="light">
@@ -79,7 +81,167 @@
 </div>
 
                 </div>
+    <style>
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .image-row img {
+            flex-grow: 1;
+            max-width: calc(100% / 3 - 20px);
+            height: auto;
+            object-fit: contain;
+        }
+
+        .image-row.two-columns img {
+            max-width: calc(50% - 10px);
+        }
+
+        .image-row.three-columns img {
+            max-width: calc(33.33% - 10px);
+        }
+
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+            const postContent = document.querySelector('#post-content');
+            if (!postContent) {
+                console.error('Error: #post-content not found!');
+                return;
+            }
+
+            
+            const images = Array.from(postContent.querySelectorAll('img'));
+
+            if (images.length === 0) {
+                console.log('No images found.');
+                return;
+            }
+
+            console.log(`Found ${images.length} images.`);
+
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+            document.body.appendChild(overlay);
+
+            const overlayImage = document.createElement('img');
+            overlay.appendChild(overlayImage);
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('active');
+            });
+
+            
+            const paragraphs = postContent.querySelectorAll('p');
+
+            paragraphs.forEach((paragraph, pIndex) => {
+                const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+                if (paragraphImages.length === 0) {
+                    return; 
+                }
+
+                console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+                if (paragraphImages.length === 1) {
+                    
+                    const img = paragraphImages[0];
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+                    return; 
+                }
+
+                
+                const imageRow = document.createElement('div');
+                imageRow.classList.add('image-row');
+
+                
+                if (paragraphImages.length === 2) {
+                    imageRow.classList.add('two-columns');
+                } else if (paragraphImages.length === 3) {
+                    imageRow.classList.add('three-columns');
+                } else if (paragraphImages.length === 4) {
+                    imageRow.classList.add('two-rows');
+                } else if (paragraphImages.length === 5) {
+                    imageRow.classList.add('three-two-columns');
+                } else if (paragraphImages.length === 6) {
+                    imageRow.classList.add('three-columns');
+                }
+
+                
+                paragraphImages.forEach((img) => {
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+
+                    
+                    imageRow.appendChild(img);
+                });
+
+                
+                paragraph.innerHTML = '';
+                paragraph.appendChild(imageRow);
+            });
+
+            
+            images.forEach((img, index) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+
+                if (naturalWidth > 200 && naturalHeight > 200) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        overlayImage.src = img.src;
+                        overlay.classList.add('active');
+                    });
+                }
+
+                console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+            });
+        });
+    </script>
 <article>
     <h1>《纸钞屋》：中国科学家成功破译深夜惨叫声50枚</h1>
     <p id="post-meta">
@@ -129,6 +291,7 @@
 
 
     </div>
+    <div id="post-content">
     <h2 id="写在前面">写在前面</h2>
 <p>三月份开始看《纸钞屋(La Casa de Papel)》，很快看完，上微博哀嚎两周，惨叫声不绝于耳终于引来了：１位同担，以及１位愿意吃我安利的亲友。结果恰逢这天微博被禁言，恐不日将喜迎炸号，继上一轮船的胡言乱语后终于攒够一圈能发碎片分类的东西，于是拍拍手决定把 SNS 上为 Lcdp（主要是为我 CP）发出的惨叫声收集一下凑篇博客。</p>
 <p>（收集到一半 Update：开始思考到底有没有必要整理了）</p>
@@ -340,6 +503,7 @@
 </blockquote>
 <p>（不是说人家会搞很多冷 CP 然后拼命自评乃至于需要专门环节的意思，就是，就是这种重复使用的可能性的确是存在的，而且我超喜欢取行动代号，有行动代号好像会有仪式感一点耶 🥺）</p>
 
+    </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
@@ -656,6 +820,8 @@
         }
     })()
 </script>
+
+
 
 </div>
 

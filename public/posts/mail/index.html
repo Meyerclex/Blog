@@ -22,11 +22,13 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.bc386ca095bd355029b76db123575da32bdbb97d2ab3a451835535b67b51dd02314acccd126af20293467619a986fdd08a1b44730eb5e1aab9e2e02fa68c625b.css" integrity="sha512-vDhsoJW9NVApt22xI1ddoyvbuX0qs6RRg1U1tntR3QIxSszNEmryApNGdhmphv3QihtEcw614aq54uAvpoxiWw==" />
+    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
   
 
   
   
+
+
 
 </head>
 <body a="light">
@@ -79,7 +81,167 @@
 </div>
 
                 </div>
+    <style>
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .image-row img {
+            flex-grow: 1;
+            max-width: calc(100% / 3 - 20px);
+            height: auto;
+            object-fit: contain;
+        }
+
+        .image-row.two-columns img {
+            max-width: calc(50% - 10px);
+        }
+
+        .image-row.three-columns img {
+            max-width: calc(33.33% - 10px);
+        }
+
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+            const postContent = document.querySelector('#post-content');
+            if (!postContent) {
+                console.error('Error: #post-content not found!');
+                return;
+            }
+
+            
+            const images = Array.from(postContent.querySelectorAll('img'));
+
+            if (images.length === 0) {
+                console.log('No images found.');
+                return;
+            }
+
+            console.log(`Found ${images.length} images.`);
+
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+            document.body.appendChild(overlay);
+
+            const overlayImage = document.createElement('img');
+            overlay.appendChild(overlayImage);
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('active');
+            });
+
+            
+            const paragraphs = postContent.querySelectorAll('p');
+
+            paragraphs.forEach((paragraph, pIndex) => {
+                const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+                if (paragraphImages.length === 0) {
+                    return; 
+                }
+
+                console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+                if (paragraphImages.length === 1) {
+                    
+                    const img = paragraphImages[0];
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+                    return; 
+                }
+
+                
+                const imageRow = document.createElement('div');
+                imageRow.classList.add('image-row');
+
+                
+                if (paragraphImages.length === 2) {
+                    imageRow.classList.add('two-columns');
+                } else if (paragraphImages.length === 3) {
+                    imageRow.classList.add('three-columns');
+                } else if (paragraphImages.length === 4) {
+                    imageRow.classList.add('two-rows');
+                } else if (paragraphImages.length === 5) {
+                    imageRow.classList.add('three-two-columns');
+                } else if (paragraphImages.length === 6) {
+                    imageRow.classList.add('three-columns');
+                }
+
+                
+                paragraphImages.forEach((img) => {
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+
+                    
+                    imageRow.appendChild(img);
+                });
+
+                
+                paragraph.innerHTML = '';
+                paragraph.appendChild(imageRow);
+            });
+
+            
+            images.forEach((img, index) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+
+                if (naturalWidth > 200 && naturalHeight > 200) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        overlayImage.src = img.src;
+                        overlay.classList.add('active');
+                    });
+                }
+
+                console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+            });
+        });
+    </script>
 <article>
     <h1>Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件</h1>
     <p id="post-meta">
@@ -114,6 +276,7 @@
 
 
     </div>
+    <div id="post-content">
     <p>事情要从 Checker Plus for Gmail 这个浏览器插件开始讲起，它是一个可以提醒你 Gmail 收到新邮件、并且不需要点开新的网页就能直接查看邮件的插件。</p>
 <p>不知什么时候我安装了这个它，它的图标小小一个，挂在我浏览器的右上角，非常十分之特别好用。因为实在太方便了，导致我后来很多网站都直接用了 Gmail 的邮箱来注册。</p>
 <p>但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。</p>
@@ -150,6 +313,7 @@
 </blockquote>
 <p>想起高中寒暑假回来常被教训“学的东西全还给老师了是吧”。是的。计日以还不过三天还还是两天还的区别，手自笔录，也不过为了还掉还能再找回来。于是以后实在不知道<code>|</code>前加什么内容的文章，一律用<code>手自笔录</code>占位。</p>
 
+    </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
@@ -466,6 +630,8 @@
         }
     })()
 </script>
+
+
 
 </div>
 

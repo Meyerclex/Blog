@@ -1,0 +1,5 @@
+{{- $lang := .Get "lang" | default (.Get 0) -}}
+
+<div class="cols__column" {{ with $lang }} lang="{{ . }}"{{ end }}>
+{{ .Inner | $.Page.RenderString (dict "display" "block") }}
+</div>

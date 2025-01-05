@@ -22,11 +22,13 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.bc386ca095bd355029b76db123575da32bdbb97d2ab3a451835535b67b51dd02314acccd126af20293467619a986fdd08a1b44730eb5e1aab9e2e02fa68c625b.css" integrity="sha512-vDhsoJW9NVApt22xI1ddoyvbuX0qs6RRg1U1tntR3QIxSszNEmryApNGdhmphv3QihtEcw614aq54uAvpoxiWw==" />
+    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
   
 
   
   
+
+
 
 </head>
 <body a="light">
@@ -79,7 +81,167 @@
 </div>
 
                 </div>
+    <style>
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .image-row img {
+            flex-grow: 1;
+            max-width: calc(100% / 3 - 20px);
+            height: auto;
+            object-fit: contain;
+        }
+
+        .image-row.two-columns img {
+            max-width: calc(50% - 10px);
+        }
+
+        .image-row.three-columns img {
+            max-width: calc(33.33% - 10px);
+        }
+
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+            const postContent = document.querySelector('#post-content');
+            if (!postContent) {
+                console.error('Error: #post-content not found!');
+                return;
+            }
+
+            
+            const images = Array.from(postContent.querySelectorAll('img'));
+
+            if (images.length === 0) {
+                console.log('No images found.');
+                return;
+            }
+
+            console.log(`Found ${images.length} images.`);
+
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+            document.body.appendChild(overlay);
+
+            const overlayImage = document.createElement('img');
+            overlay.appendChild(overlayImage);
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('active');
+            });
+
+            
+            const paragraphs = postContent.querySelectorAll('p');
+
+            paragraphs.forEach((paragraph, pIndex) => {
+                const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+                if (paragraphImages.length === 0) {
+                    return; 
+                }
+
+                console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+                if (paragraphImages.length === 1) {
+                    
+                    const img = paragraphImages[0];
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+                    return; 
+                }
+
+                
+                const imageRow = document.createElement('div');
+                imageRow.classList.add('image-row');
+
+                
+                if (paragraphImages.length === 2) {
+                    imageRow.classList.add('two-columns');
+                } else if (paragraphImages.length === 3) {
+                    imageRow.classList.add('three-columns');
+                } else if (paragraphImages.length === 4) {
+                    imageRow.classList.add('two-rows');
+                } else if (paragraphImages.length === 5) {
+                    imageRow.classList.add('three-two-columns');
+                } else if (paragraphImages.length === 6) {
+                    imageRow.classList.add('three-columns');
+                }
+
+                
+                paragraphImages.forEach((img) => {
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+
+                    
+                    imageRow.appendChild(img);
+                });
+
+                
+                paragraph.innerHTML = '';
+                paragraph.appendChild(imageRow);
+            });
+
+            
+            images.forEach((img, index) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+
+                if (naturalWidth > 200 && naturalHeight > 200) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        overlayImage.src = img.src;
+                        overlay.classList.add('active');
+                    });
+                }
+
+                console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+            });
+        });
+    </script>
 <article>
     <h1>读段永别书：第二次爆炸</h1>
     <p id="post-meta">
@@ -99,6 +261,7 @@
         
 
     </div>
+    <div id="post-content">
     <p>上次在博客里发读书音频还是<a href="/posts/audio-1122/">2022年读《楚留香传奇》</a>。最近虽然有想写博客的心情，但暂且没有一个非常想写的主题，于是来完成一下很久之前就说想读的《永别书》。这本书是经由朋友安利，这两年都时常在内心出现而给我内心以震动的长篇小说。它所谈论的主题，谈论的创伤，与道德，诚实，与寂寞，都给了我一种感受：它写出了我没有能力形容出来的事情。在它面前我有一种感受，像还未学会语言的孩子，终于知道了如何用语言去形容自己当初想要求救的事情。</p>
 <p>读的这一段来自小说几近结尾的部分，张亦绚女士写主角贺殷殷人生里的第二次爆炸，关于她的爱人萱瑄告诉她了一件事情：她有撒谎癖。事实上选择这一段是因为她书写的另一个爆炸太过于巨大而沉重，而我还没有办法很好地面对。</p>
 <p>就不放出完整的文章片段了。两段音频都有大量的口胡，请随意听。</p>
@@ -127,6 +290,7 @@
 
 <p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/audio/02.png" alt=""></p>
 
+    </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
@@ -443,6 +607,8 @@
         }
     })()
 </script>
+
+
 
 </div>
 

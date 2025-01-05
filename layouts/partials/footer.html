@@ -1,0 +1,112 @@
+{{ if .Site.Params.theme_config.isShowFooter }}
+{{ with resources.Get "layouts/footer.md" }}
+<!-- 如果有自定义的 footer.md -->
+{{ .Content | markdownify }}
+{{ else }}
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 -{{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }} {{ .Site.Params.footer.since }} - {{ end }} {{ now.Format "2006" }}
+        <a href="https://gregueria.icu/"> {{ $.Site.Title }} </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        {{$scratch := newScratch}}
+        {{ range (where .Site.Pages "Kind" "page") }}
+        {{$scratch.Add "total" .WordCount}}
+        {{ end }}
+        {{$var := $scratch.Get "total"}}
+        {{$var = div $var 100.0}}
+        {{$var = math.Ceil $var}}
+        {{$var = div $var 10.0}}
+        共书写了{{$var}}k字 · 共 {{ len (where .Site.RegularPages "Section" "posts") }}篇文章
+    </section>
+
+    <!-- 计算网站启动以来的天数 -->
+    <script>
+        var s1 = '2021-11-12'; // 设置建站日期
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+</footer>
+{{ end }}
+{{ end }}
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+

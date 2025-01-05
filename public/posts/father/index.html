@@ -21,11 +21,13 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.bc386ca095bd355029b76db123575da32bdbb97d2ab3a451835535b67b51dd02314acccd126af20293467619a986fdd08a1b44730eb5e1aab9e2e02fa68c625b.css" integrity="sha512-vDhsoJW9NVApt22xI1ddoyvbuX0qs6RRg1U1tntR3QIxSszNEmryApNGdhmphv3QihtEcw614aq54uAvpoxiWw==" />
+    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
   
 
   
   
+
+
 
 </head>
 <body a="light">
@@ -78,7 +80,167 @@
 </div>
 
                 </div>
+    <style>
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .image-row img {
+            flex-grow: 1;
+            max-width: calc(100% / 3 - 20px);
+            height: auto;
+            object-fit: contain;
+        }
+
+        .image-row.two-columns img {
+            max-width: calc(50% - 10px);
+        }
+
+        .image-row.three-columns img {
+            max-width: calc(33.33% - 10px);
+        }
+
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+            const postContent = document.querySelector('#post-content');
+            if (!postContent) {
+                console.error('Error: #post-content not found!');
+                return;
+            }
+
+            
+            const images = Array.from(postContent.querySelectorAll('img'));
+
+            if (images.length === 0) {
+                console.log('No images found.');
+                return;
+            }
+
+            console.log(`Found ${images.length} images.`);
+
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+            document.body.appendChild(overlay);
+
+            const overlayImage = document.createElement('img');
+            overlay.appendChild(overlayImage);
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('active');
+            });
+
+            
+            const paragraphs = postContent.querySelectorAll('p');
+
+            paragraphs.forEach((paragraph, pIndex) => {
+                const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+                if (paragraphImages.length === 0) {
+                    return; 
+                }
+
+                console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+                if (paragraphImages.length === 1) {
+                    
+                    const img = paragraphImages[0];
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+                    return; 
+                }
+
+                
+                const imageRow = document.createElement('div');
+                imageRow.classList.add('image-row');
+
+                
+                if (paragraphImages.length === 2) {
+                    imageRow.classList.add('two-columns');
+                } else if (paragraphImages.length === 3) {
+                    imageRow.classList.add('three-columns');
+                } else if (paragraphImages.length === 4) {
+                    imageRow.classList.add('two-rows');
+                } else if (paragraphImages.length === 5) {
+                    imageRow.classList.add('three-two-columns');
+                } else if (paragraphImages.length === 6) {
+                    imageRow.classList.add('three-columns');
+                }
+
+                
+                paragraphImages.forEach((img) => {
+                    const naturalWidth = img.naturalWidth || img.width;
+                    const naturalHeight = img.naturalHeight || img.height;
+
+                    if (naturalWidth > 200 && naturalHeight > 200) {
+                        img.style.cursor = 'zoom-in';
+                        img.addEventListener('click', () => {
+                            overlayImage.src = img.src;
+                            overlay.classList.add('active');
+                        });
+                    }
+
+                    
+                    imageRow.appendChild(img);
+                });
+
+                
+                paragraph.innerHTML = '';
+                paragraph.appendChild(imageRow);
+            });
+
+            
+            images.forEach((img, index) => {
+                const naturalWidth = img.naturalWidth || img.width;
+                const naturalHeight = img.naturalHeight || img.height;
+
+                if (naturalWidth > 200 && naturalHeight > 200) {
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        overlayImage.src = img.src;
+                        overlay.classList.add('active');
+                    });
+                }
+
+                console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+            });
+        });
+    </script>
 <article>
     <h1>我们两个人都没有赢</h1>
     <p id="post-meta">
@@ -113,6 +275,7 @@
 
 
     </div>
+    <div id="post-content">
     <p>兵荒马乱的一天结束，社会新闻的脑内盘旋，我不平静。有许多话需要聊，这需要是迫切的。河北唐山打人、上海金山杀女。我感到愤怒而煎熬。我没有话可以说了。</p>
 <p>过去的那个五月不是没有好事发生，但坏的事实在太坏。我心中有一部分被破坏，我怀疑那是难以修复的。我感到痛苦。这里存在两件事情：首先，我的不自洽让我非常厌恶自己，在解决它以前我无法原谅这个人的懦弱；其次，我原本想说是发生了一些事情，但真相是我得知一些事情——事实与观念本身就牢固地存在着，只是我没有看见。关于家人，关于我父亲，我曾从他那里得到过珍贵的情感支持，但我不觉得以后仍能。我无法接他的电话，难以回复他的信息，几乎不能够听见他的声音，我感到恐惧，同时亦有一种报复心理在作祟。我报复他给我带来的无助。</p>
 <p>但同时我也明白，借助《回归故里》中作者对他父亲的叙述：他的性格，他的观点、立场与他看待我与我的作为的方式，受到他生活的时间与地点的双重决定，一种不利环境持续越久，它们的影响就越大，这种影响越大，就越难以改变。我和我父亲相差四十岁，那真的是非常漫长的一段时间，足以将一个人几次塑造成不同的样子。我明白我父亲身上那种我所排斥和痛苦的东西，是社会强加于他的。</p>
@@ -129,6 +292,7 @@
 <p>我想也许并非我输给了他的立场，而是我和他输给了他的立场。他只是失败了。他只是没有赢过几十年来他的时代与社会区域赋予他的东西。我会感到非常愤怒，只是因为他也没有赢。可一个从来没有赢过的人又有什么资格责怪另一个人没有赢？我不知道。</p>
 <p>这篇博客写了将近四个小时，我写得睡着，次日中午又继续写。仍然心碎，仍然。我试图合理化发生过的一切，令他改变是不可能完成的事，而原谅和释怀又让我觉得很艰难。这一阶段会是我们的历史中尤为晦暗与复杂的时间，我找遍理由拒绝回家面对他，但我想总会有一天我们将这一页不清不楚地揭过，因为这就是父母子女之间一切事件的终点。可我明白我已经不能够信任他。可想而知未来仍然有大量选择是他不希望我做出的，是否我仍需受到他回收走我的家的威胁？是否我还会有第二次在他的语境里无父无母，理应找一辆车去撞死。我仍然需要他，且这里仍有非常多我依赖的情感，但我不再信任他。我觉得我应该自己去有别的家。</p>
 
+    </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
@@ -445,6 +609,8 @@
         }
     })()
 </script>
+
+
 
 </div>
 

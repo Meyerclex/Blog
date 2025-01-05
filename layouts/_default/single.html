@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <div class="post-meta">
+        {{ partial "back_link.html" .}}
+    </div>
+    <article class="post-content">
+        <h1>{{ .Title }}</h1>
+        <p>
+            <time datetime="{{ .Date }}">
+                {{ .Date | time.Format site.Params.theme_config.date_format }}
+            </time>
+        </p>
+        <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+            {{ partial "toc.html" . }}
+        </div>
+        {{ .Content }}
+        <br>
+        <div style="padding-bottom:3px;"></div>
+    </article>
+{{ end }}

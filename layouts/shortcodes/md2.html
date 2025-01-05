@@ -1,0 +1,5 @@
+{{- /*
+Do not write <span></span> in this shortcode.
+Use: <span>{{% md2 %}}...{{% /md2 %}}</span> instead.
+*/ -}}
+{{ .Inner | safeHTML }}

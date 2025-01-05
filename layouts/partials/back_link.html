@@ -1,0 +1,38 @@
+<!--<a id="back-link" href="{{ "" | relURL }}">{{ $.Site.Params.theme_config.back_home_text }}</a>-->
+<!--<script>-->
+<!--    window.addEventListener("load", function() {-->
+<!--        const backLink = document.getElementById("back-link");-->
+
+<!--        // 获取上一页的 URL-->
+<!--        const referrer = document.referrer;-->
+
+<!--        // 获取当前页面的 URL-->
+<!--        const currentURL = window.location.pathname;-->
+
+<!--        // 判断当前页面是否是 All posts 页面 (/posts 或 /posts/)-->
+<!--        if (currentURL === "/posts" || currentURL === "/posts/") {-->
+<!--            backLink.href = "/";  // 如果是 All posts 页面，返回首页-->
+<!--            backLink.textContent = "Back to Home";  // 根据需要修改显示的文字-->
+<!--        }-->
+<!--        // 判断上一页是否为 /posts 或首页-->
+<!--        else if (referrer.includes("/posts")) {-->
+<!--            backLink.href = "/posts";  // 返回到 All posts 页面-->
+<!--            backLink.textContent = "Back to All Posts";  // 根据需要修改显示的文字-->
+<!--        } else if (referrer === window.location.origin || referrer === "") {-->
+<!--            backLink.href = "/";  // 返回到首页-->
+<!--            backLink.textContent = "Back to Home";  // 根据需要修改显示的文字-->
+<!--        } else {-->
+<!--            backLink.href = referrer;  // 如果无法判断，回到上一页-->
+<!--            backLink.textContent = "Back";  // 你可以根据需要修改-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </span>
+</div>
