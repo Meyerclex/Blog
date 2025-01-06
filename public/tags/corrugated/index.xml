@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Corrugated on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/corrugated/</link>
+    <link>http://localhost:1313/tags/corrugated/</link>
     <description>Recent content in Corrugated on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/corrugated/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/corrugated/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于RSS订阅二三事</title>
-      <link>https://gregueria.icu/posts/all-about-rss/</link>
+      <link>http://localhost:1313/posts/all-about-rss/</link>
       <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/all-about-rss/</guid>
+      <guid>http://localhost:1313/posts/all-about-rss/</guid>
       <description>&lt;p&gt;在我的网络生活里RSS订阅是一个蛮频繁使用的东西，所以来写一篇关于RSS订阅的内容。&lt;/p&gt;&#xA;&lt;h2 id=&#34;我们为什么要用rss阅读&#34;&gt;我们为什么要用RSS阅读？&lt;/h2&gt;&#xA;&lt;p&gt;首先，关于“什么是RSS”这个问题，如果读者的了解比较空白，这篇文章讲得比我好：&lt;a href=&#34;https://sspai.com/post/56198&#34;&gt;RSS：高效率的阅读方式&lt;/a&gt;。推荐阅读。&lt;/p&gt;</description>
     </item>
     <item>
       <title>而为什么我选择了月经盘</title>
-      <link>https://gregueria.icu/posts/disc/</link>
+      <link>http://localhost:1313/posts/disc/</link>
       <pubDate>Sat, 16 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/disc/</guid>
+      <guid>http://localhost:1313/posts/disc/</guid>
       <description>&lt;p&gt;我常用的棉条牌子是Oddsome，去年双十一的时候通过优惠，175元买了10盒指推式的，共150支棉条，1.16元/支，用了一年还剩两盒左右，照理今年双十一可以开始囤新的一年的量了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于我知道的Steam Deck的一切</title>
-      <link>https://gregueria.icu/posts/all-about-steam-deck/</link>
+      <link>http://localhost:1313/posts/all-about-steam-deck/</link>
       <pubDate>Wed, 29 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/all-about-steam-deck/</guid>
+      <guid>http://localhost:1313/posts/all-about-steam-deck/</guid>
       <description>&lt;p&gt;Steam Deck是一款2022年发售的便携式掌上游戏机。2023年的七月份，我开始感觉我的笔记本打游戏有点吃力，且至今未排查出究竟是充电器的问题还是电脑应该清灰了，常常打开性能要求稍高的游戏没几分钟就会笔记本风扇狂转且关机，但我并没有换电脑的打算：毕竟我大部分的使用场景对性能的要求不高，它只是不适合再用来打游戏了，但是刷网页和打字还是可以的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我所拥有的相对丰饶的实体生活</title>
-      <link>https://gregueria.icu/posts/messy-stuff/</link>
+      <link>http://localhost:1313/posts/messy-stuff/</link>
       <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/messy-stuff/</guid>
+      <guid>http://localhost:1313/posts/messy-stuff/</guid>
       <description>&lt;p&gt;我正在整理自己的物品，最近看别人的年度购物总结，于是心血来潮想自己也写一个。我的可支配资金本身就不多，物欲与所拥有的物品也不多，总结的自然不是某一年或某一季度，总结的是2019年至今我所拥有的物品。&lt;/p&gt;</description>
     </item>
   </channel>

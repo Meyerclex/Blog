@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fragment on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/fragment/</link>
+    <link>http://localhost:1313/tags/fragment/</link>
     <description>Recent content in Fragment on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 11 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/fragment/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/fragment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fanfic Elysium：The Final Cut</title>
-      <link>https://gregueria.icu/posts/fetfc/</link>
+      <link>http://localhost:1313/posts/fetfc/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/fetfc/</guid>
+      <guid>http://localhost:1313/posts/fetfc/</guid>
       <description>&lt;p&gt;&lt;strong&gt;本篇为纯同人女内容，谈论了大量&lt;mark&gt;我CP的NSFW内容&lt;/mark&gt;。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;我写得很幸福，所以一定要发，但也真的劝大家可以不用看。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;《无间道》系列的一般路过观众看了心情可能会比较复杂，但我很坏，我是不会在乎的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>小说大事记事簿</title>
-      <link>https://gregueria.icu/posts/aboutfic/</link>
+      <link>http://localhost:1313/posts/aboutfic/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/aboutfic/</guid>
+      <guid>http://localhost:1313/posts/aboutfic/</guid>
       <description>&lt;style&gt;&#xD;&#xA;    .image-container {&#xD;&#xA;        display: flex;&#xD;&#xA;    }&#xD;&#xA;    .image-container .image-wrapper {&#xD;&#xA;        width: 50%;&#xD;&#xA;        padding: 5px; /* 调整间隔大小 */&#xD;&#xA;        box-sizing: border-box; /* 保证内边距不会增加元素宽度 */&#xD;&#xA;        text-align: center;&#xD;&#xA;    }&#xD;&#xA;    .image-container .image-wrapper img {&#xD;&#xA;        max-width: 100%;&#xD;&#xA;    }&#xD;&#xA;    .image-container .image-wrapper p {&#xD;&#xA;        margin-top: -10px; /* 调整文字与图片的距离 */&#xD;&#xA;        font-size: 15px; /* 调整文字字号 */&#xD;&#xA;    }&#xD;&#xA;&lt;/style&gt;&#xD;&#xA;&lt;p&gt;来更新两件关于小说的大事。&lt;/p&gt;</description>
     </item>
     <item>
       <title>小鸟半月刊</title>
-      <link>https://gregueria.icu/posts/bird-valley/</link>
+      <link>http://localhost:1313/posts/bird-valley/</link>
       <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/bird-valley/</guid>
+      <guid>http://localhost:1313/posts/bird-valley/</guid>
       <description>&lt;style&gt;&#xD;&#xA;blockquote, blockquote.twitter-tweet {&#xD;&#xA;    border-left: var(--primary-alt) 5px solid;&#xD;&#xA;    margin: 0.5rem 0;&#xD;&#xA;    margin-bottom: 1rem;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&lt;/style&gt;&#xD;&#xA;&lt;p&gt;现在为你推送小鸟半月刊，亦即社交网络碎片之四月中旬来看看她都说了些什么。四月份基于这些与那些的原因，我将空前忙碌，因此为了避免月末忙里偷闲写月记，我决定月中先忙里偷闲写完它。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《肉身神像》的长评、Repo、Q&amp;A、段落Reaction、导言、安利</title>
-      <link>https://gregueria.icu/posts/repo/</link>
+      <link>http://localhost:1313/posts/repo/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/repo/</guid>
+      <guid>http://localhost:1313/posts/repo/</guid>
       <description>&lt;p&gt;耗时两三天写完了《纸钞屋》的新同人：&lt;a href=&#34;https://written.gregueria.icu/posts/teraph/&#34;&gt;《肉身神像》&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;写完觉得很喜欢。但因为实在没有人看，并且我在这 cp 里看不到什么希望了，亲自下厨给自己吃得不到反馈那是万万不行的，所以我开始在文档里给自己写 Q&amp;amp;A、读后感、Repo、段落 reaction、导言、概括、安利和并且还写得很疯癫，取这个标题显得我们圈很热闹的样子，但实际上 Q&amp;amp;A 和 Repo 共计 2500 字全是我一个人写的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《纸钞屋》：中国科学家成功破译深夜惨叫声50枚</title>
-      <link>https://gregueria.icu/posts/lcdpfragment/</link>
+      <link>http://localhost:1313/posts/lcdpfragment/</link>
       <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/lcdpfragment/</guid>
+      <guid>http://localhost:1313/posts/lcdpfragment/</guid>
       <description>&lt;h2 id=&#34;写在前面&#34;&gt;写在前面&lt;/h2&gt;&#xA;&lt;p&gt;三月份开始看《纸钞屋(La Casa de Papel)》，很快看完，上微博哀嚎两周，惨叫声不绝于耳终于引来了：１位同担，以及１位愿意吃我安利的亲友。结果恰逢这天微博被禁言，恐不日将喜迎炸号，继上一轮船的胡言乱语后终于攒够一圈能发碎片分类的东西，于是拍拍手决定把 SNS 上为 Lcdp（主要是为我 CP）发出的惨叫声收集一下凑篇博客。&lt;/p&gt;</description>
     </item>
   </channel>

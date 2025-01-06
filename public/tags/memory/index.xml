@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memory on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/memory/</link>
+    <link>http://localhost:1313/tags/memory/</link>
     <description>Recent content in Memory on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/memory/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/memory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>娇妹与窃贼</title>
-      <link>https://gregueria.icu/posts/thewoman/</link>
+      <link>http://localhost:1313/posts/thewoman/</link>
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/thewoman/</guid>
+      <guid>http://localhost:1313/posts/thewoman/</guid>
       <description>&lt;p&gt;吃完饭后，我帮她擦手。她的指甲硬而发黑，右手无名指上戴着一枚并不光亮的金戒指，是她七十一二岁时说想要一个金戒指，她认为人死后如果手上没有戒指，在地下要给人洗碗洗筷做牛做马，后来她其中一个女儿给她买了一个。&lt;/p&gt;</description>
     </item>
     <item>
       <title>旧名字的故事</title>
-      <link>https://gregueria.icu/posts/thename/</link>
+      <link>http://localhost:1313/posts/thename/</link>
       <pubDate>Sat, 21 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/thename/</guid>
+      <guid>http://localhost:1313/posts/thename/</guid>
       <description>&lt;p&gt;下午我和姑丈打了个电话，实际上是我哥哥打给他，而我在旁边拜一下年。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;我：姑丈，是我——新年好！&lt;/p&gt;&#xA;&lt;p&gt;姑丈：新年好！&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;然后就冷场了。我也不知道说什么，他也不知道说什么，冷场得太惨烈以至于有点搞笑。而后我哥哥救了一下场，他确认了一下今年我多少岁，读什么年级，接着我洗澡遁了，未有然后。&lt;/p&gt;</description>
     </item>
   </channel>
