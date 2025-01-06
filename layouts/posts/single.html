@@ -2,7 +2,7 @@
 
 <article>
     <h1>{{ .Title }}</h1>
-    <p id="post-meta">
+    <div id="post-meta">
         <time datetime="{{ .Date }}">
             {{ .Date | time.Format site.Params.theme_config.date_format }}
             <span> ‧ {{ .WordCount }}</span>
@@ -14,7 +14,10 @@
 <!--                    {{ end }}-->
 <!--            {{ end }}-->
         </time>
-    </p>
+        <blockquote id="post-description">
+            {{ .Description }}
+        </blockquote>
+    </div>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         {{ partial "toc.html" . }}
     </div>

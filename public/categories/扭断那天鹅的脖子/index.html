@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,8 +19,9 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
+    <link rel="stylesheet" href="/css/main.1de337e055284ddca21d50bec66ff30679c5f8551163b35d48d8be4439dff87f4b2364bf93c7bec2ee5cdf8268e13f937df32328c95fc816440bc702605c98b3.css" integrity="sha512-HeM34FUoTdyiHVC&#43;xm/zBnnF&#43;FURY7NdSNi&#43;RDnf&#43;H9LI2S/k8e&#43;wu5c34Jo4T&#43;TffMjKMlfyBZEC8cCYFyYsw==" />
   
+
 
   
   <style>
@@ -189,6 +190,7 @@
   
 
 
+
 </head>
 <body a="light">
         <main class="page-content" aria-label="Content">
@@ -222,6 +224,58 @@
 
 
 
+<div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+<script>
+  
+  let currentTheme = document.body.getAttribute('a') || 'auto';
+
+  
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  } else if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  
+  const themeToggle = document.getElementById('theme-toggle');
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'auto') {
+      return;  
+    }
+
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+      localStorage.setItem('theme', 'dark'); 
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+      localStorage.setItem('theme', 'light'); 
+    }
+
+    
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    document.body.setAttribute('a', savedTheme);
+    document.body.classList.add(savedTheme + '-mode');
+  }
+</script>
 <div id="header-post">
   <span id="nav">
     <ul>
@@ -239,6 +293,8 @@
     </ul>
   </span>
 </div>
+
+
 
 
 <h1>扭断那天鹅的脖子</h1>
@@ -503,6 +559,7 @@
 
 
                 
+
 
 <script>
     ;(function () {

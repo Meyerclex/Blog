@@ -4,9 +4,10 @@
 @import url('https://static.zeoseven.com/zsft/79/main/result.css');
 
 body {
-  font-family: "Clear Han Serif";
+  font-family: "Clear Han Serif", sans-serif;
   font-weight: normal;
 }
+
 
 
 /* Define the colors */
@@ -17,89 +18,233 @@ $color-vermilion: #f4442e;
 $color-vermilion2: #d05b58;
 $color-pink: #efb8ba;
 $color-pink2: #e79598;
-$color-pink3: #db6165;
 $color-pink4: #e69494;
-$color-mark: #b2d8d8;
-$color-mark-dark: #83a598;
-$color-blockquote: #466060;
+
 $link-hover: #FFD09B;
 
 
 // -------------- THEME SWITCHER -------------- //
-@mixin theme($--bg-color, $--primary-text-color, $--secondary-text-color, $--link-color, $--visited-link-color, $--highlight) {
-  background-color: $--bg-color;
+// 颜色变量定义
 
-  color: $--primary-text-color;
+//define colors - light and night
 
+$color-mark-dark: #83a598;
+
+
+// Dark theme colors
+$bg-dark: #716457;
+$text-dark: #F8F4E1;
+$secondary-text-dark: rgba(241, 231, 209, 0.82);
+$link-dark: #B6CBBD;
+$visited-link-dark: #a359e9;
+$color-blockquote-dark: #b5b5b5;
+$bg-select-dark: rgba(152, 152, 152, 0.53);
+$color-bg-code-dark: #466060;
+$color-point-dark: #819c81;
+$w-dark: #fff;
+$border-color-dark: rgba(251, 230, 189, 0.77);
+
+// Light theme colors
+$bg-light: #f9f7f1;
+$text-light: #38383c;
+$secondary-text-light: #666666;
+$link-light: #1a89ae;
+$visited-link-light: #921292;
+$color-blockquote-light: #466060;
+$bg-select-light: rgba(255, 239, 218, 0.6);
+$color-bg-code-light: rgba(94, 89, 89, 0.13);
+$color-point-light: #D45B587F;
+$w-light: transparent;
+$border-color-light: #38383c;
+$color-mark-light: #b2d8d8;
+
+// 主题样式定义
+@mixin theme($bg-color, $w-color, $primary-text-color, $secondary-text-color, $link-color, $visited-link-color,  $blockquote-color, $color-bg-code, $bg-select,$color-point,$border-color,$color-mark) {
+  background-color: $bg-color;
+  color: $primary-text-color;
   a {
-    color: $--link-color;
-
+    color: $link-color;
     &:visited {
-      color: $--link-color;
+      color: $link-color;
     }
   }
 
   details {
-    //border-left: 2px solid $--primary-text-color;
+    //border-left: 2px solid $primary-text-color;
   }
 
   details summary {
-    color: $--primary-text-color;
+    color: $primary-text-color;
   }
 
   details[open] summary {
-    border-bottom: 1px solid $--primary-text-color;
+    border-bottom: 1px solid $primary-text-color;
   }
 
+  // 改动：确保 pre 和 code 的背景颜色应用
   pre {
-    background: $--bg-color;
+    background-color: $color-bg-code; // 确保背景颜色被应用
   }
 
   code:not(pre > code) {
-    background-color: $--primary-text-color;
-    color: $--bg-color;
+    background-color: $color-bg-code; // 确保背景颜色被应用
+    color: $primary-text-color;
   }
 
   *:target {
-    background: $--highlight;
-    color: $--primary-text-color;
+    background: transparent no-repeat;
+    color: $primary-text-color;
   }
 
   table,
   th,
   td {
-    border: thin solid $--primary-text-color;
+    border: thin solid $primary-text-color;
   }
 
   .toc {
-    border: thin solid $--primary-text-color;
+    border: thin solid $primary-text-color;
     padding: 1rem;
   }
 
   figcaption {
-    color: $--secondary-text-color;
+    color: $secondary-text-color;
+  }
+
+  ::selection {
+    background-color: $bg-select;
+    /* 设置选中的背景颜色 */
   }
 
   blockquote {
-    border-left: 2px solid $color-blockquote;
-    color: $--secondary-text-color;
+    border-left: 2px solid $blockquote-color;
+    color: $secondary-text-color;
   }
+
+
+  mark {
+    /* 移除默认的黄色背景 */
+    background: linear-gradient(transparent calc(100% - 0.5em),
+            $color-mark 0.5em) no-repeat;
+    background-size: 100% 100%;
+    color: inherit;
+    /* 文字颜色继承父元素 */
+    padding: 0 2px;
+  }
+
+  #header-post #nav a {
+    color: $primary-text-color;
+  }
+  #header-post ul li {
+    box-shadow: 2px 0 0 0 $primary-text-color;
+  }
+  .note__item {
+    box-shadow: 4px 4px 0 0 $color-point;
+  }
+  .note__item {
+    border: 2px solid $border-color;
+  }
+
+  .note__day {
+    border-bottom: 2px solid $border-color;
+  }
+  ul li:before {
+    color: $primary-text-color;
+  }
+
+  /* 主题切换按钮样式 */
+  .theme-toggle {
+    position: fixed;
+    top: 10px;     /* 固定在页面顶部 */
+    right: 10px;   /* 固定在页面右边 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;   /* 控制按钮的宽度 */
+    height: 10px;  /* 控制按钮的高度 */
+    cursor: pointer;
+    z-index: 1000; /* 确保按钮位于页面最上层 */
+  }
+
+  #light-btn, #dark-btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transition: all 0.3s ease; /* 平滑过渡 */
+  }
+
+  /* Light 模式下按钮样式 */
+  #light-btn {
+    background-color: #F8F4E1;
+    border: 2px solid #38383c; /* Dark 模式时的边框颜色 */
+  }
+
+  /* Dark 模式下按钮样式 */
+  #dark-btn {
+    background-color: #38383c;
+    display: none; /* 初始隐藏 */
+    border: 2px solid #F8F4E1; /* Light 模式时的边框颜色 */
+  }
+
+  /* 切换到 dark 模式时，切换按钮的显示状态 */
+  body.dark-mode #light-btn {
+    display: none;
+  }
+
+  body.dark-mode #dark-btn {
+    display: block;
+  }
+
+  /* 按钮的鼠标悬浮效果 */
+  #light-btn:hover, #dark-btn:hover {
+    background-color: #ecd0af; /* Light 模式下按钮悬浮时的背景色 */
+    border-color: #594c4c; /* Dark 模式下按钮悬浮时的边框颜色 */
+  }
+
+  /* Dark 模式下的按钮悬浮效果 */
+  body.dark-mode #dark-btn:hover {
+    background-color: #5a5a5a; /* Dark 模式下按钮悬浮时的背景色 */
+    border-color: #f1f1f1; /* Light 模式下按钮悬浮时的边框颜色 */
+  }
+
+
+
 }
 
+
+// Dark theme appearance
 @mixin dark-appearance {
-  @include theme(#282828, #ebdbb2, #000000, #0071bc, #a359e9, #FFFF00);
+  @include theme($bg-dark, $w-dark, $text-dark, $secondary-text-dark, $link-dark, $visited-link-dark,  $color-blockquote-dark, $color-bg-code-dark,$bg-select-dark,$color-point-dark,$border-color-dark,$color-mark-dark);
 }
 
+// Light theme appearance
 @mixin light-appearance {
-  @include theme(#f9f7f1, #38383c, #666666, #1a89ae, #921292, #FFFF00);
+  @include theme($bg-light, $w-light, $text-light, $secondary-text-light, $link-light, $visited-link-light,  $color-blockquote-light, $color-bg-code-light, $bg-select-light,$color-point-light,$border-color-light,$color-mark-light);
 }
 
+// 应用主题样式
 body[a="dark"] {
+  [data-waline] p {
+    color: $text-dark!important;
+  }
+  .wl-card span.wl-nick {
+    color: $text-dark;
+  }
+  background-color: #6d695c;
+  background-image:
+          repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+          repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+          linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+          linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)) !important;
+  background-size: 70px 120px;
   @include dark-appearance;
 }
 
 body[a="light"] {
   @include light-appearance;
+  background-image: linear-gradient(#e4e4e4 1px, transparent 1px),
+  linear-gradient(90deg, #e4e4e4 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px, 2px 2px, 2px 2px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -138,17 +283,13 @@ body {
 }
 
 body {
-  background-image: linear-gradient(#e4e4e4 1px, transparent 1px),
-  linear-gradient(90deg, #e4e4e4 1px, transparent 1px);
-  background-size: 10px 10px, 10px 10px, 2px 2px, 2px 2px;
 }
 
 .note__item {
   margin-top: 20px;
   width: 95%;
-  border: 2px solid #111;
+  //border: 2px solid #111;
   position: relative;
-  box-shadow: 4px 4px 0 0 rgba(212, 91, 88, 0.5);
   /* 可根据需要调整颜色 */
   margin-bottom: 15px;
 }
@@ -156,7 +297,7 @@ body {
 .note__day {
   padding: 5px 5px 2px;
   font: 90% "Huiwen-mincho", cursive;
-  border-bottom: 2px solid #111;
+  //border-bottom: 2px solid #111;
 }
 
 .note__list {
@@ -167,28 +308,13 @@ body {
 
 //
 
-mark {
-  background: none;
-  /* 移除默认的黄色背景 */
-  background-image: linear-gradient(transparent calc(100% - 0.5em),
-          $color-mark 0.5em);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  color: inherit;
-  /* 文字颜色继承父元素 */
-  padding: 0 2px;
-}
-
-
-//
-
 h1 {
-  font-family: "Huiwen-mincho";
-  margin-bottom: 0px;
+  font-family: "Huiwen-mincho", sans-serif;
+  margin-bottom: 0;
 }
 
 article time {
-  font-family: "Huiwen-mincho";
+  font-family: "Huiwen-mincho", sans-serif;
   font-weight: normal;
 }
 
@@ -286,10 +412,16 @@ details {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   unicode-bidi: isolate;
 
+}
+
+.w {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 
 details summary {
@@ -308,22 +440,22 @@ details[open] summary {
 }
 
 #post-meta  {
-  margin: 0rem 0 1rem 0.3rem;
+  margin: 0 0 0.3rem 0.3rem;
   //padding: 0rem 0 0.1rem 0;
 }
 
-.w {
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+#post-description {
+  font-size: 14px;
+  margin: 5px 0px;
 }
+
 
 .toc {
   padding: 1rem;
 }
 
 .site-footer {
-  font-family: "Huiwen-mincho";
+  font-family: "Huiwen-mincho", sans-serif;
   display: flex;
   justify-content: center;
   /* 将内容水平居中 */
@@ -346,7 +478,7 @@ img.float-img35 {
   width: 30%;
   margin-right: 1em !important;
   /* 强制覆盖 */
-  margin-bottom: 0em !important;
+  margin-bottom: 0 !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* 添加阴影 */
   border-radius: 8px;
@@ -393,7 +525,7 @@ article img.float-img50 {
   .main-container {
     flex-direction: column;
     /* 改为垂直排列 */
-    gap: 0px;
+    gap: 0;
   }
 
   .menu-float {
@@ -418,16 +550,6 @@ article img.float-img50 {
   }
 }
 
-
-@media (prefers-color-scheme: light) {
-  body[a="light"] *:target {
-    background: transparent;
-    border-radius: 5px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    padding: 0 2px;
-  }
-}
 
 article hr {
   width: 33%;
@@ -454,7 +576,7 @@ ul {
 }
 
 li {
-  padding: 0rem 0.5rem;
+  padding: 0 0.5rem;
   /* 可选：调整列表项的间距 */
 }
 
@@ -464,7 +586,6 @@ li {
 }
 
 ul li:before {
-  color: #000;
   content: "·";
   font-weight: bold;
   margin-right: 3px;
@@ -546,7 +667,6 @@ ul p {
 .polaroid-caption {
   text-align: center;
   color: black;
-  font-size: 1.5rem;
   padding-top: 5px;
   font-size: 12px;
 }
@@ -558,20 +678,9 @@ ul p {
 }
 
 body[a="light"] code:not(pre>code) {
-  background: #66666622;
   border-radius: 4px;
   padding: 0 4px;
-  color: #212121;
-  font-family: "Clear Han Serif";
-}
-
-body[a="light"] pre {
-  background: #ebe5d2d9;
-}
-
-::selection {
-  background-color: rgba(251, 230, 189, 0.6);
-  /* 设置选中的背景颜色 */
+  font-family: "Clear Han Serif", sans-serif;
 }
 
 /* 整个滚动条 */
@@ -643,18 +752,17 @@ body[a="light"] pre {
   display: inline-block;
   margin-right: 15px;
   vertical-align: middle;
-  box-shadow: 2px 0px 0 0 rgba(74, 60, 53, 0.8);
+  box-shadow: 2px 0 0 0 rgba(74, 60, 53, 0.8);
 }
 
 /* 导航栏链接样式 */
 #header-post #nav a {
-  color: rgb(74, 60, 53);
   letter-spacing: .01em;
   font-weight: 300;
   font-style: normal;
   font-size: 1rem;
   text-decoration: none;
-  font-family: "Huiwen-mincho";
+  font-family: "Huiwen-mincho", sans-serif;
 }
 
 #header-post #nav a:hover {
@@ -673,7 +781,7 @@ body[a="light"] pre {
 }
 
 #nav ul li {
-  padding: 0rem 0.5rem 0 0;
+  padding: 0 0.5rem 0 0;
 }
 
 
@@ -687,9 +795,8 @@ body[a="light"] pre {
 .header-image img {
   flex-shrink: 0;
   /* 防止图片被压缩 */
-  margin-right: 0px;
   /* 图片与标题的间距 */
-  margin: 0px !important;
+  margin: 0 !important;
 }
 
 .header-content {
@@ -722,3 +829,7 @@ del {
     background-size: 110% 110%;
   }
 }
+
+// comment 评论区 waline
+
+

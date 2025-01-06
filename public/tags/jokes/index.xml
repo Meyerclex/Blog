@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jokes on 再會，謝謝所有的魚</title>
-    <link>http://localhost:1313/tags/jokes/</link>
+    <link>https://gregueria.icu/tags/jokes/</link>
     <description>Recent content in Jokes on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/jokes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gregueria.icu/tags/jokes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>人生差生的八月份怎么过</title>
-      <link>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</link>
+      <link>https://gregueria.icu/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</guid>
-      <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;又名《反派假期指南》。先下发给各位反派，各自学习。&lt;/i&gt;&#xA;&lt;/center&gt;&#xA;&lt;/blockquote&gt;</description>
+      <guid>https://gregueria.icu/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</guid>
+      <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;又名《反派假期指南》。先下发给各位反派，各自学习。&lt;/i&gt;&#xD;&#xA;&lt;/center&gt;&#xD;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>
 </rss>

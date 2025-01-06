@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,8 +22,9 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
+    <link rel="stylesheet" href="/css/main.1de337e055284ddca21d50bec66ff30679c5f8551163b35d48d8be4439dff87f4b2364bf93c7bec2ee5cdf8268e13f937df32328c95fc816440bc702605c98b3.css" integrity="sha512-HeM34FUoTdyiHVC&#43;xm/zBnnF&#43;FURY7NdSNi&#43;RDnf&#43;H9LI2S/k8e&#43;wu5c34Jo4T&#43;TffMjKMlfyBZEC8cCYFyYsw==" />
   
+
 
   
   <style>
@@ -192,6 +193,7 @@
   
 
 
+
 </head>
 <body a="light">
         <main class="page-content" aria-label="Content">
@@ -226,6 +228,58 @@
 
 
 
+<div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+<script>
+  
+  let currentTheme = document.body.getAttribute('a') || 'auto';
+
+  
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  } else if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  
+  const themeToggle = document.getElementById('theme-toggle');
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'auto') {
+      return;  
+    }
+
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+      localStorage.setItem('theme', 'dark'); 
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+      localStorage.setItem('theme', 'light'); 
+    }
+
+    
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    document.body.setAttribute('a', savedTheme);
+    document.body.classList.add(savedTheme + '-mode');
+  }
+</script>
 <div id="header-post">
   <span id="nav">
     <ul>
@@ -244,11 +298,13 @@
   </span>
 </div>
 
+
+
                 </div>
 
 <article>
     <h1>博客一周年，谢谢所有的鱼！</h1>
-    <p id="post-meta">
+    <div id="post-meta">
         <time datetime="2022-11-12 00:00:00 &#43;0000 UTC">
             2022-11-12
             <span> ‧ 805</span>
@@ -260,7 +316,10 @@
 
 
         </time>
-    </p>
+        <blockquote id="post-description">
+            我想我是坦诚的静观，任何人可以翻看我的任何一页。
+        </blockquote>
+    </div>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         
     <div class="post-toc" id="post-toc">
@@ -295,10 +354,10 @@
 </article>
     <div class="pre-next">
         
-            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2022-11-07-%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/">&lt;&lt; 多情剑客无情剑</a>
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/2022-11-07-%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/">&lt;&lt; 多情剑客无情剑</a>
         
         
-            <a class="pre-next-btn bg" href="http://localhost:1313/posts/audio-1122/">读段楚传玩儿：清风明月 >></a>
+            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/audio-1122/">读段楚传玩儿：清风明月 >></a>
         
     </div>
     <br>
@@ -310,27 +369,63 @@
     <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
     <div id="comments" class="comments">
         <style>
-    .wl-addr {
-        display: none !important;
-        color: transparent !important;
+    .wl-card {
+        border: 0px solid #eee;
     }
-    .wl-content .vemoji,
-    .wl-content .wl-emoji {
-        display: inline-block;
-        vertical-align: baseline;
-        height: 3.4em !important;
-        margin: -0.125em 0.25em;
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
     }
-
-    img.wl-emoji,
-    img.vemoji {
-        vertical-align: sub;
-        transition: ease-out 0.6s;
+    .wl-card-item {
+        position: relative;
+        display: flex;
+         padding: 0.2em;
     }
 
-    img.wl-emoji:hover,
-    img.vemoji:hover {
-        transform: scale(1.8) !important;
+        .wl-addr {
+            display: none !important;
+            color: transparent !important;
+        }
+        .wl-content .vemoji,
+        .wl-content .wl-emoji {
+            display: inline-block;
+            vertical-align: baseline;
+            height: 3.4em !important;
+            margin: -0.125em 0.25em;
+        }
+
+        img.wl-emoji,
+        img.vemoji {
+            vertical-align: sub;
+            transition: ease-out 0.6s;
+        }
+
+        img.wl-emoji:hover,
+        img.vemoji:hover {
+            transform: scale(1.8) !important;
+        }
+        .wl-header {
+            display: flex
+        ;
+            overflow: hidden;
+            padding: 0 4px;
+            border-bottom: 0px dashed var(--waline-border-color);
+            border-top-left-radius: 0em;
+            border-top-right-radius: 0em;
+        }
+        .wl-btn.primary {
+            border-color: transparent !important;
+            background:  SteelBlue ;
+            color: white ;
+        }
+        @media (max-width: 580px) {
+            .wl-header-item:not(:last-child) {
+                border-bottom: 0px dashed var(--waline-border-color);
+            }
+        }
+        :root {
+            --waline-theme-color: SteelBlue;
+            --waline-active-color: SteelBlue;
+        }
     }
 </style>
 <div id="waline"></div>
@@ -529,7 +624,12 @@
         var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerHTML = number_of_days;
     </script>
+
 </footer>
+
+
+
+
 
 
 

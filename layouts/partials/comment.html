@@ -1,25 +1,61 @@
 <style>
-    .wl-addr {
-        display: none !important;
-        color: transparent !important;
+    .wl-card {
+        border: 0px solid #eee;
     }
-    .wl-content .vemoji,
-    .wl-content .wl-emoji {
-        display: inline-block;
-        vertical-align: baseline;
-        height: 3.4em !important;
-        margin: -0.125em 0.25em;
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
     }
-
-    img.wl-emoji,
-    img.vemoji {
-        vertical-align: sub;
-        transition: ease-out 0.6s;
+    .wl-card-item {
+        position: relative;
+        display: flex;
+         padding: 0.2em;
     }
 
-    img.wl-emoji:hover,
-    img.vemoji:hover {
-        transform: scale(1.8) !important;
+        .wl-addr {
+            display: none !important;
+            color: transparent !important;
+        }
+        .wl-content .vemoji,
+        .wl-content .wl-emoji {
+            display: inline-block;
+            vertical-align: baseline;
+            height: 3.4em !important;
+            margin: -0.125em 0.25em;
+        }
+
+        img.wl-emoji,
+        img.vemoji {
+            vertical-align: sub;
+            transition: ease-out 0.6s;
+        }
+
+        img.wl-emoji:hover,
+        img.vemoji:hover {
+            transform: scale(1.8) !important;
+        }
+        .wl-header {
+            display: flex
+        ;
+            overflow: hidden;
+            padding: 0 4px;
+            border-bottom: 0px dashed var(--waline-border-color);
+            border-top-left-radius: 0em;
+            border-top-right-radius: 0em;
+        }
+        .wl-btn.primary {
+            border-color: transparent !important;
+            background:  SteelBlue ;
+            color: white ;
+        }
+        @media (max-width: 580px) {
+            .wl-header-item:not(:last-child) {
+                border-bottom: 0px dashed var(--waline-border-color);
+            }
+        }
+        :root {
+            --waline-theme-color: SteelBlue;
+            --waline-active-color: SteelBlue;
+        }
     }
 </style>
 <div id="waline"></div>

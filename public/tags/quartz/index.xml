@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quartz on 再會，謝謝所有的魚</title>
-    <link>http://localhost:1313/tags/quartz/</link>
+    <link>https://gregueria.icu/tags/quartz/</link>
     <description>Recent content in Quartz on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 20 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/quartz/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gregueria.icu/tags/quartz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quartz &amp; Obsidian | 总之又有新文具</title>
-      <link>http://localhost:1313/posts/quartz/</link>
+      <link>https://gregueria.icu/posts/quartz/</link>
       <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/quartz/</guid>
+      <guid>https://gregueria.icu/posts/quartz/</guid>
       <description>&lt;p&gt;先放上成果：&lt;a href=&#34;https://c.gregueria.icu&#34;&gt;Lyin&amp;rsquo;s Room&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;前段时间在象上刷到&lt;a href=&#34;https://github.com/jackyzha0/quartz&#34;&gt;Quartz&lt;/a&gt;，算是一个支持Obsidian双链玩法的博客？点了收藏之后今天适逢周六，刚好呢又到了晚上十一点（人家的一个不干正事又不打算睡觉的时间），虽然呢也没有什么笔记要整理，但是就是看到漂亮的东西想试一试。搭建并不算难，而且很漂亮！于是来写一下笔记记录过程。&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;第一步：BGM - In Motion启动！Let the hacking begin！&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;首先来讲一下我对Quartz的使用感受。它的框架也是基于Hugo啦，这直接降低了我的心理负担，因为算是一个很熟悉的东西。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -27,6 +27,58 @@
 <!--        }-->
 <!--    });-->
 <!--</script>-->
+<div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+<script>
+  // 获取当前主题配置（auto, light, dark）
+  let currentTheme = document.body.getAttribute('a') || 'auto';
+
+  // 初始化状态：如果是 dark 或 light 模式，设置主题
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  } else if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  // 获取按钮元素
+  const themeToggle = document.getElementById('theme-toggle');
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
+
+  // 切换主题的函数
+  const toggleTheme = () => {
+    if (currentTheme === 'auto') {
+      return;  // 如果当前主题是 auto，则不做任何操作
+    }
+
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+      localStorage.setItem('theme', 'dark'); // 保存选择
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+      localStorage.setItem('theme', 'light'); // 保存选择
+    }
+
+    // 更新主题配置
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  // 绑定点击事件来切换主题
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // 根据 localStorage 中的值应用保存的主题设置
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    document.body.setAttribute('a', savedTheme);
+    document.body.classList.add(savedTheme + '-mode');
+  }
+</script>
 <div id="header-post">
   <span id="nav">
     <ul>
@@ -36,3 +88,5 @@
     </ul>
   </span>
 </div>
+
+

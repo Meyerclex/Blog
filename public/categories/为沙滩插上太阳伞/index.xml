@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>为沙滩插上太阳伞 on 再會，謝謝所有的魚</title>
-    <link>http://localhost:1313/categories/%E4%B8%BA%E6%B2%99%E6%BB%A9%E6%8F%92%E4%B8%8A%E5%A4%AA%E9%98%B3%E4%BC%9E/</link>
+    <link>https://gregueria.icu/categories/%E4%B8%BA%E6%B2%99%E6%BB%A9%E6%8F%92%E4%B8%8A%E5%A4%AA%E9%98%B3%E4%BC%9E/</link>
     <description>Recent content in 为沙滩插上太阳伞 on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E4%B8%BA%E6%B2%99%E6%BB%A9%E6%8F%92%E4%B8%8A%E5%A4%AA%E9%98%B3%E4%BC%9E/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gregueria.icu/categories/%E4%B8%BA%E6%B2%99%E6%BB%A9%E6%8F%92%E4%B8%8A%E5%A4%AA%E9%98%B3%E4%BC%9E/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>换回旧主题，闪闪惹人爱</title>
-      <link>http://localhost:1313/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/</link>
+      <link>https://gregueria.icu/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/</guid>
+      <guid>https://gregueria.icu/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/</guid>
       <description>&lt;p&gt;总之又换主题了！&lt;/p&gt;&#xA;&lt;p&gt;旧的Luna主题漂亮美貌且功能齐全，可惜这主题用起来……确实问题很多且笨重。并且前段时间收到好几次站点打不开的反馈，我在Timeline上向黑客部门反馈了二十余次，无人应答，因此一直没有排查出问题，由于主站和子站点除了主题以外其他域名设置都是一致的，疑心是不是博客主题问题导致打不开，尽管我也觉得这怎么可能呢？再怎么怀疑也不应该怀疑到主题头上吧！&lt;/p&gt;</description>
     </item>
     <item>
       <title>Quartz &amp; Obsidian | 总之又有新文具</title>
-      <link>http://localhost:1313/posts/quartz/</link>
+      <link>https://gregueria.icu/posts/quartz/</link>
       <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/quartz/</guid>
+      <guid>https://gregueria.icu/posts/quartz/</guid>
       <description>&lt;p&gt;先放上成果：&lt;a href=&#34;https://c.gregueria.icu&#34;&gt;Lyin&amp;rsquo;s Room&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;前段时间在象上刷到&lt;a href=&#34;https://github.com/jackyzha0/quartz&#34;&gt;Quartz&lt;/a&gt;，算是一个支持Obsidian双链玩法的博客？点了收藏之后今天适逢周六，刚好呢又到了晚上十一点（人家的一个不干正事又不打算睡觉的时间），虽然呢也没有什么笔记要整理，但是就是看到漂亮的东西想试一试。搭建并不算难，而且很漂亮！于是来写一下笔记记录过程。&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;第一步：BGM - In Motion启动！Let the hacking begin！&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;首先来讲一下我对Quartz的使用感受。它的框架也是基于Hugo啦，这直接降低了我的心理负担，因为算是一个很熟悉的东西。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docsify | 花哨文具码在案前，用不用另说</title>
-      <link>http://localhost:1313/posts/doclog/</link>
+      <link>https://gregueria.icu/posts/doclog/</link>
       <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/doclog/</guid>
+      <guid>https://gregueria.icu/posts/doclog/</guid>
       <description>&lt;p&gt;总而言之，某日逛到一个Docsify笔记库，简洁干净又漂亮，看了一下教程似乎并不难，我对自己的&lt;a href=&#34;https://teetotaler.vercel.app/&#34;&gt;前笔记库&lt;/a&gt;不满很久（因为没有办法检索），于是摸鱼事件着手折腾Docsify，竟然成了（竟然成了）。&lt;/p&gt;&#xA;&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://xhhdd.cc/archives/80/comment-page-1&#34;&gt;Docsify的配置+全插件列表&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docsify.js.org/#/zh-cn/&#34;&gt;Docsify的配置中文文档&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://mantyke.icu/posts/2021/docsify-build/&#34;&gt;Docsify | 搭建个人静态笔记库&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;主题修改&#34;&gt;主题修改&lt;/h2&gt;&#xA;&lt;p&gt;配置是网上搜了一个随便复制下来用了（竟然成了），主要使用到的插件：字数统计、全文搜索、翻页、页面右侧TOC。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo Luna | 换上了新主题，一边装修一边相声</title>
-      <link>http://localhost:1313/posts/hugo-luna/</link>
+      <link>https://gregueria.icu/posts/hugo-luna/</link>
       <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugo-luna/</guid>
+      <guid>https://gregueria.icu/posts/hugo-luna/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;这篇文章的内容已不再适用。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Luna 主题经常更新，文章内容可能已经过时。Luna 主题作者的非常热心，主题 Issue 板块是最好的求助渠道。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;昨天跟 Missing 聊天，说有动换主题的念头，但我们都非常喜欢 Stack 主题的搜索功能，而大多数主题都需要额外配置这一部分。于是随手 Google 一下 Hugo theme，筛选了近一个月的结果——忽然找到了 Luna 主题，作者上周刚发了自荐的帖子，点进去摸摸看看，搜索和字数统计一应俱全，而且配色春意盎然非常漂亮，尽管已经入夏，仍然与友友敲手决定换上。但刚摸上没多久就报错连连，所以决定写篇新博客记录这个主题的安装及装修过程。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件</title>
-      <link>http://localhost:1313/posts/mail/</link>
+      <link>https://gregueria.icu/posts/mail/</link>
       <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mail/</guid>
+      <guid>https://gregueria.icu/posts/mail/</guid>
       <description>&lt;p&gt;事情要从 Checker Plus for Gmail 这个浏览器插件开始讲起，它是一个可以提醒你 Gmail 收到新邮件、并且不需要点开新的网页就能直接查看邮件的插件。&lt;/p&gt;&#xA;&lt;p&gt;不知什么时候我安装了这个它，它的图标小小一个，挂在我浏览器的右上角，非常十分之特别好用。因为实在太方便了，导致我后来很多网站都直接用了 Gmail 的邮箱来注册。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Blog | 互联网乱序试吃后，敲起之前中道崩殂的Notablog</title>
-      <link>http://localhost:1313/posts/nodejs-notablog/</link>
+      <link>https://gregueria.icu/posts/nodejs-notablog/</link>
       <pubDate>Tue, 11 Jan 2022 16:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/nodejs-notablog/</guid>
+      <guid>https://gregueria.icu/posts/nodejs-notablog/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;在我敲完这篇的四天后（&lt;em&gt;2022年1月16日&lt;/em&gt;）我忽然瞧见了另一个博客，TA也写了如何自己的搭建流程，我想TA的方案显然比我的更简洁也更好，虽然我想不到有谁会认真参考我的博客内容，但还是一并贴来：&lt;a href=&#34;https://janakymurthy.github.io/making_blog_from_notion_pages.html&#34;&gt;Making a Github blog from Notion pages&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo Stack | 删删改改大胆行事</title>
-      <link>http://localhost:1313/posts/decoration/</link>
+      <link>https://gregueria.icu/posts/decoration/</link>
       <pubDate>Sat, 01 Jan 2022 14:02:48 +0000</pubDate>
-      <guid>http://localhost:1313/posts/decoration/</guid>
+      <guid>https://gregueria.icu/posts/decoration/</guid>
       <description>&lt;h2 id=&#34;博客更新日志&#34;&gt;博客更新日志&lt;/h2&gt;&#xA;&lt;p&gt;2022-04-18 | 取消右侧栏小组件，更改页面宽度，Archive页面中增添Tags板块，取消了左侧栏的&lt;code&gt;Home&lt;/code&gt;键。修改Site-info为&lt;code&gt;You need to have some concerns and, even better, a bit of anger.&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>互联网搬家记：沙滩会是鱼的最后一站吗？</title>
-      <link>http://localhost:1313/posts/%E6%B2%99%E6%BB%A9%E4%BC%9A%E6%98%AF%E9%B1%BC%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%99%E5%90%97/</link>
+      <link>https://gregueria.icu/posts/%E6%B2%99%E6%BB%A9%E4%BC%9A%E6%98%AF%E9%B1%BC%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%99%E5%90%97/</link>
       <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E6%B2%99%E6%BB%A9%E4%BC%9A%E6%98%AF%E9%B1%BC%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%99%E5%90%97/</guid>
+      <guid>https://gregueria.icu/posts/%E6%B2%99%E6%BB%A9%E4%BC%9A%E6%98%AF%E9%B1%BC%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%99%E5%90%97/</guid>
       <description>&lt;p&gt;历时一周总算把我的博客建好并搬运完文章，此前的随笔基本都挂靠在网络上，没有任何备份可言。同人文好一点儿，60%左右进行了本地备份，其余的要么备份在写字的平台上，要么直接发上网络以后没有再进行任何备份。&lt;/p&gt;</description>
     </item>
   </channel>

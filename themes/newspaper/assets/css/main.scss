@@ -20,80 +20,118 @@ $color-pink2: #e79598;
 $color-pink3: #db6165;
 $color-pink4: #e69494;
 $color-mark: #b2d8d8;
-$color-mark-dark: #83a598;
-$color-blockquote: #466060;
 $link-hover: #FFD09B;
 
 
 // -------------- THEME SWITCHER -------------- //
-@mixin theme($--bg-color, $--primary-text-color, $--secondary-text-color, $--link-color, $--visited-link-color, $--highlight) {
-  background-color: $--bg-color;
+// 颜色变量定义
 
-  color: $--primary-text-color;
+//define colors - light and night
+
+$color-mark-dark: #83a598;
+
+
+// Dark theme colors
+$bg-dark: #282828;
+$text-dark: #ebdbb2;
+$secondary-text-dark: #000000;
+$link-dark: #0071bc;
+$visited-link-dark: #a359e9;
+$highlight-dark: #FFFF00;
+$color-blockquote-dark: #466060;
+$bg-select-dark: rgba(152, 152, 152, 0.53);
+$color-bg-code-dark: #466060;
+
+
+// Light theme colors
+$bg-light: #f9f7f1;
+$text-light: #38383c;
+$secondary-text-light: #666666;
+$link-light: #1a89ae;
+$visited-link-light: #921292;
+$highlight-light: #FFFF00;
+$color-blockquote-light: #466060;
+$bg-select-light: rgba(255, 239, 218, 0.6);
+$color-bg-code-light: #66666622;
+
+
+// 主题样式定义
+@mixin theme($bg-color, $primary-text-color, $secondary-text-color, $link-color, $visited-link-color, $highlight-color, $blockquote-color, $color-bg-code, $bg-select) {
+  background-color: $bg-color;
+  color: $primary-text-color;
 
   a {
-    color: $--link-color;
-
+    color: $link-color;
     &:visited {
-      color: $--link-color;
+      color: $link-color;
     }
   }
 
   details {
-    //border-left: 2px solid $--primary-text-color;
+    //border-left: 2px solid $primary-text-color;
   }
 
   details summary {
-    color: $--primary-text-color;
+    color: $primary-text-color;
   }
 
   details[open] summary {
-    border-bottom: 1px solid $--primary-text-color;
+    border-bottom: 1px solid $primary-text-color;
   }
 
+  // 改动：确保 pre 和 code 的背景颜色应用
   pre {
-    background: $--bg-color;
+    background-color: $color-bg-code !important; // 确保背景颜色被应用
   }
 
   code:not(pre > code) {
-    background-color: $--primary-text-color;
-    color: $--bg-color;
+    background-color: $color-bg-code !important; // 确保背景颜色被应用
+    color: $bg-color;
   }
 
   *:target {
-    background: $--highlight;
-    color: $--primary-text-color;
+    background: $highlight-color;
+    color: $primary-text-color;
   }
 
   table,
   th,
   td {
-    border: thin solid $--primary-text-color;
+    border: thin solid $primary-text-color;
   }
 
   .toc {
-    border: thin solid $--primary-text-color;
+    border: thin solid $primary-text-color;
     padding: 1rem;
   }
 
   figcaption {
-    color: $--secondary-text-color;
+    color: $secondary-text-color;
+  }
+
+  ::selection {
+    background-color: $bg-select;
+    /* 设置选中的背景颜色 */
   }
 
   blockquote {
-    border-left: 2px solid $color-blockquote;
-    color: $--secondary-text-color;
+    border-left: 2px solid $blockquote-color;
+    color: $secondary-text-color;
   }
 }
 
+
+// Dark theme appearance
 @mixin dark-appearance {
-  @include theme(#282828, #ebdbb2, #000000, #0071bc, #a359e9, #FFFF00);
+  @include theme($bg-dark, $text-dark, $secondary-text-dark, $link-dark, $visited-link-dark, $highlight-dark, $color-blockquote-dark, $color-bg-code-dark,$bg-select-dark);
 }
 
+// Light theme appearance
 @mixin light-appearance {
-  @include theme(#f9f7f1, #38383c, #666666, #1a89ae, #921292, #FFFF00);
+  @include theme($bg-light, $text-light, $secondary-text-light, $link-light, $visited-link-light, $highlight-light, $color-blockquote-light, $color-bg-code-light, $bg-select-light);
 }
 
+// 应用主题样式
 body[a="dark"] {
   @include dark-appearance;
 }
@@ -166,6 +204,8 @@ body {
 }
 
 //
+
+
 
 mark {
   background: none;
@@ -558,20 +598,9 @@ ul p {
 }
 
 body[a="light"] code:not(pre>code) {
-  background: #66666622;
   border-radius: 4px;
   padding: 0 4px;
-  color: #212121;
   font-family: "Clear Han Serif";
-}
-
-body[a="light"] pre {
-  background: #ebe5d2d9;
-}
-
-::selection {
-  background-color: rgba(251, 230, 189, 0.6);
-  /* 设置选中的背景颜色 */
 }
 
 /* 整个滚动条 */
