@@ -23,7 +23,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.8c70a127ba7e837c35ba37f306e8e4f0cbff5cefdddae02ba165c3c92d06090d35930e7c97b817c28ba5db307d42a2df561808060a4e20349ba1fe2c0b0d066a.css" integrity="sha512-jHChJ7p&#43;g3w1ujfzBujk8Mv/XO/d2uAroWXDyS0GCQ01kw58l7gXwoul2zB9QqLfVhgIBgpOIDSbof4sCw0Gag==" />
+    <link rel="stylesheet" href="/css/main.f91e30393798e38091a4220455d550e249452a975bef701e1e2b5de402da3a523b7042fc48881046b29b61e4e4144d4d89aa1446f3dab7c67d23105776ec1214.css" integrity="sha512-&#43;R4wOTeY44CRpCIEVdVQ4klFKpdb73AeHitd5ALaOlI7cEL8SIgQRrKbYeTkFE1NiaoURvPat8Z9IxBXduwSFA==" />
   
 
 
@@ -233,6 +233,7 @@
   <div id="light-btn"></div>
   <div id="dark-btn"></div>
 </div>
+
 <script>
   
   const themeToggle = document.getElementById('theme-toggle');
@@ -273,15 +274,16 @@
     const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
     
-    if (scrollPercent >= 10 && scrollPercent <= 30) {
-      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 20).toFixed(2); 
-    } else if (scrollPercent > 30) {
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+    } else if (scrollPercent > 40) {
       themeToggle.style.opacity = 0; 
     } else {
       themeToggle.style.opacity = 1; 
     }
   });
 </script>
+
 
 <div id="header-post">
   <span id="nav">
@@ -319,9 +321,7 @@
 
 
         </time>
-        <blockquote id="post-description">
-            
-        </blockquote>
+        
     </div>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         

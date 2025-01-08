@@ -234,6 +234,7 @@
   <div id="light-btn"></div>
   <div id="dark-btn"></div>
 </div>
+
 <script>
   
   const themeToggle = document.getElementById('theme-toggle');
@@ -274,15 +275,16 @@
     const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
     
-    if (scrollPercent >= 10 && scrollPercent <= 30) {
-      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 20).toFixed(2); 
-    } else if (scrollPercent > 30) {
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+    } else if (scrollPercent > 40) {
       themeToggle.style.opacity = 0; 
     } else {
       themeToggle.style.opacity = 1; 
     }
   });
 </script>
+
 
 <div id="header-post">
   <span id="nav">

@@ -207,8 +207,6 @@ $color-mark-light: #b2d8d8;
     border-color: #f1f1f1; /* Light 模式下按钮悬浮时的边框颜色 */
   }
 
-
-
 }
 
 
@@ -580,7 +578,7 @@ li {
   /* 可选：调整列表项的间距 */
 }
 
-.post-content li {
+#post-content li {
   padding: 0.5rem 0.5rem;
   /* 可选：调整列表项的间距 */
 }
@@ -829,7 +827,3 @@ del {
     background-size: 110% 110%;
   }
 }
-
-// comment 评论区 waline
-
-

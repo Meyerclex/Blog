@@ -14,9 +14,11 @@
 <!--                    {{ end }}-->
 <!--            {{ end }}-->
         </time>
+        {{ if .Description }}
         <blockquote id="post-description">
             {{ .Description }}
         </blockquote>
+        {{ end }}
     </div>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         {{ partial "toc.html" . }}
