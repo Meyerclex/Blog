@@ -226,12 +226,6 @@ $color-mark-light: #b2d8d8;
 
 // 应用主题样式
 body[a="dark"] {
-  [data-waline] p {
-    color: $text-dark!important;
-  }
-  .wl-card span.wl-nick {
-    color: $text-dark;
-  }
   background-color: #6d695c;
   background-image:
           repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),

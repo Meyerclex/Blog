@@ -28,17 +28,6 @@
     
   </title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/" />
-
-  
-  
-  
-    
-    
-    <link rel="stylesheet" href="/css/main.0db629c2f2ab9096c0a1e05469a3266efae71c895380849fa7327a8072861df49fc98eeb108dcabb8c4e043774184351a06d88f680dbfa32f91a4c09e83db0d7.css" integrity="sha512-DbYpwvKrkJbAoeBUaaMmbvrnHIlTgISfpzJ6gHKGHfSfyY7rEI3Ku4xOBDd0GENRoG2I9oDb&#43;jL5GkwJ6D2w1w==" />
-  
-
-
   
   <style>
     .image-row {
@@ -167,6 +156,7 @@
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
+          
           if (naturalWidth > 200 && naturalHeight > 200) {
             img.style.cursor = 'zoom-in';
             img.addEventListener('click', () => {
@@ -189,6 +179,7 @@
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
+        
         if (naturalWidth > 200 && naturalHeight > 200) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
@@ -202,12 +193,24 @@
     });
   </script>
 
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.617b29bdaae799316ff93b640a6b490adba2ee8703e3eec3c7a8d38c31377f38785de5e754ea87c60b26762c6142bddf91b16af138cb85f81c3bd09c896690e6.css" integrity="sha512-YXspvarnmTFv&#43;TtkCmtJCtui7ocD4&#43;7Dx6jTjDE3fzh4XeXnVOqHxgsmdixhQr3fkbFq8TjLhfgcO9CciWaQ5g==" />
+  
+
+
   
   
 
 
 
 </head>
+<script src="script.js" defer></script>
 <body a="light">
         <main class="page-content" aria-label="Content">
             <div class="w">
@@ -547,8 +550,15 @@
         :root {
             --waline-theme-color: SteelBlue;
             --waline-active-color: SteelBlue;
+             
         }
+        .wl-editor:focus, .wl-input:focus {
+         background: transparent;
+         }
+    .wl-panel {
+        background-color: #fffbf6;
     }
+
 </style>
 <div id="waline"></div>
 <script>
@@ -923,5 +933,6 @@
 
             </div>
         </main>
+    <script src="script.js" defer></script>
     </body>
 </html>

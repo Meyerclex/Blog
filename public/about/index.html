@@ -16,17 +16,6 @@
     
   </title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/" />
-
-  
-  
-  
-    
-    
-    <link rel="stylesheet" href="/css/main.8c70a127ba7e837c35ba37f306e8e4f0cbff5cefdddae02ba165c3c92d06090d35930e7c97b817c28ba5db307d42a2df561808060a4e20349ba1fe2c0b0d066a.css" integrity="sha512-jHChJ7p&#43;g3w1ujfzBujk8Mv/XO/d2uAroWXDyS0GCQ01kw58l7gXwoul2zB9QqLfVhgIBgpOIDSbof4sCw0Gag==" />
-  
-
-
   
   <style>
     .image-row {
@@ -155,6 +144,7 @@
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
+          
           if (naturalWidth > 200 && naturalHeight > 200) {
             img.style.cursor = 'zoom-in';
             img.addEventListener('click', () => {
@@ -177,6 +167,7 @@
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
+        
         if (naturalWidth > 200 && naturalHeight > 200) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
@@ -190,12 +181,24 @@
     });
   </script>
 
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.617b29bdaae799316ff93b640a6b490adba2ee8703e3eec3c7a8d38c31377f38785de5e754ea87c60b26762c6142bddf91b16af138cb85f81c3bd09c896690e6.css" integrity="sha512-YXspvarnmTFv&#43;TtkCmtJCtui7ocD4&#43;7Dx6jTjDE3fzh4XeXnVOqHxgsmdixhQr3fkbFq8TjLhfgcO9CciWaQ5g==" />
+  
+
+
   
   
 
 
 
 </head>
+<script src="script.js" defer></script>
 <body a="light">
         <main class="page-content" aria-label="Content">
             <div class="w">
@@ -308,11 +311,16 @@
     </div>
     <article class="post-content">
         <h1>About</h1>
-        <p class="time">
+        <div id="post-meta">
             <time datetime="2023-08-18 00:00:00 &#43;0000 UTC">
                 2023-08-18
+                <span> ‧ 1116</span>
+                <span>words</span>
+                
+                
             </time>
-        </p>
+            
+        </div>
         <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
             
     <div class="post-toc" id="post-toc">
@@ -339,7 +347,8 @@
 
 
         </div>
-        <style>
+        <div id="post-content">
+            <style>
 .post-meta {
   display: none;
 }
@@ -383,9 +392,372 @@
 <li><a href="https://gruvbox-theme.vercel.app">秋冬落叶一般</a>：当前使用的 Gruvbox 主题。</li>
 </ol>
 
+        </div>
         <br>
         <div style="padding-bottom:3px;"></div>
     </article>
+
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+    .wl-card-item {
+        position: relative;
+        display: flex;
+         padding: 0.2em;
+    }
+
+        .wl-addr {
+            display: none !important;
+            color: transparent !important;
+        }
+        .wl-content .vemoji,
+        .wl-content .wl-emoji {
+            display: inline-block;
+            vertical-align: baseline;
+            height: 3.4em !important;
+            margin: -0.125em 0.25em;
+        }
+
+        img.wl-emoji,
+        img.vemoji {
+            vertical-align: sub;
+            transition: ease-out 0.6s;
+        }
+
+        img.wl-emoji:hover,
+        img.vemoji:hover {
+            transform: scale(1.8) !important;
+        }
+        .wl-header {
+            display: flex
+        ;
+            overflow: hidden;
+            padding: 0 4px;
+            border-bottom: 0px dashed var(--waline-border-color);
+            border-top-left-radius: 0em;
+            border-top-right-radius: 0em;
+        }
+        .wl-btn.primary {
+            border-color: transparent !important;
+            background:  SteelBlue ;
+            color: white ;
+        }
+        @media (max-width: 580px) {
+            .wl-header-item:not(:last-child) {
+                border-bottom: 0px dashed var(--waline-border-color);
+            }
+        }
+        :root {
+            --waline-theme-color: SteelBlue;
+            --waline-active-color: SteelBlue;
+             
+        }
+        .wl-editor:focus, .wl-input:focus {
+         background: transparent;
+         }
+    .wl-panel {
+        background-color: #fffbf6;
+    }
+
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+</div>
+
+
+
+<div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了244.5k字 · 共 73篇文章
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+
+</div>
+
 
                 
 
@@ -471,5 +843,6 @@
 
             </div>
         </main>
+    <script src="script.js" defer></script>
     </body>
 </html>

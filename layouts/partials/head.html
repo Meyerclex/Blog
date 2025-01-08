@@ -15,19 +15,6 @@
     {{ end }}
   </title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
-
-  <!-- CSS Compilation from Sass -->
-  {{ $sass := resources.Get "css/main.scss" }}
-  {{ if $sass }}
-    {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-    {{ $style := $sass | css.Sass $options | resources.Fingerprint "sha512" }}
-    <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" integrity="{{ $style.Data.Integrity }}" />
-  {{ else }}
-    <link rel="stylesheet" href="/css/main.css" />
-  {{ end }}
-
-
   {{/*图片放大*/}}
   <style>
     .image-row {
@@ -156,6 +143,7 @@
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
+          // 只为大于200x200的图片添加放大功能
           if (naturalWidth > 200 && naturalHeight > 200) {
             img.style.cursor = 'zoom-in';
             img.addEventListener('click', () => {
@@ -173,11 +161,12 @@
         paragraph.appendChild(imageRow);
       });
 
-      // 处理不在p标签里的图片
+      // 处理不在p标签里的图片（直接放在文章中）
       images.forEach((img, index) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
+        // 只为大于200x200的图片添加放大功能
         if (naturalWidth > 200 && naturalHeight > 200) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
@@ -191,6 +180,19 @@
     });
   </script>
 
+  <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
+
+  <!-- CSS Compilation from Sass -->
+  {{ $sass := resources.Get "css/main.scss" }}
+  {{ if $sass }}
+    {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+    {{ $style := $sass | css.Sass $options | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" integrity="{{ $style.Data.Integrity }}" />
+  {{ else }}
+    <link rel="stylesheet" href="/css/main.css" />
+  {{ end }}
+
+
   <!-- MathJax inclusion -->
   {{ if .Params.mathjax }}
     {{ partial "mathjax.html" . }}
@@ -199,3 +201,4 @@
 
 
 </head>
+<script src="script.js" defer></script>

@@ -44,7 +44,7 @@
         }
         .wl-btn.primary {
             border-color: transparent !important;
-            background:  SteelBlue ;
+            background:  Peru ;
             color: white ;
         }
         @media (max-width: 580px) {
@@ -53,9 +53,25 @@
             }
         }
         :root {
-            --waline-theme-color: SteelBlue;
-            --waline-active-color: SteelBlue;
+            --waline-theme-color: Peru ;
+            --waline-active-color: Peru ;
+            --waline-light-grey: unset;
+            --waline-info-color: unset;
+            /*--waline-color: unset;*/
+            --waline-border: 0px solid peru;
         }
+        .wl-editor:focus, .wl-input:focus {
+         background: transparent;
+         }
+        .wl-panel {
+        background-color: #fffcf9;
+        }
+    .wl-card .wl-delete, .wl-card .wl-like, .wl-card .wl-reply, .wl-card .wl-edit { color:unset; }
+    [data-waline] p {
+        color: unset;
+    }
+    .wl-card span.wl-nick {
+         color: unset;
     }
 </style>
 <div id="waline"></div>

@@ -17,17 +17,6 @@
     
   </title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/" />
-
-  
-  
-  
-    
-    
-    <link rel="stylesheet" href="/css/main.8c70a127ba7e837c35ba37f306e8e4f0cbff5cefdddae02ba165c3c92d06090d35930e7c97b817c28ba5db307d42a2df561808060a4e20349ba1fe2c0b0d066a.css" integrity="sha512-jHChJ7p&#43;g3w1ujfzBujk8Mv/XO/d2uAroWXDyS0GCQ01kw58l7gXwoul2zB9QqLfVhgIBgpOIDSbof4sCw0Gag==" />
-  
-
-
   
   <style>
     .image-row {
@@ -156,6 +145,7 @@
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
+          
           if (naturalWidth > 200 && naturalHeight > 200) {
             img.style.cursor = 'zoom-in';
             img.addEventListener('click', () => {
@@ -178,6 +168,7 @@
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
+        
         if (naturalWidth > 200 && naturalHeight > 200) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
@@ -191,12 +182,24 @@
     });
   </script>
 
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.617b29bdaae799316ff93b640a6b490adba2ee8703e3eec3c7a8d38c31377f38785de5e754ea87c60b26762c6142bddf91b16af138cb85f81c3bd09c896690e6.css" integrity="sha512-YXspvarnmTFv&#43;TtkCmtJCtui7ocD4&#43;7Dx6jTjDE3fzh4XeXnVOqHxgsmdixhQr3fkbFq8TjLhfgcO9CciWaQ5g==" />
+  
+
+
   
   
 
 
 
 </head>
+<script src="script.js" defer></script>
 <body a="light">
         <main class="page-content" aria-label="Content">
             <div class="w">
@@ -322,9 +325,11 @@
 
 
         </time>
+        
         <blockquote id="post-description">
             我相信55年后​是更好的世界，那么更好的世界，理应更爱 。 |  内容涉及《2077》《底特律:变人》《红弦俱乐部》剧透。
         </blockquote>
+        
     </div>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         
@@ -409,6 +414,7 @@
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
+
     <div class="pre-next">
         
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/decoration/">&lt;&lt; Hugo Stack | 删删改改大胆行事</a>
@@ -417,15 +423,14 @@
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/nodejs-notablog/">Blog | 互联网乱序试吃后，敲起之前中道崩殂的Notablog >></a>
         
     </div>
-    <br>
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-    />
-    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
-    <div id="comments" class="comments">
-        <style>
+
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
     .wl-card {
         border: 0px solid #eee;
     }
@@ -482,8 +487,15 @@
         :root {
             --waline-theme-color: SteelBlue;
             --waline-active-color: SteelBlue;
+             
         }
+        .wl-editor:focus, .wl-input:focus {
+         background: transparent;
+         }
+    .wl-panel {
+        background-color: #fffbf6;
     }
+
 </style>
 <div id="waline"></div>
 <script>
@@ -500,7 +512,8 @@
         dark: true,
     });
 </script>
-    </div>
+</div>
+
 
     <div>
 
@@ -669,7 +682,7 @@
         
         
         
-        共书写了244.4k字 · 共 73篇文章
+        共书写了244.5k字 · 共 73篇文章
     </section>
 
     
@@ -773,4 +786,5 @@
 
             </div>
         </main>
+    <script src="script.js" defer></script>
     </body></html>
