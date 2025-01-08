@@ -5,31 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   
-    <meta name="description" content="2025/01/05
+    <meta name="description" content="2025/01/08
 
+新增Collection页面，放一些萌萌的小东西。
+新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。
+
+2025/01/05
+
+ 整理文件结构
+ 移动端看不到Home的奶牛猫图标可怎么办呀！
  加一个导航栏替代back to home
  增加页脚字数统计
  图片放大解决！
 
 2024/12/29
-又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？
-往期主题
-
-桌面风格：与当前主题一起，魔改自No Style Please主题。
-适合野餐的春天：非常美丽的 Luna 主题。
-闪闪惹人爱：由 Stack 主题魔改。
-秋冬落叶一般：Gruvbox 主题。
-
-TODO
-
- 无序列表错行问题
- 修改鼠标指针
- 修改表格之类的基础样式问题
- 适配移动端（只能说微微适配啦…）
- 修改夜晚主题配色
-
-2024/12/03
-新增了Cafe页面，用的是Status Cafe挂件。">
+又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？">
   
 
   <title>
@@ -45,7 +35,7 @@ TODO
   
     
     
-    <link rel="stylesheet" href="/css/main.8c70a127ba7e837c35ba37f306e8e4f0cbff5cefdddae02ba165c3c92d06090d35930e7c97b817c28ba5db307d42a2df561808060a4e20349ba1fe2c0b0d066a.css" integrity="sha512-jHChJ7p&#43;g3w1ujfzBujk8Mv/XO/d2uAroWXDyS0GCQ01kw58l7gXwoul2zB9QqLfVhgIBgpOIDSbof4sCw0Gag==" />
+    <link rel="stylesheet" href="/css/main.0db629c2f2ab9096c0a1e05469a3266efae71c895380849fa7327a8072861df49fc98eeb108dcabb8c4e043774184351a06d88f680dbfa32f91a4c09e83db0d7.css" integrity="sha512-DbYpwvKrkJbAoeBUaaMmbvrnHIlTgISfpzJ6gHKGHfSfyY7rEI3Ku4xOBDd0GENRoG2I9oDb&#43;jL5GkwJ6D2w1w==" />
   
 
 
@@ -330,11 +320,16 @@ TODO
     </div>
     <article class="post-content">
         <h1>💎站点更新日志 Changelog</h1>
-        <p class="time">
+        <div id="post-meta">
             <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
                 2021-06-28
+                <span> ‧ 1364</span>
+                <span>words</span>
+                
+                
             </time>
-        </p>
+            
+        </div>
         <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
             
     <div class="post-toc" id="post-toc">
@@ -346,6 +341,7 @@ TODO
             
             <nav id="TableOfContents">
   <ul>
+    <li><a href="#20250108">2025/01/08</a></li>
     <li><a href="#20250105">2025/01/05</a></li>
     <li><a href="#20241229">2024/12/29</a>
       <ul>
@@ -381,8 +377,16 @@ TODO
 
 
         </div>
-        <h2 id="20250105">2025/01/05</h2>
+        <div id="post-content">
+            <h2 id="20250108">2025/01/08</h2>
+<ol>
+<li>新增<a href="/collection">Collection</a>页面，放一些萌萌的小东西。</li>
+<li>新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。</li>
+</ol>
+<h2 id="20250105">2025/01/05</h2>
 <ul>
+<li><input disabled="" type="checkbox"> 整理文件结构</li>
+<li><input disabled="" type="checkbox"> 移动端看不到Home的奶牛猫图标可怎么办呀！</li>
 <li><input checked="" disabled="" type="checkbox"> 加一个导航栏替代back to home</li>
 <li><input checked="" disabled="" type="checkbox"> 增加页脚字数统计</li>
 <li><input checked="" disabled="" type="checkbox"> 图片放大解决！</li>
@@ -475,9 +479,365 @@ TODO
 <h2 id="2021-11-14">2021-11-14</h2>
 <p>小鸟拥有了自己的第一个私人博客</p>
 
+        </div>
         <br>
         <div style="padding-bottom:3px;"></div>
     </article>
+
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+    .wl-card-item {
+        position: relative;
+        display: flex;
+         padding: 0.2em;
+    }
+
+        .wl-addr {
+            display: none !important;
+            color: transparent !important;
+        }
+        .wl-content .vemoji,
+        .wl-content .wl-emoji {
+            display: inline-block;
+            vertical-align: baseline;
+            height: 3.4em !important;
+            margin: -0.125em 0.25em;
+        }
+
+        img.wl-emoji,
+        img.vemoji {
+            vertical-align: sub;
+            transition: ease-out 0.6s;
+        }
+
+        img.wl-emoji:hover,
+        img.vemoji:hover {
+            transform: scale(1.8) !important;
+        }
+        .wl-header {
+            display: flex
+        ;
+            overflow: hidden;
+            padding: 0 4px;
+            border-bottom: 0px dashed var(--waline-border-color);
+            border-top-left-radius: 0em;
+            border-top-right-radius: 0em;
+        }
+        .wl-btn.primary {
+            border-color: transparent !important;
+            background:  SteelBlue ;
+            color: white ;
+        }
+        @media (max-width: 580px) {
+            .wl-header-item:not(:last-child) {
+                border-bottom: 0px dashed var(--waline-border-color);
+            }
+        }
+        :root {
+            --waline-theme-color: SteelBlue;
+            --waline-active-color: SteelBlue;
+        }
+    }
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+</div>
+
+
+
+<div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了244.5k字 · 共 73篇文章
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+
+</div>
+
 
                 
 

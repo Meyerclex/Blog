@@ -2,12 +2,16 @@
     {{ range .Site.Data.goods.goods }}
     <div class="goods-bankuai">
         <img loading="lazy" class="whitey" src="{{ .image }}" alt="{{ .title }}">
+        <div class="goods-info">
         <div class="goods-title">
             <div style="text-align: center;">
                 <span>{{ .title }}</span>
             </div>
         </div>
-        <div class="goods-note">{{ .description }}</div>
+        <div class="goods-note">
+            {{ .description }}
+        </div>
+        </div>
     </div>
     {{ else }}
     <p>Nothing here...</p>
@@ -22,9 +26,12 @@
         width: 100%;
         height: auto;
         border-radius: 10px;
-        box-sizing: border-box;  /* 确保边框不会影响尺寸 */
+        box-sizing: border-box;
+        transition: transform 0.3s ease; /* 设置过渡效果 */
     }
-
+    .whitey:hover {
+        transform: translateY(-5px); /* 鼠标悬停时，图片向上浮动 5px */
+    }
     .goods {
         display: flex;
         flex-wrap: wrap;
@@ -36,7 +43,7 @@
         width: calc(33.333% - 30px); /* 每张图片占父容器的三分之一宽度，减去间隙 */
         box-sizing: border-box;
         text-align: center;
-        display: flex;
+        /*display: flex;*/
         flex-direction: column;
         justify-content: space-between; /* 确保每个块内容上下排列 */
         /*height: 300px; !* 固定容器高度，以避免图片撑高 *!*/
@@ -57,6 +64,7 @@
         margin-top: 5px;
         font-size: 0.9rem;
     }
+
 
     /* 当屏幕宽度小于 1024px 时，每行显示两张图片 */
     @media (max-width: 1024px) {

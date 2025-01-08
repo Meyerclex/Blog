@@ -3,16 +3,16 @@ title: Collection
 slug: collection
 date: 2020-01-05
 toc: false
-description:
+description: "鱼鱼家的萌萌小东西们。"
 hidden: true
+comment: false
 ---
-> 样式施工ing...
 
 
 {{< goods >}}
 
 <style>
- .time {
+ time {
     display: none;
 }
 </style>

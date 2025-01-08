@@ -207,6 +207,10 @@ $color-mark-light: #b2d8d8;
     border-color: #f1f1f1; /* Light 模式下按钮悬浮时的边框颜色 */
   }
 
+  .goods-info:hover {
+    text-shadow: $link-hover 1px 0 10px;
+  }
+
 }
 
 
@@ -575,11 +579,6 @@ ul {
 
 li {
   padding: 0 0.5rem;
-  /* 可选：调整列表项的间距 */
-}
-
-#post-content li {
-  padding: 0.5rem 0.5rem;
   /* 可选：调整列表项的间距 */
 }
 
