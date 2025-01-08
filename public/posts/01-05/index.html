@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   
-    <meta name="description" content="大家好！最近又在装修博客（没停过），主要原因是开始写手账了，想要一个和手账本一样风格的主题，由于依然没找到符合我心意的主题，所以还是决定自己改。在改主题方面我已经有一些丰富经验，想在这里做一个简明笔记整理。">
+    <meta name="description" content="大家好！最近又在装修博客（没停过），主要原因是实体生活开始写手账了，所以想要一个和手账本一样的可爱主题，由于依然没找到符合我心意的主题，所以还是决定自己改。在这里对一些经常重复修改的内容做一下笔记整理，后续新增也会在这里持续添加。">
   
 
   <title>
@@ -13,16 +13,6 @@
       简明装修笔记一则 | 再會，謝謝所有的魚
     
   </title>
-
-  <link rel="shortcut icon" type="image/x-icon" href="/" />
-
-  
-  
-  
-    
-    
-    <link rel="stylesheet" href="/css/main.e0008b26cc39d79b8b17dd7b84b72b1ca243f90728db9e92b58edccb5f37342580d7263a672080be4e2c6c4b32ba064066ab31f5ac781698f9806efab7b924aa.css" integrity="sha512-4ACLJsw515uLF917hLcrHKJD&#43;Qco256StY7cy183NCWA1yY6ZyCAvk4sbEsyugZAZqsx9ax4Fpj5gG76t7kkqg==" />
-  
 
   
   <style>
@@ -152,6 +142,7 @@
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
+          
           if (naturalWidth > 200 && naturalHeight > 200) {
             img.style.cursor = 'zoom-in';
             img.addEventListener('click', () => {
@@ -174,6 +165,7 @@
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
+        
         if (naturalWidth > 200 && naturalHeight > 200) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
@@ -187,11 +179,24 @@
     });
   </script>
 
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+
   
   
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.b4acf9101a620d6deda75ba5d4715e2202d31b620501c022bcabb5c4255ace2873f204789e730605c3118b895b1c071c52a1311c9f8d9e2f0efb6ddba79dbe6e.css" integrity="sha512-tKz5EBpiDW3tp1ul1HFeIgLTG2IFAcAivKu1xCVazihz8gR4nnMGBcMRi4lbHAccUqExHJ&#43;Nni8O&#43;23bp52&#43;bg==" />
+  
+
+
+  
+  
+
 
 
 </head>
+<script src="script.js" defer></script>
 <body a="light">
         <main class="page-content" aria-label="Content">
             <div class="w">
@@ -225,6 +230,62 @@
 
 
 
+<div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+
+<script>
+  
+  const themeToggle = document.getElementById('theme-toggle');
+
+  
+  let currentTheme = localStorage.getItem('theme') || 'auto';
+  if (currentTheme === 'auto') {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    currentTheme = prefersDarkScheme ? 'dark' : 'light';
+  }
+  document.body.setAttribute('a', currentTheme);
+  document.body.classList.add(currentTheme + '-mode');
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+    }
+    localStorage.setItem('theme', currentTheme);
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const winHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    
+    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+    
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+    } else if (scrollPercent > 40) {
+      themeToggle.style.opacity = 0; 
+    } else {
+      themeToggle.style.opacity = 1; 
+    }
+  });
+</script>
+
+
 <div id="header-post">
   <span id="nav">
     <ul>
@@ -243,14 +304,16 @@
   </span>
 </div>
 
+
+
                 </div>
 
 <article>
     <h1>简明装修笔记一则</h1>
-    <p id="post-meta">
+    <div id="post-meta">
         <time datetime="2025-01-05 00:00:00 &#43;0000 UTC">
             2025-01-05
-            <span> ‧ 176</span>
+            <span> ‧ 3013</span>
             <span>words</span>
 
 
@@ -259,38 +322,151 @@
 
 
         </time>
-    </p>
+        
+        <blockquote id="post-description">
+            简明？我看也不是很简明嘛！
+        </blockquote>
+        
+    </div>
     <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
         
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#侧边目录">侧边目录</a></li>
+    <li><a href="#字数显示与页脚统计">字数显示与页脚统计</a></li>
+    <li><a href="#评论区样式修改">评论区样式修改</a></li>
+    <li><a href="#上一篇下一篇文章">上一篇/下一篇文章</a></li>
+    <li><a href="#collection页面">Collection页面</a></li>
+    <li><a href="#图片点击放大">图片点击放大</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
 
     </div>
     <div id="post-content">
-    <p>大家好！最近又在装修博客（没停过），主要原因是开始写手账了，想要一个和手账本一样风格的主题，由于依然没找到符合我心意的主题，所以还是决定自己改。在改主题方面我已经有一些丰富经验，想在这里做一个简明笔记整理。</p>
-<p>这个主题依然是在No style please这个主题上修改的，它非常好的一点是，给出了博客所必需的每一个部件，但没有任何冗余的样式或者动画，响应起来非常快。</p>
+    <p>大家好！最近又在装修博客（没停过），主要原因是实体生活开始写手账了，所以想要一个和手账本一样的可爱主题，由于依然没找到符合我心意的主题，所以还是决定自己改。在这里对一些经常重复修改的内容做一下笔记整理，后续新增也会在这里持续添加。</p>
+<p><em>PS：大家知道我上新（？）夜间模式了吧，右上角的小圆点请点一下！很可爱的摩卡色！</em></p>
+<p>这个主题依然是在<a href="https://github.com/hanwenguo/hugo-theme-nostyleplease">No Style Please</a>这个主题上修改的，它非常好的一点是，给出了博客所必需的每一个部件，但没有任何冗余的样式或者动画，响应起来非常快。而我则擅长东抄西抄指挥GPT抄一些可爱的样式回来，然后增加一些我喜欢的功能。</p>
+<p>修改更新请见<a href="/changelog">Changelog</a>，以下是一些修改笔记。</p>
+<h2 id="侧边目录">侧边目录</h2>
+<p>这个铁定是抄的，再找却没找回原来的教程。</p>
+<ol>
+<li>新增<code>layouts/partials/toc.html</code>，写入以下内容：</li>
+</ol>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">{{ if (.Params.toc | default true ) }}
+    &lt;div class=&#34;post-toc&#34; id=&#34;post-toc&#34;&gt;
+        &lt;aside&gt;
+            &lt;header&gt;
+                Table of Contents
+            &lt;/header&gt;
+            {{ $emtLiPtrn := &#34;(?s)&lt;ul&gt;\\s&lt;li&gt;\\s&lt;ul&gt;(.*)&lt;/li&gt;\\s&lt;/ul&gt;&#34; }}
+            {{ $rplcEmtLi := &#34;&lt;ul&gt;$1&#34; }}
+            {{ .TableOfContents | replaceRE $emtLiPtrn $rplcEmtLi | safeHTML }}
+            &lt;!-- https://github.com/gohugoio/hugo/issues/1778#issuecomment-483880269 --&gt;
+            &lt;!-- {{.TableOfContents}} --&gt;
+        &lt;/aside&gt;
+        &lt;a href=&#34;#&#34; id=&#34;toc-toggle&#34;&gt;&lt;/a&gt;
+    &lt;/div&gt;
 
-    </div>
-    <br>
-    <div style="padding-bottom:3px;"></div>
-</article>
-    <div class="pre-next">
-        
-            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2024-12-26/">&lt;&lt; 怎么做皮蛋瘦肉粥和寿喜锅</a>
-        
-        
-    </div>
-    <br>
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-    />
-    <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
-    <div id="comments" class="comments">
-        <style>
+{{ end }}
+</code></pre></details>
+<ol start="2">
+<li>在<code>\layouts\posts\single.html</code>中，找到表示文章内容的<code>{{ .Content }}</code>上方增加：</li>
+</ol>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">    &lt;div style=&#34;position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;&#34;&gt;
+        {{ partial &#34;toc.html&#34; . }}
+    &lt;/div&gt;
+</code></pre></details>
+<p>因为我没研究出来移动端该怎么显示比较合适，所以直接隐藏了，在<code>main.scss</code>内写入：</p>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">@media only screen and (max-width: 1224px) {
+  .post-toc {
+    display: none;
+  }
+}
+</code></pre></details>
+<h2 id="字数显示与页脚统计">字数显示与页脚统计</h2>
+<ol>
+<li>
+<p>在<code>config.toml</code>中写入：<code>hasCJKLanguage = true</code>，这样才能处理中文字数统计。</p>
+</li>
+<li>
+<p>在<code>\layouts\posts\single.html</code>中需要插入字数显示的地方写入：<code>{{ .WordCount }} words</code></p>
+</li>
+</ol>
+<p>页脚统计的代码来源于塔塔，但那篇文章可能隐藏了，所以无法引用，这里稍微记录。</p>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">&lt;footer class=&#34;site-footer&#34;&gt;
+    &lt;section class=&#34;copyright&#34;&gt;
+        &amp;copy; 2021 -{{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format &#34;2006&#34;))) }} {{ .Site.Params.footer.since }} - {{ end }} {{ now.Format &#34;2006&#34; }}
+        &lt;a href=&#34;/&#34;&gt; {{ $.Site.Title }} &lt;/a&gt; · &lt;i class=&#34;fas fa-bell&#34;&gt; &lt;/i&gt;
+        &lt;a id=&#34;days&#34;&gt;0&lt;/a&gt; Days&lt;br&gt;
+        {{$scratch := newScratch}}
+        {{ range (where .Site.Pages &#34;Kind&#34; &#34;page&#34;) }}
+        {{$scratch.Add &#34;total&#34; .WordCount}}
+        {{ end }}
+        {{$var := $scratch.Get &#34;total&#34;}}
+        {{$var = div $var 100.0}}
+        {{$var = math.Ceil $var}}
+        {{$var = div $var 10.0}}
+        共书写了{{$var}}k字 · 共 {{ len (where .Site.RegularPages &#34;Section&#34; &#34;posts&#34;) }}篇文章
+    &lt;/section&gt;
+
+    &lt;!-- 计算网站启动以来的天数 --&gt;
+    &lt;script&gt;
+        var s1 = &#39;2021-11-12&#39;; // 设置建站日期
+        s1 = new Date(s1.replace(/-/g, &#34;/&#34;));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById(&#39;days&#39;).innerHTML = number_of_days;
+    &lt;/script&gt;
+&lt;/footer&gt;
+</code></pre></details>
+<h2 id="评论区样式修改">评论区样式修改</h2>
+<p>我对Waline评论区的一些颜色样式不太喜欢，但它的样式代码又多又长每次改都非常生气。</p>
+<p>在放置评论区的文件中（我的是<code>layouts/partials/comment.html</code>），或者CSS文件内，增加以下内容：</p>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">&lt;style&gt;
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
     .wl-addr {
         display: none !important;
         color: transparent !important;
     }
+
     .wl-content .vemoji,
     .wl-content .wl-emoji {
         display: inline-block;
@@ -309,6 +485,516 @@
     img.vemoji:hover {
         transform: scale(1.8) !important;
     }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+        /*--waline-color: unset;*/
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: #fffcf9;
+        /*评论区输入框的背景颜色*/
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
+    }
+
+&lt;/style&gt;
+</code></pre></details>
+<p>这里的<code>Peru</code>是我选的主题色，可以直接搜索替换成自己喜欢的颜色代码。</p>
+<p>由于我缺乏一个个修改匹配成主题颜色的耐心，这里的话是把Waline的一些文字颜色直接<code>unset</code>掉了，一般会继承当前博客的文字配色，因此也会跟着博客明亮/夜间主题改变而变化。再者是把一些难看的边框给隐藏了。</p>
+<h2 id="上一篇下一篇文章">上一篇/下一篇文章</h2>
+<p>在文章末尾显示上一篇文章和下一篇，Hugo本身自带这个特性。</p>
+<ol>
+<li>在<code>\layouts\posts\single.html</code>中，文章内容的部分下方增加：</li>
+</ol>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">    &lt;div class=&#34;pre-next&#34;&gt;
+        {{with .PrevInSection}}
+            &lt;a class=&#34;pre-next-btn bg&#34; href=&#34;{{.Permalink}}&#34;&gt;&lt;&lt; {{ .Title }}&lt;/a&gt;
+        {{end}}
+        {{with .NextInSection}}
+            &lt;a class=&#34;pre-next-btn bg&#34; href=&#34;{{.Permalink}}&#34;&gt;{{ .Title }} &gt;&gt;&lt;/a&gt;
+        {{end}}
+    &lt;/div&gt;
+</code></pre></details>
+<ol start="2">
+<li>CSS部分</li>
+</ol>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">.pre-next {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre-next-btn {
+  font-size: 1rem;
+  transition: font-size 0.3s ease;
+  /* 添加平滑过渡效果 */
+}
+/* 手机端适配：布局变为单列 */
+@media (max-width: 768px) {
+    .pre-next-btn {
+    font-size: 3.5vw;
+    }
+}
+</code></pre></details>
+<p>还挺方便的吧？</p>
+<h2 id="collection页面">Collection页面</h2>
+<p>这个<a href="/collection">Collection</a>页面是最近新增的，当照片墙也好，好物收集也行。</p>
+<p>这个实际是通过短代码实现的，看到<a href="https://immmmm.com/hugo-goods-page/">Hugo 创建「好物」页面</a>这篇文章所以想搞一个，但作者在更新后好像没有写具体怎么实现。所以稍微来写一下。</p>
+<ol>
+<li>在<code>layouts/shortcodes</code>中增加<code>goods.html</code>：</li>
+</ol>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code>&lt;div class=&#34;goods&#34;&gt;
+    {{ range .Site.Data.goods.goods }}
+    &lt;div class=&#34;goods-bankuai&#34;&gt;
+        &lt;img loading=&#34;lazy&#34; class=&#34;whitey&#34; src=&#34;{{ .image }}&#34; alt=&#34;{{ .title }}&#34;&gt;
+        &lt;div class=&#34;goods-info&#34;&gt;
+        &lt;div class=&#34;goods-title&#34;&gt;
+            &lt;div style=&#34;text-align: center;&#34;&gt;
+                &lt;span&gt;{{ .title }}&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;goods-note&#34;&gt;
+            {{ .description }}
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    {{ else }}
+    &lt;p&gt;Nothing here...&lt;/p&gt;
+    {{ end }}
+&lt;/div&gt;
+
+&lt;style&gt;
+    .whitey {
+        border-width: 10px;
+        border-style: solid;
+        border-image: url(&#34;https://i.imgur.com/8xftJ3v.gif&#34;) 7 fill round;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease; /* 设置过渡效果 */
+    }
+    .whitey:hover {
+        transform: translateY(-5px); /* 鼠标悬停时，图片向上浮动 5px */
+    }
+    .goods {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* 确保内容左对齐 */
+        gap: 30px;  /* 设置照片之间的间隙 */
+    }
+
+    .goods-bankuai {
+        width: calc(33.333% - 30px); /* 每张图片占父容器的三分之一宽度，减去间隙 */
+        box-sizing: border-box;
+        text-align: center;
+        /*display: flex;*/
+        flex-direction: column;
+        justify-content: space-between; /* 确保每个块内容上下排列 */
+        /*height: 300px; !* 固定容器高度，以避免图片撑高 *!*/
+    }
+
+    .goods-bankuai img {
+        width: 100%;  /* 图片宽度为容器宽度 */
+        height: 200px; /* 统一高度，确保照片高度一致 */
+        object-fit: cover; /* 确保图片裁剪和填充容器 */
+        border-radius: 8px; /* 可选：为图片添加圆角 */
+    }
+
+    .goods-title {
+        margin-top: 0px;
+    }
+
+    .goods-note {
+        margin-top: 5px;
+        font-size: 0.9rem;
+    }
+
+
+    /* 当屏幕宽度小于 1024px 时，每行显示两张图片 */
+    @media (max-width: 1024px) {
+        .goods-bankuai {
+            width: calc(50% - 20px); /* 每行显示两张 */
+        }
+    }
+
+    /* 当屏幕宽度小于 768px 时，每行显示一张图片 */
+    @media (max-width: 768px) {
+        .goods-bankuai {
+            width: calc(100% - 20px); /* 每行显示一张 */
+            height: auto;  /* 让容器高度自适应 */
+        }
+        .goods-bankuai img {
+            height: auto; /* 图片自适应高度，不再设置固定高度 */
+        }
+    }
+
+&lt;/style&gt;
+</code></pre></details>
+<ol start="2">
+<li>在博客文件夹根目录创建<code>data/goods/goods.json</code>，存放图片和文字等等数据内容。示例如下（记得改一下别把我们家小豆泥女仆带走了…！）：</li>
+</ol>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">[
+
+  {
+    &#34;image&#34;: &#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/f8ef5b36f711097e46ef49edbe729747.png&#34;,
+    &#34;title&#34;: &#34;凶巴巴女仆小豆泥&#34;,
+    &#34;description&#34;: &#34;这家女仆好凶，不敢来了。&#34;
+  },
+  {
+    &#34;image&#34;: &#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/78dbfc3707453bcbf1b47091768a0331.jpg&#34;,
+    &#34;title&#34;: &#34;委屈擦地女仆小豆泥&#34;,
+    &#34;description&#34;: &#34;好可怜，欺负一下，好可怜……&#34;
+  },
+  {
+    &#34;image&#34;: &#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/635f82685c9f81e58a30fa48ad44657c.png&#34;,
+    &#34;title&#34;: &#34;听音乐的Pingu&#34;,
+    &#34;description&#34;: &#34;Chill, chill...&#34;
+  },
+]
+</code></pre></details>
+<ol start="3">
+<li>新增<code>content/goods.md</code>页面，正文部分写入短代码：<code>{/{&lt; goods &gt;}}</code>，记得删去第一个斜杠。</li>
+</ol>
+<h2 id="图片点击放大">图片点击放大</h2>
+<p>图片放大这个功能大家好像都是用fancybox插件完成的，但无奈我怎么都不成功，只能直接粗暴指挥GPT写一个基础的。实现如下：</p>
+<ol>
+<li>在<code>layouts/partials/head.html</code>中写入：</li>
+</ol>
+<details>
+<summary>代码折叠</summary>
+<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">  {{/*图片放大*/}}
+  &lt;style&gt;
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-row img {
+      flex-grow: 1;
+      max-width: calc(100% / 3 - 20px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .image-row.two-columns img {
+      max-width: calc(50% - 10px);
+    }
+
+    .image-row.three-columns img {
+      max-width: calc(33.33% - 10px);
+    }
+
+    .image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .image-overlay.active {
+      display: flex;
+    }
+
+    .image-overlay img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  &lt;/style&gt;
+  &lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+      console.log(&#39;JavaScript loaded and DOMContentLoaded event fired.&#39;);
+
+      const postContent = document.querySelector(&#39;#post-content&#39;);
+      if (!postContent) {
+        console.error(&#39;Error: #post-content not found!&#39;);
+        return;
+      }
+
+      // 查找所有的 img 元素（无论是否在 p 标签内）
+      const images = Array.from(postContent.querySelectorAll(&#39;img&#39;));
+
+      if (images.length === 0) {
+        console.log(&#39;No images found.&#39;);
+        return;
+      }
+
+      console.log(`Found ${images.length} images.`);
+
+      // 初始化图片点击放大功能的遮罩
+      const overlay = document.createElement(&#39;div&#39;);
+      overlay.className = &#39;image-overlay&#39;;
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement(&#39;img&#39;);
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener(&#39;click&#39;, () =&gt; {
+        overlay.classList.remove(&#39;active&#39;);
+      });
+
+      // 处理每个段落的图片
+      const paragraphs = postContent.querySelectorAll(&#39;p&#39;);
+
+      paragraphs.forEach((paragraph, pIndex) =&gt; {
+        const paragraphImages = Array.from(paragraph.querySelectorAll(&#39;img&#39;));
+        if (paragraphImages.length === 0) {
+          return; // 跳过没有图片的段落
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+        if (paragraphImages.length === 1) {
+          // 单张图片，保留原始布局，仅添加缩放功能
+          const img = paragraphImages[0];
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          if (naturalWidth &gt; 200 &amp;&amp; naturalHeight &gt; 200) {
+            img.style.cursor = &#39;zoom-in&#39;;
+            img.addEventListener(&#39;click&#39;, () =&gt; {
+              overlayImage.src = img.src;
+              overlay.classList.add(&#39;active&#39;);
+            });
+          }
+          return; // 跳过多图布局处理
+        }
+
+        // 多张图片处理，创建新布局
+        const imageRow = document.createElement(&#39;div&#39;);
+        imageRow.classList.add(&#39;image-row&#39;);
+
+        // 根据图片数量调整列数
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add(&#39;two-columns&#39;);
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add(&#39;three-columns&#39;);
+        } else if (paragraphImages.length === 4) {
+          imageRow.classList.add(&#39;two-rows&#39;);
+        } else if (paragraphImages.length === 5) {
+          imageRow.classList.add(&#39;three-two-columns&#39;);
+        } else if (paragraphImages.length === 6) {
+          imageRow.classList.add(&#39;three-columns&#39;);
+        }
+
+        // 为每张图片添加点击放大功能
+        paragraphImages.forEach((img) =&gt; {
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          // 只为大于200x200的图片添加放大功能
+          if (naturalWidth &gt; 200 &amp;&amp; naturalHeight &gt; 200) {
+            img.style.cursor = &#39;zoom-in&#39;;
+            img.addEventListener(&#39;click&#39;, () =&gt; {
+              overlayImage.src = img.src;
+              overlay.classList.add(&#39;active&#39;);
+            });
+          }
+
+          // 移动图片到新容器
+          imageRow.appendChild(img);
+        });
+
+        // 替换原段落内容为图片容器
+        paragraph.innerHTML = &#39;&#39;;
+        paragraph.appendChild(imageRow);
+      });
+
+      // 处理不在p标签里的图片（直接放在文章中）
+      images.forEach((img, index) =&gt; {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        // 只为大于200x200的图片添加放大功能
+        if (naturalWidth &gt; 200 &amp;&amp; naturalHeight &gt; 200) {
+          img.style.cursor = &#39;zoom-in&#39;;
+          img.addEventListener(&#39;click&#39;, () =&gt; {
+            overlayImage.src = img.src;
+            overlay.classList.add(&#39;active&#39;);
+          });
+        }
+
+        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      });
+    });
+  &lt;/script&gt;
+</code></pre></details>
+<p>这个方法查找的是<code>id=post-content</code>的部分内的图片，同时对连续多图情况进行了排列。弊端是加载稍慢，甚至偶尔需要刷新一次才能正常使用，但好处是…很粗暴。</p>
+
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2024-12-26/">&lt;&lt; 怎么做皮蛋瘦肉粥和寿喜锅</a>
+        
+        
+    </div>
+
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: #fffcf9;
+     
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
+    }
+
 </style>
 <div id="waline"></div>
 <script>
@@ -325,7 +1011,8 @@
         dark: true,
     });
 </script>
-    </div>
+</div>
+
 
     <div>
 
@@ -496,7 +1183,7 @@
         
         
         
-        共书写了244.6k字 · 共 74篇文章
+        共书写了247.5k字 · 共 74篇文章
     </section>
 
     
@@ -508,7 +1195,13 @@
         var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerHTML = number_of_days;
     </script>
+
 </footer>
+
+
+
+
+
 
 
 
@@ -594,4 +1287,5 @@
 
             </div>
         </main>
+    <script src="script.js" defer></script>
     </body></html>
