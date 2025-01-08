@@ -3,7 +3,7 @@ title: Collection
 slug: collection
 date: 2020-01-05
 toc: false
-description: "鱼鱼家的萌萌小东西们。"
+description: "鱼鱼家的萌萌小东西们。萌啊，萌啊！"
 hidden: true
 comment: false
 ---
