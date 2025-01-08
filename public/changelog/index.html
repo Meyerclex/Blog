@@ -6,20 +6,9 @@
 
   
     <meta name="description" content="2025/01/08
-
 新增Collection页面，放一些萌萌的小东西。
 新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。
-
-2025/01/05
-
- 整理文件结构
- 移动端看不到Home的奶牛猫图标可怎么办呀！
- 加一个导航栏替代back to home
- 增加页脚字数统计
- 图片放大解决！
-
-2024/12/29
-又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？">
+修改了评论区的配色，Waline这什么神经刀配色，定义八百个颜色全都用得这么丑。">
   
 
   <title>
@@ -200,7 +189,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.617b29bdaae799316ff93b640a6b490adba2ee8703e3eec3c7a8d38c31377f38785de5e754ea87c60b26762c6142bddf91b16af138cb85f81c3bd09c896690e6.css" integrity="sha512-YXspvarnmTFv&#43;TtkCmtJCtui7ocD4&#43;7Dx6jTjDE3fzh4XeXnVOqHxgsmdixhQr3fkbFq8TjLhfgcO9CciWaQ5g==" />
+    <link rel="stylesheet" href="/css/main.b1662238b985684adf10a74fa01c95ca23cec924e1854903e3d3a5e07b685524cb8ad84b49ec233ecd5252ffe7f05e00af32d91958a2d01e23ca9db7754d63e3.css" integrity="sha512-sWYiOLmFaErfEKdPoByVyiPOySThhUkD49Ol4HtoVSTLithLSewjPs1SUv/n8F4ArzLZGVii0B4jyp23dU1j4w==" />
   
 
 
@@ -326,7 +315,7 @@
         <div id="post-meta">
             <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
                 2021-06-28
-                <span> ‧ 1364</span>
+                <span> ‧ 1404</span>
                 <span>words</span>
                 
                 
@@ -382,10 +371,9 @@
         </div>
         <div id="post-content">
             <h2 id="20250108">2025/01/08</h2>
-<ol>
-<li>新增<a href="/collection">Collection</a>页面，放一些萌萌的小东西。</li>
-<li>新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。</li>
-</ol>
+<p>新增<a href="/collection">Collection</a>页面，放一些萌萌的小东西。</p>
+<p>新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。</p>
+<p>修改了评论区的配色，Waline这什么神经刀配色，定义八百个颜色全都用得这么丑。</p>
 <h2 id="20250105">2025/01/05</h2>
 <ul>
 <li><input disabled="" type="checkbox"> 整理文件结构</li>
@@ -539,7 +527,7 @@
         }
         .wl-btn.primary {
             border-color: transparent !important;
-            background:  SteelBlue ;
+            background:  Peru ;
             color: white ;
         }
         @media (max-width: 580px) {
@@ -548,17 +536,26 @@
             }
         }
         :root {
-            --waline-theme-color: SteelBlue;
-            --waline-active-color: SteelBlue;
+            --waline-theme-color: Peru ;
+            --waline-active-color: Peru ;
+            --waline-light-grey: unset;
+            --waline-info-color: unset;
              
+            --waline-border: 0px solid peru;
         }
         .wl-editor:focus, .wl-input:focus {
          background: transparent;
          }
-    .wl-panel {
-        background-color: #fffbf6;
+        .wl-panel {
+        background-color: #fffcf9;
+        }
+    .wl-card .wl-delete, .wl-card .wl-like, .wl-card .wl-reply, .wl-card .wl-edit { color:unset; }
+    [data-waline] p {
+        color: unset;
     }
-
+    .wl-card span.wl-nick {
+         color: unset;
+    }
 </style>
 <div id="waline"></div>
 <script>
@@ -746,7 +743,7 @@
         
         
         
-        共书写了244.5k字 · 共 73篇文章
+        共书写了244.6k字 · 共 73篇文章
     </section>
 
     

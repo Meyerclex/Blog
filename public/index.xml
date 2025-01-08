@@ -517,7 +517,7 @@
       <link>http://localhost:1313/changelog/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/changelog/</guid>
-      <description>&lt;h2 id=&#34;20250108&#34;&gt;2025/01/08&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;新增&lt;a href=&#34;http://localhost:1313/collection&#34;&gt;Collection&lt;/a&gt;页面，放一些萌萌的小东西。&lt;/li&gt;&#xA;&lt;li&gt;新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;20250105&#34;&gt;2025/01/05&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 整理文件结构&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 移动端看不到Home的奶牛猫图标可怎么办呀！&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 加一个导航栏替代back to home&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 增加页脚字数统计&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 图片放大解决！&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;20241229&#34;&gt;2024/12/29&lt;/h2&gt;&#xA;&lt;p&gt;又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;20250108&#34;&gt;2025/01/08&lt;/h2&gt;&#xA;&lt;p&gt;新增&lt;a href=&#34;http://localhost:1313/collection&#34;&gt;Collection&lt;/a&gt;页面，放一些萌萌的小东西。&lt;/p&gt;&#xA;&lt;p&gt;新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。&lt;/p&gt;&#xA;&lt;p&gt;修改了评论区的配色，Waline这什么神经刀配色，定义八百个颜色全都用得这么丑。&lt;/p&gt;</description>
     </item>
     <item>
       <title>小鱼和她的朋友们</title>
