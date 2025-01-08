@@ -726,7 +726,6 @@ body[a="light"] code:not(pre>code) {
   z-index: 100;
   /* 确保导航栏显示在页面内容上方 */
 }
-
 /* 导航栏列表 */
 #header-post #nav ul {
   line-height: 10px;
@@ -734,8 +733,7 @@ body[a="light"] code:not(pre>code) {
   padding: 0;
   list-style-type: none !important;
   display: flex;
-  /* 使用flex布局使内容更加灵活 */
-  //justify-content: flex-end; /* 使导航项居右 */
+  flex-wrap: wrap; /* 允许导航项换行 */
 }
 
 /* 导航栏列表项 */
@@ -790,15 +788,18 @@ body[a="light"] code:not(pre>code) {
   margin: 0 !important;
 }
 
+.header-image {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
 .header-content {
   display: flex;
   flex-direction: column;
-  /* 将标题和返回链接垂直排列 */
   justify-content: space-between;
-  /* 保证标题和链接的高度等于图片的高度 */
-  height: 100%;
-  /* 占满父容器的高度 */
+  flex-grow: 1;  /* 允许它占用剩余空间 */
 }
+
 
 header h1 {
   margin: 10px 0px -5px 0;
