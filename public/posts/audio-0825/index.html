@@ -187,7 +187,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.b1662238b985684adf10a74fa01c95ca23cec924e1854903e3d3a5e07b685524cb8ad84b49ec233ecd5252ffe7f05e00af32d91958a2d01e23ca9db7754d63e3.css" integrity="sha512-sWYiOLmFaErfEKdPoByVyiPOySThhUkD49Ol4HtoVSTLithLSewjPs1SUv/n8F4ArzLZGVii0B4jyp23dU1j4w==" />
+    <link rel="stylesheet" href="/css/main.b4acf9101a620d6deda75ba5d4715e2202d31b620501c022bcabb5c4255ace2873f204789e730605c3118b895b1c071c52a1311c9f8d9e2f0efb6ddba79dbe6e.css" integrity="sha512-tKz5EBpiDW3tp1ul1HFeIgLTG2IFAcAivKu1xCVazihz8gR4nnMGBcMRi4lbHAccUqExHJ&#43;Nni8O&#43;23bp52&#43;bg==" />
   
 
 
@@ -386,77 +386,96 @@
     .wl-card {
         border: 0px solid #eee;
     }
+
     .wl-card .wl-quote {
         border-inline-start: 0px dashed rgba(237, 237, 237, .5);
     }
+
     .wl-card-item {
         position: relative;
         display: flex;
-         padding: 0.2em;
+        padding: 0.2em;
     }
 
-        .wl-addr {
-            display: none !important;
-            color: transparent !important;
-        }
-        .wl-content .vemoji,
-        .wl-content .wl-emoji {
-            display: inline-block;
-            vertical-align: baseline;
-            height: 3.4em !important;
-            margin: -0.125em 0.25em;
-        }
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
 
-        img.wl-emoji,
-        img.vemoji {
-            vertical-align: sub;
-            transition: ease-out 0.6s;
-        }
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
 
-        img.wl-emoji:hover,
-        img.vemoji:hover {
-            transform: scale(1.8) !important;
-        }
-        .wl-header {
-            display: flex
-        ;
-            overflow: hidden;
-            padding: 0 4px;
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
             border-bottom: 0px dashed var(--waline-border-color);
-            border-top-left-radius: 0em;
-            border-top-right-radius: 0em;
         }
-        .wl-btn.primary {
-            border-color: transparent !important;
-            background:  Peru ;
-            color: white ;
-        }
-        @media (max-width: 580px) {
-            .wl-header-item:not(:last-child) {
-                border-bottom: 0px dashed var(--waline-border-color);
-            }
-        }
-        :root {
-            --waline-theme-color: Peru ;
-            --waline-active-color: Peru ;
-            --waline-light-grey: unset;
-            --waline-info-color: unset;
-             
-            --waline-border: 0px solid peru;
-        }
-        .wl-editor:focus, .wl-input:focus {
-         background: transparent;
-         }
-        .wl-panel {
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
         background-color: #fffcf9;
-        }
-    .wl-card .wl-delete, .wl-card .wl-like, .wl-card .wl-reply, .wl-card .wl-edit { color:unset; }
+     
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
     [data-waline] p {
         color: unset;
     }
-    .wl-card span.wl-nick {
-         color: unset;
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
     }
+
 </style>
 <div id="waline"></div>
 <script>
@@ -643,7 +662,9 @@
         
         
         
-        共书写了244.6k字 · 共 73篇文章
+        
+        
+        共书写了247.5k字 · 共 74篇文章
     </section>
 
     
