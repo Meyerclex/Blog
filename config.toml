@@ -41,7 +41,7 @@ ordered    = false
 
 [params]
 [params.theme_config]
-appearance        = "light"
+appearance        = "auto"
 back_home_text    = "Back"
 date_format       = "2006-01-02"
 #  "02 Jan 2006"
