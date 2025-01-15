@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <meta name="description" content="今天下午没什么事做，听电影播客《没折腰FM》的这一期《2024年，中国电影市场回顾》。听到一位背景的嘉宾在算自己今年看电影花了多少钱，19部电影竟然花了一千出头，平均票价五十块！因为好贵，这个数字震惊到我，我平时老看烂片所以超过三十都会价格敏感型犹豫一下。但因为也从来没算过自己看电影花多少钱，又很好奇我都看了啥啊，所以闲着也是闲着，就算了算。
+我平时买票有空都会走淘宝票代省几块，跑电影院也不算勤，算之前我本以为可能总共就三四百块，毕竟就这院线片我感觉啥也没看啊！结果一算吓一跳，请看大屏幕：">
+  
+
+  <title>
+    
+      2024年院线电影颁奖典礼 | 再會，謝謝所有的魚
+    
+  </title>
+
+  
+  <style>
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-row img {
+      flex-grow: 1;
+      max-width: calc(100% / 3 - 20px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .image-row.two-columns img {
+      max-width: calc(50% - 10px);
+    }
+
+    .image-row.three-columns img {
+      max-width: calc(33.33% - 10px);
+    }
+
+    .image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .image-overlay.active {
+      display: flex;
+    }
+
+    .image-overlay img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+
+      console.log(`Found ${images.length} images.`);
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+
+      paragraphs.forEach((paragraph, pIndex) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+        if (paragraphImages.length === 1) {
+          
+          const img = paragraphImages[0];
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+              overlayImage.src = img.src;
+              overlay.classList.add('active');
+            });
+          }
+          return; 
+        }
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        } else if (paragraphImages.length === 4) {
+          imageRow.classList.add('two-rows');
+        } else if (paragraphImages.length === 5) {
+          imageRow.classList.add('three-two-columns');
+        } else if (paragraphImages.length === 6) {
+          imageRow.classList.add('three-columns');
+        }
+
+        
+        paragraphImages.forEach((img) => {
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+              overlayImage.src = img.src;
+              overlay.classList.add('active');
+            });
+          }
+
+          
+          imageRow.appendChild(img);
+        });
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
+      });
+
+      
+      images.forEach((img, index) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (naturalWidth > 200 && naturalHeight > 200) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+
+        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.3d981b6cf1e39d11834e736c44bb8f184aa9158447a181b2c943ddd6cbd8f99387efdb7d87882207f34dfb01df54d642db044a51fbee53a67532f55e1df228a4.css" integrity="sha512-PZgbbPHjnRGDTnNsRLuPGEqpFYRHoYGyyUPd1svY&#43;ZOH79t9h4giB/NN&#43;wHfVNZC2wRKUfvuU6Z1MvVeHfIopA==" />
+  
+
+
+  
+  
+
+
+
+</head>
+<script src="script.js" defer></script>
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+
+<script>
+  
+  const themeToggle = document.getElementById('theme-toggle');
+
+  
+  let currentTheme = localStorage.getItem('theme') || 'auto';
+  if (currentTheme === 'auto') {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    currentTheme = prefersDarkScheme ? 'dark' : 'light';
+  }
+  document.body.setAttribute('a', currentTheme);
+  document.body.classList.add(currentTheme + '-mode');
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+    }
+    localStorage.setItem('theme', currentTheme);
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const winHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    
+    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+    
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+    } else if (scrollPercent > 40) {
+      themeToggle.style.opacity = 0; 
+    } else {
+      themeToggle.style.opacity = 1; 
+    }
+  });
+</script>
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/collection">Collection</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+
+                </div>
+
+<article>
+    <h1>2024年院线电影颁奖典礼</h1>
+    <div id="post-meta">
+        <time datetime="2025-01-15 00:00:00 &#43;0000 UTC">
+            2025-01-15
+            <span> ‧ 1753</span>
+            <span>words</span>
+
+
+
+
+
+
+        </time>
+        
+        <blockquote id="post-description">
+            您好，本年度您共花费了753.5元看电影，共23部影片，请问明年还要继续充值吗？
+        </blockquote>
+        
+    </div>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#太好了是统计结果我们有救了">太好了是统计结果我们有救了</a></li>
+    <li><a href="#那么接下来是颁奖环节">那么接下来是颁奖环节</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+    <div id="post-content">
+    <p>今天下午没什么事做，听电影播客《没折腰FM》的这一期<a href="https://www.xiaoyuzhoufm.com/episode/677d62561962f0b751144fd3">《2024年，中国电影市场回顾》</a>。听到一位背景的嘉宾在算自己今年看电影花了多少钱，19部电影竟然花了一千出头，平均票价五十块！因为好贵，这个数字震惊到我，我平时老看烂片所以超过三十都会价格敏感型犹豫一下。但因为也从来没算过自己看电影花多少钱，又很好奇我<strong>都看了啥啊</strong>，所以闲着也是闲着，就算了算。</p>
+<p>我平时买票有空都会走淘宝票代省几块，跑电影院也不算勤，算之前我本以为可能总共就三四百块，毕竟就这院线片<strong>我感觉啥也没看啊</strong>！结果一算吓一跳，请看大屏幕：</p>
+<h2 id="太好了是统计结果我们有救了">太好了是统计结果我们有救了</h2>
+<table>
+  <thead>
+      <tr>
+          <th>日期</th>
+          <th>电影</th>
+          <th>票价</th>
+          <th>年末结合票价再评分</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>01-01</td>
+          <td>潜行</td>
+          <td>32</td>
+          <td>⭐❓❓❓<br>你也是自愿被男同骗钱的吗❓</td>
+      </tr>
+      <tr>
+          <td>01-20</td>
+          <td>年会不能停</td>
+          <td>39.9</td>
+          <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>01-21</td>
+          <td>饭戏攻心1</td>
+          <td>9.9</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>01-22</td>
+          <td>年会不能停二刷</td>
+          <td>30</td>
+          <td>❓❓❓<br>为啥还二刷了❓</td>
+      </tr>
+      <tr>
+          <td>01-27</td>
+          <td>泰勒时代巡回演唱会</td>
+          <td>17.9</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>02-18</td>
+          <td>热辣滚烫</td>
+          <td>38</td>
+          <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>04-03</td>
+          <td>坠落的审判</td>
+          <td>33</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>04-15</td>
+          <td>白日之下</td>
+          <td>27</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>04-19</td>
+          <td>年少日记</td>
+          <td>35</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>05-04</td>
+          <td>九龙城寨之围城</td>
+          <td>28</td>
+          <td>⭐❓❓❓❓<br>还钱！还钱！郑保瑞你还我血汗钱！</td>
+      </tr>
+      <tr>
+          <td>06-18</td>
+          <td>谈判专家</td>
+          <td>22.5</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>06-21</td>
+          <td>排球少年：垃圾场决战</td>
+          <td>23.5</td>
+          <td>⭐❓💧<br>电影像流体一样滑过大脑</td>
+      </tr>
+      <tr>
+          <td>07-14</td>
+          <td>头脑特工队2</td>
+          <td>25</td>
+          <td>⭐⭐⭐💧<br>电影像流体一样滑过大脑</td>
+      </tr>
+      <tr>
+          <td>08-10</td>
+          <td>灌篮高手</td>
+          <td>22</td>
+          <td>⭐⭐⭐⭐⭐<br>相比排球少年值太多了！</td>
+      </tr>
+      <tr>
+          <td>10-31</td>
+          <td>蓦然回首</td>
+          <td>32</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>11-08</td>
+          <td>侠女</td>
+          <td>60</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>11-09</td>
+          <td>滚滚红尘</td>
+          <td>60</td>
+          <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>11-12</td>
+          <td>青蛇</td>
+          <td>60</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>11-22</td>
+          <td>好东西</td>
+          <td>19.9</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>12-09</td>
+          <td>八部半</td>
+          <td>45</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>12-11</td>
+          <td>误判</td>
+          <td>19.9</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>12-12</td>
+          <td>破·地狱</td>
+          <td>28</td>
+          <td>⭐⭐❓❓<br>请问你哋搞紧咩啊❓</td>
+      </tr>
+      <tr>
+          <td>12-13</td>
+          <td>甜蜜的生活</td>
+          <td>45</td>
+          <td>⭐⭐⭐❓❓💧<br>看完重感冒了</td>
+      </tr>
+      <tr>
+          <td>总计</td>
+          <td>23部</td>
+          <td>753.5元</td>
+          <td>均价约32元/部</td>
+      </tr>
+  </tbody>
+</table>
+<p><em><strong>您好，本年度您共花费了753.5元看电影，共23部影片，请问明年还要继续充值吗？</strong></em></p>
+<p>等一下！！怎么花了七百多块钱！！算完跟朋友吐槽人家在北京做电影工作的花这么多，我又不做电影工作我怎么也花了这么多！！</p>
+<p>算都算了那就顺手写一下年终总结吧。</p>
+<h2 id="那么接下来是颁奖环节">那么接下来是颁奖环节</h2>
+<ol>
+<li>
+<p>首先是我们都很期待的
+<img
+    src="/img/emoji/fox_look_l.png"
+    title="fox_look_l"
+    alt="fox_look_l"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+2024年博主看的第一部院线电影：<strong>可怕男同巨制大烂片《潜行》</strong>！由刘德华林家栋主演，此处摘抄一则小编当日短评：</p>
+<blockquote>
+<p>过年的就该看点烂片，香港导演到底对暗网shopping有什么执念，能不能别老叫一帮手机都不会用的老头搞这种高科技。令人坐立难安的剧情，宛若盗版大白免奶糖却用了100%真牛乳的结局，林家栋你演得爽不爽，说话！</p>
+</blockquote>
+</li>
+<li>
+<p>
+<img
+    src="/img/emoji/fox_suicide.png"
+    title="fox_suicide"
+    alt="fox_suicide"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+而小编2024年最后一部电影是 <strong>《甜蜜的生活》</strong>，它同时也时本年度小编看过最长的电影，看完喜提一周重感冒！</p>
+</li>
+<li>
+<p>小编本年度最贵的电影票是：
+<img
+    src="/img/emoji/fox_shocked.png"
+    title="fox_shocked"
+    alt="fox_shocked"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+ <strong>《年会不能停！》</strong>：亲这边查询到您为该电影充值了39.9元，两日后还续充了30元，请问它是亲您最喜欢的电影吗？？？</p>
+</li>
+<li>
+<p>本年度最便宜的电影票是：<strong>9.9元的《饭戏攻心1》</strong> 
+<img
+    src="/img/emoji/fox_love.png"
+    title="fox_love"
+    alt="fox_love"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+黄子华从开头演到结尾，这不比中途消失的《破·地狱》值多了！</p>
+</li>
+<li>
+<p>小编本年度最不喜欢的电影是 <strong>《九龙城寨之围城》</strong>，此时天空飘来三行字：
+<img
+    src="/img/emoji/fox_what.png"
+    title="fox_what"
+    alt="fox_what"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+还钱！还钱！郑保瑞你还我血汗钱！</p>
+</li>
+<li>
+<p>本年度的黑马电影是 <strong>《误判》</strong> 
+<img
+    src="/img/emoji/fox_smile.png"
+    title="fox_smile"
+    alt="fox_smile"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+小编以为它是六分片，但没想到最终得到了小编的：<strong>五颗星！</strong> 让我们恭喜甄子丹导演！（雷雨般的掌声.mp3）</p>
+</li>
+<li>
+<p>本年度最佳观影体验是 <strong>《好东西》</strong> 
+<img
+    src="/img/emoji/fox_wolf2.png"
+    title="fox_wolf2"
+    alt="fox_wolf2"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+我去的那一场特别多女观众，是非常热闹的笑片所以氛围特别好。让我们恭喜邵艺辉导演！（雷雨般的掌声.mp3）</p>
+</li>
+<li>
+<p>本年度没进入排片序列的漏网之鱼是：<strong>小编2023年12月30日看的《金手指》</strong>。
+<img
+    src="/img/emoji/fox_doubts.png"
+    title="fox_doubts"
+    alt="fox_doubts"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+小编只是觉得有必要提一下今年还有这部大制作……</p>
+</li>
+</ol>
+<p>颁奖到这里已经写累了，院线就实在没有最佳影片
+<img
+    src="/img/emoji/fox_gossip.png"
+    title="fox_gossip"
+    alt="fox_gossip"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+我后来翻了翻NeoDB，发现2024年标了55个电影，最喜欢的竟然是两部日本片片，<strong>《笑之大学》</strong> 和 <strong>《蒲公英》</strong>。我几乎没看过什么日本电影，所以对这个结果非常的意外！</p>
+<p>来都来了。24年看得最多的其实是剧，竟然标记了35个电视剧（也因为每一季就是一个标记啦）！其中特别喜欢的是 <strong>《风骚律师》（Better call Saul）</strong> 
+<img
+    src="/img/emoji/fox_look_r.png"
+    title="fox_look_r"
+    alt="fox_look_r"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+很好看，推荐一下。书的话就看了16个，实在太少了，还没有格外喜欢爱不释手的。小编对24年读的书整体都不太满意吧？比较有印象也许是最近看的 <strong>赖香吟《其后》</strong>。因为注意力不集中，所以开始倾向于比较短容易看完的书，但是取向上又不再像以前那样痴迷短篇小说了，对于总是翻开看又是短篇小说集这件事有些厌烦。并且依旧对非虚构类的文本全无兴趣——自己都想说这么挑还看什么看别看了！但也依然对此没有任何具体的计划。</p>
+<p>写到这里也差不多了，那么本年度的糊弄学总结就写到这里！下次见。</p>
+<hr>
+<p>
+<img
+    src="/img/emoji/fox_cool.png"
+    title="fox_cool"
+    alt="fox_cool"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+本文含有致死量的小表情，但我是不会改的！（逃</p>
+
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/01-05/">&lt;&lt; 简明装修笔记一则</a>
+        
+        
+    </div>
+
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(244, 241, 238);
+        box-shadow: 1px 1px 2px rgba(205, 133, 63, 0.7);
+     
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
+    }
+
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+</div>
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了249.3k字 · 共 75篇文章
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+
+</div>
+
+            </div>
+        </main>
+    <script src="script.js" defer></script>
+    </body></html>
