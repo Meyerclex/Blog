@@ -1,5 +1,5 @@
 ---
-title: 萌物博物馆
+title: 小东西博物馆
 slug: collection
 date: 2020-01-05
 toc: false
