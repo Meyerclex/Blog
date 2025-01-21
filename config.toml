@@ -65,7 +65,7 @@ url = "/links"
 weight = 3
 
 [[menu.main]]
-name = "Collection"
+name = "Museum"
 url = "/collection"
 weight = 4
 
