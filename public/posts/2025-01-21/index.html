@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <meta name="description" content="仍不能直视即将到来的离别是一种好的迹象，我认为。这是我身上所葆有的其中柔软。正如悲伤令人觉得生活，而痛苦仍所示我很在乎。一月份临近回家，和好朋友们于是常约会见面，吃饭快活。我盘算所剩不多的时间，又约周五吃饭时心中其实有点不愿。我很早前就已经知道好朋友年后不再回来，计划要去另一个城市，大半年里我总是想起这事，越临近真的分别，我越不能去看，而越转开脸，越知晓离别就在那里。与朋友相识相处的一年半里度过非常多的，幸福的时刻。最快乐的那些都是一起。这样可知的分别带来一种如影随形的悲伤，我缺乏勇气来留下这样记录，因太不舍，我对这件事没有安全的不会悲伤的视角，书写这件事会给我带来很剧烈的心碎，往后每一次回读都会被这份难过伤害，记忆亦由水到实。犬犬说记录下来就是真正的稀客了，“但那天曾实在华丽地邂逅”。我知道快乐真的发生过，所以即便再看时感伤也应该写下。">
+  
+
+  <title>
+    
+      但那天曾实在华丽地邂逅 | 再會，謝謝所有的魚
+    
+  </title>
+
+  
+  <style>
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-row img {
+      flex-grow: 1;
+      max-width: calc(100% / 3 - 20px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .image-row.two-columns img {
+      max-width: calc(50% - 10px);
+    }
+
+    .image-row.three-columns img {
+      max-width: calc(33.33% - 10px);
+    }
+
+    .image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .image-overlay.active {
+      display: flex;
+    }
+
+    .image-overlay img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+
+      console.log(`Found ${images.length} images.`);
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+
+      paragraphs.forEach((paragraph, pIndex) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
+
+        if (paragraphImages.length === 1) {
+          
+          const img = paragraphImages[0];
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+              overlayImage.src = img.src;
+              overlay.classList.add('active');
+            });
+          }
+          return; 
+        }
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        } else if (paragraphImages.length === 4) {
+          imageRow.classList.add('two-rows');
+        } else if (paragraphImages.length === 5) {
+          imageRow.classList.add('three-two-columns');
+        } else if (paragraphImages.length === 6) {
+          imageRow.classList.add('three-columns');
+        }
+
+        
+        paragraphImages.forEach((img) => {
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+              overlayImage.src = img.src;
+              overlay.classList.add('active');
+            });
+          }
+
+          
+          imageRow.appendChild(img);
+        });
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
+      });
+
+      
+      images.forEach((img, index) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (naturalWidth > 200 && naturalHeight > 200) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+
+        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      });
+    });
+
+
+
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.3d981b6cf1e39d11834e736c44bb8f184aa9158447a181b2c943ddd6cbd8f99387efdb7d87882207f34dfb01df54d642db044a51fbee53a67532f55e1df228a4.css" integrity="sha512-PZgbbPHjnRGDTnNsRLuPGEqpFYRHoYGyyUPd1svY&#43;ZOH79t9h4giB/NN&#43;wHfVNZC2wRKUfvuU6Z1MvVeHfIopA==" />
+  
+
+
+  
+  
+
+
+
+</head>
+<script src="script.js" defer></script>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+
+<script>
+  
+  const themeToggle = document.getElementById('theme-toggle');
+
+  
+  let currentTheme = localStorage.getItem('theme') || 'auto';
+  if (currentTheme === 'auto') {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    currentTheme = prefersDarkScheme ? 'dark' : 'light';
+  }
+  document.body.setAttribute('a', currentTheme);
+  document.body.classList.add(currentTheme + '-mode');
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+    }
+    localStorage.setItem('theme', currentTheme);
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const winHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    
+    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+    
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+    } else if (scrollPercent > 40) {
+      themeToggle.style.opacity = 0; 
+    } else {
+      themeToggle.style.opacity = 1; 
+    }
+  });
+</script>
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/collection">Collection</a></li>
+      
+        <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+
+                </div>
+
+<article>
+    <h1>但那天曾实在华丽地邂逅</h1>
+    <div id="post-meta">
+        <time datetime="2025-01-21 00:00:00 &#43;0000 UTC">
+            2025-01-21
+            <span> ‧ 3566</span>
+            <span>words</span>
+
+
+
+
+
+
+        </time>
+        
+    </div>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents"></nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+    <div id="post-content">
+    <p>仍不能直视即将到来的离别是一种好的迹象，我认为。这是我身上所葆有的其中柔软。正如悲伤令人觉得生活，而痛苦仍所示我很在乎。一月份临近回家，和好朋友们于是常约会见面，吃饭快活。我盘算所剩不多的时间，又约周五吃饭时心中其实有点不愿。我很早前就已经知道好朋友年后不再回来，计划要去另一个城市，大半年里我总是想起这事，越临近真的分别，我越不能去看，而越转开脸，越知晓离别就在那里。与朋友相识相处的一年半里度过非常多的，幸福的时刻。最快乐的那些都是一起。这样可知的分别带来一种如影随形的悲伤，我缺乏勇气来留下这样记录，因太不舍，我对这件事没有安全的不会悲伤的视角，书写这件事会给我带来很剧烈的心碎，往后每一次回读都会被这份难过伤害，记忆亦由水到实。犬犬说记录下来就是真正的稀客了，“但那天曾实在华丽地邂逅”。我知道快乐真的发生过，所以即便再看时感伤也应该写下。</p>
+<p>周五几个人相见时去吃了饭，放工后聚会吃饭总是幸福，我第一次吃到醋炒鸡蛋，鲮鱼罐头炒空心菜，每道都香得默然无语埋头苦吃，吃到八九分饱聊天，其中一友有葱姜蒜诸多不吃，于是问。相形之下发现我几乎对饭菜里的蒜无感，完全吃不出存在感，大概是因为我从小吃的炒青菜里全都放蒜的缘故，已成背景色般默认。</p>
+<p>吃完饭之后去朋友二猫家庭摸猫。朋友年末搬家新宅，猫咪娇软可欺，新宅亮堂宽敞，如景区游客般把每一个房间都参观，什么都好新奇，什么都好特别，坐在朋友沙发上又吃又拿，把猫亲了又亲，音响里放杨千嬅作背景音乐，如灌下迷魂汤般幸福，有一瞬间那别离的哀伤终于从我身体离开，而又在下一瞬对我重重一击。我太清楚这样的时刻珍贵，因而一刻不愿错神，也因而竭尽全力移开视线。在沙发上，朋友忽然和我说，要不我和你一起去香港吧，周日。我立刻坐起，讲那我们买票吧。</p>
+<p>呆到很晚。太晚了。其实有看时间，仍因不愿这夜结束而拖延到地铁到停运，最后不得不打车回家。地铁站外夜色陈旧昏黄，像宣纸上滴墨，过零点，我等车神游天外。已经到站的朋友折返，我问她怎么，她说送完另一个友，“来看看你”。这样感性的夜晚在我生命或许还有很多，但我只记得这一个。</p>
+<p>我不曾觉得交到朋友容易，但所知交的好友却都轻易得来，好像只是站在那里，站得很近，之后我们就成为好友。我相信自己做过很对的选择才导致如此，几周前吃饭，讲到她室友很讨厌大城市，总想要回到小一点的地方。问我。而我前所未有肯定，喜恶不谈，在更小的地方我无法认识你这样的人。话未讲完她就清楚我意思。如鲤鱼入水般。常人还是异类，只交由此时此刻此地。我确信这样好的友谊真的是生命中的稀客。</p>
+<p>回到家太晚，躺倒就是休息。周六有重要行程，杨千嬅MY TREE OF LIVE巡回演唱会。这票是12月份的时候开抢，因为就在家门口，所以很确定自己一定要去，抢到周六的票之后对2025年有了极大的善意，每每想起都觉得又原谅了一些事情。“在现场”这事的幸福难能言说，到了一回想起就从心底汩汩涌出人性与美德的地步。去年下半年听最多的歌手之一就是杨千嬅，和我开始拿《勇》与《少女的祈祷》代餐有很大关系，后者每每听每每欲泪，等到现场真的听到真是泪下。杨小姐在台上耀眼无比，1.18的现场氛围好到仿佛观众都喝了两杯才入场，唱到《Wonder Woman》的时候甚至起立蹦迪，反正对我来说能现场听到《少女的祈祷》已经是我2024年嗑CP （…）生活最完美的Ending了。</p>
+<p>中场时唱《小城大事》，姐有一句高难度的“吻下来 豁出去 这吻别似覆水”给观众大型抢拍事件发生，姐淡定把拍子抢回来唱，疑似想笑又忍了。到后半场嘉宾突然上线，我完全没反应过来就看到一个陌生男人在姐后面登场突然开始唱歌，因为我实在不认识他的脸，茫然地听了整首才反应过来是周柏豪。Talking环节有个超好笑的地方是周柏豪突然回忆很久以前杨千嬅对他说过的鼓励的话，我也完全没记住，但他真的复述了她超长的一段话，杨小姐懵懵地听完，说哇自己一天天说好多话，完全不记得还跟你乱说过这些。可能是被自己逗到然后突然发出大笑，试图控制了一下还是狂笑不止直不起腰……观众还没反应过来她的笑点，反而是被她的狂笑逗笑的，实在是太萌了。</p>
+<p>到树巡后半程粉丝看她在台上情难自已落泪几乎是固定项目，《还有事情可庆祝》时很多粉丝自发拉炮，半场Talking环节我后排的观众和旁边的人讲完啦肯定要喊（哭）啦，她笑着说你们哪来这么多这些东西，又是忍不住掉泪背身去找纸巾，喃喃讲“大件事啦”。这真的是完美的现场，其实到最后我都震惊了怎么能有这么多歌还没唱完，中途好像是《芬梨道上》还是哪一首她口误说了“最后一首，呃也不是最后一首”结果这女的又在那里一边哭一边咔咔猛唱，怎么能猛唱三个小时不带停的！到最后唱《野孩子》已经泪到没法再唱，像个孩子一样抿紧嘴唇哭，台上crew都过来抱她。最后一首是《杨千嬅》，我去年下半听过无数遍的年最爱之一：“如果想照耀万人请加点信心，如果可磊落做人你会更吸引，成年人劝过你现在大个要做大戏。但是我永远爱你”，后来再听都会俗套地泪目一下。喜欢她也因为她如此至情至性率真如小孩，是非常感动难忘的夜晚，回家路上骑着自行车回去，一直幸福恍惚得两点多还没睡着。</p>
+<p>然后隔天周日就是要和朋友去香港，我是看Timeline上朋友都去看谢君豪的《天下第一楼》了，它开佛山场时我完全不知道。虽然周末这么出游有点太密集了，但合计一下我年前竟然只有1.19这个周日才有空，外加闲鱼上有人出香港场的票，才170人民币实体票包邮到家，基本没思考太多就买了。而朋友是周五临时起意和我来，和朋友出游总是开心幸福的，那天她穿白色卫衣，浅色牛仔裤，还穿球鞋，还背了一个红色的背包——看起来超级像大学生啊！我看到第一眼在心里尖叫这也太萌了吧！但到港后坐地铁，因为旺角街上人又多又密，准备去吃午饭的店又发现排长队。她前一夜没有睡好，闹市里人多得我俩都有点恐慌，她Apple Watch直接提示有氧适能过低可能引发重大健康风险，到了询问要不要通知家人的程度，于是到麦当当吃东西休息。我吃饱后冲去剧院，险些迟到。</p>
+<p>《天下第一楼》是粤语演出，我很少看剧，但为数不多的几回几乎都是在看粤语剧。上回来香港也是为了看黄秋生的《极地迷情》，当时不带字幕很担心自己的粤语不好看不明白，事后发现完全没问题，所以这次来非常放心，结果（是我自己没认真看演出信息啦）原来是带中英文字幕的，舞台上方和左右有三个字幕位置，反而因为经常要盯舞台和盯字幕导致我视觉疲劳眼睛很累。港话演出似乎都还保留送场刊明信片这类周边的习惯，这次散场还给观众派利是了。顺便散场时看到有人在花篮前合影，凑近一看是刘德华送的。</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/c99aa48555774450606eb383497a66af.JPG" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/ba2dc186a9120a5dddaac63f50a20c1e.JPG" alt=""></p>
+<p>来这一场之前没做功课，反而蛮意外的。我本来以为《天下第一楼》可能又是狮子山下的类型，结果看完才知道原来是幻灭和失败的故事。我人在山顶看不到什么细节了，但演员台词功底都很好，一把声又润又亮很入戏，小角色里其实我还蛮喜欢克五和李小辫的（这就是发场刊的重要性，本来不太记得的一翻什么都翻到了！）。而这次是奔着谢君豪来，此前看小鹅说他在这里尽得风流，然后这人一身白色长衫出来亮相亮声我就有点晕了，大概都很难不想起痴人正是十三郎。看到他当然是很幸福的。可惜《天下第一楼》里的卢孟实我觉得人物上并不是非常有力，我觉得最有力的应该是终场他听到要拿秤去秤他店里的伙计时，很惶然痛切地说不行——但后来回味其实最有力是中间轰然的闭门，“好一座危楼”。最终似梦又似临终，他无言地站在台上，那对“好一座危楼谁是主人谁是客，只三间旧屋时宜明月时宜风”的对联化开，声色转头皆空，白茫茫一片真干净。</p>
+<p>看完觉得这剧最有力的其实应该是常贵，从懵懵地得知要去分店，定定地看着孟实，等着，一个字也没有等来，只能凄惶地说那我今夜就走了。再下半场给儿子小五谋一个学徒而不得而被看不起的部分也非常哀戚。尽管《天下第一楼》有些处理我不太理解，但审美上还是很喜欢这样寂寥与失败的故事，光鲜的东西被烧毁，仅留一地余烬。</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/20325b50f0bbe122452fdcf54ef2e316.JPG" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/0e9a6586b4f8cc42de373ebabc9fd1a3.png" alt=""></p>
+<p>看完因为时间比较紧所以没有去蹲SD，现在想想没有蹲到也好，感觉山顶和台上的距离就很合适，直面某人那双美丽有情的大眼睛恐怕也会毁了我的人生。赶紧准备搭车回去，结果朋友因为坐船导致误时没能顺利按时到达XD。但也没有事，赶紧买了下一班车，只隔一个小时，于是又得以有一个小时时间走在香港的夜色里。那时路上人已经少了很多，太子站外我们聊天，在糖水店喝糖水，步行丈量城市，我暗中想这夜色多么美丽，密友与我于香港此时此刻，哪怕误时也不毁坏心情。等回到广州时已经是将近晚上十点，我担心她因为今天身体不舒服而觉得旅途是不开心的，于是在车上就打算分别时拥抱，在昏暗的人行道上她对我说“我会一直记得这时抱住你的感觉”。我也同样。而此刻我真的记得那时我们紧紧拥抱的感受。人们在我生命里留下一些很好的东西，那些紧密的触感，我不会忘记。</p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/15222d46da91d3b20c73ac4754d6c2fd.JPG" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/c861b7df0f601aca0f99cb31c9aaa1be.png" alt="大学生朋友"></p>
+
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-01-15/">&lt;&lt; 2024年度院线电影颁奖典礼</a>
+        
+        
+    </div>
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(244, 241, 238);
+        box-shadow: 1px 1px 2px rgba(205, 133, 63, 0.7);
+     
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
+    }
+
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+</div>
+
+
+
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了252.9k字 · 共 76篇文章
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="380" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+</div>
+
+            </div>
+        </main>
+    <script src="script.js" defer></script>
+    </body></html>

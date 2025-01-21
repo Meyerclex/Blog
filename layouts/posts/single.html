@@ -38,7 +38,6 @@
             <a class="pre-next-btn bg" href="{{.Permalink}}">{{ .Title }} >></a>
         {{end}}
     </div>
-
 {{ if .Params.comment | default true }}
 <br>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
@@ -47,6 +46,9 @@
 <div id="comments" class="comments">
     {{ partial "comment.html" . }}
 </div>
+
+
+
 {{ end }}
 
     <div>
