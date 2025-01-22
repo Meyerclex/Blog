@@ -12,24 +12,15 @@ comment: false
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // 获取带有 post-content 类的文章内容
     var articleContent = document.querySelector(".post-content");
-
-    // 获取文章内容内部的所有列表项
     var items = articleContent.querySelectorAll("ul li");
-
-    // 将列表项转换为数组
     var itemsArray = Array.from(items);
-
-    // 随机排列数组中的元素
     for (var i = itemsArray.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = itemsArray[i].innerHTML;
         itemsArray[i].innerHTML = itemsArray[j].innerHTML;
         itemsArray[j].innerHTML = temp;
     }
-
-    // 获取每隔6个项后的分割线
     for (var i = 5; i < itemsArray.length; i += 6) {
         var hr = document.createElement("hr");
         itemsArray[i].parentNode.insertBefore(hr, itemsArray[i].nextSibling);
@@ -112,6 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
 - [一支咏叹调](https://turquoise.one/)：是蜉蝣（的小豆泥乐园！）今年是钩针织物艺术家！
 
 - [一片痴心俱成灰](https://akaito.xyz/)：是女祭，一位神秘长情狡兔多窟的参展达人同人女。
+
+- [第三夏尔](https://thirdshire.com)：是白石京师傅，织毛线，冥想，大搞美丽装修。记录丰富多彩的事情。
+
+- [枕石](zhen-shi.github.io/)：语言风格利落又干净的薯饼，那些关于古典乐的文章结构清晰又美丽，非常值得阅读。
 
 ---
 
