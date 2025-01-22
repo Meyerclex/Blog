@@ -4,7 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {{ if .IsPage }}
-    <meta name="description" content="{{ .Summary | default "Default description" }}">
+    <meta name="description" content="{{ .Description | default .Summary | default "Default description" }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ .Description | default .Summary | default "Default description" }}">
+    <meta property="og:image" content="{{ .Params.image }}">
   {{ end }}
 
   <title>
