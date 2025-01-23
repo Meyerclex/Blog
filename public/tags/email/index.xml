@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Email on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/email/</link>
+    <link>http://localhost:1313/tags/email/</link>
     <description>Recent content in Email on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/email/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/email/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件</title>
-      <link>https://gregueria.icu/posts/mail/</link>
+      <link>http://localhost:1313/posts/mail/</link>
       <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/mail/</guid>
+      <guid>http://localhost:1313/posts/mail/</guid>
       <description>&lt;p&gt;事情要从 Checker Plus for Gmail 这个浏览器插件开始讲起，它是一个可以提醒你 Gmail 收到新邮件、并且不需要点开新的网页就能直接查看邮件的插件。&lt;/p&gt;&#xA;&lt;p&gt;不知什么时候我安装了这个它，它的图标小小一个，挂在我浏览器的右上角，非常十分之特别好用。因为实在太方便了，导致我后来很多网站都直接用了 Gmail 的邮箱来注册。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yearly on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/yearly/</link>
+    <link>http://localhost:1313/tags/yearly/</link>
     <description>Recent content in Yearly on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 24 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/yearly/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/yearly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2024同人年终总结 ✨</title>
-      <link>https://gregueria.icu/posts/fanfic2024/</link>
+      <link>http://localhost:1313/posts/fanfic2024/</link>
       <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/fanfic2024/</guid>
+      <guid>http://localhost:1313/posts/fanfic2024/</guid>
       <description>&lt;p&gt;今年竟然稍微写了一些东西，虽然不多，也来年终总结一下。问题来自各路问卷，选择了我觉得回答得上来的一些问题。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1. 基本情况？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;今年年初因为家里的事心情阴郁低落，逃家之后三四月份开始才真正过了点同人生活。主要写的就是无间道的哥和弟，虽然去年也在搞，但今年如此燎原之势起因是三月份小派老师突然戳我给我看一段小仁受伤之后在倪家的删减段落，我也没想到会搞这个片片这么久，反正就是到现在还在上头一发不可收拾。&lt;/p&gt;</description>
     </item>
   </channel>

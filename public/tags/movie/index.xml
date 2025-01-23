@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Movie on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/movie/</link>
+    <link>http://localhost:1313/tags/movie/</link>
     <description>Recent content in Movie on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 26 Jan 2022 16:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/movie/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/movie/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>下条时间线仍做读者与观众</title>
-      <link>https://gregueria.icu/posts/2018/</link>
+      <link>http://localhost:1313/posts/2018/</link>
       <pubDate>Wed, 26 Jan 2022 16:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/2018/</guid>
+      <guid>http://localhost:1313/posts/2018/</guid>
       <description>&lt;p&gt;放假以后我的日子不再以“周”为标尺，像鱼一样，随意生活。临近过年，每件事底下都暗藏焦灼，总觉得该整理一下了。先拣两件这段时间来我觉得最重要的事说说。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《指南》说：“尽管去吧，祝你好运”</title>
-      <link>https://gregueria.icu/posts/guide-for-drunkard/</link>
+      <link>http://localhost:1313/posts/guide-for-drunkard/</link>
       <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/guide-for-drunkard/</guid>
-      <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;《指南》对醉酒给出了一些建议：&lt;/i&gt;&lt;/center&gt;&#xD;&#xA;&lt;center&gt;&lt;i&gt;“尽管去吧，祝你好运”&#xD;&#xA;&lt;/i&gt;&#xD;&#xA;&lt;/blockquote&gt;</description>
+      <guid>http://localhost:1313/posts/guide-for-drunkard/</guid>
+      <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;《指南》对醉酒给出了一些建议：&lt;/i&gt;&lt;/center&gt;&#xA;&lt;center&gt;&lt;i&gt;“尽管去吧，祝你好运”&#xA;&lt;/i&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>人生差生的八月份怎么过</title>
-      <link>https://gregueria.icu/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</link>
+      <link>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</guid>
-      <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;又名《反派假期指南》。先下发给各位反派，各自学习。&lt;/i&gt;&#xD;&#xA;&lt;/center&gt;&#xD;&#xA;&lt;/blockquote&gt;</description>
+      <guid>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</guid>
+      <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;又名《反派假期指南》。先下发给各位反派，各自学习。&lt;/i&gt;&#xA;&lt;/center&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>
 </rss>
