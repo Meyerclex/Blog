@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 > {{< emoji name="blobcatflower" ext="">}}基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！
 > 
-> 每一次刷新，排列顺序都会被打乱。
+> {{< emoji name="cats" ext="">}}每一次刷新，排列顺序都会被打乱。
+> 
+> 请不要将我的站点收录进任何聚合页面。{{< emoji name="face" ext="gif">}}目前只想和说过话/有毛毛象联系方式的朋友交换链接，所以也请不要添加单向友链。交换的话右下角Guest Book和毛象联系都OK！
 
 ---
 
@@ -120,6 +122,4 @@ document.addEventListener("DOMContentLoaded", function() {
 > 
 > 简介（如需）：您首页的奶牛猫图片转发大使
 
-很珍惜博客这样的连结，因而暂时不希望是单向链接。 虽然新主题暂时没办法打开友链评论区，但仍然欢迎和我说过话/有毛毛象联系方式的朋友交换链接，Guest Book和毛象联系都OK！
-
-{{< emoji name="cats" ext="">}}希望您也是对人和小动物都富有同理心的友善之人！
+很珍惜博客这样的连结，因而暂时不希望是单向链接。{{< emoji name="cats" ext="">}}希望您也是对人和小动物都富有同理心的友善之人！
