@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +11,14 @@
 
 
 基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！">
+    <meta property="og:title" content="小鱼和她的朋友们">
+    <meta property="og:description" content="
+
+
+
+
+基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！">
+    <meta property="og:image" content="">
   
 
   <title>
@@ -197,7 +205,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.3d981b6cf1e39d11834e736c44bb8f184aa9158447a181b2c943ddd6cbd8f99387efdb7d87882207f34dfb01df54d642db044a51fbee53a67532f55e1df228a4.css" integrity="sha512-PZgbbPHjnRGDTnNsRLuPGEqpFYRHoYGyyUPd1svY&#43;ZOH79t9h4giB/NN&#43;wHfVNZC2wRKUfvuU6Z1MvVeHfIopA==" />
+    <link rel="stylesheet" href="/css/main.a0a32348b43f6764ec7230f38506a203432c6fce81a59cf359f319241429f58f8cf8008c2becf02d7c95004dc3fb4efb9ccebed1dc41c04f9e829341624bbaa5.css" integrity="sha512-oKMjSLQ/Z2TscjDzhQaiA0Msb86BpZzzWfMZJBQp9Y&#43;M&#43;ACMK&#43;zwLXyVAE3D&#43;077nM6&#43;0dxBwE&#43;egpNBYku6pQ==" />
   
 
 
@@ -309,8 +317,6 @@
       
         <li><a href="/collection">Museum</a></li>
       
-        <li><a href="/index.xml">RSS</a></li>
-      
     </ul>
   </span>
 </div>
@@ -323,7 +329,7 @@
         <div id="post-meta">
             <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
                 2021-06-28
-                <span> ‧ 1418</span>
+                <span> ‧ 1495</span>
                 <span>words</span>
                 
                 
@@ -342,24 +348,15 @@
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // 获取带有 post-content 类的文章内容
     var articleContent = document.querySelector(".post-content");
-
-    // 获取文章内容内部的所有列表项
     var items = articleContent.querySelectorAll("ul li");
-
-    // 将列表项转换为数组
     var itemsArray = Array.from(items);
-
-    // 随机排列数组中的元素
     for (var i = itemsArray.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = itemsArray[i].innerHTML;
         itemsArray[i].innerHTML = itemsArray[j].innerHTML;
         itemsArray[j].innerHTML = temp;
     }
-
-    // 获取每隔6个项后的分割线
     for (var i = 5; i < itemsArray.length; i += 6) {
         var hr = document.createElement("hr");
         itemsArray[i].parentNode.insertBefore(hr, itemsArray[i].nextSibling);
@@ -488,6 +485,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </li>
 <li>
 <p><a href="https://akaito.xyz/">一片痴心俱成灰</a>：是女祭，一位神秘长情狡兔多窟的参展达人同人女。</p>
+</li>
+<li>
+<p><a href="https://thirdshire.com">第三夏尔</a>：是白石京师傅，织毛线，冥想，大搞美丽装修。记录丰富多彩的事情。</p>
+</li>
+<li>
+<p><a href="zhen-shi.github.io/">枕石</a>：语言风格利落又干净的薯饼，那些关于古典乐的文章结构清晰又美丽，非常值得阅读。</p>
 </li>
 </ul>
 <hr>
@@ -706,7 +709,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
         
-        共书写了252.9k字 · 共 76篇文章
+        共书写了253.3k字 · 共 76篇文章
     </section>
 
     
