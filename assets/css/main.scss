@@ -154,10 +154,13 @@ body[a="dark"] {
 
 body[a="light"] {
   @include light-appearance;
-  background-image: linear-gradient(#e4e4e4 1px, transparent 1px),
-  linear-gradient(90deg, #e4e4e4 1px, transparent 1px);
-  background-size: 10px 10px, 10px 10px, 2px 2px, 2px 2px;
+  background-color: $bg-light;
+  background-image:
+          linear-gradient(rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px),
+          linear-gradient(90deg, rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px);
+  background-size: 10px 10px, 10px 10px;
 }
+
 
 @media (prefers-color-scheme: dark) {
   body[a="auto"] {
