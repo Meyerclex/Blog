@@ -6,6 +6,19 @@ slug: changelog
 toc: true
 ---
 
+## 2025/01/23
+
+由于博客被saveweb的聚合页未经问询直接收录，并在要求删掉收录时被对方称为“极端女权”（可见[图片](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/image.png)），所以关闭了RSS订阅源。
+
+### 具体做法
+
+删除`public`文件夹中的`index.xml`，并在`config.toml`中加入以下内容：
+
+```
+[outputs]
+home = ["HTML"]
+```
+
 ## 2025/01/08
 
 新增[Collection](/collection)页面，放一些萌萌的小东西。
