@@ -12,7 +12,6 @@
     
   </title>
 
-
   <style>
     .image-row {
       display: flex;
@@ -126,6 +125,12 @@
       const paragraphs = postContent.querySelectorAll('p');
       paragraphs.forEach((paragraph) => {
         const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+
+        
+        if (paragraphImages.length === 1) {
+          return;
+        }
+
         if (paragraphImages.length === 0) {
           return; 
         }
@@ -150,6 +155,14 @@
 
         
         paragraphImages.forEach((img) => {
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          
+          if (naturalWidth <= 200 || naturalHeight <= 200) {
+            return;
+          }
+
           const container = document.createElement('div');
           container.classList.add('image-container');
 
