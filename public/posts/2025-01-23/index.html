@@ -17,7 +17,7 @@
     
   </title>
 
-  
+
   <style>
     .image-row {
       display: flex;
@@ -27,19 +27,36 @@
       align-items: center;
     }
 
-    .image-row img {
-      flex-grow: 1;
-      max-width: calc(100% / 3 - 20px);
+    .image-container {
+      display: flex;
+      flex-direction: column;   
+      align-items: center;      
+      width: calc(100% / 3 - 20px);   
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
-    .image-row.two-columns img {
-      max-width: calc(50% - 10px);
+    .image-container .alt-text {
+      display: block;   
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px;  
     }
 
-    .image-row.three-columns img {
-      max-width: calc(33.33% - 10px);
+     
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);   
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);   
     }
 
     .image-overlay {
@@ -63,10 +80,8 @@
       max-width: 80%;
       max-height: 80%;
     }
-
-
-
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -76,16 +91,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-
-      console.log(`Found ${images.length} images.`);
 
       
       const overlay = document.createElement('div');
@@ -100,74 +105,7 @@
       });
 
       
-      const paragraphs = postContent.querySelectorAll('p');
-
-      paragraphs.forEach((paragraph, pIndex) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-        if (paragraphImages.length === 1) {
-          
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-          return; 
-        }
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        } else if (paragraphImages.length === 4) {
-          imageRow.classList.add('two-rows');
-        } else if (paragraphImages.length === 5) {
-          imageRow.classList.add('three-two-columns');
-        } else if (paragraphImages.length === 6) {
-          imageRow.classList.add('three-columns');
-        }
-
-        
-        paragraphImages.forEach((img) => {
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-
-          
-          imageRow.appendChild(img);
-        });
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
-      });
-
-      
-      images.forEach((img, index) => {
+      const enableImageZoom = (img) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
@@ -179,14 +117,83 @@
             overlay.classList.add('active');
           });
         }
+      };
 
-        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph.`);
+
+        
+        paragraphImages.forEach(enableImageZoom);
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        }
+
+        let hasAltText = false; 
+
+        
+        paragraphImages.forEach((img) => {
+          const container = document.createElement('div');
+          container.classList.add('image-container');
+
+          
+          container.appendChild(img);
+
+          
+          const altText = img.alt ? img.alt : ''; 
+          if (altText) {
+            hasAltText = true; 
+          }
+
+          
+          const altTextElement = document.createElement('div');
+          altTextElement.classList.add('alt-text');
+          altTextElement.textContent = altText; 
+          container.appendChild(altTextElement);
+
+          
+          imageRow.appendChild(container);
+        });
+
+        
+        if (!hasAltText) {
+          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+        }
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
       });
+
+      
+      images.forEach(enableImageZoom);
     });
-
-
-
   </script>
+
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="/" />
 
@@ -320,7 +327,7 @@
     <div id="post-meta">
         <time datetime="2025-01-23 00:00:00 &#43;0000 UTC">
             2025-01-23
-            <span> ‧ 3506</span>
+            <span> ‧ 3480</span>
             <span>words</span>
 
 
@@ -341,28 +348,28 @@
     </div>
     <div id="post-content">
     <p>写上一篇游记时突然想起来，24年十二月份的时候我和朋友还去过一趟澳门。正好看到犬犬讲到澳门，顺势来补一下游记。</p>
-<p>这次出游的理由其实很简单，是刷到广州到珠海拱北口岸有非常便宜的城际大巴，单程11.6人民币，朋友办完港澳通行证就决定一起去了。</p>
+<p>这次出游的理由其实很简单，因为发现城际大巴很便宜，所以朋友办完港澳通行证就决定一起去了。</p>
 <p>城际大巴对我的坐标来说很方便，和其他朋友聊天时发现对于其他人来说可能不是一个比较常用的出行工具。我上学的时候基本是坐城际大巴回家的，上车睡觉服务区尿尿（喂）然后再睡一觉就到家了，对这个很熟悉。</p>
 <p>如果其他人没有坐过的话，大概就是这样一种交通方式：这辆大巴可能在城内沿途有数个上车点，通常会在地铁站附近。买离你最近那个，到达上车点，到时间准时刷新出一辆大巴，报手机号码上车，随便找个位置坐，到下车点自行下车。有时如果上下车的位置离你家很近，甚至能获得比坐火车高铁（加上到站出入站的时间）更快的体验，</p>
-<p>出行当天路况很好，差不多一个小时多点就到珠海了，再打车十几分钟到拱北口岸。比我们想象的快很多。那段时间时值冬至，外加好像是澳门回归周年纪念日，去前还很犹豫人太多和店可能不开的问题，但去到发现多虑了：人估计什么时候都很多，而店都还是开的。拱北口岸是人流非常大的一个口岸，但当天过关丝滑，还在口岸边上的商场买了早餐吃。</p>
+<p>出行当天路况很好，差不多一个小时多点就到珠海了，再打车十几分钟到口岸。比我们想象的快很多。那段时间时值冬至，外加好像是澳门回归周年纪念日，去前还很犹豫人太多和店可能不开的问题，但去到发现多虑了：人估计什么时候都很多，而店都还是开的。拱北口岸是人流非常大的一个口岸，但当天过关丝滑，还在口岸边上的商场买了早餐吃。</p>
 <p>去之前我们都没做攻略，我除了要去亚婆井前地看一下《放·逐》拍摄地以外没有特别想去的地方，因为感觉发财车之类的要等比较久，就随便上了一个能去到亚婆井前地的公交车。在比较常见的景点附近下了车，在官也街附近吃了胜利茶餐室的牛腩面和港式奶茶，面还是好吃的，咖喱牛腩有点油，但朋友的瑶柱酱牛腩就还好。之后途径一个英记饼家史努比的主题店，买了两盒过年带回家的手信——</p>
 <p>写到这里觉得很枯燥。我之前没有去过澳门，办它的签注都是第一次。它已经是一个被游客淹没的城市，大三巴及大多数的知名景点好像都没有什么好逛的，不以出片为目的的话完全可以不去，就算要出片也很难不拍到人山人海，还不如自拍cos一张周迅好多人啊jpg——而在食物方面，不知道是因为我在这方面更加钝感还是什么缘故，粤港澳三地的本地美食我都觉得相似，很少有什么惊喜，茶餐厅的话更是雷同。</p>
 <p>不过后来反思了一下这主要是怪我不做攻略，街上又到处都是茶餐厅出来揽客，所以最后吃了茶餐厅还要怪茶餐厅！而看犬犬游记去吃了当地的葡式餐厅——等等，我想吃的就是这种没有吃过的东西啊！我在找饭吃这条路上完全偏离重点，不管味道怎么样我也想吃烤苹果而不是在家附近也能吃到的牛腩面嘛！</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/a25e5c4d8804b9c90309f2d3d86776fe.JPG" alt=""> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/2e1813eb9804fd0fce2ae9512592cf28.JPG" alt=""> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/b15ece16d319c3638c0697af2dc80ad1.JPG" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/a25e5c4d8804b9c90309f2d3d86776fe.JPG"> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/2e1813eb9804fd0fce2ae9512592cf28.JPG"> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/b15ece16d319c3638c0697af2dc80ad1.JPG"></p>
 <p>吃完饭后我和朋友找了比较僻静的路逛起来，没有目的，只是边聊天边晃悠，朋友那天穿了绿色毛衣，还戴了超级萌的小熊毛绒帽子，超级可爱。我们俩聊着，非常开心地就走到了大炮台公园附近，澳门的地势给了我第一个下马威，<strong>怎么会有这么陡峭的路！</strong> 一路爬着上坡路上去，经过人家的居民楼，开始还能看到人家的入户一楼，爬着爬着发现，怎么经过了人家二楼阳台……到顶时感觉已经可以俯瞰很多城市景观。</p>
 <p>虽然爬坡很辛苦，但因为空气很好，景观也很好，全程开开心心地就到顶上，顺便一路上的鸽子——硕鸽——大鸽全都不怕人啊啊啊反而因为鸽子好多好大好拽好霸道我好怕啊（抱头）！炮台公园旁边就是澳门博物馆，专程来一趟倒没有必要，因为没有什么特别的展品。</p>
 <p>在炮台附近晃晃拍照之后又准备离开，爬了如此之高之后走下坡路，我直接一整个恐高了！而且这种直上直下的路还不止一段，导致我非常好奇这边的老人出行都是什么体验，真的都能承受这种地势吗！</p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/2450dababa0218c053770ebf196320b6.png" class="float-img35">
 <p>再之后就是逛逛，我和朋友准备跟着导航晃晃悠悠地去亚婆井前地——此时，我们犯下了一个严重的错误，网上的经验贴都让我们直接坐公交车到亚婆井前地公交站。但我们俩正在践行当下时兴的Citywalk，导航说走十几分钟就到了，平地上的澳门还是很好逛的，有一些很好玩的小店，感觉坐公交也很浪费风景，就想：那就走吧。</p>
-<p>Citywalk的路上我们还逛了一下音像店，我买了一张之前在香港没买成的达明一派，纠结了很久到底是买歌比较多的那张还是印了黄耀明漂亮脸蛋的那张，最终买了前者——实不相瞒后来回到家就后悔了！因为我的CD机不在广州暂时听不了，还不如买漂亮脸蛋呢，至少能看看漂亮脸蛋！图为我没买到的那张，给大家看看漂亮脸蛋。</p>
+<p>Citywalk的路上我们还逛了一下音像店，我买了一张之前在香港没买成的达明一派，纠结了很久到底是买歌比较多的那张还是印了黄耀明漂亮脸蛋的那张，最终买了前者——实不相瞒后来回到家就后悔了！因为我的CD机不在身边暂时听不了，还不如买漂亮脸蛋呢，至少能看看漂亮脸蛋！图为我没买到的那张，给大家看看漂亮脸蛋。</p>
 <p>买完CD我和朋友开开心心地继续Walk，但是越Walk越觉得不对劲，<strong>怎么……又是上坡？</strong> 而且是那种把橙子放在地上会立刻骨碌碌往下滚走的超绝无敌陡峭大上坡？继续埋头吭哧吭哧Walk，车行道上时而轰隆隆地有拖拉机般的摩托车往上加足马力开，那一瞬间真的好想说师傅带带我！吭哧吭哧Walk，Walk到一半我真的没信心了，回过头跟朋友说你还有力气吗，没力气我们就回去吧……但朋友还有力气。</p>
 <p>那会儿已经是晚上了，夜晚的澳门非常漂亮，又因为临近圣诞节，到处都是明亮闪光的装饰，但那段路寂寥安静，现在仍能回想起那种夜色下放松与开心的心情——但还是要继续吭哧吭哧地Walk。Walk到我内心不禁想道：<strong>人，真的需要往高处走吗？</strong></p>
 <p>直到Walk了不知道有没有80%，Google Map跟我们说还得Walk个几百米，通常五分钟走完的路愣是Walk了十几分钟，短短几百米还得歇一会儿。但是网上经验贴给的定位是很准的，我们就这样吭哧吭哧地到了《放·逐》的那个路口，也就是亚婆井前地公交站的位置，一点点偏差都没有！怪不得都让坐公交呢！这吭哧吭哧地暴走上坡路我图的是什么！</p>
 <p>到那时晚上六点半左右，天已经黑了。《放·逐》在这里的白天戏更好找机位，之所以会晚上来，完全是因为我先前根本没有把这里视作此行的重点，拖拖拉拉走走逛逛就到了晚上，甚至是没什么别的要玩的了所以顺便来逛逛。我也从来没有自诩过是什么迷影人嘛！所以我以为心境也会只是顺便来看看的那种样子——结果完全不是。</p>
 <p>当我走过站牌，在到那个路口和朋友对着剧照四处比对机位，找了很久都找不准，直到我背对公交站牌的方向，站在那个交叉口位置，粉色外墙，昏黄路灯——我忽然认出来了。就是那个位置，这个就是杜琪峰站的那个机位。那种“原来在这里”的感觉立刻上头了，尤其是我转了非常久，四面想找那个阿火阿泰站过的窗口，结果回过头来，原来是在另一个斜坡道上。找到它们的那一瞬非常非常的美好，正是那一盏灯，那两扇窗，正是那一天发生的地方。那街上寂寥无人，我却真的觉得感动，我以为只是随便看看的行程，却带来了在澳门最触动的瞬间。</p>
 <p>我想那种感动其实可能并不是出于和演员曾站在同一个地方，而是那故事发生的地方真的存在，还是那个样子。我想哪怕永远等不来二十年后的那个版本，但那些一吨爱重于一吨金的故事在这里发生过就可以。我会一再去香港也是这样感受，很多事情在变，无论人们说香港已不是那个香港，但只要那故事发生的地方真的存在过，那些情谊，真的东西，曾经真的在这里就可以。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/62da75f242a59a46cc829789765626d3.JPG" alt=""> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/17df77f99aeeeff8af94e0d4937f8003.JPEG" alt=""></p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/ed978b8b25a02a194ae427d9863b34bd.JPEG" alt=""> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/3fdf7c10c54106007f337d88fda16564.JPEG" alt=""> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/318ee1e6d10fba7d702d20da449755ce.JPG" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/62da75f242a59a46cc829789765626d3.JPG"> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/17df77f99aeeeff8af94e0d4937f8003.JPEG"></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/ed978b8b25a02a194ae427d9863b34bd.JPEG"> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/3fdf7c10c54106007f337d88fda16564.JPEG"> <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/318ee1e6d10fba7d702d20da449755ce.JPG"></p>
 <p>另外，找机位拍照的时候，我还在想阿和家窗户底下怎么就是垃圾桶啊——后来再看电影发现，电影里面这里也是垃圾桶XD，然后我在那里愣是拍了快两个小时的照片才不舍地离开！！</p>
 <p>至于怎么离开，我们选择了坐公交车。澳门的公交司机非常狂野，在特别高特别陡的地势上感觉转弯都不带刹车，有那么一会儿我都觉得自己甩出去都属于坠楼了，在车上就是一个不带减速的狂暴下坡。看着窗外我们走了几十分钟的路几分钟就下来了，内心极其崩溃……</p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/4e495e95e7b45a73bdba2126d174dc9c.JPEG" class="float-img35">
@@ -371,7 +378,7 @@
 <p>无事可干，天又很早，所以看海聊天。那几乎是我2024年最幸福的时刻之一，和友在海边竟然只是看海就呆了快两三个小时，谈论我们那些极其相似的惘然，在二十岁关于家庭的，人际关系的。事实上我们在大学时都没有过这样多密切的交往，直到毕业后才真正如此交流。</p>
 <p>而因为我们相识太久太熟悉，于是又无可遮掩于是交谈得赤裸。在人生某些固执的选择上，很多朋友其实并不与我走在相近道路，她是我为数不多的同盟。这时好像在澳门在哪里都一样，与知交谈天海风很冷也总是幸福。</p>
 <hr>
-<p>写到这里好像就可以结束了，返程又是坐十二块钱的大巴回去的，如果对珠海没有留恋我觉得当日往返也没什么问题。午饭后的半程因为走的都是比较僻静的路，所以玩得比较开心，澳门不错很好以后应该还可能会考虑再来。就是上坡路太多下次不许了。</p>
+<p>写到这里好像就可以结束了，返程又是坐城际回去的，如果对珠海没有留恋我觉得当日往返也没什么问题。午饭后的半程因为走的都是比较僻静的路，所以玩得比较开心，澳门不错很好以后应该还可能会考虑再来。就是上坡路太多下次不许了。</p>
 
     </div>
     <br>
@@ -382,6 +389,8 @@
         
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-01-21/">&lt;&lt; 但那天曾实在华丽地邂逅</a>
         
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/statement-2025-01-25/">关于本站停止RSS输出及相关事件的说明 >></a>
         
     </div>
 
@@ -682,7 +691,9 @@
         
         
         
-        共书写了256.9k字 · 共 77篇文章
+        
+        
+        共书写了259.1k字 · 共 78篇文章
     </section>
 
     

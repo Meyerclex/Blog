@@ -18,7 +18,7 @@
     {{ end }}
   </title>
 
-  {{/*图片放大*/}}
+
   <style>
     .image-row {
       display: flex;
@@ -28,19 +28,36 @@
       align-items: center;
     }
 
-    .image-row img {
-      flex-grow: 1;
-      max-width: calc(100% / 3 - 20px);
+    .image-container {
+      display: flex;
+      flex-direction: column;  /* 垂直排列图片和alt文本 */
+      align-items: center;     /* 确保图片和alt文本居中 */
+      width: calc(100% / 3 - 20px);  /* 每行最多三列 */
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
-    .image-row.two-columns img {
-      max-width: calc(50% - 10px);
+    .image-container .alt-text {
+      display: block;  /* alt文本在新的一行显示 */
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px; /* 保证alt-text区域存在即使没有文字 */
     }
 
-    .image-row.three-columns img {
-      max-width: calc(33.33% - 10px);
+    /* 适应不同列数 */
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);  /* 两列 */
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);  /* 三列 */
     }
 
     .image-overlay {
@@ -64,10 +81,8 @@
       max-width: 80%;
       max-height: 80%;
     }
-
-
-
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -77,16 +92,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      // 查找所有的 img 元素（无论是否在 p 标签内）
-      const images = Array.from(postContent.querySelectorAll('img'));
-
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-
-      console.log(`Found ${images.length} images.`);
 
       // 初始化图片点击放大功能的遮罩
       const overlay = document.createElement('div');
@@ -100,75 +105,8 @@
         overlay.classList.remove('active');
       });
 
-      // 处理每个段落的图片
-      const paragraphs = postContent.querySelectorAll('p');
-
-      paragraphs.forEach((paragraph, pIndex) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-        if (paragraphImages.length === 0) {
-          return; // 跳过没有图片的段落
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-        if (paragraphImages.length === 1) {
-          // 单张图片，保留原始布局，仅添加缩放功能
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-          return; // 跳过多图布局处理
-        }
-
-        // 多张图片处理，创建新布局
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        // 根据图片数量调整列数
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        } else if (paragraphImages.length === 4) {
-          imageRow.classList.add('two-rows');
-        } else if (paragraphImages.length === 5) {
-          imageRow.classList.add('three-two-columns');
-        } else if (paragraphImages.length === 6) {
-          imageRow.classList.add('three-columns');
-        }
-
-        // 为每张图片添加点击放大功能
-        paragraphImages.forEach((img) => {
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          // 只为大于200x200的图片添加放大功能
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-
-          // 移动图片到新容器
-          imageRow.appendChild(img);
-        });
-
-        // 替换原段落内容为图片容器
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
-      });
-
-      // 处理不在p标签里的图片（直接放在文章中）
-      images.forEach((img, index) => {
+      // 处理图片点击放大功能
+      const enableImageZoom = (img) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
@@ -180,14 +118,83 @@
             overlay.classList.add('active');
           });
         }
+      };
 
-        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      // 查找所有的 img 元素（无论是否在 p 标签内）
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      // 处理每个段落的图片
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; // 跳过没有图片的段落
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph.`);
+
+        // 为每张图片添加点击放大功能
+        paragraphImages.forEach(enableImageZoom);
+
+        // 多张图片处理，创建新布局
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        // 根据图片数量调整列数
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        }
+
+        let hasAltText = false; // 标志位，检查该行是否有alt文本
+
+        // 移动图片到新容器并处理alt文本
+        paragraphImages.forEach((img) => {
+          const container = document.createElement('div');
+          container.classList.add('image-container');
+
+          // 将图片添加到容器
+          container.appendChild(img);
+
+          // 检查alt文本
+          const altText = img.alt ? img.alt : ''; // 如果没有alt，默认为空
+          if (altText) {
+            hasAltText = true; // 如果有alt文本，设置标志位
+          }
+
+          // 如果alt不为空，插入alt-text div；如果alt为空，插入空的占位div
+          const altTextElement = document.createElement('div');
+          altTextElement.classList.add('alt-text');
+          altTextElement.textContent = altText; // 如果alt为空，显示为空的占位div
+          container.appendChild(altTextElement);
+
+          // 将图片容器加入布局
+          imageRow.appendChild(container);
+        });
+
+        // 如果该行的图片全都没有alt文本，则不显示alt-text div
+        if (!hasAltText) {
+          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+        }
+
+        // 替换原段落内容为图片容器
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
       });
+
+      // 处理不在 p 标签里的图片（直接放在文章中）
+      images.forEach(enableImageZoom);
     });
-
-
-
   </script>
+
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
 
