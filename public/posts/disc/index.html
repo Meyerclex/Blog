@@ -17,7 +17,7 @@
     
   </title>
 
-  
+
   <style>
     .image-row {
       display: flex;
@@ -27,19 +27,36 @@
       align-items: center;
     }
 
-    .image-row img {
-      flex-grow: 1;
-      max-width: calc(100% / 3 - 20px);
+    .image-container {
+      display: flex;
+      flex-direction: column;   
+      align-items: center;      
+      width: calc(100% / 3 - 20px);   
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
-    .image-row.two-columns img {
-      max-width: calc(50% - 10px);
+    .image-container .alt-text {
+      display: block;   
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px;  
     }
 
-    .image-row.three-columns img {
-      max-width: calc(33.33% - 10px);
+     
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);   
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);   
     }
 
     .image-overlay {
@@ -63,10 +80,8 @@
       max-width: 80%;
       max-height: 80%;
     }
-
-
-
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -76,16 +91,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-
-      console.log(`Found ${images.length} images.`);
 
       
       const overlay = document.createElement('div');
@@ -100,74 +105,7 @@
       });
 
       
-      const paragraphs = postContent.querySelectorAll('p');
-
-      paragraphs.forEach((paragraph, pIndex) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-        if (paragraphImages.length === 1) {
-          
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-          return; 
-        }
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        } else if (paragraphImages.length === 4) {
-          imageRow.classList.add('two-rows');
-        } else if (paragraphImages.length === 5) {
-          imageRow.classList.add('three-two-columns');
-        } else if (paragraphImages.length === 6) {
-          imageRow.classList.add('three-columns');
-        }
-
-        
-        paragraphImages.forEach((img) => {
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-
-          
-          imageRow.appendChild(img);
-        });
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
-      });
-
-      
-      images.forEach((img, index) => {
+      const enableImageZoom = (img) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
@@ -179,14 +117,83 @@
             overlay.classList.add('active');
           });
         }
+      };
 
-        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph.`);
+
+        
+        paragraphImages.forEach(enableImageZoom);
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        }
+
+        let hasAltText = false; 
+
+        
+        paragraphImages.forEach((img) => {
+          const container = document.createElement('div');
+          container.classList.add('image-container');
+
+          
+          container.appendChild(img);
+
+          
+          const altText = img.alt ? img.alt : ''; 
+          if (altText) {
+            hasAltText = true; 
+          }
+
+          
+          const altTextElement = document.createElement('div');
+          altTextElement.classList.add('alt-text');
+          altTextElement.textContent = altText; 
+          container.appendChild(altTextElement);
+
+          
+          imageRow.appendChild(container);
+        });
+
+        
+        if (!hasAltText) {
+          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+        }
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
       });
+
+      
+      images.forEach(enableImageZoom);
     });
-
-
-
   </script>
+
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="/" />
 
@@ -195,7 +202,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.43cf1d0f1291b618133a7beeeecf7645bdb066920f4e3573aecf7b00fa227ebeae5eba90f6b2a613e77a5e908ac7c9f7192b9871747898c833e8c8f9e1a99802.css" integrity="sha512-Q88dDxKRthgTOnvu7s92Rb2wZpIPTjVzrs97APoifr6uXrqQ9rKmE&#43;d6XpCKx8n3GSuYcXR4mMgz6Mj54amYAg==" />
+    <link rel="stylesheet" href="/css/main.4456f9309e35bb5fd7924edab4c1f9b4c5b0732917ffefcce22d48a38517ad6a480b3498a40a6a5f27456cbee6665275e4c0bcd78654a5e4bbfff659ce7835ea.css" integrity="sha512-RFb5MJ41u1/Xkk7atMH5tMWwcykX/&#43;/M4i1Io4UXrWpICzSYpApqXydFbL7mZlJ15MC814ZUpeS7//ZZzng16g==" />
   
 
 
@@ -369,7 +376,7 @@
 <p>月经这件事情本身就足够痛苦，还要持续性地花这么多的钱，花比以往更多的钱，这让我很愤怒。</p>
 <p>我不打算再用棉条了。并开始转而投向新的月经产品，在经过一个月的使用后，我向您推荐：<strong>月经盘</strong>。</p>
 <p>月经盘也叫月经碟，是置入式的月经产品。大家也许更为熟悉的可重复使用的置入式产品是<strong>月经杯</strong>，它的形状类似郁金香，从外观上来说月经盘的直径更大，类似半圆。如果你也是此前从未使用过这种可复用月经产品的新选手，我会在后文中谈及这两个产品的区别，以及我选择月经盘的理由。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/7-1.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/7-1.png"></p>
 <p><strong>对比图转载自<a href="https://goodmoonmood.com/what-is-menstrual-disc/">谷慕慕</a></strong>，这篇是非常棒的科普文章，配有很多更加直观的图片。相比之下，本篇会谈及更多个人感受。</p>
 <h2 id="使用原理">使用原理</h2>
 <p>月经盘与月经杯都是收集式的经期产品，医用硅胶材质，合理保存后可以重复使用多年。</p>
@@ -409,7 +416,7 @@
 <p>A：可以放置12小时以上。我的话每天起床、洗澡各取出一次，但刚开始用的那两天因为太好奇了拿出了三四次（……</p>
 <p><strong>Q：应当如何清洗、消毒、保存呢？</strong></p>
 <p>A：通常建议经期用清水清洗即可，而月经来和结束的时候各消毒一次。网络上很多人建议用温水加消毒片浸泡消毒4小时，或是高温水煮或者蒸煮，有人建议可以买个蒸蛋器蒸（很便宜，20-30元）二十分钟就行了。我觉得消毒片的时间有点久，买一个只煮月经盘的锅太怪了，所以我选择了最后一种。储存的话，我买乳贴剩下的塑料盒刚好放得下盘，这两个都是一定程度上让我人生更轻松的产品XD</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/%E7%9B%92%E5%AD%90.jpg" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/%E7%9B%92%E5%AD%90.jpg"></p>
 <p><strong>Q：关于TSS风险？</strong></p>
 <p>A：TSS是中毒性休克症状，长期不更换棉条或阴道有伤口会有一定风险。事实上我不想讨论这个，现在因为使用棉条导致TSS的概率非常低，十万分之一的概率就跟遇到飞机失事差不多，我非常不喜欢看到有人拿TSS去建议女性不要使用棉条，就和建议女生天黑不要出门一样，用低概率的危险去阻止更便利的生活，看似好心，实际是非常目中无<strong>人</strong>的作风。</p>
 <p><strong>Q：除了上文谈及以外，生活里还有其他的改变吗？</strong></p>

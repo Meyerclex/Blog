@@ -93,6 +93,12 @@ $color-mark-light: #b2d8d8;
     border-left: 2px solid $blockquote-color;
     color: $secondary-text-color;
   }
+
+  .alt-text {
+    color: $secondary-text-color;  // 使用与 blockquote 相同的颜色
+  }
+
+
   mark {
     background: linear-gradient(transparent calc(100% - 0.5em), $color-mark 0.5em) no-repeat;
     background-size: 100% 100%;

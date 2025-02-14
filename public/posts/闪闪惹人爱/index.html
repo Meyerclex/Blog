@@ -17,7 +17,7 @@
     
   </title>
 
-  
+
   <style>
     .image-row {
       display: flex;
@@ -27,19 +27,36 @@
       align-items: center;
     }
 
-    .image-row img {
-      flex-grow: 1;
-      max-width: calc(100% / 3 - 20px);
+    .image-container {
+      display: flex;
+      flex-direction: column;   
+      align-items: center;      
+      width: calc(100% / 3 - 20px);   
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
-    .image-row.two-columns img {
-      max-width: calc(50% - 10px);
+    .image-container .alt-text {
+      display: block;   
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px;  
     }
 
-    .image-row.three-columns img {
-      max-width: calc(33.33% - 10px);
+     
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);   
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);   
     }
 
     .image-overlay {
@@ -63,10 +80,8 @@
       max-width: 80%;
       max-height: 80%;
     }
-
-
-
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -76,16 +91,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-
-      console.log(`Found ${images.length} images.`);
 
       
       const overlay = document.createElement('div');
@@ -100,74 +105,7 @@
       });
 
       
-      const paragraphs = postContent.querySelectorAll('p');
-
-      paragraphs.forEach((paragraph, pIndex) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-        if (paragraphImages.length === 1) {
-          
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-          return; 
-        }
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        } else if (paragraphImages.length === 4) {
-          imageRow.classList.add('two-rows');
-        } else if (paragraphImages.length === 5) {
-          imageRow.classList.add('three-two-columns');
-        } else if (paragraphImages.length === 6) {
-          imageRow.classList.add('three-columns');
-        }
-
-        
-        paragraphImages.forEach((img) => {
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-
-          
-          imageRow.appendChild(img);
-        });
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
-      });
-
-      
-      images.forEach((img, index) => {
+      const enableImageZoom = (img) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
@@ -179,14 +117,83 @@
             overlay.classList.add('active');
           });
         }
+      };
 
-        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph.`);
+
+        
+        paragraphImages.forEach(enableImageZoom);
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        }
+
+        let hasAltText = false; 
+
+        
+        paragraphImages.forEach((img) => {
+          const container = document.createElement('div');
+          container.classList.add('image-container');
+
+          
+          container.appendChild(img);
+
+          
+          const altText = img.alt ? img.alt : ''; 
+          if (altText) {
+            hasAltText = true; 
+          }
+
+          
+          const altTextElement = document.createElement('div');
+          altTextElement.classList.add('alt-text');
+          altTextElement.textContent = altText; 
+          container.appendChild(altTextElement);
+
+          
+          imageRow.appendChild(container);
+        });
+
+        
+        if (!hasAltText) {
+          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+        }
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
       });
+
+      
+      images.forEach(enableImageZoom);
     });
-
-
-
   </script>
+
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="/" />
 
@@ -195,7 +202,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.43cf1d0f1291b618133a7beeeecf7645bdb066920f4e3573aecf7b00fa227ebeae5eba90f6b2a613e77a5e908ac7c9f7192b9871747898c833e8c8f9e1a99802.css" integrity="sha512-Q88dDxKRthgTOnvu7s92Rb2wZpIPTjVzrs97APoifr6uXrqQ9rKmE&#43;d6XpCKx8n3GSuYcXR4mMgz6Mj54amYAg==" />
+    <link rel="stylesheet" href="/css/main.4456f9309e35bb5fd7924edab4c1f9b4c5b0732917ffefcce22d48a38517ad6a480b3498a40a6a5f27456cbee6665275e4c0bcd78654a5e4bbfff659ce7835ea.css" integrity="sha512-RFb5MJ41u1/Xkk7atMH5tMWwcykX/&#43;/M4i1Io4UXrWpICzSYpApqXydFbL7mZlJ15MC814ZUpeS7//ZZzng16g==" />
   
 
 
@@ -359,10 +366,10 @@
 <p>旧的Luna主题漂亮美貌且功能齐全，可惜这主题用起来……确实问题很多且笨重。并且前段时间收到好几次站点打不开的反馈，我在Timeline上向黑客部门反馈了二十余次，无人应答，因此一直没有排查出问题，由于主站和子站点除了主题以外其他域名设置都是一致的，疑心是不是博客主题问题导致打不开，尽管我也觉得这怎么可能呢？再怎么怀疑也不应该怀疑到主题头上吧！</p>
 <p>可是事情就是这么发生了，我的问题排查能力就是在这个水平了，再说了一个主题用久了就是很想换嘛！所以我决定换主题看看会不会有所改善。</p>
 <p>不过在我在改主题的时随手查了一下邮箱，突然发现：</p>
-<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220911005645.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220911005645.png"></p>
 <p>诶，哈哈哈，原来Vercel一直给我狂发邮件说我域名没设置好啊，一直以为是广告邮件……所以问题其实出在这里吧！！！</p>
 <p>不过主题换都换了，本次改主题改得非常开心。请看：</p>
-<p><img src="luna.png" alt="Stack"> <img src="stack.png" alt="Luna"></p>
+<p><img alt="Stack" src="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/luna.png"> <img alt="Luna" src="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/stack.png"></p>
 <p>找了一圈主题，最终还是选了功能齐全Stack（主要还是方便，因为之前就用过所以博客文件也还没删！），马上开始磨刀霍霍一顿乱改，把主题的层层叠叠的三栏结构改成了单栏，改的过程中忽然意识到人家本身就是美丽的层叠卡片式主题——我到底在干嘛啊！</p>
 <p>总而言之，一股“我偏要勉强”的信念让我走到了现在。主要进行了以下修改：</p>
 <ol>

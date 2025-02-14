@@ -17,7 +17,7 @@
     
   </title>
 
-  
+
   <style>
     .image-row {
       display: flex;
@@ -27,19 +27,36 @@
       align-items: center;
     }
 
-    .image-row img {
-      flex-grow: 1;
-      max-width: calc(100% / 3 - 20px);
+    .image-container {
+      display: flex;
+      flex-direction: column;   
+      align-items: center;      
+      width: calc(100% / 3 - 20px);   
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
-    .image-row.two-columns img {
-      max-width: calc(50% - 10px);
+    .image-container .alt-text {
+      display: block;   
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px;  
     }
 
-    .image-row.three-columns img {
-      max-width: calc(33.33% - 10px);
+     
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);   
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);   
     }
 
     .image-overlay {
@@ -63,10 +80,8 @@
       max-width: 80%;
       max-height: 80%;
     }
-
-
-
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -76,16 +91,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-
-      console.log(`Found ${images.length} images.`);
 
       
       const overlay = document.createElement('div');
@@ -100,74 +105,7 @@
       });
 
       
-      const paragraphs = postContent.querySelectorAll('p');
-
-      paragraphs.forEach((paragraph, pIndex) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-        if (paragraphImages.length === 1) {
-          
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-          return; 
-        }
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        } else if (paragraphImages.length === 4) {
-          imageRow.classList.add('two-rows');
-        } else if (paragraphImages.length === 5) {
-          imageRow.classList.add('three-two-columns');
-        } else if (paragraphImages.length === 6) {
-          imageRow.classList.add('three-columns');
-        }
-
-        
-        paragraphImages.forEach((img) => {
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-
-          
-          imageRow.appendChild(img);
-        });
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
-      });
-
-      
-      images.forEach((img, index) => {
+      const enableImageZoom = (img) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
@@ -179,14 +117,83 @@
             overlay.classList.add('active');
           });
         }
+      };
 
-        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph.`);
+
+        
+        paragraphImages.forEach(enableImageZoom);
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        }
+
+        let hasAltText = false; 
+
+        
+        paragraphImages.forEach((img) => {
+          const container = document.createElement('div');
+          container.classList.add('image-container');
+
+          
+          container.appendChild(img);
+
+          
+          const altText = img.alt ? img.alt : ''; 
+          if (altText) {
+            hasAltText = true; 
+          }
+
+          
+          const altTextElement = document.createElement('div');
+          altTextElement.classList.add('alt-text');
+          altTextElement.textContent = altText; 
+          container.appendChild(altTextElement);
+
+          
+          imageRow.appendChild(container);
+        });
+
+        
+        if (!hasAltText) {
+          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+        }
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
       });
+
+      
+      images.forEach(enableImageZoom);
     });
-
-
-
   </script>
+
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="/" />
 
@@ -195,7 +202,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.43cf1d0f1291b618133a7beeeecf7645bdb066920f4e3573aecf7b00fa227ebeae5eba90f6b2a613e77a5e908ac7c9f7192b9871747898c833e8c8f9e1a99802.css" integrity="sha512-Q88dDxKRthgTOnvu7s92Rb2wZpIPTjVzrs97APoifr6uXrqQ9rKmE&#43;d6XpCKx8n3GSuYcXR4mMgz6Mj54amYAg==" />
+    <link rel="stylesheet" href="/css/main.4456f9309e35bb5fd7924edab4c1f9b4c5b0732917ffefcce22d48a38517ad6a480b3498a40a6a5f27456cbee6665275e4c0bcd78654a5e4bbfff659ce7835ea.css" integrity="sha512-RFb5MJ41u1/Xkk7atMH5tMWwcykX/&#43;/M4i1Io4UXrWpICzSYpApqXydFbL7mZlJ15MC814ZUpeS7//ZZzng16g==" />
   
 
 
@@ -363,7 +370,7 @@
 <li>本人副业电子吸血鬼，手机24小时暗夜模式，Win11的全局暗夜模式很漂亮，但开许多软件之前都会闪现1秒没加载好的全白画面刺杀我的双眼。</li>
 </ul>
 <p>我通过重启、升级到Dev版本、重启10次、重置无法打开的应用、安装新软件、再重启4次解决了大部分问题，又安装了MyDockFinder的美化应用消弭了我对新系统的仇恨，再将没解决掉的问题忽略不计，目前为之我还……蛮喜欢新系统的！非常漂亮！非常开心！输入法也变好看了一点，打字都开心了很多，但是好像变卡了，但我又担心是记忆将过去这台笔记本的流畅度进行了修饰与美化——好吧好像就是比较卡了一点！可是……人家又有什么办法当然是选择原谅它啊！</p>
-<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220731181211.png" alt="新Emoji"></p>
+<p><img alt="新Emoji" src="https://raw.githubusercontent.com/Meyerclex/image/main/20220731181211.png"></p>
 <p>和电子设备斗殴系列似乎还可以写另一件事：我读了<a href="https://blog.plaskier.ga/posts/add-text-indent-and-headline-centering-for-your-blog-with-frontmatter/">芋阿圆的笔记</a>，给博客增加了文章段首空两格的Feature，我的梦中情Feature，一举解决了我对Markdown写作最大的不满。（但是这一篇没有设成首段空格，究其原因是我还没有解决这个主题的一些奇妙问题）</p>
 <p>追求首段空格这件事实在是给我的人生造成很多不必要的烦恼，因此下载又卸载的编辑器已经攒满一打，最近小半年的新宠是<a href="https://www.tominlab.com/wonderpen">WonderPen</a>，但它并不支持移动端。但赶巧我最近也不太移动（也不太写作），所以暂且将这个需求放在一边。</p>
 <p>这篇其实是七月末开始写的，放在硬盘里一周都还没有丢出来，再打开时已经八月。我的生活上的烦恼和好事已经播掉两三季，重心与追求也飞快迭代了一轮，以至于看到前文中关于人生时区的思虑已经不明白在讲些什么，连真心话的更迭都快到上一个版本像是盗版。以后这样的事情实在是不能拖延。</p>

@@ -17,7 +17,7 @@
     
   </title>
 
-  
+
   <style>
     .image-row {
       display: flex;
@@ -27,19 +27,36 @@
       align-items: center;
     }
 
-    .image-row img {
-      flex-grow: 1;
-      max-width: calc(100% / 3 - 20px);
+    .image-container {
+      display: flex;
+      flex-direction: column;   
+      align-items: center;      
+      width: calc(100% / 3 - 20px);   
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
-    .image-row.two-columns img {
-      max-width: calc(50% - 10px);
+    .image-container .alt-text {
+      display: block;   
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px;  
     }
 
-    .image-row.three-columns img {
-      max-width: calc(33.33% - 10px);
+     
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);   
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);   
     }
 
     .image-overlay {
@@ -63,10 +80,8 @@
       max-width: 80%;
       max-height: 80%;
     }
-
-
-
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -76,16 +91,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-
-      console.log(`Found ${images.length} images.`);
 
       
       const overlay = document.createElement('div');
@@ -100,74 +105,7 @@
       });
 
       
-      const paragraphs = postContent.querySelectorAll('p');
-
-      paragraphs.forEach((paragraph, pIndex) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-        if (paragraphImages.length === 1) {
-          
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-          return; 
-        }
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        } else if (paragraphImages.length === 4) {
-          imageRow.classList.add('two-rows');
-        } else if (paragraphImages.length === 5) {
-          imageRow.classList.add('three-two-columns');
-        } else if (paragraphImages.length === 6) {
-          imageRow.classList.add('three-columns');
-        }
-
-        
-        paragraphImages.forEach((img) => {
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-
-          
-          imageRow.appendChild(img);
-        });
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
-      });
-
-      
-      images.forEach((img, index) => {
+      const enableImageZoom = (img) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
@@ -179,14 +117,83 @@
             overlay.classList.add('active');
           });
         }
+      };
 
-        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph.`);
+
+        
+        paragraphImages.forEach(enableImageZoom);
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        }
+
+        let hasAltText = false; 
+
+        
+        paragraphImages.forEach((img) => {
+          const container = document.createElement('div');
+          container.classList.add('image-container');
+
+          
+          container.appendChild(img);
+
+          
+          const altText = img.alt ? img.alt : ''; 
+          if (altText) {
+            hasAltText = true; 
+          }
+
+          
+          const altTextElement = document.createElement('div');
+          altTextElement.classList.add('alt-text');
+          altTextElement.textContent = altText; 
+          container.appendChild(altTextElement);
+
+          
+          imageRow.appendChild(container);
+        });
+
+        
+        if (!hasAltText) {
+          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+        }
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
       });
+
+      
+      images.forEach(enableImageZoom);
     });
-
-
-
   </script>
+
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="/" />
 
@@ -195,7 +202,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.43cf1d0f1291b618133a7beeeecf7645bdb066920f4e3573aecf7b00fa227ebeae5eba90f6b2a613e77a5e908ac7c9f7192b9871747898c833e8c8f9e1a99802.css" integrity="sha512-Q88dDxKRthgTOnvu7s92Rb2wZpIPTjVzrs97APoifr6uXrqQ9rKmE&#43;d6XpCKx8n3GSuYcXR4mMgz6Mj54amYAg==" />
+    <link rel="stylesheet" href="/css/main.4456f9309e35bb5fd7924edab4c1f9b4c5b0732917ffefcce22d48a38517ad6a480b3498a40a6a5f27456cbee6665275e4c0bcd78654a5e4bbfff659ce7835ea.css" integrity="sha512-RFb5MJ41u1/Xkk7atMH5tMWwcykX/&#43;/M4i1Io4UXrWpICzSYpApqXydFbL7mZlJ15MC814ZUpeS7//ZZzng16g==" />
   
 
 
@@ -354,7 +361,7 @@
   <span>Your browser doesn't support HTML5 audio. Here is a <a href="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/audio/%e6%b0%b8%e5%88%ab%e4%b9%a601.mp3">link to the audio</a> instead.</span>
 </audio>
 
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/audio/01.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/audio/01.png"></p>
 <p>《永别书》第十七章：</p>
 
 
@@ -366,7 +373,7 @@
   <span>Your browser doesn't support HTML5 audio. Here is a <a href="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/audio/%e6%b0%b8%e5%88%ab%e4%b9%a602.mp3">link to the audio</a> instead.</span>
 </audio>
 
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/audio/02.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/audio/02.png"></p>
 
     </div>
     <br>

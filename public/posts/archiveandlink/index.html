@@ -17,7 +17,7 @@
     
   </title>
 
-  
+
   <style>
     .image-row {
       display: flex;
@@ -27,19 +27,36 @@
       align-items: center;
     }
 
-    .image-row img {
-      flex-grow: 1;
-      max-width: calc(100% / 3 - 20px);
+    .image-container {
+      display: flex;
+      flex-direction: column;   
+      align-items: center;      
+      width: calc(100% / 3 - 20px);   
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
       height: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
-    .image-row.two-columns img {
-      max-width: calc(50% - 10px);
+    .image-container .alt-text {
+      display: block;   
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px;  
     }
 
-    .image-row.three-columns img {
-      max-width: calc(33.33% - 10px);
+     
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);   
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);   
     }
 
     .image-overlay {
@@ -63,10 +80,8 @@
       max-width: 80%;
       max-height: 80%;
     }
-
-
-
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -76,16 +91,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-
-      console.log(`Found ${images.length} images.`);
 
       
       const overlay = document.createElement('div');
@@ -100,74 +105,7 @@
       });
 
       
-      const paragraphs = postContent.querySelectorAll('p');
-
-      paragraphs.forEach((paragraph, pIndex) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph ${pIndex + 1}.`);
-
-        if (paragraphImages.length === 1) {
-          
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-          return; 
-        }
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        } else if (paragraphImages.length === 4) {
-          imageRow.classList.add('two-rows');
-        } else if (paragraphImages.length === 5) {
-          imageRow.classList.add('three-two-columns');
-        } else if (paragraphImages.length === 6) {
-          imageRow.classList.add('three-columns');
-        }
-
-        
-        paragraphImages.forEach((img) => {
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
-
-          
-          if (naturalWidth > 200 && naturalHeight > 200) {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
-              overlayImage.src = img.src;
-              overlay.classList.add('active');
-            });
-          }
-
-          
-          imageRow.appendChild(img);
-        });
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
-      });
-
-      
-      images.forEach((img, index) => {
+      const enableImageZoom = (img) => {
         const naturalWidth = img.naturalWidth || img.width;
         const naturalHeight = img.naturalHeight || img.height;
 
@@ -179,14 +117,83 @@
             overlay.classList.add('active');
           });
         }
+      };
 
-        console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        if (paragraphImages.length === 0) {
+          return; 
+        }
+
+        console.log(`Found ${paragraphImages.length} images in paragraph.`);
+
+        
+        paragraphImages.forEach(enableImageZoom);
+
+        
+        const imageRow = document.createElement('div');
+        imageRow.classList.add('image-row');
+
+        
+        if (paragraphImages.length === 2) {
+          imageRow.classList.add('two-columns');
+        } else if (paragraphImages.length === 3) {
+          imageRow.classList.add('three-columns');
+        }
+
+        let hasAltText = false; 
+
+        
+        paragraphImages.forEach((img) => {
+          const container = document.createElement('div');
+          container.classList.add('image-container');
+
+          
+          container.appendChild(img);
+
+          
+          const altText = img.alt ? img.alt : ''; 
+          if (altText) {
+            hasAltText = true; 
+          }
+
+          
+          const altTextElement = document.createElement('div');
+          altTextElement.classList.add('alt-text');
+          altTextElement.textContent = altText; 
+          container.appendChild(altTextElement);
+
+          
+          imageRow.appendChild(container);
+        });
+
+        
+        if (!hasAltText) {
+          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+        }
+
+        
+        paragraph.innerHTML = '';
+        paragraph.appendChild(imageRow);
       });
+
+      
+      images.forEach(enableImageZoom);
     });
-
-
-
   </script>
+
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="/" />
 
@@ -195,7 +202,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.43cf1d0f1291b618133a7beeeecf7645bdb066920f4e3573aecf7b00fa227ebeae5eba90f6b2a613e77a5e908ac7c9f7192b9871747898c833e8c8f9e1a99802.css" integrity="sha512-Q88dDxKRthgTOnvu7s92Rb2wZpIPTjVzrs97APoifr6uXrqQ9rKmE&#43;d6XpCKx8n3GSuYcXR4mMgz6Mj54amYAg==" />
+    <link rel="stylesheet" href="/css/main.4456f9309e35bb5fd7924edab4c1f9b4c5b0732917ffefcce22d48a38517ad6a480b3498a40a6a5f27456cbee6665275e4c0bcd78654a5e4bbfff659ce7835ea.css" integrity="sha512-RFb5MJ41u1/Xkk7atMH5tMWwcykX/&#43;/M4i1Io4UXrWpICzSYpApqXydFbL7mZlJ15MC814ZUpeS7//ZZzng16g==" />
   
 
 
@@ -504,7 +511,7 @@ toc: false
 <p>之前的友链样式如下。如果有人想知道实现方式的话，正巧之前在毛象上写过一次，涉及到无序列表的更改，这个方式不需要手动分隔号和调整间距。</p>
 <details>
 <summary>样式及代码部分</summary>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/2.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/2.png"></p>
 <pre tabindex="0"><code>&lt;style&gt;
 .content li::marker {
   content: &#34;♡  &#34;; 
@@ -535,7 +542,7 @@ a.link--external:last-child::after {
 <p>于是效果如下：</p>
 <details>
 <summary>效果及代码部分</summary>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/1.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/1.png"></p>
 <pre tabindex="0"><code>&lt;style&gt;
 .post-meta {
   display: none;
@@ -579,7 +586,7 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
 </code></pre></details>
 <p>标签<code>&lt;script&gt;</code>内的部分是用来实现无序列表随机排列的，它会对当前整个网站页面包括导航栏等等的无序列表生效。所以为了限定它只对文章内的无序列表生效，在第一段注释中有一个<code>获取带有 post-content 类的文章内容</code>的步骤，这是因为我网站主题中，文章正文的类是<code>post-content</code>，这是根据我的主题的情况写的。</p>
 <p>如果你不知道应该怎么做和修改这部分，请在自己的网站上按<code>F12</code>，查看主题的源代码，点进去用选择器查找和看自己文章部分的所属的类是什么，然后替换掉上述代码里我的<code>post-content</code>部分即可。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/3.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/3.png"></p>
 <h2 id="全站字体修改">全站字体修改</h2>
 <p>大家应该都注意到了吧！我把网站的主题修改成了霞鹜文楷，由于我不知道怎么样引入非Google字体的字体，就在网上找了一下。发现了这个仓库：<a href="https://github.com/satouriko/LxgwWenKai_Webfonts">霞鹜文楷Web字体</a>。它的简介表示使用与Google Fonts相同的技术对中文字体进行分包和压缩，以便于用于网页端分发——</p>
 <p>什么意思？我是看不懂啦，但会用能用就行。根据使用说明具体操作如下：</p>
@@ -739,10 +746,10 @@ weight: 99
 <p>应该没有别的需要补充的部分了，遇事不决可以询问ChatGPT老师。</p>
 <h3 id="效果展示">效果展示</h3>
 <p>然后放一下我的同人博客更新后的样子。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/5.png" alt=""></p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/4.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/5.png"></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/4.png"></p>
 <p>浣心魔改后的主题本身对处于一个Series的文章做了新的显示效果如下，如果想要实现，具体请看他的文章：<a href="https://blog.loikein.one/posts/2021-05-28-hugo-series/">在Hugo里显示系列文章</a>。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/6.png" alt=""></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/6.png"></p>
 <h2 id="最后的话">最后的话</h2>
 <p>其实还做了一些很多其他的改动。因为每次装修都在无关紧要的细节上进行长时间的大思考，所以暂时不打算再对博客做其他修改了……下一次写装修笔记应该又是明年了。</p>
 <p>如果您对本站及同人站的特性感到好奇，欢迎在这一篇文章的评论区留言！我会很乐意分享的。</p>
