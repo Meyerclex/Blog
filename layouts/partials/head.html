@@ -18,7 +18,6 @@
     {{ end }}
   </title>
 
-
   <style>
     .image-row {
       display: flex;
@@ -132,6 +131,12 @@
       const paragraphs = postContent.querySelectorAll('p');
       paragraphs.forEach((paragraph) => {
         const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+
+        // 如果只有一张图片，跳过处理
+        if (paragraphImages.length === 1) {
+          return;
+        }
+
         if (paragraphImages.length === 0) {
           return; // 跳过没有图片的段落
         }
@@ -156,6 +161,14 @@
 
         // 移动图片到新容器并处理alt文本
         paragraphImages.forEach((img) => {
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          // 如果图片小于 200x200，不做处理
+          if (naturalWidth <= 200 || naturalHeight <= 200) {
+            return;
+          }
+
           const container = document.createElement('div');
           container.classList.add('image-container');
 
