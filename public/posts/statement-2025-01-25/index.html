@@ -80,7 +80,6 @@
       max-height: 80%;
     }
   </style>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -133,72 +132,94 @@
 
         
         if (paragraphImages.length === 1) {
-          return;
-        }
-
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph.`);
-
-        
-        paragraphImages.forEach(enableImageZoom);
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        }
-
-        let hasAltText = false; 
-
-        
-        paragraphImages.forEach((img) => {
+          const img = paragraphImages[0];
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
           
-          if (naturalWidth <= 200 || naturalHeight <= 200) {
-            return;
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.style.width = '100%';
+
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+
+            
+            if (!altText) {
+              altTextElement.style.display = 'none';
+            }
+
+            container.appendChild(altTextElement);
+
+            
+            paragraph.innerHTML = '';
+            paragraph.appendChild(container);
+          }
+        } else if (paragraphImages.length > 1) {
+          
+          const imageRow = document.createElement('div');
+          imageRow.classList.add('image-row');
+
+          
+          if (paragraphImages.length === 2) {
+            imageRow.classList.add('two-columns');
+          } else if (paragraphImages.length === 3) {
+            imageRow.classList.add('three-columns');
           }
 
-          const container = document.createElement('div');
-          container.classList.add('image-container');
+          let hasAltText = false; 
 
           
-          container.appendChild(img);
+          paragraphImages.forEach((img) => {
+            const naturalWidth = img.naturalWidth || img.width;
+            const naturalHeight = img.naturalHeight || img.height;
+
+            
+            if (naturalWidth <= 200 || naturalHeight <= 200) {
+              return;
+            }
+
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            if (altText) {
+              hasAltText = true; 
+            }
+
+            
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+            container.appendChild(altTextElement);
+
+            
+            imageRow.appendChild(container);
+          });
 
           
-          const altText = img.alt ? img.alt : ''; 
-          if (altText) {
-            hasAltText = true; 
+          if (!hasAltText) {
+            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
           }
 
           
-          const altTextElement = document.createElement('div');
-          altTextElement.classList.add('alt-text');
-          altTextElement.textContent = altText; 
-          container.appendChild(altTextElement);
-
-          
-          imageRow.appendChild(container);
-        });
-
-        
-        if (!hasAltText) {
-          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+          paragraph.innerHTML = '';
+          paragraph.appendChild(imageRow);
         }
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
       });
+
 
       
       images.forEach(enableImageZoom);
@@ -215,7 +236,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.4456f9309e35bb5fd7924edab4c1f9b4c5b0732917ffefcce22d48a38517ad6a480b3498a40a6a5f27456cbee6665275e4c0bcd78654a5e4bbfff659ce7835ea.css" integrity="sha512-RFb5MJ41u1/Xkk7atMH5tMWwcykX/&#43;/M4i1Io4UXrWpICzSYpApqXydFbL7mZlJ15MC814ZUpeS7//ZZzng16g==" />
+    <link rel="stylesheet" href="/css/main.c5bbbefb34a0ea510fa20787420b5cfd19ae7ac4f64e8bb5568c5cd9d7bb20ac121d2fed6e5882267ab4540b8dac822fa314c0fcd64471083c54272162c752d7.css" integrity="sha512-xbu&#43;&#43;zSg6lEPogeHQgtc/RmuesT2Tou1Voxc2de7IKwSHS/tbliCJnq0VAuNrIIvoxTA/NZEcQg8VCchYsdS1w==" />
   
 
 
