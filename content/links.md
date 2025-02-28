@@ -107,7 +107,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 - [第三夏尔](https://thirdshire.com)：是白石京师傅，织毛线，冥想，大搞美丽装修。记录丰富多彩的事情。
 
-- [枕石](zhen-shi.github.io/)：语言风格利落又干净的薯饼，那些关于古典乐的文章结构清晰又美丽，非常值得阅读。
+- [枕石](https://zhen-shi.github.io/)：语言风格利落又干净的薯饼，那些关于古典乐的文章结构清晰又美丽，非常值得阅读。
+
+- [春天与阿修罗](https://harushuura.vip)：是小梨！写着书影音游和生活的事，对了小梨正在做自己的游戏！！走过路过请点个心愿单吧！
+
+- [Mid of Nowhere](https://notes.midofnowhere.link/)：是黑猫学学，感觉学学是实用经验派，看完之后真的会学到，比看电视管用（？
 
 ---
 

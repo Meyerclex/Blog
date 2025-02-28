@@ -90,7 +90,6 @@
       max-height: 80%;
     }
   </style>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -143,72 +142,94 @@
 
         
         if (paragraphImages.length === 1) {
-          return;
-        }
-
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph.`);
-
-        
-        paragraphImages.forEach(enableImageZoom);
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        }
-
-        let hasAltText = false; 
-
-        
-        paragraphImages.forEach((img) => {
+          const img = paragraphImages[0];
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
           
-          if (naturalWidth <= 200 || naturalHeight <= 200) {
-            return;
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.style.width = '100%';
+
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+
+            
+            if (!altText) {
+              altTextElement.style.display = 'none';
+            }
+
+            container.appendChild(altTextElement);
+
+            
+            paragraph.innerHTML = '';
+            paragraph.appendChild(container);
+          }
+        } else if (paragraphImages.length > 1) {
+          
+          const imageRow = document.createElement('div');
+          imageRow.classList.add('image-row');
+
+          
+          if (paragraphImages.length === 2) {
+            imageRow.classList.add('two-columns');
+          } else if (paragraphImages.length === 3) {
+            imageRow.classList.add('three-columns');
           }
 
-          const container = document.createElement('div');
-          container.classList.add('image-container');
+          let hasAltText = false; 
 
           
-          container.appendChild(img);
+          paragraphImages.forEach((img) => {
+            const naturalWidth = img.naturalWidth || img.width;
+            const naturalHeight = img.naturalHeight || img.height;
+
+            
+            if (naturalWidth <= 200 || naturalHeight <= 200) {
+              return;
+            }
+
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            if (altText) {
+              hasAltText = true; 
+            }
+
+            
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+            container.appendChild(altTextElement);
+
+            
+            imageRow.appendChild(container);
+          });
 
           
-          const altText = img.alt ? img.alt : ''; 
-          if (altText) {
-            hasAltText = true; 
+          if (!hasAltText) {
+            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
           }
 
           
-          const altTextElement = document.createElement('div');
-          altTextElement.classList.add('alt-text');
-          altTextElement.textContent = altText; 
-          container.appendChild(altTextElement);
-
-          
-          imageRow.appendChild(container);
-        });
-
-        
-        if (!hasAltText) {
-          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+          paragraph.innerHTML = '';
+          paragraph.appendChild(imageRow);
         }
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
       });
+
 
       
       images.forEach(enableImageZoom);
@@ -349,7 +370,7 @@
         <div id="post-meta">
             <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
                 2021-06-28
-                <span> ‧ 1513</span>
+                <span> ‧ 1607</span>
                 <span>words</span>
                 
                 
@@ -535,7 +556,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <p><a href="https://thirdshire.com">第三夏尔</a>：是白石京师傅，织毛线，冥想，大搞美丽装修。记录丰富多彩的事情。</p>
 </li>
 <li>
-<p><a href="zhen-shi.github.io/">枕石</a>：语言风格利落又干净的薯饼，那些关于古典乐的文章结构清晰又美丽，非常值得阅读。</p>
+<p><a href="https://zhen-shi.github.io/">枕石</a>：语言风格利落又干净的薯饼，那些关于古典乐的文章结构清晰又美丽，非常值得阅读。</p>
+</li>
+<li>
+<p><a href="https://harushuura.vip">春天与阿修罗</a>：是小梨！写着书影音游和生活的事，对了小梨正在做自己的游戏！！走过路过请点个心愿单吧！</p>
+</li>
+<li>
+<p><a href="https://notes.midofnowhere.link/">Mid of Nowhere</a>：是黑猫学学，感觉学学是实用经验派，看完之后真的会学到，比看电视管用（？</p>
 </li>
 </ul>
 <hr>
@@ -757,7 +784,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
         
-        共书写了259.1k字 · 共 78篇文章
+        共书写了259.2k字 · 共 78篇文章
     </section>
 
     

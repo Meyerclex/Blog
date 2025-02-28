@@ -75,7 +75,6 @@
       max-height: 80%;
     }
   </style>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -128,72 +127,94 @@
 
         
         if (paragraphImages.length === 1) {
-          return;
-        }
-
-        if (paragraphImages.length === 0) {
-          return; 
-        }
-
-        console.log(`Found ${paragraphImages.length} images in paragraph.`);
-
-        
-        paragraphImages.forEach(enableImageZoom);
-
-        
-        const imageRow = document.createElement('div');
-        imageRow.classList.add('image-row');
-
-        
-        if (paragraphImages.length === 2) {
-          imageRow.classList.add('two-columns');
-        } else if (paragraphImages.length === 3) {
-          imageRow.classList.add('three-columns');
-        }
-
-        let hasAltText = false; 
-
-        
-        paragraphImages.forEach((img) => {
+          const img = paragraphImages[0];
           const naturalWidth = img.naturalWidth || img.width;
           const naturalHeight = img.naturalHeight || img.height;
 
           
-          if (naturalWidth <= 200 || naturalHeight <= 200) {
-            return;
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.style.width = '100%';
+
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+
+            
+            if (!altText) {
+              altTextElement.style.display = 'none';
+            }
+
+            container.appendChild(altTextElement);
+
+            
+            paragraph.innerHTML = '';
+            paragraph.appendChild(container);
+          }
+        } else if (paragraphImages.length > 1) {
+          
+          const imageRow = document.createElement('div');
+          imageRow.classList.add('image-row');
+
+          
+          if (paragraphImages.length === 2) {
+            imageRow.classList.add('two-columns');
+          } else if (paragraphImages.length === 3) {
+            imageRow.classList.add('three-columns');
           }
 
-          const container = document.createElement('div');
-          container.classList.add('image-container');
+          let hasAltText = false; 
 
           
-          container.appendChild(img);
+          paragraphImages.forEach((img) => {
+            const naturalWidth = img.naturalWidth || img.width;
+            const naturalHeight = img.naturalHeight || img.height;
+
+            
+            if (naturalWidth <= 200 || naturalHeight <= 200) {
+              return;
+            }
+
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            if (altText) {
+              hasAltText = true; 
+            }
+
+            
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+            container.appendChild(altTextElement);
+
+            
+            imageRow.appendChild(container);
+          });
 
           
-          const altText = img.alt ? img.alt : ''; 
-          if (altText) {
-            hasAltText = true; 
+          if (!hasAltText) {
+            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
           }
 
           
-          const altTextElement = document.createElement('div');
-          altTextElement.classList.add('alt-text');
-          altTextElement.textContent = altText; 
-          container.appendChild(altTextElement);
-
-          
-          imageRow.appendChild(container);
-        });
-
-        
-        if (!hasAltText) {
-          imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+          paragraph.innerHTML = '';
+          paragraph.appendChild(imageRow);
         }
-
-        
-        paragraph.innerHTML = '';
-        paragraph.appendChild(imageRow);
       });
+
 
       
       images.forEach(enableImageZoom);
