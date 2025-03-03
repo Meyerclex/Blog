@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guide on 再會，謝謝所有的魚</title>
-    <link>http://localhost:1313/tags/guide/</link>
+    <link>https://gregueria.icu/tags/guide/</link>
     <description>Recent content in Guide on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 27 May 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/guide/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gregueria.icu/tags/guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何忘记并肩而行的烦恼，并走进炸鸡店</title>
-      <link>http://localhost:1313/posts/emotional/</link>
+      <link>https://gregueria.icu/posts/emotional/</link>
       <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/emotional/</guid>
+      <guid>https://gregueria.icu/posts/emotional/</guid>
       <description>&lt;p&gt;这两个月里我一直处在一种自责、悔恨、愤怒与焦虑的情感之中，说长不长的一段时间，但对身心都带来了很大的摧残。现在我又处于这种感受中了。记录一下几个有用或无用稳定情绪的方法，聊作指南。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于打破量子复合叠加态生活的建议</title>
-      <link>http://localhost:1313/posts/advice/</link>
+      <link>https://gregueria.icu/posts/advice/</link>
       <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/advice/</guid>
+      <guid>https://gregueria.icu/posts/advice/</guid>
       <description>&lt;p&gt;大三的这个学期，我的课程很少，每天都有大量的空白需要填补，一周七天以一种疯狂的速度飞快的离开我，我像第一次拽住一匹马，很狼狈地想要留住它。因此我开始写。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《指南》说：“尽管去吧，祝你好运”</title>
-      <link>http://localhost:1313/posts/guide-for-drunkard/</link>
+      <link>https://gregueria.icu/posts/guide-for-drunkard/</link>
       <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/guide-for-drunkard/</guid>
+      <guid>https://gregueria.icu/posts/guide-for-drunkard/</guid>
       <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;《指南》对醉酒给出了一些建议：&lt;/i&gt;&lt;/center&gt;&#xD;&#xA;&lt;center&gt;&lt;i&gt;“尽管去吧，祝你好运”&#xD;&#xA;&lt;/i&gt;&#xD;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>

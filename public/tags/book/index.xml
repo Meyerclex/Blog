@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Book on 再會，謝謝所有的魚</title>
-    <link>http://localhost:1313/tags/book/</link>
+    <link>https://gregueria.icu/tags/book/</link>
     <description>Recent content in Book on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 26 Jan 2022 16:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gregueria.icu/tags/book/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>下条时间线仍做读者与观众</title>
-      <link>http://localhost:1313/posts/2018/</link>
+      <link>https://gregueria.icu/posts/2018/</link>
       <pubDate>Wed, 26 Jan 2022 16:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/</guid>
+      <guid>https://gregueria.icu/posts/2018/</guid>
       <description>&lt;p&gt;放假以后我的日子不再以“周”为标尺，像鱼一样，随意生活。临近过年，每件事底下都暗藏焦灼，总觉得该整理一下了。先拣两件这段时间来我觉得最重要的事说说。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《指南》说：“尽管去吧，祝你好运”</title>
-      <link>http://localhost:1313/posts/guide-for-drunkard/</link>
+      <link>https://gregueria.icu/posts/guide-for-drunkard/</link>
       <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/guide-for-drunkard/</guid>
+      <guid>https://gregueria.icu/posts/guide-for-drunkard/</guid>
       <description>&lt;blockquote&gt; &lt;center&gt;&lt;i&gt;《指南》对醉酒给出了一些建议：&lt;/i&gt;&lt;/center&gt;&#xD;&#xA;&lt;center&gt;&lt;i&gt;“尽管去吧，祝你好运”&#xD;&#xA;&lt;/i&gt;&#xD;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>寻瘾未果</title>
-      <link>http://localhost:1313/posts/we-will-be-fine/</link>
+      <link>https://gregueria.icu/posts/we-will-be-fine/</link>
       <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/we-will-be-fine/</guid>
+      <guid>https://gregueria.icu/posts/we-will-be-fine/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;我以为我会快乐。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;敲第一个字的时候是 2021 年 4 月 23 日 23 点 57 分，世界读书日的尾声，今天没有翻书，跟读书日无关，不反抗也没有认可，我与众多纪念日的关系就保持在这里，像夫妻：总是冷漠，却装扮热情，装不下去了就撂下面子。读书变成伪流行文化，热映的指环王也是，我打起十二分热情想要靠近，却最终因为不想打扮而没有出门。&lt;/p&gt;</description>
     </item>
   </channel>
