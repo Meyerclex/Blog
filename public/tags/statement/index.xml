@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Statement on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/statement/</link>
+    <link>http://localhost:1313/tags/statement/</link>
     <description>Recent content in Statement on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/statement/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/statement/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于本站停止RSS输出及相关事件的说明</title>
-      <link>https://gregueria.icu/posts/statement-2025-01-25/</link>
+      <link>http://localhost:1313/posts/statement-2025-01-25/</link>
       <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/statement-2025-01-25/</guid>
+      <guid>http://localhost:1313/posts/statement-2025-01-25/</guid>
       <description>&lt;p&gt;关于本站停止RSS输出的说明及相关事件始末如下。&lt;/p&gt;&#xA;&lt;h2 id=&#34;事件始末&#34;&gt;事件始末&lt;/h2&gt;&#xA;&lt;p&gt;2024年8月25日，我发现自己的站点在未获许可、未被告知的情况下，被一个叫“川流”站点收录，该站没有相关信息，但由于它和“川流论坛”互联，我与该论坛的主张、所要求的博客网站规则之间没有共鸣亦无共识，因此要求撤下——后来在Fediverse的讨论集中于该站只是无授权收录了RSS源，但我无法孤立地认为这只是一个RSS订阅源展示站点而与论坛无关，实际该站的主张这才是我最开始如此抵触被收录的原因。但显然我的看法与感受全无意义，事件本身就是会在传播过程中失真。&lt;/p&gt;</description>
     </item>
   </channel>

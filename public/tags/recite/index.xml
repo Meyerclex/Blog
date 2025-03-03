@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recite on 再會，謝謝所有的魚</title>
-    <link>https://gregueria.icu/tags/recite/</link>
+    <link>http://localhost:1313/tags/recite/</link>
     <description>Recent content in Recite on 再會，謝謝所有的魚</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 25 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gregueria.icu/tags/recite/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/recite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>读段永别书：第二次爆炸</title>
-      <link>https://gregueria.icu/posts/audio-0825/</link>
+      <link>http://localhost:1313/posts/audio-0825/</link>
       <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/audio-0825/</guid>
-      <description>&lt;p&gt;上次在博客里发读书音频还是&lt;a href=&#34;https://gregueria.icu/posts/audio-1122/&#34;&gt;2022年读《楚留香传奇》&lt;/a&gt;。最近虽然有想写博客的心情，但暂且没有一个非常想写的主题，于是来完成一下很久之前就说想读的《永别书》。这本书是经由朋友安利，这两年都时常在内心出现而给我内心以震动的长篇小说。它所谈论的主题，谈论的创伤，与道德，诚实，与寂寞，都给了我一种感受：它写出了我没有能力形容出来的事情。在它面前我有一种感受，像还未学会语言的孩子，终于知道了如何用语言去形容自己当初想要求救的事情。&lt;/p&gt;&#xA;&lt;p&gt;读的这一段来自小说几近结尾的部分，张亦绚女士写主角贺殷殷人生里的第二次爆炸，关于她的爱人萱瑄告诉她了一件事情：她有撒谎癖。事实上选择这一段是因为她书写的另一个爆炸太过于巨大而沉重，而我还没有办法很好地面对。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/audio-0825/</guid>
+      <description>&lt;p&gt;上次在博客里发读书音频还是&lt;a href=&#34;http://localhost:1313/posts/audio-1122/&#34;&gt;2022年读《楚留香传奇》&lt;/a&gt;。最近虽然有想写博客的心情，但暂且没有一个非常想写的主题，于是来完成一下很久之前就说想读的《永别书》。这本书是经由朋友安利，这两年都时常在内心出现而给我内心以震动的长篇小说。它所谈论的主题，谈论的创伤，与道德，诚实，与寂寞，都给了我一种感受：它写出了我没有能力形容出来的事情。在它面前我有一种感受，像还未学会语言的孩子，终于知道了如何用语言去形容自己当初想要求救的事情。&lt;/p&gt;&#xA;&lt;p&gt;读的这一段来自小说几近结尾的部分，张亦绚女士写主角贺殷殷人生里的第二次爆炸，关于她的爱人萱瑄告诉她了一件事情：她有撒谎癖。事实上选择这一段是因为她书写的另一个爆炸太过于巨大而沉重，而我还没有办法很好地面对。&lt;/p&gt;</description>
     </item>
     <item>
       <title>读段楚传玩儿：清风明月</title>
-      <link>https://gregueria.icu/posts/audio-1122/</link>
+      <link>http://localhost:1313/posts/audio-1122/</link>
       <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://gregueria.icu/posts/audio-1122/</guid>
+      <guid>http://localhost:1313/posts/audio-1122/</guid>
       <description>&lt;p&gt;嗨！突然上线给大家读一段楚传！有非常多口误，但大家都很熟了，错别字我能写得，错别话我怎么说不得？不过这文本着实很长，读到后面我已经渴了，缺乏水分，脑子不灵，最后几分钟看着“树桠”俩字卡壳半天有点认不出来。请原谅。&lt;/p&gt;</description>
     </item>
   </channel>
