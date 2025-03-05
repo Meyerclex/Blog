@@ -113,6 +113,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 - [Mid of Nowhere](https://notes.midofnowhere.link/)：是黑猫学学，感觉学学是实用经验派，看完之后真的会学到，比看电视管用（？
 
+- [匣](https://kiokumo.vip/)：是蓝色小幽灵海胆（？）！手账家居生活内容都看起来好舒服像流动的小溪……
+
 ---
 
 喜欢大家，爱看大家，通过RSS猛猛地订阅了大家{{< emoji name="meow_blush" ext="">}}

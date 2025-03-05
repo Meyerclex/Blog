@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+    <meta name="description" content="我可以接受聊天内容很肤浅，不客观，很激动，有私怨，不冷静，还没point，但我不能接受对方听起来“是一个无聊，不可爱，还有烦的家伙”。">
+    <meta property="og:title" content="听播客，今天听什么？">
+    <meta property="og:description" content="我可以接受聊天内容很肤浅，不客观，很激动，有私怨，不冷静，还没point，但我不能接受对方听起来“是一个无聊，不可爱，还有烦的家伙”。">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      听播客，今天听什么？ | 再會，謝謝所有的魚
+    
+  </title>
+
+  <style>
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;   
+      align-items: center;      
+      width: calc(100% / 3 - 20px);   
+      max-width: 100%;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .image-container .alt-text {
+      display: block;   
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 5px;
+      min-height: 20px;  
+    }
+
+     
+    .image-row.two-columns .image-container {
+      width: calc(50% - 10px);   
+    }
+
+    .image-row.three-columns .image-container {
+      width: calc(33.33% - 10px);   
+    }
+
+    .image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .image-overlay.active {
+      display: flex;
+    }
+
+    .image-overlay img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const enableImageZoom = (img) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (naturalWidth > 200 && naturalHeight > 200) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+      };
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+
+        
+        if (paragraphImages.length === 1) {
+          const img = paragraphImages[0];
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.style.width = '100%';
+
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+
+            
+            if (!altText) {
+              altTextElement.style.display = 'none';
+            }
+
+            container.appendChild(altTextElement);
+
+            
+            paragraph.innerHTML = '';
+            paragraph.appendChild(container);
+          }
+        } else if (paragraphImages.length > 1) {
+          
+          const imageRow = document.createElement('div');
+          imageRow.classList.add('image-row');
+
+          
+          if (paragraphImages.length === 2) {
+            imageRow.classList.add('two-columns');
+          } else if (paragraphImages.length === 3) {
+            imageRow.classList.add('three-columns');
+          }
+
+          let hasAltText = false; 
+
+          
+          paragraphImages.forEach((img) => {
+            const naturalWidth = img.naturalWidth || img.width;
+            const naturalHeight = img.naturalHeight || img.height;
+
+            
+            if (naturalWidth <= 200 || naturalHeight <= 200) {
+              return;
+            }
+
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            if (altText) {
+              hasAltText = true; 
+            }
+
+            
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+            container.appendChild(altTextElement);
+
+            
+            imageRow.appendChild(container);
+          });
+
+          
+          if (!hasAltText) {
+            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+          }
+
+          
+          paragraph.innerHTML = '';
+          paragraph.appendChild(imageRow);
+        }
+      });
+
+
+      
+      images.forEach(enableImageZoom);
+    });
+  </script>
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.05054ca65d868c96a33c17ee251f127596ca39ca6f66c23824b77b065ed212793c4aac93a2b9a23cac18c91f02559fd8d9b310f5559ea9a523b8199fc970085b.css" integrity="sha512-BQVMpl2GjJajPBfuJR8SdZbKOcpvZsI4JLd7Bl7SEnk8SqyTormiPKwYyR8CVZ/Y2bMQ9VWeqaUjuBmfyXAIWw==" />
+  
+
+
+  
+  
+
+
+
+</head>
+<script src="script.js" defer></script>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+
+<script>
+  
+  const themeToggle = document.getElementById('theme-toggle');
+
+  
+  let currentTheme = localStorage.getItem('theme') || 'auto';
+  if (currentTheme === 'auto') {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    currentTheme = prefersDarkScheme ? 'dark' : 'light';
+  }
+  document.body.setAttribute('a', currentTheme);
+  document.body.classList.add(currentTheme + '-mode');
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+    }
+    localStorage.setItem('theme', currentTheme);
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const winHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    
+    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+    
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+    } else if (scrollPercent > 40) {
+      themeToggle.style.opacity = 0; 
+    } else {
+      themeToggle.style.opacity = 1; 
+    }
+  });
+</script>
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/collection">Museum</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+
+                </div>
+
+<article>
+    <h1>听播客，今天听什么？</h1>
+    <div id="post-meta">
+        <time datetime="2025-03-05 00:00:00 &#43;0000 UTC">
+            2025-03-05
+            <span> ‧ 3999</span>
+            <span>words</span>
+
+
+
+
+
+
+        </time>
+        
+        <blockquote id="post-description">
+            我可以接受聊天内容很肤浅，不客观，很激动，有私怨，不冷静，还没point，但我不能接受对方听起来“是一个无聊，不可爱，还有烦的家伙”。
+        </blockquote>
+        
+    </div>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+
+    </div>
+    <div id="post-content">
+    <p>我去年中旬才开始高强度听播客。常听的主题是港产片和国产电影相关，热爱追更正在上映的电影的有关播客，属于是我看了我就得听听看，我没看我更要听一听过把瘾。最近是听到有点听无可听，以下是突然心血来潮整理下规律追更、基本有更都听的几档播客。但列出不代表推荐，推荐就会明说，没说推荐就是虽然听但偷偷不推荐。</p>
+<hr>
+<ul>
+<li><strong>过期电影报告</strong>：播客主题范围是电影，外语片国产电影都讲，但感觉主播的真正热情比较集中于港产片。常驻嘉宾一位是女主播Mallory，一位是男主播五色全味，后者是一部杜琪峰纪录片的导演，现在也在香港做一些电影相关工作。我非常喜欢早期聊狄姜和电影导演、影人的几期。但基本是2023年刚开始看港片时听的，在还不那么了解的时候作为观影索引使用，最近也没有重听，仅凭印象推荐当时的几期。但到2025年感觉主播很忙碌没有讨论电影的精力，更新频率下降，电影也聊得比较浅。
+<ul>
+<li><a href="https://open.spotify.com/episode/311jVkGcSJx1pZLMvziHIw?si=zAnhFakKTzeKVZM_CuPBnw">《E1: “狄龙姜大卫为何不合”》</a>：是长篇主播们对自己爱过的RPS的考据史。</li>
+<li><a href="https://www.douban.com/podcast_episode/252191">《E5: 金像奖之夜与太湖私房话》</a>：这期显然是临时录的，在酒店里杯盏碰撞的声音里聊她们喜欢的两位影人，氛围非常美妙。</li>
+<li><a href="https://open.spotify.com/episode/2UyRjFeRvAlsLJVc8vGYGW?si=2655b15e588a4991">《EP 20: 杜琪峰，一个香港导演》</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>油尖旺午夜场</strong>：也是一个比较业内的播客，会聊电影幕后不同工种/技术的内容，聊的也（对于普通听众如我）非常深，这些内容会听得非常开心过瘾。不过这类邀请嘉宾对谈的播客会很难免有一个比较长的纯唠嗑和互相夸奖前摇，也有几期嘉宾很多的时候主播可能不是很能控场，会让我觉得“天哪来水时长的”（比如83期聊《演员请就位3》）。但我也是真心推荐大部分一对一的对谈，绝对值得一听！
+<ul>
+<li><a href="https://www.douban.com/podcast_episode/88695">第7期 在TVB做演员是一种什么体验？做人最紧要就是开心啦</a></li>
+<li><a href="https://www.douban.com/podcast_episode/88692">第9期 剧组揭秘之“场记”是什么？</a></li>
+<li><a href="https://www.douban.com/podcast_episode/88664">第36期 剧组揭秘之“美术”是什么？</a></li>
+<li><a href="https://www.douban.com/podcast_episode/278798">第75期 填词是初恋，导演是婚姻 | 专访《填词L》导演黄绮琳</a></li>
+<li><a href="https://www.douban.com/podcast_episode/269824">第73期 打破刻板印象，女性也能做摄影！| 专访摄影指导邓璐老师</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>没折腰FM</strong>：主要辐射范围应该是院线电影和时下热播电视剧。主播空山之前做影视业采访有关的工作，网友看我的SNS应该知道这是我的每期必听！我其实非常喜欢空山老师，首先是，她的口条非常好，我最开始听是听了她单人的期数，我觉得文本用词最舒服准确干净的一位（后来听到她是编辑，立即萌生出了“果然是编辑”的感慨），她对自己播客的质量要求很高的，即使是和好友的对谈她也蛮较真的，也有很明确节奏和主题，基本没有什么很水很唠嗑的内容。</li>
+<li>我很喜欢空山的另一个原因是她真的很爱看商业片，虽然聊商业片的播客很多啦，但她还是偶尔会给我一种‘这都看了’的惊讶，是爱吗？我不知道。她也是少数也会刷古偶现偶之类国产电视剧（虽然貌似最近聊得不多）的主播，有时候即使没看我也会点开那些期数听一听，她说话非常可爱，可能没有什么“高深的见解”，也不会觉得她讲得无聊。除此之外，她每个月也会发影视月报，讲讲全球电影啦内地电影啦票房啦大新闻啦之类的，很像早间新闻三十分钟但月更版。可惜因为聊得太泛貌似没有记忆点（但我是推荐的），但这几期可以听一听：
+<ul>
+<li><a href="https://www.douban.com/podcast_episode/280171">《749局》关于“枪毙陆川”，我并无明显反对意见</a>：我没看《749局》但这期真的太搞笑了！</li>
+<li><a href="https://www.douban.com/podcast_episode/189677">《可怜的东西》伪女权</a>：也是我的入坑集，因为用词干净口条又顺。</li>
+<li><a href="https://www.douban.com/podcast_episode/176089">“我花钱买票了，凭什么不让我屏摄/拍银幕？”</a>：空山老师武德充沛的一期。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://open.spotify.com/show/7zmAMTlY67odVahnvMwg7r?si=38bdf473d1bb48b1"><strong>词与物</strong></a>：词与物一档泛文化类播客节目（摘自播客简介）。但泛文化类是什么我其实也不是很清楚，但听了大部分期数后感觉，就是几位酷儿/同人er聊电影文学和音乐，常驻主播是词作者，可能也是术业有专攻，所以我比较爱听的也是播客里讲音乐人和词人的几期。这个播客听感也很好，虽然不属于是那种非常专业的播客，但即使唠嗑也很好玩很好听，同人文化爱好者（突然这么疏离…）的话即使不是播客主题内容也应该经常能get到很多梗。也推荐我比较喜欢的几期：
+<ul>
+<li><a href="https://open.spotify.com/episode/6b473NB08mwV18rfyF1gHt?si=20c360b412d14952">VOL30.继续边走边唱，总要以歌解愁</a>：几位主播听过黄耀明Live之后聊各自感受的一期。主播锤头鲨是黄耀明的粉丝，听人聊自己真正爱的人和物总是很感动。</li>
+<li><a href="https://open.spotify.com/episode/0ceOT0Hou7nqNg3aVKtzEQ?si=tn1pzDfjRiSrSVU6ZwGiOg">VOL23.垂头望废水，照的不是镜——聊聊林夕的创作</a></li>
+<li><a href="https://open.spotify.com/episode/2ke4JVnhatlwSiqXIxOwpD?si=lp99EibHTZedJNbwjrpqsA">Vol.01“ 烧了这张脸，还有似舌火焰”</a>：聊黄耀明和林夕，使我从此路过黄粱都会顺便嗑一口……</li>
+<li><a href="https://open.spotify.com/episode/0VS4doLX8Ir0I7ohKdDE0m">VOL28. 聊聊二次元“体育生”，和运动或不爱运动的我们</a></li>
+<li><a href="https://open.spotify.com/episode/6jUkABQ0i9VH53ksDFzkyX?si=9AmuikbGSyuP5_WfZZ8E_g">VOL19.划划软件中的爱欲泡泡</a>：聊一些交友软件见闻，虽然没有用过但听得也好开心。</li>
+<li>PS：她们的选题和标题都很好。建议用Spotify之类的平台听，因为似乎小宇宙上缺失了几期何韵诗之类“404”的内容。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong><a href="https://podcasts.apple.com/cn/podcast/%E7%8F%8D%E5%AE%9D%E6%B5%B7%E9%B2%9C%E8%88%AB/id1736361431">珍宝海鲜舫</a></strong>：是一个专讲港片、香港影人的播客，主播离谱蔓应该是文化方面的学者，所以内容也会……有点像写论文！我对它最近的感情比较复杂，一方面我觉得这么认真对待的播客，且是我感兴趣的主题，作为听众应该认真听一听，而且前面的期数我也确实有觉得讲得很好听的。但近期会觉得比较闷，习惯于话比较长的篇幅讲香港电影历史，还蛮上课风的。但是！主播肯定是带着爱和怀念在讲香港电影！它不是那种“辣评”式的播客，即使对待她知道有瑕疵的作品也依旧很温柔而言之有物，不是为了彰显自己的聪明而极尽刻薄的评论播客。而且她的更新还蛮有规律的，上映什么就聊什么，然后只要有一点关系的她都要聊一下她的真爱楚原（喂）。我比较喜欢的期数是鬼片专题的几期和这两期。
+<ul>
+<li><a href="https://podcasts.apple.com/cn/podcast/028-%E6%B1%9F%E6%B9%96%E7%87%95%E5%8E%BB%E7%A9%BA%E7%95%99%E5%BD%B1-%E9%83%91%E4%BD%A9%E4%BD%A9%E4%B8%8E%E8%83%A1%E9%87%91%E9%93%A8%E5%BC%8F%E7%9A%84%E4%BE%A0%E5%A5%B3%E4%BA%BA%E7%94%9F/id1736361431?i=1000662758341">028 江湖燕去空留影——郑佩佩与胡金铨式的侠女人生</a></li>
+<li><a href="https://podcasts.apple.com/cn/podcast/044-%E7%94%84%E5%AD%90%E4%B8%B9-%E4%B8%80%E5%9C%BA%E4%B8%8D%E5%A4%AA%E5%B9%B3%E9%A1%BA%E7%9A%84%E5%B7%A8%E6%98%9F%E5%85%BB%E6%88%90%E4%B9%8B%E8%B7%AF/id1736361431?i=1000684025095">044 甄子丹——一场不太平顺的巨星养成之路</a></li>
+<li><a href="https://podcasts.apple.com/cn/podcast/026-%E4%BA%A6%E8%88%92%E4%B8%8E-%E7%8E%AB%E7%91%B0%E7%9A%84%E6%95%85%E4%BA%8B/id1736361431?i=1000659948657">026 亦舒与《玫瑰的故事》</a>：亦舒的一些相关八卦也好听，支持主播论文式综述八卦（逃</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong><a href="https://sisreads.fireside.fm/">姐姐好读</a></strong>：终于讲到我近期最爱的姐姐好读！这其实是一档女读者聊女作家的读书播客，偶尔也聊一些小说改编的影视作品，常驻主播有四位，简直难以介绍，因为都超级可爱。是听一期少一期的好播客！首先我觉得四位主播都是非常非常有同理心的人，读书看书都蛮有自己的视角和观点，且经常在聊书的过程里分享自己的一些生命体验和好玩的事。</li>
+<li>在SNS上也分享过，我非常喜欢里面的主播老袁，是不是因为她同时也是影视编剧的原因？总之她聊起书时随手分享的一些故事——全都讲得特别好听，短短几句就又生动又好笑又好玩：讲她姐姐的“我有一个超能力，我可以在整个操场上立刻看见我喜欢的男生”、讲她的狗狗“听Someone like you的时候我真的哭了，我想起我的狗狗，很久之后我在自己羽绒服上看到了一根狗毛，这狗也太能掉毛了”、讲初中时网恋同校一个丑丑的大哥“我想起我妈那句合并同类项，我转身就跑，还特别怕他来班上找我”。她讲的每一个故事都特别好听，她一开始讲整个脑子里只有她讲的事情了！</li>
+<li>但是！即使老袁不讲故事（喂）这个播客也非常好听。这个播客每期都会有蛮明确的“我们对什么部分特别有感触”的部分，听几个姐姐在各自分享对书的感受、对作者的观点和评价，偶尔这种对某部分情节的评价有大相径庭的时刻，讨论后也经常会有高频的“你说得太好了！”、“我完全被你说服了！”的句子出没。虽然很暴言，但我还是要说，这是在很多对谈类播客里（尤其男主播出没时）根本听不到的，因为观点要么毫无出入，要么有出入的部分就敷衍一下过去，要么针锋相对了一会儿呵呵笑一下即使被说服了都不肯承认（说的就是过期电影报告邀请男嘉宾出场三人对谈的某期）。</li>
+<li>而且姐姐好读的大家，每期试图给听众传达的情绪都很好，总是情绪非常饱满地在聊天，有时听某些播客情绪Down得我听完觉得人生都没希望了（说的是最近的五色但他也挺辛苦的我干嘛老针对他），但姐姐好读就是，听完你会觉得好开心啊，像早上起来看到几个室友在厨房里紧锣密鼓热热闹闹地聊天煮咖啡做早餐一样，很有活力。</li>
+<li>其实我可能每期都很推荐，但私心最喜欢的是这几期：
+<ul>
+<li><a href="https://sisreads.fireside.fm/38">S4SP 纪念大S：为了真实、尊荣和洁净灵魂的灭亡</a>：事后的缅怀总是很难免沉重和痛苦，但这一期聊大S是真的会忽然笑出来，因为姐姐们眼中的大S真的太鲜活太可爱了，姐姐们对大S的趣事如数家珍，真的是聊一个她们都认识的很好很喜欢的朋友，聊她的正直、尊严和品行。中途真的听到泛泪鼻酸。</li>
+<li><a href="https://sisreads.fireside.fm/27">S3E6 咖啡。流浪。爱。安妮宝贝是一种生活方式</a>：特别好玩好笑的一期，但同时也真的聊出了一个不一样的、我意料之外的安妮宝贝！</li>
+<li><a href="https://sisreads.fireside.fm/37">S4E4 科颜氏｜感谢永远有港乐，把心境道破</a>：这一期也特别好玩，关于Twins的两首歌、郑秀文和杨千嬅都聊得很好听。我好像也听了很多聊港乐的播客，但总觉得翻来覆去都是些人云亦云的评价，但这期却不是。真的是自己的观察和感受。</li>
+<li>聊<strong>张爱玲、亦舒、琼瑶、李碧华</strong>的几期我都很喜欢但这样就把人家1/3都推荐了！真的请大家听听看吧！</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>还有一些散装播客，就是我没有全部听完，但这些单集我很喜欢。
+<ul>
+<li><a href="https://www.xiaoyuzhoufm.com/episode/630b42470d43f7f6306c6b0e">邵氏电影：电光影里斩春风，五十年前一场梦</a></li>
+<li><a href="https://open.spotify.com/episode/53M10sOWKqa4P0hD4SGX4x?si=QpRH5pPwTGqbD5DJLvnmvQ">vol.1-闽南人如何与鬼神通话？</a></li>
+<li><a href="https://www.douban.com/podcast_episode/189159">偶然误差 | happyweirdo 04：我们研究了“耗时四年”你都能干些什么</a>：偶然误差的happyweirdo专辑，是那种超放松超有梗不用带脑子的超级好笑，在工位笑到肩膀发抖！</li>
+<li><a href="https://podcasts.apple.com/tw/podcast/%E8%81%8C%E5%9C%BA%E7%99%BD%E6%97%A5%E6%A2%A6-%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%96%AF%E7%8B%82-vol-094/id1603580035?i=1000630629512">职场白日梦，一起来疯狂</a>：很轻松的白日梦内容，太无厘头了也在工位笑到发抖。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>在我开始听播客的时候也按人推荐尝试听一些很了不起很严肃的主题啦，比如小宇宙首页的那些，严肃对谈政治经济世界文化职场自然之类的，最后我发现我确实听不了，真的不关心，真的不爱听。究其原因是我对通过声音认识人的要求又高又低吧。我这个人，在现实真实对话和听播客时，都不关心别人有没有文化，只关心说话的人可不可爱，比起对方说话内容有没有质量，我觉得有没有梗更重要，比起聪不聪明，我更介意的是你会不会对不聪明的人极尽挖苦之能事。我可以接受聊天内容很肤浅，不客观，不冷静，很激动，有私怨，还没point，但我不能接受对方听起来“是一个无聊，不可爱，还有烦的家伙”。</p>
+<p>介绍到这里感觉大家也发现了，我是对“即使我完全不懂，但主播用特别多热情和爱在介绍”的内容会兴致勃勃听下去的人，尤其听主播聊自己CP或者自己钟爱的一些事物，即使内容主播在麦克风里什么也没说，只是长吁短叹“唉！就是，你懂吧！唉！”只要感情足够浓烈，我也会爱听的（喂）。</p>
+
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-03-03/">&lt;&lt; 全心保存真的我</a>
+        
+        
+    </div>
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(244, 241, 238);
+        box-shadow: 1px 1px 2px rgba(205, 133, 63, 0.7);
+     
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
+    }
+
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+    });
+</script>
+</div>
+
+
+
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了266.7k字 · 共 80篇文章
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+</div>
+
+            </div>
+        </main>
+    <script src="script.js" defer></script>
+    </body></html>

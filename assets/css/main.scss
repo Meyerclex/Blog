@@ -109,6 +109,10 @@ $color-mark-light: #b2d8d8;
     padding: 0 2px;
   }
 
+  strong {
+    font-weight: bold;
+  }
+
   #header-post #nav a {
     color: $primary-text-color;
   }
@@ -259,8 +263,8 @@ p {
   padding: 0.1rem 0;
 }
 
-li {
-  margin: 0.4rem 0;
+#post-content li {
+  margin: 0.8rem 0;
 }
 
 a {
@@ -505,6 +509,10 @@ ul {
 li {
   padding: 0 0.5rem;
   /* 可选：调整列表项的间距 */
+}
+
+ul li ul li {
+  padding: 0.4rem 1rem;
 }
 
 ul li:before {
