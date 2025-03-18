@@ -47,7 +47,14 @@ date_format       = "2006-01-02"
 #  "02 Jan 2006"
 isListGroupByDate = true
 isShowFooter      = true
-
+[params.meowBox]
+enabled = true
+images = [
+    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/e5b786e27835fd295754ce15d32f9654.jpg",
+    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/008oVlcxgy1hz9pc597lbj32c0340b29.jpg",
+    "https://img.gregueria.icu/2025/008oVlcxgy1htrm5kk1vyj32c0340npd.jpg",
+    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/008oVlcxgy1hzarjm6thtj32c03401kz.jpg"
+]
 
 [[menu.main]]
 name = "Home"
@@ -76,3 +83,4 @@ weight = 4
 
 [outputs]
 home = ["HTML"]
+

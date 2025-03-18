@@ -232,7 +232,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.715fbfa386c220291faf0514097088779b21db330a43080e17a468357e6be99bfa8e7c62d374f1b5ba28e272be35c21f8e2f8b9243804f6b9b430fddcc028b9e.css" integrity="sha512-cV&#43;/o4bCICkfrwUUCXCId5sh2zMKQwgOF6RoNX5r6Zv6jnxi03Txtboo4nK&#43;NcIfji&#43;LkkOAT2ubQw/dzAKLng==" />
+    <link rel="stylesheet" href="/css/main.a7c15e7bd88db6461926817662cd560a1bc7df65ec81883572044ebd4960a3057ad6e67f36f679107a01bda9f6de8e4be57a6211fbb0619ed7ce0dda29aca21f.css" integrity="sha512-p8Fee9iNtkYZJoF2Ys1WChvH32XsgYg1cgROvUlgowV61uZ/NvZ5EHoBvan23o5L5XpiEfuwYZ7Xzg3aKayiHw==" />
   
 
 
@@ -430,6 +430,97 @@
 
         </div>
     </div>
+
+<div class="main-container" >
+    <div class="note">
+    <div class="note__item">
+        <div class="note__day">碎碎念啦，唔使理我</div>
+        <div class="note__list" style="font-size: 80%;">
+            <details class="mumble" open>
+                <summary>Mumble...</summary>
+                <div id="feed-reader" ></div>
+                <script>
+                    const feedURL = 'https://status.cafe/users/lyin.atom';
+
+                    function timeAgo(publishedDate) {
+                        const now = new Date();
+                        const published = new Date(publishedDate);
+                        const diff = now - published; 
+
+                        const seconds = Math.floor(diff / 1000);
+                        const minutes = Math.floor(seconds / 60);
+                        const hours = Math.floor(minutes / 60);
+                        const days = Math.floor(hours / 24);
+
+                        if (days > 0) {
+                            return `${days} day${days > 1 ? 's' : ''} ago`;
+                        } else if (hours > 0) {
+                            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                        } else if (minutes > 0) {
+                            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                        } else {
+                            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+                        }
+                    }
+
+                    fetch(feedURL)
+                        .then(response => response.text())
+                        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                        .then(data => {
+                            const entries = data.querySelectorAll("entry");
+                            let html = ``;
+                            entries.forEach(el => {
+                                let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+                                let content = el.querySelector("content").textContent.trim();
+                                let publishedDate = el.querySelector("published").innerHTML;
+                                let relativeTime = timeAgo(publishedDate);
+
+                                html += `
+              <div class="statuscafe-entry">
+                <p class="statuscafe-username">${title} - ${relativeTime}</p>
+                <p class="statuscafe-content">${content}</p>
+              </div>
+            `;
+                            });
+                            document.getElementById("feed-reader").innerHTML = html;
+                        });
+                </script>
+            </details>
+        </div>
+    </div>
+    </div>
+    <div class="menu-float">
+
+<div id="meow-box" style="">
+    <img id="meow-image" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/e5b786e27835fd295754ce15d32f9654.jpg" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
+    <button onclick="toggleMeowImage()" id="meow-btn" style="margin: 10px;">
+        meow
+    </button>
+</div>
+
+<script>
+    let images = [
+        
+    "https:\/\/pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev\/picture\/2024\/12\/e5b786e27835fd295754ce15d32f9654.jpg",
+        
+    "https:\/\/pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev\/2025\/008oVlcxgy1hz9pc597lbj32c0340b29.jpg",
+        
+    "https:\/\/img.gregueria.icu\/2025\/008oVlcxgy1htrm5kk1vyj32c0340npd.jpg",
+        
+    "https:\/\/pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev\/2025\/008oVlcxgy1hzarjm6thtj32c03401kz.jpg",
+        
+    ];
+    let currentIndex = 0;
+
+    function toggleMeowImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById("meow-image").src = images[currentIndex];
+    }
+</script>
+
+    </div>
+</div>
+
 
 
 

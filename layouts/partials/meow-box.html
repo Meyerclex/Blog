@@ -1,0 +1,25 @@
+{{- if .Site.Params.meowBox.enabled }}
+<div id="meow-box" style="">
+    {{- $images := .Site.Params.meowBox.images -}}
+    {{- if gt (len $images) 0 }}
+    <img id="meow-image" src="{{ index $images 0 }}" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
+    {{- end }}
+    <button onclick="toggleMeowImage()" id="meow-btn" style="margin: 10px;">
+        meow
+    </button>
+</div>
+
+<script>
+    let images = [
+        {{ range $index, $img := .Site.Params.meowBox.images }}
+    "{{ $img }}",
+        {{ end }}
+    ];
+    let currentIndex = 0;
+
+    function toggleMeowImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById("meow-image").src = images[currentIndex];
+    }
+</script>
+{{- end }}

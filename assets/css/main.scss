@@ -121,6 +121,56 @@ $color-mark-light: #b2d8d8;
     box-shadow: 2px 0 0 0 $primary-text-color;
   }
 
+  #meow-box {
+    border: 2px solid $border-color;
+    box-shadow: 4px 4px 0 0 $color-point;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  #meow-box {
+    width: 250px; /* 桌面端固定宽度 */
+    height: auto+30px; /* 让高度自适应 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden; /* 防止图片溢出 */
+  }
+
+  /* 让 img 不超出 */
+  #meow-image {
+    width: 100%; /* 保证图片不超出容器 */
+    max-width: 100%; /* 避免超出 */
+    height: auto;
+    aspect-ratio: 1 / 1; /* 保持 1:1 比例 */
+    object-fit: cover; /* 保持图片填充 */
+  }
+
+  /* 瀑布流模式（手机端） */
+  @media (max-width: 768px) {
+    #meow-box {
+      width: 95%; /* 让盒子宽度填满父容器 */
+    }
+    #meow-box {
+      border: 2px solid $border-color;
+      box-shadow: 4px 4px 0 0 $color-point;
+      padding: 30px;
+      margin: 20px 0px;
+    }
+  }
+
+
+  #meow-btn {
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    background: $color-point;
+    color: $bg-light;
+    cursor: pointer;
+  }
+
   .note__item {
     border: 2px solid $border-color;
     box-shadow: 4px 4px 0 0 $color-point;
@@ -455,6 +505,12 @@ article img.float-img50 {
   box-sizing: border-box;
 }
 
+.note {
+  flex: 0 0 50%;
+  /* 菜单部分占据 50% 宽度 */
+  box-sizing: border-box;
+}
+
 /* 手机端适配：布局变为单列 */
 @media (max-width: 768px) {
   .main-container {
@@ -544,12 +600,11 @@ ul p {
 }
 
 .mumble {
-  max-height: 300px;
+  max-height: 230px;
   /* 设置最大高度 */
   overflow-y: auto;
   /* 超过最大高度时启用垂直滚动 */
 }
-
 
 .statuscafe-username {
   margin-left: 0.5em;
@@ -657,3 +712,4 @@ del {
     background-size: 110% 110%;
   }
 }
+

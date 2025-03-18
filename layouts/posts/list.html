@@ -85,61 +85,7 @@
         </div>
         {{/*changelog*/}}
 {{/*        碎碎念*/}}
-                <div class="note__item">
-                    <div class="note__day">碎碎念啦，唔使理我</div>
-                    <div class="note__list" style="font-size: 80%;">
-                        <details class="mumble">
-                            <summary>Mumble...</summary>
-                            <div id="feed-reader" ></div>
-                            <script>
-                                const feedURL = 'https://status.cafe/users/lyin.atom';
 
-                                function timeAgo(publishedDate) {
-                                    const now = new Date();
-                                    const published = new Date(publishedDate);
-                                    const diff = now - published; // 差值以毫秒为单位
-
-                                    const seconds = Math.floor(diff / 1000);
-                                    const minutes = Math.floor(seconds / 60);
-                                    const hours = Math.floor(minutes / 60);
-                                    const days = Math.floor(hours / 24);
-
-                                    if (days > 0) {
-                                        return `${days} day${days > 1 ? 's' : ''} ago`;
-                                    } else if (hours > 0) {
-                                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-                                    } else if (minutes > 0) {
-                                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-                                    } else {
-                                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-                                    }
-                                }
-
-                                fetch(feedURL)
-                                    .then(response => response.text())
-                                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                                    .then(data => {
-                                        const entries = data.querySelectorAll("entry");
-                                        let html = ``;
-                                        entries.forEach(el => {
-                                            let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
-                                            let content = el.querySelector("content").textContent.trim();
-                                            let publishedDate = el.querySelector("published").innerHTML;
-                                            let relativeTime = timeAgo(publishedDate);
-
-                                            html += `
-              <div class="statuscafe-entry">
-                <p class="statuscafe-username">${title} - ${relativeTime}</p>
-                <p class="statuscafe-content">${content}</p>
-              </div>
-            `;
-                                        });
-                                        document.getElementById("feed-reader").innerHTML = html;
-                                    });
-                            </script>
-                        </details>
-                    </div>
-                </div>
 {{/*碎碎念*/}}
         {{/*        小卡*/}}
         <blockquote style="font-size: 90%;">
