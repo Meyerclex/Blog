@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn"><head>
-	<meta name="generator" content="Hugo 0.139.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.140.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -232,7 +232,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.a7c15e7bd88db6461926817662cd560a1bc7df65ec81883572044ebd4960a3057ad6e67f36f679107a01bda9f6de8e4be57a6211fbb0619ed7ce0dda29aca21f.css" integrity="sha512-p8Fee9iNtkYZJoF2Ys1WChvH32XsgYg1cgROvUlgowV61uZ/NvZ5EHoBvan23o5L5XpiEfuwYZ7Xzg3aKayiHw==" />
+    <link rel="stylesheet" href="/css/main.787f32c6ffeb0acae60ff42a2ae32f6a4c2437711bd38b45c7729748d040d827beff28ba3cb5f2512b74e9c35d417d758101b8a87c2b44a96467a3342bbf2e7f.css" integrity="sha512-eH8yxv/rCsrmD/QqKuMvakwkN3Eb04tFx3KXSNBA2Ce&#43;/yi6PLXyUSt06cNdQX11gQG4qHwrRKlkZ6M0K78ufw==" />
   
 
 
@@ -359,12 +359,13 @@
             </div>
         </div></header>
 
-    <div class="main-container" >
-        <div class="note">
+
+    <div class="grid-container">
+        <div class="note" id="x2">
             <div class="note__item">
                 <div class="note__day">Welcome</div>
                 <div class="note__list">
-                        <p>欢迎光临一位是吗里面请里面坐～</p>
+                    <p>欢迎光临一位是吗里面请里面坐～</p>
 <p><strong>🔮 关于我：</strong></p>
 <p><del><em>我下山那年，他们都叫我傅鱼鱼…</em></del></p>
 <p>是鱼鱼，爱与和平同人女一枚无需多言！</p>
@@ -388,9 +389,65 @@
 
                 </div>
             </div>
-        </div>
+            <div class="note" id="x3">
+                <div class="note__item">
+                    <div class="note__day">碎碎念啦，唔使理我</div>
+                    <div class="note__list" style="font-size: 80%;">
+                        <details class="mumble" open>
+                            <summary>Mumble...</summary>
+                            <div id="feed-reader" ></div>
+                            <script>
+                                const feedURL = 'https://status.cafe/users/lyin.atom';
 
-        <div class="menu-float">
+                                function timeAgo(publishedDate) {
+                                    const now = new Date();
+                                    const published = new Date(publishedDate);
+                                    const diff = now - published; 
+
+                                    const seconds = Math.floor(diff / 1000);
+                                    const minutes = Math.floor(seconds / 60);
+                                    const hours = Math.floor(minutes / 60);
+                                    const days = Math.floor(hours / 24);
+
+                                    if (days > 0) {
+                                        return `${days} day${days > 1 ? 's' : ''} ago`;
+                                    } else if (hours > 0) {
+                                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                                    } else if (minutes > 0) {
+                                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                                    } else {
+                                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+                                    }
+                                }
+
+                                fetch(feedURL)
+                                    .then(response => response.text())
+                                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                                    .then(data => {
+                                        const entries = data.querySelectorAll("entry");
+                                        let html = ``;
+                                        entries.forEach(el => {
+                                            let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+                                            let content = el.querySelector("content").textContent.trim();
+                                            let publishedDate = el.querySelector("published").innerHTML;
+                                            let relativeTime = timeAgo(publishedDate);
+
+                                            html += `
+              <div class="statuscafe-entry">
+                <p class="statuscafe-username">${title} - ${relativeTime}</p>
+                <p class="statuscafe-content">${content}</p>
+              </div>
+            `;
+                                        });
+                                        document.getElementById("feed-reader").innerHTML = html;
+                                    });
+                            </script>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-float" id="x1">
             <div class="multi-column-menu"><div class="menu-column">
             <h3 class="menu-title">📚 All Posts</h3><h3 class="menu-title"></h3>
                 <div class="posts-list-ul">
@@ -428,72 +485,12 @@
 
 </div></div></div>
 
-        </div>
-    </div>
-
-<div class="main-container" >
-    <div class="note">
-    <div class="note__item">
-        <div class="note__day">碎碎念啦，唔使理我</div>
-        <div class="note__list" style="font-size: 80%;">
-            <details class="mumble" open>
-                <summary>Mumble...</summary>
-                <div id="feed-reader" ></div>
-                <script>
-                    const feedURL = 'https://status.cafe/users/lyin.atom';
-
-                    function timeAgo(publishedDate) {
-                        const now = new Date();
-                        const published = new Date(publishedDate);
-                        const diff = now - published; 
-
-                        const seconds = Math.floor(diff / 1000);
-                        const minutes = Math.floor(seconds / 60);
-                        const hours = Math.floor(minutes / 60);
-                        const days = Math.floor(hours / 24);
-
-                        if (days > 0) {
-                            return `${days} day${days > 1 ? 's' : ''} ago`;
-                        } else if (hours > 0) {
-                            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-                        } else if (minutes > 0) {
-                            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-                        } else {
-                            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-                        }
-                    }
-
-                    fetch(feedURL)
-                        .then(response => response.text())
-                        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                        .then(data => {
-                            const entries = data.querySelectorAll("entry");
-                            let html = ``;
-                            entries.forEach(el => {
-                                let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
-                                let content = el.querySelector("content").textContent.trim();
-                                let publishedDate = el.querySelector("published").innerHTML;
-                                let relativeTime = timeAgo(publishedDate);
-
-                                html += `
-              <div class="statuscafe-entry">
-                <p class="statuscafe-username">${title} - ${relativeTime}</p>
-                <p class="statuscafe-content">${content}</p>
-              </div>
-            `;
-                            });
-                            document.getElementById("feed-reader").innerHTML = html;
-                        });
-                </script>
-            </details>
-        </div>
-    </div>
-    </div>
-    <div class="menu-float">
-
+            <div class="menu-float" id="x4">
+                
 <div id="meow-box" style="">
+    <mark style="padding:0px; margin: 0px; font-size:90%;">❤ 猫! ❤</mark>
     <img id="meow-image" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/e5b786e27835fd295754ce15d32f9654.jpg" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-    <button onclick="toggleMeowImage()" id="meow-btn" style="margin: 10px;">
+    <button onclick="toggleMeowImage()" id="meow-btn" >
         meow
     </button>
 </div>
@@ -518,8 +515,146 @@
     }
 </script>
 
+                <div class="note" id="x5">
+                    <div class="note__item">
+                        <div class="note__day">碎碎念啦，唔使理我</div>
+                        <div class="note__list" style="font-size: 80%;">
+                            <details class="mumble">
+                                <summary>Mumble...</summary>
+                                <div id="feed-reader" ></div>
+                                <script>
+                                    const feedURL = 'https://status.cafe/users/lyin.atom';
+
+                                    function timeAgo(publishedDate) {
+                                        const now = new Date();
+                                        const published = new Date(publishedDate);
+                                        const diff = now - published; 
+
+                                        const seconds = Math.floor(diff / 1000);
+                                        const minutes = Math.floor(seconds / 60);
+                                        const hours = Math.floor(minutes / 60);
+                                        const days = Math.floor(hours / 24);
+
+                                        if (days > 0) {
+                                            return `${days} day${days > 1 ? 's' : ''} ago`;
+                                        } else if (hours > 0) {
+                                            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                                        } else if (minutes > 0) {
+                                            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                                        } else {
+                                            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+                                        }
+                                    }
+
+                                    fetch(feedURL)
+                                        .then(response => response.text())
+                                        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                                        .then(data => {
+                                            const entries = data.querySelectorAll("entry");
+                                            let html = ``;
+                                            entries.forEach(el => {
+                                                let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+                                                let content = el.querySelector("content").textContent.trim();
+                                                let publishedDate = el.querySelector("published").innerHTML;
+                                                let relativeTime = timeAgo(publishedDate);
+
+                                                html += `
+              <div class="statuscafe-entry">
+                <p class="statuscafe-username">${title} - ${relativeTime}</p>
+                <p class="statuscafe-content">${content}</p>
+              </div>
+            `;
+                                            });
+                                            document.getElementById("feed-reader").innerHTML = html;
+                                        });
+                                </script>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

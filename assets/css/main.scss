@@ -103,7 +103,7 @@ $color-mark-light: #b2d8d8;
 
 
   mark {
-    background: linear-gradient(transparent calc(100% - 0.5em), $color-mark 0.5em) no-repeat;
+    background: linear-gradient(transparent calc(100% - 0.6em), $color-mark 0.6em) no-repeat;
     background-size: 100% 100%;
     color: inherit;
     padding: 0 2px;
@@ -124,13 +124,13 @@ $color-mark-light: #b2d8d8;
   #meow-box {
     border: 2px solid $border-color;
     box-shadow: 4px 4px 0 0 $color-point;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 5px 15px 15px 15px;
+    margin-top: 10px;
   }
 
   #meow-box {
-    width: 250px; /* 桌面端固定宽度 */
-    height: auto+30px; /* 让高度自适应 */
+    width: 280px; /* 桌面端固定宽度 */
+    height: auto+20px; /* 让高度自适应 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,6 +166,8 @@ $color-mark-light: #b2d8d8;
     margin-top: 10px;
     padding: 5px;
     border: none;
+    margin: 10px;
+    border-radius: 8px;
     background: $color-point;
     color: $bg-light;
     cursor: pointer;
@@ -273,8 +275,8 @@ body {
 }
 
 .note__day {
-  padding: 5px 5px 2px;
-  font: 90% "Huiwen-mincho", cursive;
+  padding: 5px 5px 5px 5px;
+  font: 100% "Huiwen-mincho", cursive;
   //border-bottom: 2px solid #111;
 }
 
@@ -600,7 +602,7 @@ ul p {
 }
 
 .mumble {
-  max-height: 230px;
+  max-height: 190px;
   /* 设置最大高度 */
   overflow-y: auto;
   /* 超过最大高度时启用垂直滚动 */
@@ -711,5 +713,32 @@ del {
     background-position: center center;
     background-size: 110% 110%;
   }
+}
+
+
+/* 桌面端：2x2网格布局 */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 两列 */
+  grid-template-rows: auto auto; /* 自动行高 */
+  gap: 20px; /* 设置间距 */
+}
+
+#x4 { margin-top: 30px; margin-left: 10px; }
+#x5 {display: none;}
+/* 手机端：调整为单列布局，并控制顺序 */
+@media (max-width: 768px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  #x3 {display: none}
+  #x2 { order: 1; }
+  #x1 { order: 2; }
+  #x3 { order: 3; }
+  #x4 { order: 4; }
+  #x5 {display: flex;}
 }
 

@@ -5,7 +5,7 @@
 
     <body>
     <div class="main-container">
-    <div id="page_posts" class="window active page_posts" style="">
+        <div id="page_posts" class="window active page_posts" style="">
         <div class="window-title" style="">
             <div class="buttons">
                 <div class="button" style="background: #ffff4d;" onclick="history.back()"></div>
@@ -30,31 +30,46 @@
                         <div class="">
                             {{/* **** Yearly archive **** */}}
                             {{/* Group articles by year and loop through them */}}
+                            {{- $currentYear := now.Format "2006" | int -}}  <!-- 转换为整数 -->
                             {{- range (.Site.RegularPages.GroupByDate "2006") -}}
-                                {{/* Get articles to display, excluding hidden ones */}}
                                 {{- $articles_yearly := (where (where .Pages "Type" $type) "Params.hidden" "!=" true) -}}
-                                {{/* Count articles returned */}}
                                 {{- $articles_yearly_count := len $articles_yearly -}}
-                                {{/* Check if a proper year is returned and if it contains any articles */}}
+                                {{- $year := .Key | int -}}  <!-- 确保年份是整数 -->
+
                                 {{ if and (gt .Key 1) (gt $articles_yearly_count 0) }}
-                                    {{- range $index, $value := $articles_yearly -}}
-                                        {{ if not $index }}
-                                            {{/* Display a header in the first loop */}}
-                                            <h3 class="archive--year">{{ .Date.Format "2006" }}
-                                                / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}</h3>
+                                    <h3 class="archive--year">
+                                        {{ .Key }} / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}
+                                    </h3>
+
+                                    {{ if eq $year $currentYear }}
+                                        <ul>
+                                            {{- range $articles_yearly -}}
+                                                <li>
+                                                    <span class="">{{ .Date.Format "01-02" }}</span>&emsp;
+                                                    <a href="{{ .RelPermalink }}">
+                                                        {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
+                                                    </a>
+                                                </li>
+                                            {{- end -}}
+                                        </ul>
+                                    {{ else }}
+                                        <details style="padding: 0px; margin: 0px;">
+                                            <summary style="padding: 10px;">Click Here</summary>
                                             <ul>
-                                        {{ end }}
-                                        {{/* Display articles here */}}
-                                        <li>
-                                            <span class="">{{ .Date.Format "01-02" }}</span>&emsp;
-                                            <a href="{{ .RelPermalink }}">
-                                                {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
-                                            </a>
-                                        </li>
+                                                {{- range $articles_yearly -}}
+                                                    <li>
+                                                        <span class="">{{ .Date.Format "01-02" }}</span>&emsp;
+                                                        <a href="{{ .RelPermalink }}">
+                                                            {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
+                                                        </a>
+                                                    </li>
+                                                {{- end -}}
+                                            </ul>
+                                        </details>
                                     {{ end }}
-                                    </ul>
                                 {{ end }}
                             {{ end }}
+
 
                         </div>
                         <div id="index-content">
@@ -64,16 +79,12 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-
-    <div class="note menu-float" style="flex: 0 0 45%;">
-        {{/*        changelog*/}}
+        <div class="note menu-float" style="flex: 0 0 45%;">
         <div class="note__item">
             <div class="note__day">更新日志</div>
             <div class="note__list" style="font-size: 80%;">
-                <details class="mumble" style="max-height: 200px;">
+                <details class="mumble" open style="max-height: 250px;">
                     <summary>Changelog...</summary>
                     {{ with site.GetPage "changelog" }}
                         {{ .Content | safeHTML }}
@@ -83,31 +94,6 @@
                 </details>
             </div>
         </div>
-        {{/*changelog*/}}
-{{/*        碎碎念*/}}
-
-{{/*碎碎念*/}}
-        {{/*        小卡*/}}
-        <blockquote style="font-size: 90%;">
-            这么长的网页看起来很麻烦吧？<br>所以附赠一张宝宝可爱小卡，见者有份🥰<br>请查收！
-        </blockquote>
-            <div class="main-container">
-                <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
-                    <div style="height: 50%; max-width: 80%; align-items: center;">
-                        <div class="polaroid-frame">
-                            <div class="polaroid-image">
-                                <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/e5b786e27835fd295754ce15d32f9654.jpg">
-                            </div>
-                            <div class="polaroid-caption">
-                              🤍 宝宝我们喜欢你！
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                            </div>
-{{/*        小卡*/}}
-
-
     </div>
     </div>
     </body>

@@ -6,6 +6,11 @@ slug: changelog
 toc: true
 ---
 
+## 2025/03/18
+
+- 修改首页布局，增加了猫猫图片。修改了Archive页面显示。之前内容也太长了一点！
+- 正文字体改为思源黑体（`Noto Sans CJK SC`）。
+
 ## 2025/01/23
 
 由于博客被saveweb的聚合页未经问询直接收录，并在要求删掉收录时被对方称为“极端女权”（可见[图片](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/image.png)），所以关闭了RSS订阅源。
