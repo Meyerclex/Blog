@@ -765,7 +765,7 @@ del {
   top: 110px; /* 紧贴着 .w 顶部 */
   right: -200px; /* Sidebar 距离 .grid-container 右边的距离，可以根据需要调整 */
   width: 200px; /* Sidebar 宽度 */
-  height: 100%; /* 高度与父容器相同 */
+  //height: 100%; /* 高度与父容器相同 */
   padding: 10px;
   transition: right 0.3s ease; /* 动画效果，使其更流畅 */
 }
@@ -793,7 +793,7 @@ del {
   text-shadow: $link-hover 1px 0 10px;
   text-decoration: underline $color-point-light;
   text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-underline-offset: 5px;
 }
 
 #menutable a {
