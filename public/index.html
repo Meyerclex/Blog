@@ -6,6 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   
+  <link rel="preload" href="https://font.eterfinal.ink/HuiwenFangsong/result.css" as="style">
+  <link rel="preload" href="https://static.zeoseven.com/zsft/256/main/result.css" as="style">
+
+  
+  <link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  
+  <noscript>
+    <link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+  </noscript>
+
+
+
+  
 
   <title>
     
@@ -232,7 +256,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.42c81b916ca91d7952037097ed6e7bd489235f9fdb4da6d10dc8d75d11fc0eb2b9231a894a7aeecc73320070c71c619f4455686256e77fd7a28e5dd119bf774e.css" integrity="sha512-QsgbkWypHXlSA3CX7W571IkjX5/bTabRDcjXXRH8DrK5IxqJSnruzHMyAHDHHGGfRFVoYlbnf9eijl3RGb93Tg==" />
+    <link rel="stylesheet" href="/css/main.41d4d3a8ffb4656adcbd2cf4608079ff08398c705c5a6821ede5296deb4ac2abbd84c8137f49041737c02015b3d851ace202521d544280671913822f50a9df8a.css" integrity="sha512-QdTTqP&#43;0ZWrcvSz0YIB5/wg5jHBcWmgh7eUpbetKwqu9hMgTf0kEFzfAIBWz2FGs4gJSHVRCgGcZE4IvUKnfig==" />
   
 
 
@@ -246,16 +270,14 @@
 <body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-<link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
-
-    <header>
-        <div class="header">
-            <div class="header-image">
-                <img src="/cat/tuxicon2.gif" alt="Icon">
-            </div>
-            <div class="header-content">
-                <h1>再會，謝謝所有的魚</h1>
-                <div id="theme-toggle" class="theme-toggle">
+<header>
+    <div class="header">
+        <div class="header-image">
+            <img src="/cat/tuxicon2.gif" alt="Icon">
+        </div>
+        <div class="header-content">
+            <h1>再會，謝謝所有的魚</h1>
+            <div id="theme-toggle" class="theme-toggle">
   <div id="light-btn"></div>
   <div id="dark-btn"></div>
 </div>
@@ -329,16 +351,15 @@
 
 
 
-            </div>
-        </div></header>
+        </div>
+    </div></header>
 
-
-    <div class="grid-container">
-        <div class="note" id="x2">
-            <div class="note__item">
-                <div class="note__day">Welcome</div>
-                <div class="note__list">
-                    <p>欢迎光临一位是吗里面请里面坐～</p>
+<div class="grid-container">
+    <div class="note" id="x2">
+        <div class="note__item">
+            <div class="note__day">Welcome</div>
+            <div class="note__list">
+                <p>欢迎光临一位是吗里面请里面坐～</p>
 <p><strong>🔮 关于我：</strong></p>
 <p><del><em>我下山那年，他萌都叫我傅鱼鱼…</em></del></p>
 <p>是鱼鱼，爱与和平同人女一枚无需多言！</p>
@@ -358,68 +379,70 @@
 />
 </p>
 
-                </div>
-            </div>
-            <div class="note" id="x3">
-                <div class="note__item">
-                    <div class="note__day">碎碎念啦，唔使理我</div>
-                    <div class="note__list" style="font-size: 80%;">
-                        <details class="mumble" open>
-                            <summary>Mumble...</summary>
-                            <div id="feed-reader" ></div>
-                            <script>
-                                const feedURL = 'https://status.cafe/users/lyin.atom';
-
-                                function timeAgo(publishedDate) {
-                                    const now = new Date();
-                                    const published = new Date(publishedDate);
-                                    const diff = now - published; 
-
-                                    const seconds = Math.floor(diff / 1000);
-                                    const minutes = Math.floor(seconds / 60);
-                                    const hours = Math.floor(minutes / 60);
-                                    const days = Math.floor(hours / 24);
-
-                                    if (days > 0) {
-                                        return `${days} day${days > 1 ? 's' : ''} ago`;
-                                    } else if (hours > 0) {
-                                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-                                    } else if (minutes > 0) {
-                                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-                                    } else {
-                                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-                                    }
-                                }
-
-                                fetch(feedURL)
-                                    .then(response => response.text())
-                                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                                    .then(data => {
-                                        const entries = data.querySelectorAll("entry");
-                                        let html = ``;
-                                        entries.forEach(el => {
-                                            let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
-                                            let content = el.querySelector("content").textContent.trim();
-                                            let publishedDate = el.querySelector("published").innerHTML;
-                                            let relativeTime = timeAgo(publishedDate);
-
-                                            html += `
-              <div class="statuscafe-entry">
-                <p class="statuscafe-username">${title} - ${relativeTime}</p>
-                <p class="statuscafe-content">${content}</p>
-              </div>
-            `;
-                                        });
-                                        document.getElementById("feed-reader").innerHTML = html;
-                                    });
-                            </script>
-                        </details>
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="menu-float" id="x1">
-            <div class="multi-column-menu"><div class="menu-column">
+        <div id="x3">
+            <div class="note__item">
+    <div class="note__day">碎碎念啦，唔使理我</div>
+    <div class="note__list" style="font-size: 80%;">
+        <details class="mumble" open>
+            <summary>Mumble...</summary>
+            <div id="feed-reader"></div>
+            <script>
+                const feedURL = 'https://status.cafe/users/lyin.atom';
+
+                function timeAgo(publishedDate) {
+                    const now = new Date();
+                    const published = new Date(publishedDate);
+                    const diff = now - published;
+
+                    const seconds = Math.floor(diff / 1000);
+                    const minutes = Math.floor(seconds / 60);
+                    const hours = Math.floor(minutes / 60);
+                    const days = Math.floor(hours / 24);
+
+                    if (days > 0) {
+                        return `${days} day${days > 1 ? 's' : ''} ago`;
+                    } else if (hours > 0) {
+                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                    } else if (minutes > 0) {
+                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                    } else {
+                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+                    }
+                }
+
+                fetch(feedURL)
+                    .then(response => response.text())
+                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                    .then(data => {
+                        const entries = data.querySelectorAll("entry");
+                        let html = ``;
+                        entries.forEach(el => {
+                            let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+                            let content = el.querySelector("content").textContent.trim();
+                            let publishedDate = el.querySelector("published").innerHTML;
+                            let relativeTime = timeAgo(publishedDate);
+
+                            html += `
+                                <div class="statuscafe-entry">
+                                    <p class="statuscafe-username">${title} - ${relativeTime}</p>
+                                    <p class="statuscafe-content">${content}</p>
+                                </div>
+                            `;
+                        });
+                        document.getElementById("feed-reader").innerHTML = html;
+                    });
+            </script>
+        </details>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <div class="menu-float" id="x1">
+        <div class="multi-column-menu"><div class="menu-column">
             <h3 class="menu-title">📚 All Posts</h3><h3 class="menu-title"></h3>
                 <div class="posts-list-ul">
                     
@@ -456,8 +479,8 @@
 
 </div></div></div>
 
-            <div class="menu-float" id="x4">
-                
+        <div id="x4">
+            
 <div id="meow-box" style="border-radius: 10px;">
 
     <img id="meow-image" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/01.jpg" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
@@ -487,10 +510,9 @@
     }
 </script>
 
-            </div>
-
         </div>
     </div>
+</div>
 
 <aside id="sidebar">
     <table id="menutable" style="border-collapse: collapse; table-layout: auto; width: 100%;">
@@ -542,23 +564,16 @@
 
 <script>
     function toggleMenu(element) {
-        const content = element.nextElementSibling; 
+        const content = element.nextElementSibling;
         const allContents = document.querySelectorAll('.menu-content');
-
-        
         allContents.forEach(item => {
             if (item !== content) {
                 item.style.display = 'none';
             }
         });
-
-        
         content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'table-row' : 'none';
     }
 </script>
-
-
-
 
 
 
@@ -840,7 +855,6 @@
         }
     })()
 </script>
-
 
 
 
