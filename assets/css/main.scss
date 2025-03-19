@@ -179,7 +179,10 @@ $color-mark-light: #b2d8d8;
     border-radius: 8px;
     background: $color-point;
     color: $bg-light;
-    cursor: pointer;
+  }
+
+  #meow-btn:active {
+    transform: scale(0.95); /* 按下时缩小 */
   }
 
   .note__item {
@@ -790,7 +793,7 @@ del {
 #menutable td, #menutable th {
   border: 0; /* 清除单元格边框 */
   padding: 0;
-  font-family: 'Huiwen-Fangsong' !important;
+  font-family: 'Huiwen-Fangsong',"Noto Sans CJK SC" !important;
 }
 
 #menutable-name:hover,

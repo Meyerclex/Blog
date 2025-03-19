@@ -67,16 +67,11 @@ content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">Darkness 
 [params.meowBox]
 enabled = true
 images = [
-    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/e5b786e27835fd295754ce15d32f9654.jpg",
-    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/008oVlcxgy1hz9pc597lbj32c0340b29.jpg",
-    "https://img.gregueria.icu/2025/008oVlcxgy1htrm5kk1vyj32c0340npd.jpg",
-    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/008oVlcxgy1hzarjm6thtj32c03401kz.jpg"
+    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/01.jpg",
+    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/02-1.jpg",
+    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/03.jpg",
+    "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/02.jpg"
 ]
-
-
-
-
-
 
 [[menu.main]]
 name = "Home"

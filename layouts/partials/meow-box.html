@@ -1,12 +1,12 @@
 {{- if .Site.Params.meowBox.enabled }}
 <div id="meow-box" style="border-radius: 10px;">
-    <p style="padding:0px; margin: 0px; font-size:90%; "> 猫! <img src="/cat/cat75.gif" style="border-radius:0; margin:0;"> </p>
+<!--    <p style="padding:0px; margin: 0px; font-size:90%; "> 猫! <img src="/cat/cat75.gif" style="border-radius:0; margin:0;"> </p>-->
     {{- $images := .Site.Params.meowBox.images -}}
     {{- if gt (len $images) 0 }}
     <img id="meow-image" src="{{ index $images 0 }}" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
     {{- end }}
     <button onclick="toggleMeowImage()" id="meow-btn" >
-        <img src="/cat/cat32.gif" style="border-radius:0; margin:0; max-width:50%;">
+        <img src="/cat/cat75.gif" style="border-radius:0; margin:0; max-width:50%;">
         meow
     </button>
 </div>
