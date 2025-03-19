@@ -52,7 +52,7 @@ isShowFooter      = true
 [[params.sidebar_menu]]
 icon = "/cat/cat89.gif"
 name = "Music!"
-content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">The Cat Lady OST 🎵</a>"
+content = "<a href=\"https://open.spotify.com/playlist/1b4FV7h1ROLP0Wk6bmk7xo?si=C76ZwDu3Tp267dZfE-E6Tg/\" target=\"_blank\">The Cat Lady OST 🎵</a>"
 
 [[params.sidebar_menu]]
 icon = "/cat/240f9f9b.gif"
@@ -62,7 +62,7 @@ content = "<p>呢排冇咩好睇吖!</p>"
 [[params.sidebar_menu]]
 icon = "/cat/camera4.gif"
 name = "Photos"
-content = "<a href=\"https://open.spotify.com/playlist/1b4FV7h1ROLP0Wk6bmk7xo?si=C76ZwDu3Tp267dZfE-E6Tg/\" target=\"_blank\">Darkness in my Eyes</a><span> 📷（奏这样差生文具多）</span>"
+content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">Darkness in my Eyes</a><span> 📷（奏这样差生文具多）</span>"
 
 [params.meowBox]
 enabled = true
