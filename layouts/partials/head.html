@@ -272,7 +272,20 @@
     {{ partial "mathjax.html" . }}
   {{ end }}
 
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
 
+      // Hide all content first
+      allContents.forEach(item => {
+        item.style.display = 'none';
+      });
+
+      // Toggle visibility for the clicked content
+      content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'table-row' : 'none';
+    }
+  </script>
 
 </head>
 <script src="script.js" defer></script>

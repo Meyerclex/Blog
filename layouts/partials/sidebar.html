@@ -18,15 +18,4 @@
     </table>
 </aside>
 
-<script>
-    function toggleMenu(element) {
-        const content = element.nextElementSibling;
-        const allContents = document.querySelectorAll('.menu-content');
-        allContents.forEach(item => {
-            if (item !== content) {
-                item.style.display = 'none';
-            }
-        });
-        content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'table-row' : 'none';
-    }
-</script>
+

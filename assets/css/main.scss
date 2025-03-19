@@ -790,6 +790,7 @@ del {
   border: 0; /* 清除单元格边框 */
   padding: 0;
   font-family: 'Huiwen-Fangsong',"Noto Sans CJK SC" !important;
+  font-display: swap;
 }
 
 #menutable-name:hover,
@@ -806,4 +807,14 @@ del {
 
 #menutable p {
   margin: 0rem 0;
+}
+
+/* 默认情况下，menu-content 隐藏 */
+.menu-content {
+  display: none;
+}
+
+/* 当菜单项展开时，添加 visible 类显示内容 */
+.menu-content.visible {
+  display: table-row;
 }

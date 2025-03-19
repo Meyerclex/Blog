@@ -278,14 +278,27 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.63c991215c2f6738e758f969b7634aab76a4ebbfcbaf80accc681e309c11bb63a7ca3be3cf82f95c080e74b856c9b97d4bd3792ccb6de0f025cb6c6eeb4c0d0a.css" integrity="sha512-Y8mRIVwvZzjnWPlpt2NKq3ak67/Lr4CszGgeMJwRu2Onyjvjz4L5XAgOdLhWybl9S9N5LMtt4PAly2xu60wNCg==" />
+    <link rel="stylesheet" href="/css/main.296d9fd724fd9afb2a3d505305ab9f425648c6e0ea0783a48929380535620097b99f260ce31ff8002fe9ad3522d0faca92e8d75e80c5dff69c48e5f2c1d01cf6.css" integrity="sha512-KW2f1yT9mvsqPVBTBaufQlZIxuDqB4OkiSk4BTViAJe5nyYM4x/4AC/prTUi0PrKkujXXoDF3/acSOXywdAc9g==" />
   
 
 
   
   
 
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
 
+      
+      allContents.forEach(item => {
+        item.style.display = 'none';
+      });
+
+      
+      content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'table-row' : 'none';
+    }
+  </script>
 
 </head>
 <script src="script.js" defer></script>
