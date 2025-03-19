@@ -65,6 +65,12 @@ icon = "/cat/camera4.gif"
 name = "Photos"
 content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">Darkness in my Eyes</a><span> 📷（奏这样差生文具多）</span>"
 
+[[params.sidebar_menu]]
+icon = "/cat/cat24.gif"
+name = "Drink"
+content = "<p>热美式上头ing…</p>"
+
+
 [params.meowBox]
 enabled = true
 images = [

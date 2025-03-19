@@ -766,10 +766,14 @@ del {
 }
 
 /* 当屏幕宽度小于 768px 时，隐藏 sidebar */
-@media (max-width: 768px) {
+
+@media (max-width: 940px) {
   #sidebar {
     display: none; /* 隐藏 sidebar */
   }
+}
+
+@media (max-width: 768px) {
   .w {
     max-width: 740px;
     margin: 0 auto;
