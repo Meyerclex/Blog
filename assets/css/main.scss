@@ -734,7 +734,7 @@ del {
 }
 
 #x4 { margin-top: 30px;}
-#x5 {display: none;}
+
 /* 手机端：调整为单列布局，并控制顺序 */
 @media (max-width: 768px) {
   .grid-container {
@@ -774,6 +774,11 @@ del {
 @media (max-width: 768px) {
   #sidebar {
     display: none; /* 隐藏 sidebar */
+  }
+  .w {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
   }
 }
 #menutable {
