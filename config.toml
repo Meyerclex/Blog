@@ -40,13 +40,30 @@ endLevel   = 3
 ordered    = false
 
 [params]
+sidebar_icon = "/cat/checkeredblank.gif"
+
 [params.theme_config]
 appearance        = "auto"
 back_home_text    = "Back"
 date_format       = "2006-01-02"
-#  "02 Jan 2006"
 isListGroupByDate = true
 isShowFooter      = true
+
+[[params.sidebar_menu]]
+icon = "/cat/cat89.gif"
+name = "Music!"
+content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">The Cat Lady OST 🎵</a>"
+
+[[params.sidebar_menu]]
+icon = "/cat/240f9f9b.gif"
+name = "Book"
+content = "<p>呢排冇咩好睇吖!</p>"
+
+[[params.sidebar_menu]]
+icon = "/cat/camera4.gif"
+name = "Photos"
+content = "<a href=\"https://open.spotify.com/playlist/1b4FV7h1ROLP0Wk6bmk7xo?si=C76ZwDu3Tp267dZfE-E6Tg/\" target=\"_blank\">Darkness in my Eyes</a><span> 📷（奏这样差生文具多）</span>"
+
 [params.meowBox]
 enabled = true
 images = [
@@ -55,6 +72,11 @@ images = [
     "https://img.gregueria.icu/2025/008oVlcxgy1htrm5kk1vyj32c0340npd.jpg",
     "https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/008oVlcxgy1hzarjm6thtj32c03401kz.jpg"
 ]
+
+
+
+
+
 
 [[menu.main]]
 name = "Home"

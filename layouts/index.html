@@ -1,4 +1,6 @@
 {{ define "main" }}
+<link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+
     <header>
         <div class="header">
             <div class="header-image">
@@ -147,84 +149,44 @@
         </div>
     </div>
 
+<aside id="sidebar">
+    <table id="menutable" style="border-collapse: collapse; table-layout: auto; width: 100%;">
+        {{ range site.Params.sidebar_menu }}
+        <tr class="menu-item" onclick="toggleMenu(this)">
+            <td style="text-align: center; white-space: nowrap;">
+                <img src="{{ .icon | absURL }}" alt="{{ .name }}">
+            </td>
+            <td id="menutable-name" style="font-weight: bold;">
+                {{ .name }}
+            </td>
+        </tr>
+        <tr class="menu-content" style="display: none;">
+            <td colspan="2" style="padding-left: 20px; font-weight: bold; padding-top: 4px;">
+                {{ .content | safeHTML }}
+            </td>
+        </tr>
+        {{ end }}
+    </table>
+</aside>
+
+<script>
+    function toggleMenu(element) {
+        const content = element.nextElementSibling; // 获取当前点击行的下一个菜单内容
+        const allContents = document.querySelectorAll('.menu-content');
+
+        // 关闭所有菜单内容
+        allContents.forEach(item => {
+            if (item !== content) {
+                item.style.display = 'none';
+            }
+        });
+
+        // 切换当前点击内容的显示与隐藏
+        content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'table-row' : 'none';
+    }
+</script>
 
 
-{{/*    <div class="main-container" >*/}}
-{{/*        <div class="note" id="x2">*/}}
-{{/*            <div class="note__item">*/}}
-{{/*                <div class="note__day">Welcome</div>*/}}
-{{/*                <div class="note__list">*/}}
-{{/*                        {{ .Content }}*/}}
-{{/*                </div>*/}}
-{{/*            </div>*/}}
-{{/*        </div>*/}}
-{{/*        <div class="menu-float" id="x1">*/}}
-{{/*            {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}*/}}
-{{/*        </div>*/}}
-{{/*    </div>*/}}
-
-{{/*<div class="main-container" >*/}}
-{{/*    <div class="note" id="x3">*/}}
-{{/*    <div class="note__item">*/}}
-{{/*        <div class="note__day">碎碎念啦，唔使理我</div>*/}}
-{{/*        <div class="note__list" style="font-size: 80%;">*/}}
-{{/*            <details class="mumble" open>*/}}
-{{/*                <summary>Mumble...</summary>*/}}
-{{/*                <div id="feed-reader" ></div>*/}}
-{{/*                <script>*/}}
-{{/*                    const feedURL = 'https://status.cafe/users/lyin.atom';*/}}
-{{/**/}}
-{{/*                    function timeAgo(publishedDate) {*/}}
-{{/*                        const now = new Date();*/}}
-{{/*                        const published = new Date(publishedDate);*/}}
-{{/*                        const diff = now - published; // 差值以毫秒为单位*/}}
-{{/**/}}
-{{/*                        const seconds = Math.floor(diff / 1000);*/}}
-{{/*                        const minutes = Math.floor(seconds / 60);*/}}
-{{/*                        const hours = Math.floor(minutes / 60);*/}}
-{{/*                        const days = Math.floor(hours / 24);*/}}
-{{/**/}}
-{{/*                        if (days > 0) {*/}}
-{{/*                            return `${days} day${days > 1 ? 's' : ''} ago`;*/}}
-{{/*                        } else if (hours > 0) {*/}}
-{{/*                            return `${hours} hour${hours > 1 ? 's' : ''} ago`;*/}}
-{{/*                        } else if (minutes > 0) {*/}}
-{{/*                            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;*/}}
-{{/*                        } else {*/}}
-{{/*                            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;*/}}
-{{/*                        }*/}}
-{{/*                    }*/}}
-{{/**/}}
-{{/*                    fetch(feedURL)*/}}
-{{/*                        .then(response => response.text())*/}}
-{{/*                        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))*/}}
-{{/*                        .then(data => {*/}}
-{{/*                            const entries = data.querySelectorAll("entry");*/}}
-{{/*                            let html = ``;*/}}
-{{/*                            entries.forEach(el => {*/}}
-{{/*                                let title = el.querySelector("title").innerHTML.slice(0, 7).trim();*/}}
-{{/*                                let content = el.querySelector("content").textContent.trim();*/}}
-{{/*                                let publishedDate = el.querySelector("published").innerHTML;*/}}
-{{/*                                let relativeTime = timeAgo(publishedDate);*/}}
-{{/**/}}
-{{/*                                html += `*/}}
-{{/*              <div class="statuscafe-entry">*/}}
-{{/*                <p class="statuscafe-username">${title} - ${relativeTime}</p>*/}}
-{{/*                <p class="statuscafe-content">${content}</p>*/}}
-{{/*              </div>*/}}
-{{/*            `;*/}}
-{{/*                            });*/}}
-{{/*                            document.getElementById("feed-reader").innerHTML = html;*/}}
-{{/*                        });*/}}
-{{/*                </script>*/}}
-{{/*            </details>*/}}
-{{/*        </div>*/}}
-{{/*    </div>*/}}
-{{/*    </div>*/}}
-{{/*    <div class="menu-float" id="x4">*/}}
-{{/*{{ partial "meow-box.html" . }}*/}}
-{{/*    </div>*/}}
-{{/*</div>*/}}
 
 
 {{ partial "footer.html" . }}
