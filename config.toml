@@ -40,7 +40,7 @@ endLevel   = 3
 ordered    = false
 
 [params]
-favicon = "/favicon.png"
+favicon = "/cat/240f9f9b.gif"
 sidebar_icon = "/cat/checkeredblank.gif"
 
 [params.theme_config]
