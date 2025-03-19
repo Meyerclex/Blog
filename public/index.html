@@ -232,7 +232,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.90d96983eeca0f78957a58c4cebfc77c5c048b46f8bf609ebe1dd7265ee5bd69823636f402b2e760ab0b446c6cdce6c1aabed6ed47569d758bcad1e884565c28.css" integrity="sha512-kNlpg&#43;7KD3iVeljEzr/HfFwEi0b4v2Cevh3XJl7lvWmCNjb0ArLnYKsLRGxs3ObBqr7W7UdWnXWLytHohFZcKA==" />
+    <link rel="stylesheet" href="/css/main.a0f359fb60e123c1aa024aa377ef7d1a21748b9b7cd341ddfaa91575025febe48d38086a3a89612076d5561ccf28c777bfba543281e6c3d75636abd3ab5df7cd.css" integrity="sha512-oPNZ&#43;2DhI8GqAkqjd&#43;99GiF0i5t800Hd&#43;qkVdQJf6&#43;SNOAhqOolhIHbVVhzPKMd3v7pUMoHmw9dWNqvTq133zQ==" />
   
 
 
@@ -458,7 +458,7 @@
 
             <div class="menu-float" id="x4">
                 
-<div id="meow-box" style="">
+<div id="meow-box" style="border-radius: 10px;">
     <p style="padding:0px; margin: 0px; font-size:90%; "> 猫! <img src="/cat/cat75.gif" style="border-radius:0; margin:0;"> </p>
     <img id="meow-image" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/e5b786e27835fd295754ce15d32f9654.jpg" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
     <button onclick="toggleMeowImage()" id="meow-btn" >
@@ -487,63 +487,6 @@
     }
 </script>
 
-                <div class="note" id="x5">
-                    <div class="note__item">
-                        <div class="note__day">碎碎念啦，唔使理我</div>
-                        <div class="note__list" style="font-size: 80%;">
-                            <details class="mumble">
-                                <summary>Mumble...</summary>
-                                <div id="feed-reader" ></div>
-                                <script>
-                                    const feedURL = 'https://status.cafe/users/lyin.atom';
-
-                                    function timeAgo(publishedDate) {
-                                        const now = new Date();
-                                        const published = new Date(publishedDate);
-                                        const diff = now - published; 
-
-                                        const seconds = Math.floor(diff / 1000);
-                                        const minutes = Math.floor(seconds / 60);
-                                        const hours = Math.floor(minutes / 60);
-                                        const days = Math.floor(hours / 24);
-
-                                        if (days > 0) {
-                                            return `${days} day${days > 1 ? 's' : ''} ago`;
-                                        } else if (hours > 0) {
-                                            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-                                        } else if (minutes > 0) {
-                                            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-                                        } else {
-                                            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-                                        }
-                                    }
-
-                                    fetch(feedURL)
-                                        .then(response => response.text())
-                                        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                                        .then(data => {
-                                            const entries = data.querySelectorAll("entry");
-                                            let html = ``;
-                                            entries.forEach(el => {
-                                                let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
-                                                let content = el.querySelector("content").textContent.trim();
-                                                let publishedDate = el.querySelector("published").innerHTML;
-                                                let relativeTime = timeAgo(publishedDate);
-
-                                                html += `
-              <div class="statuscafe-entry">
-                <p class="statuscafe-username">${title} - ${relativeTime}</p>
-                <p class="statuscafe-content">${content}</p>
-              </div>
-            `;
-                                            });
-                                            document.getElementById("feed-reader").innerHTML = html;
-                                        });
-                                </script>
-                            </details>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>

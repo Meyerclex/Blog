@@ -1,5 +1,5 @@
 {{- if .Site.Params.meowBox.enabled }}
-<div id="meow-box" style="">
+<div id="meow-box" style="border-radius: 10px;">
     <p style="padding:0px; margin: 0px; font-size:90%; "> 猫! <img src="/cat/cat75.gif" style="border-radius:0; margin:0;"> </p>
     {{- $images := .Site.Params.meowBox.images -}}
     {{- if gt (len $images) 0 }}
