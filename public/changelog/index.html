@@ -292,13 +292,21 @@
 
       
       allContents.forEach(item => {
-        item.style.display = 'none';
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
       });
 
       
-      content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'table-row' : 'none';
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
     }
   </script>
+
 
 </head>
 <script src="script.js" defer></script>

@@ -260,13 +260,34 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.41d4d3a8ffb4656adcbd2cf4608079ff08398c705c5a6821ede5296deb4ac2abbd84c8137f49041737c02015b3d851ace202521d544280671913822f50a9df8a.css" integrity="sha512-QdTTqP&#43;0ZWrcvSz0YIB5/wg5jHBcWmgh7eUpbetKwqu9hMgTf0kEFzfAIBWz2FGs4gJSHVRCgGcZE4IvUKnfig==" />
+    <link rel="stylesheet" href="/css/main.296d9fd724fd9afb2a3d505305ab9f425648c6e0ea0783a48929380535620097b99f260ce31ff8002fe9ad3522d0faca92e8d75e80c5dff69c48e5f2c1d01cf6.css" integrity="sha512-KW2f1yT9mvsqPVBTBaufQlZIxuDqB4OkiSk4BTViAJe5nyYM4x/4AC/prTUi0PrKkujXXoDF3/acSOXywdAc9g==" />
   
 
 
   
   
 
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
 
 
 </head>

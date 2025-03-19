@@ -279,13 +279,21 @@
 
       // Hide all content first
       allContents.forEach(item => {
-        item.style.display = 'none';
+        // 保证其他内容折叠
+        if (item !== content) {
+          item.style.display = 'none';
+        }
       });
 
       // Toggle visibility for the clicked content
-      content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'table-row' : 'none';
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  // 展开
+      } else {
+        content.style.display = 'none';  // 折叠
+      }
     }
   </script>
+
 
 </head>
 <script src="script.js" defer></script>
