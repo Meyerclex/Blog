@@ -264,13 +264,34 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.41d4d3a8ffb4656adcbd2cf4608079ff08398c705c5a6821ede5296deb4ac2abbd84c8137f49041737c02015b3d851ace202521d544280671913822f50a9df8a.css" integrity="sha512-QdTTqP&#43;0ZWrcvSz0YIB5/wg5jHBcWmgh7eUpbetKwqu9hMgTf0kEFzfAIBWz2FGs4gJSHVRCgGcZE4IvUKnfig==" />
+    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
   
 
 
   
   
 
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
 
 
 </head>

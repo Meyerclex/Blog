@@ -53,7 +53,7 @@ isShowFooter      = true
 [[params.sidebar_menu]]
 icon = "/cat/cat89.gif"
 name = "Music!"
-content = "<a href=\"https://open.spotify.com/playlist/1b4FV7h1ROLP0Wk6bmk7xo?si=C76ZwDu3Tp267dZfE-E6Tg/\" target=\"_blank\">The Cat Lady OST 🎵</a>"
+content = "<a href=\"https://open.spotify.com/album/4QtWb6EEnq9EvtI9FVocUY?si=KXk7EZwGRHKU0bwtWZRE4A/\" target=\"_blank\">I Saw The TV Glow 🎵</a>"
 
 [[params.sidebar_menu]]
 icon = "/cat/240f9f9b.gif"
