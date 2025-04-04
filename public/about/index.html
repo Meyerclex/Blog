@@ -152,7 +152,55 @@
     });
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const enableImageZoom = (img) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (naturalWidth > 200 && naturalHeight > 200) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+      };
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      images.forEach(enableImageZoom);
+    });
+  </script>
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
@@ -161,7 +209,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
+    <link rel="stylesheet" href="/css/main.52fe9f767e705fcaae897d12c42aed1b4c9b3631a766ec1012dd2e595ba1352b2c7c60145de88f995b5d20c9d1a594f437e71d1207e42d74da6e31ace243968a.css" integrity="sha512-Uv6fdn5wX8quiX0SxCrtG0ybNjGnZuwQEt0uWVuhNSssfGAUXeiPmVtdIMnRpZT0N&#43;cdEgfkLXTabjGs4kOWig==" />
   
 
 

@@ -154,7 +154,55 @@
     });
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const enableImageZoom = (img) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (naturalWidth > 200 && naturalHeight > 200) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+      };
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      images.forEach(enableImageZoom);
+    });
+  </script>
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 

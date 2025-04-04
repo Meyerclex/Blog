@@ -42,7 +42,7 @@
   font-family: "Huiwen-mincho", sans-serif;
 }
 
-#header-post #nav a:hover {
+.underline, #header-post #nav a:hover {
   text-decoration: underline;
   /* hover 时添加下划线 */
   text-decoration-color: $color-pink;
