@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -689,12 +586,11 @@
 </blockquote>
 <p>先介绍一下，我的评论区是用Vercel部署的，弄起来非常简单，而使用的发件邮箱（也就是文档中提到的SMTP邮件发送服务提供商）是Gmail。</p>
 <p>邮件提醒增加起来也很方便，直接在Vercel部署好的评论区项目里转到<code>Dashboard</code>-<code>Setting</code>-<code>Environment Variables</code>，进行环境变量配置，在<code>NAME</code>中添加<strong>上面官方文档中提到的变量名</strong>，<code>VALUE</code>中添加变量值，然后<code>ADD</code>上去就好啦！我只添加了必填的内容，添加成功后是这样的：</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/_20220127202930.png"></p>
-<p>在这里如果你也是用Gmail邮箱，需要注意一件事情，由于Google的安全意识非常之高，所以在<code>SMTP_PASS</code>密码这一项中，不能直接填你的邮箱密码，而需要填<strong>应用专用密码</strong>，如何创建应用专用密码，请见Gmail的文档帮助：<a href="https://support.google.com/mail/answer/185833?hl=zh-Hans#zippy=%2C%E4%B8%BA%E4%BB%80%E4%B9%88%E6%82%A8%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E4%B8%93%E7%94%A8%E5%AF%86%E7%A0%81">创建和使用应用专用密码</a>。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/_20220127202930.png" alt=""><p>在这里如果你也是用Gmail邮箱，需要注意一件事情，由于Google的安全意识非常之高，所以在<code>SMTP_PASS</code>密码这一项中，不能直接填你的邮箱密码，而需要填<strong>应用专用密码</strong>，如何创建应用专用密码，请见Gmail的文档帮助：<a href="https://support.google.com/mail/answer/185833?hl=zh-Hans#zippy=%2C%E4%B8%BA%E4%BB%80%E4%B9%88%E6%82%A8%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E4%B8%93%E7%94%A8%E5%AF%86%E7%A0%81">创建和使用应用专用密码</a>。</p>
 <p>之后，还要记得要去设置中开启IMAP访问（据说163邮箱也需要这两步）。具体操作请见：<a href="https://support.google.com/mail/answer/7126229?hl=zh-Hans#zippy=%2C%E7%AC%AC-%E6%AD%A5%E6%A3%80%E6%9F%A5-imap-%E6%98%AF%E5%90%A6%E5%B7%B2%E5%90%AF%E7%94%A8">通过其他电子邮件平台查看 Gmail</a>，完成第一步即可。</p>
 <p>完成上述操作后还需要回到Vercel中重新部署你的评论区项目：点进项目→<code>Deployments</code>→对最上方那一条，点击右侧的三个点→<code>Redeploy</code>。</p>
 <p>实不相瞒，由于Redeploy需要很久，还有很多Warning出现，等得我超慌的！不过等部署成功之后看到有邮件提醒出现，一切都明亮了起来！由于我还不清楚怎么设置邮件模板，所以使用的还是Waline的默认模板，它长这样：</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/1.png" title="我收到的提醒"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/2.png" title="我回复后对方收到的提醒"></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/1.png" alt="" title="我收到的提醒"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/2.png" alt="" title="我回复后对方收到的提醒"></p>
 <h3 id="取消设备与浏览器版本显示">取消设备与浏览器版本显示</h3>
 <p>在我增添邮件提醒功能、Redeploy了Waline之后，发现评论者昵称下方会出现设备与浏览器的版本号。我猜测是Waline的新功能，但是对我来讲太多余了😿Waline，我真的不需要了解网友那么多信息啦！</p>
 <p>搜寻官方文档和Issue无果，只好进群询问。经作者回复，找到了<code>DISABLE_USERAGENT</code>这个环境变量，用上文的方法，将这个变量值设置成<code>true</code>，然后重新部署即可。Waline的其他环境变量在这里可以找到：<a href="https://waline.js.org/reference/server.html#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">服务端配置</a>。</p>
@@ -740,8 +636,7 @@
         }
     }
 </code></pre><p>从而美美实现以下效果：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220418211748.png"></p>
-<h2 id="页面主体内容宽度更改">页面主体内容宽度更改</h2>
+<img src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220418211748.png" alt=""><h2 id="页面主体内容宽度更改">页面主体内容宽度更改</h2>
 <p>在取消右侧栏小组件之后（这个直接在<code>config.yaml</code>中取消即可），主题内容变得很宽，所以想要修改一下宽度。折腾很久终于做到。</p>
 <p>在<code>assets\scss\grid.scss</code>中修改以下内容</p>
 <pre tabindex="0"><code>    &amp;.compact {

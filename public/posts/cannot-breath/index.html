@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -422,33 +319,29 @@
 <p>从微博出逃一个月，身心虽然没有健康，但摒弃很多来自社会新闻的干扰。不知世事，也不知是不是好事。焦虑不减，但很少来源于新闻，姑且列为好事之一。</p>
 <center>但还是对我的社交网络碎片进行一个总结：</center>
 <center>Part1：平均一天13条，这个女人疯得没边</center>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/1.webp"></p>
-<center>Part2：10月20日倒霉记事不完全版本</center>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/1.webp" alt=""><center>Part2：10月20日倒霉记事不完全版本</center>
 <center>当天在各个社交平台都发表了很多脾气，现实生活中也掉了些许眼泪，总而言之是本人一生中较为倒霉的一天</center>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/2.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/3.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/4.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/5.webp"></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/2.webp" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/3.webp" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/4.webp" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/5.webp" alt=""></p>
 <center>Part3：搜作业搜出26条，可以说十月份每天都在做作业
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/6.webp">
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/6.webp" alt="">
 </br></p>
 <center>Part4：同时产生了知识迷思
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/%E6%84%8F%E5%BF%97%E5%8A%9B.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/7.webp"></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/%E6%84%8F%E5%BF%97%E5%8A%9B.webp" alt="">
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/7.webp" alt=""></p>
 <center>Part4：还产生了酒神信仰，同时决定去打耳洞</center>
 <center>
     Spoiler：20天后我还没找到时间打耳洞，想扎两个孔，总要一些时间准备。但在这件事情上我避免给自己太大压力，我不能把一件用来泄压的事情也转换成一种负担。我毕竟太擅长这个了。
 </center>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/8.webp"></p>
-<center>Part5：冬天是近期唯一的好事。尽管它只出现了两天就离开了</center>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/8.webp" alt=""><center>Part5：冬天是近期唯一的好事。尽管它只出现了两天就离开了</center>
 <center>那一天也很伤心。忘了为什么，应该仅仅是伤心，我常常无意义忧郁</center>
 <center>还有别听我讲，C盘要清理一下。据说满了会启动不了电脑或者应用程序，有点像世界末日</center>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/9.webp"></p>
-<center>懒得继续翻了。本篇取消前后月亮。月亮不顾我生活匆忙，每天按时出现，遂怨从心头起，取消之。
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/9.webp" alt=""><center>懒得继续翻了。本篇取消前后月亮。月亮不顾我生活匆忙，每天按时出现，遂怨从心头起，取消之。
 <center>不过还剩一小段，复制过来吧。
 <center>我不知道我会这样贪婪，也许这是生活予我重击的缘由：
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/10.webp"></p>
-<center>Fin</center>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/10.webp" alt=""><center>Fin</center>
 <center>封面来自《搏击俱乐部》
 <center>没有所谓，我对生活只说：Fight me</center>
 </br>

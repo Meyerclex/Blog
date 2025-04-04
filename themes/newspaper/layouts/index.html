@@ -1,34 +1,40 @@
 {{ define "main" }}
-    <header>
-        <div class="header">
-            <div class="header-image">
-                <img src="/cat/tuxicon2.gif" alt="Icon">
-            </div>
-            <div class="header-content">
-                <h1>{{ $.Site.Title }}</h1>
-                {{ partial "back_link.html" . }}
+<header>
+    <div class="header">
+        <div class="header-image">
+            <img src="/cat/tuxicon2.gif" alt="Icon">
+        </div>
+        <div class="header-content">
+            <h1>{{ $.Site.Title }}</h1>
+            {{ partial "back_link.html" . }}
+        </div>
+    </div>
+    {{- if $.Site.Params.theme_config.show_description -}}
+    <p>{{ $.Site.Params.description }}</p>
+    {{- end -}}
+</header>
+
+<div class="grid-container">
+    <div class="note" id="x2">
+        <div class="note__item">
+            <div class="note__day">Welcome</div>
+            <div class="note__list">
+                {{ .Content }}
             </div>
         </div>
-        {{- if $.Site.Params.theme_config.show_description -}}
-            <p>{{ $.Site.Params.description }}</p>
-        {{- end -}}
-    </header>
-
-    <div class="main-container" >
-        <div class="note">
-            <div class="note__item">
-                <div class="note__day">Welcome</div>
-                <div class="note__list">
-                        {{ .Content }}
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-float">
-            {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}
+        <div id="x3">
+            {{ partial "mumble.html" . }}
         </div>
     </div>
 
-{{ partial "footer.html" . }}
+    <div class="menu-float" id="x1">
+        {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}
+        <div id="x4">
+            {{ partial "meow-box.html" . }}
+        </div>
+    </div>
+</div>
 
+{{ partial "sidebar.html" . }}
+{{ partial "footer.html" . }}
 {{ end }}

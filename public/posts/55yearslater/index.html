@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -451,8 +348,7 @@
 <blockquote>
 <p><em>我们是朋友吗？</em></p>
 </blockquote>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_28-2_11_41.png"></p>
-<p>说回《红弦俱乐部》。它的构想也很好看，调酒师和黑客捡到了一个阿卡拉机器人，介入一场“公司又想控制我”的社会事件。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_28-2_11_41.png" alt=""><p>说回《红弦俱乐部》。它的构想也很好看，调酒师和黑客捡到了一个阿卡拉机器人，介入一场“公司又想控制我”的社会事件。</p>
 <p>大老板们在改造人的思想，企图把人改成更好的版本上已经走了很远的路，消除偏激，保留气恼，消除致死量的抑郁，但中枢仍能感到悲伤。我们人类不能接受这一点仅仅是讳疾忌医思想根深蒂固，总觉得不开刀是上上策。说实话连我都觉得这个 2.0 版本的世界其实还不错，接着故事悄悄掀开阴谋一角：你以为还没发布吗？你早就是内测版本啦！</p>
 <p>黑客布兰迪斯恍然大悟，公司早已改造过他的脑子，他却仍旧保留反叛、悲伤与爱。</p>
 <p>沮丧版本的我又开始嘟嘟囔囔：会不会其实被控制一下也真的没那么糟糕？好吧，我先回家了。</p>
@@ -469,7 +365,7 @@
 <p>​</p>
 <p>Fin</p>
 <p>虽然大骂了一顿 DBH 但还是放上几张我很喜欢的截图。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_28-0_51_38.png"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-1_24_30.png"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_30_26.png"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_38_53.png"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_38_23.png"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-2_21_41.png"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-2_30_58.png"></p>
+<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_28-0_51_38.png" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-1_24_30.png" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_30_26.png" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_38_53.png" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-0_38_23.png" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-2_21_41.png" alt=""><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/detroit_-become-human-2021_12_29-2_30_58.png" alt=""></p>
 
     </div>
     <br>

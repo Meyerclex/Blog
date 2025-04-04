@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -428,14 +325,12 @@
 <p>阅读观影似乎成为我每次叙述的重心。久而久之我意识到这里存在一个意义灰色地带：我不能把其他作品中的美妙挪移到我的生活里，以掩饰我生活的轻浮。于是此处简述一番就算完事：</p>
 <p>刚看完《万历十五年》，狠狠嗑到万历/张居正，夜观 CP 文 20 篇，酒足饭饱，不忘恩人：黄仁宇，谢谢你。经人提醒才知万张居然是明史同人烫圈，失敬！我居然也能嗑到烫圈！</p>
 <p>开始看《银河系搭车客指南》的第四部，比第三部更好看一点。其余拉杂狗碎，既然想不起来，也不值得我电脑开着热点花着手机的数据去查豆瓣了。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/%E5%B8%83%E8%8E%B1%E5%85%8B%E4%B9%A6%E5%BA%97.jfif"></p>
-<center><i>（图截自《布莱克书店》。以此可以概括我大部分的阅读生活）</i></center>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/%E5%B8%83%E8%8E%B1%E5%85%8B%E4%B9%A6%E5%BA%97.jfif" alt=""><center><i>（图截自《布莱克书店》。以此可以概括我大部分的阅读生活）</i></center>
 </br>
 <p>九月份花时间跑完小虎马拉松，观遍梁朝伟，是大事一桩。易先生与周先生，狠辣与优雅在同一人身上交手，无间道对阵黎耀辉，美人不管什么发型都令我心如擂鼓。</p>
 <p>还以眨眼一般的速度看完了《布莱克书店》，很喜欢。一生一眼到头：寂寞成这个样子也没有关系。再者就是《燃烧女子的肖像》，其中对俄尔甫斯回头的解释很妙：他做了诗人的选择，而非爱人的选择。很好，这很美。</p>
 <p>一翻列表，又看到一部 <strong>《天王流氓( Gangster No.1)》</strong>。保罗·贝坦尼，金发短短搭在前额，气质美艳冷酷似不涉世的小孩，爱人于他好像伪命题。美丽，美丽！戏里戏外都是真杀手！搞到称心美人，我是很知足的：</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/641.jfif"></p>
-<p>九月份的文艺活动还包含舞剧《记忆深处》和戏剧《雪莉的墙》。后者带给我的幸福至今仍有眩晕的余韵，贴一下当时的感想：</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/641.jfif" alt=""><p>九月份的文艺活动还包含舞剧《记忆深处》和戏剧《雪莉的墙》。后者带给我的幸福至今仍有眩晕的余韵，贴一下当时的感想：</p>
 <blockquote>
 <p>看完走出，仍在幸福之中难能自拔。太美丽了，太快乐了。剧院在小小巷子中，七扭八弯才能找到，看之前扭到另一条小街上，去了一个窄窄的转身不能的寿司店，在小正方形的桌子上吃小小个的寿司，连店员给我挤的芥末都是小小一团，感觉自己跟世界都变得极小。</p>
 <p>雪莉的墙看得我非常开心，快乐，演员的俏皮话层出不穷。演员独自一人演完全程，嗤笑，喜悦，穿着长裙在希腊的沙滩上转圈，她是谁？她是怎么从那个与乔泡在香草冰淇淋浴中的女人变成“乔的妈妈”？她吻过她丈夫湿漉漉的前额后，是什么把他变成了那个对着冰箱抱怨的男人？是有什么发生了、还是说什么都没有发生？故事打动我的地方很多，那个小时候她欺负过的优等生女孩，跟在雨中狼狈不堪的她说我曾想成为你。还有她女邻居送来的真丝浴袍：你这样有勇气，美妙非凡的雪莉。</p>
@@ -451,8 +346,7 @@
 <p>几日前决心开始戒酒，距离零点仅有四小时时一位朋友跑来和我倾诉写作的苦，一时间二人苦涩难当，她频频发来哭泣小狗图，我不得不再次打开酒瓶子大喝特喝，又与另一位朋友聊到这个，更加苦闷。此夜在我日记本上史称写作伤心人之夜。这个任务最后自然是没有完成。</p>
 <p>很不幸这篇记事到这里就要结束了，并不辛苦的大扫除竟然耗尽了我所有力气，我重回电脑前堪堪敲了百余字就累得眼皮打架了。阅览前文，发现饮酒与美人都已提到，那就没有任何遗失了。就此别过，有缘再见。</p>
 <center>另外：封面是Black Books的片头、标题来自《生命、宇宙以及一切》。</center>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/6423.png"></p>
-<p>又：本次大扫除里，我把我头顶窗台少说攒了十年的尘灰打扫了。我都不知道当灰尘足够多的时候，它们会形成不断跳跃飞舞的球状，就好像灰尘都有了生命。我扫荡了一个蜘蛛窝点，我舍友老王帮我扫荡了绝大部分。几日前恰巧有位蜘蛛从我头顶降落至杯子旁边，那日我称赞它十足优雅，今日就抄了它家，实在很不好意思。抄家时没有遇到蜘蛛，兴许是出门去了，回来搞不好会很生气。如果你看到这篇推文，请不要找我，我有我的理由的。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/6423.png" alt=""><p>又：本次大扫除里，我把我头顶窗台少说攒了十年的尘灰打扫了。我都不知道当灰尘足够多的时候，它们会形成不断跳跃飞舞的球状，就好像灰尘都有了生命。我扫荡了一个蜘蛛窝点，我舍友老王帮我扫荡了绝大部分。几日前恰巧有位蜘蛛从我头顶降落至杯子旁边，那日我称赞它十足优雅，今日就抄了它家，实在很不好意思。抄家时没有遇到蜘蛛，兴许是出门去了，回来搞不好会很生气。如果你看到这篇推文，请不要找我，我有我的理由的。</p>
 <p>又又：你可以重建家园。预估下次再有人扫荡你家是两年后我毕业、新同学住进这间屋子。寻仇找她，别找我。</p>
 <p>又又又：窝点里被灰尘与蛛网缠绕着一只大虫。我都不知道在我平静生活的同时，头顶上正进行着一场缜密漫长的分尸。住在陈年老蜘蛛窝底下让我感到我三十年后也会过这种日子，我甚至感到我即将成为马尔克斯笔下那种孤独干燥、九十岁还没嫁出去养着三十多只紫色猫咪的老姑婆。这蜘蛛网令我甚至盼望。生活难料嘛，我喜欢这样。</p>
 <center><b>Fin</b></center>

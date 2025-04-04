@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -449,8 +346,7 @@
 <p>在写之前我对打破量子复合叠加态没有任何头绪，在写作以后，叠加态的我突然从我身上消失，多个平行宇宙中都做着同样事件的我已经不是我。这一瞬间我成为唯一态，具体这个过程是怎么实现的……就是这样。那样。然后物理是一种魔法，应该懂了吧？</p>
 <br>
 <p>视听生活的另一大事是我开始听《蒋勋细说红楼梦》，它似乎是一个讲课的音频，两集讲红楼的一个回合，一集一小时。小学看红楼的我绝没有想到十年后红楼于我主要是起到烂梗精神家园的作用：（felt sorry for my 烂梗。PS：哥弟是我 CP 的代称可是一旦解释就不好笑了啦 😫）</p>
-<p><img alt="烂梗" src="https://s2.loli.net/2022/03/18/1or4evRdhBxMO2G.png"></p>
-<p>其实当时究竟从《红楼梦》里读到了什么，我已经记不太清楚了，我读它的时候似乎还没有黛玉年纪大。但过了很久，许多名字，许多情节，经过十年语文学习的教化，几乎耳熟能详，我并不能够分辨它们是源于那个遥远时代的故事还是源于我从各种文本里看来的边角料。</p>
+<img src="https://s2.loli.net/2022/03/18/1or4evRdhBxMO2G.png" alt="烂梗"><p>其实当时究竟从《红楼梦》里读到了什么，我已经记不太清楚了，我读它的时候似乎还没有黛玉年纪大。但过了很久，许多名字，许多情节，经过十年语文学习的教化，几乎耳熟能详，我并不能够分辨它们是源于那个遥远时代的故事还是源于我从各种文本里看来的边角料。</p>
 <p>这个音频很好听，我走路在听，骑车在听，洗澡在听。因为每一回都讲得很生动很有趣，因而不构成叠加态。不过在听完以前仍不能下定论——我是谨慎的。</p>
 <p>指南写至此处，心情畅快许多。我与量子复合叠加态生活的打架往往三局两败，这是唯一胜出的那局。希望大家都能打赢叠加态，下一集再见。</p>
 

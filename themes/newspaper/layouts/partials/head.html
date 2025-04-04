@@ -3,8 +3,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- 预加载关键字体 -->
+  <link rel="preload" href="https://font.eterfinal.ink/HuiwenFangsong/result.css" as="style">
+  <link rel="preload" href="https://static.zeoseven.com/zsft/256/main/result.css" as="style">
+
+  <!-- 样式表（异步加载） -->
+  <link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <!-- 兼容无 JS -->
+  <noscript>
+    <link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+  </noscript>
+
+
+
   {{ if .IsPage }}
-    <meta name="description" content="{{ .Summary | default "Default description" }}">
+    <meta name="description" content="{{ .Description | default .Summary | default "Default description" }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ .Description | default .Summary | default "Default description" }}">
+    <meta property="og:image" content="{{ .Params.image }}">
   {{ end }}
 
   <title>
@@ -14,6 +41,115 @@
       {{ $.Site.Title }}
     {{ end }}
   </title>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      // 处理每个段落的图片
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+
+        // 如果只有一张图片，进行处理
+        if (paragraphImages.length === 1) {
+          const img = paragraphImages[0];
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          // 如果图片大于200x200，显示alt-text
+          if (naturalWidth > 200 && naturalHeight > 200) {
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            // 设置容器宽度为100%
+            container.style.width = '100%';
+
+            container.appendChild(img);
+
+            // 处理alt文本
+            const altText = img.alt ? img.alt : ''; // 如果没有alt，默认为空
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; // 如果alt为空，显示为空的占位div
+
+            // 如果没有alt文本，隐藏alt-text div
+            if (!altText) {
+              altTextElement.style.display = 'none';
+            }
+
+            container.appendChild(altTextElement);
+
+            // 替换段落的内容为图片容器
+            paragraph.innerHTML = '';
+            paragraph.appendChild(container);
+          }
+        } else if (paragraphImages.length > 1) {
+          // 多张图片的处理逻辑保持不变
+          const imageRow = document.createElement('div');
+          imageRow.classList.add('image-row');
+
+          // 根据图片数量调整列数
+          if (paragraphImages.length === 2) {
+            imageRow.classList.add('two-columns');
+          } else if (paragraphImages.length === 3) {
+            imageRow.classList.add('three-columns');
+          }
+
+          let hasAltText = false; // 标志位，检查该行是否有alt文本
+
+          // 移动图片到新容器并处理alt文本
+          paragraphImages.forEach((img) => {
+            const naturalWidth = img.naturalWidth || img.width;
+            const naturalHeight = img.naturalHeight || img.height;
+
+            // 如果图片小于 200x200，不做处理
+            if (naturalWidth <= 200 || naturalHeight <= 200) {
+              return;
+            }
+
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            // 将图片添加到容器
+            container.appendChild(img);
+
+            // 检查alt文本
+            const altText = img.alt ? img.alt : ''; // 如果没有alt，默认为空
+            if (altText) {
+              hasAltText = true; // 如果有alt文本，设置标志位
+            }
+
+            // 如果alt不为空，插入alt-text div；如果alt为空，插入空的占位div
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; // 如果alt为空，显示为空的占位div
+            container.appendChild(altTextElement);
+
+            // 将图片容器加入布局
+            imageRow.appendChild(container);
+          });
+
+          // 如果该行的图片全都没有alt文本，则不显示alt-text div
+          if (!hasAltText) {
+            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+          }
+
+          // 替换原段落内容为图片容器
+          paragraph.innerHTML = '';
+          paragraph.appendChild(imageRow);
+        }
+      });
+    });
+  </script>
+
+
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
 
@@ -27,9 +163,34 @@
     <link rel="stylesheet" href="/css/main.css" />
   {{ end }}
 
+
   <!-- MathJax inclusion -->
   {{ if .Params.mathjax }}
     {{ partial "mathjax.html" . }}
   {{ end }}
 
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      // Hide all content first
+      allContents.forEach(item => {
+        // 保证其他内容折叠
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      // Toggle visibility for the clicked content
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  // 展开
+      } else {
+        content.style.display = 'none';  // 折叠
+      }
+    }
+  </script>
+
+
 </head>
+<script src="script.js" defer></script>

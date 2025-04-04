@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -419,8 +316,7 @@
 <p>我觉得狮狮2是好的东西、是清澈的，有美的眼光的故事，而那天短暂的接触里，也觉得他们是非常有尊严，至少对待故事，对待观众都非常踏实和正派的创作者。而我们都明白这些品质有多么珍贵。</p>
 </blockquote>
 <p>在别的地方不敢说但在这里我就要说了，<strong>这不比光线强十倍？</strong></p>
-<p><img alt="网友换到的大无料" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/IMG_9065.JPEG"></p>
-<p>看完电影又换完无料之后就有点晚了（这次观影团完全是狮狮Only我完全跟着友来长见识……），和网友饮食从简找了地方坐下就抓紧时间欣赏他换到的大无料，然后狂暴聊狮狮！聊完之后整个人心情非常充沛，出门前我还需要自我暗示我是个很function的看起来一点也不奇怪的社会人，见面之后却狂暴聊着酷儿话题同人话题，完全没有发生任何不好的对话，没有任何不好的感受，就像认识了非常久一样。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/IMG_9065.JPEG" alt="网友换到的大无料"><p>看完电影又换完无料之后就有点晚了（这次观影团完全是狮狮Only我完全跟着友来长见识……），和网友饮食从简找了地方坐下就抓紧时间欣赏他换到的大无料，然后狂暴聊狮狮！聊完之后整个人心情非常充沛，出门前我还需要自我暗示我是个很function的看起来一点也不奇怪的社会人，见面之后却狂暴聊着酷儿话题同人话题，完全没有发生任何不好的对话，没有任何不好的感受，就像认识了非常久一样。</p>
 <p>尽管其实三次元生活里，我也一直在“做自己”这件事上贯彻得很彻底，但那天却觉得自己在做一个……更深一点的我自己。我就是很喜欢看同人写同人聊同人，如果不去自我控制不需要穿上裤子出门赚钱花的话，我的每一天应该都像那天一样深地成为自己，最喜欢的活动就是呆在家里和朋友聊我喜欢的CP，分享我喜欢的同人。只是这样。</p>
 <p>约会见面对我来说是一个会花光全部行动点数的事情，我总是在和人见完面之后觉得能量耗尽，但那天却不会。回家时电量仍充沛异常，坐下来先把日记给写了企图留住这天。其实写这篇时已经距离那天大半个月了，而幸福的事在一段时间后回望总带着一些好的伤感，但就先停在这刻。</p>
 

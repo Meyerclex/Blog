@@ -5,6 +5,6 @@ p.innerHTML = "C'mon, move your mouse!"
 document.body.append(p);
 
 document.addEventListener("mousemove", e => {
-  p.innerHTML = `mouseX: ${e.clientX}, mouseY: ${e.clientY}`;  
+  p.innerHTML = `mouseX: ${e.clientX}, mouseY: ${e.clientY}`;
 });
 

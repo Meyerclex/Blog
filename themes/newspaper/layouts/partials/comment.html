@@ -1,13 +1,23 @@
 <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
     .wl-addr {
         display: none !important;
         color: transparent !important;
     }
-    .wl-btn.primary {
-        border-color: var(--waline-theme-color);
-        background: var(--waline-theme-color);
-        color: var(--waline-white);
-    }
+
     .wl-content .vemoji,
     .wl-content .wl-emoji {
         display: inline-block;
@@ -26,6 +36,63 @@
     img.vemoji:hover {
         transform: scale(1.8) !important;
     }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+        /*--waline-color: unset;*/
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(244, 241, 238);
+        box-shadow: 1px 1px 2px rgba(205, 133, 63, 0.7);
+    /*评论区输入框的背景颜色*/
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
+    }
+
 </style>
 <div id="waline"></div>
 <script>

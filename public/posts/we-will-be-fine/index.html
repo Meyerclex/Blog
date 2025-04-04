@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -433,8 +330,7 @@
 <p>敲第一个字的时候是 2021 年 4 月 23 日 23 点 57 分，世界读书日的尾声，今天没有翻书，跟读书日无关，不反抗也没有认可，我与众多纪念日的关系就保持在这里，像夫妻：总是冷漠，却装扮热情，装不下去了就撂下面子。读书变成伪流行文化，热映的指环王也是，我打起十二分热情想要靠近，却最终因为不想打扮而没有出门。</p>
 <p>四月份发觉咖啡无法再让我幸福如狂犬，于是开始喝酒。经网友推荐买了她说的女子大生入门酒：百利甜，酒精那个数据是 17，单位是哪个我也不清楚。兑着奶粉服用，收获面红脸热的一个我，最开始喝觉得酒精味苦，渐渐觉得好喝，躺在床上如徜徉在海面，四肢沉重，骨头里仿佛灌满了绵密的泡沫。我很快乐，眼皮打架，睡得很好。去光孝寺的前一晚失眠到三点钟，爬起来寻这一口，心理作用吧，很快就睡着了。我很快乐。我需要一点瘾来维系生活，去年这个瘾是咖啡，喝完咖啡的下午我总是狂喜又迷惘，那个状态下的我有很多的爱，我希望找回这个我。我以为酒精会帮我找回当时那种充盈的幸福，我以为我会继续快乐，但没有。酒精没有让我持续觉得有趣又快活，我无法在那上面找到持续的瘾。</p>
 <p>四月份的我几乎在寻瘾这件事耗了过去，我的瘾是持续的激情、热辣喋喋不休的语言、无穷无尽似不停歇的爱。酒精好浅薄，古人欺我。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%E5%B7%AE%E7%94%9F/6.png"></p>
-<p>这个月我读同人的数量有所下降，小马华多依然吸引我，但不像从前了。当然有写同人破除魅惑的缘故，但也有一部分原因是我对收获称赞有着执迷与不屑，二者的冲突使我不想再写，于是也不愿再看——我可以承认：会嫉妒。为什么你们还可以写？为什么你们可以收获我不能收获的？我不能发出第三次深问，这令我觉得我很无聊。同人之前就是那个瘾，现在戒了。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%E5%B7%AE%E7%94%9F/6.png" alt=""><p>这个月我读同人的数量有所下降，小马华多依然吸引我，但不像从前了。当然有写同人破除魅惑的缘故，但也有一部分原因是我对收获称赞有着执迷与不屑，二者的冲突使我不想再写，于是也不愿再看——我可以承认：会嫉妒。为什么你们还可以写？为什么你们可以收获我不能收获的？我不能发出第三次深问，这令我觉得我很无聊。同人之前就是那个瘾，现在戒了。</p>
 <p>不读同人了，自然有了很多时间开始搞七搞八。可日子真是好无聊，除了那天和好友出去玩。开始读书，把先前借了没读的一并读了，四月份已读书单，书评一并贴来：</p>
 <h3 id="如何抑止女性写作">《如何抑止女性写作》</h3>
 <p><em>是多则短评的集合。前后不连续。</em></p>

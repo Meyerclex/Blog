@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -445,15 +342,13 @@
 <p>看海这件事情不带有很多情绪，面对海面，几乎没有想得太多，只是抑郁情绪的温和释放，以及萌我CP之情的时而超级大爆发。到了下午，和朋友碰面，一起去天后宫。</p>
 <p>天后宫是一座妈祖庙，路上和朋友讨论，谈及伊的家乡（内陆省份）从来没听过拜妈祖这件事，家里也没有什么拜神的习俗。这是因为妈祖是一个海上的神。我也是第一次来，临时起意时才得知南沙天后宫原来是省内最大的一座妈祖庙，建在海边，最近家中不少事情，我想来求签，但最后没有求成，因为到了顶上，发现已经没有这样的需要。</p>
 <p>我提前做过攻略，知道网上购入门票20元，提前2小时预约可劲省2元。据言完整参观下来只需要40分钟左右，其间有不少阶梯要爬，也可花20元搭乘电梯，而我年富力强女青年一个，何须电梯？爬之。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/20240328/%E8%BF%91%E5%83%8F.jpg"></p>
-<p>在我参观下来，天后宫并不是一个非常大的庙，我当天走了很多路，到天后宫时下午三点，应该已经走了一万多步，光是到正门就已经气喘不匀了（柔弱阿宅一个让您见笑了），几乎还没进门，就能远远看见高耸的妈祖圣像屹立在不远处。迫不及待跑到近前，发现可以上香，我摸遍了单肩包，只有一枚硬币，默默投入箱中。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/20240328/%E8%BF%91%E5%83%8F.jpg" alt=""><p>在我参观下来，天后宫并不是一个非常大的庙，我当天走了很多路，到天后宫时下午三点，应该已经走了一万多步，光是到正门就已经气喘不匀了（柔弱阿宅一个让您见笑了），几乎还没进门，就能远远看见高耸的妈祖圣像屹立在不远处。迫不及待跑到近前，发现可以上香，我摸遍了单肩包，只有一枚硬币，默默投入箱中。</p>
 <p>天后圣像本身很高，似乎是我见过最高的石像。虽然之前有看过照片，但亲眼见到雕塑的时候仍被这种美丽与庄严所惊讶，那是非常温厚仁慈的形象，海上女神像就站在山门往前，高高地远眺着海面。我脑海中觉得她面上带笑，但后来看照片时发现其实没有。她发髻上生长着小小一枝植物，微弱的绿意，迎着风晃晃，入门口时拿的宣传册说意外长出的这枝植物也叫作妈祖灵钗。</p>
 <p>在来之前，在看海时，我已经想好要说的话。拿香，跪拜，祷念。我们家也没有拜神的传统，仅仅只是虔信。在前一晚和妈妈电话中我大哭不已，我指责她做了不对的事，我反复质问她，你做错了，你承不承认你是错的。她说她做错了，这就是我唯一能得到的。这件事情没有报偿或改正的方式，因此我和她都无法得到更多，事情就这样结束了，我们都无法做得更好。</p>
 <p>我感到自己这五年来一直执着于，这是一个对的事情，还是错的事情。我过很简单的生活，我做对的事情，我不做错的事情。就只是这样而已，我都时而会觉得难过和辛苦。</p>
 <p>我对家人有很多怨怼，还有很多令我困闷不休的念头。</p>
 <p>在天后圣像前，我向妈祖谈论了这件事。但没有深入，因为她是石像，没法给我谈论下去的正反馈。之后我开始向她提出一些愿望，关于家人的和朋友的，关于健康和生活和学业工作顺遂各个方面的，内容之多，堪称海量。我甚至跟她说，希望自己写得更好。如今写下这些我都有些想笑：喂，这也太贪心了吧！我还跟她讲了好多，比如身份证号云云，以便妈祖可以精准锁定施加祝福Buff。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/20240328/%E5%8D%8A%E5%B1%B1.jpg"></p>
-<p>但我不知道原来山门前的天后圣像只是第一座，往后的献殿和正殿有贴金的天后像和木雕神龛。我和朋友一起爬上去，光是爬到献殿就以为到了终点，不知为什么，明明看起来阶梯并不多也并不高，爬起来却非常累，也许是因为整个建筑群的设计都非常陡峭，只爬到三分之一，就可以远眺到宽阔的海。在很厚的香火气息前，我爬得很累，气喘不已，大张着嘴还没调整好就开始祷念。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/20240328/%E5%8D%8A%E5%B1%B1.jpg" alt=""><p>但我不知道原来山门前的天后圣像只是第一座，往后的献殿和正殿有贴金的天后像和木雕神龛。我和朋友一起爬上去，光是爬到献殿就以为到了终点，不知为什么，明明看起来阶梯并不多也并不高，爬起来却非常累，也许是因为整个建筑群的设计都非常陡峭，只爬到三分之一，就可以远眺到宽阔的海。在很厚的香火气息前，我爬得很累，气喘不已，大张着嘴还没调整好就开始祷念。</p>
 <p>到了下午，温度升高，眼下都出现汗水，湿漉漉的，连颈后都很沉重。我没有很多的虔诚，但却有很多希望解决的事情，如释重负的同时，又觉得很悲伤。贴金神像前的跪垫，经年累月地承受人的重量，已经陈旧又破损，跪下去时，膝盖触到了比想象中更深的位置，那种比预期中要更坍塌一点的感觉，仿佛神压在了你身上。</p>
 <p>也许是因为大脑供氧不足，已经记不得那么多的事，在山门石像面前还能絮絮叨叨，爬到贴金像的时候，由于阿宅体力不支，于是只是在非常简单地把事情说了一遍。我真的以为到了终点，贪念一万，到了半山，还剩一千。</p>
 <p>祷念完和朋友在石椅上坐了一会儿吹风，手机信号也没多少，往旁边走了走，发现紫荆花非常茂密，望一望，发现还有阶梯能继续爬。歇了一会儿跟朋友说去看看吗，实在不行到中间的时候坐一会儿。</p>

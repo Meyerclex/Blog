@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -426,8 +323,7 @@
 <p>月经这件事情本身就足够痛苦，还要持续性地花这么多的钱，花比以往更多的钱，这让我很愤怒。</p>
 <p>我不打算再用棉条了。并开始转而投向新的月经产品，在经过一个月的使用后，我向您推荐：<strong>月经盘</strong>。</p>
 <p>月经盘也叫月经碟，是置入式的月经产品。大家也许更为熟悉的可重复使用的置入式产品是<strong>月经杯</strong>，它的形状类似郁金香，从外观上来说月经盘的直径更大，类似半圆。如果你也是此前从未使用过这种可复用月经产品的新选手，我会在后文中谈及这两个产品的区别，以及我选择月经盘的理由。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/7-1.png"></p>
-<p><strong>对比图转载自<a href="https://goodmoonmood.com/what-is-menstrual-disc/">谷慕慕</a></strong>，这篇是非常棒的科普文章，配有很多更加直观的图片。相比之下，本篇会谈及更多个人感受。</p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/7-1.png" alt=""><p><strong>对比图转载自<a href="https://goodmoonmood.com/what-is-menstrual-disc/">谷慕慕</a></strong>，这篇是非常棒的科普文章，配有很多更加直观的图片。相比之下，本篇会谈及更多个人感受。</p>
 <h2 id="使用原理">使用原理</h2>
 <p>月经盘与月经杯都是收集式的经期产品，医用硅胶材质，合理保存后可以重复使用多年。</p>
 <p>与棉条不同，它只做到体内储存，而非吸收，容器置入体内后依然维持一种近乎真空的环境，于是经血并不会氧化产生气味。你需要做的就是一段时间后将容器从体内取出，清洗容器，再度置入。</p>
@@ -466,8 +362,7 @@
 <p>A：可以放置12小时以上。我的话每天起床、洗澡各取出一次，但刚开始用的那两天因为太好奇了拿出了三四次（……</p>
 <p><strong>Q：应当如何清洗、消毒、保存呢？</strong></p>
 <p>A：通常建议经期用清水清洗即可，而月经来和结束的时候各消毒一次。网络上很多人建议用温水加消毒片浸泡消毒4小时，或是高温水煮或者蒸煮，有人建议可以买个蒸蛋器蒸（很便宜，20-30元）二十分钟就行了。我觉得消毒片的时间有点久，买一个只煮月经盘的锅太怪了，所以我选择了最后一种。储存的话，我买乳贴剩下的塑料盒刚好放得下盘，这两个都是一定程度上让我人生更轻松的产品XD</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/%E7%9B%92%E5%AD%90.jpg"></p>
-<p><strong>Q：关于TSS风险？</strong></p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/%E7%9B%92%E5%AD%90.jpg" alt=""><p><strong>Q：关于TSS风险？</strong></p>
 <p>A：TSS是中毒性休克症状，长期不更换棉条或阴道有伤口会有一定风险。事实上我不想讨论这个，现在因为使用棉条导致TSS的概率非常低，十万分之一的概率就跟遇到飞机失事差不多，我非常不喜欢看到有人拿TSS去建议女性不要使用棉条，就和建议女生天黑不要出门一样，用低概率的危险去阻止更便利的生活，看似好心，实际是非常目中无<strong>人</strong>的作风。</p>
 <p><strong>Q：除了上文谈及以外，生活里还有其他的改变吗？</strong></p>
 <p>A：说起来这是使用棉条以后有一个微小的改变，就是我不再带卫生巾出门了，身边的女性朋友向我借卫生巾时我无法再提供帮助。所以如果你读到这里仍有其他问题，我很乐意提供回答～</p>

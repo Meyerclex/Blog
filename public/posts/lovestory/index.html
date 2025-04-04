@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -435,17 +332,14 @@
 <p>这作我的好感度是冈崎＞白石（另外四位半斤八两吧大家也别比了）。也不知道是命克官配还是柳爱时锁线导致打到他时我已经累了，总而言之我期待很大的一个角色打完居然一点感觉也没。</p>
 <p>我喜欢冈崎契这个角色，必然有我第一条线就莫名其妙走进他的分支的原因。雏鸟情结，印随学习，所以这条线我打得最认真也对破案流程最上心，放到这游的后十个小时，我一分钟按走八百字案情介绍。</p>
 <p>扯远。重点是，他好可爱！武力值高强的电波系人物，在别人的攻略线里也游手好闲地晃悠刷存在感，他的攻略线前半程我频频发出“你在想什么啊”、“你在说什么啊”、“你听听你自己说的话”的这种通讯信号不好的感慨，搞不懂他的脑筋急转，于是便产生距离，距离于是就产生了美，所以该作的前十个小时我每天都按亮屏幕感慨美女你好漂亮啊我好喜欢你，加个微信吧（假的）。</p>
-<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/FdUJy7ZaMAAXF8p.jpg"></p>
-<p>不过打完整条线以后我反而一口也嗑不到了，成为纯粹的人物推。冈崎契的电波感来源于他不健全，他全心全意将自己物化，职业生涯规划主要是寻死，又把女主视作象征，爱人有多少难讲，爱象征倒是指数级。他有病，无褒贬含义的纯有病，他的爱让人感觉只是他向往的死亡的附赠品。在后半程故事里我喜欢他的自我物化与自毁，他非人的一面消解爱情故事的说服力与逻辑，但令他更好。</p>
+<img src="https://raw.githubusercontent.com/Meyerclex/image/main/FdUJy7ZaMAAXF8p.jpg" alt=""><p>不过打完整条线以后我反而一口也嗑不到了，成为纯粹的人物推。冈崎契的电波感来源于他不健全，他全心全意将自己物化，职业生涯规划主要是寻死，又把女主视作象征，爱人有多少难讲，爱象征倒是指数级。他有病，无褒贬含义的纯有病，他的爱让人感觉只是他向往的死亡的附赠品。在后半程故事里我喜欢他的自我物化与自毁，他非人的一面消解爱情故事的说服力与逻辑，但令他更好。</p>
 <p>好像抱怨声大过喜爱？没事啦！我一向比较有釜底抽薪本领，孱弱主线与不合逻辑都没太大关系，我是搞到喜欢的人物就会觉得此行不虚的类型——于是此处就要点名我打的另一乙游《虔诚之花的晚钟》，我每打一段都会愈加诧异，怎么会有人把黑手党故事写得这么家家酒，怎么会有主角性格这么无聊的游戏，怎么会有我这么想捅死的攻略人物（点名把哥）。</p>
 <p>但诸多瑕疵略过不提，它的杨线Bad End提供了我非常喜欢的一小片爱的剪影。</p>
 <p>我在打之前就已经刷到很多关于杨老板的吐槽，但这男的画得实在是太帅了，所以人烂一点我没什么所谓。关于他经典的BE线我也已经被剧透了个底掉，但打完才意识到它让人印象深刻之处不在于残忍的死法，而在于死亡以前的浪漫谎言。</p>
 <p>进入最终章节，杨在窗台和莉莉见面，甜蜜话语称他会来救她，他当然会来救她，正因为爱所以他才冒天大危险来见她一面，坐在露台向她承诺自己不是喝下毒药的愚蠢恋中之人，还对她说出她读过的爱情故事的句子：“我借爱的轻翼飞过院墙”，多么罗朱。</p>
 <p>我非常清楚这故事不得善终，也清楚面前人口蜜腹剑说得全是谎言，但我非常理解那时的莉莉，即使觉察巨大阴谋向她靠近，但还是会非常喜悦地一步步靠近戏台。我无法拒绝夸张浪漫，也无法拒绝戏剧上演，如果美梦足够精彩，被蒙骗也没关系，这就是我这种人的弱点。</p>
-<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/FfQY0nZacAExabI.jpg"></p>
-<p>我对杨的喜爱也仅止步于BE线和花絮的Short story，给长发角色梳毛永远能精准打击我的性癖，花絮实在是太懂，我知道他很烂人但是我还是会喜欢，觉得他脑子有病还是开开心心给他梳毛……这是我没有办法的事情嘛！晚钟的故事很催眠，绝大多数人物结局我都不喜欢还是努力全收集了，最近才好不容易推到了最后一条人物线，可谓吃够了男人的苦。</p>
-<p><img alt="给梳羊毛" src="https://raw.githubusercontent.com/Meyerclex/image/main/FfQYU0ZakAIcST7.jpg"></p>
-<p>虚拟爱情使人空掷许多情感，但我在游戏世界确实得到过非常完整的爱的体验。虽然打2077已经是很久以前的事了，但每次刷到朱迪·阿尔瓦雷兹的名字或图片我都会歇斯底里地发五秒钟神经病然后再继续正常生活。</p>
+<img src="https://raw.githubusercontent.com/Meyerclex/image/main/FfQY0nZacAExabI.jpg" alt=""><p>我对杨的喜爱也仅止步于BE线和花絮的Short story，给长发角色梳毛永远能精准打击我的性癖，花絮实在是太懂，我知道他很烂人但是我还是会喜欢，觉得他脑子有病还是开开心心给他梳毛……这是我没有办法的事情嘛！晚钟的故事很催眠，绝大多数人物结局我都不喜欢还是努力全收集了，最近才好不容易推到了最后一条人物线，可谓吃够了男人的苦。</p>
+<img src="https://raw.githubusercontent.com/Meyerclex/image/main/FfQYU0ZakAIcST7.jpg" alt="给梳羊毛"><p>虚拟爱情使人空掷许多情感，但我在游戏世界确实得到过非常完整的爱的体验。虽然打2077已经是很久以前的事了，但每次刷到朱迪·阿尔瓦雷兹的名字或图片我都会歇斯底里地发五秒钟神经病然后再继续正常生活。</p>
 <p>2077塑造朱迪这个人物时非常狡猾，夜之城的超梦大师，又酷又轻巧，公事公办而冷淡。接触之后却非常可爱鲜活、敏感柔软，CDPR没有让她成为那种照顾玩家的完美NPC，而是让她成为那种任性又冲动的女友，而V对朱迪的对话选项也不像对别人那样嬉笑或回嘴，而是常常沉默，非常迁就，一方面因为朱迪说话呛人，还容易生气，另一方面是朱迪总是希望离开夜之城……我似乎也可以理解V对待她时的安静与难过。这种若有若无的遗憾贯穿与朱迪交往的整个过程，可她一个电话过来我在天涯海角做任务也还是会立刻跑回宪章街见她，她发短信来叫V小南瓜我傻笑半小时，在公寓看到她摆成心形的礼物也被可爱得昏倒，连她的任性也令我觉得她简直如小猫一般完美得不得了。</p>
 <p>金字塔之歌潜水任务是我整个游戏里最喜欢的任务之一，这个支线浪漫、寂寞又忧伤。她的故乡是已经沉没的亚特兰蒂斯，但还是想带V听一听她的童年，潜入深海也要看看她过去居住过的房屋，分享她久远而私密的记忆。朱迪童年的回声和教堂钟声在V脑海里响起，屏幕内外几乎共感。那种逝去的难过久久盘旋，以至于后来拿到朱迪的门禁，跑去宪章街见她的时候，看她靠在自己的窗边笑着看V，那种难过还是在我挥之不去，常常觉得CDPR给她的动作太少，想到V不在的时候她也许就这样一直靠在窗边眺望，我就会觉得难过又寂寞。</p>
 <p>而故事终有结局。我打出太阳结局之后几乎是心痛又心碎的。到最后我的V不愿意让她担心与为难，没有告诉她病情恶化到多么糟糕，而朱迪也意识到留在夜之城是错误的，选项里无论是挽留还是故作轻松的告别，都无法让她留下。恰如朱迪在最后所说，她和她之间隔着一堵墙。</p>

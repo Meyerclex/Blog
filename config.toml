@@ -8,13 +8,24 @@ hasCJKLanguage = true
 [module.hugoVersion]
 extended = true
 min      = "0.41.0"
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+[[module.mounts]]
+source = 'static'
+target = 'assets'
+
 
 [markup]
 [markup.goldmark]
 [markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
 [markup.goldmark.parser.attribute]
 block = true
 title = true
+[markup.goldmark.renderHooks.image]
+enableDefault = true
+
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -42,6 +53,7 @@ ordered    = false
 [params]
 favicon = "/cat/240f9f9b.gif"
 sidebar_icon = "/cat/checkeredblank.gif"
+fancybox = true
 
 [params.theme_config]
 appearance        = "auto"

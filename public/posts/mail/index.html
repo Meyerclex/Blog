@@ -41,69 +41,6 @@
     
   </title>
 
-  <style>
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-container {
-      display: flex;
-      flex-direction: column;   
-      align-items: center;      
-      width: calc(100% / 3 - 20px);   
-      max-width: 100%;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
-    }
-
-    .image-container .alt-text {
-      display: block;   
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 5px;
-      min-height: 20px;  
-    }
-
-     
-    .image-row.two-columns .image-container {
-      width: calc(50% - 10px);   
-    }
-
-    .image-row.three-columns .image-container {
-      width: calc(33.33% - 10px);   
-    }
-
-    .image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -113,41 +50,6 @@
         console.error('Error: #post-content not found!');
         return;
       }
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
-        if (naturalWidth > 200 && naturalHeight > 200) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.src = img.src;
-            overlay.classList.add('active');
-          });
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
 
       
       const paragraphs = postContent.querySelectorAll('p');
@@ -243,13 +145,8 @@
           paragraph.appendChild(imageRow);
         }
       });
-
-
-      
-      images.forEach(enableImageZoom);
     });
   </script>
-
 
 
 
@@ -260,7 +157,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.ebb883ffce66ec7b67d9b81f3f93357c04decaaddd21a6b5a66f4af580294ce649d4b0f5a1e24dd643e748d737c2a852a68bb6e2b336836536def569ca317207.css" integrity="sha512-67iD/85m7Htn2bgfP5M1fATeyq3dIaa1pm9K9YApTOZJ1LD1oeJN1kPnSNc3wqhSpou24rM2g2U23vVpyjFyBw==" />
+    <link rel="stylesheet" href="/css/main.ef778ef343e196ba66b00dd0b482eac6651ecb9613645c46af78f370f83b3676cfb2e3db1141adf0871dd94d149b666cff7573648010f31624546b518905c10b.css" integrity="sha512-73eO80PhlrpmsA3QtILqxmUey5YTZFxGr3jzcPg7NnbPsuPbEUGt8Icd2U0Um2Zs/3VzZIAQ8xYkVGtRiQXBCw==" />
   
 
 
@@ -417,8 +314,7 @@
 <p>但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。</p>
 <p>事实上 Checker 插件似乎是能够做到这个功能的，我后来在他们的帮助页面找到了这方面的内容：<a href="https://jasonsavard.com/wiki/Check_mail_from_other_accounts_or_using_POP">Check mail from other accounts or using POP</a>，但当时我并不知道。</p>
 <p>我后来选用了另一个办法，在邮箱设置里面我看到了<strong>查收其他帐号的邮件</strong>：这似乎就是我想要的，用我现有的 Gmail 邮箱来收网易邮箱的邮件。</p>
-<p><img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png"></p>
-<p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p>
+<img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png" alt=""><p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p>
 <ol>
 <li>跑去<code>被查收的邮箱</code>的网页里找到<code>设置</code>。</li>
 <li>找到<code>开启POP3/SMTP</code>相关的选项，打开它。这时多半需要你的手机发送一个验证码什么的。开启后，如果设置中有<code>授权密码管理</code>（在 QQ 邮箱中叫<code>授权码</code>），请新增一个密码。往往会给你一个十六位的乱码，它只会出现一次，请把它背下来，或者记在你的<code>password.txt</code>中，事实上我感到这辈子都不需要再看它们第二眼，所以我复制了下来就关掉了。</li>
@@ -441,8 +337,7 @@
 <p>总而言之，到这一步，我们已经可以用 Gmail 邮箱来查看 QQ 邮箱、网易邮箱和 Outlook 的垃圾邮件，并且用它来发送更多。当然，反过来也一样。至于 Gmail 删除网易的邮件的操作是否会同步到网易中，我还没有尝试，也许可以，也许不行。我已经不在乎了，在我心中，网易邮箱不再是一个具体的产品，只是我 Gmail 邮箱中一个微不足道的标签（冷淡.jpg）。</p>
 <p>如果有用其他邮箱来发件的需求，还可以在<code>用这个地址发送邮件</code>中添加它，相比前者，这个要容易许多，只需要发一个验证邮件，点击链接即可完成设置。</p>
 <p>于是我终于摆脱掉了网易邮箱大师 APP 和要点开 QQ、打开不同网页去看一封邮件的苦恼，实现了文章开头的构想：从此打扰我的只有 Checker Plugin。</p>
-<p><img alt="设置好“用这个地址发送邮件”之后发新邮件时的样子" src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png"></p>
-<p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p>
+<img src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png" alt="设置好“用这个地址发送邮件”之后发新邮件时的样子"><p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p>
 <blockquote>
 <p>《送东阳马生序》：每假借于藏书之家，手自笔录，计日以还。</p>
 </blockquote>
