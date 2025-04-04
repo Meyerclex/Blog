@@ -1,0 +1,51 @@
+{{ define "main" }}
+    <article>
+        <h1>{{ .Title }}</h1>
+        <div id="post-meta">
+            <time datetime="{{ .Date }}">
+                {{ .Date | time.Format site.Params.theme_config.date_format }}
+                <span> ‧ {{ .WordCount }}</span>
+                <span>words</span>
+            </time>
+            {{ if .Description }}
+                <blockquote id="post-description">
+                    {{ .Description }}
+                </blockquote>
+            {{ end }}
+        </div>
+
+        <!-- 这里开始填充目录 -->
+        {{ block "toc" . }}
+            {{ partial "toc.html" . }} <!-- 使用partial渲染toc内容 -->
+        {{ end }}
+
+        <div id="post-content">
+            {{ .Content | safeHTML }}
+        </div>
+        <br>
+        <div style="padding-bottom:3px;"></div>
+    </article>
+
+    <div class="pre-next">
+        {{with .PrevInSection}}
+            <a class="pre-next-btn bg" href="{{.Permalink}}"><< {{ .Title }}</a>
+        {{end}}
+        {{with .NextInSection}}
+            <a class="pre-next-btn bg" href="{{.Permalink}}">{{ .Title }} >></a>
+        {{end}}
+    </div>
+
+    {{ if .Params.comment | default true }}
+        <br>
+        <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+        <div id="comments" class="comments">
+            {{ partial "comment.html" . }}
+        </div>
+    {{ end }}
+
+    <div>
+        {{ partial "footer.html" . }}
+    </div>
+{{ end }}

@@ -115,6 +115,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 - [匣](https://kiokumo.vip/)：是蓝色小幽灵海胆（？）！手账家居生活内容都看起来好舒服像流动的小溪……
 
+- [昼梦日和](https://nanako-blog.web.app/): 是又萌又温柔的nana！在讲一些萌萌的话，生活的事。nana还会拍美丽的照片。
+
 ---
 
 喜欢大家，爱看大家，通过RSS猛猛地订阅了大家{{< emoji name="meow_blush" ext="">}}

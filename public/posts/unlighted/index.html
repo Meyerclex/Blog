@@ -409,15 +409,28 @@
         --waline-border: 0px solid peru;
     }
 
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
     .wl-editor:focus,
     .wl-input:focus {
         background: transparent;
     }
 
     .wl-panel {
-        background-color: rgb(244, 241, 238);
-        box-shadow: 1px 1px 2px rgba(205, 133, 63, 0.7);
-     
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
     }
 
     .wl-card .wl-delete,
@@ -434,6 +447,10 @@
         color: var(--waline-color);
         font-size: .75em;
     }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
 
 </style>
 <div id="waline"></div>
@@ -449,6 +466,10 @@
         ],
         requiredMeta: ["name", "email", "url"],
         dark: true,
+        locale: {
+            placeholder: '这里有小豆泥表情，请肆无忌惮地使用！^^',
+            admin: 'admin',
+        }
     });
 </script>
 </div>

@@ -1,0 +1,5 @@
+{{- $block    := .Get "block" | default "true" -}}
+{{- $optBlock := cond (ne $block "true") (dict "display" "inline") (dict "display" "block") -}}
+{{ with (.Get "lang" ) }}<span lang={{ . }}>{{ end }}
+{{ .Inner | $.Page.RenderString $optBlock | safeHTML -}}
+{{ with (.Get "lang" ) }}</span>{{ end }}

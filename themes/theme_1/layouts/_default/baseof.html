@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode }}">
+{{- partial "head.html" . -}}
+<body a="{{ $.Site.Params.theme_config.appearance | default "auto" }}">
+<main class="page-content" aria-label="Content">
+    <div class="w">
+        <div id="main">
+            <div id="left-sidebar">
+                {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
+            <div id="r-content">
+                <h1>{{ .Title }}</h1>
+                {{ block "main" . }}{{ end }}
+            </div>
+            <div id="right-sidebar">
+                {{ block "toc" . }}{{ end }}
+            </div>
+        </div>
+        {{ partial "footer.html" }}
+    </div>
+</main>
+</body>
+</html>

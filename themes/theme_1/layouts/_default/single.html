@@ -1,0 +1,50 @@
+{{ define "main" }}
+    <div class="post-meta">
+        {{ partial "back_link.html" .}}
+    </div>
+    <article class="post-content">
+        <h1>{{ .Title }}</h1>
+        <div id="post-meta">
+            <time datetime="{{ .Date }}">
+                {{ .Date | time.Format site.Params.theme_config.date_format }}
+                <span> ‧ {{ .WordCount }}</span>
+                <span>words</span>
+                <!--            ‧ <span>tags : </span>-->
+                <!--            {{ if .Params.tags }}-->
+                <!--                    {{ range .Params.tags }}-->
+                <!--                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>-->
+                <!--                    {{ end }}-->
+                <!--            {{ end }}-->
+            </time>
+            {{ if .Description }}
+            <blockquote id="post-description">
+                {{ .Description }}
+            </blockquote>
+            {{ end }}
+        </div>
+        <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+            {{ partial "toc.html" . }}
+        </div>
+        <div id="post-content">
+            {{ .Content | safeHTML }}
+        </div>
+        <br>
+        <div style="padding-bottom:3px;"></div>
+    </article>
+
+{{ if .Params.comment | default true }}
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    {{ partial "comment.html" . }}
+</div>
+{{ end }}
+
+
+<div>
+    {{- partial "footer.html" . -}}
+</div>
+
+{{ end }}
