@@ -129,4 +129,4 @@ document.addEventListener("DOMContentLoaded", function() {
 > 
 > 简介（如需）：您首页的奶牛猫图片转发大使
 
-很珍惜博客这样的连结，因而暂时不希望是单向链接。交换的话右下角Guest Book和毛象联系都OK！{{< emoji name="cats" ext="">}}希望您也是对人和小动物都富有同理心的友善之人！
+很珍惜博客这样的连结，因而暂时不希望是单向链接。交换的话右下角Guest Book和毛象联系都OK！暂时只和有过一些交流的朋友交换了{{< emoji name="cats" ext="">}}希望您也是对人和小动物都富有同理心的友善之人！

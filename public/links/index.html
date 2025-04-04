@@ -158,7 +158,55 @@
     });
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const enableImageZoom = (img) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (naturalWidth > 200 && naturalHeight > 200) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+      };
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      images.forEach(enableImageZoom);
+    });
+  </script>
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
@@ -283,7 +331,7 @@
         <div id="post-meta">
             <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
                 2021-06-28
-                <span> ‧ 1688</span>
+                <span> ‧ 1704</span>
                 <span>words</span>
                 
                 
@@ -512,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>名称：谢谢所有的鱼</p>
 <p>简介（如需）：您首页的奶牛猫图片转发大使</p>
 </blockquote>
-<p>很珍惜博客这样的连结，因而暂时不希望是单向链接。交换的话右下角Guest Book和毛象联系都OK！
+<p>很珍惜博客这样的连结，因而暂时不希望是单向链接。交换的话右下角Guest Book和毛象联系都OK！暂时只和有过一些交流的朋友交换了
 <img
     src="/img/emoji/cats.png"
     title="cats"
