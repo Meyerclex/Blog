@@ -5,15 +5,12 @@ draft = false
 +++
 
 <style>
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
   img.float-img35 {
-    width: 20%!important;
+    width: 25%!important;
     /*max-width: 50%;*/
-    margin: 0.5em !important;
+    margin: 0 0.5em !important;
   }
-  }
-
-
  img.float-img35 {
     width: 30%;
     margin-right: 0px;
@@ -26,6 +23,9 @@ draft = false
     line-height: 1.35;
     /*font-size: 90%;*/
 }
+
+
+
 </style>
 
 **🧸 About me**<img src="/img/8422aeec14319a67.jpeg" class="float-img35" style="padding-bottom: 2px!important;">
