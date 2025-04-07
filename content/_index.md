@@ -7,15 +7,15 @@ draft = false
 <style>
   @media (max-width: 968px) {
   img.float-img35 {
-    width: 25%!important;
+    width: 23%!important;
     /*max-width: 50%;*/
     margin: 0 0.5em !important;
   }
  img.float-img35 {
     width: 30%;
     margin-right: 0px;
-    margin-left: 0.5rem;
-    float: right;
+    margin: 0 0.5rem;
+    /*float: right;*/
 }
 
 .box-welcome p {
