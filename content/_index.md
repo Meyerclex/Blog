@@ -13,7 +13,6 @@ draft = false
   }
  img.float-img35 {
     width: 30%;
-    margin-right: 0px;
     margin: 0 0.5rem;
     /*float: right;*/
 }
