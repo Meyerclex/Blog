@@ -7,7 +7,7 @@ draft = false
 <style>
   @media (max-width: 968px) {
   img.float-img35 {
-    width: 22%!important;
+    width: 21%!important;
     /*max-width: 50%;*/
     margin: 0 0.5em !important;
   }
