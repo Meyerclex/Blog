@@ -5,9 +5,19 @@ draft = false
 +++
 
 <style>
+  @media (max-width: 768px) {
+  img.float-img35 {
+    width: 20%!important;
+    /*max-width: 50%;*/
+    margin: 0.5em !important;
+  }
+  }
+
+
  img.float-img35 {
     width: 30%;
-    /*margin-bottom: 5px;*/
+    margin-right: 0px;
+    margin-left: 0.5rem;
     float: right;
 }
 

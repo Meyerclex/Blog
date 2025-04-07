@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "E:/hugo-newspaper",
+	"sourceRoot": "D:/hugo-newspaper",
 	"sources": [
 		"themes/newspaper/assets/css/main.scss",
 		"themes/newspaper/assets/css/_theme-toggle.scss",
