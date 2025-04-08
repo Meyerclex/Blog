@@ -6,6 +6,11 @@ slug: changelog
 toc: true
 ---
 
+## Bookmark
+
+- [Bonnibel's Graphic Collection](https://graphic.neocities.org/directory)
+- [「素材屋405番地」](http://sozaiya405.chu.jp/405/)
+
 ## 2025/03/19
 
 给自己加了个Sidebar但不知道加了有啥用（喂）。
