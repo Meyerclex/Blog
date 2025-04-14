@@ -79,8 +79,9 @@ content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">Darkness 
 
 [[params.sidebar_menu]]
 icon = "/cat/cat24.gif"
-name = "Drink"
-content = "<p>热美式上头ing…</p>"
+name = "RSS 📫"
+content = "<p><a href=\"/index.xml\" target=\"_blank\">订阅 RSS 链接</a></p>"
+
 
 
 [params.meowBox]
