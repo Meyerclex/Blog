@@ -15,6 +15,6 @@ border-radius: 0px;
 
 All rights reserved.
 
-**💫 来源声明 Resource Credit**
+**💫 使用素材鸣谢 Resource Credit**
 
 - 背景图：[「素材屋405番地」](http://sozaiya405.chu.jp/405/) ![](/site/sozaiya405_6.gif)
