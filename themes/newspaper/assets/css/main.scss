@@ -240,10 +240,16 @@ body[a="dark"] {
 body[a="light"] {
   @include light-appearance;
   background-color: $bg-light;
-  background-image:
-          linear-gradient(rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px),
-          linear-gradient(90deg, rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px);
-  background-size: 10px 10px, 10px 10px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.5)),
+  url("/site/bg_note_haha_1.gif");
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  //米白格子背景图
+  //background-image:
+  //        linear-gradient(rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px),
+  //        linear-gradient(90deg, rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px);
+  //background-size: 10px 10px, 10px 10px;
 }
 
 

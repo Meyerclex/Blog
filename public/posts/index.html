@@ -201,7 +201,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.7e374a51a92bed418c398908c05ff3d1782d4706477182f1a1475d4be0fbf91d93194a7c071683fa68e0800b00751a3935b62fca518747b4ce9ffb722ec0efb3.css" integrity="sha512-fjdKUakr7UGMOYkIwF/z0XgtRwZHcYLxoUddS&#43;D7&#43;R2TGUp8BxaD&#43;mjggAsAdRo5NbYvylGHR7TOn/tyLsDvsw==" />
+    <link rel="stylesheet" href="/css/main.c6b2f358d22bb9467bc7a807ca3744f10148c0a69bb65b2f3d79e5ac93654f656ab178c1346d500c4f0452df511bf54946ff5b521ff0d066b7167f81ac260307.css" integrity="sha512-xrLzWNIruUZ7x6gHyjdE8QFIwKabtlsvPXnlrJNlT2VqsXjBNG1QDE8EUt9RG/VJRv9bUh/w0Ga3Fn&#43;BrCYDBw==" />
   
 
 
@@ -315,7 +315,11 @@
 <h1>Archive<img style="width: 13%; margin: 0 0;" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/12/8fd02c72ea9ae1442c54e990ae50d595.gif"></h1>
 
 
-
+    <style>
+        body[a="dark"] #copyright {
+            background-image: none !important;
+        }
+    </style>
     <body>
     <div class="main-container">
         <div id="page_posts" class="window active page_posts" style="">
@@ -645,16 +649,37 @@
         </div>
     </div>
         <div class="note menu-float" style="flex: 0 0 45%;">
+            <div class="note__item">
+                <div id="copyright" class="note__list"
+                     style="font-size: 80%; background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/site/bg-mizu1-2-2.gif'); background-repeat: repeat;">
+                    
+                    <h3 style="margin-top: 1em;">🍞 本站版权说明</h3>
+                    <style>
+img {
+border-radius: 0px;
+}
+</style>
+<p>博客作者保留对文章内容的所有权利。</p>
+<p>All rights reserved.</p>
+<p><strong>💫 来源声明 Resource Credit</strong></p>
+<ul>
+<li>背景图：<a href="http://sozaiya405.chu.jp/405/">「素材屋405番地」</a> <img src="/site/sozaiya405_6.gif"></li>
+</ul>
+
+                    
+                </div>
+            </div>
         <div class="note__item">
             <div class="note__day">更新日志</div>
             <div class="note__list" style="font-size: 80%;">
                 <details class="mumble" open style="max-height: 250px;">
                     <summary>Changelog...</summary>
                     
-                        <h2 id="bookmark">Bookmark</h2>
+                        <h2 id="20250414">2025/04/14</h2>
 <ul>
-<li><a href="https://graphic.neocities.org/directory">Bonnibel&rsquo;s Graphic Collection</a></li>
-<li><a href="http://sozaiya405.chu.jp/405/">「素材屋405番地」</a></li>
+<li>修改了日间模式背景图。</li>
+<li>恢复了RSS输出，根据<a href="https://zhen-shi.github.io/p/hugo-content-protect-tips/">薯饼的文章</a>修改了输出摘要部分。</li>
+<li>在Archive内增加了版权部份的说明（为什么加在这里，因为放在首页太挤了0v0）。</li>
 </ul>
 <h2 id="20250319">2025/03/19</h2>
 <p>给自己加了个Sidebar但不知道加了有啥用（喂）。</p>
@@ -958,7 +983,9 @@ home = [&#34;HTML&#34;]
         
         
         
-        共书写了269.3k字 · 共 81篇文章
+        
+        
+        共书写了269.4k字 · 共 81篇文章
     </section>
 
     

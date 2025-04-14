@@ -6,10 +6,11 @@ slug: changelog
 toc: true
 ---
 
-## Bookmark
+## 2025/04/14
 
-- [Bonnibel's Graphic Collection](https://graphic.neocities.org/directory)
-- [「素材屋405番地」](http://sozaiya405.chu.jp/405/)
+- 修改了日间模式背景图。
+- 恢复了RSS输出，根据[薯饼的文章](https://zhen-shi.github.io/p/hugo-content-protect-tips/)修改了输出摘要部分。
+- 在Archive内增加了版权部份的说明（为什么加在这里，因为放在首页太挤了0v0）。
 
 ## 2025/03/19
 

@@ -51,12 +51,12 @@ endLevel   = 3
 ordered    = false
 
 [params]
-favicon = "/cat/240f9f9b.gif"
+favicon = "/cat/240f9f9b.gif" #图标
 sidebar_icon = "/cat/checkeredblank.gif"
 fancybox = true
 
 [params.theme_config]
-appearance        = "auto"
+appearance        = "auto" #light, dark
 back_home_text    = "Back"
 date_format       = "2006-01-02"
 isListGroupByDate = true
