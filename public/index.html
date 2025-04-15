@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn"><head>
-	<meta name="generator" content="Hugo 0.139.0">
+	<meta name="generator" content="Hugo 0.139.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -59,7 +59,7 @@
           const naturalHeight = img.naturalHeight || img.height;
 
           
-          if (naturalWidth > 200 && naturalHeight > 200) {
+          if (!img.src.includes('/img/emoji/')) {
             const container = document.createElement('div');
             container.classList.add('image-container');
 
@@ -172,7 +172,7 @@
         const naturalHeight = img.naturalHeight || img.height;
 
         
-        if (naturalWidth > 200 && naturalHeight > 200) {
+        if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;
@@ -201,7 +201,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.155230b7000429c63a92e8f25a303a1891fcea9365598393dcb9c5249c49c995e3887b49112b14161bae6b803743aff1d01832fd91e67be65fcfde96d0175fe1.css" integrity="sha512-FVIwtwAEKcY6kujyWjA6GJH86pNlWYOT3LnFJJxJyZXjiHtJESsUFhuua4A3Q6/x0Bgy/ZHme&#43;Zfz96W0Bdf4Q==" />
+    <link rel="stylesheet" href="/css/main.80d450bf0497b471c0964da3e13853fb6195531638efb4fe579b930b38b9ebcdb4e2fcb0a7037d53b14cb725fa300d34aa6c45321ee1ed076442a19d31c237dc.css" integrity="sha512-gNRQvwSXtHHAlk2j4ThT&#43;2GVUxY477T&#43;V5uTCzi568204vywpwN9U7FMtyX6MA00qmxFMh7h7QdkQqGdMcI33A==" />
   
 
 
@@ -416,9 +416,15 @@
 
     <div class="menu-float" id="x1">
         <div class="multi-column-menu"><div class="menu-column">
-            <h3 class="menu-title">📚 All Posts</h3><h3 class="menu-title"></h3>
-                <div class="posts-list-ul">
-                    
+
+        
+        <h3 class="menu-title">📚 All Posts</h3>
+
+        
+
+        
+        <div class="posts-list-ul">
+            
         
     
     <ul><li>
@@ -450,7 +456,10 @@
         
     </ul>
 
-</div></div></div>
+
+        </div>
+    </div>
+</div>
 
         <div id="x4">
             
@@ -504,7 +513,7 @@
         
         <tr class="menu-item" onclick="toggleMenu(this)">
             <td style="text-align: center; white-space: nowrap;">
-                <img src="https://gregueria.icu/cat/cat89.gif" alt="Music!">
+                <img src="http://localhost:1313/cat/cat89.gif" alt="Music!">
             </td>
             <td id="menutable-name" style="font-weight: bold;">
                 
@@ -520,7 +529,7 @@
         
         <tr class="menu-item" onclick="toggleMenu(this)">
             <td style="text-align: center; white-space: nowrap;">
-                <img src="https://gregueria.icu/cat/240f9f9b.gif" alt="Book">
+                <img src="http://localhost:1313/cat/240f9f9b.gif" alt="Book">
             </td>
             <td id="menutable-name" style="font-weight: bold;">
                 
@@ -536,7 +545,7 @@
         
         <tr class="menu-item" onclick="toggleMenu(this)">
             <td style="text-align: center; white-space: nowrap;">
-                <img src="https://gregueria.icu/cat/camera4.gif" alt="Photos">
+                <img src="http://localhost:1313/cat/camera4.gif" alt="Photos">
             </td>
             <td id="menutable-name" style="font-weight: bold;">
                 
@@ -552,12 +561,12 @@
         
         <tr class="menu-item" onclick="toggleMenu(this)">
             <td style="text-align: center; white-space: nowrap;">
-                <img src="https://gregueria.icu/cat/cat24.gif" alt="RSS">
+                <img src="http://localhost:1313/cat/cat24.gif" alt="RSS">
             </td>
             <td id="menutable-name" style="font-weight: bold;">
                 
                 
-                <a href="https://gregueria.icu/index.xml" target="_blank" style="text-decoration: none; color: inherit;">
+                <a href="http://localhost:1313/index.xml" target="_blank" style="text-decoration: none; color: inherit;">
                     RSS
                 </a>
                 
@@ -757,13 +766,7 @@
         
         
         
-        
-        
-        
-        
-        
-        
-        共书写了280.8k字 · 共 84篇文章
+        共书写了269.5k字 · 共 81篇文章
     </section>
 
     

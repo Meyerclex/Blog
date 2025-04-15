@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  <link rel="preload" href="https://font.eterfinal.ink/HuiwenFangsong/result.css" as="style">
+  <link rel="preload" href="https://static.zeoseven.com/zsft/256/main/result.css" as="style">
+
+  
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  
+  <noscript>
+    <link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+  </noscript>
+
+
+
+  
+    <meta name="description" content="草长莺飞季节，最近发生了不少事情，让我一一道来。
+和屋企人吵架了
+三月末其实和家里人爆发了一次近年最严重的争吵，好像也不是争吵，更贴切地说，是彼此在用非常暴力的方式在宣泄悲伤。那天其实还过得蛮不错，我和网友约见一起去看《你的颜色》，之后在麦麦快乐聊天，然后回家，晚上还看了《荧屏在发光》。就在还有二十分钟就看完的时候，接到电话。和家人聊天，在挂断前有一句非常普通的话，对方是笑着说的，我甚至也是嗯嗯笑着把电话挂断。">
+    <meta property="og:title" content="四月份">
+    <meta property="og:description" content="草长莺飞季节，最近发生了不少事情，让我一一道来。
+和屋企人吵架了
+三月末其实和家里人爆发了一次近年最严重的争吵，好像也不是争吵，更贴切地说，是彼此在用非常暴力的方式在宣泄悲伤。那天其实还过得蛮不错，我和网友约见一起去看《你的颜色》，之后在麦麦快乐聊天，然后回家，晚上还看了《荧屏在发光》。就在还有二十分钟就看完的时候，接到电话。和家人聊天，在挂断前有一句非常普通的话，对方是笑着说的，我甚至也是嗯嗯笑着把电话挂断。">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      四月份 | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+
+        
+        if (paragraphImages.length === 1) {
+          const img = paragraphImages[0];
+          const naturalWidth = img.naturalWidth || img.width;
+          const naturalHeight = img.naturalHeight || img.height;
+
+          
+          if (!img.src.includes('/img/emoji/')) {
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.style.width = '100%';
+
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+
+            
+            if (!altText) {
+              altTextElement.style.display = 'none';
+            }
+
+            container.appendChild(altTextElement);
+
+            
+            paragraph.innerHTML = '';
+            paragraph.appendChild(container);
+          }
+        } else if (paragraphImages.length > 1) {
+          
+          const imageRow = document.createElement('div');
+          imageRow.classList.add('image-row');
+
+          
+          if (paragraphImages.length === 2) {
+            imageRow.classList.add('two-columns');
+          } else if (paragraphImages.length === 3) {
+            imageRow.classList.add('three-columns');
+          }
+
+          let hasAltText = false; 
+
+          
+          paragraphImages.forEach((img) => {
+            const naturalWidth = img.naturalWidth || img.width;
+            const naturalHeight = img.naturalHeight || img.height;
+
+            
+            if (naturalWidth <= 200 || naturalHeight <= 200) {
+              return;
+            }
+
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+
+            
+            container.appendChild(img);
+
+            
+            const altText = img.alt ? img.alt : ''; 
+            if (altText) {
+              hasAltText = true; 
+            }
+
+            
+            const altTextElement = document.createElement('div');
+            altTextElement.classList.add('alt-text');
+            altTextElement.textContent = altText; 
+            container.appendChild(altTextElement);
+
+            
+            imageRow.appendChild(container);
+          });
+
+          
+          if (!hasAltText) {
+            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
+          }
+
+          
+          paragraph.innerHTML = '';
+          paragraph.appendChild(imageRow);
+        }
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const enableImageZoom = (img) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (!img.src.includes('/img/emoji/')) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+      };
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      images.forEach(enableImageZoom);
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.80d450bf0497b471c0964da3e13853fb6195531638efb4fe579b930b38b9ebcdb4e2fcb0a7037d53b14cb725fa300d34aa6c45321ee1ed076442a19d31c237dc.css" integrity="sha512-gNRQvwSXtHHAlk2j4ThT&#43;2GVUxY477T&#43;V5uTCzi568204vywpwN9U7FMtyX6MA00qmxFMh7h7QdkQqGdMcI33A==" />
+  
+
+
+  
+  
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+<script src="script.js" defer></script>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <div id="theme-toggle" class="theme-toggle">
+  <div id="light-btn"></div>
+  <div id="dark-btn"></div>
+</div>
+
+<script>
+  
+  const themeToggle = document.getElementById('theme-toggle');
+
+  
+  let currentTheme = localStorage.getItem('theme') || 'auto';
+  if (currentTheme === 'auto') {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    currentTheme = prefersDarkScheme ? 'dark' : 'light';
+  }
+  document.body.setAttribute('a', currentTheme);
+  document.body.classList.add(currentTheme + '-mode');
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+    } else if (currentTheme === 'dark') {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+    }
+    localStorage.setItem('theme', currentTheme);
+    document.body.setAttribute('a', currentTheme);
+  };
+
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const winHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    
+    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+    
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+    } else if (scrollPercent > 40) {
+      themeToggle.style.opacity = 0; 
+    } else {
+      themeToggle.style.opacity = 1; 
+    }
+  });
+</script>
+
+
+<div id="header-post">
+  <span id="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/collection">Museum</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+
+                </div>
+
+<article>
+    <h1>四月份</h1>
+    <div id="post-meta">
+        <time datetime="2025-04-15 00:00:00 &#43;0000 UTC">
+            2025-04-15
+            <span> ‧ 4116</span>
+            <span>words</span>
+
+
+
+
+
+
+        </time>
+        
+    </div>
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+        
+    <div class="post-toc" id="post-toc">
+        <aside>
+            <header>
+                Table of Contents
+            </header>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#和屋企人吵架了">和屋企人吵架了</a></li>
+    <li><a href="#去做gym啦">去做Gym啦</a>
+      <ul>
+        <li><a href="#关于时间安排">关于时间安排</a></li>
+      </ul>
+    </li>
+    <li><a href="#娱乐版块之我看">娱乐版块之我看</a></li>
+    <li><a href="#读了">读了</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+
+
+
+    </div>
+    <div id="post-content">
+    <p>草长莺飞季节，最近发生了不少事情，让我一一道来。</p>
+<h2 id="和屋企人吵架了">和屋企人吵架了</h2>
+<p>三月末其实和家里人爆发了一次近年最严重的争吵，好像也不是争吵，更贴切地说，是彼此在用非常暴力的方式在宣泄悲伤。那天其实还过得蛮不错，我和网友约见一起去看《你的颜色》，之后在麦麦快乐聊天，然后回家，晚上还看了《荧屏在发光》。就在还有二十分钟就看完的时候，接到电话。和家人聊天，在挂断前有一句非常普通的话，对方是笑着说的，我甚至也是嗯嗯笑着把电话挂断。</p>
+<p>关于那句话，在情感上、理性上，我都自己觉得是可以接受的。但一挂完电话突然立刻打开电脑网页上chatGpt登账号，非常不对劲手都在抖。手表的压力值在10：30-11：00的时候突破了本月最高。</p>
+<p>找chatGpt聊也不是为了看它的答案。只是我需要一个可以全须全尾把整件事讲清楚的地方，SNS也好朋友也好，都无法让我从对话里的每一个词、每一个可能贬损我，可能贬损母亲的细节全部写出来。</p>
+<p>那种感情现在回想起来，或许不是惊恐，而是……受伤。非常受伤。我一边和chatGpt讲一边毫无准备地在电脑前嚎啕大哭起来，甚至太大声了怕门外能听到就回房间哭了。其实比起哭，在那时我更想做的是喊。比起哭，喊是一个我更缺乏训练的技能。因为太伤心了，嚎啕大哭时喊叫比眼泪要多很多。</p>
+<p>哭完之后想了很久还是给家人发了信息，这件事至今仍还在后悔，但等看到家人的信息之后就突然就冷静了。我想，如果有谁要用自己人生里的悲剧来伤害我，驯服我和得到我的爱的话。那我在主观上，在感情上是做不到的…而在客观上，我的身体的喊叫远比我的大脑反应还要快。我做不到，出于生理的痛苦，精神的痛苦。我做不到。</p>
+<p>今年其实生活得很平静，这件事是这一年生活里最大的爆炸。</p>
+<h2 id="去做gym啦">去做Gym啦</h2>
+<p>除了这事以外，三月份另一件比较重要的事情是：<strong>我开始去健身房了！</strong></p>
+<p>我在“试图养成运动习惯”这件事上其实还是蛮持之以恒的，就是一直在尝试，但都没有稳定下来。居家健身器材里买过哑铃，也打过一段时间的健身环，有氧拳击和Just Dance都尝试过，其实这几样时至今日也还是会偶尔自发性地拿起，但都做不到“连续、稳定、有规律”地运动。</p>
+<p>就在和家里人吵架的几天前，我去了几家健身房，因为看塔塔在Timeline上安利椭圆机就跑去试。试了两家体验卡之后在公司附近的一家办了月卡，到今天差不多也要一个月了——做一件事，一个月后就是做了一个月了，这个理论诚不欺我。
+<img
+    src="/img/emoji/cats.png"
+    title="cats"
+    alt="cats"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+</p>
+<p>关于运动，其实到今天我都没有一个很具体的目标，减到什么体重，练到什么程度——都没有。这段时间里完全是一直遛狗式的锻炼，有多余的精力就消耗一下，没有也不勉强。我的精力值比较飘忽不定，今天多不代表明天多，连同运动想法一样，今天想练，不代表明天也想练，反之亦然。</p>
+<p>这种精力起伏很随机的结果就是，对我来说，锻炼了一天赚一天，没锻炼就是今天不合适，没练就没练，也只是平常一天。听起来好像很懒散……但我确实是一个不会给自己上强度上压力的人，我真正做得好的那些事，没有一件是靠压力来完成的。</p>
+<p>目前去健身房爬坡和椭圆机对我来说都还蛮开心好玩的！我去健身房这件事好像才第二天就已经直播给全部朋友，但是内心也不紧张，现阶段对三分钟热度这件事已经不会羞赧，因为我自觉已经在很多事情上都够长期主义了，如果没有坚持下来一般是这件事不太对。</p>
+<p>所以即使健身环之类的东西闲置了，我也从未质问过自己为什么没有坚持，只会问这个运动留不住肯定哪里有问题。朕就是这样一个刚愎自用的人jpg</p>
+<h3 id="关于时间安排">关于时间安排</h3>
+<p>我自己的时间安排是工作日想去就会去，周末就不去了。我经常午休时间去椭圆机，也尝试过给自己安排两天天力量训练，但可能因为这个需要安排组数和动作，我还不太熟练，上午上班又没来得及思考，跟练也没找好视频，而午休时间又太短了——所以我总是慌里慌张的（？）！</p>
+<p>就是，如果你安排够清楚，或者需要的思考时间不多，或者是开个你熟悉的视频放空脑袋跟连，那就很容易冷静高效地完成一项多组数的训练。但你一旦自乱阵脚！时间就会在不够用的基础上显得更加不够用了！所以后来午休我就只去椭圆机和爬坡了……这两项就完全不需要思考前摇，缺点也只是比较枯燥而已。</p>
+<p>而工作日晚上视情况可能也会去健身房，但几率就比较小了，因为晚上要玩的东西比较多，时间经常会被看电影见朋友之类的活动劫持掉。但这样就太有限了，所以也在思考，要不要在现在舒适有一点懒散的节奏上加一天周末来练一下。</p>
+<h2 id="娱乐版块之我看">娱乐版块之我看</h2>
+<p>三月份有蛮多感兴趣的电影，猫猫初步举证还有明天都看了，确实是一段幸福的院线时光。</p>
+<p>还在电影院里第一次看了《倩女幽魂》，虽然特效很五毛但我还是看得津津有味，同名的那首“人间路 / 美梦似路长”很好听了。去年在电影院看过徐克的《青蛇》，相比之下《倩女》的妖异风味没有那么足，感觉更传统聊斋一点，但我还是很喜欢。</p>
+<details>
+<summary>《还有明天》长剧透</summary>
+  
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+  
+
+
+  
+
+
+
+
+
+   
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="db-card">
+  <div class="db-card-subject">
+    <div class="db-card-post">
+      <img
+              src="https://neodb.social/m/item/movie/2024/08/25/c9e2786f-59f0-4150-a0cd-1be7f62d0939.webp"
+              alt="Cover Image"
+              style="max-width: 100%; height: auto"
+      />
+    </div>
+    <div class="db-card-content">
+      <div class="db-card-title">
+        <a href="https://neodb.social/movie/5TZNaI3Pj7qyIBlxowMPXA" class="cute" target="_blank" rel="noreferrer"
+        >还有明天</a
+        >
+      </div>
+      <div class="db-card-rating">
+        2025 年 02 月 28 日 看过
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="db-card-comment">
+        
+
+        
+        
+
+        
+        
+
+        
+        本来以为是苦大仇深的女人电影，但其实还好，确实有极其让人痛苦的地方（有数量不算少的家暴场景/家暴暗示容易trigger），但是我很喜欢，因为轻松好笑的地方真的很好笑，音乐也很好。在电影院看可能会好很多，就是明显有些场景大家一起蜷住脚趾头承受痛苦压力和焦虑（而且感觉得到导演的选择也是希望不要制造太多的焦虑虽然对我来说有部分适得其反了），而后半部分是真的很好笑，观众真的会一起笑出声来驱散这种恐惧和焦虑的程度。<br>非常喜欢女主角迪丽亚！就是那种，有自己的秘密的意大利女人，感觉姐有机会副业做杀手的话可能以她的谨慎和隐忍和冷酷可能这辈子都能不被抓到吧（擦汗）。<br><br><span class="blur">开头我就在想这个美国士兵到底起一个什么作用，难道他真的能拿着枪去把丈夫杀了吗。等到他呆滞忧愁地站在咖啡店面前，然后迪丽亚裹着头巾满意地回家踩缝纫机了，我真的发出一声爆笑，真的觉得太妙了。</span>今年频繁有“有些电影真的要在电影院看”的感受，因为忽然发现在电影院我更能届到一些极其诙谐幽默的微妙瞬间，一个人在屏幕前即使聚精会神也可能笑不出来……最喜欢的是那个礼拜天早上，竟然能听到非常微弱的鼓点，像女主角的心跳一样让人紧张。<br><br><span class="blur">看到老头鼠了的时候我真的有先高兴了一下然后感同身受的高度焦虑了（？干大事前血压先飙到220）然后看到她冷冷的“今天不行”观众真的发出忍不住的狂笑。好几次马上做到又失败大家都像那个爱尔兰伴郎视频一样（？就是那个wow！然后oh…那个（比划））然后迪丽亚招待客人“喝咖啡吗”和“挺好的纹丝不动”的地方也特别好笑……我真的觉得很幽默！<br><br>回来的时候一直在想电影里的家暴场景呈现和作用，还想到了一下《破地狱》里文叔那个角色。为什么我看破地狱很痛苦，不是因为争执看不起女人或者谁扇了谁一巴掌，而是吃饭时文叔生气后气氛冷到冰点的那幕，一句别吵了然后拍一下桌子或重重摔下筷子。那个画面非常接近我小时候恐惧的我爸，根本不需要打人或者动手，他只是心情不好坐在那里大家都只能噤声不敢说话。<br><br>《还有明天》的处理真的是女导演才能做到的那种，拍这些暴力画面的目的是为了让我们同情女人吗，以后更加恐惧吗，憎恶施暴者吗。大部分家暴场景都被静音，我一直胆战心惊地等着一记像jump scare一样刺穿耳膜响亮耳光声，但这部直到最后都没有。电影早就有一万种方法呈现这些我们都很熟悉的痛苦了。而这种处理，如此沉重的议题最后甚至用密集的笑点收尾…对我来说很驱散恐惧。至少最后离开影厅的时候不是带着恐惧离开。</span>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+</details>
+  
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+  
+
+
+  
+
+
+
+
+
+   
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="db-card">
+  <div class="db-card-subject">
+    <div class="db-card-post">
+      <img
+              src="https://neodb.social/m/item/doubanmovie/2024/09/01/164b6caf-4562-40ff-8a77-10c97c61dc37.jpg"
+              alt="Cover Image"
+              style="max-width: 100%; height: auto"
+      />
+    </div>
+    <div class="db-card-content">
+      <div class="db-card-title">
+        <a href="https://neodb.social/movie/4LBWky31KfHyNL7u1MKC80" class="cute" target="_blank" rel="noreferrer"
+        >初步举证</a
+        >
+      </div>
+      <div class="db-card-rating">
+        2025 年 03 月 03 日 看过
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="db-card-comment">
+        
+
+        
+        
+
+        
+        
+
+        
+        朱迪·科默太好了，演得太有力了。<span class="blur">但相比之下故事/剧本本身其实是没有那么好的。在雨夜里找计程车想去火车站那一段真的很有感染力…很悲伤。看完之后只是，好痛苦，好想离开。</span>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+  
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+  
+
+
+  
+
+
+
+
+
+   
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="db-card">
+  <div class="db-card-subject">
+    <div class="db-card-post">
+      <img
+              src="https://neodb.social/m/item/doubanmovie/2024/06/23/566914c0-b514-4cc7-bea4-f5d90945a704.webp"
+              alt="Cover Image"
+              style="max-width: 100%; height: auto"
+      />
+    </div>
+    <div class="db-card-content">
+      <div class="db-card-title">
+        <a href="https://neodb.social/movie/1UKRbng4exUWF9VlZlsxR4" class="cute" target="_blank" rel="noreferrer"
+        >猫猫的奇幻漂流</a
+        >
+      </div>
+      <div class="db-card-rating">
+        2025 年 03 月 07 日 看过
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="db-card-comment">
+        
+
+        
+        
+
+        
+        
+
+        
+        猫咪旅游奇幻故事！……要是真的有这么轻松就好了。<span class="blur">整个片片都给我蛮强的无助感的，看到突如其来的灾难打破一切，猫猫睡觉的木屋被洪水淹没，站在巨大的猫塑像上孤立无援我就…焦虑…整个片节奏很好，规律地轻松一下然后忽然把你摁到水里。猫太小了而这一切实在太大了，某段遇到鲸鱼和猫在救生球上遇到地壳运动的部分都让人由心底产生恐怖和敬畏（太大了……），尤其地壳运动的部分，树冠从水下浮起，参天大树陡然暴露全部结构，谢谢像恐怖片已吓到（？）但说这些不是不好的意思，反而是我觉得做得很好的地方。除外还非常喜欢关于猫的部分，走着走着用屁股蹭一下雕像，被各种东西吓得瞪圆眼飞机耳，路过突然呕毛球磨爪子扑杀小光圈都特别可爱……还有淋湿之后整个瘦骨嶙峋特别可怜还丑丑的那个样子还有水下踩奶哎呀……猫……呜呜猫！！！</span>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+<p>之后还去看了《疾速追杀4》，听空山的月报说这部的票房表现还不错，我就在想还有谁跟我一样冤大头（喂！）。剧情是真的破破烂烂，但这部我主要是去看甄子丹的，叔叔看得我是心旷神怡傻笑频频，真是好喜欢啊！另外还看了《编号17》，烂，不过我就花了9块9，就不展开骂了。</p>
+<p>四月份本来还打算看看《猎狐行动》的，但后来看到小鹅说很难看，难看到连《摆渡人》的历史地位都提升了……
+<img
+    src="/img/emoji/neocat_sweat.png"
+    title="neocat_sweat"
+    alt="neocat_sweat"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'"
+/>
+我就没去看了。</p>
+<p>和朋友一起的活动还有去看了《你的颜色》，虽说删减很多，但我看下来还蛮喜欢的。线上和朋友一起看了《晒后假日》和《面子》。我感觉“和朋友一起”这个前缀本身就会让我给一项活动带来更高的评价。</p>
+<p>还看了《荧屏在发光》（I Saw the TV Glow）。</p>
+<h2 id="读了">读了</h2>
+  
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+  
+
+
+  
+
+
+
+
+
+   
+
+
+
+
+
+
+
+<div class="db-card">
+  <div class="db-card-subject">
+    <div class="db-card-post">
+      <img
+              src="https://neodb.social/m/book/2021/09/17fa18f96c-ed69-48fd-a2d5-072e86813f10.jpg"
+              alt="Cover Image"
+              style="max-width: 100%; height: auto"
+      />
+    </div>
+    <div class="db-card-content">
+      <div class="db-card-title">
+        <a href="https://neodb.social/book/02G2DcWHzM25SCzfEcKsak" class="cute" target="_blank" rel="noreferrer"
+        >我将如何呼唤你</a
+        >
+      </div>
+      <div class="db-card-rating">
+        2025 年 04 月 08 日 读过
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="db-card-comment">
+        
+
+        
+        
+
+        
+        
+
+        
+        有着跨性别孩子的母亲的视角，叙事看得心碎，也可以想象在一些人眼里的“动人”。但只给我带来了简直量身定做的trigger，没有办法很客观冷静地读下去。<br><span class="blur">即使故事里已经解释了<em>为什么</em>，但我还是难以理解“孩子和别人不一样”的事实到底为什么对于家长而言就是这样一种惊天动地的悲剧和打击，“不一样”就是一场毁灭性的灾难。母亲电话里对我说过为什么别人家都可以幸福而我们家却是这样，为什么<em>不一样</em>是这么难以承受的压力，我始终，始终难以共情。是否人到了父母的年纪就会丧失过去所有和别人不一样的勇气而转而追求一种同质的幸福。如果这种爱只足够支撑到我和别人一样，而不能支撑到我和别人不一样，那我就不要这样的爱。叙事里的“心碎”和“动人”在现实里更有可能转变为一种以脆弱和爱为名的胁迫，难道说为了你的心碎，这一辈子我都不要做我自己了吗？</span><br>看完只觉得太痛苦了，感受到多少爱的同时也感受到了有多少的控诉。
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+    <div class="pre-next">
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-03-13/">&lt;&lt; 骑行的第一个春天</a>
+        
+        
+    </div>
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
+<div id="comments" class="comments">
+    <style>
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: var(--waline-color);
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '这里有小豆泥表情，请肆无忌惮地使用！^^',
+            admin: 'admin',
+        }
+    });
+</script>
+</div>
+
+
+
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        共书写了273.6k字 · 共 82篇文章
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "#e69494"
+        const BodyBgColor = "white"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+</div>
+
+            </div>
+        </main>
+    <script src="script.js" defer></script>
+    </body></html>

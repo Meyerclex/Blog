@@ -64,7 +64,7 @@
           const naturalHeight = img.naturalHeight || img.height;
 
           // 如果图片大于200x200，显示alt-text
-          if (naturalWidth > 200 && naturalHeight > 200) {
+          if (!img.src.includes('/img/emoji/')) {
             const container = document.createElement('div');
             container.classList.add('image-container');
 
@@ -177,7 +177,7 @@
         const naturalHeight = img.naturalHeight || img.height;
 
         // 只为大于200x200的图片添加放大功能
-        if (naturalWidth > 200 && naturalHeight > 200) {
+        if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;

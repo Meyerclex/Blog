@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -58,7 +58,7 @@
           const naturalHeight = img.naturalHeight || img.height;
 
           
-          if (naturalWidth > 200 && naturalHeight > 200) {
+          if (!img.src.includes('/img/emoji/')) {
             const container = document.createElement('div');
             container.classList.add('image-container');
 
@@ -171,7 +171,7 @@
         const naturalHeight = img.naturalHeight || img.height;
 
         
-        if (naturalWidth > 200 && naturalHeight > 200) {
+        if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;
@@ -200,7 +200,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.155230b7000429c63a92e8f25a303a1891fcea9365598393dcb9c5249c49c995e3887b49112b14161bae6b803743aff1d01832fd91e67be65fcfde96d0175fe1.css" integrity="sha512-FVIwtwAEKcY6kujyWjA6GJH86pNlWYOT3LnFJJxJyZXjiHtJESsUFhuua4A3Q6/x0Bgy/ZHme&#43;Zfz96W0Bdf4Q==" />
+    <link rel="stylesheet" href="/css/main.e4ea017bb11e9900d50478ecec04d262cac5050626884a55dfb4c93c40067762175bb9d4d2364be9abcdd4d7653a7c06dcf20b6814cda6fbc80f0e4e4e8901da.css" integrity="sha512-5OoBe7EemQDVBHjs7ATSYsrFBQYmiEpV37TJPEAGd2IXW7nU0jZL6avN1NdlOnwG3PILaBTNpvvIDw5OTokB2g==" />
   
 
 
@@ -321,18 +321,6 @@
         <li>
             <span>2022-03-28</span>
             <a href="/posts/lcdpfragment/">《纸钞屋》：中国科学家成功破译深夜惨叫声50枚</a>
-        </li>
-        <li>
-            <span>2021-11-15</span>
-            <a href="/posts/%E8%80%81%E5%A4%A7%E6%81%B6%E6%96%97%E5%B0%8F%E7%8B%97/">《Gangster No.1》：老大恶斗小狗</a>
-        </li>
-        <li>
-            <span>2021-07-14</span>
-            <a href="/posts/%E5%85%8D%E8%B4%A3%E7%88%B1%E6%83%85/">《The Social Network》免责爱情：长毛象EM惨叫碎片</a>
-        </li>
-        <li>
-            <span>2020-08-12</span>
-            <a href="/posts/%E5%8D%A1%E6%B3%A2%E7%89%B9au%E8%84%91%E6%B4%9E/">《The Social Network》：卡波特AU下的Mardo脑洞</a>
         </li>
         
     </ul>

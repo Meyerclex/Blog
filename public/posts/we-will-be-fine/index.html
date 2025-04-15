@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -63,7 +63,7 @@
           const naturalHeight = img.naturalHeight || img.height;
 
           
-          if (naturalWidth > 200 && naturalHeight > 200) {
+          if (!img.src.includes('/img/emoji/')) {
             const container = document.createElement('div');
             container.classList.add('image-container');
 
@@ -176,7 +176,7 @@
         const naturalHeight = img.naturalHeight || img.height;
 
         
-        if (naturalWidth > 200 && naturalHeight > 200) {
+        if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;
@@ -205,7 +205,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.155230b7000429c63a92e8f25a303a1891fcea9365598393dcb9c5249c49c995e3887b49112b14161bae6b803743aff1d01832fd91e67be65fcfde96d0175fe1.css" integrity="sha512-FVIwtwAEKcY6kujyWjA6GJH86pNlWYOT3LnFJJxJyZXjiHtJESsUFhuua4A3Q6/x0Bgy/ZHme&#43;Zfz96W0Bdf4Q==" />
+    <link rel="stylesheet" href="/css/main.e4ea017bb11e9900d50478ecec04d262cac5050626884a55dfb4c93c40067762175bb9d4d2364be9abcdd4d7653a7c06dcf20b6814cda6fbc80f0e4e4e8901da.css" integrity="sha512-5OoBe7EemQDVBHjs7ATSYsrFBQYmiEpV37TJPEAGd2IXW7nU0jZL6avN1NdlOnwG3PILaBTNpvvIDw5OTokB2g==" />
   
 
 
@@ -443,10 +443,10 @@
 
     <div class="pre-next">
         
-            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/%E5%BF%83%E7%A2%8E%E7%9A%84%E5%8A%A8%E7%89%A9%E7%AC%AC%E4%BA%8C%E4%B8%AA%E9%97%AE%E9%A2%98%E7%9A%84%E7%AD%94%E6%A1%88%E5%A4%B1%E8%80%8C%E5%A4%8D%E5%BE%97%E7%9A%84%E9%87%91%E5%AD%90/">&lt;&lt; 心碎的动物、第二个问题的答案、失而复得的金子</a>
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/%E5%BF%83%E7%A2%8E%E7%9A%84%E5%8A%A8%E7%89%A9%E7%AC%AC%E4%BA%8C%E4%B8%AA%E9%97%AE%E9%A2%98%E7%9A%84%E7%AD%94%E6%A1%88%E5%A4%B1%E8%80%8C%E5%A4%8D%E5%BE%97%E7%9A%84%E9%87%91%E5%AD%90/">&lt;&lt; 心碎的动物、第二个问题的答案、失而复得的金子</a>
         
         
-            <a class="pre-next-btn bg" href="https://gregueria.icu/posts/night-city/">早上好，夜之城！ >></a>
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/night-city/">早上好，夜之城！ >></a>
         
     </div>
 
@@ -780,11 +780,7 @@
         
         
         
-        
-        
-        
-        
-        共书写了280.8k字 · 共 84篇文章
+        共书写了270k字 · 共 82篇文章
     </section>
 
     
