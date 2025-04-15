@@ -6,7 +6,14 @@
                 <img src="{{ .icon | absURL }}" alt="{{ .name }}">
             </td>
             <td id="menutable-name" style="font-weight: bold;">
+                {{ if .url }}
+                <!-- 如果有url字段，name用a标签包裹 -->
+                <a href="{{ .url | absURL }}" target="_blank" style="text-decoration: none; color: inherit;">
+                    {{ .name }}
+                </a>
+                {{ else }}
                 {{ .name }}
+                {{ end }}
             </td>
         </tr>
         <tr class="menu-content" style="display: none;">
@@ -17,5 +24,3 @@
         {{ end }}
     </table>
 </aside>
-
-

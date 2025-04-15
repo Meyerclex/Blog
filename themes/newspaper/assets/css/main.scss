@@ -1,11 +1,28 @@
 //new
-
+@font-face {
+  font-family: 'HuiwenFangsong';
+  src: url('/fonts/huiwen-fangsong.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   font-family: "Noto Sans CJK SC", "Source Han Sans SC VF", "Clear Han Serif", sans-serif;
   font-weight: normal;
   letter-spacing: 0.5px;
 }
+h1 {
+  font-family: "Huiwen-mincho", sans-serif;
+  margin-bottom: 0;
+}
 
+article time {
+  font-family: "Huiwen-mincho", sans-serif;
+  font-weight: normal;
+}
+.site-footer {
+  font-family: "Huiwen-mincho", sans-serif;
+}
 * {
   cursor: url('/cursor.png'), auto;
 }
@@ -13,6 +30,13 @@ body {
 a:hover {
   cursor: url('/cursor.png'), pointer;
 }
+#menutable td, #menutable th {
+  font-family: 'HuiwenFangsong',"Noto Sans CJK SC" !important;
+}
+
+
+
+
 
 // -------------- THEME SWITCHER -------------- //
 // 颜色变量定义 通用
@@ -272,7 +296,6 @@ html {
 }
 
 body {
-  //font-family: monospace;
   font-size: 15px;
   line-height: 1.6;
   margin: 0;
@@ -281,7 +304,6 @@ body {
 }
 
 body {
-  //font-family: "Huiwen-mincho";
   font-weight: normal;
   padding: 0 15px;
   max-width: 1200px;
@@ -310,18 +332,6 @@ body {
   padding: 8px 12px;
   line-height: 1.2;
   font-size: 90%;
-}
-
-//
-
-h1 {
-  font-family: "Huiwen-mincho", sans-serif;
-  margin-bottom: 0;
-}
-
-article time {
-  font-family: "Huiwen-mincho", sans-serif;
-  font-weight: normal;
 }
 
 .page-content h1 {
@@ -468,7 +478,6 @@ details[open] summary {
 }
 
 .site-footer {
-  font-family: "Huiwen-mincho", sans-serif;
   display: flex;
   justify-content: center;
   /* 将内容水平居中 */
@@ -811,7 +820,6 @@ del {
 #menutable td, #menutable th {
   border: 0; /* 清除单元格边框 */
   padding: 0;
-  font-family: 'Huiwen-Fangsong',"Noto Sans CJK SC" !important;
   font-display: swap;
 }
 
