@@ -44,7 +44,15 @@
       《The Social Network》：卡波特AU下的Mardo脑洞 | 再會，謝謝所有的魚
     
   </title>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -67,7 +75,7 @@
           const naturalHeight = img.naturalHeight || img.height;
 
           
-          if (naturalWidth > 200 && naturalHeight > 200) {
+          if (!img.src.includes('/img/emoji/')) {
             const container = document.createElement('div');
             container.classList.add('image-container');
 
@@ -180,7 +188,7 @@
         const naturalHeight = img.naturalHeight || img.height;
 
         
-        if (naturalWidth > 200 && naturalHeight > 200) {
+        if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;
@@ -209,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.155230b7000429c63a92e8f25a303a1891fcea9365598393dcb9c5249c49c995e3887b49112b14161bae6b803743aff1d01832fd91e67be65fcfde96d0175fe1.css" integrity="sha512-FVIwtwAEKcY6kujyWjA6GJH86pNlWYOT3LnFJJxJyZXjiHtJESsUFhuua4A3Q6/x0Bgy/ZHme&#43;Zfz96W0Bdf4Q==" />
+    <link rel="stylesheet" href="/css/main.157370fdce79328383740c16bf3339ad010efa1cd34c864561fb7672e51fdc4296a66b1bd05ebf385d912b218e454b42acdfa202c47659e5caa06fd15d1b217f.css" integrity="sha512-FXNw/c55MoODdAwWvzM5rQEO&#43;hzTTIZFYft2cuUf3EKWpmsb0F6/OF2RKyGORUtCrN&#43;iAsR2WeXKoG/RXRshfw==" />
   
 
 
@@ -803,7 +811,9 @@
         
         
         
-        共书写了280.8k字 · 共 84篇文章
+        
+        
+        共书写了287.4k字 · 共 85篇文章
     </section>
 
     
@@ -817,6 +827,7 @@
     </script>
 
 </footer>
+
 
 
 

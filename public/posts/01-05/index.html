@@ -40,7 +40,15 @@
       简明装修笔记一则 | 再會，謝謝所有的魚
     
   </title>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -205,7 +213,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.e4ea017bb11e9900d50478ecec04d262cac5050626884a55dfb4c93c40067762175bb9d4d2364be9abcdd4d7653a7c06dcf20b6814cda6fbc80f0e4e4e8901da.css" integrity="sha512-5OoBe7EemQDVBHjs7ATSYsrFBQYmiEpV37TJPEAGd2IXW7nU0jZL6avN1NdlOnwG3PILaBTNpvvIDw5OTokB2g==" />
+    <link rel="stylesheet" href="/css/main.6da79545fdc6c6f86c5b535fb2a70a754969e048a71da6c68a3a6aac749d2fcd0c7c5fc393129ea2d4c71bdffeddc780b3fbc43309b25c8abb31f7da124bc202.css" integrity="sha512-baeVRf3GxvhsW1NfsqcKdUlp4EinHabGijpqrHSdL80MfF/DkxKeotTHG9/&#43;3ceAs/vEMwmyXIq7MffaEkvCAg==" />
   
 
 
@@ -1236,7 +1244,7 @@
         
         
         
-        共书写了270k字 · 共 82篇文章
+        共书写了276.1k字 · 共 82篇文章
     </section>
 
     
@@ -1250,6 +1258,7 @@
     </script>
 
 </footer>
+
 
 
 

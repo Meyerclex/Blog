@@ -91,7 +91,7 @@ $color-mark-light: #b2d8d8;
   }
 
   details[open] summary {
-    border-bottom: 1px solid $primary-text-color;
+    border-bottom: 0px solid $primary-text-color;
   }
 
   pre, code:not(pre > code) {
@@ -142,7 +142,7 @@ $color-mark-light: #b2d8d8;
     text-shadow: 0px 0px 6px $primary-text-color;
   }
 
-  .blur:hover {
+  .blur.revealed {
     color: inherit;
     text-shadow: none;
     transition: 0.2s;
@@ -956,7 +956,9 @@ del {
 }
 
 .db-card-comment {
-  margin:10px 5px;
+  margin: 10px 5px;
+  max-height: 450px;
+  scrollbar-gutter: stable both-edges;
 }
 
 .db-card-cate {

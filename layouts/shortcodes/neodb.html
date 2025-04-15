@@ -1,4 +1,18 @@
-{{ $dbUrl := .Get 0 }} {{ $apiUrl := "https://neodb.social/api/me/shelf/item/"
+{{ $dbUrl := .Get 0 }}
+{{ $summaryText := "内容过长折叠" }}
+{{ $param1 := .Get 1 }}
+{{ $param2 := .Get 2 }}
+
+{{ $useDetails := or (eq $param1 "details") (eq $param2 "details") }}
+
+{{ if and (ne $param1 "") (ne $param1 "details") }}
+{{ $summaryText = $param1 }}
+{{ else if and (ne $param2 "") (ne $param2 "details") }}
+{{ $summaryText = $param2 }}
+{{ end }}
+
+
+{{ $apiUrl := "https://neodb.social/api/me/shelf/item/"
 }} {{ $itemUuid := "" }}
 {{ $authToken := "7NU3AsTwDZb3TM7FmsQCoLSS8L3KQHhVQ7VUfx2LgGA-11HpGGrSAiCc_g" }} <!-- Replace with your actual API token -->
 
@@ -97,16 +111,19 @@ $starCount }}
       <div class="db-card-comment">
         {{ $comment := $dbFetch.comment_text }}
 
-        <!-- Adjust the regex to allow multiline content inside >! and !< -->
         {{ $comment = replaceRE `>!(?s)(.*?)!<` (print "<span class=\"blur\">$1</span>") $comment }}
-
-        <!-- Replace newlines within the comment with <br> for proper rendering -->
         {{ $comment = replaceRE `\n` `<br>` $comment }}
 
-        <!-- Now process the comment as markdown -->
+        {{ if $useDetails }}
+        <details>
+          <summary>「 {{ $summaryText }} 」</summary>
+          {{ $comment | markdownify }}
+        </details>
+        {{ else }}
         {{ $comment | markdownify }}
-      </div>
+        {{ end }}
 
+      </div>
 
     </div>
 <!--    <div class="db-card-cate">{{ $dbFetch.item.category }}</div>-->

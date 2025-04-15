@@ -40,7 +40,15 @@
       骑行的第一个春天 | 再會，謝謝所有的魚
     
   </title>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -205,7 +213,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.80d450bf0497b471c0964da3e13853fb6195531638efb4fe579b930b38b9ebcdb4e2fcb0a7037d53b14cb725fa300d34aa6c45321ee1ed076442a19d31c237dc.css" integrity="sha512-gNRQvwSXtHHAlk2j4ThT&#43;2GVUxY477T&#43;V5uTCzi568204vywpwN9U7FMtyX6MA00qmxFMh7h7QdkQqGdMcI33A==" />
+    <link rel="stylesheet" href="/css/main.6da79545fdc6c6f86c5b535fb2a70a754969e048a71da6c68a3a6aac749d2fcd0c7c5fc393129ea2d4c71bdffeddc780b3fbc43309b25c8abb31f7da124bc202.css" integrity="sha512-baeVRf3GxvhsW1NfsqcKdUlp4EinHabGijpqrHSdL80MfF/DkxKeotTHG9/&#43;3ceAs/vEMwmyXIq7MffaEkvCAg==" />
   
 
 
@@ -366,6 +374,8 @@
         
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-03-05/">&lt;&lt; 听播客，今天听什么？</a>
         
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-04-15/">草长莺飞季节里的一些事 >></a>
         
     </div>
 
@@ -697,7 +707,9 @@
         
         
         
-        共书写了269.5k字 · 共 81篇文章
+        
+        
+        共书写了276.1k字 · 共 82篇文章
     </section>
 
     
@@ -711,6 +723,7 @@
     </script>
 
 </footer>
+
 
 
 
