@@ -38,10 +38,15 @@
 := "" }}
 
 <!-- Determine the action based on category -->
-{{ if eq $category "book" }} {{ $action = "读" }} {{ else if or (eq $category
-"tv") (eq $category "movie") }} {{ $action = "看" }} {{ else if or (eq $category
-"podcast") (eq $category "album") }} {{ $action = "听" }} {{ else if eq
-$category "game" }} {{ $action = "玩" }} {{ end }}
+{{ if eq $category "book" }}
+{{ $action = "读" }}
+{{ else if or (eq $category "tv") (eq $category "movie") (eq $category "performance") }}
+{{ $action = "看" }}
+{{ else if or (eq $category "podcast") (eq $category "album") }}
+{{ $action = "听" }}
+{{ else if eq $category "game" }}
+{{ $action = "玩" }}
+{{ end }}
 
 <!-- Determine the prefix and suffix based on shelf type -->
 {{ if eq $shelfType "wishlist" }} {{ $prefix = "想" }} {{ else if eq $shelfType
