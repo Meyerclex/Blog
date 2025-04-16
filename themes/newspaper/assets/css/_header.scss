@@ -44,7 +44,7 @@
 .underline, #header-post #nav a:hover {
   text-decoration: underline;
   /* hover 时添加下划线 */
-  text-decoration-color: $color-pink;
+  text-decoration-color: var(--color-point);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }

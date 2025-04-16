@@ -1,0 +1,64 @@
+
+// 图片排列
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;  /* 垂直排列图片和alt文本 */
+  align-items: center;     /* 确保图片和alt文本居中 */
+  width: calc(100% / 3 - 20px);  /* 每行最多三列 */
+  max-width: 100%;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  //cursor: pointer;
+}
+
+.image-container .alt-text {
+  display: block;  /* alt文本在新的一行显示 */
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 5px;
+  min-height: 20px; /* 保证alt-text区域存在即使没有文字 */
+}
+
+/* 适应不同列数 */
+.image-row.two-columns .image-container {
+  width: calc(50% - 10px);  /* 两列 */
+}
+
+.image-row.three-columns .image-container {
+  width: calc(33.33% - 10px);  /* 三列 */
+}
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.image-overlay.active {
+  display: flex;
+}
+
+.image-overlay img {
+  max-width: 80%;
+  max-height: 80%;
+}

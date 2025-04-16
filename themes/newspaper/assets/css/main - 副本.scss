@@ -1,0 +1,651 @@
+@import "fonts";
+@import "color";
+/* 主题切换按钮样式 */
+@import "theme-toggle";
+
+// -------------- THEME SWITCHER -------------- //
+// 颜色变量定义 通用
+$color-mark-dark: #83a598;
+$color-pink: #e69494;
+$link-hover: #FFD09B;
+
+// Dark theme colors
+//$bg-dark: #716457; // 薄荷巧克力背景
+//$text-dark: #F8F4E1; //
+$bg-dark: rgba(35, 18, 53, 0.78);
+$text-dark: #F8F4E1;
+$secondary-text-dark: rgba(241, 231, 209, 0.82);
+$link-dark: #B6CBBD;
+$visited-link-dark: #a359e9;
+$color-blockquote-dark: #b5b5b5;
+$bg-select-dark: rgba(152, 152, 152, 0.53);
+$color-bg-code-dark: rgba(85, 76, 76, 0.47);
+$color-point-dark: #819c81;
+$w-dark: #fff;
+$border-color-dark: rgba(251, 230, 189, 0.77);
+
+// Light theme colors
+$bg-light: #f9f7f1;
+$text-light: #38383c;
+$secondary-text-light: #666666;
+$link-light: #1a89ae;
+$visited-link-light: #921292;
+$color-blockquote-light: #466060;
+$bg-select-light: rgba(255, 239, 218, 0.6);
+$color-bg-code-light: rgba(94, 89, 89, 0.13);
+$color-point-light: #D45B587F;
+$w-light: transparent;
+$border-color-light: #38383c;
+$color-mark-light: #b2d8d8;
+
+// 主题样式定义
+@mixin theme($bg-color,
+$w-color,
+$primary-text-color,
+$secondary-text-color,
+$link-color,$visited-link-color,
+$blockquote-color,
+$color-bg-code,
+$bg-select,
+$color-point,
+$border-color,$color-mark) {
+
+  background-color: $bg-color;
+  color: $primary-text-color;
+
+  .db-card {
+    background-color: rgba($bg-color, 0.5); // 如果 $bg-color 是 rgb 值会直接工作
+  }
+
+
+  a {
+    color: $link-color;
+    &:visited {
+      color: $link-color;
+    }
+  }
+
+  details summary {
+    color: $primary-text-color;
+  }
+
+  details[open] summary {
+    border-bottom: 0px solid $primary-text-color;
+  }
+
+  pre, code:not(pre > code) {
+    background-color: $color-bg-code;
+    color: $primary-text-color;
+  }
+
+  *:target {
+    background: transparent no-repeat;
+    color: $primary-text-color;
+  }
+
+  table, th, td, .toc {
+    border: thin solid $primary-text-color;
+  }
+
+  .toc {
+    padding: 1rem;
+  }
+
+  figcaption {
+    color: $secondary-text-color;
+  }
+
+  ::selection {
+    background-color: $bg-select;
+  }
+
+  blockquote {
+    border-left: 2px solid $blockquote-color;
+    color: $secondary-text-color;
+  }
+
+  .alt-text {
+    color: $secondary-text-color;  // 使用与 blockquote 相同的颜色
+  }
+
+  mark {
+    background: linear-gradient(transparent calc(100% - 0.6em), $color-mark 0.6em) no-repeat;
+  }
+  .blur {
+    color: transparent;
+    text-shadow: 0px 0px 6px $primary-text-color;
+  }
+  .blur.revealed {
+    color: inherit;
+    text-shadow: none;
+    transition: 0.2s;
+  }
+  #header-post #nav a {
+    color: $primary-text-color;
+  }
+
+  #header-post ul li {
+    box-shadow: 2px 0 0 0 $primary-text-color;
+  }
+
+  #meow-box {
+    border: 2px solid $border-color;
+    box-shadow: 4px 4px 0 0 $color-point;
+  }
+
+  /* 瀑布流模式（手机端） */
+  @media (max-width: 768px) {
+    #meow-box {
+      border: 2px solid $border-color;
+      box-shadow: 4px 4px 0 0 $color-point;
+    }
+  }
+
+  #meow-btn {
+    background: $color-point;
+    color: $bg-light;
+  }
+  .note__item {
+    border: 2px solid $border-color;
+    box-shadow: 4px 4px 0 0 $color-point;
+  }
+
+  .note__day {
+    border-bottom: 2px solid $border-color;
+  }
+
+  ul li:before {
+    color: $primary-text-color;
+  }
+
+  .goods-info:hover {
+    text-shadow: $link-hover 1px 0 10px;
+  }
+}
+
+
+
+// Dark theme appearance
+@mixin dark-appearance {
+  @include theme($bg-dark, $w-dark, $text-dark, $secondary-text-dark, $link-dark, $visited-link-dark,  $color-blockquote-dark, $color-bg-code-dark,$bg-select-dark,$color-point-dark,$border-color-dark,$color-mark-dark);
+}
+
+// Light theme appearance
+@mixin light-appearance {
+  @include theme($bg-light, $w-light, $text-light, $secondary-text-light, $link-light, $visited-link-light,  $color-blockquote-light, $color-bg-code-light, $bg-select-light,$color-point-light,$border-color-light,$color-mark-light);
+}
+
+// 应用主题样式
+body[a="dark"] {
+  position: relative; /* 确保伪元素的定位不受其他元素影响 */
+  @include dark-appearance;
+}
+
+/* 使用伪元素创建固定背景 */
+body[a="dark"]::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image:
+          linear-gradient(rgba(31, 5, 41, 0.75), rgba(0, 0, 0, 0.85)),
+          url("/site/tumblr_7970a2312a2e235a9e506929f9d8082f_148ba81f_250.png");
+  background-repeat: repeat;
+  background-size: 100% 100%, auto;
+  z-index: -1; /* 保证背景不干扰其他元素 */
+  pointer-events: none; /* 让背景不会影响交互 */
+}
+
+
+//薄荷巧克力暗色背景
+//body[a="dark"] {
+  //background-color: #6d695c;
+  //background-image:
+  //        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  //        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  //        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  //        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)) !important;
+  //background-size: 70px 120px;
+  //@include dark-appearance;
+//}
+
+.db-card[a="dark"]{
+  background-color: transparent!important;
+}
+body[a="light"] {
+  @include light-appearance;
+  background-color: $bg-light;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.5)),
+  url("/site/bg_note_haha_1.gif");
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  //米白格子背景图
+  //background-image:
+  //        linear-gradient(rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px),
+  //        linear-gradient(90deg, rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px);
+  //background-size: 10px 10px, 10px 10px;
+}
+@media (prefers-color-scheme: dark) {
+  body[a="auto"] {
+    @include dark-appearance;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body[a="auto"] {
+    @include light-appearance;
+  }
+}
+// -------------------------------------------- //
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+
+body {
+  font-weight: normal;
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+mark {
+  background-size: 100% 100%;
+  color: inherit;
+  padding: 0 2px;
+}
+.page-content h1 {
+  font-size: 200%;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5rem;
+}
+
+p {
+  margin: 1rem 0;
+  padding: 0.1rem 0;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+#post-content li {
+  margin: 0.8rem 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-shadow: $link-hover 1px 0 10px;
+  }
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  /* Fix pre content overflowing parent without scroll bar */
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+
+code {
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+code:not(pre > code) {
+  padding: 0.1em 0.2em;
+  font-size: 90%;
+}
+
+code.has-jax {
+  -webkit-font-smoothing: antialiased;
+  background: inherit !important;
+  border: none !important;
+  font-size: 100%;
+}
+
+blockquote {
+  padding: 1rem;
+
+  p {
+    margin: 10px 5px;
+
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+  vertical-align: middle;
+  /* 图片居中 */
+  border-radius: 10px;
+}
+
+figcaption {
+  text-align: center;
+  opacity: 0.5;
+}
+
+blockquote,
+details {
+  padding: 0.5rem;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  unicode-bidi: isolate;
+}
+
+.w {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+details summary {
+  text-decoration: none;
+}
+
+details[open] summary {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#post-meta  {
+  margin: 0 0 0.3rem 0.3rem;
+  //padding: 0rem 0 0.1rem 0;
+}
+
+#post-description {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.toc {
+  padding: 1rem;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  /* 将内容水平居中 */
+  align-items: center;
+  /* 将内容垂直居中 */
+  text-align: center;
+  /* 确保文本在子元素内居中 */
+  margin-top: 2rem;
+}
+
+.posts-list-ul span {
+  margin-right: 15px
+}
+
+
+//
+
+img.float-img35 {
+  float: left;
+  width: 30%;
+  margin-right: 1em !important;
+  /* 强制覆盖 */
+  margin-bottom: 0 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* 添加阴影 */
+  border-radius: 8px;
+  /* 可选：让图片的边角稍微圆润 */
+}
+
+article img.float-img50 {
+  float: left;
+  width: 50%;
+  margin-right: 1em !important;
+  /* 强制覆盖 */
+  margin-bottom: 0.5em !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* 添加阴影 */
+  border-radius: 8px;
+  /* 可选：让图片的边角稍微圆润 */
+}
+
+//
+
+/* 页面整体容器，使用 flexbox 布局 */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  /* 内容与菜单之间的间距 */
+}
+
+/* 内容部分 */
+.content {
+  flex: 1;
+  /* 内容部分占据剩余空间 */
+}
+
+/* 菜单部分，固定右侧 */
+.menu-float {
+  flex: 0 0 50%;
+  box-sizing: border-box;
+}
+
+
+
+/* 手机端适配：布局变为单列 */
+@media (max-width: 768px) {
+  body {
+    background-image:
+            linear-gradient(rgba(73, 6, 6, 0.93), rgba(0, 0, 0, 0.95)),
+            url("/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png");
+  }
+  .main-container {
+    flex-direction: column;
+    /* 改为垂直排列 */
+    gap: 0;
+  }
+
+  .menu-float {
+    width: 100%;
+    /* 菜单占满宽度 */
+    box-shadow: none;
+    /* 去掉阴影 */
+  }
+
+  body {
+    padding: 0 5px;
+  }
+
+  .w {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
+  }
+
+  .pre-next-btn {
+    font-size: 3.5vw;
+  }
+}
+
+
+article hr {
+  width: 33%;
+  margin: 1.5em auto 1.5em auto;
+}
+
+article ol {
+  padding-left: 22px;
+}
+
+@media only screen and (max-width: 1224px) {
+  .post-toc {
+    display: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  /* 取消圆点 */
+  margin: 0;
+  /* 可选：移除默认外边距 */
+  padding: 0;
+  /* 可选：移除默认内边距 */
+}
+
+li {
+  padding: 0 0.5rem;
+  /* 可选：调整列表项的间距 */
+}
+
+ul li ul li {
+  padding: 0.4rem 1rem;
+}
+
+ul li:before {
+  content: "·";
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+ul p {
+  display: inline;
+  margin: 10px 5px;
+}
+
+.pre-next {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre-next-btn {
+  font-size: 1rem;
+  transition: font-size 0.3s ease;
+  /* 添加平滑过渡效果 */
+}
+
+@import "widget";
+
+/* photo frame style */
+
+
+.menu-column .sub-menu {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+body[a="light"] code:not(pre>code) {
+  border-radius: 4px;
+  padding: 0 4px;
+  font-family: "Clear Han Serif", sans-serif;
+}
+
+/* 整个滚动条 */
+::-webkit-scrollbar {
+  width: 12px;
+  /* 设置滚动条的宽度（竖直滚动条） */
+  height: 12px;
+  /* 设置滚动条的高度（水平滚动条） */
+}
+
+/* 滚动条的轨道（背景） */
+::-webkit-scrollbar-track {
+  background: rgba(220, 213, 207, 0.66);
+  border-radius: 10px;
+}
+
+/* 滚动条的滑块（可以拖动的部分） */
+::-webkit-scrollbar-thumb {
+  background: $color-mark-dark;
+  border: 2px solid #f1f1f1;
+}
+
+/* 滚动条滑块被鼠标悬停时的样式 */
+::-webkit-scrollbar-thumb:hover {
+  background: #91ae8d;
+  /* 鼠标悬停时滑块的颜色 */
+}
+
+
+
+/* 桌面端：2x2网格布局 */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 两列 */
+  grid-template-rows: auto auto; /* 自动行高 */
+  gap: 20px; /* 设置间距 */
+}
+
+#x4 { margin-top: 30px;}
+
+/* 手机端：调整为单列布局，并控制顺序 */
+@media (max-width: 768px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  #x3 {display: none}
+  #x2 { order: 1; }
+  #x1 { order: 2; }
+  #x3 { order: 3; }
+  #x4 { order: 4; }
+  #x5 { display: none;}
+}
+
+/* 现有的 .w 样式 */
+.w {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  position: relative; /* 使得子元素的绝对定位相对于它 */
+}
+
+@media (max-width: 768px) {
+  .w {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
+  }
+}
+
+@import "header";
+@import "pic";
+@import "neodb";
