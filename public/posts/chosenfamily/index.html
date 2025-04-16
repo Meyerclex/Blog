@@ -212,7 +212,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.4a8ff9487e7f87cde9aace1572cf78c802428a917761a85cb09142f843ce7ed836dbc95eca9d6e35fce1a419a678b5df2055b38deba555082fc179d04a354c03.css" integrity="sha512-So/5SH5/h83pqs4Vcs94yAJCipF3YahcsJFC&#43;EPOftg228leyp1uNfzhpBmmeLXfIFWzjeulVQgvwXnQSjVMAw==" />
+    <link rel="stylesheet" href="/css/main.3cd1608eb68c9343e57219e0201bae9442d74686d2ad8c0c94c3fa1ecd08a1e4141d2ca3dad0a11a5274d89202c09016c74dc1e9f53f1839c8d0e6a84a0939e7.css" integrity="sha512-PNFgjraMk0PlchngIBuulELXRobSrYwMlMP6Hs0IoeQUHSyj2tChGlJ02JICwJAWx03B6fU/GDnI0OaoSgk55w==" />
   
 
 
@@ -457,6 +457,9 @@
 <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
 <div id="comments" class="comments">
     <style>
+    :root {
+        --waline-color: unset;
+    }
     .wl-card {
         border: 0px solid #eee;
     }
@@ -555,6 +558,7 @@
     }
     body[a="dark"] .wl-panel {
         background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
     }
 
     .wl-card .wl-delete,
@@ -568,7 +572,7 @@
     }
 
     .wl-info .wl-text-number {
-        color: var(--waline-color);
+        color: unset;
         font-size: .75em;
     }
     .wl-editor, .wl-input {
