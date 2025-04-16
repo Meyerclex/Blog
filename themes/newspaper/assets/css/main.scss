@@ -6,21 +6,32 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'HuiwenMincho';
+  src: url('/fonts/Huiwenmincho-improved.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: "Noto Sans CJK SC", "Source Han Sans SC VF", "Clear Han Serif", sans-serif;
   font-weight: normal;
   letter-spacing: 0.5px;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Huiwen-mincho", sans-serif;
+  font-family: "HuiwenMincho", sans-serif;
   margin-bottom: 0;
 }
+#header-post #nav a {
+  font-family: "HuiwenMincho", sans-serif;
+}
 article time {
-  font-family: "Huiwen-mincho", sans-serif;
+  font-family: "HuiwenMincho", sans-serif;
   font-weight: normal;
 }
 .site-footer {
-  font-family: "Huiwen-mincho", sans-serif;
+  font-family: "HuiwenMincho", sans-serif;
 }
 * {
   cursor: url('/cursor.png'), auto;
@@ -324,7 +335,7 @@ body {
 
 .note__day {
   padding: 5px;
-  font: 90% "Huiwen-mincho", cursive;
+  font: 90% "HuiwenMincho", cursive;
   //border-bottom: 2px solid #111;
 }
 
@@ -945,7 +956,7 @@ del {
   margin-bottom: 3px;
   font-size: 19px;
   font-weight: bold;
-  font-family: "Huiwen-mincho", sans-serif
+  font-family: "HuiwenMincho", sans-serif
 }
 
 .db-card-title a {

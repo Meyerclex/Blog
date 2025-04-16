@@ -213,7 +213,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.6da79545fdc6c6f86c5b535fb2a70a754969e048a71da6c68a3a6aac749d2fcd0c7c5fc393129ea2d4c71bdffeddc780b3fbc43309b25c8abb31f7da124bc202.css" integrity="sha512-baeVRf3GxvhsW1NfsqcKdUlp4EinHabGijpqrHSdL80MfF/DkxKeotTHG9/&#43;3ceAs/vEMwmyXIq7MffaEkvCAg==" />
+    <link rel="stylesheet" href="/css/main.03770e685416412ba73d464b4c8ae4151e6eb9685ac09eafc8d0261579068a9de26de9850661a0191caf88a64b89b648b95829cb42f1379564d2a28167213a16.css" integrity="sha512-A3cOaFQWQSunPUZLTIrkFR5uuWhawJ6vyNAmFXkGip3ibemFBmGgGRyviKZLibZIuVgpy0LxN5Vk0qKBZyE6Fg==" />
   
 
 
@@ -489,6 +489,14 @@
          
          
         border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
     }
 
     .wl-card .wl-delete,
@@ -746,81 +754,81 @@
 
 
 
-<script>
-    ;(function () {
-        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
-        const Wording1 = "向我提问！"
-        const Wording2 = "看到就会回复 :D"
-        const TagTextColor = "#f9f7f1"
-        const TagBgColor = "#e69494"
-        const BodyBgColor = "white"
 
-        const $container = document.createElement("div")
-        const $button = document.createElement("div")
 
-        $button.innerText = Wording1
-        document.body.append($button)
 
-        $container.innerHTML += `
-    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `
-        let isOpen = false
-        let isFirst = true
-        $button.onclick = () => {
-            if (isFirst) {
-                isFirst = false
-                document.body.append($container)
-            }
-            if (!isOpen) {
-                useStyle($container, {
-                    top: "unset",
-                    bottom: "0px",
-                    visibility: "visible"
-                })
-                useStyle($button, {
-                    bottom: "400px"
-                })
-                $button.innerText = Wording2
-            } else {
-                useStyle($container, {
-                    top: "100%",
-                    bottom: "unset",
-                    visibility: "hidden"
-                })
-                useStyle($button, {
-                    bottom: "0px"
-                })
-                $button.innerText = Wording1
-            }
-            isOpen = !isOpen
-        }
-        useStyle($button, {
-            position: "fixed",
-            bottom: "0px",
-            right: "0px",
-            background: TagBgColor,
-            color: TagTextColor,
-            "font-size": "14px",
-            "border-top-left-radius": "10px",
-            padding: "5px 10px",
-            cursor: "pointer"
-        })
-        useStyle($container, {
-            position: "fixed",
-            top: "100%",
-            right: "0px",
-            width: "300px",
-            height: "400px",
-            background: BodyBgColor
-        })
 
-        function useStyle (dom, style) {
-            for (let sKey in style) {
-                dom.style[sKey] = style[sKey]
-            }
-        }
-    })()
-</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </div>
