@@ -993,11 +993,13 @@ del {
   }
   .db-card-title {
     margin: 0px 5px;
+    font-size: 95%;
   }
   .db-card-rating {
     margin: 0px 5px;
+    font-size: 85%;
   }
   .db-card-comment {
-    //font-size: calc(var(--body-font-size) * 0.7);
+    font-size: 90%;
   }
 }
