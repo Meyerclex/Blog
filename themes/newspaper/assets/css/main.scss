@@ -269,7 +269,7 @@ body[a="dark"] {
           linear-gradient(rgba(73, 6, 6, 0.8), rgba(0, 0, 0, 0.85)),
   url("/site/tumblr_fd836fc0f7a7df1b1a0c22e19c84f470_d3f728e1_250.png");
   background-repeat: repeat;
-  background-size: auto;
+  background-size: 100% 100%, auto;
   background-attachment: fixed;
   //background-color: #6d695c;
   //background-image:
@@ -280,6 +280,7 @@ body[a="dark"] {
   //background-size: 70px 120px;
   @include dark-appearance;
 }
+
 .db-card[a="dark"]{
   background-color: transparent!important;
 }
@@ -568,6 +569,11 @@ article img.float-img50 {
 
 /* 手机端适配：布局变为单列 */
 @media (max-width: 768px) {
+    body[a="dark"] {
+      background-attachment: scroll; /* 避免部分浏览器 fixed 不生效或导致卡顿 */
+      background-size: 100% 100vh, auto; /* 保证渐变占满整个屏幕高度 */
+      background-repeat: no-repeat, repeat; /* 渐变部分只渲染一次 */
+    }
   .main-container {
     flex-direction: column;
     /* 改为垂直排列 */
