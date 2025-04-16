@@ -569,11 +569,6 @@ article img.float-img50 {
 
 /* 手机端适配：布局变为单列 */
 @media (max-width: 768px) {
-    body[a="dark"] {
-      background-attachment: scroll; /* 避免部分浏览器 fixed 不生效或导致卡顿 */
-      background-size: 100% 100vh, auto; /* 保证渐变占满整个屏幕高度 */
-      background-repeat: no-repeat, repeat; /* 渐变部分只渲染一次 */
-    }
   .main-container {
     flex-direction: column;
     /* 改为垂直排列 */
