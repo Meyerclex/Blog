@@ -55,7 +55,7 @@ $link-hover: #FFD09B;
 
 // Dark theme colors
 //$bg-dark: #716457; // 薄荷巧克力背景
-$bg-dark: rgb(73, 20, 3);
+$bg-dark: rgba(35, 18, 53, 0.78);
 $text-dark: #F8F4E1;
 $secondary-text-dark: rgba(241, 231, 209, 0.82);
 $link-dark: #B6CBBD;
@@ -266,8 +266,8 @@ $color-mark-light: #b2d8d8;
 // 应用主题样式
 body[a="dark"] {
   background-image:
-          linear-gradient(rgba(73, 6, 6, 0.8), rgba(0, 0, 0, 0.85)),
-  url("/site/tumblr_fd836fc0f7a7df1b1a0c22e19c84f470_d3f728e1_250.png");
+          linear-gradient(rgba(31, 5, 41, 0.6), rgba(0, 0, 0, 0.85)),
+  url("/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png");
   background-repeat: repeat;
   background-size: 100% 100%, auto;
   background-attachment: fixed;
@@ -572,7 +572,7 @@ article img.float-img50 {
   body {
     background-image:
             linear-gradient(rgba(73, 6, 6, 0.93), rgba(0, 0, 0, 0.95)),
-            url("/site/tumblr_fd836fc0f7a7df1b1a0c22e19c84f470_d3f728e1_250.png");
+            url("/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png");
   }
   .main-container {
     flex-direction: column;
