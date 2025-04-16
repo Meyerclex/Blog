@@ -742,6 +742,9 @@
 <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
 <div id="comments" class="comments">
     <style>
+    :root {
+        --waline-color: unset;
+    }
     .wl-card {
         border: 0px solid #eee;
     }
@@ -840,6 +843,7 @@
     }
     body[a="dark"] .wl-panel {
         background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
     }
 
     .wl-card .wl-delete,
@@ -853,7 +857,7 @@
     }
 
     .wl-info .wl-text-number {
-        color: var(--waline-color);
+        color: unset;
         font-size: .75em;
     }
     .wl-editor, .wl-input {
