@@ -26,8 +26,8 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 
 - **April 2025**
 
-![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/April-2025-light.png) 
-![魔女之家](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/April-2025-dark.png)
+![](/theme-archive/April-2025-light.png) 
+![魔女之家](/theme-archive/April-2025-dark.png)
 
 <br>
 
@@ -39,8 +39,8 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 
 </div>
 
-![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/Jan-2025-light.jpg) 
-![薄荷巧克力](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/Jan-2025-dark.jpeg)
+![](/theme-archive/Jan-2025-light.jpg) 
+![薄荷巧克力](/theme-archive/Jan-2025-dark.jpeg)
 
 <br>
 
@@ -52,8 +52,8 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 
 </div>
 
-![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/11/ce5b259b20a77a938ba2aae7db9c114a.png)
-![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2024/11/f48cca3e7a98345be971a6b24eecdd70.png)
+![](/theme-archive/November-2024-1.png)
+![](/theme-archive/November-2024-2.png)
 
 <br>
 
@@ -65,7 +65,7 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 
 </div>
 
-![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/Dec-2022-dark.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/Dec-2022-light.png)
+![](/theme-archive/Dec-2022-dark.png) ![](/theme-archive/Dec-2022-light.png)
 
 <br>
 
@@ -80,7 +80,7 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 
 </div>
 
-![Stack](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/luna.png) ![Luna](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/theme-archive/stack.png)
+![Stack](/theme-archive/luna.png) ![Luna](/theme-archive/stack.png)
 
 </details>
 
