@@ -569,11 +569,17 @@ article img.float-img50 {
 
 /* 手机端适配：布局变为单列 */
 @media (max-width: 768px) {
+  body {
+    background-image:
+            linear-gradient(rgba(73, 6, 6, 0.93), rgba(0, 0, 0, 0.95)),
+            url("/site/tumblr_fd836fc0f7a7df1b1a0c22e19c84f470_d3f728e1_250.png");
+  }
   .main-container {
     flex-direction: column;
     /* 改为垂直排列 */
     gap: 0;
   }
+
   .menu-float {
     width: 100%;
     /* 菜单占满宽度 */
