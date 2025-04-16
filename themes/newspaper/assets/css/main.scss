@@ -54,7 +54,8 @@ $color-pink: #e69494;
 $link-hover: #FFD09B;
 
 // Dark theme colors
-$bg-dark: #716457;
+//$bg-dark: #716457; // 薄荷巧克力背景
+$bg-dark: rgb(73, 20, 3);
 $text-dark: #F8F4E1;
 $secondary-text-dark: rgba(241, 231, 209, 0.82);
 $link-dark: #B6CBBD;
@@ -264,13 +265,19 @@ $color-mark-light: #b2d8d8;
 
 // 应用主题样式
 body[a="dark"] {
-  background-color: #6d695c;
   background-image:
-          repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-          repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-          linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-          linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)) !important;
-  background-size: 70px 120px;
+          linear-gradient(rgba(73, 6, 6, 0.8), rgba(0, 0, 0, 0.85)),
+  url("/site/tumblr_fd836fc0f7a7df1b1a0c22e19c84f470_d3f728e1_250.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  //background-color: #6d695c;
+  //background-image:
+  //        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  //        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  //        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  //        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)) !important;
+  //background-size: 70px 120px;
   @include dark-appearance;
 }
 .db-card[a="dark"]{
