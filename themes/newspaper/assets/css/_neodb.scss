@@ -4,6 +4,7 @@
   margin: 0.5rem;
   border-radius: 7px;
   padding: 5px;
+  background-color: var(--neodb-card-color); // 或者拆成 RGB 变量
 }
 
 .db-card-subject {

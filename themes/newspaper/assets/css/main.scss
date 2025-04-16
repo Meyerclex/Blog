@@ -18,7 +18,9 @@
   --color-mark: #7caaaa;
   --link-hover: #FFD09B;
   --neodb-card-color: rgba(249, 247, 241, 0.7);
-  --btn: rgba(244, 219, 159, 0.85);
+  --btn: rgba(124, 170, 170, 0.72);
+  --btn-hover: rgba(66, 103, 103, 0.72);
+  --mark:rgba(255, 255, 147, 0.6);
 }
 
 [a="dark"] {
@@ -35,17 +37,15 @@
   --border-color: rgba(251, 230, 189, 0.77);
   --color-mark: #83a598;
   --neodb-card-color: rgba(35, 18, 53, 0.65);
+  --btn: rgba(159, 122, 161, 0.75);
+  --btn-hover: rgb(109, 81, 131);
+  --mark: rgba(230, 164, 43, 0.49);
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
-
-.db-card {
-  background-color: var(--bg-color); // 或者拆成 RGB 变量
-}
-
 a {
   color: var(--link-color);
   &:visited {
@@ -97,7 +97,7 @@ blockquote {
 }
 
 mark {
-  background: linear-gradient(transparent calc(100% - 0.6em), var(--color-mark) 0.6em) no-repeat;
+  background: var(--mark);
 }
 
 .blur {
@@ -540,32 +540,25 @@ body[a="light"] code:not(pre>code) {
 
 /* 整个滚动条 */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
   /* 设置滚动条的宽度（竖直滚动条） */
-  height: 12px;
+  height: 10px;
   /* 设置滚动条的高度（水平滚动条） */
 }
-
 /* 滚动条的轨道（背景） */
 ::-webkit-scrollbar-track {
-  background: rgba(220, 213, 207, 0.66);
-  border-radius: 10px;
+  background: var(--bg-color);
+  //border-radius: 10px;
 }
-
 /* 滚动条的滑块（可以拖动的部分） */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-mark);
-  border: 2px solid #f1f1f1;
+  background: var(--btn);
 }
-
 /* 滚动条滑块被鼠标悬停时的样式 */
 ::-webkit-scrollbar-thumb:hover {
-  background: #91ae8d;
+  background: var(--btn-hover);
   /* 鼠标悬停时滑块的颜色 */
 }
-
-
-
 /* 桌面端：2x2网格布局 */
 .grid-container {
   display: grid;
