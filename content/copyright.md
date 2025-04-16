@@ -17,5 +17,9 @@ All rights reserved.
 
 **💫 使用素材鸣谢 Resource Credit**
 
-- [「素材屋405番地」](http://sozaiya405.chu.jp/405/) ![](/site/sozaiya405_6.gif)
+- [「素材屋405番地」](http://sozaiya405.chu.jp/405/) 
 - [bg by cairovercoat](http://cairovercoat.tumblr.com/tagged/pixel+pattern)
+
+
+
+

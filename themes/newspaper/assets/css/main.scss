@@ -1,5 +1,5 @@
 @import "fonts";
-@import "color";
+@import "shortcode";
 @import "theme-toggle";
 
 :root {
@@ -487,6 +487,15 @@ ul {
   /* 可选：移除默认外边距 */
   padding: 0;
   /* 可选：移除默认内边距 */
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 0em;
+  margin-block-end: 1em;
+  padding-inline-start: 20px;
+  unicode-bidi: isolate;
 }
 
 li {
