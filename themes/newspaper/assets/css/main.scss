@@ -55,6 +55,7 @@ $link-hover: #FFD09B;
 
 // Dark theme colors
 //$bg-dark: #716457; // 薄荷巧克力背景
+//$text-dark: #F8F4E1; //
 $bg-dark: rgba(35, 18, 53, 0.78);
 $text-dark: #F8F4E1;
 $secondary-text-dark: rgba(241, 231, 209, 0.82);
@@ -279,7 +280,7 @@ body[a="dark"]::before {
   height: 100vh;
   background-image:
           linear-gradient(rgba(31, 5, 41, 0.75), rgba(0, 0, 0, 0.85)),
-          url("/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png");
+          url("/site/tumblr_7970a2312a2e235a9e506929f9d8082f_148ba81f_250.png");
   background-repeat: repeat;
   background-size: 100% 100%, auto;
   z-index: -1; /* 保证背景不干扰其他元素 */
@@ -763,14 +764,8 @@ body[a="light"] code:not(pre>code) {
 
 /* 滚动条滑块被鼠标悬停时的样式 */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #91ae8d;
   /* 鼠标悬停时滑块的颜色 */
-}
-
-/* 可选：滚动条角落的部分 */
-::-webkit-scrollbar-corner {
-  background: #f1f1f1;
-  /* 设置滚动条角落的背景颜色 */
 }
 
 @import 'header';
