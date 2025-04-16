@@ -265,12 +265,30 @@ $color-mark-light: #b2d8d8;
 
 // 应用主题样式
 body[a="dark"] {
+  position: relative; /* 确保伪元素的定位不受其他元素影响 */
+  @include dark-appearance;
+}
+
+/* 使用伪元素创建固定背景 */
+body[a="dark"]::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image:
           linear-gradient(rgba(31, 5, 41, 0.75), rgba(0, 0, 0, 0.85)),
-  url("/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png");
+          url("/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png");
   background-repeat: repeat;
   background-size: 100% 100%, auto;
-  background-attachment: fixed;
+  z-index: -1; /* 保证背景不干扰其他元素 */
+  pointer-events: none; /* 让背景不会影响交互 */
+}
+
+
+//薄荷巧克力暗色背景
+//body[a="dark"] {
   //background-color: #6d695c;
   //background-image:
   //        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
@@ -278,8 +296,8 @@ body[a="dark"] {
   //        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
   //        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)) !important;
   //background-size: 70px 120px;
-  @include dark-appearance;
-}
+  //@include dark-appearance;
+//}
 
 .db-card[a="dark"]{
   background-color: transparent!important;
