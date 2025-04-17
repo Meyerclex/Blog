@@ -39,6 +39,7 @@
       Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -48,112 +49,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
 
-          
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.style.width = '100%';
 
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
 
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
 
-            container.appendChild(altTextElement);
 
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
 
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
 
-          let hasAltText = false; 
 
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
 
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
 
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
 
-            
-            imageRow.appendChild(container);
-          });
 
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
 
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
     });
   </script>
 
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -212,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.de4f43b0d920be7dc56f17d12fa8ccc63f2b9ba63d57db7eb229821f4c59ae68bc15cc2eebe9c14211bfdf287855e7148f98796f7d5d58cb4227a9bd4cace974.css" integrity="sha512-3k9DsNkgvn3FbxfRL6jMxj8rm6Y9V9t&#43;simCH0xZrmi8Fcwu6&#43;nBQhG/3yh4VecUj5h5b31dWMtCJ6m9TKzpdA==" />
+    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
   
 
 
@@ -329,7 +334,7 @@
     <div id="post-meta">
         <time datetime="2022-04-20 00:00:00 &#43;0000 UTC">
             2022-04-20
-            <span> ‧ 1953</span>
+            <span> ‧ 1977</span>
             <span>words</span>
 
 
@@ -369,7 +374,11 @@
 <p>但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。</p>
 <p>事实上 Checker 插件似乎是能够做到这个功能的，我后来在他们的帮助页面找到了这方面的内容：<a href="https://jasonsavard.com/wiki/Check_mail_from_other_accounts_or_using_POP">Check mail from other accounts or using POP</a>，但当时我并不知道。</p>
 <p>我后来选用了另一个办法，在邮箱设置里面我看到了<strong>查收其他帐号的邮件</strong>：这似乎就是我想要的，用我现有的 Gmail 邮箱来收网易邮箱的邮件。</p>
-<img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png"><p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p>
+
+
+<img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png" alt="" loading="lazy" />
+
+<p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p>
 <ol>
 <li>跑去<code>被查收的邮箱</code>的网页里找到<code>设置</code>。</li>
 <li>找到<code>开启POP3/SMTP</code>相关的选项，打开它。这时多半需要你的手机发送一个验证码什么的。开启后，如果设置中有<code>授权密码管理</code>（在 QQ 邮箱中叫<code>授权码</code>），请新增一个密码。往往会给你一个十六位的乱码，它只会出现一次，请把它背下来，或者记在你的<code>password.txt</code>中，事实上我感到这辈子都不需要再看它们第二眼，所以我复制了下来就关掉了。</li>
@@ -392,7 +401,12 @@
 <p>总而言之，到这一步，我们已经可以用 Gmail 邮箱来查看 QQ 邮箱、网易邮箱和 Outlook 的垃圾邮件，并且用它来发送更多。当然，反过来也一样。至于 Gmail 删除网易的邮件的操作是否会同步到网易中，我还没有尝试，也许可以，也许不行。我已经不在乎了，在我心中，网易邮箱不再是一个具体的产品，只是我 Gmail 邮箱中一个微不足道的标签（冷淡.jpg）。</p>
 <p>如果有用其他邮箱来发件的需求，还可以在<code>用这个地址发送邮件</code>中添加它，相比前者，这个要容易许多，只需要发一个验证邮件，点击链接即可完成设置。</p>
 <p>于是我终于摆脱掉了网易邮箱大师 APP 和要点开 QQ、打开不同网页去看一封邮件的苦恼，实现了文章开头的构想：从此打扰我的只有 Checker Plugin。</p>
-<img alt="设置好“用这个地址发送邮件”之后发新邮件时的样子" src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png"><p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p>
+
+
+<img src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png" alt="设置好“用这个地址发送邮件”之后发新邮件时的样子" loading="lazy" />
+<span class="alt-text">设置好“用这个地址发送邮件”之后发新邮件时的样子</span>
+
+<p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p>
 <blockquote>
 <p>《送东阳马生序》：每假借于藏书之家，手自笔录，计日以还。</p>
 </blockquote>
@@ -757,7 +771,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

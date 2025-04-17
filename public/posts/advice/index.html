@@ -39,6 +39,7 @@
       关于打破量子复合叠加态生活的建议 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -48,112 +49,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
 
-          
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.style.width = '100%';
 
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
 
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
 
-            container.appendChild(altTextElement);
 
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
 
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
 
-          let hasAltText = false; 
 
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
 
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
 
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
 
-            
-            imageRow.appendChild(container);
-          });
 
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
 
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
     });
   </script>
 
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -212,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.de4f43b0d920be7dc56f17d12fa8ccc63f2b9ba63d57db7eb229821f4c59ae68bc15cc2eebe9c14211bfdf287855e7148f98796f7d5d58cb4227a9bd4cace974.css" integrity="sha512-3k9DsNkgvn3FbxfRL6jMxj8rm6Y9V9t&#43;simCH0xZrmi8Fcwu6&#43;nBQhG/3yh4VecUj5h5b31dWMtCJ6m9TKzpdA==" />
+    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
   
 
 
@@ -329,7 +334,7 @@
     <div id="post-meta">
         <time datetime="2022-03-18 00:00:00 &#43;0000 UTC">
             2022-03-18
-            <span> ‧ 2888</span>
+            <span> ‧ 2890</span>
             <span>words</span>
 
 
@@ -401,7 +406,12 @@
 <p>在写之前我对打破量子复合叠加态没有任何头绪，在写作以后，叠加态的我突然从我身上消失，多个平行宇宙中都做着同样事件的我已经不是我。这一瞬间我成为唯一态，具体这个过程是怎么实现的……就是这样。那样。然后物理是一种魔法，应该懂了吧？</p>
 <br>
 <p>视听生活的另一大事是我开始听《蒋勋细说红楼梦》，它似乎是一个讲课的音频，两集讲红楼的一个回合，一集一小时。小学看红楼的我绝没有想到十年后红楼于我主要是起到烂梗精神家园的作用：（felt sorry for my 烂梗。PS：哥弟是我 CP 的代称可是一旦解释就不好笑了啦 😫）</p>
-<img alt="烂梗" src="https://s2.loli.net/2022/03/18/1or4evRdhBxMO2G.png"><p>其实当时究竟从《红楼梦》里读到了什么，我已经记不太清楚了，我读它的时候似乎还没有黛玉年纪大。但过了很久，许多名字，许多情节，经过十年语文学习的教化，几乎耳熟能详，我并不能够分辨它们是源于那个遥远时代的故事还是源于我从各种文本里看来的边角料。</p>
+
+
+<img src="https://s2.loli.net/2022/03/18/1or4evRdhBxMO2G.png" alt="烂梗" loading="lazy" />
+<span class="alt-text">烂梗</span>
+
+<p>其实当时究竟从《红楼梦》里读到了什么，我已经记不太清楚了，我读它的时候似乎还没有黛玉年纪大。但过了很久，许多名字，许多情节，经过十年语文学习的教化，几乎耳熟能详，我并不能够分辨它们是源于那个遥远时代的故事还是源于我从各种文本里看来的边角料。</p>
 <p>这个音频很好听，我走路在听，骑车在听，洗澡在听。因为每一回都讲得很生动很有趣，因而不构成叠加态。不过在听完以前仍不能下定论——我是谨慎的。</p>
 <p>指南写至此处，心情畅快许多。我与量子复合叠加态生活的打架往往三局两败，这是唯一胜出的那局。希望大家都能打赢叠加态，下一集再见。</p>
 
@@ -764,7 +774,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

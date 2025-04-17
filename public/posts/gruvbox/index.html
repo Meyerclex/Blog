@@ -39,6 +39,7 @@
       换上秋冬色系新主题 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -48,112 +49,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
 
-          
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.style.width = '100%';
 
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
 
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
 
-            container.appendChild(altTextElement);
 
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
 
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
 
-          let hasAltText = false; 
 
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
 
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
 
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
 
-            
-            imageRow.appendChild(container);
-          });
 
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
 
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
     });
   </script>
 
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -212,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.de4f43b0d920be7dc56f17d12fa8ccc63f2b9ba63d57db7eb229821f4c59ae68bc15cc2eebe9c14211bfdf287855e7148f98796f7d5d58cb4227a9bd4cace974.css" integrity="sha512-3k9DsNkgvn3FbxfRL6jMxj8rm6Y9V9t&#43;simCH0xZrmi8Fcwu6&#43;nBQhG/3yh4VecUj5h5b31dWMtCJ6m9TKzpdA==" />
+    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
   
 
 
@@ -731,7 +736,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

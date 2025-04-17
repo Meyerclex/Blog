@@ -39,6 +39,7 @@
       换回旧主题，闪闪惹人爱 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -48,112 +49,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
 
-          
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.style.width = '100%';
 
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
 
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
 
-            container.appendChild(altTextElement);
 
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
 
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
 
-          let hasAltText = false; 
 
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
 
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
 
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
 
-            
-            imageRow.appendChild(container);
-          });
 
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
 
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
     });
   </script>
 
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -212,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.de4f43b0d920be7dc56f17d12fa8ccc63f2b9ba63d57db7eb229821f4c59ae68bc15cc2eebe9c14211bfdf287855e7148f98796f7d5d58cb4227a9bd4cace974.css" integrity="sha512-3k9DsNkgvn3FbxfRL6jMxj8rm6Y9V9t&#43;simCH0xZrmi8Fcwu6&#43;nBQhG/3yh4VecUj5h5b31dWMtCJ6m9TKzpdA==" />
+    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
   
 
 
@@ -329,7 +334,7 @@
     <div id="post-meta">
         <time datetime="2022-09-10 00:00:00 &#43;0000 UTC">
             2022-09-10
-            <span> ‧ 954</span>
+            <span> ‧ 956</span>
             <span>words</span>
 
 
@@ -368,9 +373,23 @@
 <p>旧的Luna主题漂亮美貌且功能齐全，可惜这主题用起来……确实问题很多且笨重。并且前段时间收到好几次站点打不开的反馈，我在Timeline上向黑客部门反馈了二十余次，无人应答，因此一直没有排查出问题，由于主站和子站点除了主题以外其他域名设置都是一致的，疑心是不是博客主题问题导致打不开，尽管我也觉得这怎么可能呢？再怎么怀疑也不应该怀疑到主题头上吧！</p>
 <p>可是事情就是这么发生了，我的问题排查能力就是在这个水平了，再说了一个主题用久了就是很想换嘛！所以我决定换主题看看会不会有所改善。</p>
 <p>不过在我在改主题的时随手查了一下邮箱，突然发现：</p>
-<img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220911005645.png"><p>诶，哈哈哈，原来Vercel一直给我狂发邮件说我域名没设置好啊，一直以为是广告邮件……所以问题其实出在这里吧！！！</p>
+
+
+<img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220911005645.png" alt="" loading="lazy" />
+
+<p>诶，哈哈哈，原来Vercel一直给我狂发邮件说我域名没设置好啊，一直以为是广告邮件……所以问题其实出在这里吧！！！</p>
 <p>不过主题换都换了，本次改主题改得非常开心。请看：</p>
-<p><img alt="Stack" src="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/luna.png"> <img alt="Luna" src="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/stack.png"></p>
+<p>
+
+<img src="luna.png" alt="Stack" loading="lazy" />
+<span class="alt-text">Stack</span>
+
+ 
+
+<img src="stack.png" alt="Luna" loading="lazy" />
+<span class="alt-text">Luna</span>
+
+</p>
 <p>找了一圈主题，最终还是选了功能齐全Stack（主要还是方便，因为之前就用过所以博客文件也还没删！），马上开始磨刀霍霍一顿乱改，把主题的层层叠叠的三栏结构改成了单栏，改的过程中忽然意识到人家本身就是美丽的层叠卡片式主题——我到底在干嘛啊！</p>
 <p>总而言之，一股“我偏要勉强”的信念让我走到了现在。主要进行了以下修改：</p>
 <ol>
@@ -751,7 +770,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

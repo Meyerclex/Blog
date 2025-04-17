@@ -39,6 +39,7 @@
       死亡的拟态色泽璀璨 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -48,112 +49,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
 
-          
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.style.width = '100%';
 
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
 
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
 
-            container.appendChild(altTextElement);
 
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
 
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
 
-          let hasAltText = false; 
 
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
 
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
 
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
 
-            
-            imageRow.appendChild(container);
-          });
 
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
 
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
     });
   </script>
 
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -212,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.de4f43b0d920be7dc56f17d12fa8ccc63f2b9ba63d57db7eb229821f4c59ae68bc15cc2eebe9c14211bfdf287855e7148f98796f7d5d58cb4227a9bd4cace974.css" integrity="sha512-3k9DsNkgvn3FbxfRL6jMxj8rm6Y9V9t&#43;simCH0xZrmi8Fcwu6&#43;nBQhG/3yh4VecUj5h5b31dWMtCJ6m9TKzpdA==" />
+    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
   
 
 
@@ -329,7 +334,7 @@
     <div id="post-meta">
         <time datetime="2022-06-29 00:00:00 &#43;0000 UTC">
             2022-06-29
-            <span> ‧ 3401</span>
+            <span> ‧ 3432</span>
             <span>words</span>
 
 
@@ -404,19 +409,58 @@
 <p>其实我还没打完《巫师 3》，这游戏我隔三岔五打开玩半个小时，两周都未必跑得完一个支线任务，但也没断过。可总归怵了这种流程超长的游戏，因而夏促选了些小游戏。其实这部分原本想独立篇章，可又觉得没有那么大的参考意义，再者我喜欢把事情一口气说完，所以就算了。这次夏促购物车如下：</p>
 <h3 id="ravenous-devils">Ravenous Devils</h3>
 <p>一个杀人夫妻店模拟经营类游戏，经营模式是这样的：丈夫二楼开杀人裁缝店，尸体通过暗门丢到负一楼，妻子在负一楼做好了人肉派，送到一楼餐厅去卖。就猎奇心理买了下来，玩了玩觉得就蛮好笑的。玩了两个小时，手柄不太玩得来，而我的鼠标有点坏了所以搁置没玩下去。其实游戏机制有点问题，但因为我不是太在乎这些只要让我把时间杀掉就好了。</p>
-<img alt="随便截了一张感受一下游戏的美术风格" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220625002330_1.jpg"><h3 id="travellers-rest-旅者之憩">Travellers Rest 旅者之憩</h3>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220625002330_1.jpg" alt="随便截了一张感受一下游戏的美术风格" loading="lazy" />
+<span class="alt-text">随便截了一张感受一下游戏的美术风格</span>
+
+<h3 id="travellers-rest-旅者之憩">Travellers Rest 旅者之憩</h3>
 <p>也玩了两个小时，是开小酒馆的模拟经营，除了随时可以赶客关店以外暂时没有玩出什么出彩的地方。另外，一个猫水盆子卖 20 银币也太贵了吧！</p>
-<img alt="《旅者之憩》" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220620230655_1.jpg"><h3 id="the-crown-of-leaves">The Crown of Leaves</h3>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220620230655_1.jpg" alt="《旅者之憩》" loading="lazy" />
+<span class="alt-text">《旅者之憩》</span>
+
+<h3 id="the-crown-of-leaves">The Crown of Leaves</h3>
 <p>连夜玩了五个小时，在玩之前我还想不就是猫猫狗狗什么的嘛我见得多了——玩了之后，我：这世界上只有两种人，一种是 Furry 控，另一种是暂时还没发现自己是 Furry 控的 Furry 控……这是款视觉小说来着……视觉小说重要的一般是小说吧可这视觉也太漂亮了！</p>
 <p>这游戏目前只做了两章，有民间翻译无官方中文（民间汉化压缩包需要密码而我实在解不开）。第一章靠蒙蒙猜猜还蛮好看懂的，第二章解密部分就有点吃力了，一些神秘学，一些谜题，一些可爱迷人的动物。没有办法介绍剧情，我是一边玩一边截图一边流口水……真好呀。</p>
-<p><img alt="左下角就是主角！" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626010753_1.jpg"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626001948_1.jpg"></p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/21.jpg"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626003621_1.jpg"></p>
+<p>
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626010753_1.jpg" alt="左下角就是主角！" loading="lazy" />
+<span class="alt-text">左下角就是主角！</span>
+
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626001948_1.jpg" alt="" loading="lazy" />
+
+</p>
+<p>
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/21.jpg" alt="" loading="lazy" />
+
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626003621_1.jpg" alt="" loading="lazy" />
+
+</p>
 <h3 id="firewatch">Firewatch</h3>
 <p>坚持了不到两个小时晕头转向整个人如同坐了两个小时公交车且是最后一排。很美的风景但因为本人的大巴游客视角口含晕车片无法欣赏，据说是很好的文本，但正在考虑退款。</p>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/2.jpg"><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/1.jpg"></p>
+<p>
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/2.jpg" alt="" loading="lazy" />
+
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/1.jpg" alt="" loading="lazy" />
+
+</p>
 <h3 id="逆转裁判-phoenix-wright-ace-attorney-trilogy">逆转裁判 Phoenix Wright: Ace Attorney Trilogy</h3>
 <p>鼎鼎有名嘛所以就买了！只玩了一个章节没有发言权！可是角色蛮可爱的，所以接下来应该会主要打这个。</p>
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220619220035_1.jpg"><detail>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220619220035_1.jpg" alt="" loading="lazy" />
+
+<detail>
 <summary>
 📑清单：买了还没有玩的，无参考意义所以折叠
 </summary>
@@ -792,7 +836,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

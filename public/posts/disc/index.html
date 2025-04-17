@@ -39,6 +39,7 @@
       而为什么我选择了月经盘 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -48,112 +49,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
 
-          
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.style.width = '100%';
 
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
 
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
 
-            container.appendChild(altTextElement);
 
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
 
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
 
-          let hasAltText = false; 
 
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
 
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
 
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
 
-            
-            imageRow.appendChild(container);
-          });
 
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
 
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
     });
   </script>
 
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -212,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.de4f43b0d920be7dc56f17d12fa8ccc63f2b9ba63d57db7eb229821f4c59ae68bc15cc2eebe9c14211bfdf287855e7148f98796f7d5d58cb4227a9bd4cace974.css" integrity="sha512-3k9DsNkgvn3FbxfRL6jMxj8rm6Y9V9t&#43;simCH0xZrmi8Fcwu6&#43;nBQhG/3yh4VecUj5h5b31dWMtCJ6m9TKzpdA==" />
+    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
   
 
 
@@ -378,7 +383,11 @@
 <p>月经这件事情本身就足够痛苦，还要持续性地花这么多的钱，花比以往更多的钱，这让我很愤怒。</p>
 <p>我不打算再用棉条了。并开始转而投向新的月经产品，在经过一个月的使用后，我向您推荐：<strong>月经盘</strong>。</p>
 <p>月经盘也叫月经碟，是置入式的月经产品。大家也许更为熟悉的可重复使用的置入式产品是<strong>月经杯</strong>，它的形状类似郁金香，从外观上来说月经盘的直径更大，类似半圆。如果你也是此前从未使用过这种可复用月经产品的新选手，我会在后文中谈及这两个产品的区别，以及我选择月经盘的理由。</p>
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/7-1.png"><p><strong>对比图转载自<a href="https://goodmoonmood.com/what-is-menstrual-disc/">谷慕慕</a></strong>，这篇是非常棒的科普文章，配有很多更加直观的图片。相比之下，本篇会谈及更多个人感受。</p>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/7-1.png" alt="" loading="lazy" />
+
+<p><strong>对比图转载自<a href="https://goodmoonmood.com/what-is-menstrual-disc/">谷慕慕</a></strong>，这篇是非常棒的科普文章，配有很多更加直观的图片。相比之下，本篇会谈及更多个人感受。</p>
 <h2 id="使用原理">使用原理</h2>
 <p>月经盘与月经杯都是收集式的经期产品，医用硅胶材质，合理保存后可以重复使用多年。</p>
 <p>与棉条不同，它只做到体内储存，而非吸收，容器置入体内后依然维持一种近乎真空的环境，于是经血并不会氧化产生气味。你需要做的就是一段时间后将容器从体内取出，清洗容器，再度置入。</p>
@@ -417,7 +426,11 @@
 <p>A：可以放置12小时以上。我的话每天起床、洗澡各取出一次，但刚开始用的那两天因为太好奇了拿出了三四次（……</p>
 <p><strong>Q：应当如何清洗、消毒、保存呢？</strong></p>
 <p>A：通常建议经期用清水清洗即可，而月经来和结束的时候各消毒一次。网络上很多人建议用温水加消毒片浸泡消毒4小时，或是高温水煮或者蒸煮，有人建议可以买个蒸蛋器蒸（很便宜，20-30元）二十分钟就行了。我觉得消毒片的时间有点久，买一个只煮月经盘的锅太怪了，所以我选择了最后一种。储存的话，我买乳贴剩下的塑料盒刚好放得下盘，这两个都是一定程度上让我人生更轻松的产品XD</p>
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/%E7%9B%92%E5%AD%90.jpg"><p><strong>Q：关于TSS风险？</strong></p>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/%e7%9b%92%e5%ad%90.jpg" alt="" loading="lazy" />
+
+<p><strong>Q：关于TSS风险？</strong></p>
 <p>A：TSS是中毒性休克症状，长期不更换棉条或阴道有伤口会有一定风险。事实上我不想讨论这个，现在因为使用棉条导致TSS的概率非常低，十万分之一的概率就跟遇到飞机失事差不多，我非常不喜欢看到有人拿TSS去建议女性不要使用棉条，就和建议女生天黑不要出门一样，用低概率的危险去阻止更便利的生活，看似好心，实际是非常目中无<strong>人</strong>的作风。</p>
 <p><strong>Q：除了上文谈及以外，生活里还有其他的改变吗？</strong></p>
 <p>A：说起来这是使用棉条以后有一个微小的改变，就是我不再带卫生巾出门了，身边的女性朋友向我借卫生巾时我无法再提供帮助。所以如果你读到这里仍有其他问题，我很乐意提供回答～</p>
@@ -781,7 +794,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

@@ -39,6 +39,7 @@
       在尘土中呼吸 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -48,112 +49,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
 
-          
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.style.width = '100%';
 
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
 
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
 
-            container.appendChild(altTextElement);
 
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
 
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
 
-          let hasAltText = false; 
 
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
 
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
 
-            
-            container.appendChild(img);
 
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
 
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
 
-            
-            imageRow.appendChild(container);
-          });
 
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
 
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
     });
   </script>
 
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -212,7 +217,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.de4f43b0d920be7dc56f17d12fa8ccc63f2b9ba63d57db7eb229821f4c59ae68bc15cc2eebe9c14211bfdf287855e7148f98796f7d5d58cb4227a9bd4cace974.css" integrity="sha512-3k9DsNkgvn3FbxfRL6jMxj8rm6Y9V9t&#43;simCH0xZrmi8Fcwu6&#43;nBQhG/3yh4VecUj5h5b31dWMtCJ6m9TKzpdA==" />
+    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
   
 
 
@@ -374,29 +379,73 @@
 <p>从微博出逃一个月，身心虽然没有健康，但摒弃很多来自社会新闻的干扰。不知世事，也不知是不是好事。焦虑不减，但很少来源于新闻，姑且列为好事之一。</p>
 <center>但还是对我的社交网络碎片进行一个总结：</center>
 <center>Part1：平均一天13条，这个女人疯得没边</center>
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/1.webp"><center>Part2：10月20日倒霉记事不完全版本</center>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/1.webp" alt="" loading="lazy" />
+
+<center>Part2：10月20日倒霉记事不完全版本</center>
 <center>当天在各个社交平台都发表了很多脾气，现实生活中也掉了些许眼泪，总而言之是本人一生中较为倒霉的一天</center>
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/2.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/3.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/4.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/5.webp"></p>
+<p>
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/2.webp" alt="" loading="lazy" />
+
+
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/3.webp" alt="" loading="lazy" />
+
+
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/4.webp" alt="" loading="lazy" />
+
+
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/5.webp" alt="" loading="lazy" />
+
+</p>
 <center>Part3：搜作业搜出26条，可以说十月份每天都在做作业
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/6.webp">
+<p>
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/6.webp" alt="" loading="lazy" />
+
+
 </br></p>
 <center>Part4：同时产生了知识迷思
-<p><img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/%E6%84%8F%E5%BF%97%E5%8A%9B.webp">
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/7.webp"></p>
+<p>
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/%e6%84%8f%e5%bf%97%e5%8a%9b.webp" alt="" loading="lazy" />
+
+
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/7.webp" alt="" loading="lazy" />
+
+</p>
 <center>Part4：还产生了酒神信仰，同时决定去打耳洞</center>
 <center>
     Spoiler：20天后我还没找到时间打耳洞，想扎两个孔，总要一些时间准备。但在这件事情上我避免给自己太大压力，我不能把一件用来泄压的事情也转换成一种负担。我毕竟太擅长这个了。
 </center>
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/8.webp"><center>Part5：冬天是近期唯一的好事。尽管它只出现了两天就离开了</center>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/8.webp" alt="" loading="lazy" />
+
+<center>Part5：冬天是近期唯一的好事。尽管它只出现了两天就离开了</center>
 <center>那一天也很伤心。忘了为什么，应该仅仅是伤心，我常常无意义忧郁</center>
 <center>还有别听我讲，C盘要清理一下。据说满了会启动不了电脑或者应用程序，有点像世界末日</center>
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/9.webp"><center>懒得继续翻了。本篇取消前后月亮。月亮不顾我生活匆忙，每天按时出现，遂怨从心头起，取消之。
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/9.webp" alt="" loading="lazy" />
+
+<center>懒得继续翻了。本篇取消前后月亮。月亮不顾我生活匆忙，每天按时出现，遂怨从心头起，取消之。
 <center>不过还剩一小段，复制过来吧。
 <center>我不知道我会这样贪婪，也许这是生活予我重击的缘由：
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/10.webp"><center>Fin</center>
+
+
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/images/10.webp" alt="" loading="lazy" />
+
+<center>Fin</center>
 <center>封面来自《搏击俱乐部》
 <center>没有所谓，我对生活只说：Fight me</center>
 </br>
@@ -760,7 +809,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     
