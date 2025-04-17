@@ -50,114 +50,6 @@
     });
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -253,7 +145,6 @@
 
 
 
-
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -261,7 +152,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.b00a7a472a0ba516665f81ccaa6431f5d0a717fe50ff1945e05092a4f8bd35ed256f6486ff9269013ee4e75e632c530698eefccd5a30751ec397c818ab986261.css" integrity="sha512-sAp6RyoLpRZmX4HMqmQx9dCnF/5Q/xlF4FCSpPi9Ne0lb2SG/5JpAT7k515jLFMGmO78zVowdR7Dl8gYq5hiYQ==" />
+    <link rel="stylesheet" href="/css/main.28b0945c34c8799f17de5ef28483f1bb56147e579d8df5c76fc666ac690cbcb85af69c96db3367fd031d9d2252d4a6af97221e4f106b7320780f2f1ac32b23d2.css" integrity="sha512-KLCUXDTIeZ8X3l7yhIPxu1YUfledjfXHb8ZmrGkMvLha9pyW2zNn/QMdnSJS1KavlyIeTxBrcyB4Dy8awysj0g==" />
   
 
 
@@ -297,13 +188,25 @@
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <div id="theme-toggle" class="theme-toggle">
-  <div id="light-btn"></div>
-  <div id="dark-btn"></div>
+                    <div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+  <div id="light-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+    </svg>
+  </div>
+  <div id="dark-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+    </svg>
+  </div>
 </div>
 
+
 <script>
-  
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
   const themeToggle = document.getElementById('theme-toggle');
 
   
@@ -316,20 +219,34 @@
   document.body.classList.add(currentTheme + '-mode');
 
   
+  const updateIcons = () => {
+    if (currentTheme === 'light') {
+      lightBtn.style.display = 'block';
+      darkBtn.style.display = 'none';
+    } else {
+      lightBtn.style.display = 'none';
+      darkBtn.style.display = 'block';
+    }
+  };
+  updateIcons();
+
+  
   const toggleTheme = () => {
     if (currentTheme === 'light') {
       document.body.classList.remove('light-mode');
       document.body.classList.add('dark-mode');
       currentTheme = 'dark';
-    } else if (currentTheme === 'dark') {
+    } else {
       document.body.classList.remove('dark-mode');
       document.body.classList.add('light-mode');
       currentTheme = 'light';
     }
     localStorage.setItem('theme', currentTheme);
     document.body.setAttribute('a', currentTheme);
+    updateIcons();
   };
 
+  
   themeToggle.addEventListener('click', toggleTheme);
 
   
@@ -337,24 +254,22 @@
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
     const winHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    
     const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-    
     if (scrollPercent >= 10 && scrollPercent <= 40) {
-      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
     } else if (scrollPercent > 40) {
-      themeToggle.style.opacity = 0; 
+      themeToggle.style.opacity = 0;
     } else {
-      themeToggle.style.opacity = 1; 
+      themeToggle.style.opacity = 1;
     }
   });
+
 </script>
 
 
-<div id="header-post">
-  <span id="nav">
+<div id="header-post" >
+  <span id="nav" data-pagefind-ignore>
     <ul>
       
         <li><a href="/">Home</a></li>
@@ -373,8 +288,8 @@
 
                 </div>
 
-<article>
-    <h1>娇妹与窃贼</h1>
+<article data-pagefind-ignore>
+    <h1 data-pagefind-meta="title" data-pagefind-ignore>娇妹与窃贼</h1>
     <div id="post-meta">
         <time datetime="2023-02-28 00:00:00 &#43;0000 UTC">
             2023-02-28
@@ -395,12 +310,12 @@
         </blockquote>
         
     </div>
-    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;" data-pagefind-ignore>
         
 
     </div>
-    <div id="post-content">
-    <p>吃完饭后，我帮她擦手。她的指甲硬而发黑，右手无名指上戴着一枚并不光亮的金戒指，是她七十一二岁时说想要一个金戒指，她认为人死后如果手上没有戒指，在地下要给人洗碗洗筷做牛做马，后来她其中一个女儿给她买了一个。</p>
+    <div id="post-content"  data-pagefind-body>
+        <p>吃完饭后，我帮她擦手。她的指甲硬而发黑，右手无名指上戴着一枚并不光亮的金戒指，是她七十一二岁时说想要一个金戒指，她认为人死后如果手上没有戒指，在地下要给人洗碗洗筷做牛做马，后来她其中一个女儿给她买了一个。</p>
 <p>她的手发皱、粗糙、干燥得几乎没有水分，给她擦手的触感像是用一张湿纸巾擦一张干纸巾。她是如此衰老而干燥，给她擦手时，我忽然想起来她的名字，她叫娇妹。</p>
 <p>娇妹，1924年生的广东人。在她前后几年出生的人有张爱玲与金庸，英国女王和江泽民比她还小两岁。她比他们中任何一个人都活得要长，娇妹今年满打满算九十九岁。</p>
 <p>娇妹四岁时被卖去做童养媳，实际上就是七八公里外的另一个村子，据她自己说那时她父亲抬着轿子把她抬了过去，才四岁，被卖到别人家里当一个十岁男孩的童养媳。那是九十多年前的一件事，如今回忆这件事情，我认为不幸中的万幸是这个男孩子不是坏人，她至今发脾气都会以“阿公一辈子都没有对我大声说过话”来威胁与指责让她不顺心的儿女与事情。</p>
@@ -441,12 +356,13 @@
 <p>我猜测我感到我需要写，也许是因为我需要知道我又是一个怎样的人，我如何长大，我需要知道我的历史，我并不顾念的血缘是否也在冥冥之中对我作出影响。我如何成为我，成为怎样的我，我想这个谜题或许能够通过她们得到拼图一角。我留下这个盒子，期盼未来某天我能从中得到答案。</p>
 </blockquote>
 
+        
     </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
 
-    <div class="pre-next">
+    <div class="pre-next" data-pagefind-ignore>
         
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/messy-stuff/">&lt;&lt; 我所拥有的相对丰饶的实体生活</a>
         
@@ -458,8 +374,8 @@
 <br>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
-<div id="comments" class="comments">
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />
+<div id="comments" class="comments" data-pagefind-ignore>
     <style>
     :root {
         --waline-color: unset;
@@ -588,7 +504,7 @@
     }
 
 </style>
-<div id="waline"></div>
+<div id="waline" data-pagefind-ignore></div>
 <script>
     Waline.init({
         el: "#waline",
@@ -798,9 +714,7 @@
         
         
         
-        
-        
-        共书写了277.7k字 · 共 82篇文章
+        共书写了272.7k字 · 共 80篇文章
     </section>
 
     
@@ -814,9 +728,6 @@
     </script>
 
 </footer>
-
-
-
 
 
 

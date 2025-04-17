@@ -50,114 +50,6 @@
     });
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -253,7 +145,6 @@
 
 
 
-
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -261,7 +152,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.b00a7a472a0ba516665f81ccaa6431f5d0a717fe50ff1945e05092a4f8bd35ed256f6486ff9269013ee4e75e632c530698eefccd5a30751ec397c818ab986261.css" integrity="sha512-sAp6RyoLpRZmX4HMqmQx9dCnF/5Q/xlF4FCSpPi9Ne0lb2SG/5JpAT7k515jLFMGmO78zVowdR7Dl8gYq5hiYQ==" />
+    <link rel="stylesheet" href="/css/main.28b0945c34c8799f17de5ef28483f1bb56147e579d8df5c76fc666ac690cbcb85af69c96db3367fd031d9d2252d4a6af97221e4f106b7320780f2f1ac32b23d2.css" integrity="sha512-KLCUXDTIeZ8X3l7yhIPxu1YUfledjfXHb8ZmrGkMvLha9pyW2zNn/QMdnSJS1KavlyIeTxBrcyB4Dy8awysj0g==" />
   
 
 
@@ -297,13 +188,25 @@
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <div id="theme-toggle" class="theme-toggle">
-  <div id="light-btn"></div>
-  <div id="dark-btn"></div>
+                    <div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+  <div id="light-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+    </svg>
+  </div>
+  <div id="dark-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+    </svg>
+  </div>
 </div>
 
+
 <script>
-  
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
   const themeToggle = document.getElementById('theme-toggle');
 
   
@@ -316,20 +219,34 @@
   document.body.classList.add(currentTheme + '-mode');
 
   
+  const updateIcons = () => {
+    if (currentTheme === 'light') {
+      lightBtn.style.display = 'block';
+      darkBtn.style.display = 'none';
+    } else {
+      lightBtn.style.display = 'none';
+      darkBtn.style.display = 'block';
+    }
+  };
+  updateIcons();
+
+  
   const toggleTheme = () => {
     if (currentTheme === 'light') {
       document.body.classList.remove('light-mode');
       document.body.classList.add('dark-mode');
       currentTheme = 'dark';
-    } else if (currentTheme === 'dark') {
+    } else {
       document.body.classList.remove('dark-mode');
       document.body.classList.add('light-mode');
       currentTheme = 'light';
     }
     localStorage.setItem('theme', currentTheme);
     document.body.setAttribute('a', currentTheme);
+    updateIcons();
   };
 
+  
   themeToggle.addEventListener('click', toggleTheme);
 
   
@@ -337,24 +254,22 @@
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
     const winHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    
     const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-    
     if (scrollPercent >= 10 && scrollPercent <= 40) {
-      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
     } else if (scrollPercent > 40) {
-      themeToggle.style.opacity = 0; 
+      themeToggle.style.opacity = 0;
     } else {
-      themeToggle.style.opacity = 1; 
+      themeToggle.style.opacity = 1;
     }
   });
+
 </script>
 
 
-<div id="header-post">
-  <span id="nav">
+<div id="header-post" >
+  <span id="nav" data-pagefind-ignore>
     <ul>
       
         <li><a href="/">Home</a></li>
@@ -373,8 +288,8 @@
 
                 </div>
 
-<article>
-    <h1>十二月份事发始末</h1>
+<article >
+    <h1 data-pagefind-meta="title" >十二月份事发始末</h1>
     <div id="post-meta">
         <time datetime="2024-12-19 00:00:00 &#43;0000 UTC">
             2024-12-19
@@ -393,12 +308,12 @@
         </blockquote>
         
     </div>
-    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;" data-pagefind-ignore>
         
 
     </div>
-    <div id="post-content">
-    <p>事件的整个经过是这样。</p>
+    <div id="post-content"  data-pagefind-body>
+        <p>事件的整个经过是这样。</p>
 <p>十一月底最后一周，因为即将进入生日月与圣诞的月份，我打算好好做人，重新开始。其表征可见我一周全勤给自己做了五天的饭，饮食相当健康，地中海饮食结构，手作预制菜现烹小作坊，我份人做饭干净手脚麻利有菜有肉，使用纯天然食材取之于大自然用之于大自然，一整周行善积德吃斋戒酒路过不踩蚂蚁，去超市买菜还自带环保袋，想从功德角度来看也该加点卷面分。</p>
 <p>结果一周下来照镜子发现非但没有飞升成神还长了俩痘。天塌。好人没好报，天道不酬勤。地中海饮食法负我。预制菜作坊只开到周五中午，当晚火速服用麦当劳，拿着冰可乐骑车去看《好东西》。</p>
 <p>那晚城市气温抵达零上十度，我明明早从衣柜深处挖出厚衣防御，结果不知是否免疫力低下，还是夜里顶风骑车已达判刑最低标准，总之一觉醒来，我不幸患上感冒。整个周末都相当虚弱，霎时间生活里除了给朋友发“宝娟我的嗓子”语音以外没有再进行其他社交活动。</p>
@@ -416,12 +331,13 @@
 <p>生病让时间过得很快也很慢，眨眼就到十二月下旬，好吓人，总觉得这个月除了生病以外什么也没有做，所以只能写写流水账博客。到写作这篇的今晚，虽然说话还是会有呛咳的冲动，但已经基本好透。</p>
 <p>这就是事发的全部过程。马上就要新的一年，还是要吃饱穿暖，好好锻炼，提高免疫力，重新夺回属于我的幸福。</p>
 
+        
     </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
 
-    <div class="pre-next">
+    <div class="pre-next" data-pagefind-ignore>
         
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/2024-11-24/">&lt;&lt; 博客三周年，猛猛大装修</a>
         
@@ -433,8 +349,8 @@
 <br>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
-<div id="comments" class="comments">
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />
+<div id="comments" class="comments" data-pagefind-ignore>
     <style>
     :root {
         --waline-color: unset;
@@ -563,7 +479,7 @@
     }
 
 </style>
-<div id="waline"></div>
+<div id="waline" data-pagefind-ignore></div>
 <script>
     Waline.init({
         el: "#waline",
@@ -773,9 +689,7 @@
         
         
         
-        
-        
-        共书写了277.7k字 · 共 82篇文章
+        共书写了272.7k字 · 共 80篇文章
     </section>
 
     
@@ -789,9 +703,6 @@
     </script>
 
 </footer>
-
-
-
 
 
 

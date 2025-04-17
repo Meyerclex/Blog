@@ -50,114 +50,6 @@
     });
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -253,7 +145,6 @@
 
 
 
-
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -261,7 +152,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.b00a7a472a0ba516665f81ccaa6431f5d0a717fe50ff1945e05092a4f8bd35ed256f6486ff9269013ee4e75e632c530698eefccd5a30751ec397c818ab986261.css" integrity="sha512-sAp6RyoLpRZmX4HMqmQx9dCnF/5Q/xlF4FCSpPi9Ne0lb2SG/5JpAT7k515jLFMGmO78zVowdR7Dl8gYq5hiYQ==" />
+    <link rel="stylesheet" href="/css/main.28b0945c34c8799f17de5ef28483f1bb56147e579d8df5c76fc666ac690cbcb85af69c96db3367fd031d9d2252d4a6af97221e4f106b7320780f2f1ac32b23d2.css" integrity="sha512-KLCUXDTIeZ8X3l7yhIPxu1YUfledjfXHb8ZmrGkMvLha9pyW2zNn/QMdnSJS1KavlyIeTxBrcyB4Dy8awysj0g==" />
   
 
 
@@ -297,13 +188,25 @@
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <div id="theme-toggle" class="theme-toggle">
-  <div id="light-btn"></div>
-  <div id="dark-btn"></div>
+                    <div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+  <div id="light-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+    </svg>
+  </div>
+  <div id="dark-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+    </svg>
+  </div>
 </div>
 
+
 <script>
-  
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
   const themeToggle = document.getElementById('theme-toggle');
 
   
@@ -316,20 +219,34 @@
   document.body.classList.add(currentTheme + '-mode');
 
   
+  const updateIcons = () => {
+    if (currentTheme === 'light') {
+      lightBtn.style.display = 'block';
+      darkBtn.style.display = 'none';
+    } else {
+      lightBtn.style.display = 'none';
+      darkBtn.style.display = 'block';
+    }
+  };
+  updateIcons();
+
+  
   const toggleTheme = () => {
     if (currentTheme === 'light') {
       document.body.classList.remove('light-mode');
       document.body.classList.add('dark-mode');
       currentTheme = 'dark';
-    } else if (currentTheme === 'dark') {
+    } else {
       document.body.classList.remove('dark-mode');
       document.body.classList.add('light-mode');
       currentTheme = 'light';
     }
     localStorage.setItem('theme', currentTheme);
     document.body.setAttribute('a', currentTheme);
+    updateIcons();
   };
 
+  
   themeToggle.addEventListener('click', toggleTheme);
 
   
@@ -337,24 +254,22 @@
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
     const winHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    
     const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-    
     if (scrollPercent >= 10 && scrollPercent <= 40) {
-      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
     } else if (scrollPercent > 40) {
-      themeToggle.style.opacity = 0; 
+      themeToggle.style.opacity = 0;
     } else {
-      themeToggle.style.opacity = 1; 
+      themeToggle.style.opacity = 1;
     }
   });
+
 </script>
 
 
-<div id="header-post">
-  <span id="nav">
+<div id="header-post" >
+  <span id="nav" data-pagefind-ignore>
     <ul>
       
         <li><a href="/">Home</a></li>
@@ -373,8 +288,8 @@
 
                 </div>
 
-<article>
-    <h1>Docsify | 花哨文具码在案前，用不用另说</h1>
+<article data-pagefind-ignore>
+    <h1 data-pagefind-meta="title" data-pagefind-ignore>Docsify | 花哨文具码在案前，用不用另说</h1>
     <div id="post-meta">
         <time datetime="2022-07-07 00:00:00 &#43;0000 UTC">
             2022-07-07
@@ -393,7 +308,7 @@
         </blockquote>
         
     </div>
-    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;" data-pagefind-ignore>
         
     <div class="post-toc" id="post-toc">
         <aside>
@@ -419,8 +334,8 @@
 
 
     </div>
-    <div id="post-content">
-    <p>总而言之，某日逛到一个Docsify笔记库，简洁干净又漂亮，看了一下教程似乎并不难，我对自己的<a href="https://teetotaler.vercel.app/">前笔记库</a>不满很久（因为没有办法检索），于是摸鱼事件着手折腾Docsify，竟然成了（竟然成了）。</p>
+    <div id="post-content"  data-pagefind-body>
+        <p>总而言之，某日逛到一个Docsify笔记库，简洁干净又漂亮，看了一下教程似乎并不难，我对自己的<a href="https://teetotaler.vercel.app/">前笔记库</a>不满很久（因为没有办法检索），于是摸鱼事件着手折腾Docsify，竟然成了（竟然成了）。</p>
 <h2 id="参考资料">参考资料</h2>
 <ol>
 <li><a href="https://xhhdd.cc/archives/80/comment-page-1">Docsify的配置+全插件列表</a></li>
@@ -450,12 +365,13 @@
 <p><a href="https://note.gregueria.icu/">Welcome to 鱼’s Repository！</a></p>
 <p>最近到了晚上约莫十点前后，眼皮就开始打架，今天振作起来打开文档，以超快速度并超不详细地写一篇超短的更新（我意识到这几个月我每次写博客都大动干戈企图翻出最内在的情绪宣泄，然后导致一些长篇累牍连篇废话，这不是一个正常的状态，对我这等超强表演欲的精神暴露狂来讲凡是超过3000字都是危险的，所以我决定最近的计划是缩短更新间隔，删减更新篇幅，所以我这次写了这个没有感情色彩的折腾笔记。靠，可我甚至都不是一个正常人，我哪来的正常的状态？像个大疯狗一样站在网页中央刨水坑就是我的一个天然自然正常的形态）。这个笔记库是上周建的，其实只是个一成放读书笔记、九成放小说摘抄的整理库，整理起来倒也很快：一键导出电子书划线部分，SNS的俏皮话复制粘贴一下，调整格式，放进Markdown文档里，丢进Docsify，上传，即成。Docsify的好处在于它没有Front-matter之类的东西，完美实现所见即所得。目前为止，我都喜爱它。</p>
 
+        
     </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
 
-    <div class="pre-next">
+    <div class="pre-next" data-pagefind-ignore>
         
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/deathlove/">&lt;&lt; 死亡的拟态色泽璀璨</a>
         
@@ -467,8 +383,8 @@
 <br>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
-<div id="comments" class="comments">
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />
+<div id="comments" class="comments" data-pagefind-ignore>
     <style>
     :root {
         --waline-color: unset;
@@ -597,7 +513,7 @@
     }
 
 </style>
-<div id="waline"></div>
+<div id="waline" data-pagefind-ignore></div>
 <script>
     Waline.init({
         el: "#waline",
@@ -807,9 +723,7 @@
         
         
         
-        
-        
-        共书写了277.7k字 · 共 82篇文章
+        共书写了272.7k字 · 共 80篇文章
     </section>
 
     
@@ -823,9 +737,6 @@
     </script>
 
 </footer>
-
-
-
 
 
 

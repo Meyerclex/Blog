@@ -104,7 +104,7 @@
         <div class="note__item">
             <div class="note__day">更新日志</div>
             <div class="note__list" style="font-size: 80%;">
-                <details class="mumble" open style="max-height: 250px;">
+                <details class="mumble" style="max-height: 250px;">
                     <summary>Changelog...</summary>
                     {{ with site.GetPage "changelog" }}
                         {{ .Content | safeHTML }}
@@ -114,6 +114,10 @@
                 </details>
             </div>
         </div>
+            <hr class="decoration-hr">
+            <p style="text-align: center;"><a href="/search" target="_blank">📖 Search for...</a>
+            </p>
+
     </div>
     </div>
     </body>

@@ -50,114 +50,6 @@
     });
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -253,7 +145,6 @@
 
 
 
-
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -261,7 +152,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.b00a7a472a0ba516665f81ccaa6431f5d0a717fe50ff1945e05092a4f8bd35ed256f6486ff9269013ee4e75e632c530698eefccd5a30751ec397c818ab986261.css" integrity="sha512-sAp6RyoLpRZmX4HMqmQx9dCnF/5Q/xlF4FCSpPi9Ne0lb2SG/5JpAT7k515jLFMGmO78zVowdR7Dl8gYq5hiYQ==" />
+    <link rel="stylesheet" href="/css/main.28b0945c34c8799f17de5ef28483f1bb56147e579d8df5c76fc666ac690cbcb85af69c96db3367fd031d9d2252d4a6af97221e4f106b7320780f2f1ac32b23d2.css" integrity="sha512-KLCUXDTIeZ8X3l7yhIPxu1YUfledjfXHb8ZmrGkMvLha9pyW2zNn/QMdnSJS1KavlyIeTxBrcyB4Dy8awysj0g==" />
   
 
 
@@ -297,13 +188,25 @@
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
-                    <div id="theme-toggle" class="theme-toggle">
-  <div id="light-btn"></div>
-  <div id="dark-btn"></div>
+                    <div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+  <div id="light-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+    </svg>
+  </div>
+  <div id="dark-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+    </svg>
+  </div>
 </div>
 
+
 <script>
-  
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
   const themeToggle = document.getElementById('theme-toggle');
 
   
@@ -316,20 +219,34 @@
   document.body.classList.add(currentTheme + '-mode');
 
   
+  const updateIcons = () => {
+    if (currentTheme === 'light') {
+      lightBtn.style.display = 'block';
+      darkBtn.style.display = 'none';
+    } else {
+      lightBtn.style.display = 'none';
+      darkBtn.style.display = 'block';
+    }
+  };
+  updateIcons();
+
+  
   const toggleTheme = () => {
     if (currentTheme === 'light') {
       document.body.classList.remove('light-mode');
       document.body.classList.add('dark-mode');
       currentTheme = 'dark';
-    } else if (currentTheme === 'dark') {
+    } else {
       document.body.classList.remove('dark-mode');
       document.body.classList.add('light-mode');
       currentTheme = 'light';
     }
     localStorage.setItem('theme', currentTheme);
     document.body.setAttribute('a', currentTheme);
+    updateIcons();
   };
 
+  
   themeToggle.addEventListener('click', toggleTheme);
 
   
@@ -337,24 +254,22 @@
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
     const winHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    
     const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
 
-    
     if (scrollPercent >= 10 && scrollPercent <= 40) {
-      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2); 
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
     } else if (scrollPercent > 40) {
-      themeToggle.style.opacity = 0; 
+      themeToggle.style.opacity = 0;
     } else {
-      themeToggle.style.opacity = 1; 
+      themeToggle.style.opacity = 1;
     }
   });
+
 </script>
 
 
-<div id="header-post">
-  <span id="nav">
+<div id="header-post" >
+  <span id="nav" data-pagefind-ignore>
     <ul>
       
         <li><a href="/">Home</a></li>
@@ -373,8 +288,8 @@
 
                 </div>
 
-<article>
-    <h1>是问题构成了这个世界</h1>
+<article >
+    <h1 data-pagefind-meta="title" >是问题构成了这个世界</h1>
     <div id="post-meta">
         <time datetime="2023-07-07 00:00:00 &#43;0000 UTC">
             2023-07-07
@@ -393,12 +308,12 @@
         </blockquote>
         
     </div>
-    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;" data-pagefind-ignore>
         
 
     </div>
-    <div id="post-content">
-    <p>六月的某天，我通宵看完一整个《了不起的麦瑟尔夫人》最后一季，全然因为隔日没有其他安排。不久前我刚从学校搬出来，开始独居生活，忽然心血来潮开始重温它第二季的片段，Lenny Bruce那场All alone，我感到前所未有的寂寞。</p>
+    <div id="post-content"  data-pagefind-body>
+        <p>六月的某天，我通宵看完一整个《了不起的麦瑟尔夫人》最后一季，全然因为隔日没有其他安排。不久前我刚从学校搬出来，开始独居生活，忽然心血来潮开始重温它第二季的片段，Lenny Bruce那场All alone，我感到前所未有的寂寞。</p>
 <p>我从接到Offer到租好房入职搬家只用了一周的时间，刚开始自己住的那几天每天都不想回家，因为不知道应当如何面对那种空空如也的、没有收拾好的孤单和沉寂。但如今也已半个月过去，工作半只脚已步入正轨，独居的生活似乎也徐徐展开它真实的画卷，我度过了非常忙碌与慌乱的六月份，如今七月之初，我总算有时间坐下来开始写博客。</p>
 <p>首先是我的工作。说起来七月初开这个文档时我还是蛮有兴致想要和大家分享的，它有一些我不喜欢的地方，工作时间，声噪，压力。它也有一些我喜欢的地方：一部分的工作内容，环境，氛围，一些人，给得还行。</p>
 <p>不过七月工了一周之后喜与不喜都烟消云散了，我的上班心情主要就是突出八个字：无所叼谓，做错就叼。加班这件事直接让我从一个办公室职业女性变成一个女流氓，每天在地铁上跟同事表演单口骂街，乘客纷纷侧目，而我不摘工牌。</p>
@@ -422,12 +337,13 @@
 <p>我想，其实是问题构成了这个世界。朋友们，其实是问题了构成这个世界，如今光是解决问题已经无法解决问题了，熵减的活动没有意义，我们只能做到的是把问题按大号中号小号进行简单的排序，然后把特大号拿起来看一下，放在一边，然后尽可能比较平静地束手无策。</p>
 <p>这也是我目前对待大多数事情的基本策略。</p>
 
+        
     </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
 
-    <div class="pre-next">
+    <div class="pre-next" data-pagefind-ignore>
         
             <a class="pre-next-btn bg" href="http://localhost:1313/posts/rent/">&lt;&lt; 拉断一根尼龙绳</a>
         
@@ -439,8 +355,8 @@
 <br>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
-<div id="comments" class="comments">
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />
+<div id="comments" class="comments" data-pagefind-ignore>
     <style>
     :root {
         --waline-color: unset;
@@ -569,7 +485,7 @@
     }
 
 </style>
-<div id="waline"></div>
+<div id="waline" data-pagefind-ignore></div>
 <script>
     Waline.init({
         el: "#waline",
@@ -779,9 +695,7 @@
         
         
         
-        
-        
-        共书写了277.7k字 · 共 82篇文章
+        共书写了272.7k字 · 共 80篇文章
     </section>
 
     
@@ -795,9 +709,6 @@
     </script>
 
 </footer>
-
-
-
 
 
 

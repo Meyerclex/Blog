@@ -27,6 +27,9 @@
         </div>
         <div id="post-content">
             {{ .Content | safeHTML }}
+            {{ if .Params.search }}
+            {{ partial "pagefind.html" . }}
+            {{ end }}
         </div>
         <br>
         <div style="padding-bottom:3px;"></div>
@@ -41,10 +44,5 @@
     {{ partial "comment.html" . }}
 </div>
 {{ end }}
-
-
-<div>
     {{- partial "footer.html" . -}}
-</div>
-
 {{ end }}

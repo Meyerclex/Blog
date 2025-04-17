@@ -323,9 +323,6 @@
     <loc>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</loc>
     <lastmod>2021-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/night-city/</loc>
-    <lastmod>2021-07-12T22:37:58+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/copyright/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -338,10 +335,9 @@
     <loc>http://localhost:1313/posts/we-will-be-fine/</loc>
     <lastmod>2021-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E5%BF%83%E7%A2%8E%E7%9A%84%E5%8A%A8%E7%89%A9%E7%AC%AC%E4%BA%8C%E4%B8%AA%E9%97%AE%E9%A2%98%E7%9A%84%E7%AD%94%E6%A1%88%E5%A4%B1%E8%80%8C%E5%A4%8D%E5%BE%97%E7%9A%84%E9%87%91%E5%AD%90/</loc>
-    <lastmod>2020-12-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/collection/</loc>
     <lastmod>2020-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>

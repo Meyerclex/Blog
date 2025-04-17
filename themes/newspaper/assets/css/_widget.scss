@@ -161,3 +161,64 @@
 .menu-item img {
   margin: 8px 0!important;
 }
+
+// search
+
+#search {
+  margin-top: 15px;
+  min-height: 400px;
+}
+
+#search a {
+  font-size: 120%;
+  font-weight: bold;
+  font-family: "HuiwenMincho", sans-serif;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+:root {
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: var(--link-color);
+  --pagefind-ui-text: var(--text-color);
+  --pagefind-ui-background: var(--bg-color);
+  --pagefind-ui-border: var(--border-color);
+  --pagefind-ui-tag: var(--color-mark);
+  --pagefind-ui-border-width: 0px;
+  --pagefind-ui-border-radius: 8px;
+  --pagefind-ui-image-box-ratio: 1 / 1;
+  --pagefind-ui-image-border-radius: 8px;
+  --pagefind-ui-font: "Noto Sans CJK SC", "Source Han Sans SC VF", "Clear Han Serif", sans-serif;
+}
+
+[a="dark"] {
+  --pagefind-ui-primary: var(--link-color);
+  --pagefind-ui-text: var(--text-color-dark);
+  --pagefind-ui-background: var(--bg-color);
+  --pagefind-ui-border: var(--border-color);
+  --pagefind-ui-tag: var(--color-mark);
+}
+
+div.pagefind-ui__drawer {
+  padding: 10px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+}
+
+#search li {
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  border: 0px solid var(--border-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  transition: background-color 0.2s ease; /* 添加过渡效果 */
+}
+
+#search li:hover {
+  background-color: var(--bg-color-hover);
+}
+
+#search mark{
+  color: var(--text-color);
+  background: var(--mark);
+}

@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-<article>
-    <h1>{{ .Title }}</h1>
+<article {{ if .Params.hidden }}data-pagefind-ignore{{ end }}>
+    <h1 data-pagefind-meta="title" {{ if .Params.hidden }}data-pagefind-ignore{{ end }}>{{ .Title }}</h1>
     <div id="post-meta">
         <time datetime="{{ .Date }}">
             {{ .Date | time.Format site.Params.theme_config.date_format }}
@@ -20,17 +20,20 @@
         </blockquote>
         {{ end }}
     </div>
-    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;">
+    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;" data-pagefind-ignore>
         {{ partial "toc.html" . }}
     </div>
-    <div id="post-content">
-    {{ .Content | safeHTML }}
+    <div id="post-content"  data-pagefind-body>
+        {{ .Content | safeHTML }}
+        {{ if .Params.search }}
+        {{ partial "pagefind.html" . }}
+        {{ end }}
     </div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
 
-    <div class="pre-next">
+    <div class="pre-next" data-pagefind-ignore>
         {{with .PrevInSection}}
             <a class="pre-next-btn bg" href="{{.Permalink}}"><< {{ .Title }}</a>
         {{end}}
@@ -42,8 +45,8 @@
 <br>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" />
-<div id="comments" class="comments">
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />
+<div id="comments" class="comments" data-pagefind-ignore>
     {{ partial "comment.html" . }}
 </div>
 

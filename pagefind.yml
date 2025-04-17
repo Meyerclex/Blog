@@ -1,0 +1,48 @@
+source: public
+glob: posts/*/*.{html}
+bundle_dir: search
+
+# 指定要索引的源目录，通常是 Hugo 生成的静态文件目录
+#contentDir: "public"
+
+# 指定输出索引文件的目录
+#indexDir: "static/pagefind"
+
+# 指定静态文件的 URL 前缀，这通常与你的 Hugo 网站的 URL 结构相匹配
+#baseURL: "https://example.com"
+
+# 指定要索引的文件类型，例如 .html
+indexDocs: [".html"]
+
+# 指定要排除索引的文件或目录的 glob 模式
+excludeFiles: ["**/404.html", "*/noindex/*"]
+
+# 指定要包含的字段，这些字段将被索引用于搜索
+fields: ["title", "description", "content"]
+
+# 指定用于生成摘要的字段
+excerptField: "excerpt"
+
+# 指定用于搜索结果标题的字段
+titleField: "title"
+
+# 指定用于搜索结果 URL 的字段
+#urlField: "link"
+
+# 指定用于搜索结果内容的字段
+#contentField: "content"
+
+# 指定是否将 HTML 内容转换为纯文本
+#htmlAsText: true
+
+# 指定是否启用对中文语言的支持
+chinese: true
+
+# 指定是否在控制台中显示详细的日志信息
+verbose: false
+
+# 指定是否跟踪堆内存使用情况
+traceHeap: false
+
+# 指定是否启用调试模式
+debug: false

@@ -3,7 +3,8 @@
 @import "theme-toggle";
 
 :root {
-  --bg-color: #f9f7f1;
+  --bg-color: rgba(249, 247, 241, 0.84);
+  --bg-color-hover: rgba(253, 241, 207, 0.8);
   --w-color: transparent;
   --text-color: #38383c;
   --text-color-dark: #F8F4E1;
@@ -25,6 +26,7 @@
 
 [a="dark"] {
   --bg-color: rgba(35, 18, 53, 0.78);
+  --bg-color-hover: rgba(81, 44, 126, 0.74);
   --w-color: #fff;
   --text-color: #F8F4E1;
   --secondary-text-color: rgba(241, 231, 209, 0.82);
@@ -469,7 +471,7 @@ article hr {
   margin: 1.5em auto 1.5em auto;
 }
 
-article hr {
+.decoration-hr, article hr {
   border: none;
   height: 16px;
   background-image: url(/site/hr.gif);
