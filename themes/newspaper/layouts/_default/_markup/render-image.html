@@ -3,4 +3,7 @@
 
 {{ if .Destination }}
 <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy"/>
+{{- if $alt }}
+{{ $alt }}
 {{ end }}
+    {{ end }}

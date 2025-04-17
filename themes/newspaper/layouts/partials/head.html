@@ -169,6 +169,29 @@
         return;
       }
 
+      // 处理每个段落的图片
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+        // 如果段落内有图片且该图片的id不是"emoji"
+        if (img && img.id !== 'emoji') {
+          // 将这个段落居中
+          paragraph.style.textAlign = 'center';
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
       // 初始化图片点击放大功能的遮罩
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
@@ -209,6 +232,7 @@
     });
   </script>
 <!-- 已弃用 -->
+
 
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />

@@ -169,6 +169,29 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+        
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +230,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -333,7 +357,7 @@
         <div id="post-meta">
             <time datetime="2020-01-05 00:00:00 &#43;0000 UTC">
                 2020-01-05
-                <span> ‧ 244</span>
+                <span> ‧ 255</span>
                 <span>words</span>
                 
                 
@@ -559,10 +583,12 @@
 </ul>
 <p>
 <img src="/theme-archive/April-2025-light.png" alt="" loading="lazy"/>
-
+    
 
 <img src="/theme-archive/April-2025-dark.png" alt="魔女之家" loading="lazy"/>
-</p>
+魔女之家
+
+    </p>
 <br>
 <ul>
 <li><strong>January 2025</strong></li>
@@ -572,10 +598,12 @@
 </div>
 <p>
 <img src="/theme-archive/Jan-2025-light.jpg" alt="" loading="lazy"/>
-
+    
 
 <img src="/theme-archive/Jan-2025-dark.jpeg" alt="薄荷巧克力" loading="lazy"/>
-</p>
+薄荷巧克力
+
+    </p>
 <br>
 <ul>
 <li><strong>November 2024</strong> <a href="/posts/2024-11-24/">博客三周年，猛猛大装修</a></li>
@@ -585,10 +613,10 @@
 </div>
 <p>
 <img src="/theme-archive/November-2024-1.png" alt="" loading="lazy"/>
-
+    
 
 <img src="/theme-archive/November-2024-2.png" alt="" loading="lazy"/>
-</p>
+    </p>
 <br>
 <ul>
 <li><strong>December 2022</strong> <a href="/posts/gruvbox/">换上秋冬色系新主题</a></li>
@@ -598,9 +626,9 @@
 </div>
 <p>
 <img src="/theme-archive/Dec-2022-dark.png" alt="" loading="lazy"/>
- 
+     
 <img src="/theme-archive/Dec-2022-light.png" alt="" loading="lazy"/>
-</p>
+    </p>
 <br>
 <ul>
 <li><strong>September 2022</strong> <a href="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/">换回旧主题，闪闪惹人爱</a></li>
@@ -612,9 +640,13 @@
 </div>
 <p>
 <img src="/theme-archive/luna.png" alt="Stack" loading="lazy"/>
- 
+Stack
+
+     
 <img src="/theme-archive/stack.png" alt="Luna" loading="lazy"/>
-</p>
+Luna
+
+    </p>
 </details>
 <hr>
 <div style="text-align: center;">
@@ -819,7 +851,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

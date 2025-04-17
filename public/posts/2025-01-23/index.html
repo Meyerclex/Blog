@@ -169,6 +169,29 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+        
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +230,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -364,11 +388,11 @@
 <p>不过后来反思了一下这主要是怪我不做攻略，街上又到处都是茶餐厅出来揽客，所以最后吃了茶餐厅还要怪茶餐厅！而看犬犬游记去吃了当地的葡式餐厅——等等，我想吃的就是这种没有吃过的东西啊！我在找饭吃这条路上完全偏离重点，不管味道怎么样我也想吃烤苹果而不是在家附近也能吃到的牛腩面嘛！</p>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/a25e5c4d8804b9c90309f2d3d86776fe.JPG" alt="" loading="lazy"/>
- 
+     
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/2e1813eb9804fd0fce2ae9512592cf28.JPG" alt="" loading="lazy"/>
- 
+     
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/b15ece16d319c3638c0697af2dc80ad1.JPG" alt="" loading="lazy"/>
-</p>
+    </p>
 <p>吃完饭后我和朋友找了比较僻静的路逛起来，没有目的，只是边聊天边晃悠，朋友那天穿了绿色毛衣，还戴了超级萌的小熊毛绒帽子，超级可爱。我们俩聊着，非常开心地就走到了大炮台公园附近，澳门的地势给了我第一个下马威，<strong>怎么会有这么陡峭的路！</strong> 一路爬着上坡路上去，经过人家的居民楼，开始还能看到人家的入户一楼，爬着爬着发现，怎么经过了人家二楼阳台……到顶时感觉已经可以俯瞰很多城市景观。</p>
 <p>虽然爬坡很辛苦，但因为空气很好，景观也很好，全程开开心心地就到顶上，顺便一路上的鸽子——硕鸽——大鸽全都不怕人啊啊啊反而因为鸽子好多好大好拽好霸道我好怕啊（抱头）！炮台公园旁边就是澳门博物馆，专程来一趟倒没有必要，因为没有什么特别的展品。</p>
 <p>在炮台附近晃晃拍照之后又准备离开，爬了如此之高之后走下坡路，我直接一整个恐高了！而且这种直上直下的路还不止一段，导致我非常好奇这边的老人出行都是什么体验，真的都能承受这种地势吗！</p>
@@ -383,16 +407,16 @@
 <p>我想那种感动其实可能并不是出于和演员曾站在同一个地方，而是那故事发生的地方真的存在，还是那个样子。我想哪怕永远等不来二十年后的那个版本，但那些一吨爱重于一吨金的故事在这里发生过就可以。我会一再去香港也是这样感受，很多事情在变，无论人们说香港已不是那个香港，但只要那故事发生的地方真的存在过，那些情谊，真的东西，曾经真的在这里就可以。</p>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/62da75f242a59a46cc829789765626d3.JPG" alt="" loading="lazy"/>
- 
+     
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/17df77f99aeeeff8af94e0d4937f8003.JPEG" alt="" loading="lazy"/>
-</p>
+    </p>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/ed978b8b25a02a194ae427d9863b34bd.JPEG" alt="" loading="lazy"/>
- 
+     
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/3fdf7c10c54106007f337d88fda16564.JPEG" alt="" loading="lazy"/>
- 
+     
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/318ee1e6d10fba7d702d20da449755ce.JPG" alt="" loading="lazy"/>
-</p>
+    </p>
 <p>另外，找机位拍照的时候，我还在想阿和家窗户底下怎么就是垃圾桶啊——后来再看电影发现，电影里面这里也是垃圾桶XD，然后我在那里愣是拍了快两个小时的照片才不舍地离开！！</p>
 <p>至于怎么离开，我们选择了坐公交车。澳门的公交司机非常狂野，在特别高特别陡的地势上感觉转弯都不带刹车，有那么一会儿我都觉得自己甩出去都属于坠楼了，在车上就是一个不带减速的狂暴下坡。看着窗外我们走了几十分钟的路几分钟就下来了，内心极其崩溃……</p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/4e495e95e7b45a73bdba2126d174dc9c.JPEG" class="float-img35">
@@ -762,7 +786,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

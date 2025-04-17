@@ -169,6 +169,29 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+        
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +230,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -404,7 +428,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 </p>
 <p>关于运动，其实到今天我都没有一个很具体的目标，非要说的话肯定希望自己更健康更Fit啦，但减到什么体重，练到什么程度——都还没有。这段时间里完全是一直遛狗式的锻炼，有多余的精力就消耗一下，没有也不勉强。我的精力值比较飘忽不定，今天多不代表明天多，连同运动想法一样，今天想练，不代表明天也想练，反之亦然。</p>
@@ -432,7 +456,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 </p>
 <p>（PS：博客还换了新背景，加了其他新装修和小东西！我就在这里敲敲打打！）</p>
@@ -449,7 +473,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 我就没去看了。</p>
 <hr>
@@ -1151,7 +1175,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 乱七八糟的就不贴上来了，就想问问自己哪来的时间啊！（唯一的安慰是很多都是在跑步机上看的。</p>
 <h2 id="读了些什么">读了些什么？</h2>
@@ -2641,7 +2665,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 下回真的不去这家剧院了！</p>
 <p>其实三四月份还和朋友线上观影了一季《夜访吸血鬼》，虽然看过一遍了但重温有了新感受，和朋友一起线上看剧也带来很多好玩好笑的感受。不过再写这篇就太长了，下次再说！</p>
@@ -3004,7 +3028,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

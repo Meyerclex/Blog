@@ -169,6 +169,29 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+        
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +230,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -334,7 +358,7 @@
     <div id="post-meta">
         <time datetime="2022-09-10 00:00:00 &#43;0000 UTC">
             2022-09-10
-            <span> ‧ 954</span>
+            <span> ‧ 956</span>
             <span>words</span>
 
 
@@ -375,13 +399,17 @@
 <p>不过在我在改主题的时随手查了一下邮箱，突然发现：</p>
 
 <img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220911005645.png" alt="" loading="lazy"/>
-<p>诶，哈哈哈，原来Vercel一直给我狂发邮件说我域名没设置好啊，一直以为是广告邮件……所以问题其实出在这里吧！！！</p>
+    <p>诶，哈哈哈，原来Vercel一直给我狂发邮件说我域名没设置好啊，一直以为是广告邮件……所以问题其实出在这里吧！！！</p>
 <p>不过主题换都换了，本次改主题改得非常开心。请看：</p>
 <p>
 <img src="luna.png" alt="Stack" loading="lazy"/>
- 
+Stack
+
+     
 <img src="stack.png" alt="Luna" loading="lazy"/>
-</p>
+Luna
+
+    </p>
 <p>找了一圈主题，最终还是选了功能齐全Stack（主要还是方便，因为之前就用过所以博客文件也还没删！），马上开始磨刀霍霍一顿乱改，把主题的层层叠叠的三栏结构改成了单栏，改的过程中忽然意识到人家本身就是美丽的层叠卡片式主题——我到底在干嘛啊！</p>
 <p>总而言之，一股“我偏要勉强”的信念让我走到了现在。主要进行了以下修改：</p>
 <ol>
@@ -762,7 +790,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

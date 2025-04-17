@@ -179,6 +179,29 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+        
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -220,6 +243,7 @@
 
 
 
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -227,7 +251,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.41823eaafa6c1868f2486cf8bb37b34cb32b463a22441ab092d700fd2442f6629af62d3b976930a34db724c3b6ecaf610dbc5d42bc6c38d1fe99ac3727c14a82.css" integrity="sha512-QYI&#43;qvpsGGjySGz4uzezTLMrRjoiRBqwktcA/SRC9mKa9i07l2kwo023JMO27K9hDbxdQrxsONH&#43;maw3J8FKgg==" />
+    <link rel="stylesheet" href="/css/main.9124abd5dd2f5e02d47db2b06b7481dbad5efe23747b8d7370f497e62535ab7e7fb0ca46a0e0a00f047c3afc74d7b446e828685e4b853823f876a1a5b1e30524.css" integrity="sha512-kSSr1d0vXgLUfbKwa3SB261e/iN0e41zcPSX5iU1q35/sMpGoOCgDwR8Ovx017RG6ChoXkuFOCP4dqGlseMFJA==" />
   
 
 
@@ -390,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function() {
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！</p>
 <p>
@@ -405,7 +429,7 @@ document.addEventListener("DOMContentLoaded", function() {
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 目前只想和说过话/有毛毛象联系方式的朋友交换链接，所以请不要单向添加友链。也请不要将我的站点收录进任何聚合页面。</p>
 <p>
@@ -420,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function() {
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 每一次刷新，排列顺序都会被打乱。</p>
 </blockquote>
@@ -563,7 +587,7 @@ document.addEventListener("DOMContentLoaded", function() {
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 </p>
 <h2 id="要和我交换吗">要和我交换吗？</h2>
@@ -584,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function() {
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 希望您也是对人和小动物都富有同理心的友善之人！</p>
 

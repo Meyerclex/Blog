@@ -1,6 +1,6 @@
 baseURL = 'https://gregueria.icu/'
 title = '再會，謝謝所有的魚'
-theme = ['newspaper',"hugo-shortcode-gallery"] #newspaper theme_1
+theme = ['newspaper'] #newspaper theme_1
 languageCode = "zh-cn"
 hasCJKLanguage = true
 
