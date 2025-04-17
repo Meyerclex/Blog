@@ -75,22 +75,3 @@
 #post-content p:has(> img:nth-child(2)) img{display:inherit;}
 #post-content p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 
-.alt-text {
-  display: block;
-  text-align: center;
-  margin: 2px auto;
-  width: fit-content;
-  white-space: nowrap;
-  max-width: 90%; /* 控制宽度 */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.5; /* 适当增加行高 */
-}
-
-@media (max-width: 768px) {
-  .alt-text {
-    max-width: 80%;
-    white-space: normal; /* 在小屏设备上允许换行 */
-  }
-}
-

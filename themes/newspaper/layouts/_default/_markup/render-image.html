@@ -1,10 +1,6 @@
 {{- $alt := .Text | plainify -}}
 {{- $title := .Title | plainify -}}
 
-<!-- 只针对 <p> 中的图片进行 alt-text 处理 -->
 {{ if .Destination }}
-<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" />
-{{- if $alt }}
-<span class="alt-text">{{ $alt }}</span>
-{{- end }}
+<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy"/>
 {{ end }}
