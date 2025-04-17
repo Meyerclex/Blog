@@ -75,24 +75,22 @@
 #post-content p:has(> img:nth-child(2)) img{display:inherit;}
 #post-content p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 
-
-/* 确保图片在 p 标签中显示为块级元素 */
-#post-content p {
-  text-align: center; /* 让所有图片在 p 标签中居中 */
-}
-
-/* 针对有 alt 的图片，确保文字在图片下方居中 */
-#post-content img[alt] {
-  display: block;  /* 让图片为块级元素，这样文本可以直接在下方显示 */
-  margin: 0 auto;  /* 让图片居中 */
-}
-
-#post-content p {
-  position: relative;
-}
-
-#post-content p > img + text {
+.alt-text {
   display: block;
   text-align: center;
-  margin-top: 8px; /* 控制文本和图片之间的间距 */
+  margin: 2px auto;
+  width: fit-content;
+  white-space: nowrap;
+  max-width: 90%; /* 控制宽度 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5; /* 适当增加行高 */
 }
+
+@media (max-width: 768px) {
+  .alt-text {
+    max-width: 80%;
+    white-space: normal; /* 在小屏设备上允许换行 */
+  }
+}
+
