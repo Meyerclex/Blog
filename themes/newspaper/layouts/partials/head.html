@@ -40,6 +40,7 @@
       {{ $.Site.Title }}
     {{ end }}
   </title>
+<!--  blur效果，点击模糊-->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -49,112 +50,114 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
+<!--  多图排列及点击放大-->
+<!--  <script>-->
+<!--    document.addEventListener('DOMContentLoaded', () => {-->
+<!--      console.log('JavaScript loaded and DOMContentLoaded event fired.');-->
 
-      // 处理每个段落的图片
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+<!--      const postContent = document.querySelector('#post-content');-->
+<!--      if (!postContent) {-->
+<!--        console.error('Error: #post-content not found!');-->
+<!--        return;-->
+<!--      }-->
 
-        // 如果只有一张图片，进行处理
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
+<!--      // 处理每个段落的图片-->
+<!--      const paragraphs = postContent.querySelectorAll('p');-->
+<!--      paragraphs.forEach((paragraph) => {-->
+<!--        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));-->
 
-          // 如果图片大于200x200，显示alt-text
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
+<!--        // 如果只有一张图片，进行处理-->
+<!--        if (paragraphImages.length === 1) {-->
+<!--          const img = paragraphImages[0];-->
+<!--          const naturalWidth = img.naturalWidth || img.width;-->
+<!--          const naturalHeight = img.naturalHeight || img.height;-->
 
-            // 设置容器宽度为100%
-            container.style.width = '100%';
+<!--          // 如果图片大于200x200，显示alt-text-->
+<!--          if (!img.src.includes('/img/emoji/')) {-->
+<!--            const container = document.createElement('div');-->
+<!--            container.classList.add('image-container');-->
 
-            container.appendChild(img);
+<!--            // 设置容器宽度为100%-->
+<!--            container.style.width = '100%';-->
 
-            // 处理alt文本
-            const altText = img.alt ? img.alt : ''; // 如果没有alt，默认为空
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; // 如果alt为空，显示为空的占位div
+<!--            container.appendChild(img);-->
 
-            // 如果没有alt文本，隐藏alt-text div
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
+<!--            // 处理alt文本-->
+<!--            const altText = img.alt ? img.alt : ''; // 如果没有alt，默认为空-->
+<!--            const altTextElement = document.createElement('div');-->
+<!--            altTextElement.classList.add('alt-text');-->
+<!--            altTextElement.textContent = altText; // 如果alt为空，显示为空的占位div-->
 
-            container.appendChild(altTextElement);
+<!--            // 如果没有alt文本，隐藏alt-text div-->
+<!--            if (!altText) {-->
+<!--              altTextElement.style.display = 'none';-->
+<!--            }-->
 
-            // 替换段落的内容为图片容器
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          // 多张图片的处理逻辑保持不变
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
+<!--            container.appendChild(altTextElement);-->
 
-          // 根据图片数量调整列数
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
+<!--            // 替换段落的内容为图片容器-->
+<!--            paragraph.innerHTML = '';-->
+<!--            paragraph.appendChild(container);-->
+<!--          }-->
+<!--        } else if (paragraphImages.length > 1) {-->
+<!--          // 多张图片的处理逻辑保持不变-->
+<!--          const imageRow = document.createElement('div');-->
+<!--          imageRow.classList.add('image-row');-->
 
-          let hasAltText = false; // 标志位，检查该行是否有alt文本
+<!--          // 根据图片数量调整列数-->
+<!--          if (paragraphImages.length === 2) {-->
+<!--            imageRow.classList.add('two-columns');-->
+<!--          } else if (paragraphImages.length === 3) {-->
+<!--            imageRow.classList.add('three-columns');-->
+<!--          }-->
 
-          // 移动图片到新容器并处理alt文本
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
+<!--          let hasAltText = false; // 标志位，检查该行是否有alt文本-->
 
-            // 如果图片小于 200x200，不做处理
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
+<!--          // 移动图片到新容器并处理alt文本-->
+<!--          paragraphImages.forEach((img) => {-->
+<!--            const naturalWidth = img.naturalWidth || img.width;-->
+<!--            const naturalHeight = img.naturalHeight || img.height;-->
 
-            const container = document.createElement('div');
-            container.classList.add('image-container');
+<!--            // 如果图片小于 200x200，不做处理-->
+<!--            if (naturalWidth <= 200 || naturalHeight <= 200) {-->
+<!--              return;-->
+<!--            }-->
 
-            // 将图片添加到容器
-            container.appendChild(img);
+<!--            const container = document.createElement('div');-->
+<!--            container.classList.add('image-container');-->
 
-            // 检查alt文本
-            const altText = img.alt ? img.alt : ''; // 如果没有alt，默认为空
-            if (altText) {
-              hasAltText = true; // 如果有alt文本，设置标志位
-            }
+<!--            // 将图片添加到容器-->
+<!--            container.appendChild(img);-->
 
-            // 如果alt不为空，插入alt-text div；如果alt为空，插入空的占位div
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; // 如果alt为空，显示为空的占位div
-            container.appendChild(altTextElement);
+<!--            // 检查alt文本-->
+<!--            const altText = img.alt ? img.alt : ''; // 如果没有alt，默认为空-->
+<!--            if (altText) {-->
+<!--              hasAltText = true; // 如果有alt文本，设置标志位-->
+<!--            }-->
 
-            // 将图片容器加入布局
-            imageRow.appendChild(container);
-          });
+<!--            // 如果alt不为空，插入alt-text div；如果alt为空，插入空的占位div-->
+<!--            const altTextElement = document.createElement('div');-->
+<!--            altTextElement.classList.add('alt-text');-->
+<!--            altTextElement.textContent = altText; // 如果alt为空，显示为空的占位div-->
+<!--            container.appendChild(altTextElement);-->
 
-          // 如果该行的图片全都没有alt文本，则不显示alt-text div
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
+<!--            // 将图片容器加入布局-->
+<!--            imageRow.appendChild(container);-->
+<!--          });-->
 
-          // 替换原段落内容为图片容器
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
-        }
-      });
-    });
-  </script>
+<!--          // 如果该行的图片全都没有alt文本，则不显示alt-text div-->
+<!--          if (!hasAltText) {-->
+<!--            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');-->
+<!--          }-->
+
+<!--          // 替换原段落内容为图片容器-->
+<!--          paragraph.innerHTML = '';-->
+<!--          paragraph.appendChild(imageRow);-->
+<!--        }-->
+<!--      });-->
+<!--    });-->
+<!--  </script>-->
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +208,8 @@
       images.forEach(enableImageZoom);
     });
   </script>
+<!-- 已弃用 -->
+
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
 
