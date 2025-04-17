@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -334,7 +361,7 @@
     <div id="post-meta">
         <time datetime="2022-03-18 00:00:00 &#43;0000 UTC">
             2022-03-18
-            <span> ‧ 2888</span>
+            <span> ‧ 2890</span>
             <span>words</span>
 
 
@@ -408,7 +435,9 @@
 <p>视听生活的另一大事是我开始听《蒋勋细说红楼梦》，它似乎是一个讲课的音频，两集讲红楼的一个回合，一集一小时。小学看红楼的我绝没有想到十年后红楼于我主要是起到烂梗精神家园的作用：（felt sorry for my 烂梗。PS：哥弟是我 CP 的代称可是一旦解释就不好笑了啦 😫）</p>
 
 <img src="https://s2.loli.net/2022/03/18/1or4evRdhBxMO2G.png" alt="烂梗" loading="lazy"/>
-<p>其实当时究竟从《红楼梦》里读到了什么，我已经记不太清楚了，我读它的时候似乎还没有黛玉年纪大。但过了很久，许多名字，许多情节，经过十年语文学习的教化，几乎耳熟能详，我并不能够分辨它们是源于那个遥远时代的故事还是源于我从各种文本里看来的边角料。</p>
+烂梗
+
+    <p>其实当时究竟从《红楼梦》里读到了什么，我已经记不太清楚了，我读它的时候似乎还没有黛玉年纪大。但过了很久，许多名字，许多情节，经过十年语文学习的教化，几乎耳熟能详，我并不能够分辨它们是源于那个遥远时代的故事还是源于我从各种文本里看来的边角料。</p>
 <p>这个音频很好听，我走路在听，骑车在听，洗澡在听。因为每一回都讲得很生动很有趣，因而不构成叠加态。不过在听完以前仍不能下定论——我是谨慎的。</p>
 <p>指南写至此处，心情畅快许多。我与量子复合叠加态生活的打架往往三局两败，这是唯一胜出的那局。希望大家都能打赢叠加态，下一集再见。</p>
 
@@ -771,7 +800,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -392,7 +419,7 @@
 <p>四月份的我几乎在寻瘾这件事耗了过去，我的瘾是持续的激情、热辣喋喋不休的语言、无穷无尽似不停歇的爱。酒精好浅薄，古人欺我。</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%e5%b7%ae%e7%94%9f/6.png" alt="" loading="lazy"/>
-<p>这个月我读同人的数量有所下降，小马华多依然吸引我，但不像从前了。当然有写同人破除魅惑的缘故，但也有一部分原因是我对收获称赞有着执迷与不屑，二者的冲突使我不想再写，于是也不愿再看——我可以承认：会嫉妒。为什么你们还可以写？为什么你们可以收获我不能收获的？我不能发出第三次深问，这令我觉得我很无聊。同人之前就是那个瘾，现在戒了。</p>
+    <p>这个月我读同人的数量有所下降，小马华多依然吸引我，但不像从前了。当然有写同人破除魅惑的缘故，但也有一部分原因是我对收获称赞有着执迷与不屑，二者的冲突使我不想再写，于是也不愿再看——我可以承认：会嫉妒。为什么你们还可以写？为什么你们可以收获我不能收获的？我不能发出第三次深问，这令我觉得我很无聊。同人之前就是那个瘾，现在戒了。</p>
 <p>不读同人了，自然有了很多时间开始搞七搞八。可日子真是好无聊，除了那天和好友出去玩。开始读书，把先前借了没读的一并读了，四月份已读书单，书评一并贴来：</p>
 <h3 id="如何抑止女性写作">《如何抑止女性写作》</h3>
 <p><em>是多则短评的集合。前后不连续。</em></p>
@@ -809,7 +836,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

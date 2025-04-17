@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -520,7 +547,7 @@ toc: false
 <summary>样式及代码部分</summary>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/2.png" alt="" loading="lazy"/>
-<pre tabindex="0"><code>&lt;style&gt;
+    <pre tabindex="0"><code>&lt;style&gt;
 .content li::marker {
   content: &#34;♡  &#34;; 
   color: var(--primary-alt); 
@@ -552,7 +579,7 @@ a.link--external:last-child::after {
 <summary>效果及代码部分</summary>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/1.png" alt="" loading="lazy"/>
-<pre tabindex="0"><code>&lt;style&gt;
+    <pre tabindex="0"><code>&lt;style&gt;
 .post-meta {
   display: none;
 }
@@ -597,7 +624,7 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
 <p>如果你不知道应该怎么做和修改这部分，请在自己的网站上按<code>F12</code>，查看主题的源代码，点进去用选择器查找和看自己文章部分的所属的类是什么，然后替换掉上述代码里我的<code>post-content</code>部分即可。</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/3.png" alt="" loading="lazy"/>
-<h2 id="全站字体修改">全站字体修改</h2>
+    <h2 id="全站字体修改">全站字体修改</h2>
 <p>大家应该都注意到了吧！我把网站的主题修改成了霞鹜文楷，由于我不知道怎么样引入非Google字体的字体，就在网上找了一下。发现了这个仓库：<a href="https://github.com/satouriko/LxgwWenKai_Webfonts">霞鹜文楷Web字体</a>。它的简介表示使用与Google Fonts相同的技术对中文字体进行分包和压缩，以便于用于网页端分发——</p>
 <p>什么意思？我是看不懂啦，但会用能用就行。根据使用说明具体操作如下：</p>
 <ol>
@@ -758,12 +785,12 @@ weight: 99
 <p>然后放一下我的同人博客更新后的样子。</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/5.png" alt="" loading="lazy"/>
-
+    
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/4.png" alt="" loading="lazy"/>
-<p>浣心魔改后的主题本身对处于一个Series的文章做了新的显示效果如下，如果想要实现，具体请看他的文章：<a href="https://blog.loikein.one/posts/2021-05-28-hugo-series/">在Hugo里显示系列文章</a>。</p>
+    <p>浣心魔改后的主题本身对处于一个Series的文章做了新的显示效果如下，如果想要实现，具体请看他的文章：<a href="https://blog.loikein.one/posts/2021-05-28-hugo-series/">在Hugo里显示系列文章</a>。</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/6.png" alt="" loading="lazy"/>
-<h2 id="最后的话">最后的话</h2>
+    <h2 id="最后的话">最后的话</h2>
 <p>其实还做了一些很多其他的改动。因为每次装修都在无关紧要的细节上进行长时间的大思考，所以暂时不打算再对博客做其他修改了……下一次写装修笔记应该又是明年了。</p>
 <p>如果您对本站及同人站的特性感到好奇，欢迎在这一篇文章的评论区留言！我会很乐意分享的。</p>
 
@@ -1126,7 +1153,7 @@ weight: 99
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

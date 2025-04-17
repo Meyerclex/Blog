@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -334,7 +361,7 @@
     <div id="post-meta">
         <time datetime="2025-03-03 00:00:00 &#43;0000 UTC">
             2025-03-03
-            <span> ‧ 3461</span>
+            <span> ‧ 3469</span>
             <span>words</span>
 
 
@@ -378,7 +405,9 @@
 <p>在别的地方不敢说但在这里我就要说了，<strong>这不比光线强十倍？</strong></p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/IMG_9065.JPEG" alt="网友换到的大无料" loading="lazy"/>
-<p>看完电影又换完无料之后就有点晚了（这次观影团完全是狮狮Only我完全跟着友来长见识……），和网友饮食从简找了地方坐下就抓紧时间欣赏他换到的大无料，然后狂暴聊狮狮！聊完之后整个人心情非常充沛，出门前我还需要自我暗示我是个很function的看起来一点也不奇怪的社会人，见面之后却狂暴聊着酷儿话题同人话题，完全没有发生任何不好的对话，没有任何不好的感受，就像认识了非常久一样。</p>
+网友换到的大无料
+
+    <p>看完电影又换完无料之后就有点晚了（这次观影团完全是狮狮Only我完全跟着友来长见识……），和网友饮食从简找了地方坐下就抓紧时间欣赏他换到的大无料，然后狂暴聊狮狮！聊完之后整个人心情非常充沛，出门前我还需要自我暗示我是个很function的看起来一点也不奇怪的社会人，见面之后却狂暴聊着酷儿话题同人话题，完全没有发生任何不好的对话，没有任何不好的感受，就像认识了非常久一样。</p>
 <p>尽管其实三次元生活里，我也一直在“做自己”这件事上贯彻得很彻底，但那天却觉得自己在做一个……更深一点的我自己。我就是很喜欢看同人写同人聊同人，如果不去自我控制不需要穿上裤子出门赚钱花的话，我的每一天应该都像那天一样深地成为自己，最喜欢的活动就是呆在家里和朋友聊我喜欢的CP，分享我喜欢的同人。只是这样。</p>
 <p>约会见面对我来说是一个会花光全部行动点数的事情，我总是在和人见完面之后觉得能量耗尽，但那天却不会。回家时电量仍充沛异常，坐下来先把日记给写了企图留住这天。其实写这篇时已经距离那天大半个月了，而幸福的事在一段时间后回望总带着一些好的伤感，但就先停在这刻。</p>
 
@@ -741,7 +770,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

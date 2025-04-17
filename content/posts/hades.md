@@ -94,6 +94,4 @@ Fin
 
 照例放一下游戏截图，由于我着急去躺着睡觉所以大家无法欣赏到余下 50 张没有放出来的高清美丽我家可爱小扎真是太过遗憾：
 
-![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/hades/3.png)
-
-![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/hades/4.png)
+![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/hades/3.png)![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/hades/4.png)

@@ -169,18 +169,38 @@
         return;
       }
 
-      // 处理每个段落的图片
+      // 遍历所有段落，居中含图段落
       const paragraphs = postContent.querySelectorAll('p');
       paragraphs.forEach((paragraph) => {
         const img = paragraph.querySelector('img');
-
-        // 如果段落内有图片且该图片的id不是"emoji"
         if (img && img.id !== 'emoji') {
-          // 将这个段落居中
           paragraph.style.textAlign = 'center';
+          paragraph.style.fontSize = '90%';
+        }
+      });
+
+      // 处理“不是p标签里”的单张img + 后文本
+      const imgs = postContent.querySelectorAll('img');
+      imgs.forEach((img) => {
+        if (img.closest('p')) return; // 忽略被<p>包裹的图
+        if (img.id === 'emoji') return;
+        if (!img.alt) return;
+
+        const next = img.nextSibling;
+        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
+          // 创建 span 包裹文字
+          const span = document.createElement('span');
+          span.textContent = next.textContent.trim();
+          span.style.display = 'block';
+          span.style.textAlign = 'center';
+          span.style.fontSize = '90%';
+
+          // 替换原始 textNode
+          img.parentNode.replaceChild(span, next);
         }
       });
     });
+
 
 
     document.addEventListener('DOMContentLoaded', () => {

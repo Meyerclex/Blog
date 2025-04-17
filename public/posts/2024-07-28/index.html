@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -491,7 +518,7 @@
 </ol>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/%e8%b4%ad%e7%89%a9.jpeg" alt="" loading="lazy"/>
-<h3 id="搬家之后">搬家之后</h3>
+    <h3 id="搬家之后">搬家之后</h3>
 <p>搬家打扫干净后的第一件事是整理出了赏心悦目的角落，将朋友们送的明信片贴到墙上，作为新家第一又或唯一的装饰物。我大概花了两个星期，一直到现在都没有真正把物品归置妥帖，搬家实在是一项浩大的工程，但目前来看，我还是自己一个人搞定了。</p>
 <p>毕业以后我做的很多事情都是这样，一个人就把事情做完。我非常相信脱口而出的话语最终会成为人，因而很长一段时间里都在对自己讲：我是可以做好很多事情的人，也说自己是没有拖延症的人。在做事情以前不喜欢抱怨和说烦躁的话也是因为此，甚至针对未来的恐慌，也因为缄口不言而消失许多。</p>
 <p>如今我已经把新家附近逛了个遍，找到了很好的沿江骑行路线，看过一场电影，买到了相当喜欢的衣服，找到一间很喜欢的咖啡店，逛了公园，度过了两个幸福的周末。</p>
@@ -508,22 +535,22 @@
 <hr>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_2873.JPG" alt="" loading="lazy"/>
-
+    
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_2913.JPG" alt="" loading="lazy"/>
-
+    
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/milk.jpg" alt="" loading="lazy"/>
-
+    
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_3030.JPG" alt="" loading="lazy"/>
-
+    
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_3102.jpg" alt="" loading="lazy"/>
-
+    
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202407/IMG_2742.jpg" alt="" loading="lazy"/>
-</p>
+    </p>
 
     </div>
     <br>
@@ -884,7 +911,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

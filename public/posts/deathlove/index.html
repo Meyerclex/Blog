@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -334,7 +361,7 @@
     <div id="post-meta">
         <time datetime="2022-06-29 00:00:00 &#43;0000 UTC">
             2022-06-29
-            <span> ‧ 3401</span>
+            <span> ‧ 3432</span>
             <span>words</span>
 
 
@@ -411,35 +438,41 @@
 <p>一个杀人夫妻店模拟经营类游戏，经营模式是这样的：丈夫二楼开杀人裁缝店，尸体通过暗门丢到负一楼，妻子在负一楼做好了人肉派，送到一楼餐厅去卖。就猎奇心理买了下来，玩了玩觉得就蛮好笑的。玩了两个小时，手柄不太玩得来，而我的鼠标有点坏了所以搁置没玩下去。其实游戏机制有点问题，但因为我不是太在乎这些只要让我把时间杀掉就好了。</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220625002330_1.jpg" alt="随便截了一张感受一下游戏的美术风格" loading="lazy"/>
-<h3 id="travellers-rest-旅者之憩">Travellers Rest 旅者之憩</h3>
+随便截了一张感受一下游戏的美术风格
+
+    <h3 id="travellers-rest-旅者之憩">Travellers Rest 旅者之憩</h3>
 <p>也玩了两个小时，是开小酒馆的模拟经营，除了随时可以赶客关店以外暂时没有玩出什么出彩的地方。另外，一个猫水盆子卖 20 银币也太贵了吧！</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220620230655_1.jpg" alt="《旅者之憩》" loading="lazy"/>
-<h3 id="the-crown-of-leaves">The Crown of Leaves</h3>
+《旅者之憩》
+
+    <h3 id="the-crown-of-leaves">The Crown of Leaves</h3>
 <p>连夜玩了五个小时，在玩之前我还想不就是猫猫狗狗什么的嘛我见得多了——玩了之后，我：这世界上只有两种人，一种是 Furry 控，另一种是暂时还没发现自己是 Furry 控的 Furry 控……这是款视觉小说来着……视觉小说重要的一般是小说吧可这视觉也太漂亮了！</p>
 <p>这游戏目前只做了两章，有民间翻译无官方中文（民间汉化压缩包需要密码而我实在解不开）。第一章靠蒙蒙猜猜还蛮好看懂的，第二章解密部分就有点吃力了，一些神秘学，一些谜题，一些可爱迷人的动物。没有办法介绍剧情，我是一边玩一边截图一边流口水……真好呀。</p>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626010753_1.jpg" alt="左下角就是主角！" loading="lazy"/>
+左下角就是主角！
 
+    
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626001948_1.jpg" alt="" loading="lazy"/>
-</p>
+    </p>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/21.jpg" alt="" loading="lazy"/>
-
+    
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220626003621_1.jpg" alt="" loading="lazy"/>
-</p>
+    </p>
 <h3 id="firewatch">Firewatch</h3>
 <p>坚持了不到两个小时晕头转向整个人如同坐了两个小时公交车且是最后一排。很美的风景但因为本人的大巴游客视角口含晕车片无法欣赏，据说是很好的文本，但正在考虑退款。</p>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/2.jpg" alt="" loading="lazy"/>
-
+    
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/1.jpg" alt="" loading="lazy"/>
-</p>
+    </p>
 <h3 id="逆转裁判-phoenix-wright-ace-attorney-trilogy">逆转裁判 Phoenix Wright: Ace Attorney Trilogy</h3>
 <p>鼎鼎有名嘛所以就买了！只玩了一个章节没有发言权！可是角色蛮可爱的，所以接下来应该会主要打这个。</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/June/20220619220035_1.jpg" alt="" loading="lazy"/>
-<detail>
+    <detail>
 <summary>
 📑清单：买了还没有玩的，无参考意义所以折叠
 </summary>
@@ -815,7 +848,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

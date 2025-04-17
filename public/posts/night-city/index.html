@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -397,12 +424,12 @@
 <center>封面是2077里的投币告解机：</center>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%e6%97%a9%e4%b8%8a%e5%a5%bd/640.png" alt="" loading="lazy"/>
-
+    
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%e6%97%a9%e4%b8%8a%e5%a5%bd/2.webp" alt="" loading="lazy"/>
-<center>投币之后：</center>
+    <center>投币之后：</center>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%e6%97%a9%e4%b8%8a%e5%a5%bd/3.webp" alt="" loading="lazy"/>
-
+    
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%e6%97%a9%e4%b8%8a%e5%a5%bd/4.webp" alt="" loading="lazy"/>
     </div>
     <br>
@@ -763,7 +790,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

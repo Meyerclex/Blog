@@ -173,11 +173,14 @@
       paragraphs.forEach((paragraph) => {
         const img = paragraph.querySelector('img');
 
-        
+
         if (img && img.id !== 'emoji') {
           
           paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
         }
+
       });
     });
 

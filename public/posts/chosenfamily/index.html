@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -390,7 +417,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
  ）才终于写了出来。</p>
 <p>对了
@@ -405,7 +432,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 为了庆祝这次更新，我决定为博客增添充满活力的Blobcat表情 并为之增添超可爱的鼠标移上时会放大的时髦效果，来，试试看吧！</p>
 <p>关于如何达到这样时髦又可爱的效果，请参考<a href="https://mantyke.icu/posts/2021/ff14-emoji/">塔塔的文章</a>。</p>
@@ -438,7 +465,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 </p>
 </details>
@@ -801,7 +828,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

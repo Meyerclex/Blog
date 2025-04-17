@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -334,7 +361,7 @@
     <div id="post-meta">
         <time datetime="2024-04-08 00:00:00 &#43;0000 UTC">
             2024-04-08
-            <span> ‧ 3805</span>
+            <span> ‧ 3806</span>
             <span>words</span>
 
 
@@ -420,12 +447,14 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 请参观：</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/%e5%b0%8f%e8%af%b4%e5%a4%a7%e4%ba%8b/2.png" alt="1" loading="lazy"/>
-<div class="image-container">
+1
+
+    <div class="image-container">
         <div class="image-wrapper">
             <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/小说大事/3.png" alt="About">
             <p>About</p>
@@ -476,7 +505,7 @@
     margin: 0.2rem 0;
     border-radius: 0px;"
     onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
 />
 </p>
 
@@ -839,7 +868,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     

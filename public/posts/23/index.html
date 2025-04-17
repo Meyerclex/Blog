@@ -169,6 +169,32 @@
       }
 
       
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+
+
+        if (img && img.id !== 'emoji') {
+          
+          paragraph.style.textAlign = 'center';
+          
+          paragraph.style.fontSize = '90%';
+        }
+
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
       const overlay = document.createElement('div');
       overlay.className = 'image-overlay';
       document.body.appendChild(overlay);
@@ -207,6 +233,7 @@
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -383,7 +410,7 @@
 <p>中学转学是我第一次脱离家人独自在外生活，新班级有圣诞那天互相赠送糖果的礼仪，而我那时和大家并不熟悉，对于礼仪也并不清楚，但在全然迷惘的情况下收到了满满一盒来自同学的糖果。</p>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Dec/%e7%b3%96%e6%9e%9c.jpg" alt="" loading="lazy"/>
-<p>迄今仍记得那份令我错愕的丰盈善意，口袋空空如也的我也急忙去买了糖作为回礼。甚至那时交到的好朋友送的巧克力被我保存了多年，从不舍得吃到无法再吃。圣诞节从一个无所谓的节日，由此变成了一个发光的日子。</p>
+    <p>迄今仍记得那份令我错愕的丰盈善意，口袋空空如也的我也急忙去买了糖作为回礼。甚至那时交到的好朋友送的巧克力被我保存了多年，从不舍得吃到无法再吃。圣诞节从一个无所谓的节日，由此变成了一个发光的日子。</p>
 <p>我15岁，不是校园生活里那种受欢迎的小孩，不知道有趣的事情，没有讲笑话的智慧，在未开蒙的阶段里，经常保持着令人如坐针毡、而自己也并不舒服的沉默。因而至今仍然感激旧班级同学的接纳，令我脱离家庭开始社会化的第一步，没有过得太困难。</p>
 <p>这也是生日的月份，我23岁。</p>
 <p>直到那天被工作群自动提醒，才意识到生日到了，同事在办公室外放了海底捞那首生日歌，我笑得东倒西歪忙说谢谢谢谢，晚饭的时候还和同事去吃了泰国菜，是那种底部会放小蜡烛保持锅热的菜式，吃完锅拿掉后，小葵呼得一下吹灭蜡烛：“生日快乐！”</p>
@@ -768,7 +795,7 @@
         
         
         
-        共书写了277.4k字 · 共 82篇文章
+        共书写了277.7k字 · 共 82篇文章
     </section>
 
     
