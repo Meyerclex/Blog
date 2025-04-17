@@ -167,17 +167,34 @@
       const paragraphs = postContent.querySelectorAll('p');
       paragraphs.forEach((paragraph) => {
         const img = paragraph.querySelector('img');
-
-
         if (img && img.id !== 'emoji') {
-          
           paragraph.style.textAlign = 'center';
-          
           paragraph.style.fontSize = '90%';
         }
+      });
 
+      
+      const imgs = postContent.querySelectorAll('img');
+      imgs.forEach((img) => {
+        if (img.closest('p')) return; 
+        if (img.id === 'emoji') return;
+        if (!img.alt) return;
+
+        const next = img.nextSibling;
+        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
+          
+          const span = document.createElement('span');
+          span.textContent = next.textContent.trim();
+          span.style.display = 'block';
+          span.style.textAlign = 'center';
+          span.style.fontSize = '90%';
+
+          
+          img.parentNode.replaceChild(span, next);
+        }
       });
     });
+
 
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -239,7 +256,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.9124abd5dd2f5e02d47db2b06b7481dbad5efe23747b8d7370f497e62535ab7e7fb0ca46a0e0a00f047c3afc74d7b446e828685e4b853823f876a1a5b1e30524.css" integrity="sha512-kSSr1d0vXgLUfbKwa3SB261e/iN0e41zcPSX5iU1q35/sMpGoOCgDwR8Ovx017RG6ChoXkuFOCP4dqGlseMFJA==" />
+    <link rel="stylesheet" href="/css/main.b00a7a472a0ba516665f81ccaa6431f5d0a717fe50ff1945e05092a4f8bd35ed256f6486ff9269013ee4e75e632c530698eefccd5a30751ec397c818ab986261.css" integrity="sha512-sAp6RyoLpRZmX4HMqmQx9dCnF/5Q/xlF4FCSpPi9Ne0lb2SG/5JpAT7k515jLFMGmO78zVowdR7Dl8gYq5hiYQ==" />
   
 
 
@@ -353,296 +370,209 @@
 
 
 
-    <ul><li>
-            <span>2025-04-15</span>
-            <a href="/posts/2025-04-15/">草长莺飞季节里的一些事</a>
-        </li>
-        <li>
-            <span>2025-03-13</span>
-            <a href="/posts/2025-03-13/">骑行的第一个春天</a>
-        </li>
-        <li>
-            <span>2025-03-05</span>
-            <a href="/posts/2025-03-05/">听播客，今天听什么？</a>
-        </li>
-        <li>
-            <span>2025-03-03</span>
-            <a href="/posts/2025-03-03/">全心保存真的我</a>
-        </li>
-        <li>
-            <span>2025-01-25</span>
-            <a href="/posts/statement-2025-01-25/">关于本站停止RSS输出及相关事件说明</a>
-        </li>
-        <li>
-            <span>2025-01-23</span>
-            <a href="/posts/2025-01-23/">那故事发生的地方真的存在</a>
-        </li>
-        <li>
-            <span>2025-01-21</span>
-            <a href="/posts/2025-01-21/">但那天曾实在华丽地邂逅</a>
-        </li>
-        <li>
-            <span>2025-01-15</span>
-            <a href="/posts/2025-01-15/">2024年度院线电影颁奖典礼</a>
-        </li>
-        <li>
-            <span>2025-01-05</span>
-            <a href="/posts/01-05/">简明装修笔记一则</a>
-        </li>
-        <li>
-            <span>2024-12-26</span>
-            <a href="/posts/2024-12-26/">怎么做皮蛋瘦肉粥和寿喜锅</a>
-        </li>
-        <li>
-            <span>2024-12-24</span>
-            <a href="/posts/fanfic2024/">2024同人年终总结 ✨</a>
-        </li>
-        <li>
-            <span>2024-12-19</span>
-            <a href="/posts/2024-12-19/">十二月份事发始末</a>
-        </li>
-        <li>
-            <span>2024-11-24</span>
-            <a href="/posts/2024-11-24/">博客三周年，猛猛大装修</a>
-        </li>
-        <li>
-            <span>2024-11-18</span>
-            <a href="/posts/disconnected/">在最爱上网的年纪断网之后</a>
-        </li>
-        <li>
-            <span>2024-09-08</span>
-            <a href="/posts/%E5%8D%A4%E7%85%AE/">差不多行了食谱集</a>
-        </li>
-        <li>
-            <span>2024-08-26</span>
-            <a href="/posts/theroadofaspectrum/">一场有关A-spectrum的自我探索</a>
-        </li>
-        <li>
-            <span>2024-08-25</span>
-            <a href="/posts/audio-0825/">读段永别书：第二次爆炸</a>
-        </li>
-        <li>
-            <span>2024-07-28</span>
-            <a href="/posts/2024-07-28/">搬进新的生活</a>
-        </li>
-        <li>
-            <span>2024-06-23</span>
-            <a href="/posts/archiveandlink/">鱼鱼小家的装修笔记</a>
-        </li>
-        <li>
-            <span>2024-06-12</span>
-            <a href="/posts/all-about-rss/">关于RSS订阅二三事</a>
-        </li>
-        <li>
-            <span>2024-06-11</span>
-            <a href="/posts/fetfc/">Fanfic Elysium：The Final Cut</a>
-        </li>
-        <li>
-            <span>2024-05-17</span>
-            <a href="/posts/2024-05-17/">《九龙城寨之围城》是一部烂电影</a>
-        </li>
-        <li>
-            <span>2024-04-28</span>
-            <a href="/posts/8tips/">生活的撇步也应逐一记录</a>
-        </li>
-        <li>
-            <span>2024-04-08</span>
-            <a href="/posts/aboutfic/">小说大事记事簿</a>
-        </li>
-        <li>
-            <span>2024-03-27</span>
-            <a href="/posts/maco/">神压在了你身上</a>
-        </li>
-        <li>
-            <span>2024-03-08</span>
-            <a href="/posts/chosenfamily/">战士的选择</a>
-        </li>
-        <li>
-            <span>2023-12-16</span>
-            <a href="/posts/disc/">而为什么我选择了月经盘</a>
-        </li>
-        <li>
-            <span>2023-12-15</span>
-            <a href="/posts/23/">23岁，两周年，谢谢所有的鱼</a>
-        </li>
-        <li>
-            <span>2023-11-29</span>
-            <a href="/posts/all-about-steam-deck/">关于我知道的Steam Deck的一切</a>
-        </li>
-        <li>
-            <span>2023-09-10</span>
-            <a href="/posts/safeandhealthy/">如果生病，一个人</a>
-        </li>
-        <li>
-            <span>2023-08-17</span>
-            <a href="/posts/thekitchen/">我的厨房</a>
-        </li>
-        <li>
-            <span>2023-08-08</span>
-            <a href="/posts/living-alone/">当我们谈论独居时</a>
-        </li>
-        <li>
-            <span>2023-07-07</span>
-            <a href="/posts/all-alone/">是问题构成了这个世界</a>
-        </li>
-        <li>
-            <span>2023-06-14</span>
-            <a href="/posts/rent/">拉断一根尼龙绳</a>
-        </li>
-        <li>
-            <span>2023-04-13</span>
-            <a href="/posts/bird-valley/">小鸟半月刊</a>
-        </li>
-        <li>
-            <span>2023-03-29</span>
-            <a href="/posts/decisiontostay/">而这使你充满了决心</a>
-        </li>
-        <li>
-            <span>2023-03-24</span>
-            <a href="/posts/2023-03-24/">做六分片观众</a>
-        </li>
-        <li>
-            <span>2023-02-28</span>
-            <a href="/posts/thewoman/">娇妹与窃贼</a>
-        </li>
-        <li>
-            <span>2023-01-27</span>
-            <a href="/posts/messy-stuff/">我所拥有的相对丰饶的实体生活</a>
-        </li>
-        <li>
-            <span>2023-01-21</span>
-            <a href="/posts/thename/">旧名字的故事</a>
-        </li>
-        <li>
-            <span>2023-01-04</span>
-            <a href="/posts/2023-1-3/">未来属于勇敢的人</a>
-        </li>
-        <li>
-            <span>2022-12-17</span>
-            <a href="/posts/gruvbox/">换上秋冬色系新主题</a>
-        </li>
-        <li>
-            <span>2022-12-11</span>
-            <a href="/posts/portrait/">一个现实生活卧底的画像</a>
-        </li>
-        <li>
-            <span>2022-11-22</span>
-            <a href="/posts/audio-1122/">读段楚传玩儿：清风明月</a>
-        </li>
-        <li>
-            <span>2022-11-12</span>
-            <a href="/posts/1st/">博客一周年，谢谢所有的鱼！</a>
-        </li>
-        <li>
-            <span>2022-11-07</span>
-            <a href="/posts/2022-11-07-%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/">多情剑客无情剑</a>
-        </li>
-        <li>
-            <span>2022-10-17</span>
-            <a href="/posts/lovestory/">我借爱的轻翼飞过院墙</a>
-        </li>
-        <li>
-            <span>2022-09-26</span>
-            <a href="/posts/cooladult/">还有三十年时间做Cool Adult</a>
-        </li>
-        <li>
-            <span>2022-08-30</span>
-            <a href="/posts/hackingbegin/">Let the Hacking begin！</a>
-        </li>
-        <li>
-            <span>2022-08-18</span>
-            <a href="/posts/unlighted/">人类从未成功形容过任何一朵玫瑰</a>
-        </li>
-        <li>
-            <span>2022-08-03</span>
-            <a href="/posts/july26/">拔掉两枚智齿，和电子设备斗殴</a>
-        </li>
-        <li>
-            <span>2022-07-17</span>
-            <a href="/posts/hades/">In the Name of Hades！</a>
-        </li>
-        <li>
-            <span>2022-06-29</span>
-            <a href="/posts/deathlove/">死亡的拟态色泽璀璨</a>
-        </li>
-        <li>
-            <span>2022-06-12</span>
-            <a href="/posts/nosad/">非伤心事件簿</a>
-        </li>
-        <li>
-            <span>2022-06-11</span>
-            <a href="/posts/father/">我们两个人都没有赢</a>
-        </li>
-        <li>
-            <span>2022-05-27</span>
-            <a href="/posts/emotional/">如何忘记并肩而行的烦恼，并走进炸鸡店</a>
-        </li>
-        <li>
-            <span>2022-05-18</span>
-            <a href="/posts/may-2022-02/">我是被天使宠爱过来的人</a>
-        </li>
-        <li>
-            <span>2022-05-13</span>
-            <a href="/posts/may2022-01/">我和我埋头对坐</a>
-        </li>
-        <li>
-            <span>2022-05-01</span>
-            <a href="/posts/april2022-03/">四月末归家，畅游，心情明朗与一些事件</a>
-        </li>
-        <li>
-            <span>2022-04-19</span>
-            <a href="/posts/april2022-02/">关于她与她的生活的侧写</a>
-        </li>
-        <li>
-            <span>2022-04-06</span>
-            <a href="/posts/april2022/">病情反复，仍需酒神庇护</a>
-        </li>
-        <li>
-            <span>2022-03-18</span>
-            <a href="/posts/advice/">关于打破量子复合叠加态生活的建议</a>
-        </li>
-        <li>
-            <span>2022-03-01</span>
-            <a href="/posts/hacklibrary/">图书馆的地板是烂的！</a>
-        </li>
-        <li>
-            <span>2022-01-26</span>
-            <a href="/posts/2018/">下条时间线仍做读者与观众</a>
-        </li>
-        <li>
-            <span>2022-01-03</span>
-            <a href="/posts/55yearslater/">55年后我们更加相爱</a>
-        </li>
-        <li>
-            <span>2021-11-30</span>
-            <a href="/posts/november2021/">十一月份花天酒地</a>
-        </li>
-        <li>
-            <span>2021-10-27</span>
-            <a href="/posts/cannot-breath/">在尘土中呼吸</a>
-        </li>
-        <li>
-            <span>2021-10-15</span>
-            <a href="/posts/guide-for-drunkard/">《指南》说：“尽管去吧，祝你好运”</a>
-        </li>
-        <li>
-            <span>2021-08-28</span>
-            <a href="/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/">人生差生的八月份怎么过</a>
-        </li>
-        <li>
-            <span>2021-07-12</span>
-            <a href="/posts/night-city/">早上好，夜之城！</a>
-        </li>
-        <li>
-            <span>2021-04-24</span>
-            <a href="/posts/we-will-be-fine/">寻瘾未果</a>
-        </li>
-        <li>
-            <span>2020-12-26</span>
-            <a href="/posts/%E5%BF%83%E7%A2%8E%E7%9A%84%E5%8A%A8%E7%89%A9%E7%AC%AC%E4%BA%8C%E4%B8%AA%E9%97%AE%E9%A2%98%E7%9A%84%E7%AD%94%E6%A1%88%E5%A4%B1%E8%80%8C%E5%A4%8D%E5%BE%97%E7%9A%84%E9%87%91%E5%AD%90/">心碎的动物、第二个问题的答案、失而复得的金子</a>
-        </li>
-        
-    </ul>
+
+
+  
+ 
+
+<ul><li>
+        <span>2025-04-15</span>
+        <a href="/posts/2025-04-15/">草长莺飞季节里的一些事</a>
+    </li>
+    <li>
+        <span>2025-03-13</span>
+        <a href="/posts/2025-03-13/">骑行的第一个春天</a>
+    </li>
+    <li>
+        <span>2025-03-05</span>
+        <a href="/posts/2025-03-05/">听播客，今天听什么？</a>
+    </li>
+    <li>
+        <span>2025-03-03</span>
+        <a href="/posts/2025-03-03/">全心保存真的我</a>
+    </li>
+    <li>
+        <span>2025-01-25</span>
+        <a href="/posts/statement-2025-01-25/">关于本站停止RSS输出及相关事件说明</a>
+    </li>
+    <li>
+        <span>2025-01-23</span>
+        <a href="/posts/2025-01-23/">那故事发生的地方真的存在</a>
+    </li>
+    <li>
+        <span>2025-01-21</span>
+        <a href="/posts/2025-01-21/">但那天曾实在华丽地邂逅</a>
+    </li>
+    <li>
+        <span>2025-01-15</span>
+        <a href="/posts/2025-01-15/">2024年度院线电影颁奖典礼</a>
+    </li>
+    <li>
+        <span>2025-01-05</span>
+        <a href="/posts/01-05/">简明装修笔记一则</a>
+    </li>
+    <li>
+        <span>2024-12-26</span>
+        <a href="/posts/2024-12-26/">怎么做皮蛋瘦肉粥和寿喜锅</a>
+    </li>
+    <li>
+        <span>2024-12-24</span>
+        <a href="/posts/fanfic2024/">2024同人年终总结 ✨</a>
+    </li>
+    <li>
+        <span>2024-12-19</span>
+        <a href="/posts/2024-12-19/">十二月份事发始末</a>
+    </li>
+    <li>
+        <span>2024-11-24</span>
+        <a href="/posts/2024-11-24/">博客三周年，猛猛大装修</a>
+    </li>
+    <li>
+        <span>2024-11-18</span>
+        <a href="/posts/disconnected/">在最爱上网的年纪断网之后</a>
+    </li>
+    <li>
+        <span>2024-09-08</span>
+        <a href="/posts/%E5%8D%A4%E7%85%AE/">差不多行了食谱集</a>
+    </li>
+    <li>
+        <span>2024-08-26</span>
+        <a href="/posts/theroadofaspectrum/">一场有关A-spectrum的自我探索</a>
+    </li>
+    <li>
+        <span>2024-08-25</span>
+        <a href="/posts/audio-0825/">读段永别书：第二次爆炸</a>
+    </li>
+    <li>
+        <span>2024-07-28</span>
+        <a href="/posts/2024-07-28/">搬进新的生活</a>
+    </li>
+    <li>
+        <span>2024-06-23</span>
+        <a href="/posts/archiveandlink/">鱼鱼小家的装修笔记</a>
+    </li>
+    <li>
+        <span>2024-06-12</span>
+        <a href="/posts/all-about-rss/">关于RSS订阅二三事</a>
+    </li>
+    <li>
+        <span>2024-06-11</span>
+        <a href="/posts/fetfc/">Fanfic Elysium：The Final Cut</a>
+    </li>
+    <li>
+        <span>2024-05-17</span>
+        <a href="/posts/2024-05-17/">《九龙城寨之围城》是一部烂电影</a>
+    </li>
+    <li>
+        <span>2024-04-28</span>
+        <a href="/posts/8tips/">生活的撇步也应逐一记录</a>
+    </li>
+    <li>
+        <span>2024-04-08</span>
+        <a href="/posts/aboutfic/">小说大事记事簿</a>
+    </li>
+    <li>
+        <span>2024-03-27</span>
+        <a href="/posts/maco/">神压在了你身上</a>
+    </li>
+    <li>
+        <span>2024-03-08</span>
+        <a href="/posts/chosenfamily/">战士的选择</a>
+    </li>
+    <li>
+        <span>2023-12-16</span>
+        <a href="/posts/disc/">而为什么我选择了月经盘</a>
+    </li>
+    <li>
+        <span>2023-12-15</span>
+        <a href="/posts/23/">23岁，两周年，谢谢所有的鱼</a>
+    </li>
+    <li>
+        <span>2023-11-29</span>
+        <a href="/posts/all-about-steam-deck/">关于我知道的Steam Deck的一切</a>
+    </li>
+    <li>
+        <span>2023-09-10</span>
+        <a href="/posts/safeandhealthy/">如果生病，一个人</a>
+    </li>
+    <li>
+        <span>2023-08-17</span>
+        <a href="/posts/thekitchen/">我的厨房</a>
+    </li>
+    <li>
+        <span>2023-08-08</span>
+        <a href="/posts/living-alone/">当我们谈论独居时</a>
+    </li>
+    <li>
+        <span>2023-07-07</span>
+        <a href="/posts/all-alone/">是问题构成了这个世界</a>
+    </li>
+    <li>
+        <span>2023-06-14</span>
+        <a href="/posts/rent/">拉断一根尼龙绳</a>
+    </li>
+    <li>
+        <span>2023-04-13</span>
+        <a href="/posts/bird-valley/">小鸟半月刊</a>
+    </li>
+    <li>
+        <span>2023-03-29</span>
+        <a href="/posts/decisiontostay/">而这使你充满了决心</a>
+    </li>
+    <li>
+        <span>2023-03-24</span>
+        <a href="/posts/2023-03-24/">做六分片观众</a>
+    </li>
+    <li>
+        <span>2023-01-27</span>
+        <a href="/posts/messy-stuff/">我所拥有的相对丰饶的实体生活</a>
+    </li>
+    <li>
+        <span>2023-01-21</span>
+        <a href="/posts/thename/">旧名字的故事</a>
+    </li>
+    <li>
+        <span>2023-01-04</span>
+        <a href="/posts/2023-1-3/">未来属于勇敢的人</a>
+    </li>
+    <li>
+        <span>2022-12-17</span>
+        <a href="/posts/gruvbox/">换上秋冬色系新主题</a>
+    </li>
+    <li>
+        <span>2022-12-11</span>
+        <a href="/posts/portrait/">一个现实生活卧底的画像</a>
+    </li>
+    <li>
+        <span>2022-11-22</span>
+        <a href="/posts/audio-1122/">读段楚传玩儿：清风明月</a>
+    </li>
+    <li>
+        <span>2022-11-12</span>
+        <a href="/posts/1st/">博客一周年，谢谢所有的鱼！</a>
+    </li>
+    <li>
+        <span>2022-11-07</span>
+        <a href="/posts/2022-11-07-%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/">多情剑客无情剑</a>
+    </li>
+    <li>
+        <span>2022-10-17</span>
+        <a href="/posts/lovestory/">我借爱的轻翼飞过院墙</a>
+    </li>
+    <li>
+        <span>2022-08-30</span>
+        <a href="/posts/hackingbegin/">Let the Hacking begin！</a>
+    </li>
+    <li>
+        <span>2022-07-17</span>
+        <a href="/posts/hades/">In the Name of Hades！</a>
+    </li>
+    <li>
+        <span>2022-04-06</span>
+        <a href="/posts/april2022/">病情反复，仍需酒神庇护</a>
+    </li>
+    
+</ul>
 
 
 

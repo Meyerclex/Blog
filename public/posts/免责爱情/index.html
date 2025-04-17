@@ -41,6 +41,7 @@
       《The Social Network》免责爱情：长毛象EM惨叫碎片 | 再會，謝謝所有的魚
     
   </title>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".blur").forEach(function (el) {
@@ -50,6 +51,115 @@
       });
     });
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -63,101 +173,37 @@
       
       const paragraphs = postContent.querySelectorAll('p');
       paragraphs.forEach((paragraph) => {
-        const paragraphImages = Array.from(paragraph.querySelectorAll('img'));
+        const img = paragraph.querySelector('img');
+        if (img && img.id !== 'emoji') {
+          paragraph.style.textAlign = 'center';
+          paragraph.style.fontSize = '90%';
+        }
+      });
 
-        
-        if (paragraphImages.length === 1) {
-          const img = paragraphImages[0];
-          const naturalWidth = img.naturalWidth || img.width;
-          const naturalHeight = img.naturalHeight || img.height;
+      
+      const imgs = postContent.querySelectorAll('img');
+      imgs.forEach((img) => {
+        if (img.closest('p')) return; 
+        if (img.id === 'emoji') return;
+        if (!img.alt) return;
+
+        const next = img.nextSibling;
+        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
+          
+          const span = document.createElement('span');
+          span.textContent = next.textContent.trim();
+          span.style.display = 'block';
+          span.style.textAlign = 'center';
+          span.style.fontSize = '90%';
 
           
-          if (!img.src.includes('/img/emoji/')) {
-            const container = document.createElement('div');
-            container.classList.add('image-container');
-
-            
-            container.style.width = '100%';
-
-            container.appendChild(img);
-
-            
-            const altText = img.alt ? img.alt : ''; 
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-
-            
-            if (!altText) {
-              altTextElement.style.display = 'none';
-            }
-
-            container.appendChild(altTextElement);
-
-            
-            paragraph.innerHTML = '';
-            paragraph.appendChild(container);
-          }
-        } else if (paragraphImages.length > 1) {
-          
-          const imageRow = document.createElement('div');
-          imageRow.classList.add('image-row');
-
-          
-          if (paragraphImages.length === 2) {
-            imageRow.classList.add('two-columns');
-          } else if (paragraphImages.length === 3) {
-            imageRow.classList.add('three-columns');
-          }
-
-          let hasAltText = false; 
-
-          
-          paragraphImages.forEach((img) => {
-            const naturalWidth = img.naturalWidth || img.width;
-            const naturalHeight = img.naturalHeight || img.height;
-
-            
-            if (naturalWidth <= 200 || naturalHeight <= 200) {
-              return;
-            }
-
-            const container = document.createElement('div');
-            container.classList.add('image-container');
-
-            
-            container.appendChild(img);
-
-            
-            const altText = img.alt ? img.alt : ''; 
-            if (altText) {
-              hasAltText = true; 
-            }
-
-            
-            const altTextElement = document.createElement('div');
-            altTextElement.classList.add('alt-text');
-            altTextElement.textContent = altText; 
-            container.appendChild(altTextElement);
-
-            
-            imageRow.appendChild(container);
-          });
-
-          
-          if (!hasAltText) {
-            imageRow.querySelectorAll('.alt-text').forEach(alt => alt.style.display = 'none');
-          }
-
-          
-          paragraph.innerHTML = '';
-          paragraph.appendChild(imageRow);
+          img.parentNode.replaceChild(span, next);
         }
       });
     });
-  </script>
 
-  <script>
+
+
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
@@ -207,6 +253,9 @@
     });
   </script>
 
+
+
+
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
 
   
@@ -214,7 +263,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.9a2b528480057f24a1405dd77f6013f69bd5da9e436e5485bb382bdea9daf6acf80c8183d14a552544c9ed21d092afd2d05c90503fa981eedf8272caee0b3b62.css" integrity="sha512-mitShIAFfyShQF3Xf2AT9pvV2p5DblSFuzgr3qna9qz4DIGD0UpVJUTJ7SHQkq/S0FyQUD&#43;pge7fgnLK7gs7Yg==" />
+    <link rel="stylesheet" href="/css/main.38a248518dc0c29fbedc065c2f28927d662c310404825c8a860306c4a487194d2152680b3d2f0af770fd8c45ac75c045cce1c03ab3b4097c36de642034c8b2a3.css" integrity="sha512-OKJIUY3Awp&#43;&#43;3AZcLyiSfWYsMQQEglyKhgMGxKSHGU0hUmgLPS8K93D9jEWsdcBFzOHAOrO0CXw23mQgNMiyow==" />
   
 
 
@@ -246,7 +295,7 @@
 
 </head>
 <script src="script.js" defer></script>
-<body a="auto">
+<body a="dark">
         <main class="page-content" aria-label="Content">
             <div class="w">
                 <div class="post-meta">
@@ -892,7 +941,7 @@
         
         
         
-        共书写了288.8k字 · 共 85篇文章
+        共书写了289.1k字 · 共 85篇文章
     </section>
 
     

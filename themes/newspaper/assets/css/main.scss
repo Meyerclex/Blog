@@ -465,8 +465,22 @@ article img.float-img50 {
 
 
 article hr {
-  width: 33%;
+  //width: 33%;
   margin: 1.5em auto 1.5em auto;
+}
+
+article hr {
+  border: none;
+  height: 16px;
+  background-image: url(/site/hr.gif);
+  background-size: auto 100%;
+  /*
+  the width of the image will be automatically determined
+  while the height will be 100% of the element width (in this case its 50px)
+  */
+  background-repeat: no-repeat; /* the bg wont repeat */
+  background-position: center; /* bg will be centered */
+  image-rendering: pixelated;
 }
 
 article ol {

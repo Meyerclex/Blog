@@ -167,17 +167,34 @@
       const paragraphs = postContent.querySelectorAll('p');
       paragraphs.forEach((paragraph) => {
         const img = paragraph.querySelector('img');
-
-
         if (img && img.id !== 'emoji') {
-          
           paragraph.style.textAlign = 'center';
-          
           paragraph.style.fontSize = '90%';
         }
+      });
 
+      
+      const imgs = postContent.querySelectorAll('img');
+      imgs.forEach((img) => {
+        if (img.closest('p')) return; 
+        if (img.id === 'emoji') return;
+        if (!img.alt) return;
+
+        const next = img.nextSibling;
+        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
+          
+          const span = document.createElement('span');
+          span.textContent = next.textContent.trim();
+          span.style.display = 'block';
+          span.style.textAlign = 'center';
+          span.style.fontSize = '90%';
+
+          
+          img.parentNode.replaceChild(span, next);
+        }
       });
     });
+
 
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -239,7 +256,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.9124abd5dd2f5e02d47db2b06b7481dbad5efe23747b8d7370f497e62535ab7e7fb0ca46a0e0a00f047c3afc74d7b446e828685e4b853823f876a1a5b1e30524.css" integrity="sha512-kSSr1d0vXgLUfbKwa3SB261e/iN0e41zcPSX5iU1q35/sMpGoOCgDwR8Ovx017RG6ChoXkuFOCP4dqGlseMFJA==" />
+    <link rel="stylesheet" href="/css/main.b00a7a472a0ba516665f81ccaa6431f5d0a717fe50ff1945e05092a4f8bd35ed256f6486ff9269013ee4e75e632c530698eefccd5a30751ec397c818ab986261.css" integrity="sha512-sAp6RyoLpRZmX4HMqmQx9dCnF/5Q/xlF4FCSpPi9Ne0lb2SG/5JpAT7k515jLFMGmO78zVowdR7Dl8gYq5hiYQ==" />
   
 
 
@@ -353,40 +370,17 @@
 
 
 
-    <ul><li>
-            <span>2022-09-10</span>
-            <a href="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/">换回旧主题，闪闪惹人爱</a>
-        </li>
-        <li>
-            <span>2022-08-20</span>
-            <a href="/posts/quartz/">Quartz &amp; Obsidian | 总之又有新文具</a>
-        </li>
-        <li>
-            <span>2022-07-07</span>
-            <a href="/posts/doclog/">Docsify | 花哨文具码在案前，用不用另说</a>
-        </li>
-        <li>
-            <span>2022-05-06</span>
-            <a href="/posts/hugo-luna/">Hugo Luna | 换上了新主题，一边装修一边相声</a>
-        </li>
-        <li>
-            <span>2022-04-20</span>
-            <a href="/posts/mail/">Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件</a>
-        </li>
-        <li>
-            <span>2022-01-11</span>
-            <a href="/posts/nodejs-notablog/">Blog | 互联网乱序试吃后，敲起之前中道崩殂的Notablog</a>
-        </li>
-        <li>
-            <span>2022-01-01</span>
-            <a href="/posts/decoration/">Hugo Stack | 删删改改大胆行事</a>
-        </li>
-        <li>
-            <span>2021-11-17</span>
-            <a href="/posts/%E6%B2%99%E6%BB%A9%E4%BC%9A%E6%98%AF%E9%B1%BC%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%99%E5%90%97/">互联网搬家记：沙滩会是鱼的最后一站吗？</a>
-        </li>
-        
-    </ul>
+
+
+  
+ 
+
+<ul><li>
+        <span>2022-09-10</span>
+        <a href="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/">换回旧主题，闪闪惹人爱</a>
+    </li>
+    
+</ul>
 
 
 

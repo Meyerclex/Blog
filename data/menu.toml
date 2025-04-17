@@ -1,14 +1,3 @@
-#[[entries]]
-#title = "Info"
-#
-#  [[entries.entries]]
-#  title = " <img src=/cat/tuxicon2.gif>"
-#
-#  [[entries.entries]]
-#  title = "github repo"
-#  url = "https://github.com/hanwenguo/hugo-theme-nostyleplease"
-#
-
 [[entries]]
 title = "📚 All Posts"
   [entries.post_list]

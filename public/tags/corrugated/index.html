@@ -167,17 +167,34 @@
       const paragraphs = postContent.querySelectorAll('p');
       paragraphs.forEach((paragraph) => {
         const img = paragraph.querySelector('img');
-
-
         if (img && img.id !== 'emoji') {
-          
           paragraph.style.textAlign = 'center';
-          
           paragraph.style.fontSize = '90%';
         }
+      });
 
+      
+      const imgs = postContent.querySelectorAll('img');
+      imgs.forEach((img) => {
+        if (img.closest('p')) return; 
+        if (img.id === 'emoji') return;
+        if (!img.alt) return;
+
+        const next = img.nextSibling;
+        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
+          
+          const span = document.createElement('span');
+          span.textContent = next.textContent.trim();
+          span.style.display = 'block';
+          span.style.textAlign = 'center';
+          span.style.fontSize = '90%';
+
+          
+          img.parentNode.replaceChild(span, next);
+        }
       });
     });
+
 
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -239,7 +256,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.9124abd5dd2f5e02d47db2b06b7481dbad5efe23747b8d7370f497e62535ab7e7fb0ca46a0e0a00f047c3afc74d7b446e828685e4b853823f876a1a5b1e30524.css" integrity="sha512-kSSr1d0vXgLUfbKwa3SB261e/iN0e41zcPSX5iU1q35/sMpGoOCgDwR8Ovx017RG6ChoXkuFOCP4dqGlseMFJA==" />
+    <link rel="stylesheet" href="/css/main.b00a7a472a0ba516665f81ccaa6431f5d0a717fe50ff1945e05092a4f8bd35ed256f6486ff9269013ee4e75e632c530698eefccd5a30751ec397c818ab986261.css" integrity="sha512-sAp6RyoLpRZmX4HMqmQx9dCnF/5Q/xlF4FCSpPi9Ne0lb2SG/5JpAT7k515jLFMGmO78zVowdR7Dl8gYq5hiYQ==" />
   
 
 
@@ -353,24 +370,29 @@
 
 
 
-    <ul><li>
-            <span>2024-06-12</span>
-            <a href="/posts/all-about-rss/">关于RSS订阅二三事</a>
-        </li>
-        <li>
-            <span>2023-12-16</span>
-            <a href="/posts/disc/">而为什么我选择了月经盘</a>
-        </li>
-        <li>
-            <span>2023-11-29</span>
-            <a href="/posts/all-about-steam-deck/">关于我知道的Steam Deck的一切</a>
-        </li>
-        <li>
-            <span>2023-01-27</span>
-            <a href="/posts/messy-stuff/">我所拥有的相对丰饶的实体生活</a>
-        </li>
-        
-    </ul>
+
+
+  
+ 
+
+<ul><li>
+        <span>2024-06-12</span>
+        <a href="/posts/all-about-rss/">关于RSS订阅二三事</a>
+    </li>
+    <li>
+        <span>2023-12-16</span>
+        <a href="/posts/disc/">而为什么我选择了月经盘</a>
+    </li>
+    <li>
+        <span>2023-11-29</span>
+        <a href="/posts/all-about-steam-deck/">关于我知道的Steam Deck的一切</a>
+    </li>
+    <li>
+        <span>2023-01-27</span>
+        <a href="/posts/messy-stuff/">我所拥有的相对丰饶的实体生活</a>
+    </li>
+    
+</ul>
 
 
 
