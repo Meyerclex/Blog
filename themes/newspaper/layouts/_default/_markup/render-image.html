@@ -5,6 +5,6 @@
 {{ if .Destination }}
 <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" />
 {{- if $alt }}
-<span class="alt-text">{{ $alt }}</span>
-{{- end }}
+{{ $alt }}
+{{ end }}
 {{ end }}
