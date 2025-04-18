@@ -3,12 +3,7 @@
 
 {{ .Content }}
     <style>
-        body[a="dark"] #copyright  {
-            background-image:
-                    linear-gradient(rgba(39, 15, 64, 0.7),
-                    rgba(28, 10, 58, 0.91)),
-            url('/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png')!important;
-        }
+
     </style>
     <body>
     <div class="main-container">
@@ -90,12 +85,7 @@
         <div class="note menu-float" style="flex: 0 0 45%;">
             <div class="note__item">
                 <div id="copyright" class="note__list"
-                     style="font-size: 80%;
-                     background-image:
-                     linear-gradient(rgba(255, 255, 255, 0.8),
-                     rgba(255, 255, 255, 0.8)),
-                     url('/site/bg-mizu1-2-2.gif');
-                     background-repeat: repeat;">
+                     >
                     {{ with site.GetPage "copyright" }}
                     <h3 style="margin-top: 1em;">{{ .Title }}</h3>
                     {{ .Content | safeHTML }}

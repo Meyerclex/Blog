@@ -22,6 +22,7 @@
   --btn: rgba(124, 170, 170, 0.72);
   --btn-hover: rgba(66, 103, 103, 0.72);
   --mark:rgba(255, 255, 147, 0.6);
+  --shadow: #D45B587F;
 }
 
 [a="dark"] {
@@ -42,6 +43,7 @@
   --btn: rgba(159, 122, 161, 0.9);
   --btn-hover: rgba(180, 75, 186, 0.94);
   --mark: rgba(230, 164, 43, 0.49);
+  --shadow: rgba(111, 40, 179, 0.75);
 }
 
 body {
@@ -123,7 +125,7 @@ mark {
 #meow-box,
 .note__item {
   border: 2px solid var(--border-color);
-  box-shadow: 4px 4px 0 0 var(--color-point);
+  box-shadow: 4px 4px 0 0 var(--shadow);
 }
 
 #meow-btn {
@@ -663,3 +665,20 @@ body[a="light"] code:not(pre>code) {
 @import "header";
 @import "pic";
 @import "neodb";
+
+
+body[a="dark"] #copyright, body[a="dark"] #meow-box  {
+  background-image:
+          linear-gradient(rgba(0, 0, 0, 0.79),
+                  rgba(46, 6, 55, 0.72)),
+          url('/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png');
+}
+
+#copyright, #meow-box {
+  font-size: 80%;
+  background-image:
+          linear-gradient(rgba(255, 255, 255, 0.8),
+                  rgba(255, 255, 255, 0.8)),
+          url('/site/bg-mizu1-2-2.gif');
+  background-repeat: repeat;
+}
