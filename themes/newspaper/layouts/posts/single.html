@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <article {{ if .Params.hidden }}data-pagefind-ignore{{ end }}>
-    <h1 data-pagefind-meta="title" {{ if .Params.hidden }}data-pagefind-ignore{{ end }}>{{ .Title }}</h1>
+    <h1 data-pagefind-meta="title" {{ if .Params.hidden }}data-pagefind-ignore{{ end }}t>{{ .Title }}</h1>
     <div id="post-meta">
         <time datetime="{{ .Date }}">
             {{ .Date | time.Format site.Params.theme_config.date_format }}
@@ -20,7 +20,19 @@
         </blockquote>
         {{ end }}
     </div>
-    <div style="position: fixed; right:3px; max-width:400px; overflow:auto; top: 100px; width: 12vw; bottom:50px; font-size: 90%;" data-pagefind-ignore>
+    {{ if .Params.toc | default true }}
+    <div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+        <details>
+            <summary>📑 Table of Contents</summary>
+            {{ partial "toc.html" . }}
+        </details>
+    </div>
+    <hr>
+    {{ end }}
+    <div  class="post-toc" id="post-toc" data-pagefind-ignore>
+        <header><strong>
+            📑 Table of Contents</strong>
+        </header>
         {{ partial "toc.html" . }}
     </div>
     <div id="post-content"  data-pagefind-body>

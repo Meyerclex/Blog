@@ -488,13 +488,48 @@ article hr {
 article ol {
   padding-left: 22px;
 }
+/* 桌面端浮动 TOC */
+.post-toc {
+  position: fixed;
+  right: 3px;
+  max-width: 400px;
+  overflow: auto;
+  top: 100px;
+  width: 12vw;
+  bottom: 50px;
+  font-size: 90%;
+}
+
+/* 默认隐藏移动 TOC */
+.post-toc-mobile {
+  display: none;
+}
 
 @media only screen and (max-width: 1224px) {
+  /* 移动端显示 mobile TOC，隐藏桌面 TOC */
   .post-toc {
     display: none;
   }
-}
 
+  .post-toc-mobile {
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 90%;
+  }
+
+  .post-toc-mobile details {
+    border: 1px solid var(--bg-color-hover);
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: var(--neodb-card-color);
+  }
+
+  .post-toc-mobile summary {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 90%;
+  }
+}
 ul {
   list-style-type: none;
   /* 取消圆点 */

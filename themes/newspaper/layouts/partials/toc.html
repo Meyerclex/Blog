@@ -1,9 +1,6 @@
 {{ if (.Params.toc | default true ) }}
-    <div class="post-toc" id="post-toc">
+    <div >
         <aside>
-            <header>
-                Table of Contents
-            </header>
             {{ $emtLiPtrn := "(?s)<ul>\\s<li>\\s<ul>(.*)</li>\\s</ul>" }}
             {{ $rplcEmtLi := "<ul>$1" }}
             {{ .TableOfContents | replaceRE $emtLiPtrn $rplcEmtLi | safeHTML }}
