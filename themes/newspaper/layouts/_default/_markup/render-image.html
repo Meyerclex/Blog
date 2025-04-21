@@ -2,7 +2,7 @@
 {{- $title := .Title | plainify -}}
 
 {{ if .Destination }}
-<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy"/>
+<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" class="post-image"/>
 {{- if $alt }}
 {{ $alt }}
 {{ end }}

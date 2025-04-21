@@ -28,13 +28,13 @@
         </details>
     </div>
     <hr>
-    {{ end }}
     <div  class="post-toc" id="post-toc" data-pagefind-ignore>
         <header><strong>
             📑 Table of Contents</strong>
         </header>
         {{ partial "toc.html" . }}
     </div>
+    {{ end }}
     <div id="post-content"  data-pagefind-body>
         {{ .Content | safeHTML }}
         {{ if .Params.search }}

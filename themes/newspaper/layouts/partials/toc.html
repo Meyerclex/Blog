@@ -1,4 +1,3 @@
-{{ if (.Params.toc | default true ) }}
     <div >
         <aside>
             {{ $emtLiPtrn := "(?s)<ul>\\s<li>\\s<ul>(.*)</li>\\s</ul>" }}
@@ -9,5 +8,3 @@
         </aside>
         <a href="#" id="toc-toggle"></a>
     </div>
-
-{{ end }}
