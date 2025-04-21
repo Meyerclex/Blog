@@ -19,7 +19,7 @@ All rights reserved.
 
 - [「素材屋405番地」](http://sozaiya405.chu.jp/405) 
 - [bg by cairovercoat](http://cairovercoat.tumblr.com/tagged/pixel+pattern)
-
+- [scripted resources](https://scripted.neocities.org/#)
 
 
 
