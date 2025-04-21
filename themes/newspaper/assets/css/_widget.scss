@@ -104,8 +104,8 @@
 #sidebar {
   position: absolute; /* 绝对定位，脱离流 */
   top: 140px; /* 紧贴着 .w 顶部 */
-  right: -180px; /* Sidebar 距离 .grid-container 右边的距离，可以根据需要调整 */
-  width: 200px; /* Sidebar 宽度 */
+  right: -300px; /* Sidebar 距离 .grid-container 右边的距离，可以根据需要调整 */
+  width: auto; /* Sidebar 宽度 */
   //height: 100%; /* 高度与父容器相同 */
   padding: 10px;
   transition: right 0.3s ease; /* 动画效果，使其更流畅 */

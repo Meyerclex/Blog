@@ -22,6 +22,7 @@
             </blockquote>
             {{ end }}
         </div>
+
         {{ if .Params.toc | default true }}
         <div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
             <details>
@@ -30,13 +31,15 @@
             </details>
         </div>
         <hr>
-        {{ end }}
         <div  class="post-toc" id="post-toc" data-pagefind-ignore>
             <header><strong>
                 📑 Table of Contents</strong>
             </header>
             {{ partial "toc.html" . }}
         </div>
+        {{ end }}
+
+
         <div id="post-content">
             {{ .Content | safeHTML }}
             {{ if .Params.search }}

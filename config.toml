@@ -53,7 +53,7 @@ ordered    = false
 [params]
 favicon = "/cat/240f9f9b.gif" #图标
 sidebar_icon = "/cat/checkeredblank.gif"
-fancybox = true
+
 
 [params.theme_config]
 appearance        = "dark" #light, dark
@@ -68,14 +68,15 @@ name = "Music!"
 content = "<a href=\"https://open.spotify.com/album/4QtWb6EEnq9EvtI9FVocUY?si=KXk7EZwGRHKU0bwtWZRE4A/\" target=\"_blank\">I Saw The TV Glow 🎵</a>"
 
 [[params.sidebar_menu]]
-icon = "/cat/240f9f9b.gif"
-name = "Book"
-content = "<p>呢排冇咩好睇吖!</p>"
-
-[[params.sidebar_menu]]
 icon = "/cat/camera4.gif"
 name = "Photos"
-content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">Darkness in my Eyes</a><span> 📷（奏这样差生文具多）</span>"
+content = "<a href=\"https://photo.gregueria.icu//\" target=\"_blank\">Darkness in my Eyes</a>📷"
+
+[[params.sidebar_menu]]
+icon = "/cat/240f9f9b.gif"
+name = "Search 🔍"
+url = "/search"
+content = ""
 
 [[params.sidebar_menu]]
 icon = "/cat/cat24.gif"

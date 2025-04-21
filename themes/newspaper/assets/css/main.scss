@@ -668,14 +668,14 @@ body[a="light"] code:not(pre>code) {
 @import "neodb";
 
 
-body[a="dark"] #copyright, body[a="dark"] #meow-box  {
+body[a="dark"] #copyright, body[a="dark"] #meow-box, .special-bg  {
   background-image:
           linear-gradient(rgba(0, 0, 0, 0.79),
                   rgba(46, 6, 55, 0.72)),
           url('/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png');
 }
 
-#copyright, #meow-box {
+#copyright, #meow-box, .special-bg {
   font-size: 80%;
   background-image:
           linear-gradient(rgba(255, 255, 255, 0.8),
