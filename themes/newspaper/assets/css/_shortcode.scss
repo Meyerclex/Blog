@@ -93,11 +93,10 @@ body[a="light"] .whitey {
 }
 
 body[a="dark"] .whitey {
-  position: relative;
-  padding: 10px;
-  background: linear-gradient(45deg, rgb(30, 5, 30), rgba(106, 13, 133, 0.93));
-
-  border-radius: 0px;
+  border-width: 10px;
+  border-style: solid;
+  border-image: url("https://i.imgur.com/8xftJ3v.gif") 7 fill round;
+  border-radius: 10px;
 }
 
 .whitey:hover {

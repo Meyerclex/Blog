@@ -34,5 +34,15 @@
     "image": "/goods/09.jpeg",
     "title": "哥哥酱小铁块",
     "description": "刻有哥哥酱的野心和失望。"
+  },
+  {
+    "image": "/goods/a-lai.jpg",
+    "title": "阿来小铁块",
+    "description": "豹豹款款向我们走来。"
+  },
+  {
+    "image": "/goods/dog-s.jfif",
+    "title": "小狗蛇",
+    "description": "既是小狗，也是蛇。"
   }
 ]
