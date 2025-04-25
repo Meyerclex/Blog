@@ -148,7 +148,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.76b00a81884952cfad96e96b7568748c285496043cb03814b5a5c672c0c365d4512fe2a9f59ac31ba9b37be40958cdb02d33261e642c874003c45d7edb572870.css" integrity="sha512-drAKgYhJUs&#43;tlulrdWh0jChUlgQ8sDgUtaXGcsDDZdRRL&#43;Kp9ZrDG6mze&#43;QJWM2wLTMmHmQsh0ADxF1&#43;21cocA==" />
+    <link rel="stylesheet" href="/css/main.2ff841d12a2024164b7536aefac16da30b67a43f0884bd652ceac4826dd8e998ad86a6add1f90d1b2a2eebe3e56739eba4873446d23c263ea1046bffabd321c5.css" integrity="sha512-L/hB0SogJBZLdTau&#43;sFtowtnpD8IhL1lLOrEgm3Y6Zithqat0fkNGyou6&#43;PlZznrpIc0RtI8Jj6hBGv/q9MhxQ==" />
   
 
 
@@ -371,7 +371,7 @@
 
                             html += `
                                 <div class="statuscafe-entry">
-                                    <p class="statuscafe-username">${title} - ${relativeTime}</p>
+                                    <p class="statuscafe-username"><span class="mumble-title">${title}</span> <span class="mumble-time">${relativeTime}</span></p>
                                     <p class="statuscafe-content">${content}</p>
                                 </div>
                             `;
@@ -404,6 +404,10 @@
  
 
 <ul><li>
+        <span>2025-04-25</span>
+        <a href="/posts/2025-04-25/">一些美丽无料Repo</a>
+    </li>
+    <li>
         <span>2025-04-15</span>
         <a href="/posts/2025-04-15/">草长莺飞季节里的一些事</a>
     </li>
@@ -423,10 +427,6 @@
         <span>2025-01-25</span>
         <a href="/posts/statement-2025-01-25/">关于本站停止RSS输出及相关事件说明</a>
     </li>
-    <li>
-        <span>2025-01-23</span>
-        <a href="/posts/2025-01-23/">那故事发生的地方真的存在</a>
-    </li>
     
     <li><a href="/posts">See archive...</a></li>
     
@@ -440,7 +440,7 @@
         <div id="x4">
             
 <div id="meow-box" style="border-radius: 10px;">
-    <img id="meow-image" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/catpic%281%29%281%29.png" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
+    <img id="meow-image" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_8853.jpeg" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
     <button onclick="toggleMeowImage()" id="meow-btn">
         <img src="/cat/cat75.gif" style="border-radius:0; margin:0; max-width:50%;">
         meow
@@ -449,6 +449,12 @@
 
 <script>
     let images = [
+        
+    "https:\/\/pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev\/byphone\/IMG_8853.jpeg",
+        
+    "https:\/\/pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev\/byphone\/IMG_0091.jpeg",
+        
+    "https:\/\/pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev\/byphone\/IMG_8512.jpeg",
         
     "https:\/\/pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev\/catpic(1)(1).png",
         
@@ -573,6 +579,8 @@
         &copy; 2021 - 2025
         <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
+        
+        
         
         
         

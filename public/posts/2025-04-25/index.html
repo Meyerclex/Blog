@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  <link rel="preload" href="https://font.eterfinal.ink/HuiwenFangsong/result.css" as="style">
+  <link rel="preload" href="https://static.zeoseven.com/zsft/256/main/result.css" as="style">
+
+  
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  
+  <noscript>
+    <link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+  </noscript>
+
+
+
+  
+    <meta name="description" content="小小塞了十万张图吧，多图预警！">
+    <meta property="og:title" content="一些美丽无料Repo">
+    <meta property="og:description" content="小小塞了十万张图吧，多图预警！">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      一些美丽无料Repo | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const paragraphs = postContent.querySelectorAll('p');
+      paragraphs.forEach((paragraph) => {
+        const img = paragraph.querySelector('img');
+        if (img && img.id !== 'emoji') {
+          paragraph.style.textAlign = 'center';
+          paragraph.style.fontSize = '90%';
+        }
+      });
+
+      
+      const imgs = postContent.querySelectorAll('img');
+      imgs.forEach((img) => {
+        if (img.closest('p')) return; 
+        if (img.id === 'emoji') return;
+        if (!img.alt) return;
+
+        const next = img.nextSibling;
+        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
+          
+          const span = document.createElement('span');
+          span.textContent = next.textContent.trim();
+          span.style.display = 'block';
+          span.style.textAlign = 'center';
+          span.style.fontSize = '90%';
+
+          
+          img.parentNode.replaceChild(span, next);
+        }
+      });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('JavaScript loaded and DOMContentLoaded event fired.');
+
+      const postContent = document.querySelector('#post-content');
+      if (!postContent) {
+        console.error('Error: #post-content not found!');
+        return;
+      }
+
+      
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+      document.body.appendChild(overlay);
+
+      const overlayImage = document.createElement('img');
+      overlay.appendChild(overlayImage);
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      
+      const enableImageZoom = (img) => {
+        const naturalWidth = img.naturalWidth || img.width;
+        const naturalHeight = img.naturalHeight || img.height;
+
+        
+        if (!img.src.includes('/img/emoji/')) {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+            overlayImage.src = img.src;
+            overlay.classList.add('active');
+          });
+        }
+      };
+
+      
+      const images = Array.from(postContent.querySelectorAll('img'));
+      if (images.length === 0) {
+        console.log('No images found.');
+        return;
+      }
+      console.log(`Found ${images.length} images.`);
+
+      
+      images.forEach(enableImageZoom);
+    });
+  </script>
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/main.2ff841d12a2024164b7536aefac16da30b67a43f0884bd652ceac4826dd8e998ad86a6add1f90d1b2a2eebe3e56739eba4873446d23c263ea1046bffabd321c5.css" integrity="sha512-L/hB0SogJBZLdTau&#43;sFtowtnpD8IhL1lLOrEgm3Y6Zithqat0fkNGyou6&#43;PlZznrpIc0RtI8Jj6hBGv/q9MhxQ==" />
+  
+
+
+  
+  
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+<script src="script.js" defer></script>
+<body a="dark">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+  <div id="light-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+    </svg>
+  </div>
+  <div id="dark-btn" style="">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+    </svg>
+  </div>
+</div>
+
+
+<script>
+  const lightBtn = document.getElementById('light-btn');
+  const darkBtn = document.getElementById('dark-btn');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  
+  let currentTheme = localStorage.getItem('theme') || 'auto';
+  if (currentTheme === 'auto') {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    currentTheme = prefersDarkScheme ? 'dark' : 'light';
+  }
+  document.body.setAttribute('a', currentTheme);
+  document.body.classList.add(currentTheme + '-mode');
+
+  
+  const updateIcons = () => {
+    if (currentTheme === 'light') {
+      lightBtn.style.display = 'block';
+      darkBtn.style.display = 'none';
+    } else {
+      lightBtn.style.display = 'none';
+      darkBtn.style.display = 'block';
+    }
+  };
+  updateIcons();
+
+  
+  const toggleTheme = () => {
+    if (currentTheme === 'light') {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      currentTheme = 'dark';
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      currentTheme = 'light';
+    }
+    localStorage.setItem('theme', currentTheme);
+    document.body.setAttribute('a', currentTheme);
+    updateIcons();
+  };
+
+  
+  themeToggle.addEventListener('click', toggleTheme);
+
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const winHeight = window.innerHeight || document.documentElement.clientHeight;
+    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+    if (scrollPercent >= 10 && scrollPercent <= 40) {
+      themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+    } else if (scrollPercent > 40) {
+      themeToggle.style.opacity = 0;
+    } else {
+      themeToggle.style.opacity = 1;
+    }
+  });
+
+</script>
+
+
+<div id="header-post" >
+  <span id="nav" data-pagefind-ignore>
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/collection">Museum</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+
+                </div>
+
+<article >
+    <h1 data-pagefind-meta="title" t>一些美丽无料Repo</h1>
+    <div id="post-meta">
+        <time datetime="2025-04-25 00:00:00 &#43;0000 UTC">
+            2025-04-25
+            <span> ‧ 2139</span>
+            <span>words</span>
+
+
+
+
+
+
+
+
+        </time>
+        
+        <blockquote id="post-description">
+            小小塞了十万张图吧，多图预警！
+        </blockquote>
+        
+    </div>
+    
+    <div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+        <details>
+            <summary>📑 Table of Contents</summary>
+                <div >
+        <aside>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#来自小信老师和荚老师">来自小信老师和荚老师</a></li>
+    <li><a href="#来自涂庸老师">来自涂庸老师</a></li>
+    <li><a href="#来自狐狐">来自狐狐</a></li>
+    <li><a href="#来自钉钉">来自钉钉</a></li>
+    <li><a href="#来自小饲">来自小饲</a></li>
+    <li><a href="#来自烧酒">来自烧酒</a></li>
+    <li><a href="#来自river">来自River</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+        </details>
+    </div>
+    <hr>
+    <div  class="post-toc" id="post-toc" data-pagefind-ignore>
+        <header><strong>
+            📑 Table of Contents</strong>
+        </header>
+            <div >
+        <aside>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#来自小信老师和荚老师">来自小信老师和荚老师</a></li>
+    <li><a href="#来自涂庸老师">来自涂庸老师</a></li>
+    <li><a href="#来自狐狐">来自狐狐</a></li>
+    <li><a href="#来自钉钉">来自钉钉</a></li>
+    <li><a href="#来自小饲">来自小饲</a></li>
+    <li><a href="#来自烧酒">来自烧酒</a></li>
+    <li><a href="#来自river">来自River</a></li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+    </div>
+    
+    <div id="post-content"  data-pagefind-body>
+        <p>前段时间收到了一些来自网友的无料（好喜欢）🥺正巧最近修改了多图排版的CSS，所以来整理一下照片和Repo。</p>
+<h2 id="来自小信老师和荚老师">来自小信老师和荚老师</h2>
+<p>萌得我抱着狂看了半天！！老师们画得实在是超级萌…站在一起完全是尖沙咀恶棍2枚看谁敢惹jpg 翻翻乐虽然看过一些但拿在手心里小小的萌萌的超级可爱（家哥就这样！）边翻边看，可怕的笑容渐渐爬满了我的脸（…喂）还有好多好可爱好活泼的哥哥酱和弟，翻翻乐里哥酱被骂黑社会时的内心大受伤实在是太萌了太萌了……我拿到就是P3这样！！！</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hx57gma7bvj31400u0n5z.jpg" alt="" loading="lazy" class="post-image"/>
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hx57gm3do5j31590u0aja.jpg" alt="" loading="lazy" class="post-image"/>
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_7526.jpeg" alt="哥酱的个人小方本" loading="lazy" class="post-image"/>
+哥酱的个人小方本
+
+    </p>
+<h2 id="来自涂庸老师">来自涂庸老师</h2>
+<p>来自涂庸老师的《证件》，因为好期待到手立刻读（封面上的小仁拍照那天还闭眼了！）整个故事和笔触都有种往事不可追的美丽与哀伤，像个怅然若失的梦境。</p>
+<p>很喜欢小仁排队在树下发呆那幕：“前面早就没有人了”，而在故事最终回到那张照片，看见多年以后的自己，一切苦楚既已发生，只见全然陌生的一张面孔。平静的叙事里…一份叫人悚然的命运。另外本以为老师后记的信封是纯黑色，翻过来时瞬间被背面的荣和仁击中……实在是太美丽了！</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_7534.jpeg" alt="" loading="lazy" class="post-image"/>
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_7538.jpeg" alt="老师画的无间乐队" loading="lazy" class="post-image"/>
+老师画的无间乐队
+
+    </p>
+<h2 id="来自狐狐">来自狐狐</h2>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/49e688f724519d9c.jpeg" class="float-img50"> 
+<p>是狐狐伟大的审美！两个故事都很喜欢，第一次看到“时人去去如水”的标题就已经喜欢得不得了了！！整个本本也美丽得像水流过手心……</p>
+<p>
+<img
+    src="/img/emoji/neocat_cry.png"
+    title="neocat_cry"
+    alt="neocat_cry"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+而且好像绘本，那种由梦幻和童真构筑的写作风格。</p>
+<div style="clear: both;"></div>
+<h2 id="来自钉钉">来自钉钉</h2>
+<p>是来自钉钉的超好的游戏王本本，因为是两对CP的故事，前后用了不一样的书籍封面，事物特别帅气特别好看。</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_7692.jpeg" alt="" loading="lazy" class="post-image"/>
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_7689.jpeg" alt="" loading="lazy" class="post-image"/>
+    </p>
+<details>
+<summary>长Repo且偷偷迷妹发言折叠一下（？</summary>
+<blockquote>
+<p>
+<img
+    src="/img/emoji/95fdb07da9809554.png"
+    title="95fdb07da9809554"
+    alt="95fdb07da9809554"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+收到了钉钉老师的本本！  
+<img
+    src="/img/emoji/sticker_40.png"
+    title="sticker_40"
+    alt="sticker_40"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+非常幸福地读了一个周末，收到的时候觉得天啊，读的时候也觉得天啊！我会永远珍藏！！！</p>
+<p>是设计得非常精巧美丽的本本，《移山》的封面感觉又看到了帅气蟹哥坐在废弃物山堆的顶端，非常美丽的颜色。而快隼故事大概总要更血色，封面也像是口中含血，衔石填海。找了半天也没找到特别合适拍A5尺寸本本照片的地方，只能拿电影海报当背景…实物真的很漂亮！ 
+<img
+    src="/img/emoji/d7767b31f50a1fb1.png"
+    title="d7767b31f50a1fb1"
+    alt="d7767b31f50a1fb1"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+</p>
+<p>蟹柳饭（？）里很喜欢早前的The world is not enough，大概因为读得最早，又很喜欢离婚故事。其实也因为故事里信息量的披露很友好，即使初读时不知道发生过什么，也知道他们之间一定发生过什么。 
+<img
+    src="/img/emoji/5821c141f4bc7e6a.png"
+    title="5821c141f4bc7e6a"
+    alt="5821c141f4bc7e6a"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+ 而到手后很快又读了Intentional torts，像读霓虹灯下另一个版本的5Ds，也是最早吸引我去看动画的那个故事！不管是重塑而来的世界观，还是两个人的日常相处都写得特别好， 
+<img
+    src="/img/emoji/907c414d3c27f897.png"
+    title="907c414d3c27f897"
+    alt="907c414d3c27f897"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+ 一点点被细水长流的贴贴融化心防开始信任鬼柳的游星，还是那么主动亲近但其实底色还是时常冷冽的鬼柳，都特别好看，也很喜欢两个人克制、点到即止的感情——不过我感觉这个属于慢热小狗蟹哥
+<img
+    src="/img/emoji/neocat_pat_sob.png"
+    title="neocat_pat_sob"
+    alt="neocat_pat_sob"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+和心事太多太重的老婆各担一半责任（？这次一口气读到末尾00还是觉得心碎难当又觉得美丽……钉的5Ds饭饭好像总是一些无望的事已经发生，而蟹哥总在试图一次又一次想要回到过去不肯失去的那个人。</p>
+<p>
+<img
+    src="/img/emoji/ad611ce50f5776ae.png"
+    title="ad611ce50f5776ae"
+    alt="ad611ce50f5776ae"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+ 快隼文里最早读到的是P类后遗症，对故事里隼哥跨越虚实拥抱琉璃那幕非常难忘，也因为这个故事对隼哥一早就好感异常。快隼的几个故事都是不同的IF下怎么面对失去，看虫心时觉得这个命题无论怎样书写，再冷峭的意志也终究会在见到已失去的家人时动摇。很残酷…但是这样的故事又如此迷人。</p>
+<p>而另外我其实还很喜欢Quiet Symphony！除了因为很喜欢看猛禽兄断手 
+<img
+    src="/img/emoji/neocat_dizzy.png"
+    title="neocat_dizzy"
+    alt="neocat_dizzy"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+（？）以外，还因为读的时候觉得是好强的创作力（怎么可以就这样翻过一页又写出无比立体的全新世界）！而且斗哥隼哥在这里都太好了，实不相瞒看钉文这么久，
+<img
+    src="/img/emoji/neocat_laptop.png"
+    title="neocat_laptop"
+    alt="neocat_laptop"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+目前已经高度认可工作狂的魅力，一天天游手好闲的不行，还得是忙得没时间谈恋爱的工作狂谈恋爱才好看（喂）。</p>
+<p>蹭钉饭很久，还是要说钉钉是非常非常好的写作者！感谢钉钉。我非常幸福能得到这样一本珍贵的书。</p>
+<p>PPPS：钉钉老师在俺心目中最好的小说家！！</p>
+</blockquote>
+</details>
+<h2 id="来自小饲">来自小饲</h2>
+<p>一些超绝甜美激萌的萌萌小东西……哥哥弟弟戴围巾和小仁咖啡厅太萌了太甜蜜了
+<img
+    src="/img/emoji/neocat_cry_loud.png"
+    title="neocat_cry_loud"
+    alt="neocat_cry_loud"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+一口两个还能吃四顿！！！！而且这张哥酱拽着小仁不知道气势汹汹要干掉谁的超绝萌图到现在还是俺的手机壁纸……</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_8347.jpeg" alt="" loading="lazy" class="post-image"/>
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_8354.jpeg" alt="真的好可爱，到现在还是俺家门钥匙的挂件" loading="lazy" class="post-image"/>
+真的好可爱，到现在还是俺家门钥匙的挂件
+
+    </p>
+<h2 id="来自烧酒">来自烧酒</h2>
+<p>来自烧酒老师的无间道宝宝大礼包！这一切真是太可爱了无法形容的萌……而且画了哥哥弟弟小荣小明心儿医生傻强宝宝……是我最爱的无间道宝宝全肯定大家庭
+<img
+    src="/img/emoji/neocat_cry.png"
+    title="neocat_cry"
+    alt="neocat_cry"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+好喜欢啊！</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hwv6xzilcsj32c02c0b29.jpg" alt="" loading="lazy" class="post-image"/>
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hwv6xzo2daj32c02c01ky.jpg" alt="" loading="lazy" class="post-image"/>
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hwv6xzpa2mj32c02c0e82.jpg" alt="" loading="lazy" class="post-image"/>
+    </p>
+<p>俺还拍了一组无间道剧照圣地巡礼（？）</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hwv7t0oq7ij32c02c0b29.jpg" alt="天台决战昂？" loading="lazy" class="post-image"/>
+天台决战昂？
+
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hwv7t0p3iij32c02c07wh.jpg" alt="wink wink" loading="lazy" class="post-image"/>
+wink wink
+
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hwv7t0p9rhj32c02c0b29.jpg" alt="还带了心儿医生玩TT" loading="lazy" class="post-image"/>
+还带了心儿医生玩TT
+
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/006okC5ogy1hwv7t0r30rj32c02c0qv5.jpg" alt="小仁和他的好朋友" loading="lazy" class="post-image"/>
+小仁和他的好朋友
+
+    </p>
+<p>多图排版不就是为了塞这种萌图用的！</p>
+<h2 id="来自river">来自River</h2>
+<p>是前天刚收到的！我的天啊边拆边叫真的好完美啊……River老师还做了口罩，还有好喜欢的三花猫猫仁奶牛哥哥酱两颗布丁我一口吃了要晕了！还有很可爱很萌的来来和francis！</p>
+<p>看图的时候就好喜欢证件照的设计，印出来看得喘不上气真的好喜欢……白底黑底蓝底一应俱全，这下好了办证结婚葬礼什么场合都用得上（喂）还有怀旧老照片版本，钱夹里的爱妻照片也有了
+<img
+    src="/img/emoji/neocat_cry.png"
+    title="neocat_cry"
+    alt="neocat_cry"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+哥哥弟弟听说都馋哭了！</p>
+<p>而且画这么好脸长这么靓两个小东西不要命了…一到手就把哥哥酱明信片裱起来了！真的好喜欢好心仪！！！</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/grdr%202025-04-22%20203752.196.jpeg" alt="哥哥弟弟证件照" loading="lazy" class="post-image"/>
+哥哥弟弟证件照
+
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/grdr%202025-04-22%20202934.665.jpeg" alt="是否般配得有些不像话" loading="lazy" class="post-image"/>
+是否般配得有些不像话
+
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/grdr%202025-04-22%20203028.615.jpeg" alt="三花和奶牛猫也可以是哥弟" loading="lazy" class="post-image"/>
+三花和奶牛猫也可以是哥弟
+
+    </p>
+<p>（当晚光线太暗了没有拍出制品的美丽啊啊啊俺恨！）</p>
+<p>
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/006okC5ogy1i0pwz246bej322o340npe.jpg" alt="哥哥酱透卡" loading="lazy" class="post-image"/>
+哥哥酱透卡
+
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/grdr%202025-04-22%20202808.599.jpeg" alt="是Francis" loading="lazy" class="post-image"/>
+是Francis
+
+     
+<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/006okC5ogy1i0pwz1nv36j322p341npd.jpg" alt="俺们尖沙咀美丽传说" loading="lazy" class="post-image"/>
+俺们尖沙咀美丽传说
+
+    </p>
+<p>老师真的给俺寄了好多塞了好多，当时边拆边震惊
+<img
+    src="/img/emoji/neocat_pat_sob.png"
+    title="neocat_pat_sob"
+    alt="neocat_pat_sob"
+    width="40"
+    height="40"
+    style="vertical-align: middle; border: none; line-height: 1px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0.2rem 0;
+    border-radius: 0px;"
+    onmouseover="this.style.transform='scale(1.5)'"
+    onmouseout="this.style.transform='scale(1)'" id="emoji"
+/>
+俺在这个无间道这个小小fandom里真的收到了太多珍贵的礼物，好多哥哥和弟弟好幸福……整理一遍又幸福一次……</p>
+
+        
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+    <div class="pre-next" data-pagefind-ignore>
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-04-15/">&lt;&lt; 草长莺飞季节里的一些事</a>
+        
+        
+    </div>
+
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />
+<div id="comments" class="comments" data-pagefind-ignore>
+    <style>
+    :root {
+        --waline-color: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline" data-pagefind-ignore></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '这里有小豆泥表情，请肆无忌惮地使用！^^',
+            admin: 'admin',
+        }
+    });
+</script>
+</div>
+
+
+
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+            </div>
+        </main>
+    <script src="script.js" defer></script>
+    </body></html>

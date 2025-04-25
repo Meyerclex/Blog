@@ -7,10 +7,15 @@
   /* 超过最大高度时启用垂直滚动 */
 }
 .statuscafe-username {
-  margin-left: 0.5em;
+  margin: 0.5em 0.5em;
   margin-bottom: .5em;
   text-decoration: none;
   font-weight: bold;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 .statuscafe-content {
   margin: 0 1em 0.5em 1em;
