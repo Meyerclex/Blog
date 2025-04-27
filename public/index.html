@@ -45,7 +45,6 @@
       });
     });
   </script>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -75,14 +74,11 @@
 
         const next = img.nextSibling;
         if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
-          
           const span = document.createElement('span');
           span.textContent = next.textContent.trim();
           span.style.display = 'block';
           span.style.textAlign = 'center';
           span.style.fontSize = '90%';
-
-          
           img.parentNode.replaceChild(span, next);
         }
       });
@@ -114,9 +110,17 @@
         if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
+            overlayImage.removeAttribute('src');
+            overlayImage.removeAttribute('width');
+            overlayImage.removeAttribute('height');
+
             overlayImage.src = img.src;
-            overlayImage.style.width = 'auto'; 
+            overlayImage.setAttribute('width', img.width);
+            overlayImage.setAttribute('height', img.height);
+
+            overlayImage.style.width = 'auto';
             overlayImage.style.height = 'auto';
+
             overlay.classList.add('active');
           });
         }
