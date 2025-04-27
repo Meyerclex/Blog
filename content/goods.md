@@ -88,7 +88,6 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 ---
 
 <div style="text-align: center;">
-
   <a href="https://lovesick.cafe/grrrl" target="_blank" rel="noopener noreferrer">
     <img src="/img/emoji/madebya-purple2.png" alt="Made by A girl" style=" transform-origin: center; display: inline-block;">
   </a>

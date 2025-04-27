@@ -86,18 +86,6 @@
           img.parentNode.replaceChild(span, next);
         }
       });
-    });
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
-
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
       
       const overlay = document.createElement('div');
@@ -112,17 +100,32 @@
       });
 
       
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
+      function fixImageSize(img) {
+        if (!img.hasAttribute('width')) {
+          img.setAttribute('width', img.naturalWidth);
+        }
+        if (!img.hasAttribute('height')) {
+          img.setAttribute('height', img.naturalHeight);
+        }
+      }
 
-        
+      
+      const enableImageZoom = (img) => {
         if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;
+            overlayImage.style.width = 'auto'; 
+            overlayImage.style.height = 'auto';
             overlay.classList.add('active');
           });
+        }
+
+        
+        if (img.complete) {
+          fixImageSize(img);
+        } else {
+          img.addEventListener('load', () => fixImageSize(img));
         }
       };
 
@@ -134,10 +137,10 @@
       }
       console.log(`Found ${images.length} images.`);
 
-      
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
@@ -567,9 +570,6 @@
 
     <hr class="decoration-hr">
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4ZXkn7FUgzfSyGpbdXIszy?utm_source=generator" width="100%" height="222" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-
-
 </aside>
 
 

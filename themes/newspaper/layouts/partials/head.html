@@ -71,10 +71,10 @@
         }
       });
 
-      // 处理“不是p标签里”的单张img + 后文本
+      // 处理“不是 p 标签里”的单张 img + 后文本
       const imgs = postContent.querySelectorAll('img');
       imgs.forEach((img) => {
-        if (img.closest('p')) return; // 忽略被<p>包裹的图
+        if (img.closest('p')) return; // 忽略被 <p> 包裹的图
         if (img.id === 'emoji') return;
         if (!img.alt) return;
 
@@ -91,18 +91,6 @@
           img.parentNode.replaceChild(span, next);
         }
       });
-    });
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
-
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
       // 初始化图片点击放大功能的遮罩
       const overlay = document.createElement('div');
@@ -116,22 +104,37 @@
         overlay.classList.remove('active');
       });
 
+      // 加载完成后给图片加 width/height，防止 Safari 排版乱
+      function fixImageSize(img) {
+        if (!img.hasAttribute('width')) {
+          img.setAttribute('width', img.naturalWidth);
+        }
+        if (!img.hasAttribute('height')) {
+          img.setAttribute('height', img.naturalHeight);
+        }
+      }
+
       // 处理图片点击放大功能
       const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        // 只为大于200x200的图片添加放大功能
         if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;
+            overlayImage.style.width = 'auto'; // 确保大图自适应
+            overlayImage.style.height = 'auto';
             overlay.classList.add('active');
           });
         }
+
+        // 加 width/height，避免 Safari 错行
+        if (img.complete) {
+          fixImageSize(img);
+        } else {
+          img.addEventListener('load', () => fixImageSize(img));
+        }
       };
 
-      // 处理不在 p 标签里的图片（直接放在文章中）
+      // 处理所有图片
       const images = Array.from(postContent.querySelectorAll('img'));
       if (images.length === 0) {
         console.log('No images found.');
@@ -139,10 +142,10 @@
       }
       console.log(`Found ${images.length} images.`);
 
-      // 处理每个图片
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 

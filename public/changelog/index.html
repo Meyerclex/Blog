@@ -114,18 +114,6 @@
           img.parentNode.replaceChild(span, next);
         }
       });
-    });
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
-
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
 
       
       const overlay = document.createElement('div');
@@ -145,10 +133,20 @@
         const naturalHeight = img.naturalHeight || img.height;
 
         
+        if (!img.hasAttribute('width')) {
+          img.setAttribute('width', naturalWidth);
+        }
+        if (!img.hasAttribute('height')) {
+          img.setAttribute('height', naturalHeight);
+        }
+
+        
         if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
             overlayImage.src = img.src;
+            overlayImage.style.width = 'auto'; 
+            overlayImage.style.height = 'auto';
             overlay.classList.add('active');
           });
         }
@@ -162,10 +160,10 @@
       }
       console.log(`Found ${images.length} images.`);
 
-      
       images.forEach(enableImageZoom);
     });
   </script>
+
 
 
 
