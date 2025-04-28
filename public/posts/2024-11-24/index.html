@@ -55,7 +55,6 @@
       });
     });
   </script>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       console.log('JavaScript loaded and DOMContentLoaded event fired.');
@@ -85,14 +84,11 @@
 
         const next = img.nextSibling;
         if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
-          
           const span = document.createElement('span');
           span.textContent = next.textContent.trim();
           span.style.display = 'block';
           span.style.textAlign = 'center';
           span.style.fontSize = '90%';
-
-          
           img.parentNode.replaceChild(span, next);
         }
       });
@@ -110,27 +106,40 @@
       });
 
       
-      const enableImageZoom = (img) => {
-        const naturalWidth = img.naturalWidth || img.width;
-        const naturalHeight = img.naturalHeight || img.height;
-
-        
+      function fixImageSize(img) {
         if (!img.hasAttribute('width')) {
-          img.setAttribute('width', naturalWidth);
+          img.setAttribute('width', img.naturalWidth);
         }
         if (!img.hasAttribute('height')) {
-          img.setAttribute('height', naturalHeight);
+          img.setAttribute('height', img.naturalHeight);
         }
+      }
 
-        
+      
+      const enableImageZoom = (img) => {
         if (!img.src.includes('/img/emoji/')) {
           img.style.cursor = 'zoom-in';
           img.addEventListener('click', () => {
+            overlayImage.removeAttribute('src');
+            overlayImage.removeAttribute('width');
+            overlayImage.removeAttribute('height');
+
             overlayImage.src = img.src;
-            overlayImage.style.width = 'auto'; 
+            overlayImage.setAttribute('width', img.width);
+            overlayImage.setAttribute('height', img.height);
+
+            overlayImage.style.width = 'auto';
             overlayImage.style.height = 'auto';
+
             overlay.classList.add('active');
           });
+        }
+
+        
+        if (img.complete) {
+          fixImageSize(img);
+        } else {
+          img.addEventListener('load', () => fixImageSize(img));
         }
       };
 
