@@ -37,79 +37,79 @@
 
 
 
-<!--<script>-->
-<!--    ;(function () {-->
-<!--        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"-->
-<!--        const Wording1 = "向我提问！"-->
-<!--        const Wording2 = "看到就会回复 :D"-->
-<!--        const TagTextColor = "#f9f7f1"-->
-<!--        const TagBgColor = "#e69494"-->
-<!--        const BodyBgColor = "white"-->
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#f9f7f1"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "white"
 
-<!--        const $container = document.createElement("div")-->
-<!--        const $button = document.createElement("div")-->
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
 
-<!--        $button.innerText = Wording1-->
-<!--        document.body.append($button)-->
+        $button.innerText = Wording1
+        document.body.append($button)
 
-<!--        $container.innerHTML += `-->
-<!--    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>-->
-<!--  `-->
-<!--        let isOpen = false-->
-<!--        let isFirst = true-->
-<!--        $button.onclick = () => {-->
-<!--            if (isFirst) {-->
-<!--                isFirst = false-->
-<!--                document.body.append($container)-->
-<!--            }-->
-<!--            if (!isOpen) {-->
-<!--                useStyle($container, {-->
-<!--                    top: "unset",-->
-<!--                    bottom: "0px",-->
-<!--                    visibility: "visible"-->
-<!--                })-->
-<!--                useStyle($button, {-->
-<!--                    bottom: "400px"-->
-<!--                })-->
-<!--                $button.innerText = Wording2-->
-<!--            } else {-->
-<!--                useStyle($container, {-->
-<!--                    top: "100%",-->
-<!--                    bottom: "unset",-->
-<!--                    visibility: "hidden"-->
-<!--                })-->
-<!--                useStyle($button, {-->
-<!--                    bottom: "0px"-->
-<!--                })-->
-<!--                $button.innerText = Wording1-->
-<!--            }-->
-<!--            isOpen = !isOpen-->
-<!--        }-->
-<!--        useStyle($button, {-->
-<!--            position: "fixed",-->
-<!--            bottom: "0px",-->
-<!--            right: "0px",-->
-<!--            background: TagBgColor,-->
-<!--            color: TagTextColor,-->
-<!--            "font-size": "14px",-->
-<!--            "border-top-left-radius": "10px",-->
-<!--            padding: "5px 10px",-->
-<!--            cursor: "pointer"-->
-<!--        })-->
-<!--        useStyle($container, {-->
-<!--            position: "fixed",-->
-<!--            top: "100%",-->
-<!--            right: "0px",-->
-<!--            width: "300px",-->
-<!--            height: "400px",-->
-<!--            background: BodyBgColor-->
-<!--        })-->
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor
+        })
 
-<!--        function useStyle (dom, style) {-->
-<!--            for (let sKey in style) {-->
-<!--                dom.style[sKey] = style[sKey]-->
-<!--            }-->
-<!--        }-->
-<!--    })()-->
-<!--</script>-->
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
 
