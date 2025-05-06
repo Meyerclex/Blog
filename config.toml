@@ -53,6 +53,8 @@ ordered    = false
 [params]
 favicon = "/cat/240f9f9b.gif" #图标
 sidebar_icon = "/cat/checkeredblank.gif"
+show_spotify = true
+spotify_embed = "https://open.spotify.com/embed/track/1Iup6yDOBHU0AeANKXf62Q?utm_source=generator"
 
 
 [params.theme_config]
