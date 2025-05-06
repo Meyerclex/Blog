@@ -2,7 +2,7 @@
 
 .mumble {
   line-height: 1.3em;
-  max-height: 230px;
+  max-height: 210px;
   /* 设置最大高度 */
   overflow-y: auto;
   /* 超过最大高度时启用垂直滚动 */
@@ -18,11 +18,15 @@
   justify-content: space-between;
   align-items: center;
   font-family: Courier New, monospace;
-  font-size: 1.1em;
+  font-size: 1em;
   color: var(--secondary-text-color);
 }
 .mumble-time {
   //font-style: italic;
+  font-weight: bold;
+}
+.mumble-title {
+  font-size: 1.1em;
 }
 .status-meta {
   margin-left: auto;
@@ -32,9 +36,11 @@
 
 .statuscafe-content {
   margin: 0 1em 0.5em 1em;
+  letter-spacing: 0.8px;
 }
 .statuscafe-entry {
   //border-bottom: 2px solid var(--link-hover);
+  border-radius: 10px;
   padding: 5px;
   margin-bottom: 10px;
   background-color: var(--neodb-card-color);

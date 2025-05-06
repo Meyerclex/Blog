@@ -31,7 +31,9 @@
                         let html = ``;
                         entries.forEach(el => {
                             let rawTitle = el.querySelector("title").textContent.trim();
-                            let emoji = rawTitle.match(/[\p{Emoji}]/gu)?.join('') || '';
+                            let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                            let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
+
 
                             let content = el.querySelector("content").textContent.trim();
                             let publishedDate = el.querySelector("published").innerHTML;
