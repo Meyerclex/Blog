@@ -64,10 +64,10 @@ date_format       = "2006-01-02"
 isListGroupByDate = true
 isShowFooter      = true
 
-[[params.sidebar_menu]]
-icon = "/cat/cat89.gif"
-name = "Music!"
-content = "<a href=\"https://open.spotify.com/album/4QtWb6EEnq9EvtI9FVocUY?si=KXk7EZwGRHKU0bwtWZRE4A/\" target=\"_blank\">I Saw The TV Glow 🎵</a>"
+#[[params.sidebar_menu]]
+#icon = "/cat/cat89.gif"
+#name = "Music!"
+#content = "<a href=\"https://open.spotify.com/album/4QtWb6EEnq9EvtI9FVocUY?si=KXk7EZwGRHKU0bwtWZRE4A/\" target=\"_blank\">I Saw The TV Glow 🎵</a>"
 
 [[params.sidebar_menu]]
 icon = "/cat/camera4.gif"
