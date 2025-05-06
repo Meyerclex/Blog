@@ -155,7 +155,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.2ff841d12a2024164b7536aefac16da30b67a43f0884bd652ceac4826dd8e998ad86a6add1f90d1b2a2eebe3e56739eba4873446d23c263ea1046bffabd321c5.css" integrity="sha512-L/hB0SogJBZLdTau&#43;sFtowtnpD8IhL1lLOrEgm3Y6Zithqat0fkNGyou6&#43;PlZznrpIc0RtI8Jj6hBGv/q9MhxQ==" />
+    <link rel="stylesheet" href="/css/main.ddfe138d407575f976a4115b3395fbdf414420aff7781479821667df3a55bb73db188c1bfc6eef56f6b5e5a61e8b5d78fe9ca84b026a37a846817af13b8ddacc.css" integrity="sha512-3f4TjUB1dfl2pBFbM5X730FEIK/3eBR5ghZn3zpVu3PbGIwb/G7vVva15aYei114/pyoSwJqN6hGgXrxO43azA==" />
   
 
 
@@ -371,7 +371,9 @@
                         const entries = data.querySelectorAll("entry");
                         let html = ``;
                         entries.forEach(el => {
-                            let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+                            let rawTitle = el.querySelector("title").textContent.trim();
+                            let emoji = rawTitle.match(/[\p{Emoji}]/gu)?.join('') || '';
+
                             let content = el.querySelector("content").textContent.trim();
                             let publishedDate = el.querySelector("published").innerHTML;
                             let relativeTime = timeAgo(publishedDate);
@@ -379,10 +381,13 @@
                             html += `
                                 <div class="statuscafe-entry">
                                     <p class="statuscafe-username">
-                                    <span class="mumble-title">${title}</span>
-                                    <span class="mumble-time">${relativeTime}</span>
-                                    </p>
+                                        <span class="status-meta">
+                                        <span class="mumble-time">${relativeTime}</span>
+                                        <span class="mumble-title">${emoji}</span>
+                                      </span>
+                                      </p>
                                     <p class="statuscafe-content">${content}</p>
+
                                 </div>
                             `;
                         });
@@ -576,7 +581,7 @@
     </table>
 
     <hr class="decoration-hr">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1inrucS0iHVHroJVf1jMWg?utm_source=generator" width="100%" height="230" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1Iup6yDOBHU0AeANKXf62Q?utm_source=generator" width="100%" height="222" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </aside>
 
 

@@ -30,7 +30,9 @@
                         const entries = data.querySelectorAll("entry");
                         let html = ``;
                         entries.forEach(el => {
-                            let title = el.querySelector("title").innerHTML.slice(0, 7).trim();
+                            let rawTitle = el.querySelector("title").textContent.trim();
+                            let emoji = rawTitle.match(/[\p{Emoji}]/gu)?.join('') || '';
+
                             let content = el.querySelector("content").textContent.trim();
                             let publishedDate = el.querySelector("published").innerHTML;
                             let relativeTime = timeAgo(publishedDate);
@@ -38,10 +40,13 @@
                             html += `
                                 <div class="statuscafe-entry">
                                     <p class="statuscafe-username">
-                                    <span class="mumble-title">${title}</span>
-                                    <span class="mumble-time">${relativeTime}</span>
-                                    </p>
+                                        <span class="status-meta">
+                                        <span class="mumble-time">${relativeTime}</span>
+                                        <span class="mumble-title">${emoji}</span>
+                                      </span>
+                                      </p>
                                     <p class="statuscafe-content">${content}</p>
+
                                 </div>
                             `;
                         });
