@@ -560,6 +560,10 @@ ul li ul li {
   padding: 0.4rem 1rem;
 }
 
+#TableOfContents ul li ul li {
+  padding: 0rem 1rem;
+}
+
 ul li:before {
   content: "·";
   font-weight: bold;
