@@ -108,6 +108,13 @@
 
     /* 小屏幕时：显示移动版，隐藏 PC 版 */
     @media screen and (max-width: 600px) {
+        #nav ul li {
+            padding: 0 0.5rem 0 0;
+            margin: 0 0 0 -1em;
+            text-transform: lowercase;
+            font-family: Courier New, cursive;
+        }
+
         .header-inner {
             flex-direction: column; /* 垂直堆叠：第一部分（图+nav）、第二部分（content） */
             align-items: center;    /* 水平居中 */
