@@ -8,6 +8,7 @@ hidden: true
 comment: false
 ---
 
+
 {{< goods >}}
 
 <style>
@@ -17,6 +18,16 @@ comment: false
 </style>
 
 ---
+
+## More... 🍰
+
+- [📖 Write in Water](https://written.gregueria.icu)
+
+- [📸 Of Passing & Pause](https://photo.gregueria.icu/)
+
+- [📫 Pushoong](https://pushoong.com/ask/4862766301/)
+
+- [🔔 RSS](/index.xml/)
 
 ## Theme Showcase 🎨
 
