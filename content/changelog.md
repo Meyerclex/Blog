@@ -6,6 +6,14 @@ slug: changelog
 toc: true
 ---
 
+## 2025/05/12
+
+换了个首页样式。:3
+
+图片来自：[snailspng](https://www.tumblr.com/snailspng/718136009412509696/i-love-your-blog-so-much-exactly-my-type-of?source=share)
+
+（鼠标悬浮逃跑效果很可爱吧，which means 再会（这么说谁能懂））
+
 ## 2025/04/16
 
 - 增加了移动端目录。
