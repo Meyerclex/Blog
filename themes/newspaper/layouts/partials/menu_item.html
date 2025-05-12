@@ -18,12 +18,20 @@
         </ul>
         {{- end }}
 
-        {{/* 如果有 post_list，渲染文章列表 */}}
+        {{/* 判断是否有 post_list */}}
         {{- if $item.post_list }}
         <div class="posts-list-ul">
-            {{ partial "post_list.html" (dict "context" . "section" $item.post_list.section "limit" $item.post_list.limit "show_more" $item.post_list.show_more "show_more_text" $item.post_list.show_more_text "show_more_url" $item.post_list.show_more_url) }}
+            {{ partial "post_list.html" (dict
+            "context"         .
+            "section"         $item.post_list.section
+            "limit"           $item.post_list.limit
+            "show_more"       $item.post_list.show_more
+            "show_more_text"  $item.post_list.show_more_text
+            "show_more_url"   $item.post_list.show_more_url
+            ) }}
         </div>
         {{- end }}
+
     </div>
     {{- end }}
 </div>

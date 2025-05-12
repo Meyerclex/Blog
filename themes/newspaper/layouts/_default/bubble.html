@@ -1,0 +1,285 @@
+<style>
+
+    .mumble {
+        line-height: 1.3em;
+        max-height: 233px;
+        /* 设置最大高度 */
+        overflow-y: auto;
+        /* 超过最大高度时启用垂直滚动 */
+    }
+    .mumble::-webkit-scrollbar {
+        display: none;
+    }
+    .statuscafe-username {
+        margin: 0.5em;
+    //margin-bottom: 0em;
+    //font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Courier New, monospace;
+        font-size: 1em;
+    }
+    .statuscafe-content {
+        font-family: "Noto Sans CJK SC", Courier New, monospace, sans-serif, "Noto Sans CJK SC", cursive;
+    }
+    .mumble-time {
+    //font-style: italic;
+        font-weight: bold;
+        color: #ca8282;
+    }
+    .mumble-title {
+        font-size: 1.2em;
+    }
+    .status-meta {
+        margin-right: auto;
+        display: flex;
+        gap: 0.5em; /* emoji 和时间之间的间距 */
+    }
+    @media (min-width: 650px) {
+        .cols {
+            grid-template-columns: 1fr 3fr;
+            grid-gap: 2em;
+        }
+    }
+    .cols {
+        display: grid;
+        grid-template-columns: 150px 1fr; /* 左边 menu 250px，右边自适应 */
+    }
+    :root {
+        --kawaii-pink: #fff5f5;
+        --kawaii-text: #6d4b2f;
+        --kawaii-accent: #ff9494;
+        --kawaii-border: #ffb6b6;
+        cursor: url("https://gregueria.icu/cursor.png"), auto;
+    }
+
+    body {
+        padding: 0 300px;
+        background-color: var(--kawaii-pink);
+        background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://gregueria.icu/site/tumblr_inline_mxq6a1O6341qfwxgn.png");
+        color: var(--kawaii-text);
+        font-family: Courier New, monospace, sans-serif, "Noto Sans CJK SC", cursive;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding: 0 0px;
+        }
+    }
+
+    .status {
+        background: rgba(255, 255, 255, 0.8);
+        border: 0 dashed var(--kawaii-border);
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .status::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 20px;
+        transform: rotate(-10deg);
+    }
+
+    a {
+        color: var(--kawaii-text);
+        text-decoration: none;
+        position: relative;
+        padding: 0 3px;
+    }
+
+    a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: rgba(255, 148, 148, 0.2);
+        z-index: -1;
+    }
+
+    a:hover::before {
+        height: 100%;
+    }
+
+    h1, h2, h3 {
+        color: var(--kawaii-text);
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+    }
+
+    h1::after, h2::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--kawaii-border), var(--kawaii-accent), var(--kawaii-border), transparent);
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--kawaii-pink);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--kawaii-accent);
+    }
+
+    ::selection {
+        background: var(--kawaii-accent);
+        color: white;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+    }
+
+    @keyframes sparkle {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+    .ulist li {
+        list-style: none;
+        margin: 30px 0px;
+    }
+    .status-menu {
+            left: 2rem;
+            position: sticky;
+            top: 0; /* 滚动时离顶部 1rem，可根据需要调整 */
+            align-self: start; /* 让 sticky 正常工作 */
+
+    }
+    .main {
+        right: 3rem;
+    }
+</style>
+<head>
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- 预加载关键字体 -->
+    <link rel="preload" href="https://font.eterfinal.ink/HuiwenFangsong/result.css" as="style">
+    <link rel="preload" href="https://static.zeoseven.com/zsft/256/main/result.css" as="style">
+
+    <!-- 样式表（异步加载） -->
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+    <!-- 兼容无 JS -->
+    <noscript>
+        <link rel="stylesheet" href="https://font.eterfinal.ink/HuiwenFangsong/result.css">
+        <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+        <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
+        <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
+        <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
+        <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+    </noscript>
+</head>
+<main>
+    <div class="cols">
+        <section class="status-menu">
+            <h2>Menu</h2>
+            <ul class="ulist">
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </section>
+
+        <section class="main">
+            <h2>Statuses</h2>
+            <article class="status">
+                <div id="feed-reader"></div>
+                <script>
+                    const feedURL = 'https://status.cafe/users/lyin.atom';
+
+                    function timeAgo(publishedDate) {
+                        const now = new Date();
+                        const published = new Date(publishedDate);
+                        const diff = now - published;
+
+                        const seconds = Math.floor(diff / 1000);
+                        const minutes = Math.floor(seconds / 60);
+                        const hours = Math.floor(minutes / 60);
+                        const days = Math.floor(hours / 24);
+
+                        if (days > 0) {
+                            return `${days} day${days > 1 ? 's' : ''} ago`;
+                        } else if (hours > 0) {
+                            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                        } else if (minutes > 0) {
+                            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                        } else {
+                            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+                        }
+                    }
+
+                    fetch(feedURL)
+                        .then(response => response.text())
+                        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                        .then(data => {
+                            const entries = data.querySelectorAll("entry");
+                            let html = ``;
+                            entries.forEach(el => {
+                                let rawTitle = el.querySelector("title").textContent.trim();
+                                let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                                let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
+
+
+                                let content = el.querySelector("content").textContent.trim();
+                                let publishedDate = el.querySelector("published").innerHTML;
+                                let relativeTime = timeAgo(publishedDate);
+
+                                html += `
+                                <div class="statuscafe-entry">
+                                    <p class="statuscafe-username">
+                                        <span class="status-meta">
+                                        <span class="mumble-time">${relativeTime}</span>
+                                        <span class="mumble-title">${emoji} </span>
+                                      </span>
+                                      </p>
+                                    <p class="statuscafe-content">${content}</p>
+
+                                </div>
+                            `;
+                            });
+                            document.getElementById("feed-reader").innerHTML = html;
+                        });
+                </script>
+
+                </p>
+            </article>
+
+            <!-- 你可以继续添加更多 status -->
+        </section>
+    </div>
+</main>
+

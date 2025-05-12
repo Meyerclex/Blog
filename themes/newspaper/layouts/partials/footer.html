@@ -44,7 +44,7 @@
         const Wording2 = "看到就会回复 :D"
         const TagTextColor = "#ffffff"
         const TagBgColor = "var(--shadow)"
-        const BodyBgColor = "white"
+        const BodyBgColor = "#ffffff"
 
         const $container = document.createElement("div")
         const $button = document.createElement("div")
@@ -102,7 +102,8 @@
             right: "0px",
             width: "300px",
             height: "400px",
-            background: BodyBgColor
+            background: BodyBgColor,
+            "z-index": "11"
         })
 
         function useStyle (dom, style) {

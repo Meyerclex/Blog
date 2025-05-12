@@ -55,7 +55,7 @@ favicon = "/cat/240f9f9b.gif" #图标
 sidebar_icon = "/cat/checkeredblank.gif"
 show_spotify = true
 spotify_embed = "https://open.spotify.com/embed/album/1inrucS0iHVHroJVf1jMWg?utm_source=generator"
-
+show_mumble = false
 
 [params.theme_config]
 appearance        = "auto" #light, dark
@@ -63,6 +63,7 @@ back_home_text    = "Back"
 date_format       = "2006-01-02"
 isListGroupByDate = true
 isShowFooter      = true
+
 
 #[[params.sidebar_menu]]
 #icon = "/cat/cat89.gif"

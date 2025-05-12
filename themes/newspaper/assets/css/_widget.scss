@@ -2,7 +2,7 @@
 
 .mumble {
   line-height: 1.3em;
-  max-height: 210px;
+  max-height: 233px;
   /* 设置最大高度 */
   overflow-y: auto;
   /* 超过最大高度时启用垂直滚动 */
@@ -17,13 +17,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: Courier New, monospace;
+  //font-family: Courier New, monospace;
   font-size: 1em;
 }
 .mumble-time {
-  //font-style: italic;
-  font-weight: bold;
+  //text-transform: uppercase;
+  font-size: 90%;
 }
+
 .mumble-title {
   font-size: 1.2em;
 }

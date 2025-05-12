@@ -1,48 +1,134 @@
 {{ define "main" }}
+<link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/yzgcxst/dist/%E4%B9%9F%E5%AD%97%E5%B7%A5%E5%8E%82%E5%B0%8F%E7%9F%B3%E5%A4%B4/result.css' />
 <header>
-    <div class="header">
-        <div class="header-image">
-            <img src="/cat/tuxicon2.gif" alt="Icon">
-        </div>
-        <div class="header-content">
-            <h1>{{ $.Site.Title }}</h1>
-            {{ partial "nav.html" . }}
+    <div class="header-container">
+        <div class="header-inner">
+            <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+            <div class="header-content">
+                <h1>{{ $.Site.Title }}</h1>
+                {{ partial "nav_index.html" . }}
+            </div>
         </div>
     </div>
+
     {{- if $.Site.Params.theme_config.show_description -}}
     <p>{{ $.Site.Params.description }}</p>
     {{- end -}}
 </header>
 
-<div class="grid-container">
-    <div class="note" id="x2">
-        <div class="note__item">
-            <div class="note__day">Welcome</div>
-            <div class="note__list box-welcome">
-                {{ .Content }}
-            </div>
-        </div>
-        <div id="x3">
-            <div class="note__item">
-                <div class="note__day">碎碎念啦，唔使理我</div>
-                <div class="note__list" style="font-size: 80%;">
-                    <details open class="mumble">
-                        <summary>Mumble...</summary>
-            {{ partial "mumble.html" . }}
-                    </details>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="menu-float" id="x1">
-        {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}
-        <div id="x4">
-            {{ partial "meow-box.html" . }}
-        </div>
-    </div>
+<style>
+    .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-img {
+        width: 180px;
+        object-fit: cover;
+        object-position: center;
+        filter: drop-shadow(10px 2px 0px rgb(251,230,189));
+        margin: -1em -1em -1em -1em;
+        /* 不要 z-index: -1，确保图片可以响应 hover */
+        transition: transform 0.2s ease;
+        animation: none;
+    }
+
+    @keyframes shake-left {
+        0% {
+            transform: translateX(0) rotate(0deg); /* 初始位置 */
+        }
+        25% {
+            transform: translateX(-2px) rotate(4deg); /* 稍微倾斜并向左移动 */
+        }
+        50% {
+            transform: translateX(2px) rotate(-2deg); /* 稍微向右回来 */
+        }
+        75% {
+            transform: translateX(-2px) rotate(4deg); /* 再次倾斜并向左 */
+        }
+        100% {
+            transform: translateX(-12px) rotate(0deg); /* 最后左移并恢复正常 */
+        }
+    }
+
+    .header-img:hover {
+        animation: shake-left 0.8s ease-in-out forwards; /* 加慢动画 */
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .header-content h1 {
+        font-family: 'YEFONTXiaoShiTou';
+        filter: drop-shadow(2px 2px 0px var(--bg-color-hover));
+        letter-spacing: -5px;
+        margin: 0 0 -0.4em -0.5em;
+        font-size: 35px;
+    }
+
+    /* 保证 nav 始终在最前层 */
+    #nav {
+        position: relative;
+        z-index: 10;
+    }
+
+    #nav ul li {
+        padding: 0 0.5rem 0 0;
+        margin: 0 0 0em -1em;
+        text-transform: lowercase;
+        font-family: Courier New, cursive;
+    }
+
+    #nav ul li a:hover {
+        background-color: var(--mark);
+    }
+
+    .lace {
+        padding: 10px;
+        margin: 0 0 25px 0;
+        border: 2px solid var(--border-color);
+        box-shadow: 4px 4px 0 0 var(--shadow);
+        border-radius: 10px;
+    }
+</style>
+
+
+<!--            <div class="lace">-->
+<!--                {{ .Content }}-->
+<!--            </div>-->
+
+<!--                <div class="lace" style="font-size: 80%;">-->
+<!--                    <details open class="mumble">-->
+<!--                        <summary>Mumble...</summary>-->
+<!--                        {{ partial "mumble.html" . }}-->
+<!--                    </details>-->
+<!--                </div>-->
+<!--<div class="lace">-->
+<!--                <div class="menu-float" id="x1">-->
+<!--                    {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}-->
+
+<!--                </div>-->
+
+<!--</div>-->
+
+<!--    {{ partial "meow-box.html" . }}-->
+
+
+
+
 </div>
 
-{{ partial "sidebar.html" . }}
+<!--{{ partial "sidebar.html" . }}-->
 {{ partial "footer.html" . }}
 {{ end }}
