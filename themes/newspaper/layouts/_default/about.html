@@ -68,28 +68,6 @@
         -ms-user-select: none;
     }
 
-    @keyframes shake-left {
-        0% {
-            transform: translateX(0) rotate(0deg); /* 初始位置 */
-        }
-        25% {
-            transform: translateX(-2px) rotate(4deg); /* 稍微倾斜并向左移动 */
-        }
-        50% {
-            transform: translateX(2px) rotate(-2deg); /* 稍微向右回来 */
-        }
-        75% {
-            transform: translateX(-2px) rotate(4deg); /* 再次倾斜并向左 */
-        }
-        100% {
-            transform: translateX(-12px) rotate(0deg); /* 最后左移并恢复正常 */
-        }
-    }
-
-    .header-img:hover {
-        animation: shake-left 0.8s ease-in-out forwards; /* 加慢动画 */
-    }
-
     .header-content {
         display: flex;
         flex-direction: column;
@@ -160,6 +138,7 @@
     }
 
 </style>
+
 <hr class="decoration-hr">
 {{ partial "footer.html" . }}
 {{ end }}
