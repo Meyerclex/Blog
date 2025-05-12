@@ -1,5 +1,4 @@
 {{ define "main" }}
-<link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/yzgcxst/dist/%E4%B9%9F%E5%AD%97%E5%B7%A5%E5%8E%82%E5%B0%8F%E7%9F%B3%E5%A4%B4/result.css' />
 <header>
     <div class="header-container">
         <div class="header-inner">
@@ -21,6 +20,12 @@
 
 
 <style>
+    :root{
+        --index-shadow: rgb(251,230,189);
+    }
+    [a="dark"]{
+        --index-shadow: rgb(136, 50, 127);
+    }
     .header-container {
         display: flex;
         justify-content: center;
@@ -37,7 +42,7 @@
         width: 180px;
         object-fit: cover;
         object-position: center;
-        filter: drop-shadow(10px 2px 0px rgb(251,230,189));
+        filter: drop-shadow(10px 2px 0px var(--index-shadow));
         margin: -1em -1em -1em -1em;
         /* 不要 z-index: -1，确保图片可以响应 hover */
         transition: transform 0.2s ease;
@@ -80,8 +85,7 @@
     }
 
     .header-content h1 {
-        font-family: 'YEFONTXiaoShiTou';
-        filter: drop-shadow(2px 2px 0px var(--bg-color-hover));
+        filter: drop-shadow(4px 2px 0px var(--index-shadow));
         letter-spacing: -5px;
         margin: 0 0 -0.2em -0.5em;
         font-size: 35px;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-<head>
+<html lang="zh-cn"><head>
 	<meta name="generator" content="Hugo 0.139.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
@@ -15,6 +14,8 @@
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/288/main/result.css">
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/yzgcxst/dist/%E4%B9%9F%E5%AD%97%E5%B7%A5%E5%8E%82%E5%B0%8F%E7%9F%B3%E5%A4%B4/result.css' />
 
   
   <noscript>
@@ -155,7 +156,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.3e707ca9631ca258fef5e49d7d563cfa65dcd9a3f89131e48433dccb1081753df150fcd9b43bea4f94853e647013c883ddf4c6bcbb2638e0e75c0780244ff1d9.css" integrity="sha512-PnB8qWMcolj&#43;9eSdfVY8&#43;mXc2aP4kTHkhDPcyxCBdT3xUPzZtDvqT5SFPmRwE8iD3fTGvLsmOODnXAeAJE/x2Q==" />
+    <link rel="stylesheet" href="/css/main.356b28aebd8dfa7c49a6d428a7cad7000104002b3a2f666cdb59b96fbf70006f59262835e56a0259de47aaa6d981c887151ad4bedc5a6ed078dc17c0de6a173a.css" integrity="sha512-NWsorr2N&#43;nxJptQop8rXAAEEACs6L2Zs21m5b79wAG9ZJig15WoCWd5HqqbZgciHFRrUvtxabtB43BfA3moXOg==" />
   
 
 
@@ -267,7 +268,6 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-<link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/yzgcxst/dist/%E4%B9%9F%E5%AD%97%E5%B7%A5%E5%8E%82%E5%B0%8F%E7%9F%B3%E5%A4%B4/result.css' />
 <header>
     <div class="header-container">
         <div class="header-inner">
@@ -301,6 +301,12 @@
 
 
 <style>
+    :root{
+        --index-shadow: rgb(251,230,189);
+    }
+    [a="dark"]{
+        --index-shadow: rgb(136, 50, 127);
+    }
     .header-container {
         display: flex;
         justify-content: center;
@@ -317,7 +323,7 @@
         width: 180px;
         object-fit: cover;
         object-position: center;
-        filter: drop-shadow(10px 2px 0px rgb(251,230,189));
+        filter: drop-shadow(10px 2px 0px var(--index-shadow));
         margin: -1em -1em -1em -1em;
          
         transition: transform 0.2s ease;
@@ -360,8 +366,7 @@
     }
 
     .header-content h1 {
-        font-family: 'YEFONTXiaoShiTou';
-        filter: drop-shadow(2px 2px 0px var(--bg-color-hover));
+        filter: drop-shadow(4px 2px 0px var(--index-shadow));
         letter-spacing: -5px;
         margin: 0 0 -0.2em -0.5em;
         font-size: 35px;
