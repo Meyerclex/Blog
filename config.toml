@@ -123,9 +123,9 @@ url = "/collection"
 weight = 4
 
 # [[menu.main]]
-# name = "RSS"
-# url = "/index.xml"
-# weight = 4
+# name = "Mumble"
+# url = "/bubble"
+# weight = 5
 
 [outputs]
 home = ["HTML", "RSS"]

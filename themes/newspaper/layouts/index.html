@@ -5,7 +5,10 @@
         <div class="header-inner">
             <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
             <div class="header-content">
-                <h1>{{ $.Site.Title }}</h1>
+                <h1>
+                    <span class="h1-pc">{{ $.Site.Title }}</span>
+                    <span class="h1-mobile">再會，<br>謝謝所<br>有的魚</span>
+                </h1>
                 {{ partial "nav_index.html" . }}
             </div>
         </div>
@@ -39,6 +42,13 @@
         /* 不要 z-index: -1，确保图片可以响应 hover */
         transition: transform 0.2s ease;
         animation: none;
+
+        /* 禁止选中拖拽 */
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
     }
 
     @keyframes shake-left {
@@ -73,8 +83,9 @@
         font-family: 'YEFONTXiaoShiTou';
         filter: drop-shadow(2px 2px 0px var(--bg-color-hover));
         letter-spacing: -5px;
-        margin: 0 0 -0.4em -0.5em;
+        margin: 0 0 -0.2em -0.5em;
         font-size: 35px;
+        line-height: 1em;
     }
 
     /* 保证 nav 始终在最前层 */
@@ -101,6 +112,24 @@
         box-shadow: 4px 4px 0 0 var(--shadow);
         border-radius: 10px;
     }
+    /* 默认显示 PC 版，隐藏移动版 */
+    .h1-mobile {
+        display: none;
+    }
+    .h1-pc {
+        display: inline;
+    }
+
+    /* 小屏幕时：显示移动版，隐藏 PC 版 */
+    @media screen and (max-width: 600px) {
+        .h1-mobile {
+            display: inline;
+        }
+        .h1-pc {
+            display: none;
+        }
+    }
+
 </style>
 
 

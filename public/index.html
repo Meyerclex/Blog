@@ -273,7 +273,10 @@
         <div class="header-inner">
             <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
             <div class="header-content">
-                <h1>再會，謝謝所有的魚</h1>
+                <h1>
+                    <span class="h1-pc">再會，謝謝所有的魚</span>
+                    <span class="h1-mobile">再會，<br>謝謝所<br>有的魚</span>
+                </h1>
                 <div  >
   <span id="nav" data-pagefind-ignore>
     <ul>
@@ -319,6 +322,13 @@
          
         transition: transform 0.2s ease;
         animation: none;
+
+         
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
     }
 
     @keyframes shake-left {
@@ -353,8 +363,9 @@
         font-family: 'YEFONTXiaoShiTou';
         filter: drop-shadow(2px 2px 0px var(--bg-color-hover));
         letter-spacing: -5px;
-        margin: 0 0 -0.4em -0.5em;
+        margin: 0 0 -0.2em -0.5em;
         font-size: 35px;
+        line-height: 1em;
     }
 
      
@@ -381,6 +392,24 @@
         box-shadow: 4px 4px 0 0 var(--shadow);
         border-radius: 10px;
     }
+     
+    .h1-mobile {
+        display: none;
+    }
+    .h1-pc {
+        display: inline;
+    }
+
+     
+    @media screen and (max-width: 600px) {
+        .h1-mobile {
+            display: inline;
+        }
+        .h1-pc {
+            display: none;
+        }
+    }
+
 </style>
 
 
