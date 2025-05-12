@@ -12,10 +12,6 @@
             </div>
         </div>
     </div>
-
-    {{- if $.Site.Params.theme_config.show_description -}}
-    <p>{{ $.Site.Params.description }}</p>
-    {{- end -}}
 </header>
 
 
@@ -108,14 +104,6 @@
     #nav ul li a:hover {
         background-color: var(--mark);
     }
-
-    .lace {
-        padding: 10px;
-        margin: 0 0 25px 0;
-        border: 2px solid var(--border-color);
-        box-shadow: 4px 4px 0 0 var(--shadow);
-        border-radius: 10px;
-    }
     /* 默认显示 PC 版，隐藏移动版 */
     .h1-mobile {
         display: none;
@@ -135,32 +123,6 @@
     }
 
 </style>
-
-
-<!--            <div class="lace">-->
-<!--                {{ .Content }}-->
-<!--            </div>-->
-
-<!--                <div class="lace" style="font-size: 80%;">-->
-<!--                    <details open class="mumble">-->
-<!--                        <summary>Mumble...</summary>-->
-<!--                        {{ partial "mumble.html" . }}-->
-<!--                    </details>-->
-<!--                </div>-->
-<!--<div class="lace">-->
-<!--                <div class="menu-float" id="x1">-->
-<!--                    {{ partial "menu_item.html" (dict "context" . "collection" $.Site.Data.menu.entries) }}-->
-
-<!--                </div>-->
-
-<!--</div>-->
-
-<!--    {{ partial "meow-box.html" . }}-->
-
-
-
-
-</div>
 
 <!--{{ partial "sidebar.html" . }}-->
 {{ partial "footer.html" . }}

@@ -2,7 +2,7 @@
 title: About
 description:
 date: 2023-08-18
-slug: about
+slug: about-ver
 aliases:
   - about-us
   - about-hugo
