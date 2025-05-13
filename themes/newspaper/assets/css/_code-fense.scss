@@ -64,7 +64,7 @@ pre:active ~ .copy-code-button,
 pre:focus ~ .copy-code-button,
 div.highlight:active > .copy-code-button,
 div.highlight:focus > .copy-code-button {
-  cursor: pointer;
+  //cursor: pointer;
   opacity: 1;
 }
 

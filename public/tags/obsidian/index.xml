@@ -6,7 +6,16 @@
         <description>Recent content in Obsidian on 再會，謝謝所有的魚</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Tue, 13 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+            <title>为博客制作猫咪拍立得与Status Cafe挂件</title>
+            <link>http://localhost:1313/posts/2025-05-13/</link>
+            <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/2025-05-13/</guid>
+            <description>13 May | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
+        </item>
+        
         <item>
             <title>本季度消费小结 Vol.1</title>
             <link>http://localhost:1313/posts/2025-04-28/</link>
@@ -743,15 +752,6 @@
             
             <guid>http://localhost:1313/posts/we-will-be-fine/</guid>
             <description>24 Apr | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
-        </item>
-        
-        <item>
-            <title></title>
-            <link>http://localhost:1313/posts/05-13/</link>
-            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-            
-            <guid>http://localhost:1313/posts/05-13/</guid>
-            <description>01 Jan | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
         </item>
         
     </channel>

@@ -2,49 +2,48 @@
 
 .mumble {
   line-height: 1.3em;
-  max-height: 233px;
-  /* 设置最大高度 */
-  overflow-y: auto;
-  /* 超过最大高度时启用垂直滚动 */
+  max-height: 233px;           /* 设置最大高度 */
+  overflow-y: auto;            /* 超出最大高度时启用垂直滚动 */
 }
+
 .mumble::-webkit-scrollbar {
-  display: none;
+  display: none;               /* 隐藏滚动条（仅限 WebKit 浏览器） */
 }
+
+.statuscafe-entry {
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: var(--neodb-card-color);
+}
+
 .statuscafe-username {
   margin: 0.5em;
-  //margin-bottom: 0em;
-  //font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //font-family: Courier New, monospace;
   font-size: 1em;
 }
-.mumble-time {
-  //text-transform: uppercase;
-  font-size: 90%;
+
+.status-meta {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5em;
 }
 
 .mumble-title {
   font-size: 1.2em;
 }
-.status-meta {
-  margin-left: auto;
-  display: flex;
-  gap: 0.5em; /* emoji 和时间之间的间距 */
+
+.mumble-time {
+  font-size: 90%;
 }
 
 .statuscafe-content {
   margin: 0 1em 0.5em 1em;
   letter-spacing: 0.8px;
 }
-.statuscafe-entry {
-  //border-bottom: 2px solid var(--link-hover);
-  border-radius: 10px;
-  padding: 5px;
-  margin-bottom: 10px;
-  background-color: var(--neodb-card-color);
-}
+
 
 // 拍立得小组件
 #meow-box {

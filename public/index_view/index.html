@@ -164,7 +164,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.def2f7ccd56baddcc9a051e44ca1b7619d522b808389a4c5f61a0bffbdf0dc365b2282c592e7986b12b63c69da83d20fb7939355d1e0cf7505773adb8679ef6c.css" integrity="sha512-3vL3zNVrrdzJoFHkTKG3YZ1SK4CDiaTF9hoL/73w3DZbIoLFkueYaxK2PGnag9IPt5OTVdHgz3UFdzrbhnnvbA==" />
+    <link rel="stylesheet" href="/css/main.22ea47f7c1ceca8bb723207134ff5b0a472d7e1a17ec2964540a8c7d9ef770778e6488002b50a594f4896ff6b9ea79c196cca1490c30cfb05f6ad27229fd326d.css" integrity="sha512-IupH98HOyou3IyBxNP9bCkctfhoX7ClkVAqMfZ73cHeOZIgAK1CllPSJb/a56nnBlsyhSQwwz7BfatJyKf0ybQ==" />
   
 
 
@@ -355,13 +355,18 @@
             </div>
         </div>
         <div id="x3">
-            <div class="note__item">
-                <div class="note__day">碎碎念啦，唔使理我</div>
-                <div class="note__list" style="font-size: 80%;">
-                    <details open class="mumble">
-                        <summary>Mumble...</summary>
-                        <div id="feed-reader"></div>
-            <script>
+
+                <div class="note__item">
+    <div class="note__day">碎碎念啦，唔使理我</div>
+    <div class="note__list" style="font-size: 80%;">
+    
+    <details open class="mumble">
+        <summary>Mumble...</summary>
+
+
+
+    <div id="feed-reader"></div>
+    <script>
                 const feedURL = 'https://status.cafe/users/lyin.atom';
 
                 function timeAgo(publishedDate) {
@@ -417,9 +422,10 @@
                         document.getElementById("feed-reader").innerHTML = html;
                     });
             </script>
-                    </details>
-                </div>
-            </div>
+    </details>
+    </div>
+    </div>
+
         </div>
     </div>
 
@@ -442,6 +448,10 @@
  
 
 <ul><li>
+        <span>2025-05-13</span>
+        <a href="/posts/2025-05-13/">为博客制作猫咪拍立得与Status Cafe挂件</a>
+    </li>
+    <li>
         <span>2025-04-28</span>
         <a href="/posts/2025-04-28/">本季度消费小结 Vol.1</a>
     </li>
@@ -460,10 +470,6 @@
     <li>
         <span>2025-03-05</span>
         <a href="/posts/2025-03-05/">听播客，今天听什么？</a>
-    </li>
-    <li>
-        <span>2025-03-03</span>
-        <a href="/posts/2025-03-03/">全心保存真的我</a>
     </li>
     
     <li><a href="/posts">See archive...</a></li>
@@ -536,6 +542,7 @@
             
 <div id="meow-box" style="border-radius: 10px;">
     <img id="meow-image" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_8853.jpeg" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
+
     <button onclick="toggleMeowImage()" id="meow-btn">
         <img src="/cat/cat75.gif" style="border-radius:0; margin:0; max-width:50%;">
         meow
@@ -667,6 +674,8 @@
         &copy; 2021 - 2025
         <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
+        
+        
         
         
         

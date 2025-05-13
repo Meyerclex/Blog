@@ -4,6 +4,7 @@
     {{- if gt (len $images) 0 }}
     <img id="meow-image" src="{{ index $images 0 }}" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
     {{- end }}
+<!--    此处为点击按钮，如需要加入像素图标，则在img的src中填入路径  -->
     <button onclick="toggleMeowImage()" id="meow-btn">
         <img src="/cat/cat75.gif" style="border-radius:0; margin:0; max-width:50%;">
         meow

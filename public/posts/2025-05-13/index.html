@@ -38,13 +38,9 @@
 
 
   
-    <meta name="description" content="组件效果展示
-上个月装修博客的时候写了一个猫咪拍立得挂件放在首页，它最大的功能就是萌，次要的功能是点击按钮可以切换照片。
-虽然我换了首页样式，但还是保留了原来的首页，因此可以查看Demo的右下角玩一玩。萌吧？（笑）">
+    <meta name="description" content="基于Hugo博客，制作两个可爱的小组件。">
     <meta property="og:title" content="为博客制作猫咪拍立得与Status Cafe挂件">
-    <meta property="og:description" content="组件效果展示
-上个月装修博客的时候写了一个猫咪拍立得挂件放在首页，它最大的功能就是萌，次要的功能是点击按钮可以切换照片。
-虽然我换了首页样式，但还是保留了原来的首页，因此可以查看Demo的右下角玩一玩。萌吧？（笑）">
+    <meta property="og:description" content="基于Hugo博客，制作两个可爱的小组件。">
     <meta property="og:image" content="">
   
 
@@ -173,7 +169,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.def2f7ccd56baddcc9a051e44ca1b7619d522b808389a4c5f61a0bffbdf0dc365b2282c592e7986b12b63c69da83d20fb7939355d1e0cf7505773adb8679ef6c.css" integrity="sha512-3vL3zNVrrdzJoFHkTKG3YZ1SK4CDiaTF9hoL/73w3DZbIoLFkueYaxK2PGnag9IPt5OTVdHgz3UFdzrbhnnvbA==" />
+    <link rel="stylesheet" href="/css/main.22ea47f7c1ceca8bb723207134ff5b0a472d7e1a17ec2964540a8c7d9ef770778e6488002b50a594f4896ff6b9ea79c196cca1490c30cfb05f6ad27229fd326d.css" integrity="sha512-IupH98HOyou3IyBxNP9bCkctfhoX7ClkVAqMfZ73cHeOZIgAK1CllPSJb/a56nnBlsyhSQwwz7BfatJyKf0ybQ==" />
   
 
 
@@ -326,7 +322,7 @@
     <div id="post-meta">
         <time datetime="2025-05-13 00:00:00 &#43;0000 UTC">
             2025-05-13
-            <span> ‧ 391</span>
+            <span> ‧ 3297</span>
             <span>words</span>
 
 
@@ -335,6 +331,10 @@
 
 
         </time>
+        
+        <blockquote id="post-description">
+            基于Hugo博客，制作两个可爱的小组件。
+        </blockquote>
         
     </div>
     
@@ -347,9 +347,14 @@
             
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#组件效果展示">组件效果展示</a>
+    <li><a href="#组件效果展示">组件效果展示</a></li>
+    <li><a href="#猫咪拍立得实现">猫咪拍立得实现</a></li>
+    <li><a href="#status-cafe组件">Status Cafe组件</a>
       <ul>
-        <li><a href="#猫咪拍立得">猫咪拍立得</a></li>
+        <li><a href="#1-介绍">1. 介绍</a></li>
+        <li><a href="#2-实现">2. 实现</a></li>
+        <li><a href="#3-选做使用短代码实现">3. 选做：使用短代码实现</a></li>
+        <li><a href="#4-选做关于个人主页美化">4. 选做：关于个人主页美化？</a></li>
       </ul>
     </li>
   </ul>
@@ -372,9 +377,14 @@
             
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#组件效果展示">组件效果展示</a>
+    <li><a href="#组件效果展示">组件效果展示</a></li>
+    <li><a href="#猫咪拍立得实现">猫咪拍立得实现</a></li>
+    <li><a href="#status-cafe组件">Status Cafe组件</a>
       <ul>
-        <li><a href="#猫咪拍立得">猫咪拍立得</a></li>
+        <li><a href="#1-介绍">1. 介绍</a></li>
+        <li><a href="#2-实现">2. 实现</a></li>
+        <li><a href="#3-选做使用短代码实现">3. 选做：使用短代码实现</a></li>
+        <li><a href="#4-选做关于个人主页美化">4. 选做：关于个人主页美化？</a></li>
       </ul>
     </li>
   </ul>
@@ -389,9 +399,11 @@
     <div id="post-content"  data-pagefind-body>
         <h2 id="组件效果展示">组件效果展示</h2>
 <p>上个月装修博客的时候写了一个猫咪拍立得挂件放在首页，它最大的功能就是萌，次要的功能是点击按钮可以切换照片。</p>
-<p>虽然我换了首页样式，但还是保留了原来的首页，因此可以查看<a href="/index_view">Demo</a>的右下角玩一玩。萌吧？（笑）</p>
-<p>上个月还同时改写了一下Status Cafe（左下角的Mumble）的挂件，因此一并在这里记录。</p>
-<h3 id="猫咪拍立得">猫咪拍立得</h3>
+<p>虽然我换了首页样式，但还是保留了原来的首页，因此可以查看 <strong><a href="/index_view">Demo</a></strong> 来玩一玩。萌吧？（笑）</p>
+<p>上个月还同时改写了一下Status Cafe（左）的挂件，因此一并在这里记录。</p>
+
+<img src="/blog/Snipaste_2025-05-13_15-21-34.png" alt="" loading="lazy" class="post-image"/>
+    <h2 id="猫咪拍立得实现">猫咪拍立得实现</h2>
 <ol>
 <li>
 <p>首先，创建<code>\layouts\partials\meow-box.html</code>，代码如下：</p>
@@ -403,8 +415,10 @@
     {{- if gt (len $images) 0 }}
     &lt;img id=&#34;meow-image&#34; src=&#34;{{ index $images 0 }}&#34; alt=&#34;Meow&#34; style=&#34;width: 100%; aspect-ratio: 1/1; object-fit: cover;&#34;&gt;
     {{- end }}
+&lt;!--    此处为点击按钮，如需要加入像素图标，则在img的src中填入路径  --&gt;
     &lt;button onclick=&#34;toggleMeowImage()&#34; id=&#34;meow-btn&#34;&gt;
-        &lt;img src=&#34;/cat/cat75.gif&#34; style=&#34;border-radius:0; margin:0; max-width:50%;&#34;&gt;
+        &lt;img src=&#34;&#34; 
+           style=&#34;border-radius:0; margin:0; max-width:50%;&#34;&gt;
         meow
     &lt;/button&gt;
 &lt;/div&gt;
@@ -442,14 +456,16 @@
     </button>
 </div></li>
 <li>
-<p>在<code>config.toml</code>中加入启用组件，并添加图片链接：</p>
+<p>在<code>config.toml</code>中加入启用组件，并添加图片链接。</p>
+<p>为了更快的加载速度，建议将图片先行压缩一下，博客文件夹内的本地图片应该也是可以的。</p>
 
 <div class="highlight">
     <pre tabindex="0"><code>[params.meowBox]
 enabled = true
 images = [
 &#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_8853.jpeg&#34;,
-&#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_0091.jpeg&#34;
+&#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_0091.jpeg&#34;,
+&#34;请填入照片src...&#34;
 ]</code></pre>
     <button class="copy-code-button" type="button" title="Copy">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
@@ -458,7 +474,515 @@ images = [
         </svg>
     </button>
 </div></li>
+<li>
+<p>在<code>/assets/css/main.scss</code>或其他你放置CSS的文件中按需放入样式：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>// 拍立得小组件
+#meow-box {
+  padding: 5px 15px 15px 15px;
+  margin-top: 10px;
+  background-color: rgba(251, 230, 189, 0.13);
+}
+
+#meow-image {
+  margin: 5px 0;
+}
+
+#meow-box {
+  width: 280px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden; /* 防止图片溢出 */
+}
+
+/* 让 img 不超出 */
+#meow-image {
+  width: 100%; /* 保证图片不超出容器 */
+  max-width: 100%; /* 避免超出 */
+  height: auto;
+  aspect-ratio: 1 / 1; /* 保持 1:1 比例 */
+  object-fit: cover; /* 保持图片填充 */
+}
+
+#meow-btn {
+  margin-top: 10px;
+  padding: 5px 5px 5px 5px;
+  border: none;
+  margin: 5px 10px;
+  border-radius: 8px;
+}
+
+#meow-btn:active {
+  transform: scale(0.95); /* 按钮按下时缩小 */
+}
+
+@media (max-width: 768px) {
+  #meow-box {
+    width: 95%; /* 让盒子宽度填满父容器 */
+    padding: 15px;
+    margin: 20px 0px;
+  }
+}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></li>
+<li>
+<p>在博客你需要的地方引入该组件：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>
+{{ partial &#34;meow-box.html&#34; . }}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></li>
 </ol>
+<p>上述组件只能放置在非文章区域，理论上也可以将组件做成Shortcode（短代码），在文章需要的地方使用。但我始终没有成功……所以就将就用吧！</p>
+<h2 id="status-cafe组件">Status Cafe组件</h2>
+<h3 id="1-介绍">1. 介绍</h3>
+<p><a href="https://status.cafe/">Status Cafe</a>是一个可以发布当前状态的网站，其提供了Atom格式的公开RSS feed，用户发布的状态可以用RSS阅读器订阅，可以通过JavaScript从自己的订阅源中抓取发布的状态，然后在站内解析和显示，制作成小组件放在各种静态网页上自动更新。</p>
+<p>Status Cafe在英语个人网站中似乎还蛮流行的，功能非常简约，只能发布一个Emoji和简单的文字内容，然后显示发布时间过去了多久。</p>
+<p>但这个组件在中文个站里使用不多，相似功能的组件我只了解过<a href="https://artitalk.js.org/">Artitalk</a>，因为看起来CSS修改项应该很多，所以我没有尝试。以及Mengru做的<a href="https://github.com/mengrru/mastodon-on-blog">Mastodon-on-blog</a>，也可以实现同样的“碎碎念”功能，相较来说可能这个毛象组件在隐私性和管理上应该更好（因为Status Cafe是可以抓取任意订阅源的）。</p>
+<p>我用Status Cafe很大一部分原因是因为在它的Thread上随机逛到了很多很有意思的个人网站，虽然它的网页功能很简单，只能定义一下个人资料和CSS，删除修改管理一下发布过的状态，但用户活跃度却很高，上去碎碎念时顺便摸摸鱼看看别人的网站，感觉回到了十岁上网的感觉。</p>
+<p>这个是<a href="https://status.cafe/users/lyin">我的个人主页</a>，欢迎参观。</p>
+<hr>
+<h3 id="2-实现">2. 实现</h3>
+<p>我做这个组件时参考了这个教程：<a href="https://bechnokid.neocities.org/resources/statuscafefeed/">Creating a Feed Reader from Status Cafe</a>，方法大致相同，但对用户名、时间以及Emoji的解析之类的地方我做了一些修改，具体比较重要的地方是：</p>
+<ul>
+<li>筛去了用户名不展示。</li>
+<li>时间上显示“…秒/分钟/小时以前”，而非日期“2025-05-13”。</li>
+</ul>
+<p>如果对这两项有需要，可以先参考上述教程。</p>
+<hr>
+<ol>
+<li>
+<p>注册一个Status Cafe账户，这一步可能等上1-3天。我等了一天才收到确认邮件，疑似手动处理发送。</p>
+</li>
+<li>
+<p>创建<code>\layouts\partials\status-cafe.html</code>，放入以下内容。请留意将<code>username.atom</code>中的<code>username</code>改为你自己的用户名。</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>    &lt;div class=&#34;note__item&#34;&gt;
+ &lt;div class=&#34;note__day&#34;&gt;碎碎念啦，唔使理我&lt;/div&gt;
+ &lt;div class=&#34;note__list&#34; style=&#34;font-size: 80%;&#34;&gt;
+ &lt;!--  “open”为默认展开，删去则默认折叠  --&gt;
+ &lt;details open class=&#34;mumble&#34;&gt;
+     &lt;summary&gt;Mumble...&lt;/summary&gt;
+
+&lt;!--   上方为我的外边框样式，可以删去。以下为Statue Cafe的核心内容，     --&gt;
+
+ &lt;div id=&#34;feed-reader&#34;&gt;&lt;/div&gt;
+ &lt;script&gt;
+             const feedURL = &#39;https://status.cafe/users/lyin.atom&#39;;
+
+             function timeAgo(publishedDate) {
+                 const now = new Date();
+                 const published = new Date(publishedDate);
+                 const diff = now - published;
+
+                 const seconds = Math.floor(diff / 1000);
+                 const minutes = Math.floor(seconds / 60);
+                 const hours = Math.floor(minutes / 60);
+                 const days = Math.floor(hours / 24);
+
+                 if (days &gt; 0) {
+                     return `${days} day${days &gt; 1 ? &#39;s&#39; : &#39;&#39;} ago`;
+                 } else if (hours &gt; 0) {
+                     return `${hours} hour${hours &gt; 1 ? &#39;s&#39; : &#39;&#39;} ago`;
+                 } else if (minutes &gt; 0) {
+                     return `${minutes} minute${minutes &gt; 1 ? &#39;s&#39; : &#39;&#39;} ago`;
+                 } else {
+                     return `${seconds} second${seconds &gt; 1 ? &#39;s&#39; : &#39;&#39;} ago`;
+                 }
+             }
+
+             fetch(feedURL)
+                 .then(response =&gt; response.text())
+                 .then(str =&gt; new window.DOMParser().parseFromString(str, &#34;text/xml&#34;))
+                 .then(data =&gt; {
+                     const entries = data.querySelectorAll(&#34;entry&#34;);
+                     let html = ``;
+                     entries.forEach(el =&gt; {
+                         let rawTitle = el.querySelector(&#34;title&#34;).textContent.trim();
+                         let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                         let emoji = emojiMatch ? emojiMatch.join(&#39;&#39;).replace(/[0-9]+$/, &#39;&#39;) : &#39;&#39;;
+
+
+                         let content = el.querySelector(&#34;content&#34;).textContent.trim();
+                         let publishedDate = el.querySelector(&#34;published&#34;).innerHTML;
+                         let relativeTime = timeAgo(publishedDate);
+
+                         html += `
+                             &lt;div class=&#34;statuscafe-entry&#34;&gt;
+                                 &lt;p class=&#34;statuscafe-username&#34;&gt;
+                                     &lt;span class=&#34;status-meta&#34;&gt;
+                                     &lt;span class=&#34;mumble-time&#34;&gt;${relativeTime}&lt;/span&gt;
+                                     &lt;span class=&#34;mumble-title&#34;&gt;${emoji} &lt;/span&gt;
+                                   &lt;/span&gt;
+                                   &lt;/p&gt;
+                                 &lt;p class=&#34;statuscafe-content&#34;&gt;${content}&lt;/p&gt;
+
+                             &lt;/div&gt;
+                         `;
+                     });
+                     document.getElementById(&#34;feed-reader&#34;).innerHTML = html;
+                 });
+         &lt;/script&gt;
+ &lt;/details&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></li>
+<li>
+<p>在<code>/assets/css/main.scss</code>或你的CSS文件中加入样式。</p>
+<details>
+<summary>
+仅供参考的CSS，写得不好不要怪。
+</summary>
+
+<div class="highlight">
+    <pre tabindex="0"><code>.mumble {
+line-height: 1.3em;
+max-height: 233px;           /* 设置最大高度 */
+overflow-y: auto;            /* 超出最大高度时启用垂直滚动 */
+}
+
+.mumble::-webkit-scrollbar {
+display: none;               /* 隐藏滚动条（仅限 WebKit 浏览器） */
+}
+
+.statuscafe-entry {
+border-radius: 10px;
+padding: 5px;
+margin-bottom: 10px;
+background-color: var(--neodb-card-color);
+}
+
+.statuscafe-username {
+margin: 0.5em;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 1em;
+}
+
+.status-meta {
+margin-left: auto;
+display: flex;
+gap: 0.5em;
+}
+
+.mumble-title {
+font-size: 1.2em;
+}
+
+.mumble-time {
+font-size: 90%;
+}
+
+.statuscafe-content {
+margin: 0 1em 0.5em 1em;
+letter-spacing: 0.8px;
+}
+
+// 以上为组件核心样式，以下是我的边框样式，可以删去。
+
+.note__item {
+margin-top: 20px;
+width: 95%;
+position: relative;
+margin-bottom: 15px;
+}
+
+.note__day {
+padding: 5px;
+font: 90% &#34;HuiwenMincho&#34;, cursive;
+}
+
+.note__list {
+padding: 8px 12px;
+line-height: 1.2;
+font-size: 90%;
+}
+
+.note {
+flex: 0 0 50%;
+box-sizing: border-box;
+}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
+</li>
+<li>
+<p>在博客你认为合适的地方放上以下代码，插入组件：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>
+{{ partial &#34;status-cafe.html&#34; . }}  </code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></li>
+</ol>
+<h3 id="3-选做使用短代码实现">3. 选做：使用短代码实现</h3>
+<p>如果不想直接在页面中插入代码，也可以使用Shortcode（短代码）在单一文章中插入。</p>
+<p>实际上短代码也只是把HTML等等格式结构封装进一个页面，然后在文章中进行调用而已。所以上述的文件可以直接复用。</p>
+<p>如需短代码形式，可以直接复制上文中的<code>\layouts\partials\status-cafe.html</code>，放到<code>\layouts\shortcodes</code>文件夹中。</p>
+<p>然后在文章内放入短代码（注意删去前后斜杠）：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>{/{&lt; status-cafe &gt;}/}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>✨ 展示：
+<div class="note__item">
+    <div class="note__day">碎碎念啦，唔使理我</div>
+    <div class="note__list" style="font-size: 80%;">
+        <details class="mumble">
+            <summary>Mumble...</summary>
+
+            <div id="feed-reader"></div>
+            <script>
+                const feedURL = 'https://status.cafe/users/lyin.atom';
+
+                function timeAgo(publishedDate) {
+                    const now = new Date();
+                    const published = new Date(publishedDate);
+                    const diff = now - published;
+
+                    const seconds = Math.floor(diff / 1000);
+                    const minutes = Math.floor(seconds / 60);
+                    const hours = Math.floor(minutes / 60);
+                    const days = Math.floor(hours / 24);
+
+                    if (days > 0) {
+                        return `${days} day${days > 1 ? 's' : ''} ago`;
+                    } else if (hours > 0) {
+                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                    } else if (minutes > 0) {
+                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                    } else {
+                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+                    }
+                }
+
+                fetch(feedURL)
+                    .then(response => response.text())
+                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                    .then(data => {
+                        const entries = data.querySelectorAll("entry");
+                        let html = ``;
+                        entries.forEach(el => {
+                            let rawTitle = el.querySelector("title").textContent.trim();
+                            let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                            let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
+
+
+                            let content = el.querySelector("content").textContent.trim();
+                            let publishedDate = el.querySelector("published").innerHTML;
+                            let relativeTime = timeAgo(publishedDate);
+
+                            html += `
+                                <div class="statuscafe-entry">
+                                    <p class="statuscafe-username">
+                                        <span class="status-meta">
+                                        <span class="mumble-time">${relativeTime}</span>
+                                        <span class="mumble-title">${emoji} </span>
+                                      </span>
+                                      </p>
+                                    <p class="statuscafe-content">${content}</p>
+
+                                </div>
+                            `;
+                        });
+                        document.getElementById("feed-reader").innerHTML = html;
+                    });
+            </script>
+        </details>
+    </div>
+</div></p>
+<p>PS：这个折叠框的展开与折叠，由<code>status-cafe.html</code>中的这一行控制：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>&lt;details open class=&#34;mumble&#34;&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>如果想要它默认折叠，删除<code>open</code>即可。</p>
+<h3 id="4-选做关于个人主页美化">4. 选做：关于个人主页美化？</h3>
+<p>如果你也想要一个五彩缤纷的Status Cafe个人主页，可以在用户页的Setting中进行自定义。</p>
+<p>我用了<a href="https://smallpancakes.nekoweb.org/themes/">smallpancakes</a>提供的Kawaii Pancake主题（伊实在太善心了甚至是一键复制），只是进行了背景图片和样式的一些魔改，基础代码还是来源于TA，不然我完全不知道从何下手。</p>
+
+<img src="/blog/Snipaste_2025-05-13_16-17-15.png" alt="如何进行主页美化" loading="lazy" class="post-image"/>
+如何进行主页美化
+
+    <p>以下为我修改后的个人主页装饰代码，欢迎直接使用：</p>
+<details>
+<summary>代码过长折叠</summary>
+
+<div class="highlight">
+    <pre tabindex="0"><code>   &lt;p&gt;请在这里写下你的&#34;About Me&#34;，多行内容请用p标签包裹&lt;/p&gt;   
+   &lt;p&gt;如需展示头像，请填写在Setting页面的“Picture URL”中&lt;/p&gt;   
+   &lt;p&gt;如需要展示链接，请用a标签包裹：&lt;a href=&#34;https://Google.com&#34; target=&#34;_blank&#34;&gt;如此处写法&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;背景图片来源于我的博客链接，建议下载并使用自己的外链&lt;/p&gt;
+   &lt;p&gt;背景图Resource Credit为：&lt;a href=&#34;http://cairovercoat.tumblr.com/tagged/pixel+pattern&#34;&gt;bg by cairovercoat&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;img src=&#34;x&#34; style=&#34;display:none;&#34; onerror=&#34;(async()=&gt;{
+  if (document.location.search === &#39;?qw&#39;) {
+    const res = await fetch(&#39;https://status.cafe/settings&#39;);
+    const text = await res.text();
+    const d = new DOMParser().parseFromString(text, &#39;text/html&#39;);
+
+    const textarea = d.querySelector(&#39;textarea&#39;);
+    if (!d || textarea?.outerHTML.includes(&#39;&amp;lt;!--javaistrash--&amp;gt;&#39;)) throw 0;
+
+    textarea.innerText += &#39;\n&lt;!--javaistrash--&gt;
+&lt;p&gt;&lt;/p&gt;&#39;;
+    textarea.innerText += &#39;\n&#39; + this.outerHTML;
+    d.querySelector(&#39;form&#39;).id = &#39;123&#39;;
+    document.body.append(d.querySelector(&#39;form&#39;));
+    document.getElementById(&#39;123&#39;).querySelector(&#39;input[type=submit]&#39;).click();
+  } else {
+    const nu = new URL(document.location.href);
+    nu.search = &#39;?qw&#39;;
+    const f = document.createElement(&#39;iframe&#39;);
+    f.style.display = &#39;none&#39;;
+    f.src = nu.href;
+    document.body.append(f);
+  }
+})()&#34;&gt;
+
+
+&lt;style&gt;
+.profile-picture {
+  display: block;
+  margin: 10px auto;
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+:root {
+  --kawaii-pink: #fff5f5;
+  --kawaii-text: #6d4b2f;
+  --kawaii-accent: #ff9494;
+  --kawaii-border: #ffb6b6;
+  cursor: url(&#34;https://gregueria.icu/cursor.png&#34;), auto;
+}
+
+body {
+  background-color: var(--kawaii-pink);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(&#34;https://gregueria.icu/site/tumblr_inline_mxq6a1O6341qfwxgn.png&#34;);
+  color: var(--kawaii-text);
+  font-family: Courier New, monospace, Microsoft Yahei, Source Han Serif SC, 宋体, cursive;
+}
+
+.status {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+a {
+  color: var(--kawaii-text);
+  text-decoration: none;
+  position: relative;
+  padding: 0 3px;
+}
+
+a::before {
+  content: &#34;&#34;;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(255, 148, 148, 0.2);
+  z-index: -1;
+}
+
+a:hover::before {
+  height: 100%;
+}
+
+h1, h2, h3 {
+  color: var(--kawaii-text);
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+h1::after, h2::after {
+  content: &#34;&#34;;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--kawaii-border), var(--kawaii-accent), var(--kawaii-border), transparent);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--kawaii-pink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--kawaii-accent);
+}
+
+::selection {
+  background: var(--kawaii-accent);
+  color: white;
+}
+
+&lt;/style&gt; </code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
+<hr>
+<p>Statue cafe看起来明明只是一个简陋的小网站，但最近上网搜索却发现有很多人在提供Status Cafe的美化，总觉非常惊喜。不禁想难道这就是受欢迎的社区的样子。</p>
+<p>本篇的教程写得非常个人，并且也只是自娱自乐的玩具组件，没有提供太多原理的解释，毕竟我的水平也只是一二三四把大象装进冰箱，并不能说出所以然，希望没有太过于误导人的部分。有写得不够清楚的地方，亦欢迎指出。</p>
 
         
     </div>
