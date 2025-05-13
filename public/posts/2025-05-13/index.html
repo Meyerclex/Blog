@@ -38,25 +38,19 @@
 
 
   
-    <meta name="description" content="
-
-
-
-
-基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！">
-    <meta property="og:title" content="小鱼和她的朋友们">
-    <meta property="og:description" content="
-
-
-
-
-基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！">
+    <meta name="description" content="组件效果展示
+上个月装修博客的时候写了一个猫咪拍立得挂件放在首页，它最大的功能就是萌，次要的功能是点击按钮可以切换照片。
+虽然我换了首页样式，但还是保留了原来的首页，因此可以查看Demo的右下角玩一玩。萌吧？（笑）">
+    <meta property="og:title" content="为博客制作猫咪拍立得与Status Cafe挂件">
+    <meta property="og:description" content="组件效果展示
+上个月装修博客的时候写了一个猫咪拍立得挂件放在首页，它最大的功能就是萌，次要的功能是点击按钮可以切换照片。
+虽然我换了首页样式，但还是保留了原来的首页，因此可以查看Demo的右下角玩一玩。萌吧？（笑）">
     <meta property="og:image" content="">
   
 
   <title>
     
-      小鱼和她的朋友们 | 再會，謝謝所有的魚
+      为博客制作猫咪拍立得与Status Cafe挂件 | 再會，謝謝所有的魚
     
   </title>
 
@@ -305,8 +299,8 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-    <div class="post-meta">
-        <div id="header-post" >
+<div class="post-meta">
+    <div id="header-post" >
   <span id="nav" data-pagefind-ignore>
     <ul>
       
@@ -326,270 +320,327 @@
 
 
 
+</div>
+<article >
+    <h1 data-pagefind-meta="title" t>为博客制作猫咪拍立得与Status Cafe挂件</h1>
+    <div id="post-meta">
+        <time datetime="2025-05-13 00:00:00 &#43;0000 UTC">
+            2025-05-13
+            <span> ‧ 391</span>
+            <span>words</span>
+
+
+
+
+
+
+        </time>
+        
     </div>
-    <article class="post-content">
-        <h1>小鱼和她的朋友们</h1>
-        <div id="post-meta">
-            <time datetime="2021-06-28 00:00:00 &#43;0000 UTC">
-                2021-06-28
-                <span> ‧ 1704</span>
-                <span>words</span>
-                
-                
-            </time>
+    
+    <div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+        <details>
+            <summary>📑 Table of Contents</summary>
+                <div >
+        <aside>
             
-        </div>
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#组件效果展示">组件效果展示</a>
+      <ul>
+        <li><a href="#猫咪拍立得">猫咪拍立得</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+        </details>
+    </div>
+    <hr>
+    <div  class="post-toc" id="post-toc" data-pagefind-ignore>
+        <header><strong>
+            📑 Table of Contents</strong>
+        </header>
+            <div >
+        <aside>
+            
+            
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#组件效果展示">组件效果展示</a>
+      <ul>
+        <li><a href="#猫咪拍立得">猫咪拍立得</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            
+            
+        </aside>
+        <a href="#" id="toc-toggle"></a>
+    </div>
+    </div>
+    
+    <div id="post-content"  data-pagefind-body>
+        <h2 id="组件效果展示">组件效果展示</h2>
+<p>上个月装修博客的时候写了一个猫咪拍立得挂件放在首页，它最大的功能就是萌，次要的功能是点击按钮可以切换照片。</p>
+<p>虽然我换了首页样式，但还是保留了原来的首页，因此可以查看<a href="/index_view">Demo</a>的右下角玩一玩。萌吧？（笑）</p>
+<p>上个月还同时改写了一下Status Cafe（左下角的Mumble）的挂件，因此一并在这里记录。</p>
+<h3 id="猫咪拍立得">猫咪拍立得</h3>
+<ol>
+<li>
+<p>首先，创建<code>\layouts\partials\meow-box.html</code>，代码如下：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>{{- if .Site.Params.meowBox.enabled }}
+&lt;div id=&#34;meow-box&#34; style=&#34;border-radius: 10px;&#34;&gt;
+    {{- $images := .Site.Params.meowBox.images -}}
+    {{- if gt (len $images) 0 }}
+    &lt;img id=&#34;meow-image&#34; src=&#34;{{ index $images 0 }}&#34; alt=&#34;Meow&#34; style=&#34;width: 100%; aspect-ratio: 1/1; object-fit: cover;&#34;&gt;
+    {{- end }}
+    &lt;button onclick=&#34;toggleMeowImage()&#34; id=&#34;meow-btn&#34;&gt;
+        &lt;img src=&#34;/cat/cat75.gif&#34; style=&#34;border-radius:0; margin:0; max-width:50%;&#34;&gt;
+        meow
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    let images = [
+        {{ range $index, $img := .Site.Params.meowBox.images }}
+    &#34;{{ $img }}&#34;,
+        {{ end }}
+    ];
+    let currentIndex = 0;
+
+    // 预加载图片
+    function preloadImages() {
+        images.forEach(image =&gt; {
+            const img = new Image(); // 创建一个新的 Image 对象
+            img.src = image; // 将图片源设置为路径，这会自动开始加载图片
+        });
+    }
+
+    function toggleMeowImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById(&#34;meow-image&#34;).src = images[currentIndex];
+    }
+
+    // 页面加载时预加载图片
+    preloadImages();
+&lt;/script&gt;
+{{- end }}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></li>
+<li>
+<p>在<code>config.toml</code>中加入启用组件，并添加图片链接：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>[params.meowBox]
+enabled = true
+images = [
+&#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_8853.jpeg&#34;,
+&#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/byphone/IMG_0091.jpeg&#34;
+]</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></li>
+</ol>
 
         
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
 
+    <div class="pre-next" data-pagefind-ignore>
+        
+            <a class="pre-next-btn bg" href="http://localhost:1313/posts/2025-04-28/">&lt;&lt; 本季度消费小结 Vol.1</a>
+        
+        
+    </div>
 
-        <div id="post-content">
-            <style>
-#post-content li {
- padding: 0.5rem 0.5rem;
-}
+<br>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />
+<div id="comments" class="comments" data-pagefind-ignore>
+    <style>
+    :root {
+        --waline-color: unset;
+        --waline-bgcolor-light: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
 </style>
+<div id="waline" data-pagefind-ignore></div>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    var articleContent = document.querySelector(".post-content");
-    var items = articleContent.querySelectorAll("ul li");
-    var itemsArray = Array.from(items);
-    for (var i = itemsArray.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = itemsArray[i].innerHTML;
-        itemsArray[i].innerHTML = itemsArray[j].innerHTML;
-        itemsArray[j].innerHTML = temp;
-    }
-    for (var i = 5; i < itemsArray.length; i += 6) {
-        var hr = document.createElement("hr");
-        itemsArray[i].parentNode.insertBefore(hr, itemsArray[i].nextSibling);
-    }
-});
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '这里有小豆泥表情，请肆无忌惮地使用！^^',
+            admin: 'admin',
+        }
+    });
 </script>
-<blockquote>
-<p>
-<img
-    src="/img/emoji/blobcatflower.png"
-    title="blobcatflower"
-    alt="blobcatflower"
-    width="40"
-    height="40"
-    style="vertical-align: middle; border: none; line-height: 1px;
-    transition: transform 0.3s ease-in-out;
-    margin: 0.2rem 0;
-    border-radius: 0px;"
-    onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'" id="emoji"
-/>
-基于自己的认识对也在写博客的朋友们写了自己简单的了解，如果我冒冒失失搞错了任何地方欢迎联系我修改！</p>
-<p>
-<img
-    src="/img/emoji/face.gif"
-    title="face"
-    alt="face"
-    width="40"
-    height="40"
-    style="vertical-align: middle; border: none; line-height: 1px;
-    transition: transform 0.3s ease-in-out;
-    margin: 0.2rem 0;
-    border-radius: 0px;"
-    onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'" id="emoji"
-/>
-目前只想和说过话/有毛毛象联系方式的朋友交换链接，所以请不要单向添加友链。也请不要将我的站点收录进任何聚合页面。</p>
-<p>
-<img
-    src="/img/emoji/cats.png"
-    title="cats"
-    alt="cats"
-    width="40"
-    height="40"
-    style="vertical-align: middle; border: none; line-height: 1px;
-    transition: transform 0.3s ease-in-out;
-    margin: 0.2rem 0;
-    border-radius: 0px;"
-    onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'" id="emoji"
-/>
-每一次刷新，排列顺序都会被打乱。</p>
-</blockquote>
-<hr>
-<ul>
-<li>
-<p><a href="https://www.missingid.online/">Missing</a>：重新点亮域名的年更选手宝宝！！</p>
-</li>
-<li>
-<p><a href="https://mengru.space/">Mengru</a>：她的空间很棒，爱看周记栏目！</p>
-</li>
-<li>
-<p><a href="https://oaad.iceco.icu/">Muko</a>：很有活力的Kpop选手，不管学习记录还是旅行记录都很好看。</p>
-</li>
-<li>
-<p><a href="https://blog.plaskier.icu/">Plaskier</a>：芋阿圆，非常严谨文字书写风格。</p>
-</li>
-<li>
-<p><a href="https://shixiaocaia.fun">Shixiaocaia</a>：是小蔡，CS相关选手，非常积极地学习与生活。</p>
-</li>
-<li>
-<p><a href="https://suicablog.cobaltkiss.blue">suica</a>：有许多服务搭建的分享，与读书游玩体验笔记。召唤Suica！</p>
-</li>
-<li>
-<p><a href="https://writee.org/zoeash/">Zoeash</a>：诗歌与虚构，诚实的自我观察。</p>
-</li>
-<li>
-<p><a href="https://blog.mysto.cyou">咖啡冰河</a>：Kraka的美丽博客，她也书写着小说。</p>
-</li>
-<li>
-<p><a href="https://www.summeringway.icu/">晴空</a>：一个是安静的地方，存放夏夏的看过和走过的地方。</p>
-</li>
-<li>
-<p><a href="https://mantyke.icu/">小球飞鱼</a>：是塔塔，无论是按节气更新的生活日志还是经验教程类文章都非常好看！</p>
-</li>
-<li>
-<p><a href="https://supernovaradio.live/">超新星电台</a>：远游的云，在名为自己的迷宫里东张西望。</p>
-</li>
-<li>
-<p><a href="https://write.c7.io/tyou/">蝴蝶曾在此处</a>：小猫的博客，不是在打球就是在打球的路上！非常有活力的书写。</p>
-</li>
-<li>
-<p><a href="https://tortie.me/">A Purrception</a>：尾巴摆摆，一只美丽玳瑁小猫的姐姐。她在阅读和绘画，很好看的热情的分享！</p>
-</li>
-<li>
-<p><a href="https://tianxianzi.me/">天仙子</a>：繁茂的文字森林，正在记录与分享着自己生命的旅程。</p>
-</li>
-<li>
-<p><a href="https://luoshui.icu/">白天</a>：小狗充满激情的脚印！在书籍与现实世界中高速地冲浪。</p>
-</li>
-<li>
-<p><a href="https://irithys.com/">山茶花舍</a>：是吕楪喔。非常好读可爱的文字风格。关于她的生活与经验。</p>
-</li>
-<li>
-<p><a href="https://trails-of-isara.vercel.app/">深海鱼拒绝触礁</a>：鲨鲨！我们海底世界朋友（？是坦诚自由的书写。</p>
-</li>
-<li>
-<p><a href="https://houdini.eu.org/">东俄勒冈群山</a>：小迪独特的书写，字里行间藏满像风一样的思绪。</p>
-</li>
-<li>
-<p><a href="https://tothemoonriver.icu/">昼河万里</a>：是小河。她在学习，观察自己，去着不同的地方。她的沉思与旅行都值得阅读。</p>
-</li>
-<li>
-<p><a href="https://sanguok.com/">山月</a>：长期的博客写作者，书写了非常多丰富的主题。沉静的文字风格。</p>
-</li>
-<li>
-<p><a href="http://graugris.icu/">呆呆不是槑</a>：是呆呆！一位认真地书写着自己的生活与学习经验的Kpop选手。</p>
-</li>
-<li>
-<p><a href="https://ayu.land">甜鱼/Ayu</a>：多面手甜鱼，她在画画和做音乐与游戏，像万花筒一样的博客！</p>
-</li>
-<li>
-<p><a href="https://sunnkynews.icu/">圆面包如何逃离狐口</a>：是盐，在骑车，并分享着她生活里不同的风景。</p>
-</li>
-<li>
-<p><a href="https://www.hezicola.com/">冷酷蹦迪</a>：帅气而冷酷的设计，非常好玩的书写，一个很行的博客。</p>
-</li>
-<li>
-<p><a href="https://kharybdism.xyz/">Χαρυβδις</a>：是M君！博客存放着她的同人与文章翻译，帅气的同人女友友。</p>
-</li>
-<li>
-<p><a href="https://naturaleki.one/">天堂错误文件</a>：是小爱，我首页的游戏实况博主（？</p>
-</li>
-<li>
-<p><a href="https://sleepymoon.cyou">眠于水月间</a>：是鹤辞！像夜空一般的博客，有一个美丽的展柜，正在分享着她的珍藏。</p>
-</li>
-<li>
-<p><a href="https://www.velasx.com">Velas电波站</a>：一些生活的自我记录与游戏的分享，她也在写小说。</p>
-</li>
-<li>
-<p><a href="https://banshou-air.netlify.app/">夜航南飞</a>：一条充满未知的航线，与一位跑团的高手。伊在认真的对待自己的人生。</p>
-</li>
-<li>
-<p><a href="https://www.rouroupuppy.top/">让黑夜划满星</a>：秋田犬酱！！恋哥高手（小声）你好，你的cp很好也借我嗑一口……</p>
-</li>
-<li>
-<p><a href="https://goldmaple.info/">珊瑚阁 GoldMaple</a>：是世界公民小金，正在写着关于驻西非的生活。她正在用特别而珍贵的视角，坦率地记录着自己的人生。</p>
-</li>
-<li>
-<p><a href="https://kawa1planet.fun/">Kawa1Planet</a>：今年做了非常多漂亮本本封面的友友！（而我似乎即将拥有其所作封面的两本🤲</p>
-</li>
-<li>
-<p><a href="https://rovingsun.wordpress.com/">Shadows of the Sun</a>：很好的、优美的写作，与一个火热的真心，来自新朋友Rovingsun。你也会喜欢她的。</p>
-</li>
-<li>
-<p><a href="https://turquoise.one/">一支咏叹调</a>：是蜉蝣（的小豆泥乐园！）今年是钩针织物艺术家！</p>
-</li>
-<li>
-<p><a href="https://akaito.xyz/">一片痴心俱成灰</a>：是女祭，一位神秘长情狡兔多窟的参展达人同人女。</p>
-</li>
-<li>
-<p><a href="https://thirdshire.com">第三夏尔</a>：是白石京师傅，织毛线，冥想，大搞美丽装修。记录丰富多彩的事情。</p>
-</li>
-<li>
-<p><a href="https://zhen-shi.github.io/">枕石</a>：语言风格利落又干净的薯饼，那些关于古典乐的文章结构清晰又美丽，非常值得阅读。</p>
-</li>
-<li>
-<p><a href="https://harushuura.vip">春天与阿修罗</a>：是小梨！写着书影音游和生活的事，对了小梨正在做自己的游戏！！走过路过请点个心愿单吧！</p>
-</li>
-<li>
-<p><a href="https://notes.midofnowhere.link/">Mid of Nowhere</a>：是黑猫学学，感觉学学是实用经验派，看完之后真的会学到，比看电视管用（？</p>
-</li>
-<li>
-<p><a href="https://kiokumo.vip/">匣</a>：是蓝色小幽灵海胆（？）！手账家居生活内容都看起来好舒服像流动的小溪……</p>
-</li>
-<li>
-<p><a href="https://nanako-blog.web.app/">昼梦日和</a>: 是又萌又温柔的nana！在讲一些萌萌的话，生活的事。nana还会拍美丽的照片。</p>
-</li>
-</ul>
-<hr>
-<p>喜欢大家，爱看大家，通过RSS猛猛地订阅了大家
-<img
-    src="/img/emoji/meow_blush.png"
-    title="meow_blush"
-    alt="meow_blush"
-    width="40"
-    height="40"
-    style="vertical-align: middle; border: none; line-height: 1px;
-    transition: transform 0.3s ease-in-out;
-    margin: 0.2rem 0;
-    border-radius: 0px;"
-    onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'" id="emoji"
-/>
-</p>
-<h2 id="要和我交换吗">要和我交换吗？</h2>
-<blockquote>
-<p>链接：https://gregueria.icu/</p>
-<p>名称：谢谢所有的鱼</p>
-<p>简介（如需）：您首页的奶牛猫图片转发大使</p>
-</blockquote>
-<p>很珍惜博客这样的连结，因而暂时不希望是单向链接。交换的话右下角Guest Book和毛象联系都OK！暂时只和有过一些交流的朋友交换了
-<img
-    src="/img/emoji/cats.png"
-    title="cats"
-    alt="cats"
-    width="40"
-    height="40"
-    style="vertical-align: middle; border: none; line-height: 1px;
-    transition: transform 0.3s ease-in-out;
-    margin: 0.2rem 0;
-    border-radius: 0px;"
-    onmouseover="this.style.transform='scale(1.5)'"
-    onmouseout="this.style.transform='scale(1)'" id="emoji"
-/>
-希望您也是对人和小动物都富有同理心的友善之人！</p>
-
-            
-        </div>
-        <br>
-        <div style="padding-bottom:3px;"></div>
-    </article>
+</div>
 
 
+
+
+
+    <div>
 
 <footer class="site-footer">
     <section class="copyright">
         &copy; 2021 - 2025
         <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
+        
+        
         
         
         
@@ -788,6 +839,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     
     
+    <script src="/js/clipboard.js"></script>
+    
 
     <script>
         
@@ -881,91 +934,9 @@ document.addEventListener("DOMContentLoaded", function() {
     })()
 </script>
 
+</div>
 
             </div>
         </main>
-    
-
-
-
-<script>
-    ;(function () {
-        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
-        const Wording1 = "向我提问！"
-        const Wording2 = "看到就会回复 :D"
-        const TagTextColor = "#ffffff"
-        const TagBgColor = "var(--shadow)"
-        const BodyBgColor = "#ffffff"
-
-        const $container = document.createElement("div")
-        const $button = document.createElement("div")
-
-        $button.innerText = Wording1
-        document.body.append($button)
-
-        $container.innerHTML += `
-    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `
-        let isOpen = false
-        let isFirst = true
-        $button.onclick = () => {
-            if (isFirst) {
-                isFirst = false
-                document.body.append($container)
-            }
-            if (!isOpen) {
-                useStyle($container, {
-                    top: "unset",
-                    bottom: "0px",
-                    visibility: "visible"
-                })
-                useStyle($button, {
-                    bottom: "400px"
-                })
-                $button.innerText = Wording2
-            } else {
-                useStyle($container, {
-                    top: "100%",
-                    bottom: "unset",
-                    visibility: "hidden"
-                })
-                useStyle($button, {
-                    bottom: "0px"
-                })
-                $button.innerText = Wording1
-            }
-            isOpen = !isOpen
-        }
-        useStyle($button, {
-            position: "fixed",
-            bottom: "0px",
-            right: "0px",
-            background: TagBgColor,
-            color: TagTextColor,
-            "font-size": "14px",
-            "border-top-left-radius": "10px",
-            padding: "5px 10px",
-            cursor: "pointer"
-        })
-        useStyle($container, {
-            position: "fixed",
-            top: "100%",
-            right: "0px",
-            width: "300px",
-            height: "400px",
-            background: BodyBgColor,
-            "z-index": "11"
-        })
-
-        function useStyle (dom, style) {
-            for (let sKey in style) {
-                dom.style[sKey] = style[sKey]
-            }
-        }
-    })()
-</script>
-
-
     <script src="script.js" defer></script>
-    </body>
-</html>
+    </body></html>

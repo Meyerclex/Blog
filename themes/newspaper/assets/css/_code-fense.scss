@@ -10,7 +10,7 @@ pre {
   overflow: auto; /* 确保代码块可以水平和垂直滚动 */
   white-space: pre-wrap; /* 防止代码块中的文本溢出 */
   word-wrap: break-word; /* 对长单词进行换行 */
-  max-height: 500px; /* 可选，限制代码块的最大高度 */
+  max-height: 400px; /* 可选，限制代码块的最大高度 */
 }
 
 code {
@@ -73,5 +73,5 @@ pre code.hljs {
   overflow: auto; /* 允许水平和垂直滚动 */
   padding: 0;
   white-space: pre-wrap; /* 防止代码溢出 */
-  max-height: 400px; /* 可选，限制代码块的最大高度 */
+  max-height: 350px; /* 可选，限制代码块的最大高度 */
 }
