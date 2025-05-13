@@ -37,6 +37,12 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 
 - **April 2025**
 
+<div style="text-align: center;">
+
+[⛳ 主题预览](/index_view)
+
+</div>
+
 ![](/theme-archive/April-2025-light.png) 
 ![魔女之家](/theme-archive/April-2025-dark.png)
 
