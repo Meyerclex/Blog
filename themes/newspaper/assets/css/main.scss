@@ -6,14 +6,11 @@
 :root {
   --bg-color: rgba(249, 247, 241, 0.84);
   --bg-color-hover: rgba(253, 241, 207, 0.8);
-  --w-color: transparent;
   --text-color: #38383c;
-  --text-color-dark: #F8F4E1;
   --secondary-text-color: #666666;
   --link-color: #1a89ae;
-  --visited-link-color: #1a89ae;
   --blockquote-color: #466060;
-  --color-bg-code: rgba(94, 89, 89, 0.13);
+  --color-bg-code: rgba(94, 89, 89, 0.13); //代码块外边框（服了）
   --bg-select: rgba(255, 239, 218, 0.6);
   --color-point: #D45B587F;
   --border-color: #38383c;
@@ -24,16 +21,16 @@
   --btn-hover: rgba(66, 103, 103, 0.72);
   --mark:rgba(255, 255, 147, 0.6);
   --shadow: #eaa8a2;
+
+  --text-color-dark: #F8F4E1;
 }
 
 [a="dark"] {
   --bg-color: rgba(35, 18, 53, 0.78);
   --bg-color-hover: rgba(81, 44, 126, 0.74);
-  --w-color: #fff;
   --text-color: #F8F4E1;
   --secondary-text-color: rgba(241, 231, 209, 0.82);
   --link-color: #B6CBBD;
-  --visited-link-color: #B6CBBD;
   --blockquote-color: #b5b5b5;
   --bg-select: rgba(152, 152, 152, 0.53);
   --color-bg-code: rgba(85, 76, 76, 0.47);
@@ -47,7 +44,7 @@
   --shadow: rgb(117, 94, 142);
 }
 
-
+// 猫的阴影
 :root{
   --index-shadow: rgb(251,230,189);
 }
@@ -63,7 +60,7 @@ body {
 a {
   color: var(--link-color);
   &:visited {
-    color: var(--visited-link-color);
+    color: var(--link-color);
   }
 }
 
