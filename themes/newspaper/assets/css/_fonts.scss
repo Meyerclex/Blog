@@ -45,3 +45,12 @@ a:hover {
 #menutable td, #menutable th {
   font-family: 'HuiwenFangsong',"Noto Sans CJK SC" !important;
 }
+code {
+  font-family: ui-monospace, // San Francisco Mono on macOS and iOS
+  "Cascadia Mono", "Segoe UI Mono", // Newer Windows monospace fonts that
+    // are optionally installed. Most likely
+    // to be rendered in Consolas
+  "Liberation Mono", // Recently updated
+  Menlo, Monaco, Consolas, // A few sensible system font choices
+  monospace // The final fallback for rendering in monospace.;
+}

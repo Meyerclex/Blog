@@ -132,3 +132,8 @@ weight = 5
 
 [outputs]
 home = ["HTML", "RSS"]
+
+[taxonomies]
+tag = "tags"
+series = "series"
+category = "categories"

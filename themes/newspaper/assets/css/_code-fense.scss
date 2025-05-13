@@ -1,0 +1,77 @@
+code:not(pre > code) {
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+pre {
+  border: 1px solid var(--color-bg-code);
+  border-radius: 4px;
+  padding: 0.5em;
+  overflow: auto; /* 确保代码块可以水平和垂直滚动 */
+  white-space: pre-wrap; /* 防止代码块中的文本溢出 */
+  word-wrap: break-word; /* 对长单词进行换行 */
+  max-height: 500px; /* 可选，限制代码块的最大高度 */
+}
+
+code {
+  background-color: var(--color-bg-code);
+  /* color: var(--text-color); */
+  font-size: 90%;
+}
+
+code.has-jax {
+  -webkit-font-smoothing: antialiased;
+  background: inherit !important;
+  border: none !important;
+  font-size: 100%;
+}
+
+.highlight {
+  position: relative;
+}
+
+.copy-code-button {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 50%);
+  border: none;
+  border-radius: 6px;
+  padding: 0 5px 5px 5px;
+  font-size: 1rem;
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  top: 10px;
+  margin: 10px;
+  transition: opacity 0.2s ease;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+}
+
+.copy-code-button > svg {
+  fill: var(--white);
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus,
+pre:active ~ .copy-code-button,
+pre:focus ~ .copy-code-button,
+div.highlight:active > .copy-code-button,
+div.highlight:focus > .copy-code-button {
+  cursor: pointer;
+  opacity: 1;
+}
+
+pre code.hljs {
+  display: block;
+  overflow: auto; /* 允许水平和垂直滚动 */
+  padding: 0;
+  white-space: pre-wrap; /* 防止代码溢出 */
+  max-height: 400px; /* 可选，限制代码块的最大高度 */
+}

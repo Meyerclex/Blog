@@ -27,6 +27,15 @@
   </noscript>
 
 
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
 
   
     <meta name="description" content="写了关于全站字体、归档页面及友链的装修笔记，并对同人博客的Fandom与Series的区分方式进行了备忘。">
@@ -160,7 +169,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.3c70b43c8f967885625cb036a0ef89ec83e0c0cffd15c0faca966318dc415dfa72b862f2688e46be065c440820c15eb7c9f00c7a144c2901b4cdcab7c7facde0.css" integrity="sha512-PHC0PI&#43;WeIViXLA2oO&#43;J7IPgwM/9FcD6ypZjGNxBXfpyuGLyaI5GvgZcRAggwV63yfAMehRMKQG0zcq3x/rN4A==" />
+    <link rel="stylesheet" href="/css/main.abdbdac0cbc237b647a6c9dfe19b12456b0dff209562acb1eb4caed4ca85e9fbf3e13ac3137a41bc9b094f14450913d265034493e3276a1c93a0641254dbb386.css" integrity="sha512-q9vawMvCN7ZHpsnf4ZsSRWsN/yCVYqyx60yu1MqF6fvz4TrDE3pBvJsJTxRFCRPSZQNEk&#43;MnahyToGQSVNuzhg==" />
   
 
 
@@ -222,6 +231,19 @@
     document.body.setAttribute('a', currentTheme);
     document.body.classList.add(currentTheme + '-mode');
 
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
     
     const updateIcons = () => {
         if (currentTheme === 'light') {
@@ -233,7 +255,7 @@
         }
     };
     updateIcons();
-
+    updateHighlightTheme(); 
     
     const toggleTheme = () => {
         if (currentTheme === 'light') {
@@ -248,6 +270,7 @@
         localStorage.setItem('theme', currentTheme);
         document.body.setAttribute('a', currentTheme);
         updateIcons();
+        updateHighlightTheme(); 
     };
 
     
@@ -272,8 +295,8 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-                <div class="post-meta">
-                    <div id="header-post" >
+<div class="post-meta">
+    <div id="header-post" >
   <span id="nav" data-pagefind-ignore>
     <ul>
       
@@ -293,8 +316,7 @@
 
 
 
-                </div>
-
+</div>
 <article >
     <h1 data-pagefind-meta="title" t>鱼鱼小家的装修笔记</h1>
     <div id="post-meta">
@@ -397,7 +419,9 @@
 </ol>
 <details>
 <summary>代码部分</summary>
-<pre tabindex="0"><code>{{ define &#34;main&#34; }}
+
+<div class="highlight">
+    <pre tabindex="0"><code>{{ define &#34;main&#34; }}
 &lt;div class=&#34;post-list-container post-list-container-shadow&#34;&gt;
 &lt;div class=&#34;post&#34;&gt;
 
@@ -459,14 +483,22 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-{{ end }}
-</code></pre></details>
+{{ end }}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <ol start="2">
 <li>在<code>content\archives</code>中增添文件<code>posts.md</code>，如下内容：</li>
 </ol>
 <details>
 <summary>代码部分</summary>
-<pre tabindex="0"><code>---
+
+<div class="highlight">
+    <pre tabindex="0"><code>---
 title: &#34;Archive✨&#34;
 layout: archive
 type: posts
@@ -479,15 +511,23 @@ menu:
     params:
       icon: fail
 toc: false
----
-</code></pre></details>
+---</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <p>其中关于<code>menu</code>的部分是我的主题把独立页面放在导航栏的方式，如果你的主题是通过在<code>config.toml</code>增添内容实现，则忽略这一段即可。</p>
 <ol start="3">
 <li>然后我做了一些样式的修改，恐怕没有参考的意义。这个直接写在主题的CSS文件即可，例如我的目录是<code>assets\css\critical\10-custom-media.css</code>。</li>
 </ol>
 <details>
 <summary>代码部分</summary>
-<pre tabindex="0"><code>.archive--list-item {
+
+<div class="highlight">
+    <pre tabindex="0"><code>.archive--list-item {
   margin-bottom: 8px; /* 修改列表项的底部间距 */
   padding-left: 0px; /* 移除圆点位置，这个数值可以根据需要调整 */
 }
@@ -508,8 +548,14 @@ toc: false
 .archive--list-item:hover .archive--date,
 .archive--list-item:focus .archive--date {
     color: var(--primary); /* 选中时日期的颜色和文字一致 */
-}
-</code></pre></details>
+}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <h2 id="友情链接的样式">友情链接的样式</h2>
 <p>本段写于2024年6月23日。因为最近和毛象上的大家交换了友链，大家的友链都会放描述或头像，也会有友友写自己的描述，但当时我的友链是没有描述的纯URL，感觉还是想更认真地对待这件事，就给每个友友都有比较正式的介绍——但这样页面就变得超级漫长欸！所以我对友链样式重新做了修改。</p>
 <h3 id="之前的友链">之前的友链</h3>
@@ -518,6 +564,8 @@ toc: false
 <summary>样式及代码部分</summary>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/2.png" alt="" loading="lazy" class="post-image"/>
+    
+<div class="highlight">
     <pre tabindex="0"><code>&lt;style&gt;
 .content li::marker {
   content: &#34;♡  &#34;; 
@@ -540,8 +588,14 @@ a.link--external:last-child::after {
 /* 之后这样就可以显示出来了！ */
 
 - [name](link.com) [name2](link2.com)
-- ....
-</code></pre></details>
+- ....</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <p>因为它只用在友链的文件里嘛，所以这些代码我是直接添加进友链文件的正文的。进而导致RSS阅读器中阅读会看见代码本身……不过没事啦（擦汗）因为我一直都只在一个文件里修改更新，应该不会有人重复的到RSS提醒，搬家感觉也很方便。</p>
 <h3 id="目前的友链">目前的友链</h3>
 <p>目前的页面是这样的：无序列表，博客名称的链接，加以一段文字描述。同时无序列表的黑色圆点修改成了爱心，并且每一次刷新得到的排列顺序不同，每7个列表项后增添一个分割线，以提升阅读的舒适程度。</p>
@@ -550,6 +604,8 @@ a.link--external:last-child::after {
 <summary>效果及代码部分</summary>
 
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/1.png" alt="" loading="lazy" class="post-image"/>
+    
+<div class="highlight">
     <pre tabindex="0"><code>&lt;style&gt;
 .post-meta {
   display: none;
@@ -589,8 +645,14 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
         itemsArray[i].parentNode.insertBefore(hr, itemsArray[i].nextSibling);
     }
 });
-&lt;/script&gt;
-</code></pre></details>
+&lt;/script&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <p>标签<code>&lt;script&gt;</code>内的部分是用来实现无序列表随机排列的，它会对当前整个网站页面包括导航栏等等的无序列表生效。所以为了限定它只对文章内的无序列表生效，在第一段注释中有一个<code>获取带有 post-content 类的文章内容</code>的步骤，这是因为我网站主题中，文章正文的类是<code>post-content</code>，这是根据我的主题的情况写的。</p>
 <p>如果你不知道应该怎么做和修改这部分，请在自己的网站上按<code>F12</code>，查看主题的源代码，点进去用选择器查找和看自己文章部分的所属的类是什么，然后替换掉上述代码里我的<code>post-content</code>部分即可。</p>
 
@@ -602,19 +664,35 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
 <li>在网站的<code>Head</code>部分引入CSS文件。</li>
 </ol>
 <p>在我的文件路径<code>layouts\partials\head\head_start.html</code>中写入下面内容：</p>
-<pre tabindex="0"><code>&lt;!-- 霞鹜文楷 Regular --&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css&#34; /&gt;
-</code></pre><ol start="2">
+
+<div class="highlight">
+    <pre tabindex="0"><code>&lt;!-- 霞鹜文楷 Regular --&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css&#34; /&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><ol start="2">
 <li>应用字体样式。</li>
 </ol>
 <p>寻找一下你的网站字体部分在哪里。然后把字体<code>LXGWWenKai</code>放到最前面。</p>
 <p>在我的文件<code>assets\css\critical\20-base.css</code>中做了如下修改：</p>
-<pre tabindex="0"><code>:root {
+
+<div class="highlight">
+    <pre tabindex="0"><code>:root {
   --font-monospace: LXGWWenKai, &#34;Fira Code&#34;, &#34;Lucida Console&#34;, Monaco, monospace;
   --font-sans-serif: LXGWWenKai, Verdana, Helvetica, sans-serif;
   --font-serif: LXGWWenKai, &#34;Fira Code&#34;,&#34;Roboto Slab&#34;, Georgia, serif;
-}
-</code></pre><ol start="3">
+}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><ol start="3">
 <li>刷新一下，能用欸！好耶！</li>
 </ol>
 <h2 id="同人博客的魔改笔记">同人博客的魔改笔记</h2>
@@ -628,7 +706,9 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
 </ol>
 <details>
 <summary>代码部分</summary>
-<pre tabindex="0"><code>{{ define &#34;main&#34; }} 
+
+<div class="highlight">
+    <pre tabindex="0"><code>{{ define &#34;main&#34; }} 
 
 &lt;div class=&#34;post-list-container post-list-container-shadow&#34; data-pagefind-ignore&gt;
   &lt;a class=&#34;a-block&#34;&gt;
@@ -721,29 +801,51 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
   {{ end }}
 &lt;/div&gt;
 
-{{ end }}
-</code></pre></details>
+{{ end }}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <ol start="2">
 <li>创建<code>categories\_index.md</code>文件。内容如下。</li>
 </ol>
-<pre tabindex="0"><code>---
+
+<div class="highlight">
+    <pre tabindex="0"><code>---
 title: &#34;Fandom&#34;
 slug: categories
 ---
-根据原作进行分类，并未列出所有作品，可以在系列合集里面看看。
-</code></pre><p>正文内容会显示为对页面的描述。这时候你的网站<code>/categories/</code>就会显示出目前所有的分类列表。</p>
+根据原作进行分类，并未列出所有作品，可以在系列合集里面看看。</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>正文内容会显示为对页面的描述。这时候你的网站<code>/categories/</code>就会显示出目前所有的分类列表。</p>
 <ol start="3">
 <li>对分类信息进行自定义。</li>
 </ol>
 <p>假如我希望自定义<code>《无间道2》</code>这个分类，那么我所需要做的是创建文件<code>categories\无间道2\_index.md</code>，并在内容中写入如下内容。</p>
-<pre tabindex="0"><code>---
+
+<div class="highlight">
+    <pre tabindex="0"><code>---
 title: &#34;无间道 Infernal Affairs&#34;
 description: 如果这次被我搞定，我们倪家从此就可以抬头做人。
 warn: 哥攻抚慰Only
 type: series
 weight: 99
----
-</code></pre><p>于是我所有打上了<code>categories: [&quot;《无间道2》&quot;]</code>的文章内容都会显示在这个<code>/categories/无间道2/</code>（<a href="https://written.gregueria.icu/categories/%E6%97%A0%E9%97%B4%E9%81%932/">示例</a>）这个链接下。</p>
+---</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>于是我所有打上了<code>categories: [&quot;《无间道2》&quot;]</code>的文章内容都会显示在这个<code>/categories/无间道2/</code>（<a href="https://written.gregueria.icu/categories/%E6%97%A0%E9%97%B4%E9%81%932/">示例</a>）这个链接下。</p>
 <p>此示例中的书名号并不是失误，在此是希望提醒，你的本地文件夹的名字是什么，Slug/短链就是什么。书名号并不会体现在短链中，所以无论你文章的Categories是<code>无间道2</code>还是<code>《无间道2》</code>都会出现在同一个页面。如果搞不太清楚自己文件夹的命名，那么就和文章填写的Categories保持一致即可。</p>
 <ol start="4">
 <li>Series的实现方式同上。</li>
@@ -1128,6 +1230,8 @@ weight: 99
         
         
         
+        
+        
         <span>All rights reserved.</span>
 
     </section>
@@ -1140,6 +1244,19 @@ weight: 99
         var days = s2.getTime() - s1.getTime();
         var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+    <script src="/js/clipboard.js"></script>
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
     </script>
 
 </footer>

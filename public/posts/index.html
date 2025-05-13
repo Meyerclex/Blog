@@ -27,6 +27,15 @@
   </noscript>
 
 
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
 
   
 
@@ -155,7 +164,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.664f9e9765804b3a518e1b59ff6c1078cc343e4cbe8dd254ba23befd6287bf4db287139fa09d5b3e324e1d4a53dec764733cb8919a37a6f44fc4be36ddd9140d.css" integrity="sha512-Zk&#43;el2WASzpRjhtZ/2wQeMw0Pky&#43;jdJUuiO&#43;/WKHv02yhxOfoJ1bPjJOHUpT3sdkczy4kZo3pvRPxL423dkUDQ==" />
+    <link rel="stylesheet" href="/css/main.abdbdac0cbc237b647a6c9dfe19b12456b0dff209562acb1eb4caed4ca85e9fbf3e13ac3137a41bc9b094f14450913d265034493e3276a1c93a0641254dbb386.css" integrity="sha512-q9vawMvCN7ZHpsnf4ZsSRWsN/yCVYqyx60yu1MqF6fvz4TrDE3pBvJsJTxRFCRPSZQNEk&#43;MnahyToGQSVNuzhg==" />
   
 
 
@@ -217,6 +226,19 @@
     document.body.setAttribute('a', currentTheme);
     document.body.classList.add(currentTheme + '-mode');
 
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
     
     const updateIcons = () => {
         if (currentTheme === 'light') {
@@ -228,7 +250,7 @@
         }
     };
     updateIcons();
-
+    updateHighlightTheme(); 
     
     const toggleTheme = () => {
         if (currentTheme === 'light') {
@@ -243,6 +265,7 @@
         localStorage.setItem('theme', currentTheme);
         document.body.setAttribute('a', currentTheme);
         updateIcons();
+        updateHighlightTheme(); 
     };
 
     
@@ -267,8 +290,11 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-                <div class="post-meta">
-                    <div id="header-post" >
+<div class="header-container" id="mobile-nav">
+    <div class="header-inner">
+        <div class="header-left">
+            <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+            <div  >
   <span id="nav" data-pagefind-ignore>
     <ul>
       
@@ -288,13 +314,126 @@
 
 
 
-                </div>
-<h1>Archive</h1>
+        </div>
+    </div>
+</div>
+<style>
+    .header-content p {
+        margin: 0.5em 0;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: center;
+        padding: 0em 0em;
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;   
+        gap: 1em;  
+        flex-wrap: nowrap;  
+    }
+
+    .header-left {
+        display: flex;
+        flex-direction: row;  
+        justify-content: center;  
+        align-items: center;
+        flex: 0 0 auto;  
+    }
+
+    .header-content {
+        flex: 1;  
+        min-width: 0;  
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .header-img {
+        width: 220px;
+        object-fit: cover;
+        object-position: center;
+        filter: drop-shadow(10px 2px 0px var(--index-shadow));
+        margin: -1em -3em -1em -1em;
+        transition: transform 0.2s ease;
+        animation: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    #nav {
+        position: relative;
+        z-index: 10;
+    }
+    #nav ul li {
+        padding: 0 0.5rem 0 -1.5em;
+        margin: 0;
+        text-transform: lowercase;
+        font-family: Courier New, cursive;
+    }
+
+    #nav ul li a:hover {
+        background-color: var(--mark);
+    }
+
+     
+    #pc-nav,#list-title-h1 {
+        display: block;
+    }
+    #mobile-nav {
+        display: none;
+    }
+
+     
+    @media screen and (max-width: 786px) {
+        .header-img {
+            margin: -1em -2em -1em -1em;
+        }
+        .header-inner {
+            flex-direction: row;  
+            gap: 1em;  
+            justify-content: center;  
+        }
+
+        .header-left {
+            flex-direction: row;  
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-left img {
+            width: 160px;  
+        }
+
+        .header-content {
+            width: 100%;  
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: center;
+             
+        }
+
+        #pc-nav, #list-title-h1 {
+            display: none;
+        }
+
+        #mobile-nav {
+            display: block;
+        }
+    }
 
 
-    <style>
+</style>
 
-    </style>
+
+<h1 id="list-title-h1">Archive</h1>
+
     <body>
     <div class="main-container">
         <div id="page_posts" class="window active page_posts" style="">
@@ -647,6 +786,33 @@
         </div>
     </div>
         <div class="note menu-float" style="flex: 0 0 45%;">
+            <div class="header-container" id="pc-nav">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                        <div  >
+  <span id="nav" data-pagefind-ignore>
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+        <li><a href="/collection">Museum</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+
+                    </div>
+                </div>
+            </div>
             <div class="note__item">
                 <div id="copyright" class="note__list"
                      >
@@ -676,9 +842,12 @@ border-radius: 0px;
                     <summary>Changelog...</summary>
                     
                         <h2 id="20250512">2025/05/12</h2>
-<p>换了个首页样式，重写了about页面（及其layout）。:3</p>
-<p>奶牛猫图片来自：<a href="https://www.tumblr.com/snailspng/718136009412509696/i-love-your-blog-so-much-exactly-my-type-of?source=share">snailspng</a></p>
-<p>（鼠标悬浮逃跑效果很可爱吧，which means “再会”（这么说谁懂））</p>
+<ul>
+<li>换了个首页样式，重写了about页面（及其layout）:3</li>
+<li>奶牛猫图片来自：<a href="https://www.tumblr.com/snailspng/718136009412509696/i-love-your-blog-so-much-exactly-my-type-of?source=share">snailspng</a>（鼠标悬浮逃跑效果很可爱吧，which means “再会”（这么说谁懂。</li>
+<li>新增了代码代码复制与高亮。</li>
+</ul>
+<p>接下来打算做Tag页（finally。</p>
 <h2 id="20250416">2025/04/16</h2>
 <ul>
 <li>增加了移动端目录。</li>
@@ -706,9 +875,17 @@ border-radius: 0px;
 <p>由于博客被saveweb的聚合页未经问询直接收录，并在要求删掉收录时被对方称为“极端女权”（可见<a href="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/image.png">图片</a>），所以关闭了RSS订阅源。</p>
 <h3 id="具体做法">具体做法</h3>
 <p>删除<code>public</code>文件夹中的<code>index.xml</code>，并在<code>config.toml</code>中加入以下内容：</p>
-<pre tabindex="0"><code>[outputs]
-home = [&#34;HTML&#34;]
-</code></pre><h2 id="20250108">2025/01/08</h2>
+
+<div class="highlight">
+    <pre tabindex="0"><code>[outputs]
+home = [&#34;HTML&#34;]</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><h2 id="20250108">2025/01/08</h2>
 <p>新增<a href="/collection">Collection</a>页面，放一些萌萌的小东西。</p>
 <p>新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。</p>
 <p>修改了评论区的配色，Waline这什么神经刀配色，定义八百个颜色全都用得这么丑。</p>
@@ -772,7 +949,9 @@ home = [&#34;HTML&#34;]
 <p>文章页面打开时实在过分卡顿，排查原因，查到<a href="https://segmentfault.com/a/1190000002970056">一篇文章</a>谈到是背景图片显示方式<code>background-attachment: fixed;</code>导致的，一口气注释掉。</p>
 <p>原文提供的优化方法试了几次都会导致字重显示有误（怀疑是<code>::before</code>的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行<code>will-change: auto;</code>应付一下就算完事了，谁知道起不起效果，不管你了！</p>
 <p>不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢<a href="https://blog.mysto.cyou/posts/211028-blognewtheme/">咖啡冰河的文章</a>：</p>
-<pre tabindex="0"><code>    img.wl-emoji,
+
+<div class="highlight">
+    <pre tabindex="0"><code>    img.wl-emoji,
     img.vemoji {
         width: 38px;
         vertical-align: sub;
@@ -782,8 +961,14 @@ home = [&#34;HTML&#34;]
     img.wl-emoji:hover,
     img.vemoji:hover {
         transform: scale(1.75);
-    }
-</code></pre><h2 id="2022-09-10">2022-09-10</h2>
+    }</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><h2 id="2022-09-10">2022-09-10</h2>
 <p>由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。</p>
 <h3 id="关于版权">关于版权</h3>
 <ol>
@@ -1006,6 +1191,8 @@ home = [&#34;HTML&#34;]
         
         
         
+        
+        
         <span>All rights reserved.</span>
 
     </section>
@@ -1018,6 +1205,17 @@ home = [&#34;HTML&#34;]
         var days = s2.getTime() - s1.getTime();
         var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
     </script>
 
 </footer>

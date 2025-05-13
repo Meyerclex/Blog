@@ -27,6 +27,15 @@
   </noscript>
 
 
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
 
   
     <meta name="description" content="简明？我看也不是很简明嘛！">
@@ -160,7 +169,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.3c70b43c8f967885625cb036a0ef89ec83e0c0cffd15c0faca966318dc415dfa72b862f2688e46be065c440820c15eb7c9f00c7a144c2901b4cdcab7c7facde0.css" integrity="sha512-PHC0PI&#43;WeIViXLA2oO&#43;J7IPgwM/9FcD6ypZjGNxBXfpyuGLyaI5GvgZcRAggwV63yfAMehRMKQG0zcq3x/rN4A==" />
+    <link rel="stylesheet" href="/css/main.abdbdac0cbc237b647a6c9dfe19b12456b0dff209562acb1eb4caed4ca85e9fbf3e13ac3137a41bc9b094f14450913d265034493e3276a1c93a0641254dbb386.css" integrity="sha512-q9vawMvCN7ZHpsnf4ZsSRWsN/yCVYqyx60yu1MqF6fvz4TrDE3pBvJsJTxRFCRPSZQNEk&#43;MnahyToGQSVNuzhg==" />
   
 
 
@@ -222,6 +231,19 @@
     document.body.setAttribute('a', currentTheme);
     document.body.classList.add(currentTheme + '-mode');
 
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
     
     const updateIcons = () => {
         if (currentTheme === 'light') {
@@ -233,7 +255,7 @@
         }
     };
     updateIcons();
-
+    updateHighlightTheme(); 
     
     const toggleTheme = () => {
         if (currentTheme === 'light') {
@@ -248,6 +270,7 @@
         localStorage.setItem('theme', currentTheme);
         document.body.setAttribute('a', currentTheme);
         updateIcons();
+        updateHighlightTheme(); 
     };
 
     
@@ -272,8 +295,8 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-                <div class="post-meta">
-                    <div id="header-post" >
+<div class="post-meta">
+    <div id="header-post" >
   <span id="nav" data-pagefind-ignore>
     <ul>
       
@@ -293,8 +316,7 @@
 
 
 
-                </div>
-
+</div>
 <article >
     <h1 data-pagefind-meta="title" t>简明装修笔记一则</h1>
     <div id="post-meta">
@@ -380,7 +402,9 @@
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">    &lt;div &gt;
+
+<div class="highlight">
+    <pre tabindex="0"><code>    &lt;div &gt;
     &lt;aside&gt;
         {{ $emtLiPtrn := &#34;(?s)&lt;ul&gt;\\s&lt;li&gt;\\s&lt;ul&gt;(.*)&lt;/li&gt;\\s&lt;/ul&gt;&#34; }}
         {{ $rplcEmtLi := &#34;&lt;ul&gt;$1&#34; }}
@@ -389,14 +413,22 @@
         &lt;!-- {{.TableOfContents}} --&gt;
     &lt;/aside&gt;
     &lt;a href=&#34;#&#34; id=&#34;toc-toggle&#34;&gt;&lt;/a&gt;
-    &lt;/div&gt;
-</code></pre></details>
+    &lt;/div&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <ol start="2">
 <li>在<code>\layouts\posts\single.html</code>中，找到表示文章内容的<code>{{ .Content }}</code>上方增加：</li>
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">    {{ if .Params.toc | default true }}
+
+<div class="highlight">
+    <pre tabindex="0"><code>    {{ if .Params.toc | default true }}
 &lt;div class=&#34;post-toc-mobile&#34; id=&#34;post-toc-mobile&#34; data-pagefind-ignore&gt;
     &lt;details&gt;
         &lt;summary&gt;📑 Table of Contents&lt;/summary&gt;
@@ -408,14 +440,22 @@
     &lt;header&gt;&lt;strong&gt;
         📑 Table of Contents&lt;/strong&gt;
     &lt;/header&gt;
-    {{ partial &#34;toc.html&#34; . }}
-</code></pre></details>
+    {{ partial &#34;toc.html&#34; . }}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <ol start="3">
 <li>在<code>main.scss</code>里增加以下CSS代码：</li>
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">/* 桌面端浮动 TOC */
+
+<div class="highlight">
+    <pre tabindex="0"><code>/* 桌面端浮动 TOC */
 .post-toc {
   position: fixed;
   right: 3px;
@@ -456,8 +496,14 @@
     cursor: pointer;
     font-size: 90%;
   }
-}
-</code></pre></details>
+}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <h2 id="字数显示与页脚统计">字数显示与页脚统计</h2>
 <ol>
 <li>
@@ -470,7 +516,9 @@
 <p>页脚统计的代码来源于塔塔，但那篇文章可能隐藏了，所以无法引用，这里稍微记录。</p>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">&lt;footer class=&#34;site-footer&#34;&gt;
+
+<div class="highlight">
+    <pre tabindex="0"><code>&lt;footer class=&#34;site-footer&#34;&gt;
     &lt;section class=&#34;copyright&#34;&gt;
         &amp;copy; 2021 -{{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format &#34;2006&#34;))) }} {{ .Site.Params.footer.since }} - {{ end }} {{ now.Format &#34;2006&#34; }}
         &lt;a href=&#34;/&#34;&gt; {{ $.Site.Title }} &lt;/a&gt; · &lt;i class=&#34;fas fa-bell&#34;&gt; &lt;/i&gt;
@@ -495,14 +543,22 @@
         var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
         document.getElementById(&#39;days&#39;).innerHTML = number_of_days;
     &lt;/script&gt;
-&lt;/footer&gt;
-</code></pre></details>
+&lt;/footer&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <h2 id="评论区样式修改">评论区样式修改</h2>
 <p>我对Waline评论区的一些颜色样式不太喜欢，但它的样式代码又多又长每次改都非常生气。</p>
 <p>在放置评论区的文件中（我的是<code>layouts/partials/comment.html</code>），或者CSS文件内，增加以下内容：</p>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">&lt;style&gt;
+
+<div class="highlight">
+    <pre tabindex="0"><code>&lt;style&gt;
     .wl-card {
         border: 0px solid #eee;
     }
@@ -596,8 +652,14 @@
         font-size: .75em;
     }
 
-&lt;/style&gt;
-</code></pre></details>
+&lt;/style&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <p>这里的<code>Peru</code>是我选的主题色，可以直接搜索替换成自己喜欢的颜色代码。</p>
 <p>由于我缺乏一个个修改匹配成主题颜色的耐心，这里的话是把Waline的一些文字颜色直接<code>unset</code>掉了，一般会继承当前博客的文字配色，因此也会跟着博客明亮/夜间主题改变而变化。再者是把一些难看的边框给隐藏了。</p>
 <h2 id="上一篇下一篇文章">上一篇/下一篇文章</h2>
@@ -607,21 +669,31 @@
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">    &lt;div class=&#34;pre-next&#34;&gt;
+
+<div class="highlight">
+    <pre tabindex="0"><code>    &lt;div class=&#34;pre-next&#34;&gt;
         {{with .PrevInSection}}
             &lt;a class=&#34;pre-next-btn bg&#34; href=&#34;{{.Permalink}}&#34;&gt;&lt;&lt; {{ .Title }}&lt;/a&gt;
         {{end}}
         {{with .NextInSection}}
             &lt;a class=&#34;pre-next-btn bg&#34; href=&#34;{{.Permalink}}&#34;&gt;{{ .Title }} &gt;&gt;&lt;/a&gt;
         {{end}}
-    &lt;/div&gt;
-</code></pre></details>
+    &lt;/div&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <ol start="2">
 <li>CSS部分</li>
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">.pre-next {
+
+<div class="highlight">
+    <pre tabindex="0"><code>.pre-next {
   display: flex;
   text-align: center;
   justify-content: space-between;
@@ -638,8 +710,14 @@
     .pre-next-btn {
     font-size: 3.5vw;
     }
-}
-</code></pre></details>
+}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <p>还挺方便的吧？</p>
 <h2 id="museum页面">Museum页面</h2>
 <p>这个<a href="/collection">Museum</a>页面是最近新增的，当照片墙也好，好物收集也行。</p>
@@ -649,7 +727,9 @@
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code>&lt;div class=&#34;goods&#34;&gt;
+
+<div class="highlight">
+    <pre tabindex="0"><code>&lt;div class=&#34;goods&#34;&gt;
     {{ range .Site.Data.goods.goods }}
     &lt;div class=&#34;goods-bankuai&#34;&gt;
         &lt;img loading=&#34;lazy&#34; class=&#34;whitey&#34; src=&#34;{{ .image }}&#34; alt=&#34;{{ .title }}&#34;&gt;
@@ -735,14 +815,22 @@
         }
     }
 
-&lt;/style&gt;
-</code></pre></details>
+&lt;/style&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <ol start="2">
 <li>在博客文件夹根目录创建<code>data/goods/goods.json</code>，存放图片和文字等等数据内容。示例如下（记得改一下别把我们家小豆泥女仆带走了…！）：</li>
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">[
+
+<div class="highlight">
+    <pre tabindex="0"><code>[
 
   {
     &#34;image&#34;: &#34;https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/01/f8ef5b36f711097e46ef49edbe729747.png&#34;,
@@ -759,8 +847,14 @@
     &#34;title&#34;: &#34;听音乐的Pingu&#34;,
     &#34;description&#34;: &#34;Chill, chill...&#34;
   },
-]
-</code></pre></details>
+]</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <ol start="3">
 <li>新增<code>content/goods.md</code>页面，正文部分写入短代码：<code>{/{&lt; goods &gt;}}</code>，记得删去第一个斜杠。</li>
 </ol>
@@ -771,7 +865,9 @@
 </ol>
 <details>
 <summary>代码折叠</summary>
-<pre tabindex="0"><code class="language-angular2html" data-lang="angular2html">  {{/*图片放大*/}}
+
+<div class="highlight">
+    <pre tabindex="0"><code>  {{/*图片放大*/}}
   &lt;style&gt;
     .image-row {
       display: flex;
@@ -934,8 +1030,14 @@
         console.log(`Processing image ${index + 1}: ${img.src}, Dimensions: ${naturalWidth}x${naturalHeight}`);
       });
     });
-  &lt;/script&gt;
-</code></pre></details>
+  &lt;/script&gt;</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div></details>
 <p>这个方法查找的是<code>id=post-content</code>的部分内的图片，同时对连续多图情况进行了排列。弊端是加载稍慢，甚至偶尔需要刷新一次才能正常使用，但好处是…很粗暴。</p>
 
         
@@ -1301,6 +1403,8 @@
         
         
         
+        
+        
         <span>All rights reserved.</span>
 
     </section>
@@ -1313,6 +1417,19 @@
         var days = s2.getTime() - s1.getTime();
         var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+    <script src="/js/clipboard.js"></script>
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
     </script>
 
 </footer>

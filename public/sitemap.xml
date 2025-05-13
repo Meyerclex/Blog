@@ -347,10 +347,16 @@
     <loc>http://localhost:1313/collection/</loc>
     <lastmod>2020-01-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/05-13/</loc>
+  </url><url>
     <loc>http://localhost:1313/bubble/</loc>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+  </url><url>
+    <loc>http://localhost:1313/index_view/</loc>
   </url>
 </urlset>

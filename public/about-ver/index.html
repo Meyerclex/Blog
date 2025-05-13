@@ -27,6 +27,15 @@
   </noscript>
 
 
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
 
   
     <meta name="description" content="
@@ -164,7 +173,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/main.664f9e9765804b3a518e1b59ff6c1078cc343e4cbe8dd254ba23befd6287bf4db287139fa09d5b3e324e1d4a53dec764733cb8919a37a6f44fc4be36ddd9140d.css" integrity="sha512-Zk&#43;el2WASzpRjhtZ/2wQeMw0Pky&#43;jdJUuiO&#43;/WKHv02yhxOfoJ1bPjJOHUpT3sdkczy4kZo3pvRPxL423dkUDQ==" />
+    <link rel="stylesheet" href="/css/main.abdbdac0cbc237b647a6c9dfe19b12456b0dff209562acb1eb4caed4ca85e9fbf3e13ac3137a41bc9b094f14450913d265034493e3276a1c93a0641254dbb386.css" integrity="sha512-q9vawMvCN7ZHpsnf4ZsSRWsN/yCVYqyx60yu1MqF6fvz4TrDE3pBvJsJTxRFCRPSZQNEk&#43;MnahyToGQSVNuzhg==" />
   
 
 
@@ -226,6 +235,19 @@
     document.body.setAttribute('a', currentTheme);
     document.body.classList.add(currentTheme + '-mode');
 
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
     
     const updateIcons = () => {
         if (currentTheme === 'light') {
@@ -237,7 +259,7 @@
         }
     };
     updateIcons();
-
+    updateHighlightTheme(); 
     
     const toggleTheme = () => {
         if (currentTheme === 'light') {
@@ -252,6 +274,7 @@
         localStorage.setItem('theme', currentTheme);
         document.body.setAttribute('a', currentTheme);
         updateIcons();
+        updateHighlightTheme(); 
     };
 
     
@@ -745,6 +768,8 @@
         
         
         
+        
+        
         <span>All rights reserved.</span>
 
     </section>
@@ -757,6 +782,17 @@
         var days = s2.getTime() - s1.getTime();
         var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
     </script>
 
 </footer>

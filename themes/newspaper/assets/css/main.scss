@@ -2,6 +2,7 @@
 @import "shortcode";
 @import "theme-toggle";
 
+
 :root {
   --bg-color: rgba(249, 247, 241, 0.84);
   --bg-color-hover: rgba(253, 241, 207, 0.8);
@@ -46,10 +47,19 @@
   --shadow: rgb(117, 94, 142);
 }
 
+
+:root{
+  --index-shadow: rgb(251,230,189);
+}
+[a="dark"]{
+  --index-shadow: rgb(136, 50, 127);
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+
 a {
   color: var(--link-color);
   &:visited {
@@ -63,11 +73,6 @@ details summary {
 
 details[open] summary {
   border-bottom: 0px solid var(--text-color);
-}
-
-pre, code:not(pre > code) {
-  background-color: var(--color-bg-code);
-  color: var(--text-color);
 }
 
 *:target {
@@ -263,11 +268,6 @@ a {
   }
 }
 
-pre {
-  padding: 1em;
-  overflow-x: auto;
-  /* Fix pre content overflowing parent without scroll bar */
-}
 
 table {
   width: 100%;
@@ -280,24 +280,9 @@ td {
   padding: 0.4rem;
 }
 
-code {
-  text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
 
-code:not(pre > code) {
-  padding: 0.1em 0.2em;
-  font-size: 90%;
-}
-
-code.has-jax {
-  -webkit-font-smoothing: antialiased;
-  background: inherit !important;
-  border: none !important;
-  font-size: 100%;
-}
+// for code
+@import "code-fense";
 
 blockquote {
   padding: 1rem;
@@ -596,11 +581,7 @@ ul p {
   font-size: 16px;
 }
 
-body[a="light"] code:not(pre>code) {
-  border-radius: 4px;
-  padding: 0 4px;
-  font-family: "Clear Han Serif", sans-serif;
-}
+
 
 /* 整个滚动条 */
 ::-webkit-scrollbar {

@@ -28,6 +28,19 @@
     document.body.setAttribute('a', currentTheme);
     document.body.classList.add(currentTheme + '-mode');
 
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
     // 显示当前模式的按钮
     const updateIcons = () => {
         if (currentTheme === 'light') {
@@ -39,7 +52,7 @@
         }
     };
     updateIcons();
-
+    updateHighlightTheme(); // 👈 这里加
     // 切换主题函数
     const toggleTheme = () => {
         if (currentTheme === 'light') {
@@ -54,6 +67,7 @@
         localStorage.setItem('theme', currentTheme);
         document.body.setAttribute('a', currentTheme);
         updateIcons();
+        updateHighlightTheme(); // 👈 这里也加
     };
 
     // 监听按钮点击（整块监听）

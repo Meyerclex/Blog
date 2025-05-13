@@ -30,6 +30,19 @@
         document.getElementById('days').innerHTML = number_of_days;
     </script>
 
+    <!-- copy code -->
+    {{ if (findRE "<code" .Content 1) }}
+    <script src="{{"/js/clipboard.js" | relURL}}"></script>
+    {{ end }}
+
+    <script>
+        // 在页面加载完成后初始化代码高亮
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); // 自动对所有的 <code> 元素应用高亮
+        });
+
+    </script>
+
 </footer>
 <!-- Theme Toggle Button -->
 {{ end }}

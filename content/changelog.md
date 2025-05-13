@@ -8,11 +8,11 @@ toc: true
 
 ## 2025/05/12
 
-换了个首页样式，重写了about页面（及其layout）。:3
+- 换了个首页样式，重写了about页面（及其layout）:3
+- 奶牛猫图片来自：[snailspng](https://www.tumblr.com/snailspng/718136009412509696/i-love-your-blog-so-much-exactly-my-type-of?source=share)（鼠标悬浮逃跑效果很可爱吧，which means “再会”（这么说谁懂。
+- 新增了代码代码复制与高亮。
 
-奶牛猫图片来自：[snailspng](https://www.tumblr.com/snailspng/718136009412509696/i-love-your-blog-so-much-exactly-my-type-of?source=share)
-
-（鼠标悬浮逃跑效果很可爱吧，which means “再会”（这么说谁懂））
+接下来打算做Tag页（finally。
 
 ## 2025/04/16
 
