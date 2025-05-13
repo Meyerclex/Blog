@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Jokes on 再會，謝謝所有的魚</title>
-        <link>http://localhost:1313/tags/jokes/</link>
-        <description>Recent content in Jokes on 再會，謝謝所有的魚</description>
+        <title>Thanks for all the fish on 再會，謝謝所有的魚</title>
+        <link>http://localhost:1313/index_view/</link>
+        <description>Recent content in Thanks for all the fish on 再會，謝謝所有的魚</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/jokes/index.xml" rel="self" type="application/rss+xml" />
+        <language>zh-cn</language><atom:link href="http://localhost:1313/index_view/index.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>本季度消费小结 Vol.1</title>
             <link>http://localhost:1313/posts/2025-04-28/</link>

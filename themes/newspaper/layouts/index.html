@@ -4,7 +4,7 @@
         <div class="header-inner">
             <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
             <div class="header-content">
-                <h1>
+                <h1 id="special-h1">
                     <span class="h1-pc">再會，<br>謝謝所有的魚</span>
                     <span class="h1-mobile">再會，<br>謝謝所有<br>的魚</span>
                 </h1>
@@ -35,11 +35,11 @@
     }
 
     .header-img {
-        width: 180px;
+        width: 230px;
         object-fit: cover;
         object-position: center;
         filter: drop-shadow(10px 2px 0px var(--index-shadow));
-        margin: -1em -1em -1em -1em;
+        margin: -1em -1.6em -1em -1em;
         /* 不要 z-index: -1，确保图片可以响应 hover */
         transition: transform 0.2s ease;
         animation: none;
@@ -63,8 +63,8 @@
     .header-content h1 {
         filter: drop-shadow(4px 2px 0px var(--index-shadow));
         letter-spacing: -5px;
-        margin: 0 0 -0.2em -0.5em;
-        font-size: 35px;
+        margin: 0 0 -0.2em -0.6em;
+        font-size: 45px;
         line-height: 1em;
     }
 
@@ -79,6 +79,7 @@
         margin: 0 0 -0.3em -1em;
         text-transform: lowercase;
         font-family: Courier New, cursive;
+        letter-spacing: 0em;
     }
 
     #nav ul li a:hover {
