@@ -2,9 +2,9 @@
 {{ $aboutNav := resources.Get "css/_about-nav.scss" | toCSS }}
 <link rel="stylesheet" href="{{ $aboutNav.RelPermalink }}">
 
-<header>
-    <div class="header-container" style="min-height: 70vh">
-        <div class="header-inner">
+<header style="min-height: 70vh">
+    <div class="header-container">
+        <div class="header-inner" >
             <div class="header-left">
                 <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
                 {{ partial "nav_index" . }}
