@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-05-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2025-05-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,26 +11,29 @@
     <loc>http://localhost:1313/posts/2025-05-13/</loc>
     <lastmod>2025-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E6%89%AD%E6%96%AD%E9%82%A3%E5%A4%A9%E9%B9%85%E7%9A%84%E8%84%96%E5%AD%90/</loc>
-    <lastmod>2025-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/monthly/</loc>
+    <loc>http://localhost:1313/tags/pebble/</loc>
     <lastmod>2025-04-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-04-28/</loc>
     <lastmod>2025-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/repo/</loc>
+    <loc>http://localhost:1313/tags/fragment/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-04-25/</loc>
     <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/monthly/</loc>
+    <lastmod>2025-04-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-04-15/</loc>
     <lastmod>2025-04-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-03-13/</loc>
     <lastmod>2025-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/guidebook/</loc>
+    <lastmod>2025-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-03-05/</loc>
     <lastmod>2025-03-05T00:00:00+00:00</lastmod>
@@ -56,6 +56,9 @@
     <loc>http://localhost:1313/posts/2025-01-15/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/yearly/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/01-05/</loc>
     <lastmod>2025-01-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -63,9 +66,6 @@
     <lastmod>2024-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/fanfic2024/</loc>
-    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/yearly/</loc>
     <lastmod>2024-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2024-12-19/</loc>
@@ -83,7 +83,7 @@
     <loc>http://localhost:1313/posts/theroadofaspectrum/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/recite/</loc>
+    <loc>http://localhost:1313/tags/audio/</loc>
     <lastmod>2024-08-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/audio-0825/</loc>
@@ -92,22 +92,13 @@
     <loc>http://localhost:1313/posts/2024-07-28/</loc>
     <lastmod>2024-07-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/blog/</loc>
-    <lastmod>2024-06-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/archiveandlink/</loc>
     <lastmod>2024-06-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/corrugated/</loc>
-    <lastmod>2024-06-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/all-about-rss/</loc>
     <lastmod>2024-06-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/fetfc/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/fragment/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2024-05-17/</loc>
@@ -191,7 +182,7 @@
     <loc>http://localhost:1313/posts/2022-11-07-%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/</loc>
     <lastmod>2022-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/videogame/</loc>
+    <loc>http://localhost:1313/tags/game/</loc>
     <lastmod>2022-10-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/lovestory/</loc>
@@ -199,9 +190,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/cooladult/</loc>
     <lastmod>2022-09-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E4%B8%BA%E6%B2%99%E6%BB%A9%E6%8F%92%E4%B8%8A%E5%A4%AA%E9%98%B3%E4%BC%9E/</loc>
-    <lastmod>2022-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/</loc>
     <lastmod>2022-09-10T00:00:00+00:00</lastmod>
@@ -215,12 +203,6 @@
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2022-08-25T21:30:04+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/obsidian/</loc>
-    <lastmod>2022-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/quartz/</loc>
-    <lastmod>2022-08-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/quartz/</loc>
     <lastmod>2022-08-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -233,9 +215,6 @@
     <loc>http://localhost:1313/posts/hades/</loc>
     <lastmod>2022-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docsify/</loc>
-    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/doclog/</loc>
     <lastmod>2022-07-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -247,9 +226,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/father/</loc>
     <lastmod>2022-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/guide/</loc>
-    <lastmod>2022-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/emotional/</loc>
     <lastmod>2022-05-27T00:00:00+00:00</lastmod>
@@ -269,12 +245,6 @@
     <loc>http://localhost:1313/posts/repo/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E5%8F%AA%E8%A7%81%E7%A7%AF%E6%9C%A8%E8%BD%B0%E7%84%B6%E5%80%92%E5%9C%B0/</loc>
-    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/email/</loc>
-    <lastmod>2022-04-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/mail/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -293,19 +263,10 @@
     <loc>http://localhost:1313/posts/hacklibrary/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/book/</loc>
-    <lastmod>2022-01-26T16:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/movie/</loc>
-    <lastmod>2022-01-26T16:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/2018/</loc>
     <lastmod>2022-01-26T16:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/nodejs-notablog/</loc>
-    <lastmod>2022-01-11T16:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/notion/</loc>
     <lastmod>2022-01-11T16:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/55yearslater/</loc>
@@ -320,17 +281,11 @@
     <loc>http://localhost:1313/posts/%E6%B2%99%E6%BB%A9%E4%BC%9A%E6%98%AF%E9%B1%BC%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%99%E5%90%97/</loc>
     <lastmod>2021-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/memo/</loc>
-    <lastmod>2021-10-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/cannot-breath/</loc>
     <lastmod>2021-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/guide-for-drunkard/</loc>
     <lastmod>2021-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/jokes/</loc>
-    <lastmod>2021-08-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/</loc>
     <lastmod>2021-08-28T00:00:00+00:00</lastmod>
@@ -350,13 +305,9 @@
     <loc>http://localhost:1313/collection/</loc>
     <lastmod>2020-01-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/bubble/</loc>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
-  </url><url>
-    <loc>http://localhost:1313/series/</loc>
   </url><url>
     <loc>http://localhost:1313/index_view/</loc>
   </url>

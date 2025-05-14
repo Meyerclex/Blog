@@ -135,5 +135,5 @@ home = ["HTML", "RSS"]
 
 [taxonomies]
 tag = "tags"
-series = "series"
-category = "categories"
+#series = "series"
+#category = "categories"

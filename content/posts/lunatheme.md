@@ -11,7 +11,6 @@ categories:
   - 为沙滩插上太阳伞
 tags:
   - Hugo
-  - Blog
 hidden: true 
 ---
 

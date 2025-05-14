@@ -1,8 +1,26 @@
 {{ define "main" }}
-{{ partial "nav.html" .}}
+{{ $aboutNav := resources.Get "css/_about-nav.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $aboutNav.RelPermalink }}">
 
-<h1>{{ .Title }}</h1>
+<header>
+    <div class="header-container" style="min-height: 70vh">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                {{ partial "nav_index" . }}
+            </div>
+            <div class="header-content">
+                <h2>
+                    <a href="{{ .Data.Plural | urlize | relURL }}">{{ .Data.Plural | title }}</a> / {{ .Title }}
+                </h2>
+                {{ .Content }}
+                {{ partial "post_list.html" (dict "context" .)}}
+            </div>
+        </div>
+    </div>
+</header>
 
-{{ .Content }}
-{{ partial "post_list.html" (dict "context" .)}}
+
+<hr class="decoration-hr">
+{{ partial "footer.html" . }}
 {{ end }}

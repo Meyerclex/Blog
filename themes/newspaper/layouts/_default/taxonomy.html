@@ -1,8 +1,71 @@
 {{ define "main" }}
-{{ partial "nav.html" .}}
+{{ $aboutNav := resources.Get "css/_about-nav.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $aboutNav.RelPermalink }}">
+<style>
+    #taxonomy-list {
+        display: flex;
+        flex-wrap: wrap; /* 允许换行 */
+        gap: 0px; /* 标签之间的间隙 */
+        justify-content: flex-start; /* 从左侧开始排列 */
+    }
 
-<h1>{{ .Title }}</h1>
+    #taxonomy-list .tags {
+        padding: 5px;
+        border-radius: 5px;
+        display: inline-block; /* 保证每个标签内联显示 */
+        margin: 0; /* 给标签上下增加些间隔 */
+    }
 
-{{ .Content }}
-{{ partial "post_list.html" (dict "context" .)}}
+    #taxonomy-list .tags span {
+        display: inline-block;
+        margin-right: 5px; /* 标签之间的间隙 */
+        margin-bottom: 5px; /* 标签下方间隔 */
+    }
+
+    #taxonomy-list .tags .tag {
+        border: solid 1px var(--color-bg-code);
+        background: var(--neodb-card-color);
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+    .taxonomy-content p, .taxonomy-content ul li {
+        margin-bottom: 15px;
+    }
+    .taxonomy-content li p strong {
+        color: var(--color-mark);
+    }
+</style>
+
+<header>
+    <div class="header-container" style="min-height: 70vh">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                {{ partial "nav_index" . }}
+            </div>
+            <div class="header-content">
+            <h2>{{ .Title }}</h2>
+            <div id="taxonomy-list" >
+                {{- $posts := .Pages }}
+                {{- $posts = where $posts "Params.draft" "ne" true }}
+                {{- $posts = where $posts "Params.hidden" "ne" true }}
+                {{- range $post := $posts }}
+                <div class="tags" >
+                    <a href="{{ $post.Permalink | relURL }}"><span class="tag">＃ {{ $post.Title }} </span></a>
+                </div>
+                {{- end }}
+
+
+            </div>
+                <div class="taxonomy-content">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<hr class="decoration-hr">
+{{ partial "footer.html" . }}
 {{ end }}

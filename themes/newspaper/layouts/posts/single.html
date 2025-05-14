@@ -10,12 +10,12 @@
             {{ .Date | time.Format site.Params.theme_config.date_format }}
             <span> ‧ {{ .WordCount }}</span>
             <span>words</span>
-<!--            ‧ <span>tags : </span>-->
-<!--            {{ if .Params.tags }}-->
-<!--                    {{ range .Params.tags }}-->
-<!--                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>-->
-<!--                    {{ end }}-->
-<!--            {{ end }}-->
+            ‧ <span> </span>
+            {{ if .Params.tags }}
+                    {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">＃{{ . }}</a>
+                    {{ end }}
+            {{ end }}
         </time>
         {{ if .Description }}
         <blockquote id="post-description">

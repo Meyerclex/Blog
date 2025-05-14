@@ -8,7 +8,7 @@ image: ""
 categories:
   - 扭断那天鹅的脖子
 tags:
-  - Blog
+  - Hugo
 hidden: false 
 ---
 

@@ -290,7 +290,15 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-<div id="header-post" >
+
+<link rel="stylesheet" href="/css/_about-nav.css">
+
+<header>
+    <div class="header-container" style="min-height: 70vh">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                <div  >
   <span id="nav" data-pagefind-ignore>
     <ul>
       
@@ -310,27 +318,33 @@
 
 
 
-
-<h1>Fragment</h1>
-
-
-
+            </div>
+            <div class="header-content">
+                <h2>
+                    <a href="/tags">Tags</a> / Fragment
+                </h2>
+                
+                
 
 
   
  
 
 <ul><li>
+        <span>2025-04-25</span>
+        <a href="/posts/2025-04-25/">一些美丽无料Repo</a>
+    </li>
+    <li>
+        <span>2024-12-24</span>
+        <a href="/posts/fanfic2024/">2024同人年终总结 ✨</a>
+    </li>
+    <li>
         <span>2024-06-11</span>
         <a href="/posts/fetfc/">Fanfic Elysium：The Final Cut</a>
     </li>
     <li>
         <span>2024-04-08</span>
         <a href="/posts/aboutfic/">小说大事记事簿</a>
-    </li>
-    <li>
-        <span>2023-04-13</span>
-        <a href="/posts/bird-valley/">小鸟半月刊</a>
     </li>
     
 </ul>
@@ -364,6 +378,322 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<hr class="decoration-hr">
+
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
 
 
 

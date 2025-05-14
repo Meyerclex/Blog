@@ -4,7 +4,8 @@ description: "我可以接受聊天内容很肤浅，不客观，很激动，有
 date: 2025-03-05
 draft: false
 tags: 
-    - monthly
+    - Pebble
+    - Guidebook
 categories: 
     - 扭断那天鹅的脖子
 toc: false

@@ -8,7 +8,7 @@ image: ""
 categories:
   - 扭断那天鹅的脖子
 tags:
-  - Monthly
+  - Game
 toc: false
 featured_image: 3.png
 textIndent: true

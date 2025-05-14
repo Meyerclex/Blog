@@ -4,7 +4,8 @@ description: "Steam Deck OLED已震撼发布，新款产品轻了30克，屏幕�
 date: 2023-11-29
 draft: false
 tags: 
-    - corrugated
+    - Guidebook
+    - Pebble
 categories: 
     - 扭断那天鹅的脖子
 toc: true

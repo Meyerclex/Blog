@@ -6,7 +6,7 @@ slug: cooladult
 draft: false
 tags: 
     - Monthly
-    - VideoGame!
+    - Game
 categories: 扭断那天鹅的脖子
 hidden: true
 ---

@@ -5,7 +5,7 @@ description = "如果有人每天往宿舍、食堂、自习室随机发射子�
 hidden = true
 image = ""
 slug = "advice"
-tags = ["Guide"]
+tags = ["Monthly"]
 title = "关于打破量子复合叠加态生活的建议"
 textIndent = true
 +++

@@ -4,7 +4,7 @@ description: "我真正想要知道的是，和我一样的人，她们是怎么
 date: 2024-08-26
 draft: false
 tags: 
-    - monthly
+    - Monthly
 categories: 
     - 扭断那天鹅的脖子
 toc: true
