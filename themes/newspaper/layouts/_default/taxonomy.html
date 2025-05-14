@@ -2,38 +2,7 @@
 {{ $aboutNav := resources.Get "css/_about-nav.scss" | toCSS }}
 <link rel="stylesheet" href="{{ $aboutNav.RelPermalink }}">
 <style>
-    #taxonomy-list {
-        display: flex;
-        flex-wrap: wrap; /* 允许换行 */
-        gap: 0px; /* 标签之间的间隙 */
-        justify-content: flex-start; /* 从左侧开始排列 */
-    }
 
-    #taxonomy-list .tags {
-        padding: 5px;
-        border-radius: 5px;
-        display: inline-block; /* 保证每个标签内联显示 */
-        margin: 0; /* 给标签上下增加些间隔 */
-    }
-
-    #taxonomy-list .tags span {
-        display: inline-block;
-        margin-right: 5px; /* 标签之间的间隙 */
-        margin-bottom: 5px; /* 标签下方间隔 */
-    }
-
-    #taxonomy-list .tags .tag {
-        border: solid 1px var(--color-bg-code);
-        background: var(--neodb-card-color);
-        border-radius: 5px;
-        padding: 5px 10px;
-    }
-    .taxonomy-content p, .taxonomy-content ul li {
-        margin-bottom: 15px;
-    }
-    .taxonomy-content li p strong {
-        color: var(--color-mark);
-    }
 </style>
 
 <header>

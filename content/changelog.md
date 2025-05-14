@@ -6,6 +6,11 @@ slug: changelog
 toc: true
 ---
 
+## 2025/05/14
+
+- 整理了Tag，做了Tag页。
+- 改了翻页键。
+
 ## 2025/05/12
 
 - 换了个首页样式，重写了about页面（及其layout）:3
@@ -25,10 +30,7 @@ toc: true
 
 - 恢复了RSS输出，根据[薯饼的文章](https://zhen-shi.github.io/p/hugo-content-protect-tips/)修改了输出摘要部分。
 - 在Archive内增加了版权部份的说明（为什么加在这里，因为放在首页太挤了0v0）。
-
-**💬 之后要做的：**
-
-- [ ] 修改日夜切换按钮
+- 修改日夜切换按钮
 
 ## 2025/03/19
 

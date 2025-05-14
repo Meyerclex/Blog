@@ -48,14 +48,21 @@
     <div style="padding-bottom:3px;"></div>
 </article>
 
-    <div class="pre-next" data-pagefind-ignore>
-        {{with .PrevInSection}}
-            <a class="pre-next-btn bg" href="{{.Permalink}}"><< {{ .Title }}</a>
-        {{end}}
-        {{with .NextInSection}}
-            <a class="pre-next-btn bg" href="{{.Permalink}}">{{ .Title }} >></a>
-        {{end}}
-    </div>
+<nav class="custom-paginav">
+    {{ with .PrevInSection }}
+    <a class="custom-paginav-prev" href="{{ .RelPermalink }}">
+        <span class="custom-paginav-title">« Prev</span><br>
+        <span>{{ .Title }}</span>
+    </a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a class="custom-paginav-next" href="{{ .RelPermalink }}">
+        <span class="custom-paginav-title">Next »</span><br>
+        <span>{{ .Title }}</span>
+    </a>
+    {{ end }}
+</nav>
+
 {{ if .Params.comment | default true }}
 <br>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>

@@ -1,7 +1,7 @@
 @import "fonts";
 @import "shortcode";
 @import "theme-toggle";
-
+@import "code-fense";
 
 :root {
   --bg-color: rgba(249, 247, 241, 0.84);
@@ -17,12 +17,13 @@
   --color-mark: #7caaaa;
   --link-hover: #FFD09B;
   --neodb-card-color: rgba(255, 251, 251, 0.85);
+  --neodb-card-color-hover: rgba(250, 245, 245, 0.85);
   --btn: rgba(124, 170, 170, 0.72);
   --btn-hover: rgba(66, 103, 103, 0.72);
   --mark:rgba(255, 255, 147, 0.6);
   --shadow: #eaa8a2;
-
   --text-color-dark: #F8F4E1;
+  --index-shadow: rgb(251,230,189); // 猫的阴影
 }
 
 [a="dark"] {
@@ -38,18 +39,12 @@
   --border-color: rgba(251, 230, 189, 0.77);
   --color-mark: #83a598;
   --neodb-card-color: rgba(35, 18, 53, 0.65);
+  --neodb-card-color-hover: rgba(46, 24, 69, 0.8);
   --btn: rgba(159, 122, 161, 0.9);
   --btn-hover: rgba(180, 75, 186, 0.94);
   --mark: rgba(230, 164, 43, 0.49);
   --shadow: rgb(117, 94, 142);
-}
-
-// 猫的阴影
-:root{
-  --index-shadow: rgb(251,230,189);
-}
-[a="dark"]{
-  --index-shadow: rgb(136, 50, 127);
+  --index-shadow: rgb(136, 50, 127); // 猫的阴影
 }
 
 body {
@@ -278,8 +273,6 @@ td {
 }
 
 
-// for code
-@import "code-fense";
 
 blockquote {
   padding: 1rem;
@@ -337,7 +330,6 @@ details[open] summary {
 
 #post-meta  {
   margin: 0 0 0.3rem 0.3rem;
-  //padding: 0rem 0 0.1rem 0;
 }
 
 #post-description {
@@ -500,7 +492,7 @@ article ol {
   }
 
   .post-toc-mobile details {
-    border: 1px solid var(--bg-color-hover);
+    border: 1px solid var(--color-bg-code);
     padding: 0.75rem;
     border-radius: 6px;
     background-color: var(--neodb-card-color);
@@ -555,23 +547,56 @@ ul p {
   margin: 10px 5px;
 }
 
-.pre-next {
+
+.custom-paginav {
   display: flex;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
+  margin: 1rem 0;
+  line-height: 1.6;
+  border-radius: 5px;
+  background: var(--neodb-card-color);
+  border: 1px solid var(--color-bg-code);
+  overflow: hidden;
 }
 
-.pre-next-btn {
-  font-size: 1rem;
-  transition: font-size 0.3s ease;
-  /* 添加平滑过渡效果 */
+.custom-paginav a {
+  display: block;
+  width: 50%;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: var(--text-color);
+  box-sizing: border-box;
+  word-break: break-word;
 }
+
+.custom-paginav a:hover {
+  text-shadow: none;
+}
+
+.custom-paginav-prev {
+  text-align: left;
+}
+
+.custom-paginav-next {
+  text-align: right;
+  margin-inline-start: auto;
+}
+
+.custom-paginav-title {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+
+.custom-paginav-prev:hover,
+.custom-paginav-next:hover {
+  background-color: var(--neodb-card-color-hover); /* 修改为你想要的背景颜色 */
+}
+
+
+
 
 @import "widget";
-
-/* photo frame style */
-
 
 .menu-column .sub-menu {
   font-weight: normal;
@@ -579,29 +604,21 @@ ul p {
 }
 
 
-
-/* 整个滚动条 */
 ::-webkit-scrollbar {
   width: 10px;
-  /* 设置滚动条的宽度（竖直滚动条） */
   height: 10px;
-  /* 设置滚动条的高度（水平滚动条） */
 }
-/* 滚动条的轨道（背景） */
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
-  //border-radius: 10px;
 }
-/* 滚动条的滑块（可以拖动的部分） */
 ::-webkit-scrollbar-thumb {
   background: var(--btn);
 }
-/* 滚动条滑块被鼠标悬停时的样式 */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--btn-hover);
-  /* 鼠标悬停时滑块的颜色 */
 }
-/* 桌面端：2x2网格布局 */
+
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 两列 */
@@ -618,13 +635,6 @@ ul p {
     flex-direction: column;
     gap: 0px;
   }
-
-  #x3 {display: none}
-  #x2 { order: 1; }
-  #x1 { order: 2; }
-  #x3 { order: 3; }
-  #x4 { order: 4; }
-  #x5 { display: none;}
 }
 
 /* 现有的 .w 样式 */
@@ -664,47 +674,4 @@ body[a="dark"] #copyright, body[a="dark"] #meow-box, .special-bg  {
   background-repeat: repeat;
 }
 
-//post_list
-
-.post_list {
-  background: var(--neodb-card-color);
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  margin-top: 5px;
-
-  position: relative;
-}
-
-.post_list_time {
-  font-size: 90%;
-  font-family: Courier New;
-  font-weight: bold;
-}
-
-.post_list_sum {
-  color: var(--secondary-text-color);
-  font-size: 90%;
-  padding: 0.5em 0.2em 0.2em 1em;
-}
-
-.post_list_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.post_list_title {
-  text-decoration: none;
-  flex: 1;
-  margin-left: 0.5em;
-}
-
-.post_list_time {
-  color: #888;
-  font-size: 0.9em;
-  margin-left: 1em;
-  white-space: nowrap;
-}
-
+@import "taxonomy";
