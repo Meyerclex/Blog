@@ -56,6 +56,7 @@ sidebar_icon = "/cat/checkeredblank.gif"
 show_spotify = true
 spotify_embed = "https://open.spotify.com/embed/album/1inrucS0iHVHroJVf1jMWg?utm_source=generator"
 show_mumble = false
+headerEmoji = "🍞"
 
 
 [params.theme_config]

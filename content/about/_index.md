@@ -1,6 +1,7 @@
 ---
 title: lilian's room
 layout: "about"
+comment: false
 ---
 
 ## ⛳ 关于我 , May 2025

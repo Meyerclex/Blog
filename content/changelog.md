@@ -26,6 +26,8 @@ toc: true
 - 整理了以往的主题，放进了[小东西博物馆](/collection)。
 - 修改了博客背景图（夜间模式像魔女之家！用的背景在copyright部分都标注了）
 
+以及存一下Pagefind的生成索引代码：`npx pagefind --source public --bundle-dir search`。不要每次都去小爱笔记里翻了！
+
 ## 2025/04/14
 
 - 恢复了RSS输出，根据[薯饼的文章](https://zhen-shi.github.io/p/hugo-content-protect-tips/)修改了输出摘要部分。
