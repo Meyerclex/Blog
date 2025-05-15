@@ -11,7 +11,9 @@
             </div>
             <div class="header-content">
                 <h2>{{ .Title }}</h2>
+                <article>
                 {{ .Content }}
+                </article>
                 {{ if .Params.comment | default true }}
                 <br>
                 <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">last edited:

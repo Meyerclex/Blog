@@ -10,7 +10,9 @@
                 {{ partial "nav_index" . }}
             </div>
             <div class="header-content">
+                <article>
                 {{ .Content }}
+                </article>
                 {{ if .Params.comment | default true }}
                 <!--<br>-->
                 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
