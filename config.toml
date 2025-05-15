@@ -57,6 +57,7 @@ show_spotify = true
 spotify_embed = "https://open.spotify.com/embed/album/1inrucS0iHVHroJVf1jMWg?utm_source=generator"
 show_mumble = false
 headerEmoji = "🍞"
+enableGitInfo = true
 
 
 [params.theme_config]
