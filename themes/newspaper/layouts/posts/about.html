@@ -10,11 +10,14 @@
                 {{ partial "nav_index" . }}
             </div>
             <div class="header-content">
+                <h2>{{ .Title }}</h2>
                 {{ .Content }}
                 {{ if .Params.comment | default true }}
                 <br>
-                <p style="text-align: right; color: var(--secondary-text-color);">
-                    by {{ .Lastmod.Format "Jan 2 15:04" }}
+                <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">last edited:
+                    {{ with .Params.last_edit }}
+                    {{ . }}
+                    {{ end }}
                 </p>
                 <br>
                 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
