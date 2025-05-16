@@ -45,7 +45,7 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 <div style="text-align: center;">
 <p style="    font-family: Mali;
     font-weight: 300;">
-no guarantees it works, so feel free to use. </p>
+feel free to use, but no guarantees it works </p>
 <p style="    font-family: Mali;
     font-weight: 300;">
 enjoy blogging or breaking! :3
