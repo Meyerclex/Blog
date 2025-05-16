@@ -5,12 +5,12 @@ date: 2020-01-05
 toc: true
 description: "鱼鱼家精美的收藏品。"
 hidden: true
-comment: false
+comment: true
 ---
 
 
 {{< goods >}}
-
+ <link href="https://478.neocities.org/catalog/fonts.css" rel="stylesheet">
 <style>
  time {
     display: none;
@@ -33,12 +33,38 @@ comment: false
 
 {{< notice notice-note >}}
 Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以点击放大。
+<br>
+<br>
+虽然主题仓库是公开的，但我自己并没有系统性部署过，因为都是bad coding，所以大概会遇到很多问题，但里面也没有什么牵一发而动全身的高深代码，问问chatGPT、根据Log把代码或者文件删掉，一般都能治好。
+
+我不是专业人士，其实也不太懂，我只是喜欢玩电脑。
+<br>
+<br>
+
+---
+<div style="text-align: center;">
+<p style="    font-family: Mali;
+    font-weight: 300;">
+no guarantees it works, so feel free to use. </p>
+<p style="    font-family: Mali;
+    font-weight: 300;">
+enjoy blogging or breaking! :3
+</p>
+</div>
+
 {{< /notice >}}
 
 - **May 2025**：homepage / post list / two different article layouts
 
+<div style="text-align: center;">
+
+[🛁 Github Repository](https://github.com/Meyerclex/hugo-binder-theme)
+
+</div>
+
 ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/23.51.52.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/23.53.17.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/00.00.13.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/23.52.51.png)
 
+---
 
 - **April 2025**：魔女之家
 
@@ -71,6 +97,8 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 <div style="text-align: center;">
 
 [⛳ 主题预览](https://rainy-9ie.pages.dev/)
+
+[🛁 Github Repository](https://github.com/Meyerclex/hugo-rainy)
 
 </div>
 
