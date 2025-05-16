@@ -283,13 +283,12 @@ blockquote {
   }
 }
 
-#post-content img {
+img {
   max-width: 100%;
   height: auto;
   margin: 0;
   vertical-align: middle;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 figcaption {
@@ -361,9 +360,12 @@ img.float-img35 {
   float: left;
   width: 30%;
   margin-right: 1em !important;
+  /* 强制覆盖 */
   margin-bottom: 0 !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* 添加阴影 */
   border-radius: 8px;
+  /* 可选：让图片的边角稍微圆润 */
 }
 
 img.float-img50 {
