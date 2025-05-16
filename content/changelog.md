@@ -10,6 +10,7 @@ toc: true
 
 - 整理了Tag，做了Tag页。
 - 改了翻页键。
+- 用了这里的英文字体：[Fonts Catalog](https://478.neocities.org/catalog/)，moe... :3
 
 ## 2025/05/12
 
