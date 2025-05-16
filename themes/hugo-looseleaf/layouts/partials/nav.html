@@ -1,0 +1,11 @@
+<div id="header-post" >
+  <span id="nav" data-pagefind-ignore>
+    <ul>
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </span>
+</div>
+
+

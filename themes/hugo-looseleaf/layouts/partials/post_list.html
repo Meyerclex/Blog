@@ -1,0 +1,60 @@
+{{- $posts := "" -}}
+
+{{- if .section -}}
+{{- $posts = (where site.RegularPages "Section" .section) -}}
+{{- else -}}
+{{- if (eq .context.Kind "taxonomy") -}}
+{{- $posts = .context.Pages -}}
+{{- else -}}
+{{- if (eq .context.Kind "term") -}}
+{{- $posts = .context.Data.Pages -}}
+{{- else -}}
+{{- $posts = site.RegularPages }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{- $limit_exceeded := "" -}}
+{{- if (and .limit (gt (len $posts) .limit)) -}}
+{{- $limit_exceeded = true -}}
+{{- else -}}
+{{- $limit_exceeded = false -}}
+{{ end }}
+
+{{- if (gt (len $posts) 0) }}
+{{- if .limit }}
+{{ $posts = (first .limit $posts ) }}
+{{ end }}
+
+<!-- 过滤掉草稿和隐藏的文章 -->
+{{ $posts = where $posts "Params.draft" "ne" true }}  <!-- 排除草稿 -->
+{{ $posts = where $posts "Params.hidden" "ne" true }} <!-- 排除隐藏文章 -->
+
+<ul>
+    {{- range $post := $posts -}}
+    <li>
+        <span>{{- ($post.Date | time.Format site.Params.theme_config.date_format) }}</span>
+        <a href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>
+    </li>
+    {{ end }}
+    {{- if and .show_more $limit_exceeded }}
+    <li><a href="{{ .show_more_url | relURL }}">{{ .show_more_text | default "Show more..." }}</a></li>
+    {{ end }}
+</ul>
+
+<!--<ul>-->
+<!--    {{- range $post := $posts -}}-->
+<!--    <div class="post_list">-->
+<!--        <div class="post_list_header">-->
+<!--            <a class="post_list_title" href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>-->
+<!--            <span class="post_list_time">{{- ($post.Date | time.Format site.Params.theme_config.date_format) }}</span>-->
+<!--        </div>-->
+<!--        <div class="post_list_sum">{{ $post.Description }}</div>-->
+<!--    </div>-->
+<!--    {{ end }}-->
+<!--    {{- if and .show_more $limit_exceeded }}-->
+<!--    <li><a href="{{ .show_more_url | relURL }}">{{ .show_more_text | default "Show more..." }}</a></li>-->
+<!--    {{ end }}-->
+<!--</ul>-->
+
+{{ end }}

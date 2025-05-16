@@ -1,0 +1,37 @@
+<div class="multi-column-menu">
+    {{- range $item := .collection -}}
+    <div class="menu-column">
+
+        {{/* 统一的标题输出 */}}
+        <h3 class="menu-title">
+            {{- with $item.url -}}
+            <a href="{{ $item.url | relURL }}">{{ safeHTML $item.title }}</a>
+            {{- else -}}
+            {{ safeHTML $item.title }}
+            {{- end -}}
+        </h3>
+
+        {{/* 如果有 entries，渲染子菜单 */}}
+        {{- if $item.entries }}
+        <ul class="sub-menu">
+            {{ partial "menu_item.html" (dict "context" . "collection" $item.entries) }}
+        </ul>
+        {{- end }}
+
+        {{/* 判断是否有 post_list */}}
+        {{- if $item.post_list }}
+        <div class="posts-list-ul">
+            {{ partial "post_list.html" (dict
+            "context"         .
+            "section"         $item.post_list.section
+            "limit"           $item.post_list.limit
+            "show_more"       $item.post_list.show_more
+            "show_more_text"  $item.post_list.show_more_text
+            "show_more_url"   $item.post_list.show_more_url
+            ) }}
+        </div>
+        {{- end }}
+
+    </div>
+    {{- end }}
+</div>

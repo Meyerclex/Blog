@@ -1,0 +1,162 @@
+.notice {
+  position:relative;
+  padding: 1em 1em 1.5em 2.5em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 5px;
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .notice-title {
+    position: absolute;
+    left: 0.8em;
+    .notice-icon {
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+  &.notice-warning {
+    background: hsla(0, 65%, 65%, 0.15);
+    border-left: 5px solid hsl(0, 65%, 65%);
+    .notice-title {
+      color: hsl(0, 65%, 65%);
+    }
+  }
+  &.notice-info {
+    background: var(--neodb-card-color);
+    //border-left: 5px solid hsl(30, 80%, 70%);
+    .notice-title {
+      color: hsl(30, 80%, 70%);
+    }
+  }
+  &.notice-note {
+    background: var(--neodb-card-color);
+    //border-left: 5px solid hsl(200, 65%, 65%);
+    .notice-title {
+      color: var(--link-color);
+    }
+  }
+  &.notice-tip {
+    background: hsla(140, 65%, 65%, 0.15);
+    border-left: 5px solid hsl(140, 65%, 65%);
+    .notice-title {
+      color: hsl(140, 65%, 65%);
+    }
+  }
+}
+
+[data-theme="dark"] .notice {
+  &.notice-warning {
+    background: hsla(0, 25%, 35%, 0.15);
+    border-left: 5px solid hsl(0, 25%, 35%);
+    .notice-title {
+      color: hsl(0, 25%, 35%);
+    }
+  }
+  &.notice-info {
+    background: hsla(30, 25%, 35%, 0.15);
+    border-left: 5px solid hsl(30, 25%, 35%);
+    .notice-title {
+      color: hsl(30, 25%, 35%);
+    }
+  }
+  &.notice-note {
+    background: hsla(200, 25%, 35%, 0.15);
+    border-left: 5px solid hsl(200, 25%, 35%);
+    .notice-title {
+      color: hsl(200, 25%, 35%);
+    }
+  }
+  &.notice-tip {
+    background: hsla(140, 25%, 35%, 0.15);
+    border-left: 5px solid hsl(140, 25%, 35%);
+    .notice-title {
+      color: hsl(140, 25%, 35%);
+    }
+  }
+}
+
+
+// good museum 好物
+
+.whitey {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  transition: transform 0.3s ease; /* 设置过渡效果 */
+}
+body[a="light"] .whitey {
+  border-width: 10px;
+  border-style: solid;
+  border-image: url("https://i.imgur.com/8xftJ3v.gif") 7 fill round;
+  border-radius: 10px;
+}
+
+body[a="dark"] .whitey {
+  border-width: 10px;
+  border-style: solid;
+  border-image: url("https://i.imgur.com/8xftJ3v.gif") 7 fill round;
+  border-radius: 10px;
+}
+
+.whitey:hover {
+  transform: translateY(-5px); /* 鼠标悬停时，图片向上浮动 5px */
+}
+.goods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* 确保内容左对齐 */
+  gap: 30px;  /* 设置照片之间的间隙 */
+}
+
+.goods-bankuai {
+  width: calc(33.333% - 30px); /* 每张图片占父容器的三分之一宽度，减去间隙 */
+  box-sizing: border-box;
+  text-align: center;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: space-between; /* 确保每个块内容上下排列 */
+  /*height: 300px; !* 固定容器高度，以避免图片撑高 *!*/
+}
+
+.goods-bankuai img {
+  width: 100%;  /* 图片宽度为容器宽度 */
+  height: 200px; /* 统一高度，确保照片高度一致 */
+  object-fit: cover; /* 确保图片裁剪和填充容器 */
+  border-radius: 8px; /* 可选：为图片添加圆角 */
+}
+
+.goods-title {
+  margin-top: 0px;
+}
+
+.goods-note {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+
+/* 当屏幕宽度小于 1024px 时，每行显示两张图片 */
+@media (max-width: 1024px) {
+  .goods-bankuai {
+    width: calc(50% - 20px); /* 每行显示两张 */
+  }
+}
+
+/* 当屏幕宽度小于 768px 时，每行显示一张图片 */
+@media (max-width: 768px) {
+  .goods-bankuai {
+    width: calc(100% - 20px); /* 每行显示一张 */
+    height: auto;  /* 让容器高度自适应 */
+    padding: 10px 20px;
+  }
+  .goods-bankuai img {
+    height: auto; /* 图片自适应高度，不再设置固定高度 */
+  }
+  .goods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+  }
+}

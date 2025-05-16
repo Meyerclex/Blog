@@ -1,0 +1,79 @@
+
+{{ define "main" }}
+<div class="post-meta">
+    {{ partial "nav.html" .}}
+</div>
+<article {{ if .Params.hidden }}data-pagefind-ignore{{ end }}>
+    <h1 data-pagefind-meta="title" {{ if .Params.hidden }}data-pagefind-ignore{{ end }}t>{{ .Title }}</h1>
+    <div id="post-meta">
+        <time datetime="{{ .Date }}">
+            {{ .Date | time.Format site.Params.theme_config.date_format }}
+            <span> ‧ {{ .WordCount }}</span>
+            <span>words</span>
+            ‧ <span> </span>
+            {{ if .Params.tags }}
+                    {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">＃{{ . }}</a>
+                    {{ end }}
+            {{ end }}
+        </time>
+        {{ if .Description }}
+        <blockquote id="post-description">
+            {{ .Description }}
+        </blockquote>
+        {{ end }}
+    </div>
+    {{ if .Params.toc | default true }}
+    <div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+        <details>
+            <summary>📑 Table of Contents</summary>
+            {{ partial "toc.html" . }}
+        </details>
+    </div>
+    <hr>
+    <div  class="post-toc" id="post-toc" data-pagefind-ignore>
+        <header><strong>
+            📑 Table of Contents</strong>
+        </header>
+        {{ partial "toc.html" . }}
+    </div>
+    {{ end }}
+    <div id="post-content"  data-pagefind-body>
+        {{ .Content | safeHTML }}
+        {{ if .Params.search }}
+        {{ partial "pagefind.html" . }}
+        {{ end }}
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+<nav class="custom-paginav">
+    {{ with .PrevInSection }}
+    <a class="custom-paginav-prev" href="{{ .RelPermalink }}">
+        <span class="custom-paginav-title">« Prev</span><br>
+        <span>{{ .Title }}</span>
+    </a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a class="custom-paginav-next" href="{{ .RelPermalink }}">
+        <span class="custom-paginav-title">Next »</span><br>
+        <span>{{ .Title }}</span>
+    </a>
+    {{ end }}
+</nav>
+
+{{ if .Params.comment | default true }}
+<!--<br>-->
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<!--<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />-->
+<div id="comments" class="comments" data-pagefind-ignore>
+    {{ partial "comment.html" . }}
+</div>
+{{ end }}
+
+    <div>
+    {{- partial "footer.html" . -}}
+    </div>
+{{ end }}

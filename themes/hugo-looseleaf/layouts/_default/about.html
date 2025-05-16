@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ $aboutNav := resources.Get "css/_about-nav.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $aboutNav.RelPermalink }}">
+
+<header>
+    <div class="header-container">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                {{ partial "nav_index" . }}
+            </div>
+            <div class="header-content">
+                <article>
+                {{ .Content }}
+                </article>
+                {{ if .Params.comment | default true }}
+                <!--<br>-->
+                <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+                <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+                <!--<img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />-->
+                <div id="comments" class="comments" data-pagefind-ignore>
+                    {{ partial "comment.html" . }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<hr class="decoration-hr">
+{{ partial "footer.html" . }}
+{{ end }}

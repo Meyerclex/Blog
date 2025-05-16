@@ -35,7 +35,12 @@ comment: false
 Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以点击放大。
 {{< /notice >}}
 
-- **April 2025**
+- **May 2025**：homepage / post list / two different article layouts
+
+![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/23.51.52.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/23.53.17.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/00.00.13.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025-05-16/23.52.51.png)
+
+
+- **April 2025**：魔女之家
 
 <div style="text-align: center;">
 
@@ -44,11 +49,11 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 </div>
 
 ![](/theme-archive/April-2025-light.png) 
-![魔女之家](/theme-archive/April-2025-dark.png)
+![](/theme-archive/April-2025-dark.png)
 
 <br>
 
-- **January 2025**
+- **January 2025**：薄荷巧克力
 
 <div style="text-align: center;">
 
@@ -57,7 +62,7 @@ Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以�
 </div>
 
 ![](/theme-archive/Jan-2025-light.jpg) 
-![薄荷巧克力](/theme-archive/Jan-2025-dark.jpeg)
+![](/theme-archive/Jan-2025-dark.jpeg)
 
 <br>
 
