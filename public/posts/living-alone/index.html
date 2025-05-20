@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.03abca30cee20996ce5bf06e48a98ab0f49dfd98f9d8a00e3a328fd9284553329d4eb3887c9b4db82dec36bf76e78eb64f85d823507a560ae215a30190a68427.css" integrity="sha512-A6vKMM7iCZbOW/BuSKmKsPSd/Zj52KAOOjKP2ShFUzKdTrOIfJtNuC3sNr925462T4XYI1B6VgriFaMBkKaEJw==" />
+  <link rel="stylesheet" href="/css/main.babcd5094dbba39f6336bc40b7e5842576c6b78fb2ddc50defc0a355daaa63f56209b59e6a9aed0339f766d5665d76552dc2874fb0b054fcdba888575ff8a26b.css" integrity="sha512-urzVCU27o59jNrxAt&#43;WEJXbGt4&#43;y3cUN78CjVdqqY/ViCbWeaprtAzn3ZtVmXXZVLcKHT7CwVPzbqIhXX/iiaw==" />
   
   
   
@@ -68,116 +68,12 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
-
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
-
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const img = paragraph.querySelector('img');
-        if (img && img.id !== 'emoji') {
-          paragraph.style.textAlign = 'center';
-          paragraph.style.fontSize = '90%';
-        }
-      });
-
-      
-      const imgs = postContent.querySelectorAll('img');
-      imgs.forEach((img) => {
-        if (img.closest('p')) return; 
-        if (img.id === 'emoji') return;
-        if (!img.alt) return;
-
-        const next = img.nextSibling;
-        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
-          const span = document.createElement('span');
-          span.textContent = next.textContent.trim();
-          span.style.display = 'block';
-          span.style.textAlign = 'center';
-          span.style.fontSize = '90%';
-          img.parentNode.replaceChild(span, next);
-        }
-      });
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      function fixImageSize(img) {
-        if (!img.hasAttribute('width')) {
-          img.setAttribute('width', img.naturalWidth);
-        }
-        if (!img.hasAttribute('height')) {
-          img.setAttribute('height', img.naturalHeight);
-        }
-      }
-
-      
-      const enableImageZoom = (img) => {
-        if (!img.src.includes('/img/emoji/')) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.removeAttribute('src');
-            overlayImage.removeAttribute('width');
-            overlayImage.removeAttribute('height');
-
-            overlayImage.src = img.src;
-            overlayImage.setAttribute('width', img.width);
-            overlayImage.setAttribute('height', img.height);
-
-            overlayImage.style.width = 'auto';
-            overlayImage.style.height = 'auto';
-
-            overlay.classList.add('active');
-          });
-        }
-
-        
-        if (img.complete) {
-          fixImageSize(img);
-        } else {
-          img.addEventListener('load', () => fixImageSize(img));
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
-
-      images.forEach(enableImageZoom);
-    });
-  </script>
-
-
-
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
-
-
-
-
   
   
+
+
 
   <script defer>
     function toggleMenu(element) {
@@ -203,7 +99,7 @@
 
 
 </head>
-<script src="script.js" defer></script>
+
 <div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
     <div id="light-btn" style="">
         
@@ -320,6 +216,10 @@
 
 
 </div>
+
+
+<script src="/js/pic-js.min.da26304548ee64740899ade7d50f905588052ea81c6621a6838d9977742004b6.js" integrity="sha256-2iYwRUjuZHQIma3n1Q&#43;QVYgFLqgcZiGmg42Zd3QgBLY=" crossorigin="anonymous"></script>
+
 <article >
     <h1 data-pagefind-meta="title" t>当我们谈论独居时</h1>
     <div id="post-meta">
@@ -739,6 +639,8 @@
         
         
         
+        
+        
         <span>All rights reserved.</span>
 
     </section>
@@ -852,5 +754,4 @@
 
             </div>
         </main>
-    <script src="script.js" defer></script>
     </body></html>

@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.03b22c2c513ed5cf27ee961dff188643f7016d274c31ade22e8329fb024621346a94f3d0073caae98b62cedc0dc9479bc6ccf71bec4602873852679501626093.css" integrity="sha512-A7IsLFE&#43;1c8n7pYd/xiGQ/cBbSdMMa3iLoMp&#43;wJGITRqlPPQBzyq6YtiztwNyUebxsz3G&#43;xGAoc4UmeVAWJgkw==" />
+  <link rel="stylesheet" href="/css/main.babcd5094dbba39f6336bc40b7e5842576c6b78fb2ddc50defc0a355daaa63f56209b59e6a9aed0339f766d5665d76552dc2874fb0b054fcdba888575ff8a26b.css" integrity="sha512-urzVCU27o59jNrxAt&#43;WEJXbGt4&#43;y3cUN78CjVdqqY/ViCbWeaprtAzn3ZtVmXXZVLcKHT7CwVPzbqIhXX/iiaw==" />
   
   
   
@@ -63,116 +63,15 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('JavaScript loaded and DOMContentLoaded event fired.');
 
-      const postContent = document.querySelector('#post-content');
-      if (!postContent) {
-        console.error('Error: #post-content not found!');
-        return;
-      }
-
-      
-      const paragraphs = postContent.querySelectorAll('p');
-      paragraphs.forEach((paragraph) => {
-        const img = paragraph.querySelector('img');
-        if (img && img.id !== 'emoji') {
-          paragraph.style.textAlign = 'center';
-          paragraph.style.fontSize = '90%';
-        }
-      });
-
-      
-      const imgs = postContent.querySelectorAll('img');
-      imgs.forEach((img) => {
-        if (img.closest('p')) return; 
-        if (img.id === 'emoji') return;
-        if (!img.alt) return;
-
-        const next = img.nextSibling;
-        if (next && next.nodeType === Node.TEXT_NODE && next.textContent.trim()) {
-          const span = document.createElement('span');
-          span.textContent = next.textContent.trim();
-          span.style.display = 'block';
-          span.style.textAlign = 'center';
-          span.style.fontSize = '90%';
-          img.parentNode.replaceChild(span, next);
-        }
-      });
-
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'image-overlay';
-      document.body.appendChild(overlay);
-
-      const overlayImage = document.createElement('img');
-      overlay.appendChild(overlayImage);
-
-      overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
-      });
-
-      
-      function fixImageSize(img) {
-        if (!img.hasAttribute('width')) {
-          img.setAttribute('width', img.naturalWidth);
-        }
-        if (!img.hasAttribute('height')) {
-          img.setAttribute('height', img.naturalHeight);
-        }
-      }
-
-      
-      const enableImageZoom = (img) => {
-        if (!img.src.includes('/img/emoji/')) {
-          img.style.cursor = 'zoom-in';
-          img.addEventListener('click', () => {
-            overlayImage.removeAttribute('src');
-            overlayImage.removeAttribute('width');
-            overlayImage.removeAttribute('height');
-
-            overlayImage.src = img.src;
-            overlayImage.setAttribute('width', img.width);
-            overlayImage.setAttribute('height', img.height);
-
-            overlayImage.style.width = 'auto';
-            overlayImage.style.height = 'auto';
-
-            overlay.classList.add('active');
-          });
-        }
-
-        
-        if (img.complete) {
-          fixImageSize(img);
-        } else {
-          img.addEventListener('load', () => fixImageSize(img));
-        }
-      };
-
-      
-      const images = Array.from(postContent.querySelectorAll('img'));
-      if (images.length === 0) {
-        console.log('No images found.');
-        return;
-      }
-      console.log(`Found ${images.length} images.`);
-
-      images.forEach(enableImageZoom);
-    });
-  </script>
-
-
+  
 
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
-
-
-
-
   
   
+
+
 
   <script defer>
     function toggleMenu(element) {
@@ -198,7 +97,7 @@
 
 
 </head>
-<script src="script.js" defer></script>
+
 <div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
     <div id="light-btn" style="">
         
@@ -976,7 +875,9 @@ home = [&#34;HTML&#34;]</code></pre>
     </div>
 
             <hr class="decoration-hr">
-            <p style="text-align: center;"><a href="/search" target="_blank">📖 Search for...</a>
+            <p style="text-align: center;"><a href="/search" target="_blank">📖 Search...</a>
+            </p>
+            <p style="text-align: center;"><a href="/bookmarks" target="_blank">💾 Bookmarks</a>
             </p>
 
     </div>
@@ -988,6 +889,8 @@ home = [&#34;HTML&#34;]</code></pre>
         &copy; 2021 - 2025
         <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
+        
+        
         
         
         
@@ -1286,5 +1189,4 @@ home = [&#34;HTML&#34;]</code></pre>
 
             </div>
         </main>
-    <script src="script.js" defer></script>
     </body></html>
