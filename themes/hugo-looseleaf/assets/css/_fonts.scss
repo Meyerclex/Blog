@@ -1,19 +1,7 @@
 //new
 
-@font-face {
-  font-family: 'HuiwenFangsong';
-  src: url('/fonts/huiwen-fangsong.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'HuiwenMincho';
-  src: url('/fonts/Huiwenmincho-improved.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url("https://fontsapi.zeoseven.com/256/main/result.css"); // 汇文明朝
+
 
 body {
   font-family: "Noto Sans CJK SC", "Source Han Sans SC VF", "Clear Han Serif", sans-serif;
@@ -21,21 +9,20 @@ body {
   letter-spacing: 0.5px;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'STDongGuanTi',"HuiwenMincho", sans-serif;
+  font-family: 'STDongGuanTi',"Huiwen-mincho", sans-serif;
   margin-bottom: 0;
 }
 
 #header-post #nav a {
-  font-family: "HuiwenMincho", sans-serif;
+  font-family: "Huiwen-mincho", sans-serif;
   font-weight: bold;
 }
 article time {
-  //font-family: "HuiwenMincho", sans-serif;
   font-size: 90%;
   font-weight: normal;
 }
 .site-footer {
-  font-family: "HuiwenMincho", "Noto Sans CJK SC", sans-serif;
+  font-family: "Huiwen-mincho", "Noto Sans CJK SC", sans-serif;
 
 }
 #special-h1 {
