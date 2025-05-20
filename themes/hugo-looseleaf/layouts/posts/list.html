@@ -113,23 +113,25 @@
                     {{ end }}
                 </div>
             </div>
-        <div class="note__item">
-            <div class="note__day">更新日志</div>
-            <div class="note__list" style="font-size: 80%;">
-                <details class="mumble" style="max-height: 250px;">
-                    <summary>Changelog...</summary>
-                    {{ with site.GetPage "changelog" }}
-                        {{ .Content | safeHTML }}
-                    {{ else }}
-                        <p>404 Not Found</p>
-                    {{ end }}
-                </details>
-            </div>
-        </div>
+<!--        <div class="note__item">-->
+<!--            <div class="note__day">更新日志</div>-->
+<!--            <div class="note__list" style="font-size: 80%;">-->
+<!--                <details class="mumble" style="max-height: 250px;">-->
+<!--                    <summary>Changelog...</summary>-->
+<!--                    {{ with site.GetPage "changelog" }}-->
+<!--                        {{ .Content | safeHTML }}-->
+<!--                    {{ else }}-->
+<!--                        <p>404 Not Found</p>-->
+<!--                    {{ end }}-->
+<!--                </details>-->
+<!--            </div>-->
+<!--        </div>-->
                         {{ partial "mumble.html" . }}
 
             <hr class="decoration-hr">
             <p style="text-align: center;"><a href="/search" target="_blank">📖 Search...</a>
+            </p>
+            <p style="text-align: center;"><a href="/changelog" target="_blank">📠 Changelog</a>
             </p>
             <p style="text-align: center;"><a href="/bookmarks" target="_blank">💾 Bookmarks</a>
             </p>

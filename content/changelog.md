@@ -4,7 +4,11 @@ description:
 date: 2021-06-28
 slug: changelog
 toc: true
+layout: "about"
+
 ---
+
+# 📠 更新日志 / Changelog
 
 ## 2025/05/20
 
@@ -18,11 +22,24 @@ toc: true
 
 处理完之后从2.8秒左右的加载速度恢复到了400ms左右，可喜可贺！
 
+又及：
+
+- 修改了各类标题字体为上图东观体`STDongGuanTi`。
+- 新增了[Bookmarks](/bookmarks)页面。
+
 ## 2025/05/14
 
 - 整理了Tag，做了Tag页。
 - 改了翻页键。
 - 用了这里的英文字体：[Fonts Catalog](https://478.neocities.org/catalog/)，moe... :3
+
+
+<details>
+<summary>
+「 经过了漫长的装修……内容过长折叠 」
+</summary>
+
+
 
 ## 2025/05/12
 
@@ -198,6 +215,8 @@ home = ["HTML"]
 
 站点主题从 Stack 更换为 Luna
 
+</details>
+
 ## 2021-11-14
 
-小鸟拥有了自己的第一个私人博客
+拥有了自己的第一个私人博客。

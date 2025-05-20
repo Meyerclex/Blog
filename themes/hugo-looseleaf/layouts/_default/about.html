@@ -13,6 +13,12 @@
                 <article>
                 {{ .Content }}
                 </article>
+                <br>
+                {{ with .Params.last_edit }}
+                <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">last edited:
+                    {{ . }}
+                </p>
+                {{ end }}
                 {{ if .Params.comment | default true }}
                 <!--<br>-->
                 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
