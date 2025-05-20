@@ -99,3 +99,6 @@
     display: flex;
     justify-content: center;
     padding: 0.5em; } }
+
+.w {
+  max-width: 780px; }

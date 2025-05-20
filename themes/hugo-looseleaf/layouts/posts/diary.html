@@ -15,14 +15,28 @@
                 {{ .Content }}
                 </div>
                 </article>
-                {{ if .Params.comment | default true }}
                 <br>
                 <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">last edited:
                     {{ with .Params.last_edit }}
                     {{ . }}
                     {{ end }}
                 </p>
+                <nav class="custom-paginav">
+                    {{ with .PrevInSection }}
+                    <a class="custom-paginav-prev" href="{{ .RelPermalink }}">
+                        <span class="custom-paginav-title">« Prev</span><br>
+                        <span>{{ .Title }}</span>
+                    </a>
+                    {{ end }}
+                    {{ with .NextInSection }}
+                    <a class="custom-paginav-next" href="{{ .RelPermalink }}">
+                        <span class="custom-paginav-title">Next »</span><br>
+                        <span>{{ .Title }}</span>
+                    </a>
+                    {{ end }}
+                </nav>
                 <br>
+                {{ if .Params.comment | default true }}
                 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
                 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
 <!--                <img src="/site/ghostszombies.gif" class="divider" style="display: block; margin-left: auto; margin-right: auto;" data-pagefind-ignore />-->
