@@ -3,9 +3,16 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- CSS Compilation from Sass -->
+  {{ $sass := resources.Get "css/main.scss" }}
+  {{ if $sass }}
+  {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+  {{ $style := $sass | css.Sass $options | resources.Fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" integrity="{{ $style.Data.Integrity }}" />
+  {{ else }}
+  <link rel="stylesheet" href="/css/main.css" />
+  {{ end }}
   <!-- 预加载关键字体 -->
-
-
   <!-- 样式表（异步加载） -->
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/79/main/result.css">
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/438/main/result.css">
@@ -169,15 +176,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
 
-  <!-- CSS Compilation from Sass -->
-  {{ $sass := resources.Get "css/main.scss" }}
-  {{ if $sass }}
-    {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-    {{ $style := $sass | css.Sass $options | resources.Fingerprint "sha512" }}
-    <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" integrity="{{ $style.Data.Integrity }}" />
-  {{ else }}
-    <link rel="stylesheet" href="/css/main.css" />
-  {{ end }}
+
 
 
   <!-- MathJax inclusion -->
