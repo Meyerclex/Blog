@@ -17,15 +17,9 @@
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
 
   <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/yzgcxst/dist/%E4%B9%9F%E5%AD%97%E5%B7%A5%E5%8E%82%E5%B0%8F%E7%9F%B3%E5%A4%B4/result.css' />
-
   
-  <noscript>
-
-    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
-    
-    <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
-  </noscript>
-
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+  
   
   <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/stdgt/dist/%E4%B8%8A%E5%9B%BE%E4%B8%9C%E8%A7%82%E4%BD%93-%E5%B8%B8%E8%A7%84/result.css' />
 
@@ -641,7 +635,21 @@ border-radius: 0px;
                 <details class="mumble" style="max-height: 250px;">
                     <summary>Changelog...</summary>
                     
-                        <h2 id="20250514">2025/05/14</h2>
+                        <h2 id="20250520">2025/05/20</h2>
+<p>终于找到时间狠狠研究了一番到底是为什么我的网页加载速度比之前慢了很多，原来是：</p>
+<ol>
+<li>
+<p>ZeoSeven里有一个字体的CDN出了问题于是一直定向到<code>127.0.0.1</code>，找不到导致阻塞。</p>
+</li>
+<li>
+<p>把站内一些script挪了一下，不要全放在head里面，之前就是没想好怎么放比较好才一股脑……嗯。</p>
+</li>
+<li>
+<p>我在<code>&lt;head&gt;</code>里放了太多外部字体了，这个是最主要的问题。实际上我全站只用了3个中文字体2个英文字体吧，把多余的中文字体删掉了。而且汇文那个系列的字体文件超级巨大，我本来是下载的资源发现压缩后还有8M多轻轻破碎了，我只有英文导航栏用了一下，决定删掉改用外部字体了。</p>
+</li>
+</ol>
+<p>处理完之后从2.8秒左右的加载速度恢复到了400ms，可喜可贺！</p>
+<h2 id="20250514">2025/05/14</h2>
 <ul>
 <li>整理了Tag，做了Tag页。</li>
 <li>改了翻页键。</li>
