@@ -6,13 +6,6 @@ comment: false
 last_edit: May 20, 2025
 ---
 
-<style>
-.header-content {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-</style>
 
 ## Bookmarks / Resource
 

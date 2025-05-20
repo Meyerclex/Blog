@@ -55,10 +55,7 @@
   gap: 6px; }
 
 .header-content h1 {
-  filter: drop-shadow(4px 2px 0px var(--index-shadow));
-  letter-spacing: -5px;
   margin: 0 0 -0.2em -0.5em;
-  font-size: 35px;
   /*line-height: 1em;*/ }
 
 #nav ul li {
