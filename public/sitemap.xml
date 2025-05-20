@@ -299,10 +299,10 @@
     <loc>http://localhost:1313/copyright/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/changelog/</loc>
+    <loc>http://localhost:1313/links/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/links/</loc>
+    <loc>http://localhost:1313/changelog/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/we-will-be-fine/</loc>
