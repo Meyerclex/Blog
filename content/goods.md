@@ -19,29 +19,9 @@ comment: true
 
 ---
 
-## More... 🍰
-
-- [📖 Write in Water](https://written.gregueria.icu)
-
-- [📸 Of Passing & Pause](https://photo.gregueria.icu/)
-
-- [📫 Pushoong](https://pushoong.com/ask/4862766301/)
-
-- [🔔 RSS](/index.xml/)
-
 ## Theme Showcase 🎨
 
 {{< notice notice-note >}}
-Tips：如果多图排列加载卡顿，可以尝试刷新一次。图片可以点击放大。
-<br>
-<br>
-虽然主题仓库是公开的，但我自己并没有系统性部署过，因为都是bad coding，所以大概会遇到很多问题，但里面也没有什么牵一发而动全身的高深代码，问问chatGPT、根据Log把代码或者文件删掉，一般都能治好。
-
-我不是专业人士，其实也不太懂，我只是喜欢玩电脑。
-<br>
-<br>
-
----
 <div style="text-align: center;">
 <p style="    font-family: Mali;
     font-weight: 300;">
@@ -65,6 +45,9 @@ enjoy blogging or breaking! :3
 ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/0520/1.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/0520/3.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/0520/2.png) ![](https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/0520/4.png) 
 
 ---
+
+<details>
+<summary>「 往期主题，过长折叠 」</summary>
 
 - **April 2025**：魔女之家
 
@@ -134,6 +117,18 @@ enjoy blogging or breaking! :3
 
 </details>
 
+</details>
+
+
+## More... 🍰
+
+- [📖 Write in Water](https://written.gregueria.icu)：fanfiction, or just fantasy
+
+- [📸 Of Passing & Pause](https://photo.gregueria.icu/)：newbie with a camera, seeing and learning
+
+- [📫 Pushoong](https://pushoong.com/ask/4862766301/)：question box, ask me anything
+
+- [🔔 RSS](/index.xml/)：subscribe via rss
 
 ---
 

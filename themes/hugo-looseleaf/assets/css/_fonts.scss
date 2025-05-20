@@ -1,4 +1,5 @@
 //new
+
 @font-face {
   font-family: 'HuiwenFangsong';
   src: url('/fonts/huiwen-fangsong.woff2') format('woff2');
@@ -20,11 +21,13 @@ body {
   letter-spacing: 0.5px;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "HuiwenMincho", sans-serif;
+  font-family: 'STDongGuanTi',"HuiwenMincho", sans-serif;
   margin-bottom: 0;
 }
+
 #header-post #nav a {
   font-family: "HuiwenMincho", sans-serif;
+  font-weight: bold;
 }
 article time {
   //font-family: "HuiwenMincho", sans-serif;
@@ -32,7 +35,8 @@ article time {
   font-weight: normal;
 }
 .site-footer {
-  font-family: "HuiwenMincho", sans-serif;
+  font-family: 'STDongGuanTi',"HuiwenMincho", sans-serif;
+
 }
 #special-h1 {
   font-family: 'YEFONTXiaoShiTou';
@@ -44,7 +48,7 @@ a:hover {
   cursor: url('/cursor.png'), pointer;
 }
 #menutable td, #menutable th {
-  font-family: 'HuiwenFangsong',"Noto Sans CJK SC" !important;
+  font-family: 'STDongGuanTi',"Noto Sans CJK SC" !important;
 }
 code {
   font-family: ui-monospace, // San Francisco Mono on macOS and iOS
