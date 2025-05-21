@@ -15,7 +15,7 @@ layout: "about"
 
 <center>
 
-<img src="/blog/Snipaste_2025-05-21_12-12-29.png" style="width: 70%" alt="tools bar">
+![Tools Bar](/blog/Snipaste_2025-05-21_12-12-29.png)
 
 </center>
 
@@ -60,6 +60,13 @@ layout: "about"
 
 ---
 
+
+<details>
+<summary>
+「 往期装修日志，内容过长折叠 」
+</summary>
+
+
 ### 2025/05/20 网页加载速度问题
 
 终于找到时间狠狠研究了一番到底是为什么我的网页加载速度比之前慢了很多，原来是：
@@ -77,18 +84,13 @@ layout: "about"
 - 修改了各类标题字体为上图东观体`STDongGuanTi`。
 - 新增了[Bookmarks](/bookmarks)页面。
 
+
+
 ### 2025/05/14
 
 - 整理了Tag，做了Tag页。
 - 改了翻页键。
 - 用了这里的英文字体：[Fonts Catalog](https://478.neocities.org/catalog/)，moe... :3
-
-
-<details>
-<summary>
-「 经过了漫长的装修……内容过长折叠 」
-</summary>
-
 
 
 ### 2025/05/12
