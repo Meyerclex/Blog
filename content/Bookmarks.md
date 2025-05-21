@@ -18,7 +18,7 @@ last_edit: May 20, 2025
 ---
 
 - https://gifcity.carrd.co/#
-- 也是重复背景，但我似乎暂时用不上：https://simple-repeat.com/en/basic/basic_dotgray?page=14
+- 也是重复背景，但我似乎暂时用不上： https://simple-repeat.com/en/basic/basic_dotgray?page=14
 - https://user.xmission.com/~emailbox/graphics.htm
 - http://www.cute.illust-ya.com/sozai/sozai-d.htm
 - Icons: [Pixel heart](https://www.flaticon.com/search?style_id=1222&author_id=2984&word=pixel+art&type=standard)
