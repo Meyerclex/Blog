@@ -129,12 +129,11 @@
                         {{ partial "mumble.html" . }}
 
             <hr class="decoration-hr">
-            <p style="text-align: center;"><a href="/search" target="_blank">📖 Search...</a>
-            </p>
-            <p style="text-align: center;"><a href="/changelog" target="_blank">📠 Changelog</a>
-            </p>
-            <p style="text-align: center;"><a href="/bookmarks" target="_blank">💾 Bookmarks</a>
-            </p>
+            <div id="tools">
+                {{ range .Site.Params.tool }}
+                <div class="tools-item"><a href="{{ .link }}" target="{{ .target }}" >{{ .name }}</a></div>
+                {{ end }}
+            </div>
 
     </div>
     </div>

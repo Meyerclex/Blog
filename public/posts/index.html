@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.1f8baca1721d9a0ed6e80db20958e1b3630b2bc2b5b873cc356fb709e5f9242f0591bea563685593c704bf91b03d51d3a8d39fc76f4b76702b15a97acf8cc154.css" integrity="sha512-H4usoXIdmg7W6A2yCVjhs2MLK8K1uHPMNW&#43;3CeX5JC8Fkb6lY2hVk8cEv5GwPVHTqNOfx29LdnArFal6z4zBVA==" />
+  <link rel="stylesheet" href="/css/main.6ff3d5ccc2c5eb74b6c51e02b513b29a6de2388cde075ab2482cd30ce4d125c475cdade20322b5d81bc9232b54b9d661561816c98535c2eb43f88332db9523cb.css" integrity="sha512-b/PVzMLF63S2xR4CtROymm3iOIzeB1qySCzTDOTRJcR1za3iAyK12BvJIytUudZhVhgWyYU1wutD&#43;IMy25Ujyw==" />
   
   
   
@@ -644,79 +644,92 @@ border-radius: 0px;
     <div class="note__day">碎碎念啦，唔使理我</div>
     <div class="note__list" style="font-size: 80%;">
     
-    <details class="mumble">
-        <summary>Mumble...</summary>
+
+
 
 
 
     <div id="feed-reader"></div>
     <script>
-                const feedURL = 'https://status.cafe/users/lyin.atom';
+        const feedURL = 'https://status.cafe/users/lyin.atom';
 
-                function timeAgo(publishedDate) {
-                    const now = new Date();
-                    const published = new Date(publishedDate);
-                    const diff = now - published;
+        function timeAgo(publishedDate) {
+            const now = new Date();
+            const published = new Date(publishedDate);
+            const diff = now - published;
 
-                    const seconds = Math.floor(diff / 1000);
-                    const minutes = Math.floor(seconds / 60);
-                    const hours = Math.floor(minutes / 60);
-                    const days = Math.floor(hours / 24);
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
 
-                    if (days > 0) {
-                        return `${days} day${days > 1 ? 's' : ''} ago`;
-                    } else if (hours > 0) {
-                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-                    } else if (minutes > 0) {
-                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-                    } else {
-                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-                    }
+            if (days > 0) {
+                return `${days} day${days > 1 ? 's' : ''} ago`;
+            } else if (hours > 0) {
+                return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            } else if (minutes > 0) {
+                return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            } else {
+                return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+            }
+        }
+
+        fetch(feedURL)
+            .then(response => response.text())
+            .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+            .then(data => {
+                const entries = data.querySelectorAll("entry");
+                let html = ``;
+
+                
+                if (entries.length > 0) { 
+                    const el = entries[0]; 
+
+                    let rawTitle = el.querySelector("title").textContent.trim();
+                    let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                    let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
+
+
+                    let content = el.querySelector("content").textContent.trim();
+                    let publishedDate = el.querySelector("published").innerHTML;
+                    let relativeTime = timeAgo(publishedDate);
+
+                    html += `
+                            <div class="statuscafe-entry">
+                                <p class="statuscafe-username">
+                                    <span class="status-meta">
+                                    <span class="mumble-time">by ${relativeTime}</span>
+                                    <span class="mumble-title">${emoji} </span>
+                                  </span>
+                                  </p>
+                                <p class="statuscafe-content">${content}</p>
+                            </div>
+                        `;
                 }
+                
 
-                fetch(feedURL)
-                    .then(response => response.text())
-                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                    .then(data => {
-                        const entries = data.querySelectorAll("entry");
-                        let html = ``;
-                        entries.forEach(el => {
-                            let rawTitle = el.querySelector("title").textContent.trim();
-                            let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
-                            let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
-
-
-                            let content = el.querySelector("content").textContent.trim();
-                            let publishedDate = el.querySelector("published").innerHTML;
-                            let relativeTime = timeAgo(publishedDate);
-
-                            html += `
-                                <div class="statuscafe-entry">
-                                    <p class="statuscafe-username">
-                                        <span class="status-meta">
-                                        <span class="mumble-time">${relativeTime}</span>
-                                        <span class="mumble-title">${emoji} </span>
-                                      </span>
-                                      </p>
-                                    <p class="statuscafe-content">${content}</p>
-
-                                </div>
-                            `;
-                        });
-                        document.getElementById("feed-reader").innerHTML = html;
-                    });
+                document.getElementById("feed-reader").innerHTML = html;
+            })
+            .catch(error => { 
+                console.error('Error fetching or parsing feed:', error);
+                document.getElementById("feed-reader").innerHTML = '<p>无法加载状态。</p>';
+            });
+    </script>
             </script>
     </details>
     </div>
     </div>
 
             <hr class="decoration-hr">
-            <p style="text-align: center;"><a href="/search" target="_blank">📖 Search...</a>
-            </p>
-            <p style="text-align: center;"><a href="/changelog" target="_blank">📠 Changelog</a>
-            </p>
-            <p style="text-align: center;"><a href="/bookmarks" target="_blank">💾 Bookmarks</a>
-            </p>
+            <div id="tools">
+                
+                <div class="tools-item"><a href="/search" target="_blank" >✦ Search | 搜索 ✦</a></div>
+                
+                <div class="tools-item"><a href="/changelog" target="_blank" >✦ Changelog | 更新日志 ✦</a></div>
+                
+                <div class="tools-item"><a href="/bookmarks" target="_blank" >✦ Bookmarks | 书签 ✦</a></div>
+                
+            </div>
 
     </div>
     </div>

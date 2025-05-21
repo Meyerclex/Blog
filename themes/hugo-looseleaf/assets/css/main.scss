@@ -3,6 +3,7 @@
 @import "theme-toggle";
 @import "code-fense";
 
+
 :root {
   --bg-color: rgba(249, 247, 241, 0.84);
   --bg-color-hover: rgba(253, 241, 207, 0.8);
@@ -24,11 +25,8 @@
   --shadow: #eaa8a2;
   --text-color-dark: #F8F4E1;
   --index-shadow: rgb(251,230,189); // 猫的阴影
-
-//  bg
-
-  --bg-image: url('/images/bg.png');
-
+  --tools: rgb(253, 252, 224);
+  --tools-transparent: rgba(253, 252, 224, 0.2);
 }
 
 [a="dark"] {
@@ -50,6 +48,8 @@
   --mark: rgba(230, 164, 43, 0.49);
   --shadow: rgb(117, 94, 142);
   --index-shadow: rgb(136, 50, 127); // 猫的阴影
+  --tools: rgba(81, 5, 97, 0.73);
+  --tools-transparent: rgba(81, 5, 97, 0.146);
 }
 
 
@@ -130,13 +130,6 @@ details[open] summary {
   color: var(--text-color);
 }
 
-table, th, td, .toc {
-  border: thin solid var(--text-color);
-}
-
-.toc {
-  padding: 1rem;
-}
 
 figcaption {
   color: var(--secondary-text-color);
@@ -348,9 +341,6 @@ details[open] summary {
   margin: 5px 0;
 }
 
-.toc {
-  padding: 1rem;
-}
 
 .site-footer {
   display: flex;
@@ -472,50 +462,6 @@ article hr {
 
 article ol {
   padding-left: 22px;
-}
-
-
-/* 桌面端浮动 TOC */
-.post-toc {
-  position: fixed;
-  right: 3px;
-  max-width: 400px;
-  overflow: auto;
-  top: 100px;
-  width: 12vw;
-  bottom: 50px;
-  font-size: 90%;
-}
-
-/* 默认隐藏移动 TOC */
-.post-toc-mobile {
-  display: none;
-}
-
-@media only screen and (max-width: 1224px) {
-  /* 移动端显示 mobile TOC，隐藏桌面 TOC */
-  .post-toc {
-    display: none;
-  }
-
-  .post-toc-mobile {
-    display: block;
-    margin-bottom: 2rem;
-    font-size: 90%;
-  }
-
-  .post-toc-mobile details {
-    border: 1px solid var(--color-bg-code);
-    padding: 0.75rem;
-    border-radius: 6px;
-    background-color: var(--neodb-card-color);
-  }
-
-  .post-toc-mobile summary {
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 90%;
-  }
 }
 
 ul {
@@ -688,3 +634,5 @@ body[a="dark"] #copyright, body[a="dark"] #meow-box, .special-bg  {
 }
 
 @import "taxonomy";
+@import "toc";
+

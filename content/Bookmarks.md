@@ -9,6 +9,7 @@ last_edit: May 20, 2025
 
 ## Bookmarks / Resource
 
+- [我是走廊，张亦绚](https://nathaliechang.wixsite.com/nathaliechang/home)
 - **字体**：[ZeoSeven](https://fonts.zeoseven.com/)
 - [香港公共图书馆](https://sls.hkpl.gov.hk/digital-collection/tc/collection.html)
 - 蛋卷分享的[重复背景](https://booth.pm/zh-tw/items/5576108)

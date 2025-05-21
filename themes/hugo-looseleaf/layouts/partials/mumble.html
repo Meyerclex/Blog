@@ -2,67 +2,77 @@
     <div class="note__day">碎碎念啦，唔使理我</div>
     <div class="note__list" style="font-size: 80%;">
     <!--  “open”为默认展开，删去则默认折叠  -->
-    <details class="mumble">
-        <summary>Mumble...</summary>
+<!--    <details class="mumble">-->
+<!--        <summary>Mumble...</summary>-->
 
-<!--   以下为Statue Cafe的核心内容，上方为我的外边框样式可以删去     -->
+<!--   以下为Statue Cafe的核心内容，上方为我的外边框样式可以删去-->
 
     <div id="feed-reader"></div>
     <script>
-                const feedURL = 'https://status.cafe/users/lyin.atom';
+        const feedURL = 'https://status.cafe/users/lyin.atom';
 
-                function timeAgo(publishedDate) {
-                    const now = new Date();
-                    const published = new Date(publishedDate);
-                    const diff = now - published;
+        function timeAgo(publishedDate) {
+            const now = new Date();
+            const published = new Date(publishedDate);
+            const diff = now - published;
 
-                    const seconds = Math.floor(diff / 1000);
-                    const minutes = Math.floor(seconds / 60);
-                    const hours = Math.floor(minutes / 60);
-                    const days = Math.floor(hours / 24);
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
 
-                    if (days > 0) {
-                        return `${days} day${days > 1 ? 's' : ''} ago`;
-                    } else if (hours > 0) {
-                        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-                    } else if (minutes > 0) {
-                        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-                    } else {
-                        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-                    }
+            if (days > 0) {
+                return `${days} day${days > 1 ? 's' : ''} ago`;
+            } else if (hours > 0) {
+                return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            } else if (minutes > 0) {
+                return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            } else {
+                return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+            }
+        }
+
+        fetch(feedURL)
+            .then(response => response.text())
+            .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+            .then(data => {
+                const entries = data.querySelectorAll("entry");
+                let html = ``;
+
+                // *** 在这里进行修改：只处理第一个 entry ***
+                if (entries.length > 0) { // 确保有条目存在
+                    const el = entries[0]; // 获取最新的一条状态
+
+                    let rawTitle = el.querySelector("title").textContent.trim();
+                    let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                    let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
+
+
+                    let content = el.querySelector("content").textContent.trim();
+                    let publishedDate = el.querySelector("published").innerHTML;
+                    let relativeTime = timeAgo(publishedDate);
+
+                    html += `
+                            <div class="statuscafe-entry">
+                                <p class="statuscafe-username">
+                                    <span class="status-meta">
+                                    <span class="mumble-time">by ${relativeTime}</span>
+                                    <span class="mumble-title">${emoji} </span>
+                                  </span>
+                                  </p>
+                                <p class="statuscafe-content">${content}</p>
+                            </div>
+                        `;
                 }
+                // ********************************************
 
-                fetch(feedURL)
-                    .then(response => response.text())
-                    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                    .then(data => {
-                        const entries = data.querySelectorAll("entry");
-                        let html = ``;
-                        entries.forEach(el => {
-                            let rawTitle = el.querySelector("title").textContent.trim();
-                            let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
-                            let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
-
-
-                            let content = el.querySelector("content").textContent.trim();
-                            let publishedDate = el.querySelector("published").innerHTML;
-                            let relativeTime = timeAgo(publishedDate);
-
-                            html += `
-                                <div class="statuscafe-entry">
-                                    <p class="statuscafe-username">
-                                        <span class="status-meta">
-                                        <span class="mumble-time">${relativeTime}</span>
-                                        <span class="mumble-title">${emoji} </span>
-                                      </span>
-                                      </p>
-                                    <p class="statuscafe-content">${content}</p>
-
-                                </div>
-                            `;
-                        });
-                        document.getElementById("feed-reader").innerHTML = html;
-                    });
+                document.getElementById("feed-reader").innerHTML = html;
+            })
+            .catch(error => { // 添加错误处理，增强健壮性
+                console.error('Error fetching or parsing feed:', error);
+                document.getElementById("feed-reader").innerHTML = '<p>无法加载状态。</p>';
+            });
+    </script>
             </script>
     </details>
     </div>

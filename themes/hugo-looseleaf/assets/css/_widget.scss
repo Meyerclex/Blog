@@ -45,6 +45,61 @@
 }
 
 
+// 便利贴 note
+
+.note__item {
+  margin-top: 20px;
+  width: 95%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.note__day {
+  padding: 5px;
+  //font: 90% "HuiwenMincho", cursive;
+  //border-bottom: 2px solid #111;
+}
+
+.note__list {
+  padding: 8px 12px;
+  line-height: 1.2;
+  font-size: 90%;
+}
+
+.note {
+  flex: 0 0 50%;
+  /* 菜单部分占据 50% 宽度 */
+  box-sizing: border-box;
+}
+
+#tools {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, var(--tools) 0%, var(--tools-transparent) 100%);
+  border-radius: 10px;
+  padding: 10px;
+}
+#tools .tools-item {
+  color: unset;
+  display: block;
+  text-align: center;
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#tools .tools-item a {
+  color: unset;
+}
+
+
+
+
+
+
+
+
+
+
+
 // 拍立得小组件
 #meow-box {
   padding: 5px 15px 15px 15px;
@@ -94,33 +149,6 @@
     padding: 15px;
     margin: 20px 0px;
   }
-}
-
-// 便利贴 note
-
-.note__item {
-  margin-top: 20px;
-  width: 95%;
-  position: relative;
-  margin-bottom: 15px;
-}
-
-.note__day {
-  padding: 5px;
-  //font: 90% "HuiwenMincho", cursive;
-  //border-bottom: 2px solid #111;
-}
-
-.note__list {
-  padding: 8px 12px;
-  line-height: 1.2;
-  font-size: 90%;
-}
-
-.note {
-  flex: 0 0 50%;
-  /* 菜单部分占据 50% 宽度 */
-  box-sizing: border-box;
 }
 
 
@@ -245,3 +273,4 @@ div.pagefind-ui__drawer {
   color: var(--text-color);
   background: var(--mark);
 }
+
