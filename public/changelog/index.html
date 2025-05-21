@@ -48,8 +48,11 @@
 
 因为嫌弃默认emoji不好看所以搜索了一下，找到了hugo-mod-twemoji这个库！😉twemoji没有描边好看多了！
 
-💛 引入Twemoji的步骤
-如果使用hugo-mod来引入，会导致一个问题就是，它会下载七千多个表情文件放在public/twemoji里，导致每次部署都超级久……">
+
+
+「 引入Twemoji的步骤 📑 」
+
+如果使用hugo-mod来引入，会导致一个问题就是，它会下载七千多个表情文件放在public/twemoji里，导致每次部署都超级久，吓得我忙不迭复原了。然后开始尝试Gemini给我的本地化Twemoji方法：">
     <meta property="og:title" content="站点更新日志 Changelog">
     <meta property="og:description" content="📠 更新日志 / Changelog
 2025/05/21 Twemoji的应用
@@ -62,8 +65,11 @@
 
 因为嫌弃默认emoji不好看所以搜索了一下，找到了hugo-mod-twemoji这个库！😉twemoji没有描边好看多了！
 
-💛 引入Twemoji的步骤
-如果使用hugo-mod来引入，会导致一个问题就是，它会下载七千多个表情文件放在public/twemoji里，导致每次部署都超级久……">
+
+
+「 引入Twemoji的步骤 📑 」
+
+如果使用hugo-mod来引入，会导致一个问题就是，它会下载七千多个表情文件放在public/twemoji里，导致每次部署都超级久，吓得我忙不迭复原了。然后开始尝试Gemini给我的本地化Twemoji方法：">
     <meta property="og:image" content="">
   
 
@@ -257,12 +263,15 @@
 <ol start="2">
 <li>因为嫌弃默认emoji不好看所以搜索了一下，找到了<a href="https://github.com/jakejarvis/hugo-mod-twemoji" target="_blank" rel="noopener noreferrer">hugo-mod-twemoji</a>这个库！😉twemoji没有描边好看多了！</li>
 </ol>
-<h4 id="-引入twemoji的步骤">💛 引入Twemoji的步骤</h4>
-<p>如果使用<code>hugo-mod</code>来引入，会导致一个问题就是，它会下载七千多个表情文件放在<code>public/twemoji</code>里，导致每次部署都超级久……</p>
+<details>
+<summary>
+「 引入Twemoji的步骤 📑 」
+</summary>
+<p>如果使用<code>hugo-mod</code>来引入，会导致一个问题就是，它会下载七千多个表情文件放在<code>public/twemoji</code>里，导致每次部署都超级久，吓得我忙不迭复原了。然后开始尝试Gemini给我的本地化Twemoji方法：</p>
 <ol>
 <li>
 <p>打开<a href="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" target="_blank" rel="noopener noreferrer">twemoji.min.js</a>链接后<code>ctrl+s</code>，将脚本保存到<code>assets/js</code>目录下）。</p>
-<ol start="2">
+</li>
 <li>
 <p>在<code>static</code>目录里创建一个新的子文件夹，例如：<code>static/my-emojis/svg/</code></p>
 </li>
@@ -271,8 +280,6 @@
 </li>
 <li>
 <p>将如下代码放入你<code>layouts/baseof.html</code>文件中的<code>&lt;/body&gt;</code>标签前</p>
-</li>
-</ol>
 </li>
 </ol>
 
@@ -296,7 +303,8 @@
             <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
         </svg>
     </button>
-</div><p>不过何故如此大费周章啊？我又不怎么用emoji……人家已经不是中学生了。</p>
+</div></details>
+<p>不过何故如此大费周章啊？我又不怎么用emoji……我已经不是中学生了。</p>
 <p>又及：对引用样式不是特别满意但又想不出改成什么样（呆）（这都快写成Changediary了）😿</p>
 <hr>
 <h3 id="20250520-网页加载速度问题">2025/05/20 网页加载速度问题</h3>
