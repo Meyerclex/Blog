@@ -8,6 +8,7 @@
                 {{- block "main" . }}{{- end }}
             </div>
         </main>
+    {{ partial "twemoji" . }}
     </body>
     {{- if .Params.custom_js -}}
         {{- range .Params.custom_js -}}

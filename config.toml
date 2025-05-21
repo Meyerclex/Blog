@@ -3,6 +3,8 @@ title = '再會，謝謝所有的魚'
 theme = ['hugo-looseleaf'] #scribbles theme_1
 languageCode = "zh-cn"
 hasCJKLanguage = true
+# config.toml
+enableEmoji = true
 
 [module]
 [module.hugoVersion]
@@ -14,7 +16,8 @@ target = 'assets'
 [[module.mounts]]
 source = 'static'
 target = 'assets'
-
+[[module.imports]]
+path = "github.com/jakejarvis/hugo-mod-twemoji"
 
 [markup]
 [markup.goldmark]

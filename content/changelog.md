@@ -5,18 +5,26 @@ date: 2021-06-28
 slug: changelog
 toc: true
 layout: "about"
-
 ---
 
 ## 📠 更新日志 / Changelog
 
 ### 2025/05/21
 
-又做了一个小小的导航栏放一些书签搜索之类的链接，因为不想放在上方主栏目里（太长了）。<mark>be like：</mark>
+1. 又做了一个小小的tools bar放一些书签搜索之类的链接，因为不想放在上方主栏目里（太长了）。<mark>be like：</mark>
 
-![](/blog/Snipaste_2025-05-21_12-12-29.png)
+<center>
 
-对引用样式不是特别满意但又想不出改成什么样（呆）（这都快写成Changediary了）
+![tools bar](/blog/Snipaste_2025-05-21_12-12-29.png)
+
+</center>
+
+2. 因为嫌弃默认emoji不好看所以搜索了一下，找到了[hugo-mod-twemoji](https://github.com/jakejarvis/hugo-mod-twemoji)这个库！😉twemoji没有描边好看多了！
+
+不过何故如此大费周章啊？我又不怎么用emoji……人家已经不是中学生了。
+
+又及：对引用样式不是特别满意但又想不出改成什么样（呆）（这都快写成Changediary了）😿
+
 
 ### 2025/05/20 网页加载速度问题
 
@@ -228,3 +236,4 @@ home = ["HTML"]
 ### 2021-11-14 建站日
 
 拥有了自己的第一个私人博客。
+

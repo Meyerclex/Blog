@@ -636,3 +636,11 @@ body[a="dark"] #copyright, body[a="dark"] #meow-box, .special-bg  {
 @import "taxonomy";
 @import "toc";
 
+
+img.emoji {
+  height: 1.2em;
+  width: 1.2em;
+  margin: 0 .15em;
+  vertical-align: -0.2em;
+  border-radius: 0px;
+}
