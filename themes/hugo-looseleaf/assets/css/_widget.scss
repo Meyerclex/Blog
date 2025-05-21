@@ -126,11 +126,11 @@
   pointer-events: auto; /* 悬停时响应鼠标事件 */
 }
 
-
+/* --- 移动端样式（仅在屏幕宽度小于或等于 768px 时生效） --- */
 @media (max-width: 768px) {
   #tools {
     /* 移动端默认收起状态的 max-height，确保收起时只显示第一个项目 */
-    max-height: 40px; /* **修复：明确指定收起时的max-height** */
+    max-height: 40px; /* 修复：明确指定收起时的max-height */
     overflow: hidden; /* 隐藏超出部分 */
     transition: max-height 0.3s ease-out; /* 展开/收起过渡 */
     cursor: default; /* 移动端不需要手型光标 */
@@ -162,47 +162,33 @@
     pointer-events: auto; /* 展开时可点击 */
   }
 
-  /* 移动端：显示并定位小三角形图标 */
+  /* **关键修正：在移动端彻底隐藏三角形图标** */
   #tools .toggle-icon {
-    display: block; /* 在移动端显示图标 */
-    position: absolute; /* 绝对定位，不影响文本流 */
-    left: 5px; /* 距离左侧的距离 */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.8em; /* 图标大小 */
-    cursor: pointer; /* 鼠标变为手型 */
-    padding: 5px; /* 增加点击区域 */
-    color: var(--text-color);
-    z-index: 2; /* 确保图标可点击且在链接之上 */
-    width: 0;
-    height: 0;
+    display: none; /* 明确隐藏，不再显示 */
   }
 
-  /* 默认朝右的三角形 */
+  /* 移除之前关于 .toggle-icon::before 的所有规则，因为它现在不需要显示了 */
+  /* 如果你的文件中还有这些，请一并删除：
   #tools .toggle-icon::before {
-    content: ''; /* **清空 content，我们用边框画** */
-    display: block; /* 确保伪元素是一个块级元素 */
-    width: 0;
-    height: 0;
-    border-top: 6px solid transparent;    /* 增大这个值，让三角形更“高”或更“胖” */
-    border-bottom: 6px solid transparent; /* 增大这个值，让三角形更“高”或更“胖” */
-    border-left: 8px solid var(--text-color); /* 增大这个值，让三角形更“宽”或更“长” */
-
-    position: absolute; /* 相对于父级 .toggle-icon 定位 */
-    top: 50%;
-    left: 50%; /* 居中定位，然后用 transform 微调 */
-    transform: translate(-50%, -50%); /* 确保居中 */
-    transition: transform 0.3s ease; /* 添加旋转过渡效果 */
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 8px solid var(--text-color);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.3s ease;
   }
-  /* 菜单展开时，小三角形朝下 */
   #tools.open .toggle-icon::before {
-    content: ''; /* **清空 content，确保用边框画** */
-    /* **旋转 90 度形成朝下箭头** */
-    transform: translate(-50%, -50%) rotate(90deg); /* 旋转 90 度 */
+      content: '';
+      transform: translate(-50%, -50%) rotate(90deg);
   }
+  */
 }
-
-
 
 // 拍立得小组件
 #meow-box {
