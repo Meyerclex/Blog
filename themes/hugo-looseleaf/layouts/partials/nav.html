@@ -10,15 +10,35 @@
 
 
 
-
 <div id="tools">
-  {{ range .Site.Menus.main }}
-  <div class="tools-item"><a href="{{ .URL }}" >✦ {{ .Name }} ✦</a></div>
+  {{ range $index, $item := .Site.Menus.main }}
+  <div class="tools-item">
+    {{ if eq $index 0 }}<span class="toggle-icon"></span>{{ end }}<a href="{{ .URL }}" >✦ {{ .Name }} ✦</a>
+  </div>
   {{ end }}
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // 移动端现在是默认完全展开的，不需要JavaScript控制
-    // 所以这里没有任何关于 #tools 的逻辑
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
   });
 </script>

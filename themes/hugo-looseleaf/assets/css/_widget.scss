@@ -72,12 +72,14 @@
   box-sizing: border-box;
 }
 
+/* --- 你原有的 #small-nav 和 #tools 基础样式 --- */
 #small-nav, #tools {
   background-color: transparent;
   background-image: linear-gradient(180deg, var(--tools) 0%, var(--tools-transparent) 100%);
   border-radius: 10px;
   padding: 10px;
 }
+
 #small-nav .small-nav-item, #tools .tools-item {
   color: unset;
   display: block;
@@ -85,79 +87,113 @@
   font-size: 80%;
   text-transform: uppercase;
   letter-spacing: 2px;
+  position: relative; /* 为toggle-icon的绝对定位提供上下文 */
 }
+
 #small-nav .small-nav-item a, #tools .tools-item a {
   color: unset;
 }
 
+/* --- PC 端样式（仅在屏幕宽度大于 768px 时生效） --- */
+@media (min-width: 769px) { /* **关键修正：使用 min-width 769px** */
+  #tools {
+    position: relative;
+    overflow: hidden; /* 隐藏超出部分 */
+    max-height: 40px; /* 默认显示第一个菜单项的高度 */
+    transition: max-height 0.6s ease-out; /* 添加展开/收起的过渡效果 */
+    cursor: pointer; /* 鼠标变为手型，提示可交互 */
+    z-index: 10; /* 确保下拉菜单在其他内容之上 */
+  }
 
+  /* 调整第一个菜单项的样式，确保在PC端也是可见的 */
+  #tools .tools-item:first-child {
+    display: block; /* 确保第一个总是可见 */
+  }
 
-/* --- PC 端（默认显示第一个，悬停展开并带过渡） --- */
-#tools {
-  position: relative;
-  overflow: hidden; /* 隐藏超出部分 */
-  max-height: 40px; /* 默认显示第一个菜单项的高度，根据实际情况调整 */
-  transition: max-height 0.6s ease-out; /* 添加展开/收起的过渡效果 */
-  cursor: pointer; /* 鼠标变为手型，提示可交互 */
-  z-index: 10; /* 确保下拉菜单在其他内容之上 */
+  /* 默认隐藏除了第一个之外的所有菜单项 */
+  #tools .tools-item:not(:first-child) {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+  }
+
+  /* 鼠标悬停时显示所有菜单项 */
+  #tools:hover {
+    max-height: 200px; /* 悬停时设置为一个足够大的高度 */
+  }
+
+  #tools:hover .tools-item:not(:first-child) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* **PC 端：隐藏切换图标（确保此规则在此媒体查询内生效）** */
+  #tools .toggle-icon {
+    display: none;
+  }
 }
 
-/* 调整第一个菜单项的样式，确保在PC端也是可见的 */
-#tools .tools-item:first-child {
-  display: block; /* 确保第一个总是可见 */
-}
-
-/* 默认隐藏除了第一个之外的所有菜单项 */
-#tools .tools-item:not(:first-child) {
-  display: block; /* 暂时设置为block，让max-height控制显示/隐藏 */
-  opacity: 0; /* 默认透明 */
-  transition: opacity 0.3s ease-out; /* 为透明度添加过渡 */
-  pointer-events: none; /* 默认不响应鼠标事件 */
-}
-
-/* 鼠标悬停时显示所有菜单项 */
-#tools:hover {
-  max-height: 200px; /* 悬停时设置为一个足够大的高度，确保所有菜单项都能显示 */
-  /* 你需要根据菜单项的数量和行高调整这个值，确保能完全显示 */
-}
-
-#tools:hover .tools-item:not(:first-child) {
-  opacity: 1; /* 悬停时显示 */
-  pointer-events: auto; /* 悬停时响应鼠标事件 */
-}
-
-
-
-/* --- 移动端（默认完全展开，无交互） --- */
+/* --- 移动端样式（仅在屏幕宽度小于或等于 768px 时生效） --- */
 @media (max-width: 768px) {
   #tools {
-    max-height: none; /* 移除最大高度限制，让所有内容自然显示 */
-    overflow: visible; /* 允许内容溢出，不再隐藏 */
-    cursor: default; /* 移除鼠标手型 */
-    /* 移除 PC 端的 z-index，如果移动端不需要它 */
-    z-index: auto;
+    max-height: 40px; /* 移动端默认收起状态，确保只显示第一个项目 */
+    overflow: hidden; /* 隐藏超出部分 */
+    transition: max-height 0.3s ease-out; /* 展开/收起过渡 */
+    cursor: default; /* 移动端不需要手型光标 */
+    z-index: auto; /* 移除 PC 端的 z-index */
   }
 
-  /* 确保所有菜单项都可见并可点击 */
+  /* 移动端展开时的状态 */
+  #tools.open {
+    max-height: 200px; /* 移动端展开高度 */
+  }
+
+  /* 移动端统一所有菜单项的样式 */
   #tools .tools-item {
     display: block; /* 确保所有菜单项都显示为块级元素 */
-    opacity: 1 !important; /* **关键：强制覆盖PC端的透明度** */
-    pointer-events: auto !important; /* **关键：强制覆盖PC端鼠标事件** */
+    text-align: center; /* 确保所有文本居中 */
+    position: relative; /* 为图标的绝对定位提供上下文 */
   }
 
-  /* 移除移动端第一个菜单项的特殊样式（flex布局和padding-right）*/
-  #tools .tools-item:first-child {
-    padding-right: 0; /* 移除为图标留出的空间 */
-    position: static; /* 移除相对定位 */
-    /* display: block; 这一行可以省略，因为上面的 .tools-item 已经包含了 */
+  /* 移动端默认隐藏除第一个之外的所有菜单项 */
+  #tools .tools-item:not(:first-child) {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
   }
 
-  /* 移除移动端下拉/收起图标的样式 */
+  /* 移动端菜单展开时，显示其他菜单项 */
+  #tools.open .tools-item:not(:first-child) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* 移动端：显示并定位小三角形图标 */
   #tools .toggle-icon {
-    display: none; /* 直接隐藏切换图标 */
+    display: block; /* 在移动端显示图标 */
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--text-color);
+    z-index: 2;
+  }
+
+  /* 默认朝右的三角形 */
+  #tools .toggle-icon::before {
+    content: '▶'; /* Unicode 右三角形 */
+    color: var(--text-color);
+  }
+
+  /* 菜单展开时，小三角形朝下 */
+  #tools.open .toggle-icon::before {
+    content: '▼'; /* Unicode 下三角形 */
   }
 }
-
 
 
 // 拍立得小组件

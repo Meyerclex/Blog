@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.3f61b973711058917a09e48717c81b54d969795f96837f81cd0353318c760fdc1230d79aa6a02fae6507af7e7849203531bc4955936fee9a32d4f683d501047a.css" integrity="sha512-P2G5c3EQWJF6CeSHF8gbVNlpeV&#43;Wg3&#43;BzQNTMYx2D9wSMNeapqAvrmUHr354SSA1MbxJVZNv7poy1PaD1QEEeg==" />
+  <link rel="stylesheet" href="/css/main.b7be5a55b76bac48fd28ba437a514de2f2a0d59d334c68aef43522471ed1e8b518449c1fd94b725c7c5ed5ee5e67fd4d85f6effb23bb29d7501dbfc0929d721a.css" integrity="sha512-t75aVbdrrEj9KLpDelFN4vKg1Z0zTGiu9DUiRx7R6LUYRJwf2UtyXHxe1e5eZ/1Nhfbv&#43;yO7KddQHb/Akp1yGg==" />
   
   
   
@@ -194,9 +194,7 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-    <div class="post-meta">
         
-
 
 
 
@@ -218,18 +216,51 @@
 
 <div id="tools">
   
-  <div class="tools-item"><a href="/" >✦ Home ✦</a></div>
+  <div class="tools-item">
+    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
+  </div>
   
-  <div class="tools-item"><a href="/about" >✦ About ✦</a></div>
+  <div class="tools-item">
+    <a href="/about" >✦ About ✦</a>
+  </div>
   
-  <div class="tools-item"><a href="/posts" >✦ Archive ✦</a></div>
+  <div class="tools-item">
+    <a href="/posts" >✦ Archive ✦</a>
+  </div>
   
-  <div class="tools-item"><a href="/links" >✦ Friends ✦</a></div>
+  <div class="tools-item">
+    <a href="/links" >✦ Friends ✦</a>
+  </div>
   
-  <div class="tools-item"><a href="/collection" >✦ Museum ✦</a></div>
+  <div class="tools-item">
+    <a href="/collection" >✦ Museum ✦</a>
+  </div>
   
-</div>
-    </div>
+</div><script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
     <article class="post-content">
         <h1>About</h1>
         <div id="post-meta">

@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.3d51f130c0fa677c1ea1b389adec107152fd74ad8050b212f3b95d6abccbfead80cba63b0677dfe3434892563eeb20a598cf0a6d4c4ab046bbb8b601face1ae9.css" integrity="sha512-PVHxMMD6Z3weobOJrewQcVL9dK2AULIS87ldarzL/q2Ay6Y7Bnff40NIklY&#43;6yClmM8KbUxKsEa7uLYB&#43;s4a6Q==" />
+  <link rel="stylesheet" href="/css/main.b7be5a55b76bac48fd28ba437a514de2f2a0d59d334c68aef43522471ed1e8b518449c1fd94b725c7c5ed5ee5e67fd4d85f6effb23bb29d7501dbfc0929d721a.css" integrity="sha512-t75aVbdrrEj9KLpDelFN4vKg1Z0zTGiu9DUiRx7R6LUYRJwf2UtyXHxe1e5eZ/1Nhfbv&#43;yO7KddQHb/Akp1yGg==" />
   
   
   
@@ -190,28 +190,75 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-<div class="post-meta">
-    <div id="header-post" >
-  <span id="nav" data-pagefind-ignore>
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/about">About</a></li>
-      
-        <li><a href="/posts">Archive</a></li>
-      
-        <li><a href="/links">Friends</a></li>
-      
-        <li><a href="/collection">Museum</a></li>
-      
-    </ul>
-  </span>
-</div>
+
+    
 
 
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tools">
+  
+  <div class="tools-item">
+    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/about" >✦ About ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/posts" >✦ Archive ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/links" >✦ Friends ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/collection" >✦ Museum ✦</a>
+  </div>
+  
+</div><script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
+
 <article >
     <h1 data-pagefind-meta="title" t>病情反复，仍需酒神庇护</h1>
     <div id="post-meta">
