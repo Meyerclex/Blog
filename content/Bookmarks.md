@@ -35,3 +35,14 @@ last_edit: May 20, 2025
 - https://projects.verou.me/css3patterns/
 
 直接从浏览器收藏夹/Notion里挪过来的，回头再一个个点击编辑一下命名。
+
+<style>
+.header-content article li {
+  display: flex; 
+  gap: 8px;  
+  margin-bottom: 0.5em; 
+}
+.header-content article li a {
+  word-break: break-all;
+}
+</style>
