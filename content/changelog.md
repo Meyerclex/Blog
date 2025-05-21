@@ -9,22 +9,54 @@ layout: "about"
 
 ## 📠 更新日志 / Changelog
 
-### 2025/05/21
+### 2025/05/21 Twemoji的应用
 
 1. 又做了一个小小的tools bar放一些书签搜索之类的链接，因为不想放在上方主栏目里（太长了）。<mark>be like：</mark>
 
 <center>
 
-![tools bar](/blog/Snipaste_2025-05-21_12-12-29.png)
+<img src="/blog/Snipaste_2025-05-21_12-12-29.png" style="width: 70%" alt="tools bar">
 
 </center>
 
 2. 因为嫌弃默认emoji不好看所以搜索了一下，找到了[hugo-mod-twemoji](https://github.com/jakejarvis/hugo-mod-twemoji)这个库！😉twemoji没有描边好看多了！
 
+
+#### 💛 引入Twemoji的步骤
+
+如果使用`hugo-mod`来引入，会导致一个问题就是，它会下载七千多个表情文件放在`public/twemoji`里，导致每次部署都超级久……
+
+1. 打开[twemoji.min.js](https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js)链接后`ctrl+s`，将脚本保存到`assets/js`目录下）。
+
+   2. 在`static`目录里创建一个新的子文件夹，例如：`static/my-emojis/svg/`
+
+   3. 访问[twemoji](https://github.com/twitter/twemoji/tree/master)，下载整个库压缩包，然后把`assets/svg`文件里的图标解压放到上一步的文件夹内。
+
+   4. 将如下代码放入你`layouts/baseof.html`文件中的`</body>`标签前
+
+```
+    {{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
+    <script src="{{ $twemojiJS.RelPermalink }}"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+            base: '{{ "/my-emojis/" | relURL }}', 
+            folder: 'svg', 
+            ext: '.svg' 
+            });
+            });
+    </script>
+
+</body>
+```
+
+
+
 不过何故如此大费周章啊？我又不怎么用emoji……人家已经不是中学生了。
 
 又及：对引用样式不是特别满意但又想不出改成什么样（呆）（这都快写成Changediary了）😿
 
+---
 
 ### 2025/05/20 网页加载速度问题
 

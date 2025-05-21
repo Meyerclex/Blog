@@ -447,14 +447,14 @@ images = [
 <p>上述组件只能放置在非文章区域，理论上也可以将组件做成Shortcode（短代码），在文章需要的地方使用。但我始终没有成功……所以就将就用吧！</p>
 <h2 id="status-cafe组件">Status Cafe组件</h2>
 <h3 id="1-介绍">1. 介绍</h3>
-<p><a href="https://status.cafe/">Status Cafe</a>是一个可以发布当前状态的网站，其提供了Atom格式的公开RSS feed，用户发布的状态可以用RSS阅读器订阅，可以通过JavaScript从自己的订阅源中抓取发布的状态，然后在站内解析和显示，制作成小组件放在各种静态网页上自动更新。</p>
+<p><a href="https://status.cafe/" target="_blank" rel="noopener noreferrer">Status Cafe</a>是一个可以发布当前状态的网站，其提供了Atom格式的公开RSS feed，用户发布的状态可以用RSS阅读器订阅，可以通过JavaScript从自己的订阅源中抓取发布的状态，然后在站内解析和显示，制作成小组件放在各种静态网页上自动更新。</p>
 <p>Status Cafe在英语个人网站中似乎还蛮流行的，功能非常简约，只能发布一个Emoji和简单的文字内容，然后显示发布时间过去了多久。</p>
-<p>但这个组件在中文个站里使用不多，相似功能的组件我只了解过<a href="https://artitalk.js.org/">Artitalk</a>，因为看起来CSS修改项应该很多，所以我没有尝试。以及Mengru做的<a href="https://github.com/mengrru/mastodon-on-blog">Mastodon-on-blog</a>，也可以实现同样的“碎碎念”功能，相较来说可能这个毛象组件在隐私性和管理上应该更好（因为Status Cafe是可以抓取任意订阅源的）。</p>
+<p>但这个组件在中文个站里使用不多，相似功能的组件我只了解过<a href="https://artitalk.js.org/" target="_blank" rel="noopener noreferrer">Artitalk</a>，因为看起来CSS修改项应该很多，所以我没有尝试。以及Mengru做的<a href="https://github.com/mengrru/mastodon-on-blog" target="_blank" rel="noopener noreferrer">Mastodon-on-blog</a>，也可以实现同样的“碎碎念”功能，相较来说可能这个毛象组件在隐私性和管理上应该更好（因为Status Cafe是可以抓取任意订阅源的）。</p>
 <p>我用Status Cafe很大一部分原因是因为在它的Thread上随机逛到了很多很有意思的个人网站，虽然它的网页功能很简单，只能定义一下个人资料和CSS，删除修改管理一下发布过的状态，但用户活跃度却很高，上去碎碎念时顺便摸摸鱼看看别人的网站，感觉回到了十岁上网的感觉。</p>
-<p>这个是<a href="https://status.cafe/users/lyin">我的个人主页</a>，欢迎参观。</p>
+<p>这个是<a href="https://status.cafe/users/lyin" target="_blank" rel="noopener noreferrer">我的个人主页</a>，欢迎参观。</p>
 <hr>
 <h3 id="2-实现">2. 实现</h3>
-<p>我做这个组件时参考了这个教程：<a href="https://bechnokid.neocities.org/resources/statuscafefeed/">Creating a Feed Reader from Status Cafe</a>，方法大致相同，但对用户名、时间以及Emoji的解析之类的地方我做了一些修改，具体比较重要的地方是：</p>
+<p>我做这个组件时参考了这个教程：<a href="https://bechnokid.neocities.org/resources/statuscafefeed/" target="_blank" rel="noopener noreferrer">Creating a Feed Reader from Status Cafe</a>，方法大致相同，但对用户名、时间以及Emoji的解析之类的地方我做了一些修改，具体比较重要的地方是：</p>
 <ul>
 <li>筛去了用户名不展示。</li>
 <li>时间上显示“…秒/分钟/小时以前”，而非日期“2025-05-13”。</li>
@@ -738,7 +738,7 @@ box-sizing: border-box;
 </div><p>如果想要它默认折叠，删除<code>open</code>即可。因为我只在一处使用，所以将这里写死了，如果你需要多次复用，并在不同的地方分别控制展开与折叠，强烈建议把代码丢给ChatGPT进行修改。</p>
 <h3 id="4-选做关于个人主页美化">4. 选做：关于个人主页美化？</h3>
 <p>如果你也想要一个五彩缤纷的Status Cafe个人主页，可以在用户页的Setting中进行自定义。</p>
-<p>我用了<a href="https://smallpancakes.nekoweb.org/themes/">smallpancakes</a>提供的Kawaii Pancake主题（伊实在太善心了甚至是一键复制），只是进行了背景图片和样式的一些魔改，基础代码还是来源于TA，不然我完全不知道从何下手。</p>
+<p>我用了<a href="https://smallpancakes.nekoweb.org/themes/" target="_blank" rel="noopener noreferrer">smallpancakes</a>提供的Kawaii Pancake主题（伊实在太善心了甚至是一键复制），只是进行了背景图片和样式的一些魔改，基础代码还是来源于TA，不然我完全不知道从何下手。</p>
 
 <img src="/blog/Snipaste_2025-05-13_16-17-15.png" alt="如何进行主页美化" loading="lazy" class="post-image"/>
 如何进行主页美化
@@ -1368,8 +1368,17 @@ h1::after, h2::after {
 
             </div>
         </main>
+
     
-<script src="http://localhost:1313/js/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"http://localhost:1313/twemoji/","ext":".svg","folder":"svg"})</script>
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
 
     </body></html>

@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.77aa11c5509c3370776bfc5a1d6c47bceb5f3670ef37b672c93a7ac1677fc84983a8ca535fe7f61ac0cb3b2d3be1a3ccda53d9f04c55dc8518efe833901029a0.css" integrity="sha512-d6oRxVCcM3B3a/xaHWxHvOtfNnDvN7ZyyTp6wWd/yEmDqMpTX&#43;f2GsDLOy074aPM2lPZ8ExV3IUY7&#43;gzkBApoA==" />
+  <link rel="stylesheet" href="/css/main.3d51f130c0fa677c1ea1b389adec107152fd74ad8050b212f3b95d6abccbfead80cba63b0677dfe3434892563eeb20a598cf0a6d4c4ab046bbb8b601face1ae9.css" integrity="sha512-PVHxMMD6Z3weobOJrewQcVL9dK2AULIS87ldarzL/q2Ay6Y7Bnff40NIklY&#43;6yClmM8KbUxKsEa7uLYB&#43;s4a6Q==" />
   
   
   
@@ -32,7 +32,6 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-
 
 
 
@@ -62,7 +61,7 @@
 
   
   
-  <script src="/js/pic-js.min.da26304548ee64740899ade7d50f905588052ea81c6621a6838d9977742004b6.js" integrity="sha256-2iYwRUjuZHQIma3n1Q&#43;QVYgFLqgcZiGmg42Zd3QgBLY=" crossorigin="anonymous"></script>
+  <script src="/js/pic-js.min.7836958bb39ce30b15564042a0a055dc6b37f992ab718df56de04bac189718fc.js" integrity="sha256-eDaVi7Oc4wsVVkBCoKBV3Gs3&#43;ZKrcY31beBLrBiXGPw=" crossorigin="anonymous"></script>
   
 
 
@@ -93,8 +92,6 @@
       }
     }
   </script>
-
-  <link href="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.css" rel="stylesheet">
 
 
 </head>
@@ -333,7 +330,7 @@
 <hr>
 <p>昨天跟 Missing 聊天，说有动换主题的念头，但我们都非常喜欢 Stack 主题的搜索功能，而大多数主题都需要额外配置这一部分。于是随手 Google 一下 Hugo theme，筛选了近一个月的结果——忽然找到了 Luna 主题，作者上周刚发了自荐的帖子，点进去摸摸看看，搜索和字数统计一应俱全，而且配色春意盎然非常漂亮，尽管已经入夏，仍然与友友敲手决定换上。但刚摸上没多久就报错连连，所以决定写篇新博客记录这个主题的安装及装修过程。</p>
 <blockquote>
-<p>有一些修改直接参考了上一篇博客装修：<a href="https://gregueria.icu/posts/decoration/">Hugo Stack | 删删改改大胆行事</a>。</p>
+<p>有一些修改直接参考了上一篇博客装修：<a href="https://gregueria.icu/posts/decoration/" target="_blank" rel="noopener noreferrer">Hugo Stack | 删删改改大胆行事</a>。</p>
 <p>说给小鸟：不要把博客当成备忘录来写。</p>
 <p>再次说给小鸟：多写博客少装修啦 XD</p>
 </blockquote>
@@ -356,7 +353,7 @@
 </details>
 <p>诶？怎么装修 To do List 一件没干，贫嘴扯淡已经写满 800 字。</p>
 <h2 id="主题安装">主题安装</h2>
-<p>Luna 主题需要 0.97.0 extended 版本的 Hugo。相关准备<a href="https://mantyke.icu/2021/hugo-build-blog/">塔塔的教程</a>已经写的很清楚了。我原本的 Hugo 版本太低所以需要重新下载，直接覆盖掉原本的<code>Hugo.exe</code>。</p>
+<p>Luna 主题需要 0.97.0 extended 版本的 Hugo。相关准备<a href="https://mantyke.icu/2021/hugo-build-blog/" target="_blank" rel="noopener noreferrer">塔塔的教程</a>已经写的很清楚了。我原本的 Hugo 版本太低所以需要重新下载，直接覆盖掉原本的<code>Hugo.exe</code>。</p>
 <p>同时根据这个文档的指示，安装 NodeJs 和 postcss-cli，关于后者的安装，按住<code>Win+R</code>，输入<code>cmd</code>，输入<code>npm install postcss-cli -g</code>。</p>
 <p>总而言之，换好以后，去 Github 上新建一个仓库，在 E 盘随便哪个盘右键<code>git bash here</code>，然后输入<code>hugo new site luna</code>（Luna 是站点文件夹的名字）。接着进去这个文件夹，同样右键选择<code>git bash here</code>，依次敲下：</p>
 
@@ -391,7 +388,7 @@ npm install</code></pre>
 <p>接着去 Vercel 把这个仓库 import 进去，接着在这几个地方需要注意一下：</p>
 <img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220506164743.png"/>
 <ol>
-<li><code>BUILD COMMAND</code>中写入：<code>npm install hugo-extended --save-dev</code>。关于这一步是因为我发现直接部署会出现<code>command “Hugo -D --gc”exited with 255</code>的报错，并且应该不是只有我一个人遇到了这个麻烦。这里我参考了<a href="https://discourse.gohugo.io/t/netlify-build-error-255-tocss-troubleshooting/25887">这个帮助里的指示</a>，并不是很清楚这个原理，不过总之报错解决顺利 Deploy 了（？</li>
+<li><code>BUILD COMMAND</code>中写入：<code>npm install hugo-extended --save-dev</code>。关于这一步是因为我发现直接部署会出现<code>command “Hugo -D --gc”exited with 255</code>的报错，并且应该不是只有我一个人遇到了这个麻烦。这里我参考了<a href="https://discourse.gohugo.io/t/netlify-build-error-255-tocss-troubleshooting/25887" target="_blank" rel="noopener noreferrer">这个帮助里的指示</a>，并不是很清楚这个原理，不过总之报错解决顺利 Deploy 了（？</li>
 <li>添加环境变量<code>HUGO_VERSION</code>，这个主题至少需要 0.97.0，我填了最新的 0.98.0。</li>
 </ol>
 <p>如果你在这一步遇到了这个报错：</p>
@@ -441,7 +438,7 @@ npm install</code></pre>
         </svg>
     </button>
 </div><h2 id="全站字数统计">全站字数统计</h2>
-<p>这一部分感谢<a href="https://mantyke.icu/2022/stack-theme-furnish03/#%E5%8D%87%E7%BA%A7%E8%BF%9B%E5%8C%96%E6%9C%AC%E7%AB%99%E6%80%BB%E5%AD%97%E6%95%B0%E6%98%BE%E7%A4%BA">塔塔的站点总字数显示教程</a>！完全是复制粘贴 😭</p>
+<p>这一部分感谢<a href="https://mantyke.icu/2022/stack-theme-furnish03/#%E5%8D%87%E7%BA%A7%E8%BF%9B%E5%8C%96%E6%9C%AC%E7%AB%99%E6%80%BB%E5%AD%97%E6%95%B0%E6%98%BE%E7%A4%BA" target="_blank" rel="noopener noreferrer">塔塔的站点总字数显示教程</a>！完全是复制粘贴 😭</p>
 <p>在<code>layouts\partials\html\footer.html</code>文件中增添下面中间部分的内容：</p>
 
 <div class="highlight">
@@ -604,7 +601,7 @@ git push -f</code></pre>
         </svg>
     </button>
 </div><blockquote>
-<p>参考：<a href="https://blog.csdn.net/yxlshk/article/details/79944535">Git 恢复之前版本的两种方法</a></p>
+<p>参考：<a href="https://blog.csdn.net/yxlshk/article/details/79944535" target="_blank" rel="noopener noreferrer">Git 恢复之前版本的两种方法</a></p>
 </blockquote>
 <h2 id="页尾运行时间">页尾运行时间</h2>
 <p><code>layouts\partials\components\run-time.html</code>中删掉：</p>
@@ -1125,4 +1122,17 @@ git push -f</code></pre>
 
             </div>
         </main>
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+
     </body></html>

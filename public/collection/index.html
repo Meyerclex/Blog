@@ -432,7 +432,7 @@ enjoy blogging or breaking! :3
 <li><strong>May 2025</strong>：homepage / post list / two different article layouts</li>
 </ul>
 <div style="text-align: center;">
-<p><a href="https://github.com/Meyerclex/hugo-binder-theme">🛁 Github Repository</a></p>
+<p><a href="https://github.com/Meyerclex/hugo-binder-theme" target="_blank" rel="noopener noreferrer">🛁 Github Repository</a></p>
 </div>
 <p>
 <img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/0520/1.png" alt="" loading="lazy" class="post-image"/>
@@ -463,7 +463,7 @@ enjoy blogging or breaking! :3
 <li><strong>January 2025</strong>：薄荷巧克力</li>
 </ul>
 <div style="text-align: center;">
-<p><a href="https://ce20c4ff.hugo-newspaper.pages.dev/">⛳ 主题预览</a></p>
+<p><a href="https://ce20c4ff.hugo-newspaper.pages.dev/" target="_blank" rel="noopener noreferrer">⛳ 主题预览</a></p>
 </div>
 <p>
 <img src="/theme-archive/Jan-2025-light.jpg" alt="" loading="lazy" class="post-image"/>
@@ -476,8 +476,8 @@ enjoy blogging or breaking! :3
 <li><strong>November 2024</strong> <a href="/posts/2024-11-24/">博客三周年，猛猛大装修</a></li>
 </ul>
 <div style="text-align: center;">
-<p><a href="https://rainy-9ie.pages.dev/">⛳ 主题预览</a></p>
-<p><a href="https://github.com/Meyerclex/hugo-rainy">🛁 Github Repository</a></p>
+<p><a href="https://rainy-9ie.pages.dev/" target="_blank" rel="noopener noreferrer">⛳ 主题预览</a></p>
+<p><a href="https://github.com/Meyerclex/hugo-rainy" target="_blank" rel="noopener noreferrer">🛁 Github Repository</a></p>
 </div>
 <p>
 <img src="/theme-archive/November-2024-1.png" alt="" loading="lazy" class="post-image"/>
@@ -490,7 +490,7 @@ enjoy blogging or breaking! :3
 <li><strong>December 2022</strong> <a href="/posts/gruvbox/">换上秋冬色系新主题</a></li>
 </ul>
 <div style="text-align: center;">
-<p><a href="https://gruvbox-theme.vercel.app">⛳ 主题预览</a></p>
+<p><a href="https://gruvbox-theme.vercel.app" target="_blank" rel="noopener noreferrer">⛳ 主题预览</a></p>
 </div>
 <p>
 <img src="/theme-archive/Dec-2022-dark.png" alt="" loading="lazy" class="post-image"/>
@@ -499,12 +499,12 @@ enjoy blogging or breaking! :3
     </p>
 <br>
 <ul>
-<li><strong>September 2022</strong> <a href="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/">换回旧主题，闪闪惹人爱</a></li>
+<li><strong>September 2022</strong> <a href="/posts/%e9%97%aa%e9%97%aa%e6%83%b9%e4%ba%ba%e7%88%b1/">换回旧主题，闪闪惹人爱</a></li>
 </ul>
 <details>
 <summary>「 这个主题已经很久远了 」</summary>
 <div style="text-align: center;">
-<p><a href="https://shining.vercel.app/">⛳ 主题预览</a></p>
+<p><a href="https://shining.vercel.app/" target="_blank" rel="noopener noreferrer">⛳ 主题预览</a></p>
 </div>
 <p>
 <img src="/theme-archive/luna.png" alt="Stack" loading="lazy" class="post-image"/>
@@ -520,13 +520,13 @@ Luna
 <h2 id="more-">More&hellip; 🍰</h2>
 <ul>
 <li>
-<p><a href="https://written.gregueria.icu">📖 Write in Water</a>：fanfiction, or just fantasy</p>
+<p><a href="https://written.gregueria.icu" target="_blank" rel="noopener noreferrer">📖 Write in Water</a>：fanfiction, or just fantasy</p>
 </li>
 <li>
-<p><a href="https://photo.gregueria.icu/">📸 Of Passing &amp; Pause</a>：newbie with a camera, seeing and learning</p>
+<p><a href="https://photo.gregueria.icu/" target="_blank" rel="noopener noreferrer">📸 Of Passing &amp; Pause</a>：newbie with a camera, seeing and learning</p>
 </li>
 <li>
-<p><a href="https://pushoong.com/ask/4862766301/">📫 Pushoong</a>：question box, ask me anything</p>
+<p><a href="https://pushoong.com/ask/4862766301/" target="_blank" rel="noopener noreferrer">📫 Pushoong</a>：question box, ask me anything</p>
 </li>
 <li>
 <p><a href="/index.xml/">🔔 RSS</a>：subscribe via rss</p>
@@ -1090,11 +1090,16 @@ Luna
 </script>
 
 
-
-
     
-<script src="http://localhost:1313/js/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"http://localhost:1313/twemoji/","ext":".svg","folder":"svg"})</script>
-
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
     </body>
 </html>

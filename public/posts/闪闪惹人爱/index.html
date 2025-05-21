@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.77aa11c5509c3370776bfc5a1d6c47bceb5f3670ef37b672c93a7ac1677fc84983a8ca535fe7f61ac0cb3b2d3be1a3ccda53d9f04c55dc8518efe833901029a0.css" integrity="sha512-d6oRxVCcM3B3a/xaHWxHvOtfNnDvN7ZyyTp6wWd/yEmDqMpTX&#43;f2GsDLOy074aPM2lPZ8ExV3IUY7&#43;gzkBApoA==" />
+  <link rel="stylesheet" href="/css/main.3d51f130c0fa677c1ea1b389adec107152fd74ad8050b212f3b95d6abccbfead80cba63b0677dfe3434892563eeb20a598cf0a6d4c4ab046bbb8b601face1ae9.css" integrity="sha512-PVHxMMD6Z3weobOJrewQcVL9dK2AULIS87ldarzL/q2Ay6Y7Bnff40NIklY&#43;6yClmM8KbUxKsEa7uLYB&#43;s4a6Q==" />
   
   
   
@@ -32,7 +32,6 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-
 
 
 
@@ -62,7 +61,7 @@
 
   
   
-  <script src="/js/pic-js.min.da26304548ee64740899ade7d50f905588052ea81c6621a6838d9977742004b6.js" integrity="sha256-2iYwRUjuZHQIma3n1Q&#43;QVYgFLqgcZiGmg42Zd3QgBLY=" crossorigin="anonymous"></script>
+  <script src="/js/pic-js.min.7836958bb39ce30b15564042a0a055dc6b37f992ab718df56de04bac189718fc.js" integrity="sha256-eDaVi7Oc4wsVVkBCoKBV3Gs3&#43;ZKrcY31beBLrBiXGPw=" crossorigin="anonymous"></script>
   
 
 
@@ -93,8 +92,6 @@
       }
     }
   </script>
-
-  <link href="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.css" rel="stylesheet">
 
 
 </head>
@@ -290,12 +287,12 @@ Luna
 <p>总而言之，一股“我偏要勉强”的信念让我走到了现在。主要进行了以下修改：</p>
 <ol>
 <li>完全隐藏了左右边栏，站点信息转移到首页顶部。实现过程无限近似于搅拌浆糊，难以示人。</li>
-<li>站点名下的<strong>灯球</strong>点击后可以跳转到一个单独的 <strong><a href="https://gregueria/home/">小猫页面</a></strong>！它其实是一个类似About的Page页，用<code>display: none;</code>隐藏掉了所有内容，然后在内容页用Html硬写出来的（使用<code>Ctrl+U</code>可以看见我写的垃圾代码）！</li>
+<li>站点名下的<strong>灯球</strong>点击后可以跳转到一个单独的 <strong><a href="https://gregueria/home/" target="_blank" rel="noopener noreferrer">小猫页面</a></strong>！它其实是一个类似About的Page页，用<code>display: none;</code>隐藏掉了所有内容，然后在内容页用Html硬写出来的（使用<code>Ctrl+U</code>可以看见我写的垃圾代码）！</li>
 <li>增加了平铺的背景图片：闪，都给我闪jpg</li>
 <li>卡片改成了透明/半透明，轻薄透气感。外加黑色背景，酷，突出的就是一种酷。<em>啊？影响阅读？我才不管！</em></li>
 <li>滚动条炫彩，我抄的。</li>
-<li>站点标题部分，由<a href="http://www.glittertextonline.com/">Glittertextonline</a>自动生成。闪，都可以闪！</li>
-<li>各种灯球地球转来转去的图片来自：<a href="https://cinni.net/web.html#blinkies">Cinni</a>。任谁看完都会很想抛弃极简主义写个古老风格的网页吧！</li>
+<li>站点标题部分，由<a href="http://www.glittertextonline.com/" target="_blank" rel="noopener noreferrer">Glittertextonline</a>自动生成。闪，都可以闪！</li>
+<li>各种灯球地球转来转去的图片来自：<a href="https://cinni.net/web.html#blinkies" target="_blank" rel="noopener noreferrer">Cinni</a>。任谁看完都会很想抛弃极简主义写个古老风格的网页吧！</li>
 </ol>
 <p>修改过程中最痛苦的地方其实是迁移文章，在之前的主题上使用了太多短代码，在新主题上频频报错，改得心烦意乱！讨厌欸！以后不用就是啦！</p>
 <p>本次装修先告一段落，等忙完之后的装修计划：</p>
@@ -795,4 +792,17 @@ Luna
 
             </div>
         </main>
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+
     </body></html>

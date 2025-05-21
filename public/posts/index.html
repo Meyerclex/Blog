@@ -621,9 +621,9 @@ border-radius: 0px;
 <p>All rights reserved.</p>
 <p><strong>💫 使用素材鸣谢 Resource Credit</strong></p>
 <ul>
-<li><a href="http://sozaiya405.chu.jp/405">「素材屋405番地」</a></li>
-<li><a href="http://cairovercoat.tumblr.com/tagged/pixel+pattern">bg by cairovercoat</a></li>
-<li><a href="https://scripted.neocities.org/#">scripted resources</a></li>
+<li><a href="http://sozaiya405.chu.jp/405" target="_blank" rel="noopener noreferrer">「素材屋405番地」</a></li>
+<li><a href="http://cairovercoat.tumblr.com/tagged/pixel&#43;pattern" target="_blank" rel="noopener noreferrer">bg by cairovercoat</a></li>
+<li><a href="https://scripted.neocities.org/#" target="_blank" rel="noopener noreferrer">scripted resources</a></li>
 </ul>
 
                     
@@ -1040,8 +1040,17 @@ border-radius: 0px;
 
             </div>
         </main>
+
     
-<script src="http://localhost:1313/js/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"http://localhost:1313/twemoji/","ext":".svg","folder":"svg"})</script>
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
 
     </body></html>

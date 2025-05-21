@@ -624,11 +624,16 @@
 </script>
 
 
-
-
     
-<script src="http://localhost:1313/js/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"http://localhost:1313/twemoji/","ext":".svg","folder":"svg"})</script>
-
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
     </body>
 </html>

@@ -286,7 +286,7 @@
     <div id="post-content"  data-pagefind-body>
         <p>大家好！最近又在装修博客（没停过），主要原因是实体生活开始写手账了，所以想要一个和手账本一样的可爱主题，由于依然没找到符合我心意的主题，所以还是决定自己改。在这里对一些经常重复修改的内容做一下笔记整理，后续新增也会在这里持续添加。</p>
 <p><em>PS：大家知道我上新（？）夜间模式了吧，右上角的小圆点请点一下！很可爱的摩卡色！</em></p>
-<p>这个主题依然是在<a href="https://github.com/hanwenguo/hugo-theme-nostyleplease">No Style Please</a>这个主题上修改的，它非常好的一点是，给出了博客所必需的每一个部件，但没有任何冗余的样式或者动画，响应起来非常快。而我则擅长东抄西抄指挥GPT抄一些可爱的样式回来，然后增加一些我喜欢的功能。</p>
+<p>这个主题依然是在<a href="https://github.com/hanwenguo/hugo-theme-nostyleplease" target="_blank" rel="noopener noreferrer">No Style Please</a>这个主题上修改的，它非常好的一点是，给出了博客所必需的每一个部件，但没有任何冗余的样式或者动画，响应起来非常快。而我则擅长东抄西抄指挥GPT抄一些可爱的样式回来，然后增加一些我喜欢的功能。</p>
 <p>修改更新请见<a href="/changelog">Changelog</a>，以下是一些修改笔记。</p>
 <h2 id="文章目录-">文章目录 ✨</h2>
 
@@ -616,7 +616,7 @@
 <p>还挺方便的吧？</p>
 <h2 id="museum页面">Museum页面</h2>
 <p>这个<a href="/collection">Museum</a>页面是最近新增的，当照片墙也好，好物收集也行。</p>
-<p>这个实际是通过短代码实现的，看到<a href="https://immmmm.com/hugo-goods-page/">Hugo 创建「好物」页面</a>这篇文章所以想搞一个，但作者在更新后好像没有写具体怎么实现。所以稍微来写一下。</p>
+<p>这个实际是通过短代码实现的，看到<a href="https://immmmm.com/hugo-goods-page/" target="_blank" rel="noopener noreferrer">Hugo 创建「好物」页面</a>这篇文章所以想搞一个，但作者在更新后好像没有写具体怎么实现。所以稍微来写一下。</p>
 <ol>
 <li>在<code>layouts/shortcodes</code>中增加<code>goods.html</code>：</li>
 </ol>
@@ -1423,8 +1423,17 @@
 
             </div>
         </main>
+
     
-<script src="http://localhost:1313/js/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"http://localhost:1313/twemoji/","ext":".svg","folder":"svg"})</script>
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
 
     </body></html>
