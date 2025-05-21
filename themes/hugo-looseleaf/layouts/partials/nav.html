@@ -1,11 +1,24 @@
-<div id="header-post" >
-  <span id="nav" data-pagefind-ignore>
-    <ul>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ul>
-  </span>
+<!--<div id="header-post" >-->
+<!--  <span id="nav" data-pagefind-ignore>-->
+<!--    <ul>-->
+<!--      {{ range .Site.Menus.main }}-->
+<!--        <li><a href="{{ .URL }}">{{ .Name }}</a></li>-->
+<!--      {{ end }}-->
+<!--    </ul>-->
+<!--  </span>-->
+<!--</div>-->
+
+
+
+
+<div id="tools">
+  {{ range .Site.Menus.main }}
+  <div class="tools-item"><a href="{{ .URL }}" >✦ {{ .Name }} ✦</a></div>
+  {{ end }}
 </div>
-
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 移动端现在是默认完全展开的，不需要JavaScript控制
+    // 所以这里没有任何关于 #tools 的逻辑
+  });
+</script>

@@ -1,8 +1,8 @@
 
 {{ define "main" }}
-<div class="post-meta">
+<!--<div class="post-meta" style="margin: auto;">-->
     {{ partial "nav.html" .}}
-</div>
+<!--</div>-->
 <article {{ if .Params.hidden }}data-pagefind-ignore{{ end }}>
     <h1 data-pagefind-meta="title" {{ if .Params.hidden }}data-pagefind-ignore{{ end }}t>{{ .Title }}</h1>
     <div id="post-meta">
