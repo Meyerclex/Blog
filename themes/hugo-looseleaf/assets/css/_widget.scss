@@ -174,17 +174,31 @@
     padding: 5px; /* 增加点击区域 */
     color: var(--text-color);
     z-index: 2; /* 确保图标可点击且在链接之上 */
+    width: 0;
+    height: 0;
   }
 
   /* 默认朝右的三角形 */
   #tools .toggle-icon::before {
-    content: '▷'; /* Unicode 右三角形 */
-    color: var(--text-color);
-  }
+    content: ''; /* **清空 content，我们用边框画** */
+    display: block; /* 确保伪元素是一个块级元素 */
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;    /* 增大这个值，让三角形更“高”或更“胖” */
+    border-bottom: 6px solid transparent; /* 增大这个值，让三角形更“高”或更“胖” */
+    border-left: 8px solid var(--text-color); /* 增大这个值，让三角形更“宽”或更“长” */
 
+    position: absolute; /* 相对于父级 .toggle-icon 定位 */
+    top: 50%;
+    left: 50%; /* 居中定位，然后用 transform 微调 */
+    transform: translate(-50%, -50%); /* 确保居中 */
+    transition: transform 0.3s ease; /* 添加旋转过渡效果 */
+  }
   /* 菜单展开时，小三角形朝下 */
   #tools.open .toggle-icon::before {
-    content: '▽'; /* Unicode 下三角形 */
+    content: ''; /* **清空 content，确保用边框画** */
+    /* **旋转 90 度形成朝下箭头** */
+    transform: translate(-50%, -50%) rotate(90deg); /* 旋转 90 度 */
   }
 }
 
