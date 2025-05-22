@@ -40,3 +40,22 @@
 #term .header-container {
   padding: 5em 0;
 }
+
+.tags a:hover {
+  background: none;
+}
+
+.tag {
+  /* 初始样式 - 可以选择无阴影或非常轻微的阴影 */
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* 初始无阴影 */
+  /* 或者，如果你希望默认有一点点轻微的阴影，可以这样：
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  */
+  transition: box-shadow 0.5s ease; /* 只为阴影添加过渡动画 */
+}
+
+.tag:hover {
+  /* 悬停时的样式 - 弥散且无偏移的阴影 */
+  box-shadow: 0 0 15px var(--mark); /* 水平偏移 0，垂直偏移 0，模糊半径 15px，扩散半径 0，颜色透明度 0.3 */
+  /* 你可以根据喜好调整模糊半径（第三个值 15px）和透明度（rgba 中的 0.3）来控制弥散程度 */
+}
