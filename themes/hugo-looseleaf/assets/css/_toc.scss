@@ -96,3 +96,10 @@ td {
     font-size: 90%;
   }
 }
+//&:hover {
+//
+//}
+.toc-styled-pc #TableOfContents a:hover {
+  text-shadow: var(--link-hover) 1px 0 10px;
+  background: none;
+}
