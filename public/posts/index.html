@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.82b415ad68c5c03f38b1e039a8a1fb5cb93e8a76c31f803814f551f0064cab734eb2eb28ae77b7feefda6ce355b88849e9c0f1dfc2a86a80e4b02eb11fbb0a8e.css" integrity="sha512-grQVrWjFwD84seA5qKH7XLk&#43;inbDH4A4FPVR8AZMq3NOsusorne3/u/abONVuIhJ6cDx38KoaoDksC6xH7sKjg==" />
+  <link rel="stylesheet" href="/css/main.54c3f85da4bf559fd9be2d59ad2c66afaa03d636a24b5f27074c14ab816d5e132a090c882ac4c612a4ffad2d5f26d94b1d103733e1a53c6129674ee8bcae8b72.css" integrity="sha512-VMP4XaS/VZ/Zvi1ZrSxmr6oD1jaiS18nB0wUq4FtXhMqCQyIKsTGEqT/rS1fJtlLHRA3M&#43;GlPGEpZ07ovK6Lcg==" />
   
   
   
@@ -651,92 +651,101 @@ border-radius: 0px;
             </div>
 
 
+                    <hr class="decoration-hr">
+<div class="talk-bubble tri-right round right-in is-hidden"> <div class="talktext">
 
+    <div id="feed-reader"></div>
+    <script>
+        const feedURL = 'https://status.cafe/users/lyin.atom';
 
-            <hr class="decoration-hr">
-            <div class="talk-bubble tri-right round right-in">
-    <div class="talktext">
-        <div id="feed-reader"></div>
-<script>
-    const feedURL = 'https://status.cafe/users/lyin.atom';
+        function timeAgo(publishedDate) {
+            const now = new Date();
+            const published = new Date(publishedDate);
+            const diff = now - published;
 
-    function timeAgo(publishedDate) {
-        const now = new Date();
-        const published = new Date(publishedDate);
-        const diff = now - published;
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
 
-        const seconds = Math.floor(diff / 1000);
-        const minutes = Math.floor(seconds / 60);
-        const hours = Math.floor(minutes / 60);
-        const days = Math.floor(hours / 24);
-
-        if (days > 0) {
-            return `${days} day${days > 1 ? 's' : ''} ago`;
-        } else if (hours > 0) {
-            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-        } else if (minutes > 0) {
-            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-        } else {
-            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+            if (days > 0) {
+                return `${days} day${days > 1 ? 's' : ''} ago`;
+            } else if (hours > 0) {
+                return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            } else if (minutes > 0) {
+                return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            } else {
+                return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+            }
         }
-    }
 
-    fetch(feedURL)
-        .then(response => response.text())
-        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-        .then(data => {
-            const entries = data.querySelectorAll("entry");
-            let html = ``;
+        fetch(feedURL)
+            .then(response => response.text())
+            .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+            .then(data => {
+                const entries = data.querySelectorAll("entry");
+                let contentText = "";
+                let relativeTime = "";
+                let emoji = "";
 
-            
-            if (entries.length > 0) { 
-                const el = entries[0]; 
+                if (entries.length > 0) {
+                    const el = entries[0];
 
-                let rawTitle = el.querySelector("title").textContent.trim();
-                let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
-                let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
+                    let rawTitle = el.querySelector("title").textContent.trim();
+                    let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                    emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
 
+                    contentText = el.querySelector("content").textContent.trim();
+                    let publishedDate = el.querySelector("published").innerHTML;
+                    relativeTime = timeAgo(publishedDate);
+                }
 
-                let content = el.querySelector("content").textContent.trim();
-                let publishedDate = el.querySelector("published").innerHTML;
-                let relativeTime = timeAgo(publishedDate);
-
-                html += `
-                            <div class="statuscafe-entry">
-                                <p class="statuscafe-content">${content}</p>
-                                <p class="statuscafe-username">
-                                    <span class="status-meta">
-                                    <span class="mumble-time">${relativeTime}</span>
-                                    <span class="mumble-title">${emoji} </span>
-                                  </span>
-                                  </p>
-
-                            </div>
-                        `;
-            }
-            
-
-            document.getElementById("feed-reader").innerHTML = html;
-
-            
-            
-            if (typeof twemoji !== 'undefined') {
                 
-                twemoji.parse(document.getElementById("feed-reader"), {
-                    base: '\/my-emojis\/',
-                    folder: 'svg',
-                    ext: '.svg'
-                });
-            }
-            
-        })
-        .catch(error => { 
-            console.error('Error fetching or parsing feed:', error);
-            document.getElementById("feed-reader").innerHTML = '<p>无法加载状态。</p>';
-        });
-</script>
-    </div>
+                let finalHtml = `
+                        <div class="statuscafe-entry">
+                            <p class="statuscafe-content">${contentText}</p>
+                            <p class="statuscafe-username">
+                                <span class="status-meta">
+                                <span class="mumble-time">${relativeTime}</span>
+                                <span class="mumble-title">${emoji} </span>
+                              </span>
+                              </p>
+                        </div>
+                    `;
+                document.getElementById("feed-reader").innerHTML = finalHtml;
+
+                
+                const talkBubbleElement = document.querySelector('.talk-bubble');
+
+                
+                if (talkBubbleElement) {
+                    talkBubbleElement.classList.remove('is-hidden');
+                    talkBubbleElement.classList.add('animate-in');
+                }
+
+                
+                if (typeof twemoji !== 'undefined') {
+                    twemoji.parse(document.getElementById("feed-reader"), {
+                        base: '\/my-emojis\/',
+                        folder: 'svg',
+                        ext: '.svg'
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching or parsing feed:', error);
+                document.getElementById("feed-reader").innerHTML = '<p>无法加载状态。</p>';
+                
+                const talkBubbleElement = document.querySelector('.talk-bubble');
+                if (talkBubbleElement) {
+                    talkBubbleElement.classList.remove('is-hidden');
+                    talkBubbleElement.classList.add('animate-in');
+                }
+            });
+    </script>
 </div>
+</div>
+
 
     </div>
     </div>

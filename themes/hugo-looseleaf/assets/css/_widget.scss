@@ -345,39 +345,38 @@ div.pagefind-ui__drawer {
   background: var(--mark);
 }
 
+
+
+
+
 //对话框
-
-
-
-/* CSS talk bubble */
 .talk-bubble {
-  display: inline-block; /* 保持 inline-block 以便内容自适应宽度 */
-  position: relative; /* 保持 relative，因为伪元素需要相对于它定位 */
+  display: inline-block;
+  position: relative;
   width: auto;
   height: auto;
-  background-color: var(--talk-bubble-bg); /* 使用命名变量 */
+  background-color: var(--talk-bubble-bg);
   box-shadow: 6px 10px 0px var(--bubble-box-shadow);
 }
+
 .round {
-  border-radius: 30px; /* 保持你设定的圆角 */
+  border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
 }
 
-/* 气泡“小尾巴”的样式 - 右侧，稍稍内缩 */
 .tri-right.border.right-in:before {
   content: ' ';
   position: absolute;
   width: 0;
   height: 0;
   left: auto;
-  right: -40px; /* 保持你设定的位置 */
-  top: 30px; /* 保持你设定的位置 */
+  right: -40px;
+  top: 30px;
   bottom: auto;
   border: 20px solid;
-  border-color: var(--talk-bubble-border-text-color) transparent transparent var(--talk-bubble-border-text-color); /* 使用命名变量 */
-  filter: drop-shadow(6px 3px 0px var(--bubble-box-shadow))
-
+  border-color: var(--talk-bubble-border-text-color) transparent transparent var(--talk-bubble-border-text-color);
+  filter: drop-shadow(6px 3px 0px var(--bubble-box-shadow));
 }
 
 .tri-right.right-in:after {
@@ -386,51 +385,68 @@ div.pagefind-ui__drawer {
   width: 0;
   height: 0;
   left: auto;
-  right: -20px; /* 保持你设定的位置 */
-  top: 38px; /* 保持你设定的位置 */
+  right: -20px;
+  top: 38px;
   bottom: auto;
   border: 12px solid;
-  border-color: var(--talk-bubble-bg) transparent transparent var(--talk-bubble-bg); /* 使用命名变量 */
-  filter: drop-shadow(6px 3px 0px var(--bubble-box-shadow))
-
+  border-color: var(--talk-bubble-bg) transparent transparent var(--talk-bubble-bg);
+  filter: drop-shadow(6px 3px 0px var(--bubble-box-shadow));
 }
 
-/* 文本内容区域 */
 .talktext {
   padding: 0.6em 0.2em 0em 0.2em;
   text-align: left;
   line-height: 1.5em;
-  color: var(--talk-bubble-border-text-color); /* 使用命名变量 */
+  color: var(--talk-bubble-border-text-color);
 }
 
-@media (max-width: 767px) { /* 针对小型移动设备 */
+/* 气泡出现动画 */
+@keyframes bubble-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.talk-bubble.is-hidden {
+  opacity: 0;
+}
+
+.talk-bubble.animate-in {
+  animation: bubble-slide-in 0.8s ease-out forwards;
+}
+
+@media (max-width: 767px) {
   .talk-bubble {
-    width: 95%; /* 在小屏幕上占据父容器的 95% 宽度 */
-    margin: 10px auto; /* 居中显示，并提供一些上下边距 */
+    width: 95%;
+    margin: 10px auto;
   }
 
-  /* 针对移动端，可以稍微调整气泡尾巴的大小和位置，使其更协调 */
   .tri-right.border.right-in:before {
-    right: -30px; /* 调整为更靠近气泡主体 */
-    top: 20px; /* 调整垂直位置 */
-    border: 15px solid; /* 调整边框大小 */
-    /* 修正：确保边框颜色使用变量 */
+    right: -30px;
+    top: 20px;
+    border: 15px solid;
     border-color: var(--talk-bubble-border-text-color) transparent transparent var(--talk-bubble-border-text-color);
-    filter: drop-shadow(3px 3px 0px var(--bubble-box-shadow)); /* 移动端阴影可以稍微小一点 */
-
+    filter: drop-shadow(3px 3px 0px var(--bubble-box-shadow));
   }
 
   .tri-right.right-in:after {
-    right: -15px; /* 调整内部尾巴位置 */
-    top: 23px; /* 调整内部尾巴垂直位置 */
-    border: 9px solid; /* 调整内部尾巴大小 */
-    /* 修正：确保内部颜色使用变量 */
+    right: -15px;
+    top: 23px;
+    border: 9px solid;
     border-color: var(--talk-bubble-bg) transparent transparent var(--talk-bubble-bg);
-    filter: drop-shadow(3px 3px 0px var(--bubble-box-shadow)); /* 移动端阴影可以稍微小一点 */
-
+    filter: drop-shadow(3px 3px 0px var(--bubble-box-shadow));
   }
 
   .talktext {
-    padding: 0.8em 0.6em 0.2em 0.6em; /* 调整内边距，让文本在手机上看起来更舒适 */
+    padding: 0.8em 0.6em 0.2em 0.6em;
+  }
+
+  .talk-bubble.animate-in {
+    animation: bubble-slide-in 0.8s ease-out forwards;
   }
 }
