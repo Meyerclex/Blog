@@ -126,14 +126,17 @@
 <!--                </details>-->
 <!--            </div>-->
 <!--        </div>-->
-                        {{ partial "mumble.html" . }}
-
-            <hr class="decoration-hr">
             <div id="small-nav">
                 {{ range .Site.Params.tool }}
                 <div class="small-nav-item"><a href="{{ .link }}" target="{{ .target }}" >{{ .name }}</a></div>
                 {{ end }}
             </div>
+
+
+
+
+            <hr class="decoration-hr">
+            {{ partial "bubbly-background.html" . }}
 
     </div>
     </div>

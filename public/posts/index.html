@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.b7be5a55b76bac48fd28ba437a514de2f2a0d59d334c68aef43522471ed1e8b518449c1fd94b725c7c5ed5ee5e67fd4d85f6effb23bb29d7501dbfc0929d721a.css" integrity="sha512-t75aVbdrrEj9KLpDelFN4vKg1Z0zTGiu9DUiRx7R6LUYRJwf2UtyXHxe1e5eZ/1Nhfbv&#43;yO7KddQHb/Akp1yGg==" />
+  <link rel="stylesheet" href="/css/main.6e36106b8f48f708d0c04167b466c6346aa33177bb5d5a233b64377a04b29ff8927a123f2b519284bbadc2f6a1cee18a7404cd56670ff2377c9660110498919d.css" integrity="sha512-bjYQa49I9wjQwEFntGbGNGqjMXe7XVojO2Q3egSyn/iSehI/K1GShLutwvahzuGKdATNVmcP8jd8lmARBJiRnQ==" />
   
   
   
@@ -640,87 +640,6 @@ border-radius: 0px;
 
 
 
-                            <div class="note__item">
-    <div class="note__day">碎碎念啦，唔使理我</div>
-    <div class="note__list" style="font-size: 80%;">
-    
-
-
-
-
-
-    <div id="feed-reader"></div>
-    <script>
-        const feedURL = 'https://status.cafe/users/lyin.atom';
-
-        function timeAgo(publishedDate) {
-            const now = new Date();
-            const published = new Date(publishedDate);
-            const diff = now - published;
-
-            const seconds = Math.floor(diff / 1000);
-            const minutes = Math.floor(seconds / 60);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-
-            if (days > 0) {
-                return `${days} day${days > 1 ? 's' : ''} ago`;
-            } else if (hours > 0) {
-                return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-            } else if (minutes > 0) {
-                return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-            } else {
-                return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-            }
-        }
-
-        fetch(feedURL)
-            .then(response => response.text())
-            .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-            .then(data => {
-                const entries = data.querySelectorAll("entry");
-                let html = ``;
-
-                
-                if (entries.length > 0) { 
-                    const el = entries[0]; 
-
-                    let rawTitle = el.querySelector("title").textContent.trim();
-                    let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
-                    let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
-
-
-                    let content = el.querySelector("content").textContent.trim();
-                    let publishedDate = el.querySelector("published").innerHTML;
-                    let relativeTime = timeAgo(publishedDate);
-
-                    html += `
-                            <div class="statuscafe-entry">
-                                <p class="statuscafe-username">
-                                    <span class="status-meta">
-                                    <span class="mumble-time">by ${relativeTime}</span>
-                                    <span class="mumble-title">${emoji} </span>
-                                  </span>
-                                  </p>
-                                <p class="statuscafe-content">${content}</p>
-                            </div>
-                        `;
-                }
-                
-
-                document.getElementById("feed-reader").innerHTML = html;
-            })
-            .catch(error => { 
-                console.error('Error fetching or parsing feed:', error);
-                document.getElementById("feed-reader").innerHTML = '<p>无法加载状态。</p>';
-            });
-    </script>
-            </script>
-    </details>
-    </div>
-    </div>
-
-            <hr class="decoration-hr">
             <div id="small-nav">
                 
                 <div class="small-nav-item"><a href="/search" target="_blank" >✦ Search | 搜索 ✦</a></div>
@@ -730,6 +649,94 @@ border-radius: 0px;
                 <div class="small-nav-item"><a href="/bookmarks" target="_blank" >✦ Bookmarks | 书签 ✦</a></div>
                 
             </div>
+
+
+
+
+            <hr class="decoration-hr">
+            <div class="talk-bubble tri-right round right-in">
+    <div class="talktext">
+        <div id="feed-reader"></div>
+<script>
+    const feedURL = 'https://status.cafe/users/lyin.atom';
+
+    function timeAgo(publishedDate) {
+        const now = new Date();
+        const published = new Date(publishedDate);
+        const diff = now - published;
+
+        const seconds = Math.floor(diff / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+
+        if (days > 0) {
+            return `${days} day${days > 1 ? 's' : ''} ago`;
+        } else if (hours > 0) {
+            return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+        } else if (minutes > 0) {
+            return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+        } else {
+            return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+        }
+    }
+
+    fetch(feedURL)
+        .then(response => response.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => {
+            const entries = data.querySelectorAll("entry");
+            let html = ``;
+
+            
+            if (entries.length > 0) { 
+                const el = entries[0]; 
+
+                let rawTitle = el.querySelector("title").textContent.trim();
+                let emojiMatch = rawTitle.match(/[\p{Emoji}]/gu);
+                let emoji = emojiMatch ? emojiMatch.join('').replace(/[0-9]+$/, '') : '';
+
+
+                let content = el.querySelector("content").textContent.trim();
+                let publishedDate = el.querySelector("published").innerHTML;
+                let relativeTime = timeAgo(publishedDate);
+
+                html += `
+                            <div class="statuscafe-entry">
+                                <p class="statuscafe-content">${content}</p>
+                                <p class="statuscafe-username">
+                                    <span class="status-meta">
+                                    <span class="mumble-time">${relativeTime}</span>
+                                    <span class="mumble-title">${emoji} </span>
+                                  </span>
+                                  </p>
+
+                            </div>
+                        `;
+            }
+            
+
+            document.getElementById("feed-reader").innerHTML = html;
+
+            
+            
+            if (typeof twemoji !== 'undefined') {
+                
+                twemoji.parse(document.getElementById("feed-reader"), {
+                    base: '\/my-emojis\/',
+                    folder: 'svg',
+                    ext: '.svg'
+                });
+            }
+            
+        })
+        .catch(error => { 
+            console.error('Error fetching or parsing feed:', error);
+            document.getElementById("feed-reader").innerHTML = '<p>无法加载状态。</p>';
+        });
+</script>
+    </div>
+</div>
 
     </div>
     </div>

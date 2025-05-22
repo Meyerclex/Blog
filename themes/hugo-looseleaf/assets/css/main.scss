@@ -29,6 +29,11 @@
   --tools-transparent: rgba(253, 252, 224, 0.2);
 }
 
+:root {
+  --talk-bubble-bg: #fdf8e3;
+  --talk-bubble-border-text-color: #807256;
+}
+
 [a="dark"] {
   --bg-color: rgba(35, 18, 53, 0.78);
   --bg-color-hover: rgba(81, 44, 126, 0.74);
@@ -52,7 +57,10 @@
   --tools-transparent: rgba(81, 5, 97, 0.146);
 }
 
-
+[a="dark"] {
+  --talk-bubble-bg: rgb(50, 6, 60);
+  --talk-bubble-border-text-color: #F8F4E1;
+}
 
 // 应用主题样式
 body[a="dark"] {
@@ -644,3 +652,5 @@ img.emoji {
   vertical-align: -0.2em;
   border-radius: 0px;
 }
+
+@import 'bubbly.css';
