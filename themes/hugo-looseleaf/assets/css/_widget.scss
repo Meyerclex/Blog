@@ -36,14 +36,14 @@
 }
 
 .mumble-time {
-  font-size: 90%;
+  font-size: 85%;
   text-transform: uppercase;
 }
 
 .statuscafe-content {
   margin: 0 1em 0.5em 1em;
   letter-spacing: 0.8px;
-  //font-size: 90%;
+  font-size: 90%;
 }
 
 
@@ -357,7 +357,7 @@ div.pagefind-ui__drawer {
   width: auto;
   height: auto;
   background-color: var(--talk-bubble-bg);
-  box-shadow: 6px 10px 0px var(--bubble-box-shadow);
+  box-shadow: 6px 8px 0px var(--bubble-box-shadow);
 }
 
 .round {
