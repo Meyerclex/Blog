@@ -1,22 +1,13 @@
+code {
+  background-color: var(--color-bg-code);
+  font-size: 90%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 code:not(pre > code) {
   border-radius: 4px;
   padding: 0 4px;
-}
-
-pre {
-  border: 1px solid var(--color-bg-code);
-  border-radius: 4px;
-  padding: 0.5em;
-  overflow: auto; /* 确保代码块可以水平和垂直滚动 */
-  white-space: pre-wrap; /* 防止代码块中的文本溢出 */
-  word-wrap: break-word; /* 对长单词进行换行 */
-  max-height: 400px; /* 可选，限制代码块的最大高度 */
-}
-
-code {
-  background-color: var(--color-bg-code);
-  /* color: var(--text-color); */
-  font-size: 90%;
 }
 
 code.has-jax {
@@ -24,6 +15,25 @@ code.has-jax {
   background: inherit !important;
   border: none !important;
   font-size: 100%;
+}
+
+pre {
+  border: 1px solid var(--color-bg-code);
+  border-radius: 4px;
+  padding: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  max-height: 400px;
+}
+
+pre code.hljs {
+  display: block;
+  padding: 0;
+  max-height: 350px;
 }
 
 .highlight {
@@ -64,14 +74,5 @@ pre:active ~ .copy-code-button,
 pre:focus ~ .copy-code-button,
 div.highlight:active > .copy-code-button,
 div.highlight:focus > .copy-code-button {
-  //cursor: pointer;
   opacity: 1;
-}
-
-pre code.hljs {
-  display: block;
-  overflow: auto; /* 允许水平和垂直滚动 */
-  padding: 0;
-  white-space: pre-wrap; /* 防止代码溢出 */
-  max-height: 350px; /* 可选，限制代码块的最大高度 */
 }

@@ -9,7 +9,7 @@ layout: "about"
 
 ## 📠 更新日志 / Changelog
 
-### 2025/05/21 Twemoji的应用
+### 2025/05/21 Twemoji的应用 🆕
 
 1. 又做了一个小小的tools bar放一些书签搜索之类的链接，因为不想放在上方主栏目里（太长了）。<mark>be like：</mark>
 
