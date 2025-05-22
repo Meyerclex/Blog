@@ -32,6 +32,7 @@
 :root {
   --talk-bubble-bg: #fdf8e3;
   --talk-bubble-border-text-color: #807256;
+--bubble-box-shadow: #f3ebd9;
 }
 
 [a="dark"] {
@@ -58,8 +59,9 @@
 }
 
 [a="dark"] {
-  --talk-bubble-bg: rgb(50, 6, 60);
+  --talk-bubble-bg: rgb(71, 31, 83);
   --talk-bubble-border-text-color: #F8F4E1;
+  --bubble-box-shadow: #74507c;
 }
 
 // 应用主题样式
