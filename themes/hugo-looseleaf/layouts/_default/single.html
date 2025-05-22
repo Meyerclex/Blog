@@ -21,21 +21,11 @@
             {{ end }}
         </div>
 
+
         {{ if .Params.toc | default true }}
-        <div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
-            <details>
-                <summary>📑 Table of Contents</summary>
-                {{ partial "toc.html" . }}
-            </details>
-        </div>
-        <hr>
-        <div  class="post-toc" id="post-toc" data-pagefind-ignore>
-            <header><strong>
-                📑 Table of Contents</strong>
-            </header>
-            {{ partial "toc.html" . }}
-        </div>
+        {{ partial "toc.html" . }}
         {{ end }}
+
 
 
         <div id="post-content">
