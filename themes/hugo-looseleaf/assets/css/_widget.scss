@@ -44,8 +44,12 @@
   margin: 0 1em 0.5em 1em;
   letter-spacing: 0.8px;
   font-size: 90%;
-}
+  word-break: break-all;   /* 强制在任意字符处换行，包括单词内部 */
 
+}
+.statuscafe-content a {
+  word-break: break-all;
+}
 
 // 便利贴 note
 
