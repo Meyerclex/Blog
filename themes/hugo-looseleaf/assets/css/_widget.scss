@@ -376,6 +376,8 @@ div.pagefind-ui__drawer {
   bottom: auto;
   border: 20px solid;
   border-color: var(--talk-bubble-border-text-color) transparent transparent var(--talk-bubble-border-text-color); /* 使用命名变量 */
+  filter: drop-shadow(6px 3px 0px var(--bubble-box-shadow))
+
 }
 
 .tri-right.right-in:after {
@@ -389,6 +391,8 @@ div.pagefind-ui__drawer {
   bottom: auto;
   border: 12px solid;
   border-color: var(--talk-bubble-bg) transparent transparent var(--talk-bubble-bg); /* 使用命名变量 */
+  filter: drop-shadow(6px 3px 0px var(--bubble-box-shadow))
+
 }
 
 /* 文本内容区域 */
@@ -397,4 +401,36 @@ div.pagefind-ui__drawer {
   text-align: left;
   line-height: 1.5em;
   color: var(--talk-bubble-border-text-color); /* 使用命名变量 */
+}
+
+@media (max-width: 767px) { /* 针对小型移动设备 */
+  .talk-bubble {
+    width: 95%; /* 在小屏幕上占据父容器的 95% 宽度 */
+    margin: 10px auto; /* 居中显示，并提供一些上下边距 */
+  }
+
+  /* 针对移动端，可以稍微调整气泡尾巴的大小和位置，使其更协调 */
+  .tri-right.border.right-in:before {
+    right: -30px; /* 调整为更靠近气泡主体 */
+    top: 20px; /* 调整垂直位置 */
+    border: 15px solid; /* 调整边框大小 */
+    /* 修正：确保边框颜色使用变量 */
+    border-color: var(--talk-bubble-border-text-color) transparent transparent var(--talk-bubble-border-text-color);
+    filter: drop-shadow(3px 3px 0px var(--bubble-box-shadow)); /* 移动端阴影可以稍微小一点 */
+
+  }
+
+  .tri-right.right-in:after {
+    right: -15px; /* 调整内部尾巴位置 */
+    top: 23px; /* 调整内部尾巴垂直位置 */
+    border: 9px solid; /* 调整内部尾巴大小 */
+    /* 修正：确保内部颜色使用变量 */
+    border-color: var(--talk-bubble-bg) transparent transparent var(--talk-bubble-bg);
+    filter: drop-shadow(3px 3px 0px var(--bubble-box-shadow)); /* 移动端阴影可以稍微小一点 */
+
+  }
+
+  .talktext {
+    padding: 0.8em 0.6em 0.2em 0.6em; /* 调整内边距，让文本在手机上看起来更舒适 */
+  }
 }
