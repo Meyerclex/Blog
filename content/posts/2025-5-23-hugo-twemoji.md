@@ -18,6 +18,9 @@ layout: ""
     margin: 0 .15em;
     vertical-align: -0.8em;
 }
+table img {
+  display: block;
+}
 </style>
 
 ## 不负责任的Emoji小记

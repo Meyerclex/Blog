@@ -695,6 +695,6 @@ td {
 table img {
   max-width: 100px; /* 限制图片最大宽度 */
   height: auto; /* 保持图片比例 */
-  display: block; /* 移除图片下方可能存在的额外空间 */
+  //display: block; /* 移除图片下方可能存在的额外空间 */
   margin: 0 auto; /* 居中图片 */
 }
