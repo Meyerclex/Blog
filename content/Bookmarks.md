@@ -14,6 +14,7 @@ last_edit: May 20, 2025
 - [香港公共图书馆](https://sls.hkpl.gov.hk/digital-collection/tc/collection.html)
 - 蛋卷分享的[重复背景](https://booth.pm/zh-tw/items/5576108)
 - [一些手账内页](http://pdc2.u1m.biz/)
+- [林夕词作研究小站](https://www.cantonpoplyric.com/)
 
 ---
 
