@@ -666,9 +666,8 @@ img.emoji {
 
 
 @import 'bubbly.css';
-
 table {
-  width: 100%; /* 让表格占据可用宽度 */
+  width: 100%; /* PC 端表格占据可用宽度 */
   margin-bottom: 1em; /* 表格下方留白 */
 }
 
@@ -676,6 +675,7 @@ th, td {
   padding: 15px 20px; /* 增加内边距，让内容有更多空间 */
   text-align: center; /* 居中内容 */
   border: none; /* 移除默认边框 */
+  /* PC端不添加 white-space: nowrap; 让内容可以正常换行 */
 }
 
 th {
@@ -687,14 +687,30 @@ th {
 
 td {
   border: 1px solid var(--color-bg-code);
-
-  //box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 轻微的阴影增加层次感，更柔和 */
 }
 
 /* 针对图片，确保它们在单元格内表现良好 */
 table img {
-  max-width: 100px; /* 限制图片最大宽度 */
+  max-width: 100px; /* PC端限制图片最大宽度 */
   height: auto; /* 保持图片比例 */
-  //display: block; /* 移除图片下方可能存在的额外空间 */
   margin: 0 auto; /* 居中图片 */
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) { /* 假设 768px 是移动端的断点，你可以根据需要调整 */
+  table {
+    display: block; /* 移动端表格以块级元素显示 */
+    overflow-x: auto; /* 允许水平滚动 */
+    -webkit-overflow-scrolling: touch; /* 提升 iOS 上的滚动体验 */
+    width: auto; /* 移动端表格宽度自适应内容，结合 overflow-x */
+  }
+
+  th, td {
+    padding: 10px 12px; /* 移动端适当减小内边距 */
+    white-space: nowrap; /* 移动端强制内容不换行，以便滚动显示 */
+  }
+
+  table img {
+    max-width: 80px; /* 移动端图片最大宽度进一步缩小，防止超出 */
+  }
 }
