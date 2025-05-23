@@ -37,13 +37,9 @@
 
 
   
-    <meta name="description" content="
-不负责任的Emoji小记
-这周上网乱逛，看到网友的动态博客站点的默认Emoji样式很好看，于是产生了一个疑问，那就是我的博客中，Emoji到底是如何呈现的。">
+    <meta name="description" content="这么折腾一番完全是出于好奇。">
     <meta property="og:title" content="如何在Hugo博客中使用Twemoji🍻">
-    <meta property="og:description" content="
-不负责任的Emoji小记
-这周上网乱逛，看到网友的动态博客站点的默认Emoji样式很好看，于是产生了一个疑问，那就是我的博客中，Emoji到底是如何呈现的。">
+    <meta property="og:description" content="这么折腾一番完全是出于好奇。">
     <meta property="og:image" content="">
   
 
@@ -263,7 +259,7 @@
     <div id="post-meta">
         <time datetime="2025-05-23 00:00:00 &#43;0800 CST">
             2025-05-23
-            <span> ‧ 2907</span>
+            <span> ‧ 2954</span>
             <span>words</span>
             ‧ <span> </span>
             
@@ -272,6 +268,10 @@
                     
             
         </time>
+        
+        <blockquote id="post-description">
+            这么折腾一番完全是出于好奇。
+        </blockquote>
         
     </div>
 
@@ -396,6 +396,7 @@
 <h3 id="一些前言废话">一些前言废话</h3>
 <p>由于觉得我常用设备上带黑边的表情和博客主题风格不符，网上搜索的时候发现了<a href="https://github.com/jakejarvis/hugo-mod-twemoji" target="_blank" rel="noopener noreferrer">hugo-mod-twemoji</a>这个库，它可以把博客中的Emoji都指定为Twemoji的风格。Twemoji没有描边而且很亲切，于是开始折腾。</p>
 <p>这个库的原理（在我理解中）是将Twemoji官方库的表情下载到本地，然后每当你在Markdown在使用Emoji时，它会识别出其表情代码，然后在你部署为静态网页的时候自动将它们替换为一个svg/png图片。</p>
+<p>因此这种方法也将统一不同设备的显示效果，不管在哪种设备上使用，都将显示为统一的Twemoji。</p>
 <p>如仓库中说明所述，我们可以用<code>hugo-mod</code>来引入，方法非常简单。按照Usage一步步操作即可，但这将导致的一个问题是，它会下载七千多个表情文件放在<code>public/twemoji</code>里，导致每次部署都会很久（我日常本地部署大概200ms左右，这个方法会把速度拖到9000-16000ms），吓得我忙不迭复原了。</p>
 <p>事实上这七千多个表情文件，有一半都是重复的，因为这种Mod方式会默认下载png和svg两种格式，我们只使用一种就可以了。其次是我们日常使用的基础Emoji数量不多，例如有两百多个国家旗帜，我从未使用过，例如每一个人物Emoji，都会有由深至浅的五种肤色变体和两种性别变体（我们上面使用的示例，都是没有任何肤色和性别的默认Emoji），我觉得只保留基本的Emoji也是可以的。</p>
 <p>在后文中，我会解释我筛选出自己大致要用的Emoji范围的过程，但即便如此，我也保留了1700+的表情svg文件。而第一次本地预览时完整建构的速度是1900ms，而后续文件修改时再次建构还是能回到正常的200ms左右。这个速度我还是可以接受的。</p>

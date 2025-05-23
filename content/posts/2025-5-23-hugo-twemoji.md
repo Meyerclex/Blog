@@ -5,7 +5,7 @@ slug: "2025-05-23-Twemoji"
 draft: false
 tags:
   - monthly
-description:
+description: 这么折腾一番完全是出于好奇。
 comment: true
 toc: true
 layout: ""
@@ -63,6 +63,8 @@ Unicode给Emoji们赋予了唯一的代码与具体的含义。每一个Emoji的
 由于觉得我常用设备上带黑边的表情和博客主题风格不符，网上搜索的时候发现了[hugo-mod-twemoji](https://github.com/jakejarvis/hugo-mod-twemoji)这个库，它可以把博客中的Emoji都指定为Twemoji的风格。Twemoji没有描边而且很亲切，于是开始折腾。
 
 这个库的原理（在我理解中）是将Twemoji官方库的表情下载到本地，然后每当你在Markdown在使用Emoji时，它会识别出其表情代码，然后在你部署为静态网页的时候自动将它们替换为一个svg/png图片。
+
+因此这种方法也将统一不同设备的显示效果，不管在哪种设备上使用，都将显示为统一的Twemoji。
 
 如仓库中说明所述，我们可以用`hugo-mod`来引入，方法非常简单。按照Usage一步步操作即可，但这将导致的一个问题是，它会下载七千多个表情文件放在`public/twemoji`里，导致每次部署都会很久（我日常本地部署大概200ms左右，这个方法会把速度拖到9000-16000ms），吓得我忙不迭复原了。
 
