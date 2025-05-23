@@ -74,7 +74,7 @@ Unicode给Emoji们赋予了唯一的代码与具体的含义。每一个Emoji的
 
 ### 开始吧！
 
-放弃仓库作者推荐的使用Hugo Mod以后，我们要做的是手动把表情拉取下来，并进行整理筛选。
+放弃仓库作者推荐使用的Hugo Mod以后，我们要做的是手动把表情拉取下来，并进行整理筛选。
 
 1. 打开[twemoji.min.js](https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js)链接后`ctrl+s`，将脚本保存到`assets/js`目录下。
 
@@ -82,7 +82,9 @@ Unicode给Emoji们赋予了唯一的代码与具体的含义。每一个Emoji的
 
 3. 访问[twemoji](https://github.com/twitter/twemoji/releases)，从Release里下载最近更新的压缩包（在`Assets`下，你会看到两个`Source code`，下载其中一个即可）。
    
-    下载后得到`twemoji-14.0.2.zip`，解压缩后在`\twemoji-14.0.2\assets\svg`，将这一整个`svg`，拖入到你的`static\my-emojis\`文件夹中。
+    下载后得到`twemoji-14.0.2.zip`，解压缩后点开路径`\twemoji-14.0.2\assets\svg`，将一整个`svg`文件夹放入到你的`static\my-emojis\`中。
+
+    PS：为避免表述不清引发歧义说明下，最后的文件夹层级是`static/my-emojis/svg/`里面放了几千个`.svg`图标。
 
 4. 将如下代码放入你`layouts/baseof.html`文件中的`</body>`标签前
 
