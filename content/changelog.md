@@ -4,7 +4,7 @@ description:
 date: 2021-06-28
 slug: changelog
 toc: true
-layout: "about"
+layout: "diary"
 ---
 
 ## 📠 更新日志 / Changelog
