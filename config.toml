@@ -5,6 +5,7 @@ languageCode = "zh-cn"
 hasCJKLanguage = true
 # config.toml
 enableEmoji = true
+timeZone = "Asia/Shanghai"
 
 [module]
 [module.hugoVersion]
@@ -132,7 +133,6 @@ weight = 4
 #name = "Museum"
 #url = "/collection"
 #weight = 5
-
 
 
 [[params.tool]]

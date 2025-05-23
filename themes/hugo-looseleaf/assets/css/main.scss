@@ -230,6 +230,10 @@ body {
   overflow-wrap: break-word;
 }
 
+body #post-content p {
+  line-height: 1.8;
+}
+
 body {
   font-weight: normal;
   padding: 0 15px;
@@ -659,4 +663,38 @@ img.emoji {
   border-radius: 0px;
 }
 
+
+
 @import 'bubbly.css';
+
+table {
+  width: 100%; /* 让表格占据可用宽度 */
+  margin-bottom: 1em; /* 表格下方留白 */
+}
+
+th, td {
+  padding: 15px 20px; /* 增加内边距，让内容有更多空间 */
+  text-align: center; /* 居中内容 */
+  border: none; /* 移除默认边框 */
+}
+
+th {
+  background-color: var(--neodb-card-color);
+  border-bottom: 1px solid var(--color-bg-code);
+  border-radius: 8px 8px 0 0; /* 顶部标题栏圆角 */
+  font-weight: normal;
+}
+
+td {
+  border: 1px solid var(--color-bg-code);
+
+  //box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 轻微的阴影增加层次感，更柔和 */
+}
+
+/* 针对图片，确保它们在单元格内表现良好 */
+table img {
+  max-width: 100px; /* 限制图片最大宽度 */
+  height: auto; /* 保持图片比例 */
+  display: block; /* 移除图片下方可能存在的额外空间 */
+  margin: 0 auto; /* 居中图片 */
+}

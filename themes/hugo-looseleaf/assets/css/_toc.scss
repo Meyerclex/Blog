@@ -5,12 +5,7 @@
   border: thin solid var(--text-color);
 }
 
-/* 通用边框样式，如果需要表格边框，请保留 */
-table,
-th,
-td {
-  border: thin solid var(--text-color);
-}
+
 
 /* --- 新增 PC 端 TOC 样式类 --- */
 .toc-styled-pc {
