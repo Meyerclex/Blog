@@ -4,7 +4,7 @@ date: 2025-05-23
 slug: "2025-05-23-Twemoji" 
 draft: false
 tags:
-  - monthly
+  - Hugo
 description: 这么折腾一番完全是出于好奇。
 comment: true
 toc: true
