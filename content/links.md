@@ -42,7 +42,7 @@ margin: 15px 0;
 
 - [枕石](https://zhen-shi.github.io/) / [春天与阿修罗](https://harushuura.vip) / [昼梦日和](https://nanako.icu/) / [一支咏叹调](https://turquoise.one/) / [匣](https://kiokumo.vip/) / [天仙子](https://tianxianzi.me/)
 
-- [一片痴心俱成灰](https://akaito.xyz/) / [第三夏尔](https://thirdshire.com) / [眠于水月间](https://sleepymoon.cyou) / [蝴蝶曾在此处](https://write.c7.io/tyou/) 
+- [一片痴心俱成灰](https://akaito.xyz/) / [第三夏尔](https://thirdshire.com) / [眠于水月间](https://sleepymoon.cyou) / [蝴蝶曾在此处](https://www.changingmoments.one/) 
 
 - [Missing](https://www.missingid.online/) / [Mengru](https://mengru.space/) / [Mid of Nowhere](https://notes.midofnowhere.link/)  / [Plaskier](https://blog.plaskier.icu/) / [Shixiaocaia](https://shixiaocaia.fun/) 
 
