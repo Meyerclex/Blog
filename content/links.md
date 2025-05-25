@@ -3,7 +3,7 @@ title: 小鱼和她的朋友们
 description:
 date: 2021-06-28
 toc: false
-layout: "about"
+layout: "diary"
 comment: false
 ---
 
