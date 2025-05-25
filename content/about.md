@@ -1,9 +1,7 @@
 ---
 title: lilian's room
-description:
-date: 2021-06-28
 toc: false
-layout: "diary"
+layout: diary
 comment: false
 slug: about
 ---
