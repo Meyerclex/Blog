@@ -1,6 +1,6 @@
 ---
 title: Bookmarks / Resource
-layout: "about"
+layout: "diary"
 slug: bookmarks
 comment: false
 last_edit: May 20, 2025
