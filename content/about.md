@@ -3,7 +3,7 @@ title: lilian's room
 toc: false
 layout: diary
 comment: false
-slug: about
+slug: aboutme
 ---
 
 ## ⛳ 关于我 , May 2025
