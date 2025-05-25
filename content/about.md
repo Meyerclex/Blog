@@ -1,6 +1,6 @@
 ---
 title: lilian's room
-layout: "diary"
+layout: diary
 comment: false
 slug: about
 ---
