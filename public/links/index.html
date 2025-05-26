@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.36343b1d97bae5d6fbcfd54cad60f080496f08a71c027daf9e0fa69bcff31ccdc5314ec1a2cfb4bbd2babc6957a16e2e8a8fccfa5a9badeede400861618417f3.css" integrity="sha512-NjQ7HZe65db7z9VMrWDwgElvCKccAn2vng&#43;mm8/zHM3FMU7Bos&#43;0u9K6vGlXoW4uio/M&#43;lqbre7eQAhhYYQX8w==" />
+  <link rel="stylesheet" href="/css/main.ccc81d90266ebdfacb04f952888e934812502c941a4204045a63d6cd37376b36b8c5bcbb9a8f9303e3be230fb9e66df816ca6262866707826b0bc8b6b473c4bf.css" integrity="sha512-zMgdkCZuvfrLBPlSiI6TSBJQLJQaQgQEWmPWzTc3aza4xby7mo&#43;TA&#43;O&#43;Iw&#43;55m34FspiYoZnB4JrC8i2tHPEvw==" />
   
   
   
@@ -198,88 +198,37 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
-        
 
+<link rel="stylesheet" href="/css/_about-nav.css">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="tools">
-  
-  <div class="tools-item">
-    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
-  </div>
-  
-  <div class="tools-item">
-    <a href="/about" >✦ About ✦</a>
-  </div>
-  
-  <div class="tools-item">
-    <a href="/posts" >✦ Archive ✦</a>
-  </div>
-  
-  <div class="tools-item">
-    <a href="/links" >✦ Friends ✦</a>
-  </div>
-  
+<header>
+    <div class="header-container">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                <div  >
+  <span id="nav" data-pagefind-ignore>
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+    </ul>
+  </span>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const toolsNav = document.getElementById('tools');
-    if (!toolsNav) return;
-
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-    if (isMobile) {
-      const toggleIcon = toolsNav.querySelector('.toggle-icon');
-
-      if (toggleIcon) {
-        toggleIcon.addEventListener('click', function(event) {
-          event.stopPropagation();
-          toolsNav.classList.toggle('open');
-        });
-      }
-
-      document.addEventListener('click', function(event) {
-        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
-          toolsNav.classList.remove('open');
-        }
-      });
-    }
-  });
-</script>
-    <article class="post-content">
-        <h1>小鱼和她的朋友们</h1>
-        <div id="post-meta">
-            <time datetime="2021-06-28 00:00:00 &#43;0800 CST">
-                2021-06-28
-                <span> ‧ 255</span>
-                <span>words</span>
-                
-                
-            </time>
-            
-        </div>
-
-
-        
 
 
 
-        <div id="post-content">
-            <style>
+            </div>
+            <div class="header-content">
+                <article>
+                    <div id="post-content">
+                        <style>
 .header-content {
     display: flex
 ;
@@ -346,12 +295,17 @@ margin: 15px 0;
         </svg>
     </button>
 </div>
-            
+                    </div>
+                <br>
+                
+                
+            </div>
         </div>
-        <br>
-        <div style="padding-bottom:3px;"></div>
-    </article>
+    </div>
+</header>
 
+
+<hr class="decoration-hr">
 
 
 <footer class="site-footer">
@@ -359,8 +313,6 @@ margin: 15px 0;
         &copy; 2021 - 2025
         <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
-        
-        
         
         
         
@@ -661,6 +613,7 @@ margin: 15px 0;
         }
     })()
 </script>
+
 
 
             </div>

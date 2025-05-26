@@ -1,6 +1,6 @@
 baseURL = 'https://gregueria.icu/'
 title = '再會，謝謝所有的魚'
-theme = ['hugo-looseleaf'] #scribbles theme_1
+theme = ['hugo-looseleaf'] #template, hugo-looseleaf
 languageCode = "zh-cn"
 hasCJKLanguage = true
 # config.toml
