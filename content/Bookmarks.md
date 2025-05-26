@@ -28,6 +28,7 @@ last_edit: May 26, 2025
 - https://scripted.neocities.org/
 - [ribo.zone - free stuff for you](https://ribo.zone/free/)：layouts, code snippets...
 - [designfreaks](https://designfreaks.net/goodies/resources/)：made by Nick and Danny, sharing their designs and graphics
+- [cherie.nekoweb.org](https://cherie.nekoweb.org/resources/)
 
 ## layouts / themes
 
@@ -68,6 +69,8 @@ last_edit: May 26, 2025
 - [zonelets.net](https://zonelets.net/posts/2020-11-08-Theme-Gallery)：博客框架
 - [nekoweb.org](https://nekoweb.org/explore?page=1&sort=lastupd&by=name&q=)
 - [neocities.org](https://neocities.org/browse?tag=fonts)
+- [32-Bit Cafe](https://32bit.cafe/)
+- [screenfly](https://screenfly.org/)：检查网站在不同屏幕/设备上的显示效果
 
 <style>
 .header-content article li {
