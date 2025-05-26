@@ -32,8 +32,7 @@ last_edit: May 20, 2025
 - https://eggramen.neocities.org/code/css_testpages
 - https://straw.page/
 - https://corvidsahoy.neocities.org/
-- https://codesharing.neocities.org/directory/layouts
-- https://itinerae.blogspot.com/2024/01/foryou.html
+- [codesharing](https://codesharing.neocities.org/directory/layouts)：layouts
 - [数字剪贴簿](https://www.digitalscrapbook.com/)：一些素材和剪贴本网页风格的Layout。
 - [aeon flexx (dead girl)](https://codepen.io/aeon-flexx-dead-girl/pens/)：codepen
 - [itinerae.blogspot.com](https://itinerae.blogspot.com/2024/01/foryou.html)：layouts，特别好的审美
@@ -49,6 +48,7 @@ last_edit: May 20, 2025
 
 - [蕾丝材质](http://da-lace.com/)
 - [lovesick.cafe/sozai](https://lovesick.cafe/sozai)：蕾丝风格边框、背景图etc（使用前需查看网页条款term部分）
+- [tentcrafts](https://tentacrafts.neocities.org/notecards/1)：剪贴本风格
 
 <style>
 .header-content article li {
