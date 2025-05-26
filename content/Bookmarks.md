@@ -27,6 +27,7 @@ last_edit: May 20, 2025
 - https://gifypet.neocities.org/
 - https://scripted.neocities.org/
 - [ribo.zone - free stuff for you](https://ribo.zone/free/)：layouts, code snippets...
+- [designfreaks](https://designfreaks.net/goodies/resources/)：made by Nick and Danny, sharing their designs and graphics
 
 ## layouts / themes
 
