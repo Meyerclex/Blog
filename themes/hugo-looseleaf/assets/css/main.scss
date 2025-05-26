@@ -32,7 +32,7 @@
 :root {
   --talk-bubble-bg: #fdf8e3;
   --talk-bubble-border-text-color: #807256;
---bubble-box-shadow: #f3ebd9;
+  --bubble-box-shadow: #f3ebd9;
 }
 
 [a="dark"] {
@@ -664,8 +664,6 @@ img.emoji {
 }
 
 
-
-@import 'bubbly.css';
 table {
   width: 100%; /* PC 端表格占据可用宽度 */
   margin-bottom: 1em; /* 表格下方留白 */
