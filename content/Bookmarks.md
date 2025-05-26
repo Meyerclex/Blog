@@ -10,7 +10,7 @@ last_edit: May 20, 2025
 ## Bookmarks / Resource
 
 - [我是走廊，张亦绚](https://nathaliechang.wixsite.com/nathaliechang/home)：张女士的博客，竟然还是高频更新😮
-- **字体**：[ZeoSeven](https://fonts.zeoseven.com/)
+- **字体**：[ZeoSeven](https://fonts.zeoseven.com/) / [fonts catalog](https://478.neocities.org/catalog/) 
 - [香港公共图书馆](https://sls.hkpl.gov.hk/digital-collection/tc/collection.html)
 - 蛋卷分享的[重复背景](https://booth.pm/zh-tw/items/5576108)
 - [一些手账内页](http://pdc2.u1m.biz/)
@@ -27,7 +27,7 @@ last_edit: May 20, 2025
 - https://scripted.neocities.org/
 
 
-## Layouts
+## layouts
 
 - https://eggramen.neocities.org/code/css_testpages
 - https://straw.page/
@@ -36,19 +36,25 @@ last_edit: May 20, 2025
 - [数字剪贴簿](https://www.digitalscrapbook.com/)：一些素材和剪贴本网页风格的Layout。
 - [aeon flexx (dead girl)](https://codepen.io/aeon-flexx-dead-girl/pens/)：codepen
 - [itinerae.blogspot.com](https://itinerae.blogspot.com/2024/01/foryou.html)：layouts，特别好的审美
+- [xuethms.tumblr.com](https://xuethms.tumblr.com/helpful)：tumblr themes & some resource
 
 ## css pattern
 
-- https://10015.io/tools/ai-color-palette-generator
-- https://projects.verou.me/css3patterns/
+- [CSS重复背景生成及一些网页美化可能用得上的工具](https://10015.io/tools/css-background-pattern-generator)（
+- [CSS3 Patterns Gallery](https://projects.verou.me/css3patterns/)：配色魔改一番就是新天地
+- 
 
 直接从浏览器收藏夹/Notion里挪过来的，回头再一个个点击编辑一下命名。
 
-## 图形资源
+## graphics resource
 
 - [蕾丝材质](http://da-lace.com/)
 - [lovesick.cafe/sozai](https://lovesick.cafe/sozai)：蕾丝风格边框、背景图etc（使用前需查看网页条款term部分）
 - [tentcrafts](https://tentacrafts.neocities.org/notecards/1)：剪贴本风格
+- [snailspng](https://www.tumblr.com/snailspng)：transparent png...
+
+
+## others 
 
 <style>
 .header-content article li {
