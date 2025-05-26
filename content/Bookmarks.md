@@ -44,7 +44,7 @@ last_edit: May 26, 2025
 
 ## css pattern
 
-- [CSS重复背景生成及一些网页美化可能用得上的工具](https://10015.io/tools/css-background-pattern-generator)（
+- [CSS重复背景生成及一些网页美化可能用得上的工具](https://10015.io/tools/css-background-pattern-generator)
 - [CSS3 Patterns Gallery](https://projects.verou.me/css3patterns/)：配色魔改一番就是新天地
 - [Hero Patterns](https://heropatterns.com/)：SVG background patterns
 
@@ -55,6 +55,9 @@ last_edit: May 26, 2025
 - [tentcrafts](https://tentacrafts.neocities.org/notecards/1)：剪贴本风格
 - [snailspng](https://www.tumblr.com/snailspng)：transparent png...
 - [pixel safari](https://pixelsafari.neocities.org/favicon/)
+- [fancyparts](https://www.fancyparts.com/index.html)
+- [dice.nengu.jp](https://dice.nengu.jp/)
+- <A href="http://1kbsozai.com" target="_blank">1キロバイトの素材屋さん</A>
 
 ## others 
 
