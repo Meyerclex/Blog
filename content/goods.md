@@ -128,7 +128,7 @@ enjoy blogging or breaking! :3
 
 - [📫 Pushoong](https://pushoong.com/ask/4862766301/)：question box, ask me anything
 
-- [🔔 RSS](/index.xml/)：subscribe via rss
+- [🔔 RSS](/index.xml)：subscribe via rss
 
 ---
 
