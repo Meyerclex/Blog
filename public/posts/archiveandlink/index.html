@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.87bf6072f0cf8c3a75ff7fde26e0bc27fbbd165f425f284a2480ba28c67d7152c1ffa5170f131ea5807b40ce8372ab88396101fab4796f5f720458c6b2f0b26b.css" integrity="sha512-h79gcvDPjDp1/3/eJuC8J/u9Fl9CXyhKJIC6KMZ9cVLB/6UXDxMepYB7QM6DcquIOWEB&#43;rR5b19yBFjGsvCyaw==" />
+  <link rel="stylesheet" href="/css/main.01b046f94706c70fe73fb5604f0c19290a3b5a17b0fc75d993e496293097fd0f97f3f63d5aee5ccbc02644aa81abdee50ab870e44c5445b3cdab1fbd89cff796.css" integrity="sha512-AbBG&#43;UcGxw/nP7VgTwwZKQo7Whew/HXZk&#43;SWKTCX/Q&#43;X8/Y9Wu5cy8AmRKqBq97lCrhw5ExURbPNqx&#43;9ic/3lg==" />
   
   
   
@@ -58,12 +58,6 @@
       });
     });
   </script>
-
-  
-  
-  <script src="/js/pic-js.min.7836958bb39ce30b15564042a0a055dc6b37f992ab718df56de04bac189718fc.js" integrity="sha256-eDaVi7Oc4wsVVkBCoKBV3Gs3&#43;ZKrcY31beBLrBiXGPw=" crossorigin="anonymous"></script>
-  
-
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
   
@@ -190,6 +184,7 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
+
 
     
 
@@ -509,9 +504,11 @@ toc: false
 <p>之前的友链样式如下。如果有人想知道实现方式的话，正巧之前在毛象上写过一次，涉及到无序列表的更改，这个方式不需要手动分隔号和调整间距。</p>
 <details>
 <summary>样式及代码部分</summary>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/2.png" alt="" 
+     class="post-image"
 
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/2.png" alt="" loading="lazy" class="post-image"/>
-    
+/>
+
 <div class="highlight">
     <pre tabindex="0"><code>&lt;style&gt;
 .content li::marker {
@@ -549,9 +546,11 @@ a.link--external:last-child::after {
 <p>于是效果如下：</p>
 <details>
 <summary>效果及代码部分</summary>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/1.png" alt="" 
+     class="post-image"
 
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/1.png" alt="" loading="lazy" class="post-image"/>
-    
+/>
+
 <div class="highlight">
     <pre tabindex="0"><code>&lt;style&gt;
 .post-meta {
@@ -602,9 +601,11 @@ document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
 </div></details>
 <p>标签<code>&lt;script&gt;</code>内的部分是用来实现无序列表随机排列的，它会对当前整个网站页面包括导航栏等等的无序列表生效。所以为了限定它只对文章内的无序列表生效，在第一段注释中有一个<code>获取带有 post-content 类的文章内容</code>的步骤，这是因为我网站主题中，文章正文的类是<code>post-content</code>，这是根据我的主题的情况写的。</p>
 <p>如果你不知道应该怎么做和修改这部分，请在自己的网站上按<code>F12</code>，查看主题的源代码，点进去用选择器查找和看自己文章部分的所属的类是什么，然后替换掉上述代码里我的<code>post-content</code>部分即可。</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/3.png" alt="" 
+     class="post-image"
 
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/3.png" alt="" loading="lazy" class="post-image"/>
-    <h2 id="全站字体修改">全站字体修改</h2>
+/>
+<h2 id="全站字体修改">全站字体修改</h2>
 <p>大家应该都注意到了吧！我把网站的主题修改成了霞鹜文楷，由于我不知道怎么样引入非Google字体的字体，就在网上找了一下。发现了这个仓库：<a href="https://github.com/satouriko/LxgwWenKai_Webfonts" target="_blank" rel="noopener noreferrer">霞鹜文楷Web字体</a>。它的简介表示使用与Google Fonts相同的技术对中文字体进行分包和压缩，以便于用于网页端分发——</p>
 <p>什么意思？我是看不懂啦，但会用能用就行。根据使用说明具体操作如下：</p>
 <ol>
@@ -803,14 +804,20 @@ weight: 99
 <p>应该没有别的需要补充的部分了，遇事不决可以询问ChatGPT老师。</p>
 <h3 id="效果展示">效果展示</h3>
 <p>然后放一下我的同人博客更新后的样子。</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/5.png" alt="" 
+     class="post-image"
 
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/5.png" alt="" loading="lazy" class="post-image"/>
-    
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/4.png" alt="" loading="lazy" class="post-image"/>
-    <p>浣心魔改后的主题本身对处于一个Series的文章做了新的显示效果如下，如果想要实现，具体请看他的文章：<a href="https://blog.loikein.one/posts/2021-05-28-hugo-series/" target="_blank" rel="noopener noreferrer">在Hugo里显示系列文章</a>。</p>
+/>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/4.png" alt="" 
+     class="post-image"
 
-<img src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/6.png" alt="" loading="lazy" class="post-image"/>
-    <h2 id="最后的话">最后的话</h2>
+/>
+<p>浣心魔改后的主题本身对处于一个Series的文章做了新的显示效果如下，如果想要实现，具体请看他的文章：<a href="https://blog.loikein.one/posts/2021-05-28-hugo-series/" target="_blank" rel="noopener noreferrer">在Hugo里显示系列文章</a>。</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/202406/6.png" alt="" 
+     class="post-image"
+
+/>
+<h2 id="最后的话">最后的话</h2>
 <p>其实还做了一些很多其他的改动。因为每次装修都在无关紧要的细节上进行长时间的大思考，所以暂时不打算再对博客做其他修改了……下一次写装修笔记应该又是明年了。</p>
 <p>如果您对本站及同人站的特性感到好奇，欢迎在这一篇文章的评论区留言！我会很乐意分享的。</p>
 
@@ -1189,8 +1196,6 @@ weight: 99
         
         
         
-        
-        
         <span>All rights reserved.</span>
 
     </section>
@@ -1219,6 +1224,31 @@ weight: 99
     </script>
 
 </footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
 
 
 
@@ -1303,6 +1333,21 @@ weight: 99
 </script>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
         </main>

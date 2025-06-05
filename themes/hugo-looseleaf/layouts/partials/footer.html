@@ -44,6 +44,32 @@
     </script>
 
 </footer>
+
+{{ $scriptViewImage := resources.Get "js/view-image.min.js" }}
+{{ if $scriptViewImage }}
+{{ $scriptViewImage = $scriptViewImage | js.Build | resources.Fingerprint }}
+<script src="{{ $scriptViewImage.RelPermalink }}" integrity="{{ $scriptViewImage.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ else }}
+{{ end }}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 检查页面是否存在 #post-content 元素
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            // 如果存在 #post-content 且 ViewImage 对象可用，则初始化
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            // 如果没有 #post-content 元素，可以选择性地记录一条信息
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            // 如果 ViewImage 对象未找到，则发出警告
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
 <!-- Theme Toggle Button -->
 {{ end }}
 {{ end }}

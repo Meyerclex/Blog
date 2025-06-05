@@ -1,9 +1,5 @@
-{{- $alt := .Text | plainify -}}
-{{- $title := .Title | plainify -}}
+<img loading='lazy' decoding="async" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }}
+     class="post-image"
 
-{{ if .Destination }}
-<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" class="post-image"/>
-{{- if $alt }}
-{{ $alt }}
-{{ end }}
-    {{ end }}
+/>
+{{ .Text }}

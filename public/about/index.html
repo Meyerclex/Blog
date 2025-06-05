@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.091fe39d16ccd7c672a2b5e7286ce1a43bf244bcf2813f839830b5ad4ecfc4ef0ddd32413811fae354ce20133c9a95024298e486f7793627a1e0fa550048e4b3.css" integrity="sha512-CR/jnRbM18ZyorXnKGzhpDvyRLzygT&#43;DmDC1rU7PxO8N3TJBOBH641TOIBM8mpUCQpjkhvd5Nieh4PpVAEjksw==" />
+  <link rel="stylesheet" href="/css/main.01b046f94706c70fe73fb5604f0c19290a3b5a17b0fc75d993e496293097fd0f97f3f63d5aee5ccbc02644aa81abdee50ab870e44c5445b3cdab1fbd89cff796.css" integrity="sha512-AbBG&#43;UcGxw/nP7VgTwwZKQo7Whew/HXZk&#43;SWKTCX/Q&#43;X8/Y9Wu5cy8AmRKqBq97lCrhw5ExURbPNqx&#43;9ic/3lg==" />
   
   
   
@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
 
   <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/yzgcxst/dist/%E4%B9%9F%E5%AD%97%E5%B7%A5%E5%8E%82%E5%B0%8F%E7%9F%B3%E5%A4%B4/result.css' />
-  
-  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/256/main/result.css">
+
+
   
   
   <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/stdgt/dist/%E4%B8%8A%E5%9B%BE%E4%B8%9C%E8%A7%82%E4%BD%93-%E5%B8%B8%E8%A7%84/result.css' />
@@ -53,9 +53,6 @@
       });
     });
   </script>
-
-  
-
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
   
@@ -455,6 +452,31 @@
     </script>
 
 </footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
 
 
 

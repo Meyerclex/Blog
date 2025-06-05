@@ -62,12 +62,6 @@
     });
   </script>
 
-  {{ if eq .Kind "page" }}
-  {{ $script := resources.Get "js/pic-js.js" | js.Build | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
-  {{ end }}
-
-
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.Params.favicon | relURL }}" />
   <!-- MathJax inclusion -->
   {{ if .Params.mathjax }}

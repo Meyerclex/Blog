@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.87bf6072f0cf8c3a75ff7fde26e0bc27fbbd165f425f284a2480ba28c67d7152c1ffa5170f131ea5807b40ce8372ab88396101fab4796f5f720458c6b2f0b26b.css" integrity="sha512-h79gcvDPjDp1/3/eJuC8J/u9Fl9CXyhKJIC6KMZ9cVLB/6UXDxMepYB7QM6DcquIOWEB&#43;rR5b19yBFjGsvCyaw==" />
+  <link rel="stylesheet" href="/css/main.395368af58e82cf04e6c3e6378968dba38e06d17af2fedd3720d47e2f0c49faf78e07effc1b34ee73ef37ee9a52a758d402be6a7753e49d9ce52fd90e260de4e.css" integrity="sha512-OVNor1joLPBObD5jeJaNujjgbRevL&#43;3Tcg1H4vDEn6944H7/wbNO5z7zfumlKnWNQCvmp3U&#43;SdnOUv2Q4mDeTg==" />
   
   
   
@@ -65,7 +65,7 @@
 
   
   
-  <script src="/js/pic-js.min.7836958bb39ce30b15564042a0a055dc6b37f992ab718df56de04bac189718fc.js" integrity="sha256-eDaVi7Oc4wsVVkBCoKBV3Gs3&#43;ZKrcY31beBLrBiXGPw=" crossorigin="anonymous"></script>
+  <script src="/js/pic-js.min.f8952214762921b4f64b73e2957b35e4d15f86bd8df6dba030b5f9d531681c67.js" integrity="sha256-&#43;JUiFHYpIbT2S3PilXs15NFfhr2N9tugMLX51TFoHGc=" crossorigin="anonymous"></script>
   
 
 
@@ -469,6 +469,31 @@
     </script>
 
 </footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
 
 
 

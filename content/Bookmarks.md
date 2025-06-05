@@ -31,6 +31,7 @@ last_edit: May 26, 2025
 - [ribo.zone - free stuff for you](https://ribo.zone/free/)：layouts, code snippets...
 - [designfreaks](https://designfreaks.net/goodies/resources/)：made by Nick and Danny, sharing their designs and graphics
 - [cherie.nekoweb.org](https://cherie.nekoweb.org/resources/)
+- [ViewImage](https://tokinx.github.io/ViewImage/#id-demo)：现在正在用的图片放大方案，比fancybox简洁得多。
 
 ## Layouts / Themes ...
 

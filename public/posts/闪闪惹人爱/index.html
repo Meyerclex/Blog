@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.87bf6072f0cf8c3a75ff7fde26e0bc27fbbd165f425f284a2480ba28c67d7152c1ffa5170f131ea5807b40ce8372ab88396101fab4796f5f720458c6b2f0b26b.css" integrity="sha512-h79gcvDPjDp1/3/eJuC8J/u9Fl9CXyhKJIC6KMZ9cVLB/6UXDxMepYB7QM6DcquIOWEB&#43;rR5b19yBFjGsvCyaw==" />
+  <link rel="stylesheet" href="/css/main.01b046f94706c70fe73fb5604f0c19290a3b5a17b0fc75d993e496293097fd0f97f3f63d5aee5ccbc02644aa81abdee50ab870e44c5445b3cdab1fbd89cff796.css" integrity="sha512-AbBG&#43;UcGxw/nP7VgTwwZKQo7Whew/HXZk&#43;SWKTCX/Q&#43;X8/Y9Wu5cy8AmRKqBq97lCrhw5ExURbPNqx&#43;9ic/3lg==" />
   
   
   
@@ -58,12 +58,6 @@
       });
     });
   </script>
-
-  
-  
-  <script src="/js/pic-js.min.7836958bb39ce30b15564042a0a055dc6b37f992ab718df56de04bac189718fc.js" integrity="sha256-eDaVi7Oc4wsVVkBCoKBV3Gs3&#43;ZKrcY31beBLrBiXGPw=" crossorigin="anonymous"></script>
-  
-
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
   
@@ -190,6 +184,7 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
+
 
     
 
@@ -322,19 +317,21 @@
 <p>旧的Luna主题漂亮美貌且功能齐全，可惜这主题用起来……确实问题很多且笨重。并且前段时间收到好几次站点打不开的反馈，我在Timeline上向黑客部门反馈了二十余次，无人应答，因此一直没有排查出问题，由于主站和子站点除了主题以外其他域名设置都是一致的，疑心是不是博客主题问题导致打不开，尽管我也觉得这怎么可能呢？再怎么怀疑也不应该怀疑到主题头上吧！</p>
 <p>可是事情就是这么发生了，我的问题排查能力就是在这个水平了，再说了一个主题用久了就是很想换嘛！所以我决定换主题看看会不会有所改善。</p>
 <p>不过在我在改主题的时随手查了一下邮箱，突然发现：</p>
+<img loading='lazy' decoding="async" src="https://raw.githubusercontent.com/Meyerclex/image/main/20220911005645.png" alt="" 
+     class="post-image"
 
-<img src="https://raw.githubusercontent.com/Meyerclex/image/main/20220911005645.png" alt="" loading="lazy" class="post-image"/>
-    <p>诶，哈哈哈，原来Vercel一直给我狂发邮件说我域名没设置好啊，一直以为是广告邮件……所以问题其实出在这里吧！！！</p>
+/>
+<p>诶，哈哈哈，原来Vercel一直给我狂发邮件说我域名没设置好啊，一直以为是广告邮件……所以问题其实出在这里吧！！！</p>
 <p>不过主题换都换了，本次改主题改得非常开心。请看：</p>
-<p>
-<img src="luna.png" alt="Stack" loading="lazy" class="post-image"/>
-Stack
+<p><img loading='lazy' decoding="async" src="luna.png" alt="Stack" 
+     class="post-image"
 
-     
-<img src="stack.png" alt="Luna" loading="lazy" class="post-image"/>
-Luna
+/>
+Stack <img loading='lazy' decoding="async" src="stack.png" alt="Luna" 
+     class="post-image"
 
-    </p>
+/>
+Luna</p>
 <p>找了一圈主题，最终还是选了功能齐全Stack（主要还是方便，因为之前就用过所以博客文件也还没删！），马上开始磨刀霍霍一顿乱改，把主题的层层叠叠的三栏结构改成了单栏，改的过程中忽然意识到人家本身就是美丽的层叠卡片式主题——我到底在干嘛啊！</p>
 <p>总而言之，一股“我偏要勉强”的信念让我走到了现在。主要进行了以下修改：</p>
 <ol>
@@ -731,8 +728,6 @@ Luna
         
         
         
-        
-        
         <span>All rights reserved.</span>
 
     </section>
@@ -761,6 +756,31 @@ Luna
     </script>
 
 </footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
 
 
 
@@ -845,6 +865,21 @@ Luna
 </script>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
         </main>

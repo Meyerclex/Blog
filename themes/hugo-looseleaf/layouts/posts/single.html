@@ -1,6 +1,7 @@
 
 {{ define "main" }}
 <!--<div class="post-meta" style="margin: auto;">-->
+
     {{ partial "nav.html" .}}
 <!--</div>-->
 <article {{ if .Params.hidden }}data-pagefind-ignore{{ end }}>
@@ -64,6 +65,24 @@
 {{ end }}
 
     <div>
+
     {{- partial "footer.html" . -}}
+
     </div>
+
+<!--{{ $scriptViewImage := resources.Get "js/view-image.min.js" }}-->
+<!--{{ if $scriptViewImage }}-->
+<!--{{ $scriptViewImage = $scriptViewImage | js.Build | resources.Fingerprint }}-->
+<!--<script src="{{ $scriptViewImage.RelPermalink }}" integrity="{{ $scriptViewImage.Data.Integrity }}" crossorigin="anonymous"></script>-->
+<!--{{ else }}-->
+<!--{{ end }}-->
+<!--<script>-->
+<!--    document.addEventListener('DOMContentLoaded', () => {-->
+<!--        if (window.ViewImage) {-->
+<!--            ViewImage.init('img:not([no-view]):not(.emoji):not(#emoji)');-->
+<!--        } else {-->
+<!--            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
 {{ end }}

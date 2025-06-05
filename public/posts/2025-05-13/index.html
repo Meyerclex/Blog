@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.87bf6072f0cf8c3a75ff7fde26e0bc27fbbd165f425f284a2480ba28c67d7152c1ffa5170f131ea5807b40ce8372ab88396101fab4796f5f720458c6b2f0b26b.css" integrity="sha512-h79gcvDPjDp1/3/eJuC8J/u9Fl9CXyhKJIC6KMZ9cVLB/6UXDxMepYB7QM6DcquIOWEB&#43;rR5b19yBFjGsvCyaw==" />
+  <link rel="stylesheet" href="/css/main.01b046f94706c70fe73fb5604f0c19290a3b5a17b0fc75d993e496293097fd0f97f3f63d5aee5ccbc02644aa81abdee50ab870e44c5445b3cdab1fbd89cff796.css" integrity="sha512-AbBG&#43;UcGxw/nP7VgTwwZKQo7Whew/HXZk&#43;SWKTCX/Q&#43;X8/Y9Wu5cy8AmRKqBq97lCrhw5ExURbPNqx&#43;9ic/3lg==" />
   
   
   
@@ -58,12 +58,6 @@
       });
     });
   </script>
-
-  
-  
-  <script src="/js/pic-js.min.7836958bb39ce30b15564042a0a055dc6b37f992ab718df56de04bac189718fc.js" integrity="sha256-eDaVi7Oc4wsVVkBCoKBV3Gs3&#43;ZKrcY31beBLrBiXGPw=" crossorigin="anonymous"></script>
-  
-
 
   <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
   
@@ -190,6 +184,7 @@
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
             <div class="w">
+
 
     
 
@@ -350,9 +345,11 @@
 <p>上个月装修博客的时候写了一个猫咪拍立得挂件放在首页，它最大的功能就是萌，次要的功能是点击按钮可以切换照片。</p>
 <p>虽然我换了首页样式，但还是保留了原来的首页，因此可以查看 <strong><a href="https://5d4f9183.hugo-newspaper.pages.dev/" target="_blank" rel="noopener noreferrer">Demo</a></strong> 来玩一玩。萌吧？（笑）</p>
 <p>上个月还同时改写了一下Status Cafe（左）的挂件，因此一并在这里记录。</p>
+<img loading='lazy' decoding="async" src="/blog/Snipaste_2025-05-13_15-21-34.png" alt="" 
+     class="post-image"
 
-<img src="/blog/Snipaste_2025-05-13_15-21-34.png" alt="" loading="lazy" class="post-image"/>
-    <h2 id="猫咪拍立得实现">猫咪拍立得实现</h2>
+/>
+<h2 id="猫咪拍立得实现">猫咪拍立得实现</h2>
 <ol>
 <li>
 <p>首先，创建<code>\layouts\partials\meow-box.html</code>，代码如下：</p>
@@ -793,11 +790,11 @@ box-sizing: border-box;
 <h3 id="4-选做关于个人主页美化">4. 选做：关于个人主页美化？</h3>
 <p>如果你也想要一个五彩缤纷的Status Cafe个人主页，可以在用户页的Setting中进行自定义。</p>
 <p>我用了<a href="https://smallpancakes.nekoweb.org/themes/" target="_blank" rel="noopener noreferrer">smallpancakes</a>提供的Kawaii Pancake主题（伊实在太善心了甚至是一键复制），只是进行了背景图片和样式的一些魔改，基础代码还是来源于TA，不然我完全不知道从何下手。</p>
+<img loading='lazy' decoding="async" src="/blog/Snipaste_2025-05-13_16-17-15.png" alt="如何进行主页美化" 
+     class="post-image"
 
-<img src="/blog/Snipaste_2025-05-13_16-17-15.png" alt="如何进行主页美化" loading="lazy" class="post-image"/>
-如何进行主页美化
-
-    <p>以下为我修改后的个人主页装饰代码，欢迎直接使用：</p>
+/>
+如何进行主页美化<p>以下为我修改后的个人主页装饰代码，欢迎直接使用：</p>
 <details>
 <summary>代码过长折叠</summary>
 
@@ -1314,8 +1311,6 @@ h1::after, h2::after {
         
         
         
-        
-        
         <span>All rights reserved.</span>
 
     </section>
@@ -1344,6 +1339,31 @@ h1::after, h2::after {
     </script>
 
 </footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
 
 
 
@@ -1428,6 +1448,21 @@ h1::after, h2::after {
 </script>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
         </main>

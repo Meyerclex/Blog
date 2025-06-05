@@ -1,0 +1,1 @@
+(()=>{var e=postContent.querySelectorAll("p");e.forEach(e=>{const t=e.querySelector("img");t&&t.id!=="emoji"&&!t.classList.contains("emoji")&&(e.style.textAlign="center",e.style.fontSize="90%")})})()
