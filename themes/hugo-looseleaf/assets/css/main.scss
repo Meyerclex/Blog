@@ -27,7 +27,9 @@
   --index-shadow: rgb(251,230,189); // 猫的阴影
   --tools: rgb(253, 252, 224);
   --tools-transparent: rgba(253, 252, 224, 0.2);
+  --description: rgba(233, 239, 229, 0.71);
 }
+
 
 :root {
   --talk-bubble-bg: #fdf8e3;
@@ -355,10 +357,22 @@ details[open] summary {
 }
 
 #post-description {
+  //color: var(--description-word);
   font-size: 14px;
+  background-color: var(--description);
   margin: 5px 0;
+  padding: 20px;
 }
 
+
+:root {
+  --description: rgb(255, 255, 247);
+  --description-word: #7c4c3c;
+}
+
+[a="dark"] {
+  --description: rgba(50, 14, 83, 0.71);
+}
 
 .site-footer {
   display: flex;
