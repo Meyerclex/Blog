@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2025-05-23T00:00:00+08:00</lastmod>
+    <loc>http://localhost:1313/posts/june-06-thoughts/</loc>
+    <lastmod>2025-06-08T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/random-thoughts/</loc>
+    <lastmod>2025-06-08T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-08T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2025-05-23T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-05-23-twemoji/</loc>
     <lastmod>2025-05-23T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/may-15-random-thoughts/</loc>
-    <lastmod>2025-05-15T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/random-thoughts/</loc>
     <lastmod>2025-05-15T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-05-13/</loc>

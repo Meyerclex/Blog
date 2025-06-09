@@ -4,16 +4,18 @@ description:
 date: 2021-06-28
 slug: changelog
 toc: true
-layout: "diary"
+layout: diary
 ---
 
 ## 📠 更新日志 / Changelog
 
-### 2025/05/22
+### 2025/06 更新情况汇总
 
-修改了目录、导航栏和Status Cafe的样式。
+- 更广泛使用的Fancybox我用起来实在很痛苦，最后引入了[view-image](https://tokinx.github.io/ViewImage/)实现图片放大。只有2kb大小，你值得拥有jpg
 
-现在的Status颜色就是抄动森的！这两天又上岛挖挖埋埋了开心。
+- 改了一些七七八八有的没的（？）对了，把CP视频放在Archive里了
+
+- [ ] **想写一个能塞更多东西的Archive List。**
 
 ---
 
@@ -22,6 +24,12 @@ layout: "diary"
 <summary>
 「 往期装修日志，内容过长折叠 」
 </summary>
+
+### 2025/05/22
+
+修改了目录、导航栏和Status Cafe的样式。
+
+现在的Status颜色就是抄动森的！这两天又上岛挖挖埋埋了开心。
 
 ### 2025/05/21 Twemoji的应用 
 
@@ -35,42 +43,7 @@ layout: "diary"
 
 2. 因为嫌弃默认emoji不好看所以搜索了一下，找到了[hugo-mod-twemoji](https://github.com/jakejarvis/hugo-mod-twemoji)这个库！😉twemoji没有描边好看多了！
 
-<details>
-<summary>
-「 引入Twemoji的步骤 📑 」
-</summary>
-
-如果使用`hugo-mod`来引入，会导致一个问题就是，它会下载七千多个表情文件放在`public/twemoji`里，导致每次部署都超级久，吓得我忙不迭复原了。然后开始尝试Gemini给我的本地化Twemoji方法：
-
-1. 打开[twemoji.min.js](https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js)链接后`ctrl+s`，将脚本保存到`assets/js`目录下）。
-
-2. 在`static`目录里创建一个新的子文件夹，例如：`static/my-emojis/svg/`
-
-3. 访问[twemoji](https://github.com/twitter/twemoji/tree/master)，下载整个库压缩包，然后把`assets/svg`文件里的图标解压放到上一步的文件夹内。
-
-4. 将如下代码放入你`layouts/baseof.html`文件中的`</body>`标签前
-
-```
-    {{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
-    <script src="{{ $twemojiJS.RelPermalink }}"></script>
-    <script>
-       document.addEventListener('DOMContentLoaded', function() {
-            twemoji.parse(document.body, {
-            base: '{{ "/my-emojis/" | relURL }}', 
-            folder: 'svg', 
-            ext: '.svg' 
-            });
-            });
-    </script>
-
-</body>
-```
-
-</details>
-
-不过何故如此大费周章啊？我又不怎么用emoji……我已经不是中学生了。
-
-又及：对引用样式不是特别满意但又想不出改成什么样（呆）（这都快写成Changediary了）😿
+指路：[《如何在Hugo博客中使用Twemoji🍻》](/posts/2025-05-23-Twemoji)
 
 
 ### 2025/05/20 网页加载速度问题
