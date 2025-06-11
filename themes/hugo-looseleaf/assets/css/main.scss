@@ -552,12 +552,13 @@ ul p {
 .custom-paginav a {
   display: block;
   width: 50%;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem;
   text-decoration: none;
   border-radius: 5px;
   color: var(--text-color);
   box-sizing: border-box;
   word-break: break-word;
+  font-size: 90%;
 }
 
 .custom-paginav a:hover {

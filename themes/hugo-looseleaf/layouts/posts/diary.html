@@ -16,8 +16,17 @@
                 </div>
                 </article>
                 <br>
-                <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">last edited:
+                <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">
+
+                    {{ if .Params.tags }}
+                    {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">＃{{ . }}</a>
+                    {{ end }}
+                    {{ end }}
+
+
                     {{ with .Params.last_edit }}
+                    last edited:
                     {{ . }}
                     {{ end }}
                 </p>
