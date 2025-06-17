@@ -11,7 +11,7 @@ last_edit: May 26, 2025
 
 - [我是走廊，张亦绚](https://nathaliechang.wixsite.com/nathaliechang/home)：张女士的博客，竟然还是高频更新😮
 - **字体**：[ZeoSeven](https://fonts.zeoseven.com/) / [fonts catalog](https://478.neocities.org/catalog/) 
-- [香港公共图书馆](https://sls.hkpl.gov.hk/digital-collection/tc/collection.html)
+- [香港公共图书馆](https://sls.hkpl.gov.hk/digital-collection/tc/collection.html) / [HKMS 香港地图](https://www.hkmapservice.gov.hk/OneStopSystem/home)
 
 - [一些手账内页](http://pdc2.u1m.biz/)
 - [林夕词作研究小站](https://www.cantonpoplyric.com/) / [粤曲清苑](https://operawillis.appspot.com/) / [识典古籍](https://www.shidianguji.com/?page_from=reading_page)
