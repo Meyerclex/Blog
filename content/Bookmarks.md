@@ -14,7 +14,7 @@ last_edit: May 26, 2025
 - [香港公共图书馆](https://sls.hkpl.gov.hk/digital-collection/tc/collection.html)
 
 - [一些手账内页](http://pdc2.u1m.biz/)
-- [林夕词作研究小站](https://www.cantonpoplyric.com/) / [粤曲清苑](https://operawillis.appspot.com/)
+- [林夕词作研究小站](https://www.cantonpoplyric.com/) / [粤曲清苑](https://operawillis.appspot.com/) / [识典古籍](https://www.shidianguji.com/?page_from=reading_page)
 - [sadgrl.online](https://goblin-heart.net/sadgrl/webmastery/)：提供了大量个人网站创建到美化的代码、图像和知识资源。
 - [Petrapixel - Coding Help](https://petrapixel.neocities.org/coding/)：站内有非常多网站资源，最近读了一下她的建站和一些初学者Coding教程写得非常亲切详尽和好。
 
