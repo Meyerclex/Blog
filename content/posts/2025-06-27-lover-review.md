@@ -157,3 +157,10 @@ slug: 25-06-27-review
 <div style="clear: both;"></div>
 
 手记写得比较混乱，不过都是一些当下心情。或许过段时间再来看，也会有新的感受吧。总之先写到这里。
+
+---
+
+突然想起还有一件事！我CP小视频在博客里挂了1个月了，因为剪得不是很好就没有群发通知大家了（……）不过现在正好可以贴一贴。也是童话故事（但残酷版本）。
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114618634608496&bvid=BV1N97bzDEcH&cid=30300046568&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
