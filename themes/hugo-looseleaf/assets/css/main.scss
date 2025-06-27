@@ -14,7 +14,7 @@
   --color-bg-code: rgba(94, 89, 89, 0.13);
   --bg-select: rgba(255, 239, 218, 0.6);
   --color-point: #D45B587F;
-  --border-color: #38383c;
+  --border-color: rgba(56, 56, 60, 0.88);
   --color-mark: #7caaaa;
   --link-hover: #FFD09B;
   --neodb-card-color: rgba(255, 251, 251, 0.85);
@@ -358,11 +358,20 @@ details[open] summary {
 }
 
 #post-description {
-  //color: var(--description-word);
+  color: var(--post-description);
+  //font-weight: bold;
   font-size: 90%;
-  background-color: var(--description);
-  margin: 5px 0;
-  padding: 20px;
+  //background-color: var(--description);
+  margin: 20px 0;
+  padding: 0 0 0 20px;
+  border-left: 4px solid var(--post-description);
+}
+
+:root {
+  --post-description: rgba(92, 77, 77, 0.71);
+}
+[a="dark"] {
+  --post-description: rgba(253, 252, 224, 0.88);
 }
 
 .site-footer {
