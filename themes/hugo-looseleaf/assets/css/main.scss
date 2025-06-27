@@ -27,9 +27,10 @@
   --index-shadow: rgb(251,230,189); // 猫的阴影
   --tools: rgb(253, 252, 224);
   --tools-transparent: rgba(253, 252, 224, 0.2);
-  --description: rgba(233, 239, 229, 0.71);
+  --description: rgb(255, 255, 247);
+  --description-word: #7c4c3c;
+  --blockquote-bg: rgba(255, 244, 244, 0.66);
 }
-
 
 :root {
   --talk-bubble-bg: #fdf8e3;
@@ -58,6 +59,9 @@
   --index-shadow: rgb(136, 50, 127); // 猫的阴影
   --tools: rgba(81, 5, 97, 0.73);
   --tools-transparent: rgba(81, 5, 97, 0.146);
+  --description: rgba(50, 14, 83, 0.71);
+  --blockquote-bg: rgba(50, 14, 83, 0.71);
+  --description-word: #f3ecf6;
 }
 
 [a="dark"] {
@@ -151,10 +155,6 @@ figcaption {
   background-color: var(--bg-select);
 }
 
-blockquote {
-  border-left: 2px solid var(--blockquote-color);
-  color: var(--secondary-text-color);
-}
 
 .alt-text {
   color: var(--secondary-text-color);
@@ -300,10 +300,11 @@ td {
 
 blockquote {
   padding: 1rem;
-
+  border-left: 0px solid var(--blockquote-color);
+  color: var(--description-word);
+  background-color: var(--blockquote-bg);
   p {
-    margin: 10px 5px;
-
+    margin: 15px 20px;
   }
 }
 
@@ -364,16 +365,6 @@ details[open] summary {
   padding: 20px;
 }
 
-
-:root {
-  --description: rgb(255, 255, 247);
-  --description-word: #7c4c3c;
-}
-
-[a="dark"] {
-  --description: rgba(50, 14, 83, 0.71);
-}
-
 .site-footer {
   display: flex;
   justify-content: center;
@@ -399,6 +390,24 @@ img.float-img35 {
   /* 添加阴影 */
   border-radius: 8px;
   /* 可选：让图片的边角稍微圆润 */
+}
+
+img.float-15 {
+  float: left;
+  width: 15%;
+  margin-right: 1em !important;
+  margin-bottom: 0 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+img.float-20 {
+  float: left;
+  width: 20%;
+  margin-right: 1em !important;
+  margin-bottom: 0 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 img.float-img50 {
