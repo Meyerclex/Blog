@@ -4,7 +4,7 @@ date: 2025-07-10T16:07:05+08:00
 slug: "2025-07-10-Fleeting-thought" 
 draft: false
 tags:
-  - monthly
+  - Random thoughts
 description: "看过以后你就忘不了大哥，大哥他……他深邃的眼睛了……"
 comment: true
 toc: false
