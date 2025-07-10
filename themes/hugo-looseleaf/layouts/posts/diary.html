@@ -11,6 +11,17 @@
             </div>
             <div class="header-content">
                 <h2>{{ .Title }}</h2>
+                {{ if .Params.toc | default true }}
+                <style>
+                    #toc-hr {
+                        display: none;
+                    }
+                    .post-toc-mobile {
+                        display: none;
+                    }
+                </style>
+                {{ partial "toc.html" . }}
+                {{ end }}
                 <article><div id="post-content">
                 {{ .Content }}
                 </div>
