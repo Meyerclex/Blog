@@ -63,6 +63,7 @@ last_edit: May 26, 2025
 - [fancyparts](https://www.fancyparts.com/index.html)
 - [dice.nengu.jp](https://dice.nengu.jp/)
 - <A href="http://1kbsozai.com" target="_blank">1キロバイトの素材屋さん</A>
+- 蛋卷推荐的[拍立得生成器](https://notchtools.com/polaroid-photo-generator)和[万花筒生成器](https://repper.app/design/)
 
 ## others 
 
