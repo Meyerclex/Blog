@@ -44,11 +44,11 @@ margin: 15px 0;
 
 - [一片痴心俱成灰](https://akaito.xyz/) / [第三夏尔](https://thirdshire.com) / [眠于水月间](https://sleepymoon.cyou) / [蝴蝶曾在此处](https://www.changingmoments.one/) 
 
-- [Missing](https://www.missingid.online/) / [Mengru](https://mengru.space/) / [Mid of Nowhere](https://notes.midofnowhere.link/)  / [Plaskier](https://blog.plaskier.icu/) / [Shixiaocaia](https://shixiaocaia.fun/) 
+- [Missing](https://www.missingid.online/) / [Mengru](https://mengru.space/) / [Mid of Nowhere](https://notes.midofnowhere.link/)  / [Plaskier](https://blog.plaskier.icu/) / [Shixiaocaia](https://outofsea.fun/) 
 
 - [Zoeash](https://writee.org/zoeash/) / [A Purrception](https://tortie.me/) / [Velas电波站](https://www.velasx.com) / [甜鱼/Ayu](https://ayu.land) / [Muko](https://oaad.iceco.icu/)
 
-- [Kawa1Planet](https://kawa1planet.fun/) / [Χαρυβδις](https://kharybdism.xyz/) / [Shadows of the Sun](https://rovingsun.wordpress.com/) / [suica](https://suicablog.cobaltkiss.blue/)
+- [Kawa1Planet](https://kawa1planet.fun/) / [Χαρυβδις](https://kharybdism.xyz/) / [Shadows of the Sun](https://rovingsun.wordpress.com/) / [suica](https://suicablog.cobaltkiss.blue/) / [PXXELS](https://pxxels.neocities.org/)
 
 ### info
 
