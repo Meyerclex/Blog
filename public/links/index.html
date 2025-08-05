@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.24ac034b77df4454a485a03bb87d8d22b7c24282d949c31477ae6de42903a68a89f4771650d384f1abe6f91845d26c13a65f45d9f03df391329535ea5777d355.css" integrity="sha512-JKwDS3ffRFSkhaA7uH2NIrfCQoLZScMUd65t5CkDpoqJ9HcWUNOE8avm&#43;RhF0mwTpl9F2fA985EylTXqV3fTVQ==" />
+  <link rel="stylesheet" href="/css/main.bb63c85303bde6ffdcdec53f330aedcde29895e846d20543fa9ddf02187065b52fedd4481a13159b00ec69eb3e772b9944d7c02853eec4a8ec317ac32026aa8a.css" integrity="sha512-u2PIUwO95v/c3sU/MwrtzeKYlehG0gVD&#43;p3fAhhwZbUv7dRIGhMVmwDsaes&#43;dyuZRNfAKFPuxKjsMXrDICaqig==" />
   
   
   
@@ -265,13 +265,13 @@ margin: 15px 0;
 <p><a href="https://akaito.xyz/" target="_blank" rel="noopener noreferrer">一片痴心俱成灰</a> / <a href="https://thirdshire.com" target="_blank" rel="noopener noreferrer">第三夏尔</a> / <a href="https://sleepymoon.cyou" target="_blank" rel="noopener noreferrer">眠于水月间</a> / <a href="https://www.changingmoments.one/" target="_blank" rel="noopener noreferrer">蝴蝶曾在此处</a></p>
 </li>
 <li>
-<p><a href="https://www.missingid.online/" target="_blank" rel="noopener noreferrer">Missing</a> / <a href="https://mengru.space/" target="_blank" rel="noopener noreferrer">Mengru</a> / <a href="https://notes.midofnowhere.link/" target="_blank" rel="noopener noreferrer">Mid of Nowhere</a>  / <a href="https://blog.plaskier.icu/" target="_blank" rel="noopener noreferrer">Plaskier</a> / <a href="https://shixiaocaia.fun/" target="_blank" rel="noopener noreferrer">Shixiaocaia</a></p>
+<p><a href="https://www.missingid.online/" target="_blank" rel="noopener noreferrer">Missing</a> / <a href="https://mengru.space/" target="_blank" rel="noopener noreferrer">Mengru</a> / <a href="https://notes.midofnowhere.link/" target="_blank" rel="noopener noreferrer">Mid of Nowhere</a>  / <a href="https://blog.plaskier.icu/" target="_blank" rel="noopener noreferrer">Plaskier</a> / <a href="https://outofsea.fun/" target="_blank" rel="noopener noreferrer">Shixiaocaia</a></p>
 </li>
 <li>
 <p><a href="https://writee.org/zoeash/" target="_blank" rel="noopener noreferrer">Zoeash</a> / <a href="https://tortie.me/" target="_blank" rel="noopener noreferrer">A Purrception</a> / <a href="https://www.velasx.com" target="_blank" rel="noopener noreferrer">Velas电波站</a> / <a href="https://ayu.land" target="_blank" rel="noopener noreferrer">甜鱼/Ayu</a> / <a href="https://oaad.iceco.icu/" target="_blank" rel="noopener noreferrer">Muko</a></p>
 </li>
 <li>
-<p><a href="https://kawa1planet.fun/" target="_blank" rel="noopener noreferrer">Kawa1Planet</a> / <a href="https://kharybdism.xyz/" target="_blank" rel="noopener noreferrer">Χαρυβδις</a> / <a href="https://rovingsun.wordpress.com/" target="_blank" rel="noopener noreferrer">Shadows of the Sun</a> / <a href="https://suicablog.cobaltkiss.blue/" target="_blank" rel="noopener noreferrer">suica</a></p>
+<p><a href="https://kawa1planet.fun/" target="_blank" rel="noopener noreferrer">Kawa1Planet</a> / <a href="https://kharybdism.xyz/" target="_blank" rel="noopener noreferrer">Χαρυβδις</a> / <a href="https://rovingsun.wordpress.com/" target="_blank" rel="noopener noreferrer">Shadows of the Sun</a> / <a href="https://suicablog.cobaltkiss.blue/" target="_blank" rel="noopener noreferrer">suica</a> / <a href="https://pxxels.neocities.org/" target="_blank" rel="noopener noreferrer">PXXELS</a></p>
 </li>
 </ul>
 <h3 id="info">info</h3>
@@ -564,7 +564,25 @@ margin: 15px 0;
 
 
 
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
 
+</script>
 
 <script>
     ;(function () {
@@ -649,7 +667,25 @@ margin: 15px 0;
         </main>
     
 
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
 
+</script>
 
 <script>
     ;(function () {
