@@ -338,16 +338,14 @@
     <div id="post-content"  data-pagefind-body>
         <blockquote>
 <p>在我敲完这篇的四天后（<em>2022年1月16日</em>）我忽然瞧见了另一个博客，TA也写了如何自己的搭建流程，我想TA的方案显然比我的更简洁也更好，虽然我想不到有谁会认真参考我的博客内容，但还是一并贴来：<a href="https://janakymurthy.github.io/making_blog_from_notion_pages.html" target="_blank" rel="noopener noreferrer">Making a Github blog from Notion pages</a></p>
-<p>2022年4月7日 Update：增加了一个简陋的更新方法。</p>
-</blockquote>
+<p>2022年4月7日 Update：增加了一个简陋的更新方法。</p></blockquote>
 <p>这段时间有一搭没一搭地学<a href="chinese.freecodecamp.org">FreeCodeCamp</a>，CSS学到一半的路上被最后的项目困住，苦恼了几秒之后我开始试吃别的课程，在互联网乱序游荡，点开了Node.js的课，一步一步跟着先下载各种安装包，在<code>Install</code>按下没多久忽然发现——</p>
 <p>咦。我本来就有Node.js环境？</p>
 <p>大概是过去哪一回互联网试吃失败遗留下来的东西吧，实在不知道什么时候我试图挑战过这个了。但我完全不知道这个怎么用，这在FCC也是很后面的课程，而我Javascript都还只试吃了小半口，跟着敲了一下查看版本的代码都不是很顺利，于是去找了一个手把手的教程：<a href="https://www.bilibili.com/video/BV1a34y167AZ?p=5" target="_blank" rel="noopener noreferrer">Node.js全套入门教程</a>，它的分集目录很明确完整，非常有利于精准试吃，于是我这才终于明白：原来你想在哪里敲代码，就应该在目录那里打开终端——这样的表述也不知道对不对，总之就是按一下路径然后敲<code>cmd</code>回车。嗯！我会了！这就完成了第一步！</p>
 <p>试吃到这里我忽然想起来Node.js这个东西我在哪里见过：<a href="https://gregueria.vercel.app/posts/%E6%B2%99%E6%BB%A9%E4%BC%9A%E6%98%AF%E9%B1%BC%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%99%E5%90%97/" target="_blank" rel="noopener noreferrer">沙滩会是鱼的最后一站吗？</a></p>
 <blockquote>
 <p>📌<strong>前情回顾</strong></p>
-<p><a href="https://github.com/dragonman225/notablog" target="_blank" rel="noopener noreferrer">Notablog</a>：界面美丽。但Getting Start里的“Make sure you have Node.js v12.0.0 or higher”使我未能开始。</p>
-</blockquote>
+<p><a href="https://github.com/dragonman225/notablog" target="_blank" rel="noopener noreferrer">Notablog</a>：界面美丽。但Getting Start里的“Make sure you have Node.js v12.0.0 or higher”使我未能开始。</p></blockquote>
 <p>……原来在这儿呢。现在我已经有了Node.js v12.0.0 or higher啦😝虽然用Notion搭东西的愿望已经没有那么强烈了，但既然我都学到这里了（刚学完<code>npm</code>怎么用的地步）那我就一定要试试！Let&rsquo;s get started！</p>
 <h2 id="lets-get-started">Let&rsquo;s get started!</h2>
 <p>接下来的活动也没有那么激动，就是按照Notablog的文档一步步敲下来就好啦（这一步我直接在磁盘路径下的<code>cmd</code>敲的）：<code>npm i -g notablog</code></p>
@@ -356,14 +354,12 @@
 <p>然后在<code>notablog-starter</code>目录里敲命令行：<code>notablog generate .</code>——很快你的Notion中的内容就被拉下来形成了一个网站，存放在了<code>notablog-starter/public/</code>里。而之后每一次在Notion上做了调整更新，都可以用这个命令行读取并划拉下来。</p>
 <p>根据我稀薄的Html知识大概明白了网站就在这个public文件夹里了，作者是这么说的：</p>
 <blockquote>
-<p>open index.html with a browser to preview your site.</p>
-</blockquote>
+<p>open index.html with a browser to preview your site.</p></blockquote>
 <p>嗯，对<code>index.html</code>右键用浏览器打开，确实是那个漂亮样子！Congratulations！等一下，可是这样不行呀！😫我不能让它放在硬盘里孤芳自赏对不对？根据作者的建议：</p>
 <blockquote>
 <p>You can copy files in notablog-starter/public/ directory to a server or upload them to any static hosting service to share your content with the world.</p>
 <p>Some options for static hosting services:</p>
-<p><strong>Github Pages</strong>、Netlify、surge.sh</p>
-</blockquote>
+<p><strong>Github Pages</strong>、Netlify、surge.sh</p></blockquote>
 <h2 id="把它们上传到github">把它们上传到Github！</h2>
 <p>我们可以把这个<code>Public</code>文件夹用类似Github Pages之类的托管服务弄到互联网世界里——Netlify好像也挺常见的，但我没有用过，只有第一个是我认识的，因为之前读过很多用Github Pages搭建博客的文章，看了一下文档和视频大概明白了怎么处理它，嗯！动手吧！（胡扯，人家在这里卡了一个多小时唉😫）</p>
 <blockquote>
@@ -372,8 +368,7 @@
 <li><a href="https://blog.csdn.net/littlely_ll/article/details/80054481" target="_blank" rel="noopener noreferrer">如何把本地文件夹上传到github</a>：谢谢你互联网老师，我总算知道怎么弄这个啦！</li>
 <li><a href="https://www.bilibili.com/video/BV1Xh411b7wh?p=3&amp;share_source=copy_web" target="_blank" rel="noopener noreferrer">零基础-通过Github Pages搭建个人博客</a>：这个Po有讲关于Github的Master和Main分支，虽然我没有搞懂，但我总算知道了自己建完仓库以后的那些指令是做什么的。</li>
 <li><a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github Pages</a></li>
-</ol>
-</blockquote>
+</ol></blockquote>
 <p>🧐那就开始吧！</p>
 <ol>
 <li>先在Github上建一个新仓库，根据上面第二份和第三份文献，可以知道仓库名需要是<code>Username.github.io</code>，这里应该必须是自己的用户名作为前缀，其他就先不管啦。关于SSH之类的知识，我没有专门再设置。鉴于我之前搭博客设置过类似的东西，这里应该不需要……吧？把仓库地址复制下来。</li>
@@ -579,11 +574,12 @@ pause</code></pre>
         requiredMeta: ["name", "email", "url"],
         dark: true,
         locale: {
-            placeholder: '这里有小豆泥表情，请肆无忌惮地使用！^^',
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
             admin: 'admin',
         }
     });
 </script>
+
 </div>
 
 
@@ -594,6 +590,10 @@ pause</code></pre>
         &copy; 2021 - 2025
         <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
+        
+        
+        
+        
         
         
         

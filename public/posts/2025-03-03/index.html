@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.24ac034b77df4454a485a03bb87d8d22b7c24282d949c31477ae6de42903a68a89f4771650d384f1abe6f91845d26c13a65f45d9f03df391329535ea5777d355.css" integrity="sha512-JKwDS3ffRFSkhaA7uH2NIrfCQoLZScMUd65t5CkDpoqJ9HcWUNOE8avm&#43;RhF0mwTpl9F2fA985EylTXqV3fTVQ==" />
+  <link rel="stylesheet" href="/css/main.bb63c85303bde6ffdcdec53f330aedcde29895e846d20543fa9ddf02187065b52fedd4481a13159b00ec69eb3e772b9944d7c02853eec4a8ec317ac32026aa8a.css" integrity="sha512-u2PIUwO95v/c3sU/MwrtzeKYlehG0gVD&#43;p3fAhhwZbUv7dRIGhMVmwDsaes&#43;dyuZRNfAKFPuxKjsMXrDICaqig==" />
   
   
   
@@ -292,8 +292,7 @@
 <p>我非常机缘巧合地买过一张雄狮少年2的观影团票，狮狮的主创真的对粉丝/观众都非常友好。看到首页都在夸狮狮的主创对待二创/同人的态度，我也来贡献一个路人角度关于几个主创细节。</p>
 <p>我那一场电影结束后本来原定应该只有2-3个主创来映后交流，结果最后不知道为什么竟然乌泱泱来了13个幕后主创，其中三位美术组/动画质检的女性主创应该是自己买票来看电影的。</p>
 <p>本来开始台上本来只有包车来的男主创，但观影团主持在介绍“雄狮少年2男团”的时候忽然被台上主创打断，说“我们是有女生同事在的”。然后手一指观众席，然后观众席的三位美术和动画质检女生被台上同事点名，站起来自我介绍，默默地猫到台上去。非常幽默……其中印象比较深的是一位女生主创是做电影里金木洋那个非常令人惊艳的鱼缸的，她讲：“很开心大家喜欢金总的鱼缸，我也很喜欢”。</p>
-<p>我觉得狮狮2是好的东西、是清澈的，有美的眼光的故事，而那天短暂的接触里，也觉得他们是非常有尊严，至少对待故事，对待观众都非常踏实和正派的创作者。而我们都明白这些品质有多么珍贵。</p>
-</blockquote>
+<p>我觉得狮狮2是好的东西、是清澈的，有美的眼光的故事，而那天短暂的接触里，也觉得他们是非常有尊严，至少对待故事，对待观众都非常踏实和正派的创作者。而我们都明白这些品质有多么珍贵。</p></blockquote>
 <p>在别的地方不敢说但在这里我就要说了，<strong>这不比光线强十倍？</strong></p>
 <img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/2025/IMG_9065.JPEG" alt="网友换到的大无料" 
      class="post-image"
@@ -313,7 +312,7 @@
     
     <a class="custom-paginav-prev" href="/posts/statement-2025-01-25/">
         <span class="custom-paginav-title">« Prev</span><br>
-        <span>关于本站停止RSS输出及相关事件说明</span>
+        <span>🆕 关于本站停止RSS输出及相关事件说明 🆕</span>
     </a>
     
     
@@ -473,11 +472,12 @@
         requiredMeta: ["name", "email", "url"],
         dark: true,
         locale: {
-            placeholder: '这里有小豆泥表情，请肆无忌惮地使用！^^',
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
             admin: 'admin',
         }
     });
 </script>
+
 </div>
 
 
@@ -488,6 +488,10 @@
         &copy; 2021 - 2025
         <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
         <a id="days">0</a> Days<br>
+        
+        
+        
+        
         
         
         
@@ -739,7 +743,25 @@
 
 
 
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
 
+</script>
 
 <script>
     ;(function () {

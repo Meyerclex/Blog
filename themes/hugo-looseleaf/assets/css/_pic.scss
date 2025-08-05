@@ -50,6 +50,23 @@
 #post-content p:has(> img.post-image:nth-child(6)) img { margin-bottom: 8px; }
 
 
+#post-content > img.post-image,
+.single-image-figure > img.post-image {
+  display: block;
+  margin: 1.5em auto; /* 上下间距、水平居中 */
+  width: 70%;
+  max-width: 100%;
+  border: 2px solid var(--shadow);
+  box-shadow: 4px 4px 0 0 var(--shadow);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+figcaption {
+    text-align: center;
+}
+
+
 // 奶牛猫图片特效
 @keyframes shake-left {
   0% {
