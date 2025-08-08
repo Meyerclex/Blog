@@ -94,7 +94,7 @@
             <div id="copyright" class="note__list"
             >
                 {{ with site.GetPage "copyright" }}
-                <h3 style="margin-top: 1em;">{{ .Title }}</h3>
+                <h3 style="margin-top: 0.5em;">{{ .Title }}</h3>
                 {{ .Content | safeHTML }}
                 {{ else }}
                 <p>404 Not Found</p>

@@ -184,7 +184,8 @@ mark {
 
 #meow-box,
 .note__item {
-  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  border: 2px solid var(--shadow);
   box-shadow: 4px 4px 0 0 var(--shadow);
 }
 
@@ -682,6 +683,7 @@ body[a="dark"] #copyright, body[a="dark"] #meow-box, .special-bg  {
                   rgba(255, 255, 255, 0.8)),
           url('/site/bg-mizu1-2-2.gif');
   background-repeat: repeat;
+  border-radius: 10px;
 }
 
 @import "taxonomy";

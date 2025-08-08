@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.24ac034b77df4454a485a03bb87d8d22b7c24282d949c31477ae6de42903a68a89f4771650d384f1abe6f91845d26c13a65f45d9f03df391329535ea5777d355.css" integrity="sha512-JKwDS3ffRFSkhaA7uH2NIrfCQoLZScMUd65t5CkDpoqJ9HcWUNOE8avm&#43;RhF0mwTpl9F2fA985EylTXqV3fTVQ==" />
+  <link rel="stylesheet" href="/css/main.bb63c85303bde6ffdcdec53f330aedcde29895e846d20543fa9ddf02187065b52fedd4481a13159b00ec69eb3e772b9944d7c02853eec4a8ec317ac32026aa8a.css" integrity="sha512-u2PIUwO95v/c3sU/MwrtzeKYlehG0gVD&#43;p3fAhhwZbUv7dRIGhMVmwDsaes&#43;dyuZRNfAKFPuxKjsMXrDICaqig==" />
   
   
   
@@ -806,7 +806,24 @@
 
 
 
-
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
 
 <script>
     ;(function () {
