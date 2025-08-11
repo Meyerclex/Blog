@@ -2,17 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/memory/</loc>
+    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/monthly/</loc>
+    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-08-02-memory/</loc>
+    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/2025-07-10-fleeting-thought/</loc>
     <lastmod>2025-07-10T16:07:05+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/random-thoughts/</loc>
     <lastmod>2025-07-10T16:07:05+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-07-10T16:07:05+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/monthly/</loc>
-    <lastmod>2025-07-10T11:37:48+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-07-10/</loc>
     <lastmod>2025-07-10T11:37:48+08:00</lastmod>
@@ -173,9 +179,6 @@
     <loc>http://localhost:1313/posts/2023-03-24/</loc>
     <lastmod>2023-03-24T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/memory/</loc>
-    <lastmod>2023-02-28T00:00:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/thewoman/</loc>
     <lastmod>2023-02-28T00:00:00+08:00</lastmod>
   </url><url>
@@ -328,7 +331,7 @@
   </url><url>
     <loc>http://localhost:1313/bookmarks/</loc>
   </url><url>
-    <loc>http://localhost:1313/aboutme/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url><url>
