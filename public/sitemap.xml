@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/movie--book/</loc>
+    <lastmod>2025-08-15T19:37:48+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-08-15T19:37:48+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-08-15-book/</loc>
+    <lastmod>2025-08-15T19:37:48+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-08-15-movie/</loc>
+    <lastmod>2025-08-15T11:37:48+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/memory/</loc>
     <lastmod>2025-08-11T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/monthly/</loc>
-    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2025-08-02-memory/</loc>
     <lastmod>2025-08-11T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-08-02-memory/</loc>
