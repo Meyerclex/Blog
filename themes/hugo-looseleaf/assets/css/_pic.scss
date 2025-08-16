@@ -53,9 +53,8 @@
 #post-content > img.post-image,
 .single-image-figure > img.post-image {
   display: block;
-  margin: 1.5em auto; /* 上下间距、水平居中 */
-  width: 70%;
-  max-width: 100%;
+  margin: 1.5em auto 0.5em auto;
+  max-width: 65%;
   border: 2px solid var(--shadow);
   box-shadow: 4px 4px 0 0 var(--shadow);
   border-radius: 8px;
@@ -64,7 +63,15 @@
 
 figcaption {
     text-align: center;
+    font-size: 90%;
 }
+
+@media (max-width: 768px) {
+  .single-image-figure > img.post-image {
+    max-width: 80%;
+  }
+}
+
 
 
 // 奶牛猫图片特效
