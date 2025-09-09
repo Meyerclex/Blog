@@ -10,7 +10,7 @@
                 {{ partial "nav_index" . }}
             </div>
             <div class="header-content">
-                <h2>{{ .Title }}</h2>
+                <h2 data-pagefind-meta="title">{{ .Title }}</h2>
                 {{ if .Params.toc | default true }}
                 <style>
                     #toc-hr {
