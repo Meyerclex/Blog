@@ -1,5 +1,5 @@
 source: public
-glob: posts/*/*.{html}
+glob: "**/*.html"
 bundle_dir: search
 
 # 指定要索引的源目录，通常是 Hugo 生成的静态文件目录
