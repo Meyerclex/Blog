@@ -136,21 +136,27 @@ weight = 4
 
 
 
+
+
 [[params.tool]]
-name = "✦ Bookmarks | 书签 ✦"
+name = "Tags | 标签"
+link = "/tags"
+target = "_blank"
+[[params.tool]]
+name = "Bookmarks | 书签"
 link = "/bookmarks"
 target = "_blank"
 [[params.tool]]
-name = "✦ Museum | 博物馆 ✦"
+name = "Changelog | 更新日志"
+link = "/changelog"
+target = "_blank"
+[[params.tool]]
+name = "Museum | 博物馆"
 link = "/collection"
 target = "_blank"
 [[params.tool]]
-name = "✦ Search | 搜索 ✦"
+name = "Search | 搜索"
 link = "/search"
-target = "_blank"
-[[params.tool]]
-name = "✦ Tags | 标签 ✦"
-link = "/tags"
 target = "_blank"
 
 

@@ -97,6 +97,20 @@
   color: unset;
 }
 
+#small-nav{
+  padding: 15px;
+  padding-left: 45px;
+  padding-bottom: 25px;
+}
+
+.small-nav-item {
+    letter-spacing: 3px!important;
+    text-align: left!important;
+}
+.small-nav-item::before {
+  content: "✦ ";
+  margin-right: 10px;   /* 与文字之间的间距 */
+}
 
 
 /* --- PC 端（默认显示第一个，悬停展开并带过渡） --- */
