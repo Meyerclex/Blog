@@ -9,13 +9,16 @@ layout: diary
 
 ## 📠 更新日志 / Changelog
 
-### 2025/06 更新情况汇总
+### 2025/09/15 
 
-- 更广泛使用的Fancybox我用起来实在很痛苦，最后引入了[view-image](https://tokinx.github.io/ViewImage/)实现图片放大。只有2kb大小，你值得拥有jpg
+- 做了Archive中文章列表的分页。不过做得不是非常好，当最后一页文章数量很少的时候，分页器的位置很奇怪。凑合用吧！
 
-- 改了一些七七八八有的没的（？）对了，把CP视频放在Archive里了
+- 希望时间显示和分页器可以更美观一点。
 
-- [ ] **想写一个能塞更多东西的Archive List。**
+上工摸鱼时候画了个Archive页面草稿，嗯，不忙的时候再装修吧……
+
+![](/blog/0915.png)
+
 
 ---
 
@@ -24,6 +27,14 @@ layout: diary
 <summary>
 「 往期装修日志，内容过长折叠 」
 </summary>
+
+### 2025/06 更新情况汇总
+
+- 更广泛使用的Fancybox我用起来实在很痛苦，最后引入了[view-image](https://tokinx.github.io/ViewImage/)实现图片放大。只有2kb大小，你值得拥有jpg
+
+- 改了一些七七八八有的没的（？）对了，把CP视频放在Archive里了
+
+- [ ] **想写一个能塞更多东西的Archive List。**
 
 ### 2025/05/22
 
