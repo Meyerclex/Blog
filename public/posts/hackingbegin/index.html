@@ -1,10 +1,959 @@
-<!doctype html><html lang=zh-cn><head><meta name=robots content="noindex,nofollow,noarchive"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/main.260a366e640dee9479f69155a552bdc3b7689c978017755b5624991a2c1a2e54d6a2d662a5c0e8d0044a4bf57b565f287f00963f2d512207caf178c2c73144e9.css integrity="sha512-Jgo2bmQN7pR59pFVpVK9w7donJeAF3VbViSZGiwaLlTWotZipcDo0ARKS/V7Vl8ofwCWPy1RIgfK8XjCxzFE6Q=="><link rel=stylesheet href=https://static.zeoseven.com/zsft/69/main/result.css><link rel=stylesheet href=https://fontsapi.zeoseven.com/46/main/result.css><link rel=stylesheet href=/fonts/stdgt/result.css><link id=hljs-theme rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js></script><meta name=description content="我发誓这是最后一次。"><meta property="og:title" content="Let the Hacking begin！"><meta property="og:description" content="我发誓这是最后一次。"><meta property="og:image" content><title>Let the Hacking begin！ | 再會，謝謝所有的魚</title><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".blur").forEach(function(e){e.addEventListener("click",function(){e.classList.toggle("revealed")})})})</script><link rel="shortcut icon" type=image/x-icon href=/cat/240f9f9b.gif><script defer>function toggleMenu(e){const t=e.nextElementSibling,n=document.querySelectorAll(".menu-content");n.forEach(e=>{e!==t&&(e.style.display="none")}),t.style.display==="none"||t.style.display===""?t.style.display="table-row":t.style.display="none"}</script></head><div id=theme-toggle class=theme-toggle style=position:fixed;top:20px;right:20px;display:flex;gap:5px;z-index:999><div id=light-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.25a.75.75.0 01.75.75v2.25a.75.75.0 01-1.5.0V3a.75.75.0 01.75-.75zM7.5 12a4.5 4.5.0 119 0 4.5 4.5.0 01-9 0zM18.894 6.166a.75.75.0 00-1.06-1.06l-1.591 1.59a.75.75.0 101.06 1.061l1.591-1.59zM21.75 12a.75.75.0 01-.75.75h-2.25a.75.75.0 010-1.5H21a.75.75.0 01.75.75zm-3.916 6.894a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 10-1.061 1.06l1.59 1.591zM12 18a.75.75.0 01.75.75V21a.75.75.0 01-1.5.0v-2.25A.75.75.0 0112 18zM7.758 17.303a.75.75.0 00-1.061-1.06l-1.591 1.59a.75.75.0 001.06 1.061l1.591-1.59zM6 12a.75.75.0 01-.75.75H3a.75.75.0 010-1.5h2.25A.75.75.0 016 12zm.697-4.243a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 00-1.061 1.06l1.59 1.591z"/></svg></div><div id=dark-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M9.528 1.718a.75.75.0 01.162.819A8.97 8.97.0 009 6a9 9 0 009 9 8.97 8.97.0 003.463-.69.75.75.0 01.981.98 10.503 10.503.0 01-9.694 6.46c-5.799.0-10.5-4.7-10.5-10.5.0-4.368 2.667-8.112 6.46-9.694a.75.75.0 01.818.162z" clip-rule="evenodd"/></svg></div></div><script>const lightBtn=document.getElementById("light-btn"),darkBtn=document.getElementById("dark-btn"),themeToggle=document.getElementById("theme-toggle");let currentTheme=localStorage.getItem("theme")||"auto";if(currentTheme==="auto"){const e=window.matchMedia("(prefers-color-scheme: dark)").matches;currentTheme=e?"dark":"light"}document.body.setAttribute("a",currentTheme),document.body.classList.add(currentTheme+"-mode");function updateHighlightTheme(){const e=document.getElementById("hljs-theme"),t=document.body.getAttribute("a");if(!e)return;t==="dark"?e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css":e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css"}const updateIcons=()=>{currentTheme==="light"?(lightBtn.style.display="block",darkBtn.style.display="none"):(lightBtn.style.display="none",darkBtn.style.display="block")};updateIcons(),updateHighlightTheme();const toggleTheme=()=>{currentTheme==="light"?(document.body.classList.remove("light-mode"),document.body.classList.add("dark-mode"),currentTheme="dark"):(document.body.classList.remove("dark-mode"),document.body.classList.add("light-mode"),currentTheme="light"),localStorage.setItem("theme",currentTheme),document.body.setAttribute("a",currentTheme),updateIcons(),updateHighlightTheme()};themeToggle.addEventListener("click",toggleTheme),window.addEventListener("scroll",()=>{const t=document.documentElement.scrollTop||document.body.scrollTop,n=document.documentElement.scrollHeight||document.body.scrollHeight,s=window.innerHeight||document.documentElement.clientHeight,e=t/(n-s)*100;e>=10&&e<=40?themeToggle.style.opacity=(1-(e-10)/30).toFixed(2):e>40?themeToggle.style.opacity=0:themeToggle.style.opacity=1})</script><body a=auto><main class=page-content aria-label=Content><div class=w><div id=tools><div class=tools-item><span class=toggle-icon></span><a href=/>✦ Home ✦</a></div><div class=tools-item><a href=/about>✦ About ✦</a></div><div class=tools-item><a href=/posts>✦ Archive ✦</a></div><div class=tools-item><a href=/links>✦ Friends ✦</a></div></div><script>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("tools");if(!e)return;const t=window.matchMedia("(max-width: 768px)").matches;if(t){const t=e.querySelector(".toggle-icon");t&&t.addEventListener("click",function(t){t.stopPropagation(),e.classList.toggle("open")}),document.addEventListener("click",function(t){!e.contains(t.target)&&e.classList.contains("open")&&e.classList.remove("open")})}})</script><article><h1 data-pagefind-meta=title t>Let the Hacking begin！</h1><div id=post-meta><time datetime="2022-08-30 00:00:00 +0800 CST">2022-08-30
-<span>‧ 3371</span>
-<span>words</span>
-‧ <span></span><a href=/tags/game>＃Game</a></time><div id=post-description>我发誓这是最后一次。</div></div><div class=post-toc-mobile id=post-toc-mobile data-pagefind-ignore><details><summary>📑 Table of Contents</summary><div><aside><nav id=TableOfContentsMobile><nav id=TableOfContents><ul><li><a href=#error143>Error143</a></li><li><a href=#戏剧性谋杀>戏剧性谋杀</a></li></ul></nav></nav></aside></div></details></div><hr class=decoration-hr id=toc-hr><div class="post-toc toc-styled-pc" id=post-toc data-pagefind-ignore><header class=post-header-pc>✦ TOC | 目录 ✦</header><aside><nav id=TableOfContentsPC><nav id=TableOfContents><ul><li><a href=#error143>Error143</a></li><li><a href=#戏剧性谋杀>戏剧性谋杀</a></li></ul></nav></nav></aside></div><style>#toc-toggle{display:none}#TableOfContents ul li:before{content:"";font-weight:700;margin-right:0}</style><div id=post-content data-pagefind-body><p>在社交软件碎片化横跳两个整天后我终于想起来我的身体其实预装过书写超过500字文章的能力，于是我打开编辑器。上周集中打了几天游戏：《Error143》和《戏剧性谋杀》，此时横竖也不睡，不如借此写个月记。</p><p>以下内容涉及多个游戏剧透。</p><h2 id=error143>Error143</h2><p>《Error143》是前阵子刚出的免费游戏，男主角（除短信文本以外）全语音。我没有集齐全结局，游玩时间3小时左右。没有官中（除了中间有一段两个幼稚鬼突然模仿中世纪文学聊天以外并不难），gender pronoun可选。是可爱黑客Love Stroy！你扮演一个费力骇进了Micah电脑的黑客，只为在他电脑中留下嘲笑信息，接下来却被对方逮到，和对方在聊天室里和这个跳脱、活跃的男孩展开对话。游戏试图玩Meta元素，他会自动获取你的电脑设备用户名质问你：:D 所以你叫这个名字对吧？</p><p>我当下内心OS：可爱青少年黑客呢人家才不会Nerd到把设备名改成自己的真名啦，我的设备有自己的名字……（所以下面自称PC。顺便一提我的设备叫Silver，是银灰色外观外冷内热游怒症美女，一打游戏体温就会飙高到50度狂转风扇对我进行一通狂骂但我还是很爱她）。</p><p>之后Day1聊到一半他会忽然打来视频电话，屏幕前是把自己的头发染得和自家小猫一样的Micah——他超辣的！而且几乎不需要攻略他而他会主动攻略你！（不像一些国乙打起来打工小妹VS甲方）视频里会说天马行空无厘头的搞怪话和寄来礼物，有一个特别好的礼物但为了不破坏惊喜感就不剧透了！</p><p>而且很多对话都很好笑，第一次聊天就给你谜题说猜对了有大奖：奖品是我噢！😚😚🥰🥰</p><p>PC：什么啊？还好我没猜对，你到底凭什么觉得我会要这样的奖励啊！</p><p>Micah：凭我的ego</p><p>PC：? It makes sense</p><img loading=lazy decoding=async src=https://raw.githubusercontent.com/Meyerclex/image/main/20220830013510.png alt=聊天室界面 class=post-image>
-聊天室界面<p>游戏的主要玩法是猜字，给你全空白让你猜密码是什么，类似前段时间很多人玩的方块Wordle，但除了开局和中途一个小猜字游戏外没有其他必要的关卡障碍，更多是让你体会有这个黑客设定而非为难你，还可以通过猜字破解PC的好友列表，破解成功会有看到一些Micah的同人图。整个游戏都设定得很温柔，似乎就是为了让你体会被一个跳脱的、有些吵吵闹闹蛮nerd但又柔软可爱的男孩喜欢，而且整个游戏界面都有一种躲在机房里玩聊天室的青少年感。黑客青少年，我，你，我（比划）——懂我的意思了吧！！（没人懂）</p><p>打之前看过安利所以很放心，我喜欢多对话多分支游戏，屡战Galgame乙游屡败，因为不知道为什么对于游戏制作而言好像做到不爹、不卖女、不在法制（rape plot）边缘徘徊就会影响东亚人的风水。</p><p>前面有篇聊到我买了《Arcade Spirits》（AS），但不知道为什么打开来人物设定界面卡到我呼吸不畅，最后退款看实况去了。因为它也可以自选Pronoun所以似乎不能说片面叫它乙游，在找了一些欧美游戏来打之后发现人称可选竟然是常见配置，以至于我对一些很日式的分类称呼产生了犹疑，但我一时又不知道该怎么称呼这类游戏——视觉小说？文字互动冒险游戏？究竟是该怪我的语言系统还是该怪这个世界！</p><p>欧美这类Visual Novel我的感受是绘画平均水平没有日式游戏那么高，但是受冒犯的风险也相对低很多。而且仅以我为数不多的样本量来看，欧美游的服务意识更高一点，更能体会到选择的自由度和被攻略感。AS就会在故事中不断强调提醒要随心选择，选择你想要的而不用去取悦攻略对象，而我上周刚开始打的《Our life: Beginnings & Always》则是有很庞大的文本库，一个30分钟的篇章可能会有六七次选择分支，攻略对象Cove会记得你做的选择，而在后续的故事里体现出这些细节，游戏美名远扬豆瓣组就是因为很有一种捏了自己的Cove的感觉。（跟那种花钱进游戏只能说纸片人爱听的话就是不一样啦！！！对不起人家就是在乙游没吃过好的！！！）</p><p>——等下，扯太远了！！</p><h2 id=戏剧性谋杀>戏剧性谋杀</h2><p>三天前在首页刷到《戏剧性谋杀》（DMMd）出了国际中文版的消息。这个游戏蛮多年前盗版盛行时我似乎也有开来打过，但不记得为什么没打下去了，适逢周末就摸来打之，Steam版不完整，还需要在JASTUSA买个1.19美金的DLC才是完整内容，由于定价根据地区变化，建议挂个低价区例如土耳其区的梯，比国区劲省2美金。</p><p>先前好像读过打了50小时的评论，于是做好了细水长流打大长篇的心理准备，结果四小时的时候突然打完了红雀线，大概15小时左右就能全结局，不禁让我困惑打50个小时是在里面自习？</p><p>这游戏从头讲起的话就有点累了……大家都有被我的SNS账号刷屏吧？（没有的话我这里就简单贴一下呢）总而言之抱着打把黄油就睡觉的心情来，放低期待值，最后就会觉得很惊喜！惊喜之处在于DMMd的世界观把想讲清楚的故事都讲清楚了，讲不清楚的也都很好地靠色图糊弄过去了（说的就是库里亚线），在讲故事上已经达到一个比较完美的水平。</p><p>打完的最大感想是DMMd倒还蛮荤素均衡最大限度满足同人女黄金饮食结构的，年上年下竹马天降（天降）人机Furry水仙好像他们也拿不准哪个比较流行所以干脆都来一点，故事基本上就围绕熬吧一生中的五个男人展开，大家身份都很炫啦街头帮派老大什么的（除了库里亚，可怜的旧版本小机器人）。</p><p>一些SNS裁缝：</p><ol><li>我的第一个结局是红雀线的Bad Ending因为拼字游戏时选了叫他不要哭就暴露失败了</li><li>正确答案是<strong>不要认输</strong>，这哪有“不要哭”万分之一可爱啊拜托这里可是BL游戏该认输的是你吧！！！！</li><li>搜了一下，发现我的DLC打上去了没打成功还是不完整的版本？！！可是我又出现了打了补丁才会无法跳成就的bug，难道说人家只是纯粹打了个bug上去？！</li><li>重装完存档丢了所以走了两遍红雀线，直到这时我才发现原来命运早在那么久以前就为我选择好了年上竹马线。</li><li>绝大多数人一周目都会走红雀线吧！！！谁会想到打洞男和幼驯染吵架，拉架的时候先喊谁的名字就会走谁的线！！！幼不幼稚啊！！！</li><li>苍叶救了挪椅子之后他还在那里发脾气：我死了也是我自作自受吧你干嘛要来救我啊真是莫名其妙？算了对你来说我在的话很方便吧！也可能你只是看上我了想跟我上床吧！！……哪来的臭屁自恋死小鬼……？！</li><li>靠啊十九岁的臭屁小孩到底哪里来那么多方便啦利益啦烦死人了！！关心你就是关心你好不好啦！！</li><li>几条线里我最喜欢的是诺伊兹线（aka黑客小鬼）（连同上文的Micah一起）我这辈子没有机会成为黑客但是确实搞了不少网络黑客青少年。</li></ol><p>（虽然给星期定主题以是多个版本前的活动，但此时当然还是不忘要隆重公布上周主题：<strong>Let the hacking begin！！！</strong> 虽然人已不在《社交网络》的大船上，但是不妨碍我每次讲到黑客元素脑子里就宛如军训般条件反射地背诵这句台词，我发誓这是最后一次，算了根本不可能是最后一次我连开始学习之前都会气壮山河地先喊一遍提气）</p><p>懒得复制了于是继续SNS裁缝：</p><img loading=lazy decoding=async src=/Drawing.png alt=点开看完会浪费人生中宝贵的5分钟我先道歉 class=post-image>
-点开看完会浪费人生中宝贵的5分钟我先道歉<blockquote><p>Noiz的BE2像素世界比良好结局要更值得一打，也是我觉得所有BE里面最好也最恰当的一个，属于是打完可以当作TrueEnding安心金盆洗手关游继续生活的那种结局。它很好地保护了整个故事不被破坏（而不管这个良好结局是不是更适配现实世界，它都好傲慢地打碎了色彩明艳的气氛）就在一种电波又荒唐的语气里两个十六像素点的小人从门口离开，故事像RPG一样闪过一帧黑幕不知道是落幕还是续章即将来临。</p><p>而且Noiz的三个结局都来得很莫名其妙不知道自己究竟哪里选对了或选错了，完全就是掉进了十九岁青少年一团乱麻不知道在想什么的古怪大脑，每一句话都不知道他将作何反应，而BE2的概率比其他都要大很多，很可爱的一点是在Ending之前他会跳出字幕说“已经很累了”——然后掉进古早角色扮演游戏里，和一个莫名其妙的脱线反派大打一架，人物升级：</p><p>智力 提升了5点！</p><p>敏捷度 提升了3点！</p><p>“任性” 的等级 提升了！</p><p>然后就这样跳脱地谢幕离开，也知道自己很任性就这样放弃抵抗很不好（有一个选项还是：“不好就是不好”）但还是决定就要这么做。尽管后续现实必然残酷，可这样非常可爱，也非常完整，我很喜欢。</p></blockquote><hr><p>七八月份的游戏还有《Chicken Police》和《Stray》和《Knight College》，值得单开一篇动物园合集来写，于是，下次再说。SNS废话贴过来后显得字数太多，显然人家就是打单机游戏也要开通一个世界聊天频道（也是单机版）讲一大堆话的那种人，本次电子游戏通关感想就写到这里，再见！</p><img loading=lazy decoding=async src=https://raw.githubusercontent.com/Meyerclex/image/main/DRAMAtical%20Murder%E3%80%80ver1.00%202022_8_29%200_05_01.png alt class=post-image></div><br><div style=padding-bottom:3px></div></article><nav class=custom-paginav><a class=custom-paginav-prev href=/posts/quartz/><span class=custom-paginav-title>« Prev</span><br><span>Quartz & Obsidian | 总之又有新文具</span>
-</a><a class=custom-paginav-next href=/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/><span class=custom-paginav-title>Next »</span><br><span>换回旧主题，闪闪惹人爱</span></a></nav><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=comments class=comments data-pagefind-ignore><style>:root{--waline-color:unset;--waline-bgcolor-light:unset}.wl-card{border:0 solid #eee}.wl-card .wl-quote{border-inline-start:0 dashed rgba(237,237,237,.5)}.wl-card-item{position:relative;display:flex;padding:.2em}.wl-addr{display:none !important;color:transparent !important}.wl-content .vemoji,.wl-content .wl-emoji{display:inline-block;vertical-align:baseline;height:3.4em !important;margin:-.125em .25em}img.wl-emoji,img.vemoji{vertical-align:sub;transition:ease-out .6s}img.wl-emoji:hover,img.vemoji:hover{transform:scale(1.8) !important}.wl-header{display:flex;overflow:hidden;padding:0 4px;border-bottom:0 dashed var(--waline-border-color);border-top-left-radius:0;border-top-right-radius:0}.wl-btn.primary{border-color:transparent !important;background:Peru;color:#fff}@media(max-width:580px){.wl-header-item:not(:last-child){border-bottom:0 dashed var(--waline-border-color)}}:root{--waline-theme-color:Peru;--waline-active-color:Peru;--waline-light-grey:unset;--waline-info-color:unset;--waline-border:0px solid peru}[data-waline] a{color:var(--link-color)}.wl-card .wl-badge{display:inline-block;margin-inline-end:1em;padding:0 .3em;border:2px solid peru;border-radius:4px;color:peru;font-weight:700;font-size:65%}.wl-editor:focus,.wl-input:focus{background:0 0}.wl-panel{background-color:#f2ede6;border:#a38f7d solid 1px;background-image:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.8)),url(/site/bg-rain2_5color1.gif);background-repeat:repeat}body[a=dark] .wl-panel{background-image:none !important;background-color:rgba(23,14,14,.38) !important}.wl-card .wl-delete,.wl-card .wl-like,.wl-card .wl-reply,.wl-card .wl-edit,.wl-card span.wl-nick,.wl-empty,.wl-admin-actions,[data-waline] p{color:unset}.wl-info .wl-text-number{color:unset;font-size:.75em}.wl-editor,.wl-input{font-family:inherit;font-size:80%}</style><div id=waline data-pagefind-ignore></div><script>Waline.init({el:"#waline",serverURL:"https://co.gregueria.icu/",emoji:["https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif","https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png"],requiredMeta:["name","email","url"],dark:!0,locale:{placeholder:"(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！",admin:"admin"}})</script></div><div><footer class=site-footer><section class=copyright>&copy; 2021 - 2025
-<a href=https://gregueria.icu/>再會，謝謝所有的魚 </a>· <i class="fas fa-bell"></i><a id=days>0</a> Days<br><span>All rights reserved.</span></section><script>var s1="2021-11-12",s1=new Date(s1.replace(/-/g,"/")),s2=new Date,days=s2.getTime()-s1.getTime(),number_of_days=parseInt(days/(1e3*60*60*24));document.getElementById("days").innerHTML=number_of_days</script><script>document.addEventListener("DOMContentLoaded",function(){hljs.highlightAll()})</script></footer><script src=/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js integrity="sha256-OjfnrZnqF2pdNE+2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("post-content");e&&window.ViewImage?ViewImage.init("#post-content img:not([no-view]):not(.emoji):not(#emoji)"):e?console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?"):console.log("Current page does not have #post-content. ViewImage initialization skipped.")})</script><script>document.querySelectorAll("#post-content > img.post-image").forEach(e=>{const t=e.nextSibling;if(t&&t.nodeType===Node.TEXT_NODE&&t.textContent.trim()!==""){const n=document.createElement("figure");n.className="single-image-figure",e.replaceWith(n),n.appendChild(e);const s=document.createElement("figcaption");s.className="image-caption",s.textContent=t.textContent.trim(),n.appendChild(s),t.remove()}})</script><script>(function(){const a="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX",o="向我提问！",r="看到就会回复 :D",c="#ffffff",l="var(--shadow)",d="#ffffff",n=document.createElement("div"),e=document.createElement("div");e.innerText=o,document.body.append(e),n.innerHTML+=`
-    <iframe src="${a}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `;let s=!1,i=!0;e.onclick=()=>{i&&(i=!1,document.body.append(n)),s?(t(n,{top:"100%",bottom:"unset",visibility:"hidden"}),t(e,{bottom:"0px"}),e.innerText=o):(t(n,{top:"unset",bottom:"0px",visibility:"visible"}),t(e,{bottom:"400px"}),e.innerText=r),s=!s},t(e,{position:"fixed",bottom:"0px",right:"0px",background:l,color:c,"font-size":"14px","border-top-left-radius":"10px",padding:"5px 10px",cursor:"pointer"}),t(n,{position:"fixed",top:"100%",right:"0px",width:"300px",height:"400px",background:d,"z-index":"11"});function t(e,t){for(let n in t)e.style[n]=t[n]}})()</script></div></div></main><script src=/js/twemoji.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){twemoji.parse(document.body,{base:"/my-emojis/",folder:"svg",ext:".svg"})})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.dc3ca18d3ff4df59931e80edcc04c2f5024c8f60a7ff23936cd466a6f02019f54c6ab699cb337f932110d056a9db7ea7c21a35a70450c7d908d7ff209c4d4d4f.css" integrity="sha512-3DyhjT/031mTHoDtzATC9QJMj2Cn/yOTbNRmpvAgGfVMaraZyzN/kyEQ0Fap236nwho1pwRQx9kI1/8gnE1NTw==" />
+  
+  
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+
+  
+    <meta name="description" content="我发誓这是最后一次。">
+    <meta property="og:title" content="Let the Hacking begin！">
+    <meta property="og:description" content="我发誓这是最后一次。">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      Let the Hacking begin！ | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tools">
+  
+  <div class="tools-item">
+    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/about" >✦ About ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/posts" >✦ Archive ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/links" >✦ Friends ✦</a>
+  </div>
+  
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
+
+<article >
+    <h1 data-pagefind-meta="title" t>Let the Hacking begin！</h1>
+    <div id="post-meta">
+        <time datetime="2022-08-30 00:00:00 &#43;0800 CST">
+            2022-08-30
+            <span> ‧ 3371</span>
+            <span>words</span>
+            ‧ <span> </span>
+            
+                    
+                    <a href="/tags/game">＃Game</a>
+                    
+            
+        </time>
+        
+        <div id="post-description">
+            我发誓这是最后一次。
+        </div>
+        
+    </div>
+
+    
+    
+<div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+    <details>
+        <summary>📑 Table of Contents</summary>
+        <div>
+            <aside>
+                
+                
+                <nav id="TableOfContentsMobile"> <nav id="TableOfContents">
+  <ul>
+    <li><a href="#error143">Error143</a></li>
+    <li><a href="#戏剧性谋杀">戏剧性谋杀</a></li>
+  </ul>
+</nav>
+                </nav>
+            </aside>
+        </div>
+    </details>
+</div>
+<hr class="decoration-hr" id="toc-hr">
+<div class="post-toc toc-styled-pc" id="post-toc" data-pagefind-ignore>
+    <header class="post-header-pc">
+    ✦ TOC | 目录 ✦
+    </header>
+    <aside>
+        <nav id="TableOfContentsPC"> 
+            
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#error143">Error143</a></li>
+    <li><a href="#戏剧性谋杀">戏剧性谋杀</a></li>
+  </ul>
+</nav>
+        </nav>
+    </aside>
+</div>
+
+
+<style>
+     
+    #toc-toggle {
+        display: none;
+    }
+     
+    #TableOfContents ul li:before {
+        content: "";
+        font-weight: bold;
+        margin-right: 0px;
+    }
+</style>
+    
+
+    <div id="post-content"  data-pagefind-body>
+        <p>在社交软件碎片化横跳两个整天后我终于想起来我的身体其实预装过书写超过500字文章的能力，于是我打开编辑器。上周集中打了几天游戏：《Error143》和《戏剧性谋杀》，此时横竖也不睡，不如借此写个月记。</p>
+<p>以下内容涉及多个游戏剧透。</p>
+<h2 id="error143">Error143</h2>
+<p>《Error143》是前阵子刚出的免费游戏，男主角（除短信文本以外）全语音。我没有集齐全结局，游玩时间3小时左右。没有官中（除了中间有一段两个幼稚鬼突然模仿中世纪文学聊天以外并不难），gender pronoun可选。是可爱黑客Love Stroy！你扮演一个费力骇进了Micah电脑的黑客，只为在他电脑中留下嘲笑信息，接下来却被对方逮到，和对方在聊天室里和这个跳脱、活跃的男孩展开对话。游戏试图玩Meta元素，他会自动获取你的电脑设备用户名质问你：:D 所以你叫这个名字对吧？</p>
+<p>我当下内心OS：可爱青少年黑客呢人家才不会Nerd到把设备名改成自己的真名啦，我的设备有自己的名字……（所以下面自称PC。顺便一提我的设备叫Silver，是银灰色外观外冷内热游怒症美女，一打游戏体温就会飙高到50度狂转风扇对我进行一通狂骂但我还是很爱她）。</p>
+<p>之后Day1聊到一半他会忽然打来视频电话，屏幕前是把自己的头发染得和自家小猫一样的Micah——他超辣的！而且几乎不需要攻略他而他会主动攻略你！（不像一些国乙打起来打工小妹VS甲方）视频里会说天马行空无厘头的搞怪话和寄来礼物，有一个特别好的礼物但为了不破坏惊喜感就不剧透了！</p>
+<p>而且很多对话都很好笑，第一次聊天就给你谜题说猜对了有大奖：奖品是我噢！😚😚🥰🥰</p>
+<p>PC：什么啊？还好我没猜对，你到底凭什么觉得我会要这样的奖励啊！</p>
+<p>Micah：凭我的ego</p>
+<p>PC：? It makes sense</p>
+<img loading='lazy' decoding="async" src="https://raw.githubusercontent.com/Meyerclex/image/main/20220830013510.png" alt="聊天室界面" 
+     class="post-image"
+
+/>
+聊天室界面<p>游戏的主要玩法是猜字，给你全空白让你猜密码是什么，类似前段时间很多人玩的方块Wordle，但除了开局和中途一个小猜字游戏外没有其他必要的关卡障碍，更多是让你体会有这个黑客设定而非为难你，还可以通过猜字破解PC的好友列表，破解成功会有看到一些Micah的同人图。整个游戏都设定得很温柔，似乎就是为了让你体会被一个跳脱的、有些吵吵闹闹蛮nerd但又柔软可爱的男孩喜欢，而且整个游戏界面都有一种躲在机房里玩聊天室的青少年感。黑客青少年，我，你，我（比划）——懂我的意思了吧！！（没人懂）</p>
+<p>打之前看过安利所以很放心，我喜欢多对话多分支游戏，屡战Galgame乙游屡败，因为不知道为什么对于游戏制作而言好像做到不爹、不卖女、不在法制（rape plot）边缘徘徊就会影响东亚人的风水。</p>
+<p>前面有篇聊到我买了《Arcade Spirits》（AS），但不知道为什么打开来人物设定界面卡到我呼吸不畅，最后退款看实况去了。因为它也可以自选Pronoun所以似乎不能说片面叫它乙游，在找了一些欧美游戏来打之后发现人称可选竟然是常见配置，以至于我对一些很日式的分类称呼产生了犹疑，但我一时又不知道该怎么称呼这类游戏——视觉小说？文字互动冒险游戏？究竟是该怪我的语言系统还是该怪这个世界！</p>
+<p>欧美这类Visual Novel我的感受是绘画平均水平没有日式游戏那么高，但是受冒犯的风险也相对低很多。而且仅以我为数不多的样本量来看，欧美游的服务意识更高一点，更能体会到选择的自由度和被攻略感。AS就会在故事中不断强调提醒要随心选择，选择你想要的而不用去取悦攻略对象，而我上周刚开始打的《Our life: Beginnings &amp; Always》则是有很庞大的文本库，一个30分钟的篇章可能会有六七次选择分支，攻略对象Cove会记得你做的选择，而在后续的故事里体现出这些细节，游戏美名远扬豆瓣组就是因为很有一种捏了自己的Cove的感觉。（跟那种花钱进游戏只能说纸片人爱听的话就是不一样啦！！！对不起人家就是在乙游没吃过好的！！！）</p>
+<p>——等下，扯太远了！！</p>
+<h2 id="戏剧性谋杀">戏剧性谋杀</h2>
+<p>三天前在首页刷到《戏剧性谋杀》（DMMd）出了国际中文版的消息。这个游戏蛮多年前盗版盛行时我似乎也有开来打过，但不记得为什么没打下去了，适逢周末就摸来打之，Steam版不完整，还需要在JASTUSA买个1.19美金的DLC才是完整内容，由于定价根据地区变化，建议挂个低价区例如土耳其区的梯，比国区劲省2美金。</p>
+<p>先前好像读过打了50小时的评论，于是做好了细水长流打大长篇的心理准备，结果四小时的时候突然打完了红雀线，大概15小时左右就能全结局，不禁让我困惑打50个小时是在里面自习？</p>
+<p>这游戏从头讲起的话就有点累了……大家都有被我的SNS账号刷屏吧？（没有的话我这里就简单贴一下呢）总而言之抱着打把黄油就睡觉的心情来，放低期待值，最后就会觉得很惊喜！惊喜之处在于DMMd的世界观把想讲清楚的故事都讲清楚了，讲不清楚的也都很好地靠色图糊弄过去了（说的就是库里亚线），在讲故事上已经达到一个比较完美的水平。</p>
+<p>打完的最大感想是DMMd倒还蛮荤素均衡最大限度满足同人女黄金饮食结构的，年上年下竹马天降（天降）人机Furry水仙好像他们也拿不准哪个比较流行所以干脆都来一点，故事基本上就围绕熬吧一生中的五个男人展开，大家身份都很炫啦街头帮派老大什么的（除了库里亚，可怜的旧版本小机器人）。</p>
+<p>一些SNS裁缝：</p>
+<ol>
+<li>我的第一个结局是红雀线的Bad Ending因为拼字游戏时选了叫他不要哭就暴露失败了</li>
+<li>正确答案是<strong>不要认输</strong>，这哪有“不要哭”万分之一可爱啊拜托这里可是BL游戏该认输的是你吧！！！！</li>
+<li>搜了一下，发现我的DLC打上去了没打成功还是不完整的版本？！！可是我又出现了打了补丁才会无法跳成就的bug，难道说人家只是纯粹打了个bug上去？！</li>
+<li>重装完存档丢了所以走了两遍红雀线，直到这时我才发现原来命运早在那么久以前就为我选择好了年上竹马线。</li>
+<li>绝大多数人一周目都会走红雀线吧！！！谁会想到打洞男和幼驯染吵架，拉架的时候先喊谁的名字就会走谁的线！！！幼不幼稚啊！！！</li>
+<li>苍叶救了挪椅子之后他还在那里发脾气：我死了也是我自作自受吧你干嘛要来救我啊真是莫名其妙？算了对你来说我在的话很方便吧！也可能你只是看上我了想跟我上床吧！！……哪来的臭屁自恋死小鬼……？！</li>
+<li>靠啊十九岁的臭屁小孩到底哪里来那么多方便啦利益啦烦死人了！！关心你就是关心你好不好啦！！</li>
+<li>几条线里我最喜欢的是诺伊兹线（aka黑客小鬼）（连同上文的Micah一起）我这辈子没有机会成为黑客但是确实搞了不少网络黑客青少年。</li>
+</ol>
+<p>（虽然给星期定主题以是多个版本前的活动，但此时当然还是不忘要隆重公布上周主题：<strong>Let the hacking begin！！！</strong> 虽然人已不在《社交网络》的大船上，但是不妨碍我每次讲到黑客元素脑子里就宛如军训般条件反射地背诵这句台词，我发誓这是最后一次，算了根本不可能是最后一次我连开始学习之前都会气壮山河地先喊一遍提气）</p>
+<p>懒得复制了于是继续SNS裁缝：</p>
+<img loading='lazy' decoding="async" src="/Drawing.png" alt="点开看完会浪费人生中宝贵的5分钟我先道歉" 
+     class="post-image"
+
+/>
+点开看完会浪费人生中宝贵的5分钟我先道歉<blockquote>
+<p>Noiz的BE2像素世界比良好结局要更值得一打，也是我觉得所有BE里面最好也最恰当的一个，属于是打完可以当作TrueEnding安心金盆洗手关游继续生活的那种结局。它很好地保护了整个故事不被破坏（而不管这个良好结局是不是更适配现实世界，它都好傲慢地打碎了色彩明艳的气氛）就在一种电波又荒唐的语气里两个十六像素点的小人从门口离开，故事像RPG一样闪过一帧黑幕不知道是落幕还是续章即将来临。</p>
+<p>而且Noiz的三个结局都来得很莫名其妙不知道自己究竟哪里选对了或选错了，完全就是掉进了十九岁青少年一团乱麻不知道在想什么的古怪大脑，每一句话都不知道他将作何反应，而BE2的概率比其他都要大很多，很可爱的一点是在Ending之前他会跳出字幕说“已经很累了”——然后掉进古早角色扮演游戏里，和一个莫名其妙的脱线反派大打一架，人物升级：</p>
+<p>智力 提升了5点！</p>
+<p>敏捷度 提升了3点！</p>
+<p>“任性” 的等级 提升了！</p>
+<p>然后就这样跳脱地谢幕离开，也知道自己很任性就这样放弃抵抗很不好（有一个选项还是：“不好就是不好”）但还是决定就要这么做。尽管后续现实必然残酷，可这样非常可爱，也非常完整，我很喜欢。</p></blockquote>
+<hr>
+<p>七八月份的游戏还有《Chicken Police》和《Stray》和《Knight College》，值得单开一篇动物园合集来写，于是，下次再说。SNS废话贴过来后显得字数太多，显然人家就是打单机游戏也要开通一个世界聊天频道（也是单机版）讲一大堆话的那种人，本次电子游戏通关感想就写到这里，再见！</p>
+<img loading='lazy' decoding="async" src="https://raw.githubusercontent.com/Meyerclex/image/main/DRAMAtical%20Murder%E3%80%80ver1.00%202022_8_29%200_05_01.png" alt="" 
+     class="post-image"
+
+/>
+
+        
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+<nav class="custom-paginav">
+    
+    <a class="custom-paginav-prev" href="/posts/quartz/">
+        <span class="custom-paginav-title">« Prev</span><br>
+        <span>Quartz &amp; Obsidian | 总之又有新文具</span>
+    </a>
+    
+    
+    <a class="custom-paginav-next" href="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/">
+        <span class="custom-paginav-title">Next »</span><br>
+        <span>换回旧主题，闪闪惹人爱</span>
+    </a>
+    
+</nav>
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+<div id="comments" class="comments" data-pagefind-ignore>
+    <style>
+    :root {
+        --waline-color: unset;
+        --waline-bgcolor-light: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline" data-pagefind-ignore></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
+            admin: 'admin',
+        }
+    });
+</script>
+
+</div>
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
+
+
+
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </main>
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+
+    </body></html>

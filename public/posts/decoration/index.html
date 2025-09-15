@@ -1,15 +1,415 @@
-<!doctype html><html lang=zh-cn><head><meta name=robots content="noindex,nofollow,noarchive"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/main.260a366e640dee9479f69155a552bdc3b7689c978017755b5624991a2c1a2e54d6a2d662a5c0e8d0044a4bf57b565f287f00963f2d512207caf178c2c73144e9.css integrity="sha512-Jgo2bmQN7pR59pFVpVK9w7donJeAF3VbViSZGiwaLlTWotZipcDo0ARKS/V7Vl8ofwCWPy1RIgfK8XjCxzFE6Q=="><link rel=stylesheet href=https://static.zeoseven.com/zsft/69/main/result.css><link rel=stylesheet href=https://fontsapi.zeoseven.com/46/main/result.css><link rel=stylesheet href=/fonts/stdgt/result.css><link id=hljs-theme rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js></script><meta name=description content="没想到有一天我也会写装修笔记，无指导意义——健忘人士手册罢了。"><meta property="og:title" content="Hugo Stack | 删删改改大胆行事"><meta property="og:description" content="没想到有一天我也会写装修笔记，无指导意义——健忘人士手册罢了。"><meta property="og:image" content><title>Hugo Stack | 删删改改大胆行事 | 再會，謝謝所有的魚</title><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".blur").forEach(function(e){e.addEventListener("click",function(){e.classList.toggle("revealed")})})})</script><link rel="shortcut icon" type=image/x-icon href=/cat/240f9f9b.gif><script defer>function toggleMenu(e){const t=e.nextElementSibling,n=document.querySelectorAll(".menu-content");n.forEach(e=>{e!==t&&(e.style.display="none")}),t.style.display==="none"||t.style.display===""?t.style.display="table-row":t.style.display="none"}</script></head><div id=theme-toggle class=theme-toggle style=position:fixed;top:20px;right:20px;display:flex;gap:5px;z-index:999><div id=light-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.25a.75.75.0 01.75.75v2.25a.75.75.0 01-1.5.0V3a.75.75.0 01.75-.75zM7.5 12a4.5 4.5.0 119 0 4.5 4.5.0 01-9 0zM18.894 6.166a.75.75.0 00-1.06-1.06l-1.591 1.59a.75.75.0 101.06 1.061l1.591-1.59zM21.75 12a.75.75.0 01-.75.75h-2.25a.75.75.0 010-1.5H21a.75.75.0 01.75.75zm-3.916 6.894a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 10-1.061 1.06l1.59 1.591zM12 18a.75.75.0 01.75.75V21a.75.75.0 01-1.5.0v-2.25A.75.75.0 0112 18zM7.758 17.303a.75.75.0 00-1.061-1.06l-1.591 1.59a.75.75.0 001.06 1.061l1.591-1.59zM6 12a.75.75.0 01-.75.75H3a.75.75.0 010-1.5h2.25A.75.75.0 016 12zm.697-4.243a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 00-1.061 1.06l1.59 1.591z"/></svg></div><div id=dark-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M9.528 1.718a.75.75.0 01.162.819A8.97 8.97.0 009 6a9 9 0 009 9 8.97 8.97.0 003.463-.69.75.75.0 01.981.98 10.503 10.503.0 01-9.694 6.46c-5.799.0-10.5-4.7-10.5-10.5.0-4.368 2.667-8.112 6.46-9.694a.75.75.0 01.818.162z" clip-rule="evenodd"/></svg></div></div><script>const lightBtn=document.getElementById("light-btn"),darkBtn=document.getElementById("dark-btn"),themeToggle=document.getElementById("theme-toggle");let currentTheme=localStorage.getItem("theme")||"auto";if(currentTheme==="auto"){const e=window.matchMedia("(prefers-color-scheme: dark)").matches;currentTheme=e?"dark":"light"}document.body.setAttribute("a",currentTheme),document.body.classList.add(currentTheme+"-mode");function updateHighlightTheme(){const e=document.getElementById("hljs-theme"),t=document.body.getAttribute("a");if(!e)return;t==="dark"?e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css":e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css"}const updateIcons=()=>{currentTheme==="light"?(lightBtn.style.display="block",darkBtn.style.display="none"):(lightBtn.style.display="none",darkBtn.style.display="block")};updateIcons(),updateHighlightTheme();const toggleTheme=()=>{currentTheme==="light"?(document.body.classList.remove("light-mode"),document.body.classList.add("dark-mode"),currentTheme="dark"):(document.body.classList.remove("dark-mode"),document.body.classList.add("light-mode"),currentTheme="light"),localStorage.setItem("theme",currentTheme),document.body.setAttribute("a",currentTheme),updateIcons(),updateHighlightTheme()};themeToggle.addEventListener("click",toggleTheme),window.addEventListener("scroll",()=>{const t=document.documentElement.scrollTop||document.body.scrollTop,n=document.documentElement.scrollHeight||document.body.scrollHeight,s=window.innerHeight||document.documentElement.clientHeight,e=t/(n-s)*100;e>=10&&e<=40?themeToggle.style.opacity=(1-(e-10)/30).toFixed(2):e>40?themeToggle.style.opacity=0:themeToggle.style.opacity=1})</script><body a=auto><main class=page-content aria-label=Content><div class=w><div id=tools><div class=tools-item><span class=toggle-icon></span><a href=/>✦ Home ✦</a></div><div class=tools-item><a href=/about>✦ About ✦</a></div><div class=tools-item><a href=/posts>✦ Archive ✦</a></div><div class=tools-item><a href=/links>✦ Friends ✦</a></div></div><script>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("tools");if(!e)return;const t=window.matchMedia("(max-width: 768px)").matches;if(t){const t=e.querySelector(".toggle-icon");t&&t.addEventListener("click",function(t){t.stopPropagation(),e.classList.toggle("open")}),document.addEventListener("click",function(t){!e.contains(t.target)&&e.classList.contains("open")&&e.classList.remove("open")})}})</script><article data-pagefind-ignore><h1 data-pagefind-meta=title data-pagefind-ignoret>Hugo Stack | 删删改改大胆行事</h1><div id=post-meta><time datetime="2022-01-01 14:02:48 +0000 +0000">2022-01-01
-<span>‧ 6702</span>
-<span>words</span>
-‧ <span></span><a href=/tags/hugo>＃Hugo</a></time><div id=post-description>没想到有一天我也会写装修笔记，无指导意义——健忘人士手册罢了。</div></div><div class=post-toc-mobile id=post-toc-mobile data-pagefind-ignore><details><summary>📑 Table of Contents</summary><div><aside><nav id=TableOfContentsMobile><nav id=TableOfContents><ul><li><a href=#博客更新日志>博客更新日志</a><ul><li><a href=#待办清单>待办清单</a></li></ul></li><li><a href=#卡片圆角改为直角>卡片圆角改为直角</a></li><li><a href=#代码块问题>代码块问题</a></li><li><a href=#左侧栏的问题>左侧栏的问题</a><ul><li><a href=#菜单>菜单</a></li><li><a href=#暗色模式>暗色模式</a></li><li><a href=#修改左栏的占比>修改左栏的占比</a></li></ul></li><li><a href=#右侧小组件更改>右侧小组件更改</a><ul><li><a href=#来增加分类小组件吧>来增加分类小组件吧！</a></li></ul></li><li><a href=#给目录增添左边框>给目录增添左边框</a></li><li><a href=#修改左侧导航栏宽度>修改左侧导航栏宽度</a></li><li><a href=#为waline评论区增添邮件提醒>为Waline评论区增添邮件提醒</a><ul><li><a href=#取消设备与浏览器版本显示>取消设备与浏览器版本显示</a></li></ul></li><li><a href=#在archive页中加入tag云>在Archive页中加入Tag云</a></li><li><a href=#页面主体内容宽度更改>页面主体内容宽度更改</a></li></ul></nav></nav></aside></div></details></div><hr class=decoration-hr id=toc-hr><div class="post-toc toc-styled-pc" id=post-toc data-pagefind-ignore><header class=post-header-pc>✦ TOC | 目录 ✦</header><aside><nav id=TableOfContentsPC><nav id=TableOfContents><ul><li><a href=#博客更新日志>博客更新日志</a><ul><li><a href=#待办清单>待办清单</a></li></ul></li><li><a href=#卡片圆角改为直角>卡片圆角改为直角</a></li><li><a href=#代码块问题>代码块问题</a></li><li><a href=#左侧栏的问题>左侧栏的问题</a><ul><li><a href=#菜单>菜单</a></li><li><a href=#暗色模式>暗色模式</a></li><li><a href=#修改左栏的占比>修改左栏的占比</a></li></ul></li><li><a href=#右侧小组件更改>右侧小组件更改</a><ul><li><a href=#来增加分类小组件吧>来增加分类小组件吧！</a></li></ul></li><li><a href=#给目录增添左边框>给目录增添左边框</a></li><li><a href=#修改左侧导航栏宽度>修改左侧导航栏宽度</a></li><li><a href=#为waline评论区增添邮件提醒>为Waline评论区增添邮件提醒</a><ul><li><a href=#取消设备与浏览器版本显示>取消设备与浏览器版本显示</a></li></ul></li><li><a href=#在archive页中加入tag云>在Archive页中加入Tag云</a></li><li><a href=#页面主体内容宽度更改>页面主体内容宽度更改</a></li></ul></nav></nav></aside></div><style>#toc-toggle{display:none}#TableOfContents ul li:before{content:"";font-weight:700;margin-right:0}</style><div id=post-content data-pagefind-body><h2 id=博客更新日志>博客更新日志</h2><p>2022-04-18 | 取消右侧栏小组件，更改页面宽度，Archive页面中增添Tags板块，取消了左侧栏的<code>Home</code>键。修改Site-info为<code>You need to have some concerns and, even better, a bit of anger.</code></p><p>2022-04-17 | 按照<a href=https://irithys.com/p/%E7%BB%99hugo%E5%8A%A0%E4%B8%80%E7%82%B9%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%8A%9F%E8%83%BD/#%E8%81%94%E7%B3%BB%E6%B0%94%E6%B3%A1 target=_blank rel="noopener noreferrer">善楪的笔记</a>增加了右下角的Channel.io即时聊天气泡。将Fanfic站的主题换为Stack。按照<a href=https://blog.echosec.top/p/custom-hugo-theme-styles/#%E4%BF%AE%E6%94%B9%E9%80%89%E4%B8%AD%E7%9B%AE%E6%A0%87%E6%A0%B7%E5%BC%8F target=_blank rel="noopener noreferrer">echosec的博客</a>修改了选中目标和行内代码样式。</p><p>2022-03-02 | 为分类组件增加计数，修改方法来自<a href=https://mantyke.icu/2022/stack-theme-furnish03/#%E8%A1%8C%E5%8A%A8%E5%A5%97%E5%BE%88%E8%BF%B7%E8%8C%AB%E5%9C%B0%E5%A5%97 target=_blank rel="noopener noreferrer">塔塔的笔记</a>，修改了小组件Icon。删掉了去往Mastodon的社交链接。</p><p>2022-01-27 | 增加分类组件推荐阅读，为评论功能增添了邮件提醒。</p><h3 id=待办清单>待办清单</h3><ul><li><input checked disabled type=checkbox> 想要一个音乐播放器 | 音乐网站提供的内嵌链接为我解决了难题</li><li><input checked disabled type=checkbox> 修改分类组件</li><li><input disabled type=checkbox> 增加Quote短代码，感觉有点难弄，但是很漂亮呢。</li></ul><hr><p>在<a href=https://chinese.freecodecamp.org/learn/ target=_blank rel="noopener noreferrer">FreeCodeCamp</a>上学了几节CSS和Html以后，我终于对我的博客下手了。编程世界真是好，竟然允许人出错以后火速替换更改的文件以便达到救火目的。因为我不知道应该怎么看修改记录，也不确定可以看修改记录，同时兼任健忘人士和差生两大身份，所以我需要对这次贸然施工进行详尽记录。</p><p>施工进行一段时间后，我牢牢记住了：<code>Ctrl+Z</code>是撤回，<code>Ctrl+Y</code>是恢复。这两大魔法按钮，辅助<code>Ctrl+S</code>，使得我像是挠一爪子就停下来看看沙发怎么样了的猫一样所向披靡。</p><p>对我这个编程基础为零的人来讲，每修改一处都是大成就。为了让这篇东西的写作快乐一点，也便于让我这个健忘认识复习，我会写下我脑海里详细的、笨笨的解题思路。</p><h2 id=卡片圆角改为直角>卡片圆角改为直角</h2><p>我在FreeCodeCamp学的第一课马上就用上了，直角圆角问题属于<code>border-radius</code>管辖。在<code>\assets\scss\variables.scss</code>这个文件中：</p><pre><code>    --tag-border-radius: 0px; // 标签圆角改直角，由4改为0px
-</code></pre><p>由于博客的评论区是后来添加的，所以想让它改为圆角，依然需要跑去<code>\layouts\partials\comments\provider\waline.html</code>单独修改。</p><h2 id=代码块问题>代码块问题</h2><p>上一个修改带来了这个问题。我希望标签是直角，但代码块（此前我以为我的博客根本用不上这个东西）是在文中的，它也引用了上述的样式，单独修改一下。</p><pre><code>  code {
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.dc3ca18d3ff4df59931e80edcc04c2f5024c8f60a7ff23936cd466a6f02019f54c6ab699cb337f932110d056a9db7ea7c21a35a70450c7d908d7ff209c4d4d4f.css" integrity="sha512-3DyhjT/031mTHoDtzATC9QJMj2Cn/yOTbNRmpvAgGfVMaraZyzN/kyEQ0Fap236nwho1pwRQx9kI1/8gnE1NTw==" />
+  
+  
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+
+  
+    <meta name="description" content="没想到有一天我也会写装修笔记，无指导意义——健忘人士手册罢了。">
+    <meta property="og:title" content="Hugo Stack | 删删改改大胆行事">
+    <meta property="og:description" content="没想到有一天我也会写装修笔记，无指导意义——健忘人士手册罢了。">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      Hugo Stack | 删删改改大胆行事 | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tools">
+  
+  <div class="tools-item">
+    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/about" >✦ About ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/posts" >✦ Archive ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/links" >✦ Friends ✦</a>
+  </div>
+  
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
+
+<article data-pagefind-ignore>
+    <h1 data-pagefind-meta="title" data-pagefind-ignoret>Hugo Stack | 删删改改大胆行事</h1>
+    <div id="post-meta">
+        <time datetime="2022-01-01 14:02:48 &#43;0000 &#43;0000">
+            2022-01-01
+            <span> ‧ 6702</span>
+            <span>words</span>
+            ‧ <span> </span>
+            
+                    
+                    <a href="/tags/hugo">＃Hugo</a>
+                    
+            
+        </time>
+        
+        <div id="post-description">
+            没想到有一天我也会写装修笔记，无指导意义——健忘人士手册罢了。
+        </div>
+        
+    </div>
+
+    
+    
+<div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+    <details>
+        <summary>📑 Table of Contents</summary>
+        <div>
+            <aside>
+                
+                
+                <nav id="TableOfContentsMobile"> <nav id="TableOfContents">
+  <ul>
+    <li><a href="#博客更新日志">博客更新日志</a>
+      <ul>
+        <li><a href="#待办清单">待办清单</a></li>
+      </ul>
+    </li>
+    <li><a href="#卡片圆角改为直角">卡片圆角改为直角</a></li>
+    <li><a href="#代码块问题">代码块问题</a></li>
+    <li><a href="#左侧栏的问题">左侧栏的问题</a>
+      <ul>
+        <li><a href="#菜单">菜单</a></li>
+        <li><a href="#暗色模式">暗色模式</a></li>
+        <li><a href="#修改左栏的占比">修改左栏的占比</a></li>
+      </ul>
+    </li>
+    <li><a href="#右侧小组件更改">右侧小组件更改</a>
+      <ul>
+        <li><a href="#来增加分类小组件吧">来增加分类小组件吧！</a></li>
+      </ul>
+    </li>
+    <li><a href="#给目录增添左边框">给目录增添左边框</a></li>
+    <li><a href="#修改左侧导航栏宽度">修改左侧导航栏宽度</a></li>
+    <li><a href="#为waline评论区增添邮件提醒">为Waline评论区增添邮件提醒</a>
+      <ul>
+        <li><a href="#取消设备与浏览器版本显示">取消设备与浏览器版本显示</a></li>
+      </ul>
+    </li>
+    <li><a href="#在archive页中加入tag云">在Archive页中加入Tag云</a></li>
+    <li><a href="#页面主体内容宽度更改">页面主体内容宽度更改</a></li>
+  </ul>
+</nav>
+                </nav>
+            </aside>
+        </div>
+    </details>
+</div>
+<hr class="decoration-hr" id="toc-hr">
+<div class="post-toc toc-styled-pc" id="post-toc" data-pagefind-ignore>
+    <header class="post-header-pc">
+    ✦ TOC | 目录 ✦
+    </header>
+    <aside>
+        <nav id="TableOfContentsPC"> 
+            
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#博客更新日志">博客更新日志</a>
+      <ul>
+        <li><a href="#待办清单">待办清单</a></li>
+      </ul>
+    </li>
+    <li><a href="#卡片圆角改为直角">卡片圆角改为直角</a></li>
+    <li><a href="#代码块问题">代码块问题</a></li>
+    <li><a href="#左侧栏的问题">左侧栏的问题</a>
+      <ul>
+        <li><a href="#菜单">菜单</a></li>
+        <li><a href="#暗色模式">暗色模式</a></li>
+        <li><a href="#修改左栏的占比">修改左栏的占比</a></li>
+      </ul>
+    </li>
+    <li><a href="#右侧小组件更改">右侧小组件更改</a>
+      <ul>
+        <li><a href="#来增加分类小组件吧">来增加分类小组件吧！</a></li>
+      </ul>
+    </li>
+    <li><a href="#给目录增添左边框">给目录增添左边框</a></li>
+    <li><a href="#修改左侧导航栏宽度">修改左侧导航栏宽度</a></li>
+    <li><a href="#为waline评论区增添邮件提醒">为Waline评论区增添邮件提醒</a>
+      <ul>
+        <li><a href="#取消设备与浏览器版本显示">取消设备与浏览器版本显示</a></li>
+      </ul>
+    </li>
+    <li><a href="#在archive页中加入tag云">在Archive页中加入Tag云</a></li>
+    <li><a href="#页面主体内容宽度更改">页面主体内容宽度更改</a></li>
+  </ul>
+</nav>
+        </nav>
+    </aside>
+</div>
+
+
+<style>
+     
+    #toc-toggle {
+        display: none;
+    }
+     
+    #TableOfContents ul li:before {
+        content: "";
+        font-weight: bold;
+        margin-right: 0px;
+    }
+</style>
+    
+
+    <div id="post-content"  data-pagefind-body>
+        <h2 id="博客更新日志">博客更新日志</h2>
+<p>2022-04-18 | 取消右侧栏小组件，更改页面宽度，Archive页面中增添Tags板块，取消了左侧栏的<code>Home</code>键。修改Site-info为<code>You need to have some concerns and, even better, a bit of anger.</code></p>
+<p>2022-04-17 | 按照<a href="https://irithys.com/p/%E7%BB%99hugo%E5%8A%A0%E4%B8%80%E7%82%B9%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%8A%9F%E8%83%BD/#%E8%81%94%E7%B3%BB%E6%B0%94%E6%B3%A1" target="_blank" rel="noopener noreferrer">善楪的笔记</a>增加了右下角的Channel.io即时聊天气泡。将Fanfic站的主题换为Stack。按照<a href="https://blog.echosec.top/p/custom-hugo-theme-styles/#%E4%BF%AE%E6%94%B9%E9%80%89%E4%B8%AD%E7%9B%AE%E6%A0%87%E6%A0%B7%E5%BC%8F" target="_blank" rel="noopener noreferrer">echosec的博客</a>修改了选中目标和行内代码样式。</p>
+<p>2022-03-02 | 为分类组件增加计数，修改方法来自<a href="https://mantyke.icu/2022/stack-theme-furnish03/#%E8%A1%8C%E5%8A%A8%E5%A5%97%E5%BE%88%E8%BF%B7%E8%8C%AB%E5%9C%B0%E5%A5%97" target="_blank" rel="noopener noreferrer">塔塔的笔记</a>，修改了小组件Icon。删掉了去往Mastodon的社交链接。</p>
+<p>2022-01-27 | 增加分类组件推荐阅读，为评论功能增添了邮件提醒。</p>
+<h3 id="待办清单">待办清单</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 想要一个音乐播放器 | 音乐网站提供的内嵌链接为我解决了难题</li>
+<li><input checked="" disabled="" type="checkbox"> 修改分类组件</li>
+<li><input disabled="" type="checkbox"> 增加Quote短代码，感觉有点难弄，但是很漂亮呢。</li>
+</ul>
+<hr>
+<p>在<a href="https://chinese.freecodecamp.org/learn/" target="_blank" rel="noopener noreferrer">FreeCodeCamp</a>上学了几节CSS和Html以后，我终于对我的博客下手了。编程世界真是好，竟然允许人出错以后火速替换更改的文件以便达到救火目的。因为我不知道应该怎么看修改记录，也不确定可以看修改记录，同时兼任健忘人士和差生两大身份，所以我需要对这次贸然施工进行详尽记录。</p>
+<p>施工进行一段时间后，我牢牢记住了：<code>Ctrl+Z</code>是撤回，<code>Ctrl+Y</code>是恢复。这两大魔法按钮，辅助<code>Ctrl+S</code>，使得我像是挠一爪子就停下来看看沙发怎么样了的猫一样所向披靡。</p>
+<p>对我这个编程基础为零的人来讲，每修改一处都是大成就。为了让这篇东西的写作快乐一点，也便于让我这个健忘认识复习，我会写下我脑海里详细的、笨笨的解题思路。</p>
+<h2 id="卡片圆角改为直角">卡片圆角改为直角</h2>
+<p>我在FreeCodeCamp学的第一课马上就用上了，直角圆角问题属于<code>border-radius</code>管辖。在<code>\assets\scss\variables.scss</code>这个文件中：</p>
+<pre><code>    --tag-border-radius: 0px; // 标签圆角改直角，由4改为0px
+</code></pre>
+<p>由于博客的评论区是后来添加的，所以想让它改为圆角，依然需要跑去<code>\layouts\partials\comments\provider\waline.html</code>单独修改。</p>
+<h2 id="代码块问题">代码块问题</h2>
+<p>上一个修改带来了这个问题。我希望标签是直角，但代码块（此前我以为我的博客根本用不上这个东西）是在文中的，它也引用了上述的样式，单独修改一下。</p>
+<pre><code>  code {
 ​    color: var(--code-text-color);
 ​    background-color: var(--code-background-color);
 ​    padding: 2px 4px;
 ​    border-radius: 5px; // 单独改为4px
 ​    font-family: var(--code-font-family);
   }
-</code></pre><h2 id=左侧栏的问题>左侧栏的问题</h2><h3 id=菜单>菜单</h3><p>菜单部分在<code>\assets\scss\partials\menu.scss</code>里修改。</p><pre><code>    li {
+</code></pre>
+<h2 id="左侧栏的问题">左侧栏的问题</h2>
+<h3 id="菜单">菜单</h3>
+<p>菜单部分在<code>\assets\scss\partials\menu.scss</code>里修改。</p>
+<pre><code>    li {
     
     ...... 
     
@@ -18,20 +418,94 @@
             text-align:left; // left好看
             padding: 0px 0; // 10px 0 改为1px 0 是菜单栏的间距
         } 
-</code></pre><h3 id=暗色模式>暗色模式</h3><p>哎呀，暗色模式默认是在底部，让它上来！这部分在<code>\assets\scss\partials\sidebar.scss</code>修改。</p><pre><code>#dark-mode-toggle {
+</code></pre>
+<h3 id="暗色模式">暗色模式</h3>
+<p>哎呀，暗色模式默认是在底部，让它上来！这部分在<code>\assets\scss\partials\sidebar.scss</code>修改。</p>
+<pre><code>#dark-mode-toggle {
     margin-top: 10px; // auto改为10px，暗色模式按钮与菜单最后一栏的间距
-</code></pre><h3 id=修改左栏的占比>修改左栏的占比</h3><p>印象中我把头像的Margin直接改大了，然后参照<a href=https://mantyke.icu/2021/f9f0ec87/#%E5%A4%B4%E5%83%8F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%8F%8F%E8%BF%B0%E5%B1%85%E4%B8%AD%E6%98%BE%E7%A4%BA target=_blank rel="noopener noreferrer">Hugo | 看中 Stack 主题的归档功能，搬家并做修改</a>改了标题与描述的居中，会想要修改博客的样式也是因为看了这篇博客，在修改过程中抄了很多作业😭谢谢她！</p><h2 id=右侧小组件更改>右侧小组件更改</h2><p>我不喜欢以年份归类，尤其是我博客的内容全是在2020年以后写的：众所周知，新冠爆发以后的这2019-2022年生命的流逝快到令人崩溃。所以我决定在<code>config.yaml</code>关闭归档功能！</p><h3 id=来增加分类小组件吧>来增加分类小组件吧！</h3><blockquote><p>2022-01-27 Update</p><p>关于如何在Stack主题中增添分类小组件，塔塔写了一篇功能更完善也更清晰的笔记，推荐阅读：<a href=https://mantyke.icu/2022/stack-theme-furnish03/#%E5%8F%B3%E4%BE%A7%E6%A0%8F%E6%96%B0%E5%A2%9E%E5%88%86%E7%B1%BB%E5%B0%8F%E9%83%A8%E4%BB%B6 target=_blank rel="noopener noreferrer">右侧栏新增分类小部件</a></p></blockquote><details><summary>CLICK ME</summary><h4 id=理解篇>理解篇</h4><p>去掉归档，右边有些单调，我想给它加个分类——这个主题并不带有分类组件，我查找了很多个文件，感觉修改起来很麻烦，不过我在<a href=https://www.wangchucheng.com/zh/docs/hugo-eureka/homepage-configuration/ target=_blank rel="noopener noreferrer">Hugo Eureka主题的入门配置</a>中找到了这一部分的内容，马上开始四处搜寻同主题的装修大师们是怎么处理它，差生摩拳擦掌开始操作（抄作业）了。</p><p>在上面Eureka主题的配置指导中谈到：</p><blockquote><p>section(string)：需要显示的章节，例如posts等。</p></blockquote><p>而如何理解<code>section</code>呢？在<a href=https://blog.pytool.com/language/golang/hugo/hugo-nest-section/ target=_blank rel="noopener noreferrer">Hugo 创建多级 Section</a>而我所需要的则是<code>categories</code>这个section，事实上很久以前我已经为这个苦恼过了：怎么样装饰我的目录呢？Stack主题的文档里本身就有谈到：<a href=https://docs.stack.jimmycai.com/zh/taxonomy/ target=_blank rel="noopener noreferrer">给分类/标签添加图片和简介</a>。</p><p><strong>分类和标签一样</strong>，只是一个文件夹，在网页上点它们的时候，我们只是进入了一个个文件夹。所以很大程度上，我想做的分类组件，不过是标签云组件的另一个样子而已，只是它同时兼具了归档的列表形式。这说明了什么？差生可以开始抄作业了。</p><p>那么右侧的目录、搜索、标签云、归档统统都是组件——Widget！那么它在哪里？又是一顿搜索发现，组件在三个不同的地方作用着：</p><ol><li><p>在<code>config.yaml</code>中调用它们。</p></li><li><p>在<code>\layouts\partials\widget</code>文件夹中，存放着四个已有的不同组件，也是config文件中列出的可以调用的四个。（后面我突然发现自带的组件只有三个，而之前我已经根据<a href=https://mantyke.icu/2021/f9f0ec87/#%E5%A4%B4%E5%83%8F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%8F%8F%E8%BF%B0%E5%B1%85%E4%B8%AD%E6%98%BE%E7%A4%BA target=_blank rel="noopener noreferrer">Hugo | 看中 Stack 主题的归档功能，搬家并做修改</a>这篇文章，去抄了<a href=https://github.com/ShadowySpirits/hugo-theme-stack target=_blank rel="noopener noreferrer">这个仓库</a>里的一些设置，据我印象，我直接抄了整个layouts文件夹😰）</p><pre><code> widgets:
+</code></pre>
+<h3 id="修改左栏的占比">修改左栏的占比</h3>
+<p>印象中我把头像的Margin直接改大了，然后参照<a href="https://mantyke.icu/2021/f9f0ec87/#%E5%A4%B4%E5%83%8F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%8F%8F%E8%BF%B0%E5%B1%85%E4%B8%AD%E6%98%BE%E7%A4%BA" target="_blank" rel="noopener noreferrer">Hugo | 看中 Stack 主题的归档功能，搬家并做修改</a>改了标题与描述的居中，会想要修改博客的样式也是因为看了这篇博客，在修改过程中抄了很多作业😭谢谢她！</p>
+<h2 id="右侧小组件更改">右侧小组件更改</h2>
+<p>我不喜欢以年份归类，尤其是我博客的内容全是在2020年以后写的：众所周知，新冠爆发以后的这2019-2022年生命的流逝快到令人崩溃。所以我决定在<code>config.yaml</code>关闭归档功能！</p>
+<h3 id="来增加分类小组件吧">来增加分类小组件吧！</h3>
+<blockquote>
+<p>2022-01-27 Update</p>
+<p>关于如何在Stack主题中增添分类小组件，塔塔写了一篇功能更完善也更清晰的笔记，推荐阅读：<a href="https://mantyke.icu/2022/stack-theme-furnish03/#%E5%8F%B3%E4%BE%A7%E6%A0%8F%E6%96%B0%E5%A2%9E%E5%88%86%E7%B1%BB%E5%B0%8F%E9%83%A8%E4%BB%B6" target="_blank" rel="noopener noreferrer">右侧栏新增分类小部件</a></p></blockquote>
+<details>
+<summary>CLICK ME</summary>
+<h4 id="理解篇">理解篇</h4>
+<p>去掉归档，右边有些单调，我想给它加个分类——这个主题并不带有分类组件，我查找了很多个文件，感觉修改起来很麻烦，不过我在<a href="https://www.wangchucheng.com/zh/docs/hugo-eureka/homepage-configuration/" target="_blank" rel="noopener noreferrer">Hugo Eureka主题的入门配置</a>中找到了这一部分的内容，马上开始四处搜寻同主题的装修大师们是怎么处理它，差生摩拳擦掌开始操作（抄作业）了。</p>
+<p>在上面Eureka主题的配置指导中谈到：</p>
+<blockquote>
+<p>section(string)：需要显示的章节，例如posts等。</p></blockquote>
+<p>而如何理解<code>section</code>呢？在<a href="https://blog.pytool.com/language/golang/hugo/hugo-nest-section/" target="_blank" rel="noopener noreferrer">Hugo 创建多级 Section</a>而我所需要的则是<code>categories</code>这个section，事实上很久以前我已经为这个苦恼过了：怎么样装饰我的目录呢？Stack主题的文档里本身就有谈到：<a href="https://docs.stack.jimmycai.com/zh/taxonomy/" target="_blank" rel="noopener noreferrer">给分类/标签添加图片和简介</a>。</p>
+<p><strong>分类和标签一样</strong>，只是一个文件夹，在网页上点它们的时候，我们只是进入了一个个文件夹。所以很大程度上，我想做的分类组件，不过是标签云组件的另一个样子而已，只是它同时兼具了归档的列表形式。这说明了什么？差生可以开始抄作业了。</p>
+<p>那么右侧的目录、搜索、标签云、归档统统都是组件——Widget！那么它在哪里？又是一顿搜索发现，组件在三个不同的地方作用着：</p>
+<ol>
+<li>
+<p>在<code>config.yaml</code>中调用它们。</p>
+</li>
+<li>
+<p>在<code>\layouts\partials\widget</code>文件夹中，存放着四个已有的不同组件，也是config文件中列出的可以调用的四个。（后面我突然发现自带的组件只有三个，而之前我已经根据<a href="https://mantyke.icu/2021/f9f0ec87/#%E5%A4%B4%E5%83%8F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%8F%8F%E8%BF%B0%E5%B1%85%E4%B8%AD%E6%98%BE%E7%A4%BA" target="_blank" rel="noopener noreferrer">Hugo | 看中 Stack 主题的归档功能，搬家并做修改</a>这篇文章，去抄了<a href="https://github.com/ShadowySpirits/hugo-theme-stack" target="_blank" rel="noopener noreferrer">这个仓库</a>里的一些设置，据我印象，我直接抄了整个layouts文件夹😰）</p>
+<pre><code> widgets:
    enabled:
      - toc
      - search
      - archives
      - tag-cloud
-</code></pre></li><li><p><code>\assets\scss\partials\widgets.scss</code> 在这个文件中，统一管理着组件<strong>样式</strong>。</p></li></ol><p>也就是说，我希望增加一个组件，点进去它会跳转到分类中，首先我需要仿照其他组件，在<code>2.</code>中的文件夹里增加一个叫作<code>categories.html</code>的组件，在这个文件里，我可以调用<code>3.</code>这个文件中的样式，对我新增的组件进行修改。</p><p>在我其他修改当中，也存在许许多多像这样的“引用”，我猜后面还会有很多地方需要我如此理解一个功能的实现。等FreeCodeCamp大学教完我这些术语以后，我一定要倒回来润色这篇磕磕绊绊的鬼东西。快教我jpg（快去学！）</p><h4 id=动手吧>动手吧！</h4><p>事后写起来很潇洒，但当时的整个操作可谓一团浆糊。尤其两天后：现在的我已经基本忘记了当时干了什么。以下写满了我乱七八糟的理解，或者是“其实我当时完全没理解，但我事后是这么理解的”、“事后我也没懂，但我还是这么做了”。健忘的人写东西真像两个不及格生相互施加费曼学习法。</p><p>在我琢磨到一半的时候，我在<a href=https://randomwaves.space/ target=_blank rel="noopener noreferrer">波澜随心起</a>的博客里看到了我想要的分类组件设置！！！TA就做了一个分类的组件，我应该是这个世界上点TA的组件最多的人，感激这个组件让我理解了……它们真的都是超！链！接！</p><blockquote><p><strong>这个组件的左边框部分我参考了</strong><a href=https://randomwaves.space/ target=_blank rel="noopener noreferrer"><strong>波澜随心起</strong></a><strong>的博客的设置。我猜TA的写法一定比我的更加聪明。感谢TA的设置，我还不确定我是不是应该为这些代码打扰TA和作出说明，现在这里加粗感谢一下。</strong></p></blockquote><p>以下是我稀里糊涂的操作与思考，文末给出了两个文件的新增/完整内容，不必跟我一起绕远路。</p><ol><li>备份。</li><li>据说可以用命令新建Widget——但我把<code>\layouts\partials\widget\archives.html</code>（归档组件的文件）<strong>直接复制了一份</strong>。改名成<code>categories.html</code>。</li></ol><blockquote><p>I was thinking：<br><br>我把归档组件文件和<code>widgets.scss</code>这个文件进行观察，用我稀薄的CSS知识确认了每部分代码是用来做什么的。页面显示的顺序是自上而下一致的，图标→组件名称→组件本身，每个部分都用了各种在<code>widgets.scss</code>中定义过的Class。</p><p>我想要的只是一个分类卡片，每个点进去都是一个类似标签云的超链接，标签云本身用这行代码设计了这个形式🧐：<code>&lt;a href="{{ .Page.RelPermalink }}" class="font_size_{{ .Count }}"></code>。<br><br>根据我在FCC(Fight club college)学到的知识，<code>href</code>不只是……人家才不管啦它就是超链接！！！</br></p></blockquote><ol><li><p>观察刚才复制过来的Archives.html中的结构，归档由于是以年份自动整理，所以设置的十分复杂。再观察其他几个组件，发现它们不过是纸老虎！那么保留几个文件中共有的首尾，保留归档设置里的Icon和Title部分，<strong>其他都删掉</strong>（？）。</p></li><li><p>先来观察每个组件的Icon和Title吧！下面这串来自归档组件的代码指的是我们选择了“infinity”作为组件的Icon，Class是它所引用的组件名字统一的样式，中括号<code>{{}}</code>包裹住的部分我并没有在Widget里找到，删掉，在<code>&lt;h2></code>标签中写好组件的名字。</p><pre><code> &lt;section class=&quot;widget archives&quot;&gt;
+</code></pre>
+</li>
+<li>
+<p><code>\assets\scss\partials\widgets.scss</code> 在这个文件中，统一管理着组件<strong>样式</strong>。</p>
+</li>
+</ol>
+<p>也就是说，我希望增加一个组件，点进去它会跳转到分类中，首先我需要仿照其他组件，在<code>2.</code>中的文件夹里增加一个叫作<code>categories.html</code>的组件，在这个文件里，我可以调用<code>3.</code>这个文件中的样式，对我新增的组件进行修改。</p>
+<p>在我其他修改当中，也存在许许多多像这样的“引用”，我猜后面还会有很多地方需要我如此理解一个功能的实现。等FreeCodeCamp大学教完我这些术语以后，我一定要倒回来润色这篇磕磕绊绊的鬼东西。快教我jpg（快去学！）</p>
+<h4 id="动手吧">动手吧！</h4>
+<p>事后写起来很潇洒，但当时的整个操作可谓一团浆糊。尤其两天后：现在的我已经基本忘记了当时干了什么。以下写满了我乱七八糟的理解，或者是“其实我当时完全没理解，但我事后是这么理解的”、“事后我也没懂，但我还是这么做了”。健忘的人写东西真像两个不及格生相互施加费曼学习法。</p>
+<p>在我琢磨到一半的时候，我在<a href="https://randomwaves.space/" target="_blank" rel="noopener noreferrer">波澜随心起</a>的博客里看到了我想要的分类组件设置！！！TA就做了一个分类的组件，我应该是这个世界上点TA的组件最多的人，感激这个组件让我理解了……它们真的都是超！链！接！</p>
+<blockquote>
+<p><strong>这个组件的左边框部分我参考了</strong><a href="https://randomwaves.space/" target="_blank" rel="noopener noreferrer"><strong>波澜随心起</strong></a><strong>的博客的设置。我猜TA的写法一定比我的更加聪明。感谢TA的设置，我还不确定我是不是应该为这些代码打扰TA和作出说明，现在这里加粗感谢一下。</strong></p></blockquote>
+<p>以下是我稀里糊涂的操作与思考，文末给出了两个文件的新增/完整内容，不必跟我一起绕远路。</p>
+<ol>
+<li>备份。</li>
+<li>据说可以用命令新建Widget——但我把<code>\layouts\partials\widget\archives.html</code>（归档组件的文件）<strong>直接复制了一份</strong>。改名成<code>categories.html</code>。</li>
+</ol>
+<blockquote>
+<p>I was thinking：
+<br>
+<br>
+我把归档组件文件和<code>widgets.scss</code>这个文件进行观察，用我稀薄的CSS知识确认了每部分代码是用来做什么的。页面显示的顺序是自上而下一致的，图标→组件名称→组件本身，每个部分都用了各种在<code>widgets.scss</code>中定义过的Class。</p>
+<p>我想要的只是一个分类卡片，每个点进去都是一个类似标签云的超链接，标签云本身用这行代码设计了这个形式🧐：<code>&lt;a href=&quot;{{ .Page.RelPermalink }}&quot; class=&quot;font_size_{{ .Count }}&quot;&gt;</code>。<br><br>
+根据我在FCC(Fight club college)学到的知识，<code>href</code>不只是……人家才不管啦它就是超链接！！！</br></p></blockquote>
+<ol>
+<li>
+<p>观察刚才复制过来的Archives.html中的结构，归档由于是以年份自动整理，所以设置的十分复杂。再观察其他几个组件，发现它们不过是纸老虎！那么保留几个文件中共有的首尾，保留归档设置里的Icon和Title部分，<strong>其他都删掉</strong>（？）。</p>
+</li>
+<li>
+<p>先来观察每个组件的Icon和Title吧！下面这串来自归档组件的代码指的是我们选择了“infinity”作为组件的Icon，Class是它所引用的组件名字统一的样式，中括号<code>{{}}</code>包裹住的部分我并没有在Widget里找到，删掉，在<code>&lt;h2&gt;</code>标签中写好组件的名字。</p>
+<pre><code> &lt;section class=&quot;widget archives&quot;&gt;
      &lt;div class=&quot;widget-icon&quot;&gt;
          {{ partial &quot;helper/icon&quot; &quot;infinity&quot; }}
      &lt;/div&gt;
      &lt;h2 class=&quot;widget-title section-title&quot;&gt;{{ T &quot;widget.archives.title&quot; }}&lt;/h2&gt;
-</code></pre></li></ol><p>把最后一行改为：<code>&lt;h2 class="widget-title section-title">Categories&lt;/h2></code></p><blockquote><p>先前情回顾一下：<br><strong>目录和标签一样</strong>，只是一个文件夹，在网页上点它们的时候，我们只是进入了一个个文件夹。所以很大程度上，我想做的分类组件，不过是标签云组件的另一个样子而已，只是它同时兼具了归档的列表形式。这说明了什么？差生可以开始抄作业了。</p></blockquote><ol><li>把<code>categories.html</code>放在一边。让我们先在<code>Widgets.scss</code>中增添一段关于分类组件的样式，直接从归档组件里复制并把各种变量改名为Categories，让它短一点，所以加上<strong>Witdth</strong>，字体与超链接部分也照抄<code>.archives-year</code>的设置，不要<code>count</code>。字体太粗了？<code>font-weight</code>改为<code>1</code>，除了我不知道用来干嘛的部分，<strong>全部照抄</strong>。</li><li>添加左边框。虽然我已经学了<code>boarder</code>的设计，但我不知道是不是可以这么用。那么，其实它看起来有点儿像Stack主题里的<code>&lt;h1></code> <code>&lt;h2></code>等各类大标题，对吗？而在<code>article.scss</code>中我看到，作者直接用<code>h2, {border-left: var(--heading-border-size) solid var(--accent-color);}</code>设计它们，我猜我可以照搬它。</li></ol><blockquote><p>不过我不管怎么设置，<code>border-left</code>就是不起作用，差生已经习惯了道路坎坷，于是我丝滑地换了一个方式👇<br>参考资料：<a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-width target=_blank rel="noopener noreferrer">border-width</a><br>这里提供了一个样例：<code>border-width: 0 4px 8px 12px;</code>可以分别设置的是上、右、下、左边框，而我只需要把三边设置为0就可以了。</p></blockquote><pre><code>.widget.categories {
+</code></pre>
+</li>
+</ol>
+<p>把最后一行改为：<code>&lt;h2 class=&quot;widget-title section-title&quot;&gt;Categories&lt;/h2&gt;</code></p>
+<blockquote>
+<p>先前情回顾一下：<br>
+<strong>目录和标签一样</strong>，只是一个文件夹，在网页上点它们的时候，我们只是进入了一个个文件夹。所以很大程度上，我想做的分类组件，不过是标签云组件的另一个样子而已，只是它同时兼具了归档的列表形式。这说明了什么？差生可以开始抄作业了。</p></blockquote>
+<ol>
+<li>把<code>categories.html</code>放在一边。让我们先在<code>Widgets.scss</code>中增添一段关于分类组件的样式，直接从归档组件里复制并把各种变量改名为Categories，让它短一点，所以加上<strong>Witdth</strong>，字体与超链接部分也照抄<code>.archives-year</code>的设置，不要<code>count</code>。字体太粗了？<code>font-weight</code>改为<code>1</code>，除了我不知道用来干嘛的部分，<strong>全部照抄</strong>。</li>
+<li>添加左边框。虽然我已经学了<code>boarder</code>的设计，但我不知道是不是可以这么用。那么，其实它看起来有点儿像Stack主题里的<code>&lt;h1&gt;</code> <code>&lt;h2&gt;</code>等各类大标题，对吗？而在<code>article.scss</code>中我看到，作者直接用<code>h2, {border-left: var(--heading-border-size) solid var(--accent-color);}</code>设计它们，我猜我可以照搬它。</li>
+</ol>
+<blockquote>
+<p>不过我不管怎么设置，<code>border-left</code>就是不起作用，差生已经习惯了道路坎坷，于是我丝滑地换了一个方式👇<br>
+参考资料：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-width" target="_blank" rel="noopener noreferrer">border-width</a> <br>
+这里提供了一个样例：<code>border-width: 0 4px 8px 12px;</code>可以分别设置的是上、右、下、左边框，而我只需要把三边设置为0就可以了。</p></blockquote>
+<pre><code>.widget.categories {
     .widget-categories--list {
         border-radius: var(--card-border-radius);
         box-shadow: var(--shadow-l1);
@@ -57,7 +531,14 @@
         }
     }
 }
-</code></pre><ol><li><p>上面就是我在<code>widgets.scss</code>中新增的代码，回到<code>categories.html</code>中把它们加上吧。我想不通要怎么样做到“我写作时加入一个分类？小组件就会自动显示出来”，但因为我的分类很少（2-3个）所以我就不管它了，直接用<strong>超链接</strong>实现。我猜它可以仿照标签云组件的写法，但我看不太懂，希望后续FFC可以教我（快学）。</p></li><li><p>因为我想要的是归档的列表形式，所以仿照<code>archives.html</code>中<code>widget-archive--list</code>的写法，依次替换各种Class的名称，加入超链接。以下是完整的文件内容。</p><pre><code> {{- $query := first 1 (where .Site.Pages &quot;Layout&quot; &quot;==&quot; &quot;archives&quot;) -}}
+</code></pre>
+<ol>
+<li>
+<p>上面就是我在<code>widgets.scss</code>中新增的代码，回到<code>categories.html</code>中把它们加上吧。我想不通要怎么样做到“我写作时加入一个分类？小组件就会自动显示出来”，但因为我的分类很少（2-3个）所以我就不管它了，直接用<strong>超链接</strong>实现。我猜它可以仿照标签云组件的写法，但我看不太懂，希望后续FFC可以教我（快学）。</p>
+</li>
+<li>
+<p>因为我想要的是归档的列表形式，所以仿照<code>archives.html</code>中<code>widget-archive--list</code>的写法，依次替换各种Class的名称，加入超链接。以下是完整的文件内容。</p>
+<pre><code> {{- $query := first 1 (where .Site.Pages &quot;Layout&quot; &quot;==&quot; &quot;archives&quot;) -}}
  {{- if $query -}}
      {{- $archivesPage := index $query 0 -}}
      &lt;section class=&quot;widget categories&quot;&gt;
@@ -83,7 +564,20 @@
  {{- else -}}
      {{- warnf &quot;Archives page not found. Create a page with layout: archives.&quot; -}}
  {{- end -}}
-</code></pre></li></ol><blockquote><p>I was thinking:<br><br>关于左边框的颜色，上面那位博客主到底是怎么实现它们每个都不一样的呢？这一部分我发生了大量的报错，我没有办法随心所欲地加入我的超链接，要么是左右标签总有一个忘记了，以及我到底要怎么设置才能让它们正确显示出我想要的分类名？文字到底应该包裹在哪里？<br>关于第一个问题，我的FCC笔记：不在Class中统一管理，而是用Style单独设计。<br><br>这里我参考了<a href=https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/style target=_blank rel="noopener noreferrer">Style</a> ，而其他问题，代码中有所显示。当然还参考了上面那位Blogger的博客。<br><br>这些花了我很长时间的问题，这些写法一定不是最优解。最佳的解决办法其实是继续学习，争取在这次假期中完成我的FreeCodeCamp大学再教育。</p></blockquote></details><h2 id=给目录增添左边框>给目录增添左边框</h2><p>上面作妖完毕后，我决定给目录Toc也加上左边框，理由：我学会了怎么加左边框。目录作为自带的组件，增添这个小小设置应该很简单，事不宜迟，开始动手：</p><p>在<code>\assets\scss\partials\layout\article.scss</code>中修改：</p><pre><code>.widget--toc {
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>I was thinking: <br> <br>
+关于左边框的颜色，上面那位博客主到底是怎么实现它们每个都不一样的呢？这一部分我发生了大量的报错，我没有办法随心所欲地加入我的超链接，要么是左右标签总有一个忘记了，以及我到底要怎么设置才能让它们正确显示出我想要的分类名？文字到底应该包裹在哪里？<br>关于第一个问题，我的FCC笔记：不在Class中统一管理，而是用Style单独设计。<br><br>
+这里我参考了<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/style" target="_blank" rel="noopener noreferrer">Style</a> ，而其他问题，代码中有所显示。当然还参考了上面那位Blogger的博客。
+<br><br>
+这些花了我很长时间的问题，这些写法一定不是最优解。最佳的解决办法其实是继续学习，争取在这次假期中完成我的FreeCodeCamp大学再教育。</p></blockquote>
+</details>
+<h2 id="给目录增添左边框">给目录增添左边框</h2>
+<p>上面作妖完毕后，我决定给目录Toc也加上左边框，理由：我学会了怎么加左边框。目录作为自带的组件，增添这个小小设置应该很简单，事不宜迟，开始动手：</p>
+<p>在<code>\assets\scss\partials\layout\article.scss</code>中修改：</p>
+<pre><code>.widget--toc {
     background-color: var(--card-background);
     border-radius: 1px (--card-border-radius);
     box-shadow: var(--shadow-l1);
@@ -95,7 +589,10 @@
     border-style: solid;
     border-width: 0 0 0 12px;
     border-color: #93B5C6; // 增加了四行，更改宽度与左边框
-</code></pre><h2 id=修改左侧导航栏宽度>修改左侧导航栏宽度</h2><p>在<code>\assets\scss\partials\sidebar.scss</code>中：</p><pre><code>.left-sidebar {
+</code></pre>
+<h2 id="修改左侧导航栏宽度">修改左侧导航栏宽度</h2>
+<p>在<code>\assets\scss\partials\sidebar.scss</code>中：</p>
+<pre><code>.left-sidebar {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -105,8 +602,42 @@
     padding: 30px 0 15px 0;
     max-width: none;
     min-width: 15%; // 左侧导航栏的宽度
-</code></pre><h2 id=为waline评论区增添邮件提醒>为Waline评论区增添邮件提醒</h2><p>首先关于如何给Hugo增添评论区请见：<a href=https://mantyke.icu/2021/comment/#%E5%AE%89%E8%A3%85waline target=_blank rel="noopener noreferrer">Hugo | 为 Blog 增加评论区</a>，表情包添加则是参考了这篇文章：<a href=https://www.norevi.icu/2021/waline%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E6%83%85/ target=_blank rel="noopener noreferrer">Waline｜添加自定义表情</a>。</p><p>有了评论区的很长一段时间我都没有弄邮件提醒，之前看了Waline的官方文档，没看懂，有些畏难情绪。最近胆子大了，于是又开始琢磨这事。现在终于加上了，就写一下流程吧。</p><blockquote><p>先放参考资料：</p><p><a href=https://waline.js.org/guide/server/notification.html#%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5 target=_blank rel="noopener noreferrer">Waline官方文档</a></p><p><a href=https://guanqr.com/tech/website/introduction-and-basic-setting-of-waline/#%E5%BC%80%E5%90%AF%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD target=_blank rel="noopener noreferrer">Waline 评论系统的介绍与基础配置</a></p></blockquote><p>先介绍一下，我的评论区是用Vercel部署的，弄起来非常简单，而使用的发件邮箱（也就是文档中提到的SMTP邮件发送服务提供商）是Gmail。</p><p>邮件提醒增加起来也很方便，直接在Vercel部署好的评论区项目里转到<code>Dashboard</code>-<code>Setting</code>-<code>Environment Variables</code>，进行环境变量配置，在<code>NAME</code>中添加<strong>上面官方文档中提到的变量名</strong>，<code>VALUE</code>中添加变量值，然后<code>ADD</code>上去就好啦！我只添加了必填的内容，添加成功后是这样的：</p><img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/_20220127202930.png alt class=post-image><p>在这里如果你也是用Gmail邮箱，需要注意一件事情，由于Google的安全意识非常之高，所以在<code>SMTP_PASS</code>密码这一项中，不能直接填你的邮箱密码，而需要填<strong>应用专用密码</strong>，如何创建应用专用密码，请见Gmail的文档帮助：<a href="https://support.google.com/mail/answer/185833?hl=zh-Hans#zippy=%2C%E4%B8%BA%E4%BB%80%E4%B9%88%E6%82%A8%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E4%B8%93%E7%94%A8%E5%AF%86%E7%A0%81" target=_blank rel="noopener noreferrer">创建和使用应用专用密码</a>。</p><p>之后，还要记得要去设置中开启IMAP访问（据说163邮箱也需要这两步）。具体操作请见：<a href="https://support.google.com/mail/answer/7126229?hl=zh-Hans#zippy=%2C%E7%AC%AC-%E6%AD%A5%E6%A3%80%E6%9F%A5-imap-%E6%98%AF%E5%90%A6%E5%B7%B2%E5%90%AF%E7%94%A8" target=_blank rel="noopener noreferrer">通过其他电子邮件平台查看 Gmail</a>，完成第一步即可。</p><p>完成上述操作后还需要回到Vercel中重新部署你的评论区项目：点进项目→<code>Deployments</code>→对最上方那一条，点击右侧的三个点→<code>Redeploy</code>。</p><p>实不相瞒，由于Redeploy需要很久，还有很多Warning出现，等得我超慌的！不过等部署成功之后看到有邮件提醒出现，一切都明亮了起来！由于我还不清楚怎么设置邮件模板，所以使用的还是Waline的默认模板，它长这样：</p><p><img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/1.png alt title=我收到的提醒 class=post-image>
-<img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/2.png alt title=我回复后对方收到的提醒 class=post-image></p><h3 id=取消设备与浏览器版本显示>取消设备与浏览器版本显示</h3><p>在我增添邮件提醒功能、Redeploy了Waline之后，发现评论者昵称下方会出现设备与浏览器的版本号。我猜测是Waline的新功能，但是对我来讲太多余了😿Waline，我真的不需要了解网友那么多信息啦！</p><p>搜寻官方文档和Issue无果，只好进群询问。经作者回复，找到了<code>DISABLE_USERAGENT</code>这个环境变量，用上文的方法，将这个变量值设置成<code>true</code>，然后重新部署即可。Waline的其他环境变量在这里可以找到：<a href=https://waline.js.org/reference/server.html#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F target=_blank rel="noopener noreferrer">服务端配置</a>。</p><h2 id=在archive页中加入tag云>在Archive页中加入Tag云</h2><p>因为修改了以下主题，取消掉了右侧边栏的组件，但又想要Tag云，决定在Archive页面中实现。动手吧！</p><p>在<code>layouts\_default\archives.html</code>中的第14行的<code>{{ end }}</code>后面（也就是Archive页面中的Categories下面）加入以下内容</p><div class=highlight><pre tabindex=0><code>    {{- $taxonomy := $.Site.GetPage &#34;taxonomyTerm&#34; &#34;tags&#34; -}} 
+</code></pre>
+<h2 id="为waline评论区增添邮件提醒">为Waline评论区增添邮件提醒</h2>
+<p>首先关于如何给Hugo增添评论区请见：<a href="https://mantyke.icu/2021/comment/#%E5%AE%89%E8%A3%85waline" target="_blank" rel="noopener noreferrer">Hugo | 为 Blog 增加评论区</a>，表情包添加则是参考了这篇文章：<a href="https://www.norevi.icu/2021/waline%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E6%83%85/" target="_blank" rel="noopener noreferrer">Waline｜添加自定义表情</a>。</p>
+<p>有了评论区的很长一段时间我都没有弄邮件提醒，之前看了Waline的官方文档，没看懂，有些畏难情绪。最近胆子大了，于是又开始琢磨这事。现在终于加上了，就写一下流程吧。</p>
+<blockquote>
+<p>先放参考资料：</p>
+<p><a href="https://waline.js.org/guide/server/notification.html#%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5" target="_blank" rel="noopener noreferrer">Waline官方文档</a></p>
+<p><a href="https://guanqr.com/tech/website/introduction-and-basic-setting-of-waline/#%E5%BC%80%E5%90%AF%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%8A%9F%E8%83%BD" target="_blank" rel="noopener noreferrer">Waline 评论系统的介绍与基础配置</a></p></blockquote>
+<p>先介绍一下，我的评论区是用Vercel部署的，弄起来非常简单，而使用的发件邮箱（也就是文档中提到的SMTP邮件发送服务提供商）是Gmail。</p>
+<p>邮件提醒增加起来也很方便，直接在Vercel部署好的评论区项目里转到<code>Dashboard</code>-<code>Setting</code>-<code>Environment Variables</code>，进行环境变量配置，在<code>NAME</code>中添加<strong>上面官方文档中提到的变量名</strong>，<code>VALUE</code>中添加变量值，然后<code>ADD</code>上去就好啦！我只添加了必填的内容，添加成功后是这样的：</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/_20220127202930.png" alt="" 
+     class="post-image"
+
+/>
+<p>在这里如果你也是用Gmail邮箱，需要注意一件事情，由于Google的安全意识非常之高，所以在<code>SMTP_PASS</code>密码这一项中，不能直接填你的邮箱密码，而需要填<strong>应用专用密码</strong>，如何创建应用专用密码，请见Gmail的文档帮助：<a href="https://support.google.com/mail/answer/185833?hl=zh-Hans#zippy=%2C%E4%B8%BA%E4%BB%80%E4%B9%88%E6%82%A8%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E4%B8%93%E7%94%A8%E5%AF%86%E7%A0%81" target="_blank" rel="noopener noreferrer">创建和使用应用专用密码</a>。</p>
+<p>之后，还要记得要去设置中开启IMAP访问（据说163邮箱也需要这两步）。具体操作请见：<a href="https://support.google.com/mail/answer/7126229?hl=zh-Hans#zippy=%2C%E7%AC%AC-%E6%AD%A5%E6%A3%80%E6%9F%A5-imap-%E6%98%AF%E5%90%A6%E5%B7%B2%E5%90%AF%E7%94%A8" target="_blank" rel="noopener noreferrer">通过其他电子邮件平台查看 Gmail</a>，完成第一步即可。</p>
+<p>完成上述操作后还需要回到Vercel中重新部署你的评论区项目：点进项目→<code>Deployments</code>→对最上方那一条，点击右侧的三个点→<code>Redeploy</code>。</p>
+<p>实不相瞒，由于Redeploy需要很久，还有很多Warning出现，等得我超慌的！不过等部署成功之后看到有邮件提醒出现，一切都明亮了起来！由于我还不清楚怎么设置邮件模板，所以使用的还是Waline的默认模板，它长这样：</p>
+<p><img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/1.png" alt=""  title="我收到的提醒"
+     class="post-image"
+
+/>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/uploads/2.png" alt=""  title="我回复后对方收到的提醒"
+     class="post-image"
+
+/>
+</p>
+<h3 id="取消设备与浏览器版本显示">取消设备与浏览器版本显示</h3>
+<p>在我增添邮件提醒功能、Redeploy了Waline之后，发现评论者昵称下方会出现设备与浏览器的版本号。我猜测是Waline的新功能，但是对我来讲太多余了😿Waline，我真的不需要了解网友那么多信息啦！</p>
+<p>搜寻官方文档和Issue无果，只好进群询问。经作者回复，找到了<code>DISABLE_USERAGENT</code>这个环境变量，用上文的方法，将这个变量值设置成<code>true</code>，然后重新部署即可。Waline的其他环境变量在这里可以找到：<a href="https://waline.js.org/reference/server.html#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F" target="_blank" rel="noopener noreferrer">服务端配置</a>。</p>
+<h2 id="在archive页中加入tag云">在Archive页中加入Tag云</h2>
+<p>因为修改了以下主题，取消掉了右侧边栏的组件，但又想要Tag云，决定在Archive页面中实现。动手吧！</p>
+<p>在<code>layouts\_default\archives.html</code>中的第14行的<code>{{ end }}</code>后面（也就是Archive页面中的Categories下面）加入以下内容</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>    {{- $taxonomy := $.Site.GetPage &#34;taxonomyTerm&#34; &#34;tags&#34; -}} 
     {{- $terms := $taxonomy.Pages -}}
     {{ if $terms }}
     &lt;h2 class=&#34;section-title&#34;&gt;{{ $taxonomy.Title }}&lt;/h2&gt;
@@ -117,8 +648,17 @@
             {{ end }}
         &lt;/div&gt;
     &lt;/div&gt;
-    {{ end }}</code></pre><button class=copy-code-button type=button title=Copy>
-<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75.0 010 1.5h-1.5a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-1.5a.75.75.0 011.5.0v1.5A1.75 1.75.0 019.25 16h-7.5A1.75 1.75.0 010 14.25v-7.5z"/><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784.0 6.75.0h7.5C15.216.0 16 .784 16 1.75v7.5A1.75 1.75.0 0114.25 11h-7.5A1.75 1.75.0 015 9.25v-7.5zm1.75-.25a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-7.5a.25.25.0 00-.25-.25h-7.5z"/></svg></button></div><p>之后在<code>assets\scss\partials\layout\list.scss</code>中，搜索出<code>.subsection-list</code>这一条，在它的中括号<code>{ }</code>中加入以下内容：</p><div class=highlight><pre tabindex=0><code>    .article-list--tagtile {
+    {{ end }}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>之后在<code>assets\scss\partials\layout\list.scss</code>中，搜索出<code>.subsection-list</code>这一条，在它的中括号<code>{ }</code>中加入以下内容：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>    .article-list--tagtile {
         display: flex;
         padding-bottom: 10px;
         flex-wrap: wrap; //实现Archive中的Tag卡片自动换行
@@ -142,8 +682,24 @@
             }
 
         }
-    }</code></pre><button class=copy-code-button type=button title=Copy>
-<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75.0 010 1.5h-1.5a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-1.5a.75.75.0 011.5.0v1.5A1.75 1.75.0 019.25 16h-7.5A1.75 1.75.0 010 14.25v-7.5z"/><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784.0 6.75.0h7.5C15.216.0 16 .784 16 1.75v7.5A1.75 1.75.0 0114.25 11h-7.5A1.75 1.75.0 015 9.25v-7.5zm1.75-.25a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-7.5a.25.25.0 00-.25-.25h-7.5z"/></svg></button></div><p>从而美美实现以下效果：</p><img loading=lazy decoding=async src=https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220418211748.png alt class=post-image><h2 id=页面主体内容宽度更改>页面主体内容宽度更改</h2><p>在取消右侧栏小组件之后（这个直接在<code>config.yaml</code>中取消即可），主题内容变得很宽，所以想要修改一下宽度。折腾很久终于做到。</p><p>在<code>assets\scss\grid.scss</code>中修改以下内容</p><div class=highlight><pre tabindex=0><code>    &amp;.compact {
+    }</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>从而美美实现以下效果：</p>
+<img loading='lazy' decoding="async" src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220418211748.png" alt="" 
+     class="post-image"
+
+/>
+<h2 id="页面主体内容宽度更改">页面主体内容宽度更改</h2>
+<p>在取消右侧栏小组件之后（这个直接在<code>config.yaml</code>中取消即可），主题内容变得很宽，所以想要修改一下宽度。折腾很久终于做到。</p>
+<p>在<code>assets\scss\grid.scss</code>中修改以下内容</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>    &amp;.compact {
         @include respond(md) {
             --left-sidebar-max-width: 25%;
             max-width: 768px;
@@ -158,14 +714,606 @@
             max-width: 1050px; //主版面宽度改为1050px
         }
     }
-}</code></pre><button class=copy-code-button type=button title=Copy>
-<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75.0 010 1.5h-1.5a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-1.5a.75.75.0 011.5.0v1.5A1.75 1.75.0 019.25 16h-7.5A1.75 1.75.0 010 14.25v-7.5z"/><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784.0 6.75.0h7.5C15.216.0 16 .784 16 1.75v7.5A1.75 1.75.0 0114.25 11h-7.5A1.75 1.75.0 015 9.25v-7.5zm1.75-.25a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-7.5a.25.25.0 00-.25-.25h-7.5z"/></svg></button></div><p>然后左侧栏忽然变得拥挤起来，所以需要再改动一下<code>assets\scss\partials\menu.scss</code>中的这一部分：</p><div class=highlight><pre tabindex=0><code>        @include respond(md) {
+}</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>然后左侧栏忽然变得拥挤起来，所以需要再改动一下<code>assets\scss\partials\menu.scss</code>中的这一部分：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>        @include respond(md) {
             width: 80%; //修改为80%
             text-align:left; 
             padding: 0px; 
-        }</code></pre><button class=copy-code-button type=button title=Copy>
-<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75.0 010 1.5h-1.5a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-1.5a.75.75.0 011.5.0v1.5A1.75 1.75.0 019.25 16h-7.5A1.75 1.75.0 010 14.25v-7.5z"/><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784.0 6.75.0h7.5C15.216.0 16 .784 16 1.75v7.5A1.75 1.75.0 0114.25 11h-7.5A1.75 1.75.0 015 9.25v-7.5zm1.75-.25a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-7.5a.25.25.0 00-.25-.25h-7.5z"/></svg></button></div><p>取消掉小组件后唯一麻烦的地方在于没有内容目录啦XD有点可惜呢！</p></div><br><div style=padding-bottom:3px></div></article><nav class=custom-paginav><a class=custom-paginav-prev href=/posts/november2021/><span class=custom-paginav-title>« Prev</span><br><span>十一月份花天酒地</span>
-</a><a class=custom-paginav-next href=/posts/55yearslater/><span class=custom-paginav-title>Next »</span><br><span>55年后我们更加相爱</span></a></nav><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=comments class=comments data-pagefind-ignore><style>:root{--waline-color:unset;--waline-bgcolor-light:unset}.wl-card{border:0 solid #eee}.wl-card .wl-quote{border-inline-start:0 dashed rgba(237,237,237,.5)}.wl-card-item{position:relative;display:flex;padding:.2em}.wl-addr{display:none !important;color:transparent !important}.wl-content .vemoji,.wl-content .wl-emoji{display:inline-block;vertical-align:baseline;height:3.4em !important;margin:-.125em .25em}img.wl-emoji,img.vemoji{vertical-align:sub;transition:ease-out .6s}img.wl-emoji:hover,img.vemoji:hover{transform:scale(1.8) !important}.wl-header{display:flex;overflow:hidden;padding:0 4px;border-bottom:0 dashed var(--waline-border-color);border-top-left-radius:0;border-top-right-radius:0}.wl-btn.primary{border-color:transparent !important;background:Peru;color:#fff}@media(max-width:580px){.wl-header-item:not(:last-child){border-bottom:0 dashed var(--waline-border-color)}}:root{--waline-theme-color:Peru;--waline-active-color:Peru;--waline-light-grey:unset;--waline-info-color:unset;--waline-border:0px solid peru}[data-waline] a{color:var(--link-color)}.wl-card .wl-badge{display:inline-block;margin-inline-end:1em;padding:0 .3em;border:2px solid peru;border-radius:4px;color:peru;font-weight:700;font-size:65%}.wl-editor:focus,.wl-input:focus{background:0 0}.wl-panel{background-color:#f2ede6;border:#a38f7d solid 1px;background-image:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.8)),url(/site/bg-rain2_5color1.gif);background-repeat:repeat}body[a=dark] .wl-panel{background-image:none !important;background-color:rgba(23,14,14,.38) !important}.wl-card .wl-delete,.wl-card .wl-like,.wl-card .wl-reply,.wl-card .wl-edit,.wl-card span.wl-nick,.wl-empty,.wl-admin-actions,[data-waline] p{color:unset}.wl-info .wl-text-number{color:unset;font-size:.75em}.wl-editor,.wl-input{font-family:inherit;font-size:80%}</style><div id=waline data-pagefind-ignore></div><script>Waline.init({el:"#waline",serverURL:"https://co.gregueria.icu/",emoji:["https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif","https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png"],requiredMeta:["name","email","url"],dark:!0,locale:{placeholder:"(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！",admin:"admin"}})</script></div><div><footer class=site-footer><section class=copyright>&copy; 2021 - 2025
-<a href=https://gregueria.icu/>再會，謝謝所有的魚 </a>· <i class="fas fa-bell"></i><a id=days>0</a> Days<br><span>All rights reserved.</span></section><script>var s1="2021-11-12",s1=new Date(s1.replace(/-/g,"/")),s2=new Date,days=s2.getTime()-s1.getTime(),number_of_days=parseInt(days/(1e3*60*60*24));document.getElementById("days").innerHTML=number_of_days</script><script src=/js/clipboard.js></script><script>document.addEventListener("DOMContentLoaded",function(){hljs.highlightAll()})</script></footer><script src=/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js integrity="sha256-OjfnrZnqF2pdNE+2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("post-content");e&&window.ViewImage?ViewImage.init("#post-content img:not([no-view]):not(.emoji):not(#emoji)"):e?console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?"):console.log("Current page does not have #post-content. ViewImage initialization skipped.")})</script><script>document.querySelectorAll("#post-content > img.post-image").forEach(e=>{const t=e.nextSibling;if(t&&t.nodeType===Node.TEXT_NODE&&t.textContent.trim()!==""){const n=document.createElement("figure");n.className="single-image-figure",e.replaceWith(n),n.appendChild(e);const s=document.createElement("figcaption");s.className="image-caption",s.textContent=t.textContent.trim(),n.appendChild(s),t.remove()}})</script><script>(function(){const a="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX",o="向我提问！",r="看到就会回复 :D",c="#ffffff",l="var(--shadow)",d="#ffffff",n=document.createElement("div"),e=document.createElement("div");e.innerText=o,document.body.append(e),n.innerHTML+=`
-    <iframe src="${a}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `;let s=!1,i=!0;e.onclick=()=>{i&&(i=!1,document.body.append(n)),s?(t(n,{top:"100%",bottom:"unset",visibility:"hidden"}),t(e,{bottom:"0px"}),e.innerText=o):(t(n,{top:"unset",bottom:"0px",visibility:"visible"}),t(e,{bottom:"400px"}),e.innerText=r),s=!s},t(e,{position:"fixed",bottom:"0px",right:"0px",background:l,color:c,"font-size":"14px","border-top-left-radius":"10px",padding:"5px 10px",cursor:"pointer"}),t(n,{position:"fixed",top:"100%",right:"0px",width:"300px",height:"400px",background:d,"z-index":"11"});function t(e,t){for(let n in t)e.style[n]=t[n]}})()</script></div></div></main><script src=/js/twemoji.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){twemoji.parse(document.body,{base:"/my-emojis/",folder:"svg",ext:".svg"})})</script></body></html>
+        }</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><p>取消掉小组件后唯一麻烦的地方在于没有内容目录啦XD有点可惜呢！</p>
+
+        
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+<nav class="custom-paginav">
+    
+    <a class="custom-paginav-prev" href="/posts/november2021/">
+        <span class="custom-paginav-title">« Prev</span><br>
+        <span>十一月份花天酒地</span>
+    </a>
+    
+    
+    <a class="custom-paginav-next" href="/posts/55yearslater/">
+        <span class="custom-paginav-title">Next »</span><br>
+        <span>55年后我们更加相爱</span>
+    </a>
+    
+</nav>
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+<div id="comments" class="comments" data-pagefind-ignore>
+    <style>
+    :root {
+        --waline-color: unset;
+        --waline-bgcolor-light: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline" data-pagefind-ignore></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
+            admin: 'admin',
+        }
+    });
+</script>
+
+</div>
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+    <script src="/js/clipboard.js"></script>
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
+
+
+
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </main>
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+
+    </body></html>

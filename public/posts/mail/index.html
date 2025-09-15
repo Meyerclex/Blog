@@ -1,9 +1,936 @@
-<!doctype html><html lang=zh-cn><head><meta name=robots content="noindex,nofollow,noarchive"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/main.260a366e640dee9479f69155a552bdc3b7689c978017755b5624991a2c1a2e54d6a2d662a5c0e8d0044a4bf57b565f287f00963f2d512207caf178c2c73144e9.css integrity="sha512-Jgo2bmQN7pR59pFVpVK9w7donJeAF3VbViSZGiwaLlTWotZipcDo0ARKS/V7Vl8ofwCWPy1RIgfK8XjCxzFE6Q=="><link rel=stylesheet href=https://static.zeoseven.com/zsft/69/main/result.css><link rel=stylesheet href=https://fontsapi.zeoseven.com/46/main/result.css><link rel=stylesheet href=/fonts/stdgt/result.css><link id=hljs-theme rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js></script><meta name=description content="用Gmail邮箱来查看QQ邮箱、网易邮箱和Outlook的垃圾邮件，并且用它来发送更多。"><meta property="og:title" content="Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件"><meta property="og:description" content="用Gmail邮箱来查看QQ邮箱、网易邮箱和Outlook的垃圾邮件，并且用它来发送更多。"><meta property="og:image" content><title>Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件 | 再會，謝謝所有的魚</title><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".blur").forEach(function(e){e.addEventListener("click",function(){e.classList.toggle("revealed")})})})</script><link rel="shortcut icon" type=image/x-icon href=/cat/240f9f9b.gif><script defer>function toggleMenu(e){const t=e.nextElementSibling,n=document.querySelectorAll(".menu-content");n.forEach(e=>{e!==t&&(e.style.display="none")}),t.style.display==="none"||t.style.display===""?t.style.display="table-row":t.style.display="none"}</script></head><div id=theme-toggle class=theme-toggle style=position:fixed;top:20px;right:20px;display:flex;gap:5px;z-index:999><div id=light-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.25a.75.75.0 01.75.75v2.25a.75.75.0 01-1.5.0V3a.75.75.0 01.75-.75zM7.5 12a4.5 4.5.0 119 0 4.5 4.5.0 01-9 0zM18.894 6.166a.75.75.0 00-1.06-1.06l-1.591 1.59a.75.75.0 101.06 1.061l1.591-1.59zM21.75 12a.75.75.0 01-.75.75h-2.25a.75.75.0 010-1.5H21a.75.75.0 01.75.75zm-3.916 6.894a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 10-1.061 1.06l1.59 1.591zM12 18a.75.75.0 01.75.75V21a.75.75.0 01-1.5.0v-2.25A.75.75.0 0112 18zM7.758 17.303a.75.75.0 00-1.061-1.06l-1.591 1.59a.75.75.0 001.06 1.061l1.591-1.59zM6 12a.75.75.0 01-.75.75H3a.75.75.0 010-1.5h2.25A.75.75.0 016 12zm.697-4.243a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 00-1.061 1.06l1.59 1.591z"/></svg></div><div id=dark-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M9.528 1.718a.75.75.0 01.162.819A8.97 8.97.0 009 6a9 9 0 009 9 8.97 8.97.0 003.463-.69.75.75.0 01.981.98 10.503 10.503.0 01-9.694 6.46c-5.799.0-10.5-4.7-10.5-10.5.0-4.368 2.667-8.112 6.46-9.694a.75.75.0 01.818.162z" clip-rule="evenodd"/></svg></div></div><script>const lightBtn=document.getElementById("light-btn"),darkBtn=document.getElementById("dark-btn"),themeToggle=document.getElementById("theme-toggle");let currentTheme=localStorage.getItem("theme")||"auto";if(currentTheme==="auto"){const e=window.matchMedia("(prefers-color-scheme: dark)").matches;currentTheme=e?"dark":"light"}document.body.setAttribute("a",currentTheme),document.body.classList.add(currentTheme+"-mode");function updateHighlightTheme(){const e=document.getElementById("hljs-theme"),t=document.body.getAttribute("a");if(!e)return;t==="dark"?e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css":e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css"}const updateIcons=()=>{currentTheme==="light"?(lightBtn.style.display="block",darkBtn.style.display="none"):(lightBtn.style.display="none",darkBtn.style.display="block")};updateIcons(),updateHighlightTheme();const toggleTheme=()=>{currentTheme==="light"?(document.body.classList.remove("light-mode"),document.body.classList.add("dark-mode"),currentTheme="dark"):(document.body.classList.remove("dark-mode"),document.body.classList.add("light-mode"),currentTheme="light"),localStorage.setItem("theme",currentTheme),document.body.setAttribute("a",currentTheme),updateIcons(),updateHighlightTheme()};themeToggle.addEventListener("click",toggleTheme),window.addEventListener("scroll",()=>{const t=document.documentElement.scrollTop||document.body.scrollTop,n=document.documentElement.scrollHeight||document.body.scrollHeight,s=window.innerHeight||document.documentElement.clientHeight,e=t/(n-s)*100;e>=10&&e<=40?themeToggle.style.opacity=(1-(e-10)/30).toFixed(2):e>40?themeToggle.style.opacity=0:themeToggle.style.opacity=1})</script><body a=auto><main class=page-content aria-label=Content><div class=w><div id=tools><div class=tools-item><span class=toggle-icon></span><a href=/>✦ Home ✦</a></div><div class=tools-item><a href=/about>✦ About ✦</a></div><div class=tools-item><a href=/posts>✦ Archive ✦</a></div><div class=tools-item><a href=/links>✦ Friends ✦</a></div></div><script>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("tools");if(!e)return;const t=window.matchMedia("(max-width: 768px)").matches;if(t){const t=e.querySelector(".toggle-icon");t&&t.addEventListener("click",function(t){t.stopPropagation(),e.classList.toggle("open")}),document.addEventListener("click",function(t){!e.contains(t.target)&&e.classList.contains("open")&&e.classList.remove("open")})}})</script><article data-pagefind-ignore><h1 data-pagefind-meta=title data-pagefind-ignoret>Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件</h1><div id=post-meta><time datetime="2022-04-20 00:00:00 +0800 CST">2022-04-20
-<span>‧ 1977</span>
-<span>words</span>
-‧ <span></span><a href=/tags/guidebook>＃Guidebook</a></time><div id=post-description>用Gmail邮箱来查看QQ邮箱、网易邮箱和Outlook的垃圾邮件，并且用它来发送更多。</div></div><div class=post-toc-mobile id=post-toc-mobile data-pagefind-ignore><details><summary>📑 Table of Contents</summary><div><aside><nav id=TableOfContentsMobile><nav id=TableOfContents></nav></nav></aside></div></details></div><hr class=decoration-hr id=toc-hr><div class="post-toc toc-styled-pc" id=post-toc data-pagefind-ignore><header class=post-header-pc>✦ TOC | 目录 ✦</header><aside><nav id=TableOfContentsPC><nav id=TableOfContents></nav></nav></aside></div><style>#toc-toggle{display:none}#TableOfContents ul li:before{content:"";font-weight:700;margin-right:0}</style><div id=post-content data-pagefind-body><p>事情要从 Checker Plus for Gmail 这个浏览器插件开始讲起，它是一个可以提醒你 Gmail 收到新邮件、并且不需要点开新的网页就能直接查看邮件的插件。</p><p>不知什么时候我安装了这个它，它的图标小小一个，挂在我浏览器的右上角，非常十分之特别好用。因为实在太方便了，导致我后来很多网站都直接用了 Gmail 的邮箱来注册。</p><p>但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。</p><p>事实上 Checker 插件似乎是能够做到这个功能的，我后来在他们的帮助页面找到了这方面的内容：<a href=https://jasonsavard.com/wiki/Check_mail_from_other_accounts_or_using_POP target=_blank rel="noopener noreferrer">Check mail from other accounts or using POP</a>，但当时我并不知道。</p><p>我后来选用了另一个办法，在邮箱设置里面我看到了<strong>查收其他帐号的邮件</strong>：这似乎就是我想要的，用我现有的 Gmail 邮箱来收网易邮箱的邮件。</p><img loading=lazy decoding=async src=https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png alt class=post-image><p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p><ol><li>跑去<code>被查收的邮箱</code>的网页里找到<code>设置</code>。</li><li>找到<code>开启POP3/SMTP</code>相关的选项，打开它。这时多半需要你的手机发送一个验证码什么的。开启后，如果设置中有<code>授权密码管理</code>（在 QQ 邮箱中叫<code>授权码</code>），请新增一个密码。往往会给你一个十六位的乱码，它只会出现一次，请把它背下来，或者记在你的<code>password.txt</code>中，事实上我感到这辈子都不需要再看它们第二眼，所以我复制了下来就关掉了。</li><li>如果被查收邮箱的设置中可以选择<code>收取选项：收取最近30天邮件/收取全部邮件</code>，请务必选择 30 天，我当时完全不理解这个选项，选了后者，上个洗手间回来的功夫它把新旧约莫四百封邮件全部导入了进来，我才知道它是什么意思。</li><li>回到你用来<code>查收邮件的Gmail邮箱</code>的网页里找到<code>设置</code>→<code>账号和导入</code>→<code>查收其他账号的邮件</code>，也即上面截图中的那个地方。</li><li>选择<code>添加邮件账号</code>，填入邮件地址，下一步，下一步，填上刚才的授权密码。然后勾选前三个复选框：<code>保留副本</code>和<code>添加标签</code>。（勾选后者十分必要，一个标签代表一个邮箱，这样你的邮箱才不会乱糟糟）。</li><li>大功告成。</li></ol><p>如果是查收与被查收的都是 Gmail，你大概率会卡在“服务器拒绝 POP3 访问”上。去<a href=https://myaccount.google.com/ target=_blank rel="noopener noreferrer">Google 账号设置</a>中找到<code>安全性</code>→<code>登录Google</code>→ 新建一个<code>应用专用密码</code>。然后在第五步中填上它。大功再次告成——发现了吗？似乎要成功用上 POP3/IMAP/SMTP 总是需要一个更复杂的专用密码，如果你卡在了这一步，请再去检查一下你的邮箱设置中有没有相似的东西。</p><blockquote><ul><li><p>Post Office Protocol 3，邮局协定第 3 个版本：它是因特网电子邮件的第一个离线协议标准，POP3 允许用户从服务器上把邮件存储到本地主机（即自己的计算机）上，同时删除保存在邮件服务器上的邮件，而 POP3 服务器则是遵循 POP3 协议的接收邮件服务器，用来接收电子邮件的。</p></li><li><p>IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是跟 POP3 类似邮件访问标准协议之一。不同的是，开启了 IMAP 后，您在电子邮件客户端收取的邮件仍然保留在服务器上，同时在客户端上的操作都会反馈到服务器上，如：删除邮件，标记已读等，服务器上的邮件也会做相应的动作。所以无论从浏览器登录邮箱或者客户端软件登录邮箱，看到的邮件以及状态都是一致的。</p></li></ul></blockquote><p>总而言之，到这一步，我们已经可以用 Gmail 邮箱来查看 QQ 邮箱、网易邮箱和 Outlook 的垃圾邮件，并且用它来发送更多。当然，反过来也一样。至于 Gmail 删除网易的邮件的操作是否会同步到网易中，我还没有尝试，也许可以，也许不行。我已经不在乎了，在我心中，网易邮箱不再是一个具体的产品，只是我 Gmail 邮箱中一个微不足道的标签（冷淡.jpg）。</p><p>如果有用其他邮箱来发件的需求，还可以在<code>用这个地址发送邮件</code>中添加它，相比前者，这个要容易许多，只需要发一个验证邮件，点击链接即可完成设置。</p><p>于是我终于摆脱掉了网易邮箱大师 APP 和要点开 QQ、打开不同网页去看一封邮件的苦恼，实现了文章开头的构想：从此打扰我的只有 Checker Plugin。</p><img loading=lazy decoding=async src=https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png alt=设置好“用这个地址发送邮件”之后发新邮件时的样子 class=post-image>
-设置好“用这个地址发送邮件”之后发新邮件时的样子<p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p><blockquote><p>《送东阳马生序》：每假借于藏书之家，手自笔录，计日以还。</p></blockquote><p>想起高中寒暑假回来常被教训“学的东西全还给老师了是吧”。是的。计日以还不过三天还还是两天还的区别，手自笔录，也不过为了还掉还能再找回来。于是以后实在不知道<code>|</code>前加什么内容的文章，一律用<code>手自笔录</code>占位。</p></div><br><div style=padding-bottom:3px></div></article><nav class=custom-paginav><a class=custom-paginav-prev href=/posts/april2022-02/><span class=custom-paginav-title>« Prev</span><br><span>关于她与她的生活的侧写</span>
-</a><a class=custom-paginav-next href=/posts/repo/><span class=custom-paginav-title>Next »</span><br><span>《肉身神像》的长评、Repo、Q&amp;A、段落Reaction、导言、安利</span></a></nav><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=comments class=comments data-pagefind-ignore><style>:root{--waline-color:unset;--waline-bgcolor-light:unset}.wl-card{border:0 solid #eee}.wl-card .wl-quote{border-inline-start:0 dashed rgba(237,237,237,.5)}.wl-card-item{position:relative;display:flex;padding:.2em}.wl-addr{display:none !important;color:transparent !important}.wl-content .vemoji,.wl-content .wl-emoji{display:inline-block;vertical-align:baseline;height:3.4em !important;margin:-.125em .25em}img.wl-emoji,img.vemoji{vertical-align:sub;transition:ease-out .6s}img.wl-emoji:hover,img.vemoji:hover{transform:scale(1.8) !important}.wl-header{display:flex;overflow:hidden;padding:0 4px;border-bottom:0 dashed var(--waline-border-color);border-top-left-radius:0;border-top-right-radius:0}.wl-btn.primary{border-color:transparent !important;background:Peru;color:#fff}@media(max-width:580px){.wl-header-item:not(:last-child){border-bottom:0 dashed var(--waline-border-color)}}:root{--waline-theme-color:Peru;--waline-active-color:Peru;--waline-light-grey:unset;--waline-info-color:unset;--waline-border:0px solid peru}[data-waline] a{color:var(--link-color)}.wl-card .wl-badge{display:inline-block;margin-inline-end:1em;padding:0 .3em;border:2px solid peru;border-radius:4px;color:peru;font-weight:700;font-size:65%}.wl-editor:focus,.wl-input:focus{background:0 0}.wl-panel{background-color:#f2ede6;border:#a38f7d solid 1px;background-image:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.8)),url(/site/bg-rain2_5color1.gif);background-repeat:repeat}body[a=dark] .wl-panel{background-image:none !important;background-color:rgba(23,14,14,.38) !important}.wl-card .wl-delete,.wl-card .wl-like,.wl-card .wl-reply,.wl-card .wl-edit,.wl-card span.wl-nick,.wl-empty,.wl-admin-actions,[data-waline] p{color:unset}.wl-info .wl-text-number{color:unset;font-size:.75em}.wl-editor,.wl-input{font-family:inherit;font-size:80%}</style><div id=waline data-pagefind-ignore></div><script>Waline.init({el:"#waline",serverURL:"https://co.gregueria.icu/",emoji:["https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif","https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png"],requiredMeta:["name","email","url"],dark:!0,locale:{placeholder:"(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！",admin:"admin"}})</script></div><div><footer class=site-footer><section class=copyright>&copy; 2021 - 2025
-<a href=https://gregueria.icu/>再會，謝謝所有的魚 </a>· <i class="fas fa-bell"></i><a id=days>0</a> Days<br><span>All rights reserved.</span></section><script>var s1="2021-11-12",s1=new Date(s1.replace(/-/g,"/")),s2=new Date,days=s2.getTime()-s1.getTime(),number_of_days=parseInt(days/(1e3*60*60*24));document.getElementById("days").innerHTML=number_of_days</script><script src=/js/clipboard.js></script><script>document.addEventListener("DOMContentLoaded",function(){hljs.highlightAll()})</script></footer><script src=/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js integrity="sha256-OjfnrZnqF2pdNE+2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("post-content");e&&window.ViewImage?ViewImage.init("#post-content img:not([no-view]):not(.emoji):not(#emoji)"):e?console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?"):console.log("Current page does not have #post-content. ViewImage initialization skipped.")})</script><script>document.querySelectorAll("#post-content > img.post-image").forEach(e=>{const t=e.nextSibling;if(t&&t.nodeType===Node.TEXT_NODE&&t.textContent.trim()!==""){const n=document.createElement("figure");n.className="single-image-figure",e.replaceWith(n),n.appendChild(e);const s=document.createElement("figcaption");s.className="image-caption",s.textContent=t.textContent.trim(),n.appendChild(s),t.remove()}})</script><script>(function(){const a="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX",o="向我提问！",r="看到就会回复 :D",c="#ffffff",l="var(--shadow)",d="#ffffff",n=document.createElement("div"),e=document.createElement("div");e.innerText=o,document.body.append(e),n.innerHTML+=`
-    <iframe src="${a}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `;let s=!1,i=!0;e.onclick=()=>{i&&(i=!1,document.body.append(n)),s?(t(n,{top:"100%",bottom:"unset",visibility:"hidden"}),t(e,{bottom:"0px"}),e.innerText=o):(t(n,{top:"unset",bottom:"0px",visibility:"visible"}),t(e,{bottom:"400px"}),e.innerText=r),s=!s},t(e,{position:"fixed",bottom:"0px",right:"0px",background:l,color:c,"font-size":"14px","border-top-left-radius":"10px",padding:"5px 10px",cursor:"pointer"}),t(n,{position:"fixed",top:"100%",right:"0px",width:"300px",height:"400px",background:d,"z-index":"11"});function t(e,t){for(let n in t)e.style[n]=t[n]}})()</script></div></div></main><script src=/js/twemoji.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){twemoji.parse(document.body,{base:"/my-emojis/",folder:"svg",ext:".svg"})})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.dc3ca18d3ff4df59931e80edcc04c2f5024c8f60a7ff23936cd466a6f02019f54c6ab699cb337f932110d056a9db7ea7c21a35a70450c7d908d7ff209c4d4d4f.css" integrity="sha512-3DyhjT/031mTHoDtzATC9QJMj2Cn/yOTbNRmpvAgGfVMaraZyzN/kyEQ0Fap236nwho1pwRQx9kI1/8gnE1NTw==" />
+  
+  
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+
+  
+    <meta name="description" content="用Gmail邮箱来查看QQ邮箱、网易邮箱和Outlook的垃圾邮件，并且用它来发送更多。">
+    <meta property="og:title" content="Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件">
+    <meta property="og:description" content="用Gmail邮箱来查看QQ邮箱、网易邮箱和Outlook的垃圾邮件，并且用它来发送更多。">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件 | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tools">
+  
+  <div class="tools-item">
+    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/about" >✦ About ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/posts" >✦ Archive ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/links" >✦ Friends ✦</a>
+  </div>
+  
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
+
+<article data-pagefind-ignore>
+    <h1 data-pagefind-meta="title" data-pagefind-ignoret>Email | 用Gmail邮箱来查看其他邮箱的垃圾邮件</h1>
+    <div id="post-meta">
+        <time datetime="2022-04-20 00:00:00 &#43;0800 CST">
+            2022-04-20
+            <span> ‧ 1977</span>
+            <span>words</span>
+            ‧ <span> </span>
+            
+                    
+                    <a href="/tags/guidebook">＃Guidebook</a>
+                    
+            
+        </time>
+        
+        <div id="post-description">
+            用Gmail邮箱来查看QQ邮箱、网易邮箱和Outlook的垃圾邮件，并且用它来发送更多。
+        </div>
+        
+    </div>
+
+    
+    
+<div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+    <details>
+        <summary>📑 Table of Contents</summary>
+        <div>
+            <aside>
+                
+                
+                <nav id="TableOfContentsMobile"> <nav id="TableOfContents"></nav>
+                </nav>
+            </aside>
+        </div>
+    </details>
+</div>
+<hr class="decoration-hr" id="toc-hr">
+<div class="post-toc toc-styled-pc" id="post-toc" data-pagefind-ignore>
+    <header class="post-header-pc">
+    ✦ TOC | 目录 ✦
+    </header>
+    <aside>
+        <nav id="TableOfContentsPC"> 
+            
+                <nav id="TableOfContents"></nav>
+        </nav>
+    </aside>
+</div>
+
+
+<style>
+     
+    #toc-toggle {
+        display: none;
+    }
+     
+    #TableOfContents ul li:before {
+        content: "";
+        font-weight: bold;
+        margin-right: 0px;
+    }
+</style>
+    
+
+    <div id="post-content"  data-pagefind-body>
+        <p>事情要从 Checker Plus for Gmail 这个浏览器插件开始讲起，它是一个可以提醒你 Gmail 收到新邮件、并且不需要点开新的网页就能直接查看邮件的插件。</p>
+<p>不知什么时候我安装了这个它，它的图标小小一个，挂在我浏览器的右上角，非常十分之特别好用。因为实在太方便了，导致我后来很多网站都直接用了 Gmail 的邮箱来注册。</p>
+<p>但同时我又有着几个邮箱，QQ 邮箱到网易和 Outlook，因为之前用得并不频繁，自然没有化繁为简的念头。图书馆账号绑了这个邮箱，交作业又常常用那个邮箱，AO3 的提醒邮件断然是不能用工作邮箱来收信的——等等，你怎么还有一个.edu 邮箱？直到不久前，我打开不同的邮箱网页查看收信，忽然感到麻烦：要是全部都能用 Checker 来收到提醒就好了。</p>
+<p>事实上 Checker 插件似乎是能够做到这个功能的，我后来在他们的帮助页面找到了这方面的内容：<a href="https://jasonsavard.com/wiki/Check_mail_from_other_accounts_or_using_POP" target="_blank" rel="noopener noreferrer">Check mail from other accounts or using POP</a>，但当时我并不知道。</p>
+<p>我后来选用了另一个办法，在邮箱设置里面我看到了<strong>查收其他帐号的邮件</strong>：这似乎就是我想要的，用我现有的 Gmail 邮箱来收网易邮箱的邮件。</p>
+<img loading='lazy' decoding="async" src="https://raw.githubusercontent.com/Meyerclex/image/main/20220420170414.png" alt="" 
+     class="post-image"
+
+/>
+<p>官方给出的指导步骤是用 Gmail 邮箱查收另一个 Gmail 邮箱的邮件，对于用 Gmail 接收网易邮箱也是一顿照猫画虎：</p>
+<ol>
+<li>跑去<code>被查收的邮箱</code>的网页里找到<code>设置</code>。</li>
+<li>找到<code>开启POP3/SMTP</code>相关的选项，打开它。这时多半需要你的手机发送一个验证码什么的。开启后，如果设置中有<code>授权密码管理</code>（在 QQ 邮箱中叫<code>授权码</code>），请新增一个密码。往往会给你一个十六位的乱码，它只会出现一次，请把它背下来，或者记在你的<code>password.txt</code>中，事实上我感到这辈子都不需要再看它们第二眼，所以我复制了下来就关掉了。</li>
+<li>如果被查收邮箱的设置中可以选择<code>收取选项：收取最近30天邮件/收取全部邮件</code>，请务必选择 30 天，我当时完全不理解这个选项，选了后者，上个洗手间回来的功夫它把新旧约莫四百封邮件全部导入了进来，我才知道它是什么意思。</li>
+<li>回到你用来<code>查收邮件的Gmail邮箱</code>的网页里找到<code>设置</code>→<code>账号和导入</code>→<code>查收其他账号的邮件</code>，也即上面截图中的那个地方。</li>
+<li>选择<code>添加邮件账号</code>，填入邮件地址，下一步，下一步，填上刚才的授权密码。然后勾选前三个复选框：<code>保留副本</code>和<code>添加标签</code>。（勾选后者十分必要，一个标签代表一个邮箱，这样你的邮箱才不会乱糟糟）。</li>
+<li>大功告成。</li>
+</ol>
+<p>如果是查收与被查收的都是 Gmail，你大概率会卡在“服务器拒绝 POP3 访问”上。去<a href="https://myaccount.google.com/" target="_blank" rel="noopener noreferrer">Google 账号设置</a>中找到<code>安全性</code>→<code>登录Google</code>→ 新建一个<code>应用专用密码</code>。然后在第五步中填上它。大功再次告成——发现了吗？似乎要成功用上 POP3/IMAP/SMTP 总是需要一个更复杂的专用密码，如果你卡在了这一步，请再去检查一下你的邮箱设置中有没有相似的东西。</p>
+<blockquote>
+<ul>
+<li>
+<p>Post Office Protocol 3，邮局协定第 3 个版本：它是因特网电子邮件的第一个离线协议标准，POP3 允许用户从服务器上把邮件存储到本地主机（即自己的计算机）上，同时删除保存在邮件服务器上的邮件，而 POP3 服务器则是遵循 POP3 协议的接收邮件服务器，用来接收电子邮件的。</p>
+</li>
+<li>
+<p>IMAP（Internet Mail Access Protocol，即交互式邮件存取协）：它是跟 POP3 类似邮件访问标准协议之一。不同的是，开启了 IMAP 后，您在电子邮件客户端收取的邮件仍然保留在服务器上，同时在客户端上的操作都会反馈到服务器上，如：删除邮件，标记已读等，服务器上的邮件也会做相应的动作。所以无论从浏览器登录邮箱或者客户端软件登录邮箱，看到的邮件以及状态都是一致的。</p>
+</li>
+</ul></blockquote>
+<p>总而言之，到这一步，我们已经可以用 Gmail 邮箱来查看 QQ 邮箱、网易邮箱和 Outlook 的垃圾邮件，并且用它来发送更多。当然，反过来也一样。至于 Gmail 删除网易的邮件的操作是否会同步到网易中，我还没有尝试，也许可以，也许不行。我已经不在乎了，在我心中，网易邮箱不再是一个具体的产品，只是我 Gmail 邮箱中一个微不足道的标签（冷淡.jpg）。</p>
+<p>如果有用其他邮箱来发件的需求，还可以在<code>用这个地址发送邮件</code>中添加它，相比前者，这个要容易许多，只需要发一个验证邮件，点击链接即可完成设置。</p>
+<p>于是我终于摆脱掉了网易邮箱大师 APP 和要点开 QQ、打开不同网页去看一封邮件的苦恼，实现了文章开头的构想：从此打扰我的只有 Checker Plugin。</p>
+<img loading='lazy' decoding="async" src="https://cdn.jsdelivr.net/gh/Meyerclex/image@main/20220420183254.png" alt="设置好“用这个地址发送邮件”之后发新邮件时的样子" 
+     class="post-image"
+
+/>
+设置好“用这个地址发送邮件”之后发新邮件时的样子<p>另外，先前我从没有意识到在博客标题中加入<code>|</code>是这么好看和整齐的事情，但一旦加过一次，便发现之后也不得不继续加下去，就像有了一个烦人的洁癖地精室友，虽然它只要管保好自己那片地方的整齐即可，可你看着它的地方整齐了，便忍不住要让其他地方像它的地方一样整齐。出现了一次<code>|</code>后便不得不在其他文章的标题里也强行加个<code>|</code>，以至于我心头怨起甚至想倒回去把以往的全删了，地精室友也给我打包赶出去。但我终究没有这么做。</p>
+<blockquote>
+<p>《送东阳马生序》：每假借于藏书之家，手自笔录，计日以还。</p></blockquote>
+<p>想起高中寒暑假回来常被教训“学的东西全还给老师了是吧”。是的。计日以还不过三天还还是两天还的区别，手自笔录，也不过为了还掉还能再找回来。于是以后实在不知道<code>|</code>前加什么内容的文章，一律用<code>手自笔录</code>占位。</p>
+
+        
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+<nav class="custom-paginav">
+    
+    <a class="custom-paginav-prev" href="/posts/april2022-02/">
+        <span class="custom-paginav-title">« Prev</span><br>
+        <span>关于她与她的生活的侧写</span>
+    </a>
+    
+    
+    <a class="custom-paginav-next" href="/posts/repo/">
+        <span class="custom-paginav-title">Next »</span><br>
+        <span>《肉身神像》的长评、Repo、Q&amp;A、段落Reaction、导言、安利</span>
+    </a>
+    
+</nav>
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+<div id="comments" class="comments" data-pagefind-ignore>
+    <style>
+    :root {
+        --waline-color: unset;
+        --waline-bgcolor-light: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline" data-pagefind-ignore></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
+            admin: 'admin',
+        }
+    });
+</script>
+
+</div>
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+    <script src="/js/clipboard.js"></script>
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
+
+
+
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </main>
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+
+    </body></html>

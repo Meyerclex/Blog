@@ -1,8 +1,934 @@
-<!doctype html><html lang=zh-cn><head><meta name=robots content="noindex,nofollow,noarchive"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/main.260a366e640dee9479f69155a552bdc3b7689c978017755b5624991a2c1a2e54d6a2d662a5c0e8d0044a4bf57b565f287f00963f2d512207caf178c2c73144e9.css integrity="sha512-Jgo2bmQN7pR59pFVpVK9w7donJeAF3VbViSZGiwaLlTWotZipcDo0ARKS/V7Vl8ofwCWPy1RIgfK8XjCxzFE6Q=="><link rel=stylesheet href=https://static.zeoseven.com/zsft/69/main/result.css><link rel=stylesheet href=https://fontsapi.zeoseven.com/46/main/result.css><link rel=stylesheet href=/fonts/stdgt/result.css><link id=hljs-theme rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js></script><meta name=description content="我的写作不是浪费在这种没有意义的事情上的。"><meta property="og:title" content="🆕 关于本站停止RSS输出及相关事件说明 🆕"><meta property="og:description" content="我的写作不是浪费在这种没有意义的事情上的。"><meta property="og:image" content><title>🆕 关于本站停止RSS输出及相关事件说明 🆕 | 再會，謝謝所有的魚</title><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".blur").forEach(function(e){e.addEventListener("click",function(){e.classList.toggle("revealed")})})})</script><link rel="shortcut icon" type=image/x-icon href=/cat/240f9f9b.gif><script defer>function toggleMenu(e){const t=e.nextElementSibling,n=document.querySelectorAll(".menu-content");n.forEach(e=>{e!==t&&(e.style.display="none")}),t.style.display==="none"||t.style.display===""?t.style.display="table-row":t.style.display="none"}</script></head><div id=theme-toggle class=theme-toggle style=position:fixed;top:20px;right:20px;display:flex;gap:5px;z-index:999><div id=light-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.25a.75.75.0 01.75.75v2.25a.75.75.0 01-1.5.0V3a.75.75.0 01.75-.75zM7.5 12a4.5 4.5.0 119 0 4.5 4.5.0 01-9 0zM18.894 6.166a.75.75.0 00-1.06-1.06l-1.591 1.59a.75.75.0 101.06 1.061l1.591-1.59zM21.75 12a.75.75.0 01-.75.75h-2.25a.75.75.0 010-1.5H21a.75.75.0 01.75.75zm-3.916 6.894a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 10-1.061 1.06l1.59 1.591zM12 18a.75.75.0 01.75.75V21a.75.75.0 01-1.5.0v-2.25A.75.75.0 0112 18zM7.758 17.303a.75.75.0 00-1.061-1.06l-1.591 1.59a.75.75.0 001.06 1.061l1.591-1.59zM6 12a.75.75.0 01-.75.75H3a.75.75.0 010-1.5h2.25A.75.75.0 016 12zm.697-4.243a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 00-1.061 1.06l1.59 1.591z"/></svg></div><div id=dark-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M9.528 1.718a.75.75.0 01.162.819A8.97 8.97.0 009 6a9 9 0 009 9 8.97 8.97.0 003.463-.69.75.75.0 01.981.98 10.503 10.503.0 01-9.694 6.46c-5.799.0-10.5-4.7-10.5-10.5.0-4.368 2.667-8.112 6.46-9.694a.75.75.0 01.818.162z" clip-rule="evenodd"/></svg></div></div><script>const lightBtn=document.getElementById("light-btn"),darkBtn=document.getElementById("dark-btn"),themeToggle=document.getElementById("theme-toggle");let currentTheme=localStorage.getItem("theme")||"auto";if(currentTheme==="auto"){const e=window.matchMedia("(prefers-color-scheme: dark)").matches;currentTheme=e?"dark":"light"}document.body.setAttribute("a",currentTheme),document.body.classList.add(currentTheme+"-mode");function updateHighlightTheme(){const e=document.getElementById("hljs-theme"),t=document.body.getAttribute("a");if(!e)return;t==="dark"?e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css":e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css"}const updateIcons=()=>{currentTheme==="light"?(lightBtn.style.display="block",darkBtn.style.display="none"):(lightBtn.style.display="none",darkBtn.style.display="block")};updateIcons(),updateHighlightTheme();const toggleTheme=()=>{currentTheme==="light"?(document.body.classList.remove("light-mode"),document.body.classList.add("dark-mode"),currentTheme="dark"):(document.body.classList.remove("dark-mode"),document.body.classList.add("light-mode"),currentTheme="light"),localStorage.setItem("theme",currentTheme),document.body.setAttribute("a",currentTheme),updateIcons(),updateHighlightTheme()};themeToggle.addEventListener("click",toggleTheme),window.addEventListener("scroll",()=>{const t=document.documentElement.scrollTop||document.body.scrollTop,n=document.documentElement.scrollHeight||document.body.scrollHeight,s=window.innerHeight||document.documentElement.clientHeight,e=t/(n-s)*100;e>=10&&e<=40?themeToggle.style.opacity=(1-(e-10)/30).toFixed(2):e>40?themeToggle.style.opacity=0:themeToggle.style.opacity=1})</script><body a=auto><main class=page-content aria-label=Content><div class=w><div id=tools><div class=tools-item><span class=toggle-icon></span><a href=/>✦ Home ✦</a></div><div class=tools-item><a href=/about>✦ About ✦</a></div><div class=tools-item><a href=/posts>✦ Archive ✦</a></div><div class=tools-item><a href=/links>✦ Friends ✦</a></div></div><script>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("tools");if(!e)return;const t=window.matchMedia("(max-width: 768px)").matches;if(t){const t=e.querySelector(".toggle-icon");t&&t.addEventListener("click",function(t){t.stopPropagation(),e.classList.toggle("open")}),document.addEventListener("click",function(t){!e.contains(t.target)&&e.classList.contains("open")&&e.classList.remove("open")})}})</script><article><h1 data-pagefind-meta=title t>🆕 关于本站停止RSS输出及相关事件说明 🆕</h1><div id=post-meta><time datetime="2025-01-25 00:00:00 +0800 CST">2025-01-25
-<span>‧ 2696</span>
-<span>words</span>
-‧ <span></span><a href=/tags/statement>＃Statement</a></time><div id=post-description>我的写作不是浪费在这种没有意义的事情上的。</div></div><div class=post-toc-mobile id=post-toc-mobile data-pagefind-ignore><details><summary>📑 Table of Contents</summary><div><aside><nav id=TableOfContentsMobile><nav id=TableOfContents><ul><li><a href=#事件始末>事件始末</a></li><li><a href=#声明>声明</a></li><li><a href=#-2025年7月19日-updates>🆕 2025年7月19日 Updates</a></li></ul></nav></nav></aside></div></details></div><hr class=decoration-hr id=toc-hr><div class="post-toc toc-styled-pc" id=post-toc data-pagefind-ignore><header class=post-header-pc>✦ TOC | 目录 ✦</header><aside><nav id=TableOfContentsPC><nav id=TableOfContents><ul><li><a href=#事件始末>事件始末</a></li><li><a href=#声明>声明</a></li><li><a href=#-2025年7月19日-updates>🆕 2025年7月19日 Updates</a></li></ul></nav></nav></aside></div><style>#toc-toggle{display:none}#TableOfContents ul li:before{content:"";font-weight:700;margin-right:0}</style><div id=post-content data-pagefind-body><p>关于本站停止RSS输出的说明及相关事件始末如下。</p><h2 id=事件始末>事件始末</h2><p>2024年8月25日，我发现自己的站点在未获许可、未被告知的情况下，被一个叫“川流”站点收录，该站没有相关信息，但由于它和“川流论坛”互联，我与该论坛的主张、所要求的博客网站规则之间没有共鸣亦无共识，因此要求撤下——后来在Fediverse的讨论集中于该站只是无授权收录了RSS源，但我无法孤立地认为这只是一个RSS订阅源展示站点而与论坛无关，实际该站的主张这才是我最开始如此抵触被收录的原因。但显然我的看法与感受全无意义，事件本身就是会在传播过程中失真。</p><p>之后我向站点所有者发邮件交涉，并得到了同意撤下的回复。我认为事件就此结束，且因为对方很激动，于是直接拉黑了对方的邮箱。然后隔天我被朋友告知自己已获对方长文辱骂，并且短期内多次更新。而期间我的朋友塔塔很认真地为我辩驳，并在Fediverse公开了对方的行为，我很感激她的仗义执言，而从“川流”博客来的访客在这个过程中也给塔塔留下过辱骂评论，这让我觉得非常难过和抱歉。</p><p>事实上时至今日我都不知道川流发布的具体内容，因为我在8月25日将对方邮箱拉黑以后，就没有再访问过对方的博客，只是从Fedi的讨论中知道了这件事。后续经朋友提醒，他给我发过一次道歉信，但很遗憾，应该也进了我的垃圾站没有读——再后来对方不知道为什么好像又开始发脾气了。似乎我和塔塔的博客时至此刻仍旧被挂在对方的站点上，但我也没有确认形式，然后就到今天。</p><p>对方似乎指责我说话态度很差，但很遗憾，我现实里也是这样强硬的说话风格。人们只是还不习惯女人会如此强硬、钝感，在别人的极端愤怒面前如此漠视，因而觉得被挑战。在我版本的故事里，我唯一致命的技术细节是第一封邮件找错了邮箱，把邮件发到了他的网友那里。女人的指责总是让人觉得更加刺耳，经由朋友转发显得更加难堪。但这些是我无法改变的。</p><p>我的目的从始至终都是希望对方撤下我的链接，而显然在对方不可理喻的狂怒与辱骂之下，这个目的已经不可能达成了，因为我认为对方不是一个可沟通的人，我更没有必要再去交涉或者参与这场骂战。</p><p>我一直没有在博客里回应或讨论这件事，因为，我相信如果有谁曾认真阅读过我写的东西，应该可以感受到我对自己的书写非常重视，在乎，我对自己的博客也非常珍视，因此不想用这种内容污染自己的写作空间。或者更冷酷一点地说，我的写作不是浪费在这种没有意义的事情上的。</p><p>2025年1月23日，经过朋友在Fediverse上提醒，我及很多友邻的博客被<a href=https://github.com/saveweb target=_blank rel="noopener noreferrer">saveweb</a>进行了收录和备份，<strong>部分博客在未获许可、未被告知的情况下被进行了全站文章的全文存档收录</strong> ，朋友希望汇总同样不希望被收录的博客的意愿，进行统一PR提交。saveweb注册了长毛象账号进行沟通。中午，对方发布<a href=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/image.png target=_blank rel="noopener noreferrer">图片</a>内容，称呼我们为“极端女权相关博客”。</p><p>这相似的作为，惊人的素质，让我觉得难以理喻。Fediverse上还有人认为我们要求对方撤销无授权收录的行为是不够互联网精神的——我们多年来在互联网上公开书写自己的经验和勇气，这件事难道还不够互联网精神？只是沟通交涉希望对方撤销未经授权的收录，就遭到这样的辱骂和指责，这件事难道就很互联网精神？人们讨论协议，技术，“不想被收录就不要公开”，就是不谈写作者的意愿和感受，不谈尊重。这件事的本质就是“我讨厌被别人这么做，请你停止”。对方听不见。</p><p>2025年1月23日，我关闭了自己网站的RSS输出。因为这类聚合站的管理者似乎认为收录你是一种无上的光荣，而网站存在公开的RSS订阅源，就是可以无授权收录、全文存档、二次分发的意思。我自己是RSS的长期使用者，但很遗憾没办法改变别人的想法，也无法和这类博客聚合站达成理解和相互尊重的共识，只能停止输出RSS。</p><p>借用塔塔声明里的话：<strong>RSS是一种消息来源格式规范，而不是对内容传播、分发的许可。</strong> 我始终知道自己无法控制自己公开的内容的走向，尊重从来只在君子之间存在，我没有办法使这类不尊重他人创作与意愿的行为绝迹。</p><p>如果其他人的互联网精神就是自由地掠夺与辱骂他人，那除了继续写作与分享，我没有其他能做的事。我的开放精神是创作、分享、追求人与人之间的共识与共鸣，我就在这，知名度很低，但存在感不低。有人看或没有，人们来交流还是掠夺，我都只能在这里一直写。</p><h2 id=声明>声明</h2><p>写了上述的内容以后，我仍认为自己有必要对内容版权进行声明，而版权声明也将在不久后更新于博客页脚或其他明显可见的位置。</p><p>本博客作者保留对本站文章内容的所有权利。我的博客及所有文章都拒绝任何聚合、汇总类项目的未经告知的收录、转载、存档与二次分发，对于以上行为，我保留要求撤下链接或内容的权利。</p><p>而个人博客对我站文章正文内容的少量引用不在此列，对引用的方式除了不可声称为自己所写以外没有具体要求，不提及本站链接/名称/不标明引用来源是完全可以的。同时本站也不再接受单向友链添加——关于这一点其实并不是以非常严肃的语气提出，我仍能识别人们的善意，通过博客里而相识与有所交流的朋友们一直都对我很友善，相信气场相合的朋友我们总会相识相知。</p><h2 id=-2025年7月19日-updates>🆕 2025年7月19日 Updates</h2><p>因为连着两周被破防男的回复，非常惊讶于我的两封邮件居然能让人念念不忘快一年。因而来更新一些有趣的事实：</p><p>我在去年8月25日（在川流发了那一大堆辱骂博客之前）发完第二封，也是最后一封知悉邮件后，就已经和川流没有任何接触了。那封邮件的内容简短，只有两句话，尽可以给大家看：<strong>“好的。没有人在乎你的想法啦。”</strong> 之后就引起了对方长时间的狂怒、破防、辱骂、接连发了数篇内容提及了我和我的网友。但很遗憾我并不想和莫名其妙男的有那么多接触，之后对他没有任何回应，包括四天后发来的道歉亦是，甚至此后一年的博客里，除本篇外，因为我个人的写作洁癖，也没有提过对方只言片语。</p><p>但奇妙的是对方道歉完之后似乎又开始骂我了，我也不知道说什么好，包括后来我们人肉他的这个被迫害想象也不知道作何反应。毕竟，一个男的，长篇大论几天几夜骂了一个女的几千字，完事了又受不了网友说他又道歉，道歉完自己又难受又碎碎念，这里谁更情绪化，谁人肉谁的可能性大，这我不好说。原以为此事完结，最近却频繁收到男的破防评论骚扰，人身攻击和秽语太多，因此我开了评论审核。我非常奇怪于难道对方没有自己的博客可以抒发。</p><p>我同意对方的一个看法，互联网上的言说当然留痕，久而自成合订本，而各自人品亦同样久见真章。我对人品卑猥的人依然没有什么话想说。</p><p>另外，今天搜关键词也翻出了对方当时道歉的邮件，顺道也迟来公示一下，9MB高清大图，需要花一点时间才能加载出来。邮件和说过的疯话，保存的时间很长呢，大家各自警醒，不要成为人格卑猥的人。</p><img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Snipaste_2025-07-19_19-07-56.png alt class=post-image></div><br><div style=padding-bottom:3px></div></article><nav class=custom-paginav><a class=custom-paginav-prev href=/posts/2025-01-23/><span class=custom-paginav-title>« Prev</span><br><span>那故事发生的地方真的存在</span>
-</a><a class=custom-paginav-next href=/posts/2025-03-03/><span class=custom-paginav-title>Next »</span><br><span>全心保存真的我</span></a></nav><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=comments class=comments data-pagefind-ignore><style>:root{--waline-color:unset;--waline-bgcolor-light:unset}.wl-card{border:0 solid #eee}.wl-card .wl-quote{border-inline-start:0 dashed rgba(237,237,237,.5)}.wl-card-item{position:relative;display:flex;padding:.2em}.wl-addr{display:none !important;color:transparent !important}.wl-content .vemoji,.wl-content .wl-emoji{display:inline-block;vertical-align:baseline;height:3.4em !important;margin:-.125em .25em}img.wl-emoji,img.vemoji{vertical-align:sub;transition:ease-out .6s}img.wl-emoji:hover,img.vemoji:hover{transform:scale(1.8) !important}.wl-header{display:flex;overflow:hidden;padding:0 4px;border-bottom:0 dashed var(--waline-border-color);border-top-left-radius:0;border-top-right-radius:0}.wl-btn.primary{border-color:transparent !important;background:Peru;color:#fff}@media(max-width:580px){.wl-header-item:not(:last-child){border-bottom:0 dashed var(--waline-border-color)}}:root{--waline-theme-color:Peru;--waline-active-color:Peru;--waline-light-grey:unset;--waline-info-color:unset;--waline-border:0px solid peru}[data-waline] a{color:var(--link-color)}.wl-card .wl-badge{display:inline-block;margin-inline-end:1em;padding:0 .3em;border:2px solid peru;border-radius:4px;color:peru;font-weight:700;font-size:65%}.wl-editor:focus,.wl-input:focus{background:0 0}.wl-panel{background-color:#f2ede6;border:#a38f7d solid 1px;background-image:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.8)),url(/site/bg-rain2_5color1.gif);background-repeat:repeat}body[a=dark] .wl-panel{background-image:none !important;background-color:rgba(23,14,14,.38) !important}.wl-card .wl-delete,.wl-card .wl-like,.wl-card .wl-reply,.wl-card .wl-edit,.wl-card span.wl-nick,.wl-empty,.wl-admin-actions,[data-waline] p{color:unset}.wl-info .wl-text-number{color:unset;font-size:.75em}.wl-editor,.wl-input{font-family:inherit;font-size:80%}</style><div id=waline data-pagefind-ignore></div><script>Waline.init({el:"#waline",serverURL:"https://co.gregueria.icu/",emoji:["https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif","https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png"],requiredMeta:["name","email","url"],dark:!0,locale:{placeholder:"(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！",admin:"admin"}})</script></div><div><footer class=site-footer><section class=copyright>&copy; 2021 - 2025
-<a href=https://gregueria.icu/>再會，謝謝所有的魚 </a>· <i class="fas fa-bell"></i><a id=days>0</a> Days<br><span>All rights reserved.</span></section><script>var s1="2021-11-12",s1=new Date(s1.replace(/-/g,"/")),s2=new Date,days=s2.getTime()-s1.getTime(),number_of_days=parseInt(days/(1e3*60*60*24));document.getElementById("days").innerHTML=number_of_days</script><script>document.addEventListener("DOMContentLoaded",function(){hljs.highlightAll()})</script></footer><script src=/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js integrity="sha256-OjfnrZnqF2pdNE+2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("post-content");e&&window.ViewImage?ViewImage.init("#post-content img:not([no-view]):not(.emoji):not(#emoji)"):e?console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?"):console.log("Current page does not have #post-content. ViewImage initialization skipped.")})</script><script>document.querySelectorAll("#post-content > img.post-image").forEach(e=>{const t=e.nextSibling;if(t&&t.nodeType===Node.TEXT_NODE&&t.textContent.trim()!==""){const n=document.createElement("figure");n.className="single-image-figure",e.replaceWith(n),n.appendChild(e);const s=document.createElement("figcaption");s.className="image-caption",s.textContent=t.textContent.trim(),n.appendChild(s),t.remove()}})</script><script>(function(){const a="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX",o="向我提问！",r="看到就会回复 :D",c="#ffffff",l="var(--shadow)",d="#ffffff",n=document.createElement("div"),e=document.createElement("div");e.innerText=o,document.body.append(e),n.innerHTML+=`
-    <iframe src="${a}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `;let s=!1,i=!0;e.onclick=()=>{i&&(i=!1,document.body.append(n)),s?(t(n,{top:"100%",bottom:"unset",visibility:"hidden"}),t(e,{bottom:"0px"}),e.innerText=o):(t(n,{top:"unset",bottom:"0px",visibility:"visible"}),t(e,{bottom:"400px"}),e.innerText=r),s=!s},t(e,{position:"fixed",bottom:"0px",right:"0px",background:l,color:c,"font-size":"14px","border-top-left-radius":"10px",padding:"5px 10px",cursor:"pointer"}),t(n,{position:"fixed",top:"100%",right:"0px",width:"300px",height:"400px",background:d,"z-index":"11"});function t(e,t){for(let n in t)e.style[n]=t[n]}})()</script></div></div></main><script src=/js/twemoji.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){twemoji.parse(document.body,{base:"/my-emojis/",folder:"svg",ext:".svg"})})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.dc3ca18d3ff4df59931e80edcc04c2f5024c8f60a7ff23936cd466a6f02019f54c6ab699cb337f932110d056a9db7ea7c21a35a70450c7d908d7ff209c4d4d4f.css" integrity="sha512-3DyhjT/031mTHoDtzATC9QJMj2Cn/yOTbNRmpvAgGfVMaraZyzN/kyEQ0Fap236nwho1pwRQx9kI1/8gnE1NTw==" />
+  
+  
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+
+  
+    <meta name="description" content="我的写作不是浪费在这种没有意义的事情上的。">
+    <meta property="og:title" content="🆕 关于本站停止RSS输出及相关事件说明 🆕">
+    <meta property="og:description" content="我的写作不是浪费在这种没有意义的事情上的。">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      🆕 关于本站停止RSS输出及相关事件说明 🆕 | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tools">
+  
+  <div class="tools-item">
+    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/about" >✦ About ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/posts" >✦ Archive ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/links" >✦ Friends ✦</a>
+  </div>
+  
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
+
+<article >
+    <h1 data-pagefind-meta="title" t>🆕 关于本站停止RSS输出及相关事件说明 🆕</h1>
+    <div id="post-meta">
+        <time datetime="2025-01-25 00:00:00 &#43;0800 CST">
+            2025-01-25
+            <span> ‧ 2696</span>
+            <span>words</span>
+            ‧ <span> </span>
+            
+                    
+                    <a href="/tags/statement">＃Statement</a>
+                    
+            
+        </time>
+        
+        <div id="post-description">
+            我的写作不是浪费在这种没有意义的事情上的。
+        </div>
+        
+    </div>
+
+    
+    
+<div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+    <details>
+        <summary>📑 Table of Contents</summary>
+        <div>
+            <aside>
+                
+                
+                <nav id="TableOfContentsMobile"> <nav id="TableOfContents">
+  <ul>
+    <li><a href="#事件始末">事件始末</a></li>
+    <li><a href="#声明">声明</a></li>
+    <li><a href="#-2025年7月19日-updates">🆕 2025年7月19日 Updates</a></li>
+  </ul>
+</nav>
+                </nav>
+            </aside>
+        </div>
+    </details>
+</div>
+<hr class="decoration-hr" id="toc-hr">
+<div class="post-toc toc-styled-pc" id="post-toc" data-pagefind-ignore>
+    <header class="post-header-pc">
+    ✦ TOC | 目录 ✦
+    </header>
+    <aside>
+        <nav id="TableOfContentsPC"> 
+            
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#事件始末">事件始末</a></li>
+    <li><a href="#声明">声明</a></li>
+    <li><a href="#-2025年7月19日-updates">🆕 2025年7月19日 Updates</a></li>
+  </ul>
+</nav>
+        </nav>
+    </aside>
+</div>
+
+
+<style>
+     
+    #toc-toggle {
+        display: none;
+    }
+     
+    #TableOfContents ul li:before {
+        content: "";
+        font-weight: bold;
+        margin-right: 0px;
+    }
+</style>
+    
+
+    <div id="post-content"  data-pagefind-body>
+        <p>关于本站停止RSS输出的说明及相关事件始末如下。</p>
+<h2 id="事件始末">事件始末</h2>
+<p>2024年8月25日，我发现自己的站点在未获许可、未被告知的情况下，被一个叫“川流”站点收录，该站没有相关信息，但由于它和“川流论坛”互联，我与该论坛的主张、所要求的博客网站规则之间没有共鸣亦无共识，因此要求撤下——后来在Fediverse的讨论集中于该站只是无授权收录了RSS源，但我无法孤立地认为这只是一个RSS订阅源展示站点而与论坛无关，实际该站的主张这才是我最开始如此抵触被收录的原因。但显然我的看法与感受全无意义，事件本身就是会在传播过程中失真。</p>
+<p>之后我向站点所有者发邮件交涉，并得到了同意撤下的回复。我认为事件就此结束，且因为对方很激动，于是直接拉黑了对方的邮箱。然后隔天我被朋友告知自己已获对方长文辱骂，并且短期内多次更新。而期间我的朋友塔塔很认真地为我辩驳，并在Fediverse公开了对方的行为，我很感激她的仗义执言，而从“川流”博客来的访客在这个过程中也给塔塔留下过辱骂评论，这让我觉得非常难过和抱歉。</p>
+<p>事实上时至今日我都不知道川流发布的具体内容，因为我在8月25日将对方邮箱拉黑以后，就没有再访问过对方的博客，只是从Fedi的讨论中知道了这件事。后续经朋友提醒，他给我发过一次道歉信，但很遗憾，应该也进了我的垃圾站没有读——再后来对方不知道为什么好像又开始发脾气了。似乎我和塔塔的博客时至此刻仍旧被挂在对方的站点上，但我也没有确认形式，然后就到今天。</p>
+<p>对方似乎指责我说话态度很差，但很遗憾，我现实里也是这样强硬的说话风格。人们只是还不习惯女人会如此强硬、钝感，在别人的极端愤怒面前如此漠视，因而觉得被挑战。在我版本的故事里，我唯一致命的技术细节是第一封邮件找错了邮箱，把邮件发到了他的网友那里。女人的指责总是让人觉得更加刺耳，经由朋友转发显得更加难堪。但这些是我无法改变的。</p>
+<p>我的目的从始至终都是希望对方撤下我的链接，而显然在对方不可理喻的狂怒与辱骂之下，这个目的已经不可能达成了，因为我认为对方不是一个可沟通的人，我更没有必要再去交涉或者参与这场骂战。</p>
+<p>我一直没有在博客里回应或讨论这件事，因为，我相信如果有谁曾认真阅读过我写的东西，应该可以感受到我对自己的书写非常重视，在乎，我对自己的博客也非常珍视，因此不想用这种内容污染自己的写作空间。或者更冷酷一点地说，我的写作不是浪费在这种没有意义的事情上的。</p>
+<p>2025年1月23日，经过朋友在Fediverse上提醒，我及很多友邻的博客被<a href="https://github.com/saveweb" target="_blank" rel="noopener noreferrer">saveweb</a>进行了收录和备份，<strong>部分博客在未获许可、未被告知的情况下被进行了全站文章的全文存档收录</strong> ，朋友希望汇总同样不希望被收录的博客的意愿，进行统一PR提交。saveweb注册了长毛象账号进行沟通。中午，对方发布<a href="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/image.png" target="_blank" rel="noopener noreferrer">图片</a>内容，称呼我们为“极端女权相关博客”。</p>
+<p>这相似的作为，惊人的素质，让我觉得难以理喻。Fediverse上还有人认为我们要求对方撤销无授权收录的行为是不够互联网精神的——我们多年来在互联网上公开书写自己的经验和勇气，这件事难道还不够互联网精神？只是沟通交涉希望对方撤销未经授权的收录，就遭到这样的辱骂和指责，这件事难道就很互联网精神？人们讨论协议，技术，“不想被收录就不要公开”，就是不谈写作者的意愿和感受，不谈尊重。这件事的本质就是“我讨厌被别人这么做，请你停止”。对方听不见。</p>
+<p>2025年1月23日，我关闭了自己网站的RSS输出。因为这类聚合站的管理者似乎认为收录你是一种无上的光荣，而网站存在公开的RSS订阅源，就是可以无授权收录、全文存档、二次分发的意思。我自己是RSS的长期使用者，但很遗憾没办法改变别人的想法，也无法和这类博客聚合站达成理解和相互尊重的共识，只能停止输出RSS。</p>
+<p>借用塔塔声明里的话：<strong>RSS是一种消息来源格式规范，而不是对内容传播、分发的许可。</strong> 我始终知道自己无法控制自己公开的内容的走向，尊重从来只在君子之间存在，我没有办法使这类不尊重他人创作与意愿的行为绝迹。</p>
+<p>如果其他人的互联网精神就是自由地掠夺与辱骂他人，那除了继续写作与分享，我没有其他能做的事。我的开放精神是创作、分享、追求人与人之间的共识与共鸣，我就在这，知名度很低，但存在感不低。有人看或没有，人们来交流还是掠夺，我都只能在这里一直写。</p>
+<h2 id="声明">声明</h2>
+<p>写了上述的内容以后，我仍认为自己有必要对内容版权进行声明，而版权声明也将在不久后更新于博客页脚或其他明显可见的位置。</p>
+<p>本博客作者保留对本站文章内容的所有权利。我的博客及所有文章都拒绝任何聚合、汇总类项目的未经告知的收录、转载、存档与二次分发，对于以上行为，我保留要求撤下链接或内容的权利。</p>
+<p>而个人博客对我站文章正文内容的少量引用不在此列，对引用的方式除了不可声称为自己所写以外没有具体要求，不提及本站链接/名称/不标明引用来源是完全可以的。同时本站也不再接受单向友链添加——关于这一点其实并不是以非常严肃的语气提出，我仍能识别人们的善意，通过博客里而相识与有所交流的朋友们一直都对我很友善，相信气场相合的朋友我们总会相识相知。</p>
+<h2 id="-2025年7月19日-updates">🆕 2025年7月19日 Updates</h2>
+<p>因为连着两周被破防男的回复，非常惊讶于我的两封邮件居然能让人念念不忘快一年。因而来更新一些有趣的事实：</p>
+<p>我在去年8月25日（在川流发了那一大堆辱骂博客之前）发完第二封，也是最后一封知悉邮件后，就已经和川流没有任何接触了。那封邮件的内容简短，只有两句话，尽可以给大家看：<strong>“好的。没有人在乎你的想法啦。”</strong> 之后就引起了对方长时间的狂怒、破防、辱骂、接连发了数篇内容提及了我和我的网友。但很遗憾我并不想和莫名其妙男的有那么多接触，之后对他没有任何回应，包括四天后发来的道歉亦是，甚至此后一年的博客里，除本篇外，因为我个人的写作洁癖，也没有提过对方只言片语。</p>
+<p>但奇妙的是对方道歉完之后似乎又开始骂我了，我也不知道说什么好，包括后来我们人肉他的这个被迫害想象也不知道作何反应。毕竟，一个男的，长篇大论几天几夜骂了一个女的几千字，完事了又受不了网友说他又道歉，道歉完自己又难受又碎碎念，这里谁更情绪化，谁人肉谁的可能性大，这我不好说。原以为此事完结，最近却频繁收到男的破防评论骚扰，人身攻击和秽语太多，因此我开了评论审核。我非常奇怪于难道对方没有自己的博客可以抒发。</p>
+<p>我同意对方的一个看法，互联网上的言说当然留痕，久而自成合订本，而各自人品亦同样久见真章。我对人品卑猥的人依然没有什么话想说。</p>
+<p>另外，今天搜关键词也翻出了对方当时道歉的邮件，顺道也迟来公示一下，9MB高清大图，需要花一点时间才能加载出来。邮件和说过的疯话，保存的时间很长呢，大家各自警醒，不要成为人格卑猥的人。</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/Snipaste_2025-07-19_19-07-56.png" alt="" 
+     class="post-image"
+
+/>
+
+        
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+<nav class="custom-paginav">
+    
+    <a class="custom-paginav-prev" href="/posts/2025-01-23/">
+        <span class="custom-paginav-title">« Prev</span><br>
+        <span>那故事发生的地方真的存在</span>
+    </a>
+    
+    
+    <a class="custom-paginav-next" href="/posts/2025-03-03/">
+        <span class="custom-paginav-title">Next »</span><br>
+        <span>全心保存真的我</span>
+    </a>
+    
+</nav>
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+<div id="comments" class="comments" data-pagefind-ignore>
+    <style>
+    :root {
+        --waline-color: unset;
+        --waline-bgcolor-light: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline" data-pagefind-ignore></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
+            admin: 'admin',
+        }
+    });
+</script>
+
+</div>
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
+
+
+
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </main>
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+
+    </body></html>

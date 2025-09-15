@@ -18,67 +18,7 @@
 <div class="main-container">
     <div id="page_posts" class="window active page_posts" style="">
         <div class="window-content">
-            <div class="postslist">
-                {{/* begin of archive heading */}}
-                <div class="post-head-wrapper-text-only">
-                    {{- $type := .Type -}}
-                    {{/* **** Category-wide stats **** */}}
-                    {{- $scratch := newScratch -}}
-                    {{- $articles_cat := (where .Site.RegularPages "Type" $type) -}}
-                    {{- $articles_cat_count := len $articles_cat -}}
-                    {{- range (where .Site.RegularPages "Type" $type) -}}
-                    {{- $scratch.Add "allwordcount" .WordCount -}}
-                    {{- end -}}
-                    {{/* end of archive heading */}}
-                </div>
-                <div class="content">
-                    <div class="">
-                        <div class="">
-                            {{/* **** Yearly archive **** */}}
-                            {{/* Group articles by year and loop through them */}}
-                            {{- $currentYear := now.Format "2006" | int -}}  <!-- 转换为整数 -->
-                            {{- range (.Site.RegularPages.GroupByDate "2006") -}}
-                            {{- $articles_yearly := (where (where .Pages "Type" $type) "Params.hidden" "!=" true) -}}
-                            {{- $articles_yearly_count := len $articles_yearly -}}
-                            {{- $year := .Key | int -}}  <!-- 确保年份是整数 -->
-
-                            {{ if and (gt .Key 1) (gt $articles_yearly_count 0) }}
-                            <h3 class="archive--year">
-                                {{ .Key }} / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}
-                            </h3>
-
-                            {{ if eq $year $currentYear }}
-                            <ul>
-                                {{- range $articles_yearly -}}
-                                <li>
-                                    <span class="">{{ .Date.Format "01-02" }}</span>&emsp;
-                                    <a href="{{ .RelPermalink }}">
-                                        {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
-                                    </a>
-                                </li>
-                                {{- end -}}
-                            </ul>
-                            {{ else }}
-                            <details style="padding: 0px; margin: 0px;">
-                                <summary style="padding: 10px;">Click Here</summary>
-                                <ul>
-                                    {{- range $articles_yearly -}}
-                                    <li>
-                                        <span class="">{{ .Date.Format "01-02" }}</span>&emsp;
-                                        <a href="{{ .RelPermalink }}">
-                                            {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
-                                        </a>
-                                    </li>
-                                    {{- end -}}
-                                </ul>
-                            </details>
-                            {{ end }}
-                            {{ end }}
-                            {{ end }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{ partial "archives" . }}
         </div>
     </div>
     <div class="note menu-float" style="flex: 0 0 45%;">

@@ -1,8 +1,996 @@
-<!doctype html><html lang=zh-cn><head><meta name=robots content="noindex,nofollow,noarchive"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/main.260a366e640dee9479f69155a552bdc3b7689c978017755b5624991a2c1a2e54d6a2d662a5c0e8d0044a4bf57b565f287f00963f2d512207caf178c2c73144e9.css integrity="sha512-Jgo2bmQN7pR59pFVpVK9w7donJeAF3VbViSZGiwaLlTWotZipcDo0ARKS/V7Vl8ofwCWPy1RIgfK8XjCxzFE6Q=="><link rel=stylesheet href=https://static.zeoseven.com/zsft/69/main/result.css><link rel=stylesheet href=https://fontsapi.zeoseven.com/46/main/result.css><link rel=stylesheet href=/fonts/stdgt/result.css><link id=hljs-theme rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js></script><meta name=description content="本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。"><meta property="og:title" content="关于RSS订阅二三事"><meta property="og:description" content="本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。"><meta property="og:image" content><title>关于RSS订阅二三事 | 再會，謝謝所有的魚</title><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".blur").forEach(function(e){e.addEventListener("click",function(){e.classList.toggle("revealed")})})})</script><link rel="shortcut icon" type=image/x-icon href=/cat/240f9f9b.gif><script defer>function toggleMenu(e){const t=e.nextElementSibling,n=document.querySelectorAll(".menu-content");n.forEach(e=>{e!==t&&(e.style.display="none")}),t.style.display==="none"||t.style.display===""?t.style.display="table-row":t.style.display="none"}</script></head><div id=theme-toggle class=theme-toggle style=position:fixed;top:20px;right:20px;display:flex;gap:5px;z-index:999><div id=light-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.25a.75.75.0 01.75.75v2.25a.75.75.0 01-1.5.0V3a.75.75.0 01.75-.75zM7.5 12a4.5 4.5.0 119 0 4.5 4.5.0 01-9 0zM18.894 6.166a.75.75.0 00-1.06-1.06l-1.591 1.59a.75.75.0 101.06 1.061l1.591-1.59zM21.75 12a.75.75.0 01-.75.75h-2.25a.75.75.0 010-1.5H21a.75.75.0 01.75.75zm-3.916 6.894a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 10-1.061 1.06l1.59 1.591zM12 18a.75.75.0 01.75.75V21a.75.75.0 01-1.5.0v-2.25A.75.75.0 0112 18zM7.758 17.303a.75.75.0 00-1.061-1.06l-1.591 1.59a.75.75.0 001.06 1.061l1.591-1.59zM6 12a.75.75.0 01-.75.75H3a.75.75.0 010-1.5h2.25A.75.75.0 016 12zm.697-4.243a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 00-1.061 1.06l1.59 1.591z"/></svg></div><div id=dark-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M9.528 1.718a.75.75.0 01.162.819A8.97 8.97.0 009 6a9 9 0 009 9 8.97 8.97.0 003.463-.69.75.75.0 01.981.98 10.503 10.503.0 01-9.694 6.46c-5.799.0-10.5-4.7-10.5-10.5.0-4.368 2.667-8.112 6.46-9.694a.75.75.0 01.818.162z" clip-rule="evenodd"/></svg></div></div><script>const lightBtn=document.getElementById("light-btn"),darkBtn=document.getElementById("dark-btn"),themeToggle=document.getElementById("theme-toggle");let currentTheme=localStorage.getItem("theme")||"auto";if(currentTheme==="auto"){const e=window.matchMedia("(prefers-color-scheme: dark)").matches;currentTheme=e?"dark":"light"}document.body.setAttribute("a",currentTheme),document.body.classList.add(currentTheme+"-mode");function updateHighlightTheme(){const e=document.getElementById("hljs-theme"),t=document.body.getAttribute("a");if(!e)return;t==="dark"?e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css":e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css"}const updateIcons=()=>{currentTheme==="light"?(lightBtn.style.display="block",darkBtn.style.display="none"):(lightBtn.style.display="none",darkBtn.style.display="block")};updateIcons(),updateHighlightTheme();const toggleTheme=()=>{currentTheme==="light"?(document.body.classList.remove("light-mode"),document.body.classList.add("dark-mode"),currentTheme="dark"):(document.body.classList.remove("dark-mode"),document.body.classList.add("light-mode"),currentTheme="light"),localStorage.setItem("theme",currentTheme),document.body.setAttribute("a",currentTheme),updateIcons(),updateHighlightTheme()};themeToggle.addEventListener("click",toggleTheme),window.addEventListener("scroll",()=>{const t=document.documentElement.scrollTop||document.body.scrollTop,n=document.documentElement.scrollHeight||document.body.scrollHeight,s=window.innerHeight||document.documentElement.clientHeight,e=t/(n-s)*100;e>=10&&e<=40?themeToggle.style.opacity=(1-(e-10)/30).toFixed(2):e>40?themeToggle.style.opacity=0:themeToggle.style.opacity=1})</script><body a=auto><main class=page-content aria-label=Content><div class=w><div id=tools><div class=tools-item><span class=toggle-icon></span><a href=/>✦ Home ✦</a></div><div class=tools-item><a href=/about>✦ About ✦</a></div><div class=tools-item><a href=/posts>✦ Archive ✦</a></div><div class=tools-item><a href=/links>✦ Friends ✦</a></div></div><script>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("tools");if(!e)return;const t=window.matchMedia("(max-width: 768px)").matches;if(t){const t=e.querySelector(".toggle-icon");t&&t.addEventListener("click",function(t){t.stopPropagation(),e.classList.toggle("open")}),document.addEventListener("click",function(t){!e.contains(t.target)&&e.classList.contains("open")&&e.classList.remove("open")})}})</script><article><h1 data-pagefind-meta=title t>关于RSS订阅二三事</h1><div id=post-meta><time datetime="2024-06-12 00:00:00 +0800 CST">2024-06-12
-<span>‧ 2644</span>
-<span>words</span>
-‧ <span></span><a href=/tags/guidebook>＃Guidebook</a></time><div id=post-description>本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。</div></div><div class=post-toc-mobile id=post-toc-mobile data-pagefind-ignore><details><summary>📑 Table of Contents</summary><div><aside><nav id=TableOfContentsMobile><nav id=TableOfContents><ul><li><a href=#我们为什么要用rss阅读>我们为什么要用RSS阅读？</a></li><li><a href=#rss阅读器>RSS阅读器</a></li><li><a href=#更重要的其实是rss订阅源>更重要的其实是RSS订阅源</a><ul><li><a href=#rsshub的使用方法>RSSHub的使用方法</a></li><li><a href=#记得定期备份订阅源>记得定期备份订阅源</a></li></ul></li><li><a href=#其他的话>其他的话</a></li></ul></nav></nav></aside></div></details></div><hr class=decoration-hr id=toc-hr><div class="post-toc toc-styled-pc" id=post-toc data-pagefind-ignore><header class=post-header-pc>✦ TOC | 目录 ✦</header><aside><nav id=TableOfContentsPC><nav id=TableOfContents><ul><li><a href=#我们为什么要用rss阅读>我们为什么要用RSS阅读？</a></li><li><a href=#rss阅读器>RSS阅读器</a></li><li><a href=#更重要的其实是rss订阅源>更重要的其实是RSS订阅源</a><ul><li><a href=#rsshub的使用方法>RSSHub的使用方法</a></li><li><a href=#记得定期备份订阅源>记得定期备份订阅源</a></li></ul></li><li><a href=#其他的话>其他的话</a></li></ul></nav></nav></aside></div><style>#toc-toggle{display:none}#TableOfContents ul li:before{content:"";font-weight:700;margin-right:0}</style><div id=post-content data-pagefind-body><p>在我的网络生活里RSS订阅是一个蛮频繁使用的东西，所以来写一篇关于RSS订阅的内容。</p><h2 id=我们为什么要用rss阅读>我们为什么要用RSS阅读？</h2><p>首先，关于“什么是RSS”这个问题，如果读者的了解比较空白，这篇文章讲得比我好：<a href=https://sspai.com/post/56198 target=_blank rel="noopener noreferrer">RSS：高效率的阅读方式</a>。推荐阅读。</p><p>简单来讲RSS就是一个聚合不同来源信息的订阅工具。</p><p>目前我们刷的微博，小红书，都需要我们进入到它们的APP、网页里才能获取信息，某个我喜欢的博主更新了，基本上都需要下载了这个APP且开启了消息通知，我才能第一时间知晓。并且每一次我进入到这些APP和网页之中，我不可能只读到这个博主一个人的信息，我会在瀑布流里刷到各种各样我不感兴趣的内容。但实际上我只想读那一个人。</p><p>而我喜欢一个博客，我需要经常进去才能知道它有没有更新，这是值得的，因为博客页面也经常包含了对方费劲心机的网页设计，比瀑布流赏心得多。只是当我有几十个喜欢读的博客，想知晓对方是否更新就会变得比较繁琐。</p><p>那么RSS订阅就是来解决这个问题的。</p><h2 id=rss阅读器>RSS阅读器</h2><p>非常多的博客都提供RSS订阅链接，例如本站的导航栏上就有<a href=/index.xml/>订阅链接</a>，这就是一个订阅源。你的订阅对对方的网站没有任何影响，也不会有任何量化反馈。</p><p>有了订阅源以后，你还需要一个阅读器。把这个源添加进入，之后每当有更新，你的阅读器中就会有所显示。关于阅读器的选择，我个人觉得是不需要太纠结精美的形式，不用搞那些花哨的。只是获取信息然后读而已。</p><p>我之前在电脑上下载的是Inoreader，漂亮赏心，不过重装了一次系统后也没有想过下载回来。我发现最好的RSS阅读器还是融入到日常每天都会打开的浏览器中，我后来安装的是浏览器插件<a href=https://chromewebstore.google.com/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp target=_blank rel="noopener noreferrer">RSS Feed Reader</a>。</p><img loading=lazy decoding=async src="https://lh3.googleusercontent.com/rQfCS1nX6ltv30swrcNCdwTUheBXSGOkrrmdYmCEMvRf8xfFhk8xu9IyZm-4K3Cv041jG3XGlSdw45g_JxUBboR_vQ=s800-w800-h500" alt class=post-image><p>图片来源于官方的截图，不知道能不能顺利显示。我日常把它固定在了浏览器右上角，有更新就会冒出蓝点和数字。因为我至少每天都会打开浏览器，一有更新都会很快地看到。在不同的设备登录浏览器账号的话也会自动同步。所以对我来说非常实用。</p><p>免费版可以添加200个订阅源，有30分钟的更新延迟。但我使用下来好像还是即时更新的。以及下面这个图是它的阅读器页面。只是希望读到想读的内容而已，我没有很高的要求：</p><img loading=lazy decoding=async src="https://lh3.googleusercontent.com/_UzgCk7-i1b_1Mv4W-REYumd6Jc9VAYPuDuMTLvvUUpjlIeeVrhCe5oA3YJ_iRLoed74SKR0BDBKppOZ17KZsVzvlQ=s800-w800-h500" alt class=post-image><h2 id=更重要的其实是rss订阅源>更重要的其实是RSS订阅源</h2><p>类似我和很多友邻用的都是Hugo博客，是自带订阅源的。顺带一提，<strong>AO3只要是Tag都是有RSS订阅源提供的</strong>，对于想第一时间知道自家Fandom/CP有没有新故事的人来说非常方便。</p><img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/1.png alt class=post-image><p>但是还有非常多的信息源是不提供订阅源的，现在的社交平台的现状就是非常封闭，例如微信公众号，它都希望你能在它的APP上进行阅读。但事实上是我既不想打开手机微信，也不想看电脑微信，我只想读特定的内容，不想被瀑布流的内容夺走注意力。</p><p>那么<a href=https://docs.rsshub.app/zh/ target=_blank rel="noopener noreferrer">RSSHub</a>项目就是来解决订阅源获取的问题的。</p><h3 id=rsshub的使用方法>RSSHub的使用方法</h3><p>我也不太会解释RSSHub是什么样的项目。请把它想象成一个中转站，我想通过RSS订阅一个公众号，但微信不会提供给我订阅源的，那么我就用RSSHub这个中转站，来获取它的订阅源。</p><p>RSSHub可以自己部署，也可以使用公共实例。我之前尝试部署成功过，不过没多久就遗忘掉了。后来一直就使用的是公共实例（<a href=https://docs.rsshub.app/zh/guide/instances target=_blank rel="noopener noreferrer">rsshub.app</a>）来作为中转站，获得我想要的订阅源。</p><p>公共实例是稳定的，出于去中心化的考虑，官方鼓励自部署。但对于没有部署经验，没有折腾欲望，很懒，<strong>只想快狠准读完这篇文章立刻就能得到订阅源</strong>的读者来说，推荐直接选择公共实例。</p><p>我很少看公众号，我更常用的是订阅Lofter的Tag，所以在此用这个进行演示。本篇只是一个面向毫无RSSHub、订阅源获取相关知识的读者的操作指引。</p><ol><li>进入官方文档页面。确定你想获取哪个平台的订阅源，在文档中搜索框中进行搜索。常见SNS一般都有。</li></ol><blockquote><p>RSSHub的官方文档地址：<a href=https://docs.rsshub.app/zh/guide/ target=_blank rel="noopener noreferrer">https://docs.rsshub.app/zh/guide/</a></p></blockquote><img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/2.png alt class=post-image><p>仔细阅读上述内容，你就得到了如上图所示的路由（Route）：<code>/lofter/tag/:name?/:type?</code>，与一些使用的方式。</p><ol start=2><li>将它们按照<strong>实例+路由</strong>的形式组装成你想要订阅的内容。</li></ol><p>我们使用的是公共实例<code>https://rsshub.app/</code>，我要订阅的是Lofter的Tag名是“逆转裁判”的“最新”内容，所以根据使用方法，我需要的路由是<code>/lofter/tag/逆转裁判/new</code>。</p><p>然后进行组装后就得到了订阅源：<code>https://rsshub.app/lofter/tag/逆转裁判/new</code>。</p><p>丢进浏览器里看看能不能顺利显示出RSS的页面（这个页面是因为安装了RSS Feed Reader才这么显示，很可能你看到的页面是一堆代码）。</p><img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/3.png alt class=post-image><p>（其实我不看逆转裁判Tag，我只是随便想到了就用了。）</p><ol start=3><li><p>把上述订阅源丢到你的RSS阅读器里，然后等待你想看的内容静静地冒出来吧。</p></li><li><p>（可忽略）如果你是用了自部署RSSHub的方法，部署了一个<code>https://example.com/</code>实例，那么上面的订阅源就是<code>https://example.com/lofter/tag/逆转裁判/new</code>，很好理解吧？</p></li></ol><h3 id=记得定期备份订阅源>记得定期备份订阅源</h3><p>除了获取订阅源以外，还想提及一点是，导入进RSS阅读器中的订阅源是可以汇总导出的。</p><p>前篇谈及了我重装一次系统，更换了阅读器。这事发生的很突然，不过因为我偶尔会备份一下，只丢失了后来添加的少部分订阅源。</p><p>订阅源恐怕是你长期收集得来的珍贵宝物与图书馆，如果你的阅读器没有线上同步功能，我个人还是建议大家偶尔可以随手备份一下。现在订阅源的格式一般都是XLS/OPML，想换阅读器了也就是导出导入随手的事。</p><img loading=lazy decoding=async src=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/4.png alt class=post-image><h2 id=其他的话>其他的话</h2><p>RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八门的路由。我在用的还有微博，因为有段时间不想上微博但是想看特定的女网友，以及噗浪和推，我实在是用得不顺手但是有网友只玩这个。只能说也算是一个网友订阅器。我订阅器里最多的还是博客，然后就是我CP的Tag。</p><p>顺便一提，因为这种RSS订阅方式一般只能订阅公开内容信息流，像是微博粉丝可见是无法收到的，而很多自定义操作例如屏蔽，也是没有办法做到的。简单来说如果你订阅了AO3上逆转裁判的Tag，但你用自己的账号屏蔽掉了某个作者，但RSS这种方式是不知道的，这个作者在你订阅的Tag下发文了，你照样会收到消息。但无所谓，只是一种信息获取方式，这种小事我不在乎。只要我感兴趣的内容我可以第一时间收到就可以了。</p><p>其他想说的话倒也没有了。本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。</p></div><br><div style=padding-bottom:3px></div></article><nav class=custom-paginav><a class=custom-paginav-prev href=/posts/fetfc/><span class=custom-paginav-title>« Prev</span><br><span>Fanfic Elysium：The Final Cut</span>
-</a><a class=custom-paginav-next href=/posts/archiveandlink/><span class=custom-paginav-title>Next »</span><br><span>鱼鱼小家的装修笔记</span></a></nav><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=comments class=comments data-pagefind-ignore><style>:root{--waline-color:unset;--waline-bgcolor-light:unset}.wl-card{border:0 solid #eee}.wl-card .wl-quote{border-inline-start:0 dashed rgba(237,237,237,.5)}.wl-card-item{position:relative;display:flex;padding:.2em}.wl-addr{display:none !important;color:transparent !important}.wl-content .vemoji,.wl-content .wl-emoji{display:inline-block;vertical-align:baseline;height:3.4em !important;margin:-.125em .25em}img.wl-emoji,img.vemoji{vertical-align:sub;transition:ease-out .6s}img.wl-emoji:hover,img.vemoji:hover{transform:scale(1.8) !important}.wl-header{display:flex;overflow:hidden;padding:0 4px;border-bottom:0 dashed var(--waline-border-color);border-top-left-radius:0;border-top-right-radius:0}.wl-btn.primary{border-color:transparent !important;background:Peru;color:#fff}@media(max-width:580px){.wl-header-item:not(:last-child){border-bottom:0 dashed var(--waline-border-color)}}:root{--waline-theme-color:Peru;--waline-active-color:Peru;--waline-light-grey:unset;--waline-info-color:unset;--waline-border:0px solid peru}[data-waline] a{color:var(--link-color)}.wl-card .wl-badge{display:inline-block;margin-inline-end:1em;padding:0 .3em;border:2px solid peru;border-radius:4px;color:peru;font-weight:700;font-size:65%}.wl-editor:focus,.wl-input:focus{background:0 0}.wl-panel{background-color:#f2ede6;border:#a38f7d solid 1px;background-image:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.8)),url(/site/bg-rain2_5color1.gif);background-repeat:repeat}body[a=dark] .wl-panel{background-image:none !important;background-color:rgba(23,14,14,.38) !important}.wl-card .wl-delete,.wl-card .wl-like,.wl-card .wl-reply,.wl-card .wl-edit,.wl-card span.wl-nick,.wl-empty,.wl-admin-actions,[data-waline] p{color:unset}.wl-info .wl-text-number{color:unset;font-size:.75em}.wl-editor,.wl-input{font-family:inherit;font-size:80%}</style><div id=waline data-pagefind-ignore></div><script>Waline.init({el:"#waline",serverURL:"https://co.gregueria.icu/",emoji:["https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif","https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png"],requiredMeta:["name","email","url"],dark:!0,locale:{placeholder:"(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！",admin:"admin"}})</script></div><div><footer class=site-footer><section class=copyright>&copy; 2021 - 2025
-<a href=https://gregueria.icu/>再會，謝謝所有的魚 </a>· <i class="fas fa-bell"></i><a id=days>0</a> Days<br><span>All rights reserved.</span></section><script>var s1="2021-11-12",s1=new Date(s1.replace(/-/g,"/")),s2=new Date,days=s2.getTime()-s1.getTime(),number_of_days=parseInt(days/(1e3*60*60*24));document.getElementById("days").innerHTML=number_of_days</script><script src=/js/clipboard.js></script><script>document.addEventListener("DOMContentLoaded",function(){hljs.highlightAll()})</script></footer><script src=/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js integrity="sha256-OjfnrZnqF2pdNE+2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("post-content");e&&window.ViewImage?ViewImage.init("#post-content img:not([no-view]):not(.emoji):not(#emoji)"):e?console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?"):console.log("Current page does not have #post-content. ViewImage initialization skipped.")})</script><script>document.querySelectorAll("#post-content > img.post-image").forEach(e=>{const t=e.nextSibling;if(t&&t.nodeType===Node.TEXT_NODE&&t.textContent.trim()!==""){const n=document.createElement("figure");n.className="single-image-figure",e.replaceWith(n),n.appendChild(e);const s=document.createElement("figcaption");s.className="image-caption",s.textContent=t.textContent.trim(),n.appendChild(s),t.remove()}})</script><script>(function(){const a="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX",o="向我提问！",r="看到就会回复 :D",c="#ffffff",l="var(--shadow)",d="#ffffff",n=document.createElement("div"),e=document.createElement("div");e.innerText=o,document.body.append(e),n.innerHTML+=`
-    <iframe src="${a}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `;let s=!1,i=!0;e.onclick=()=>{i&&(i=!1,document.body.append(n)),s?(t(n,{top:"100%",bottom:"unset",visibility:"hidden"}),t(e,{bottom:"0px"}),e.innerText=o):(t(n,{top:"unset",bottom:"0px",visibility:"visible"}),t(e,{bottom:"400px"}),e.innerText=r),s=!s},t(e,{position:"fixed",bottom:"0px",right:"0px",background:l,color:c,"font-size":"14px","border-top-left-radius":"10px",padding:"5px 10px",cursor:"pointer"}),t(n,{position:"fixed",top:"100%",right:"0px",width:"300px",height:"400px",background:d,"z-index":"11"});function t(e,t){for(let n in t)e.style[n]=t[n]}})()</script></div></div></main><script src=/js/twemoji.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){twemoji.parse(document.body,{base:"/my-emojis/",folder:"svg",ext:".svg"})})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.dc3ca18d3ff4df59931e80edcc04c2f5024c8f60a7ff23936cd466a6f02019f54c6ab699cb337f932110d056a9db7ea7c21a35a70450c7d908d7ff209c4d4d4f.css" integrity="sha512-3DyhjT/031mTHoDtzATC9QJMj2Cn/yOTbNRmpvAgGfVMaraZyzN/kyEQ0Fap236nwho1pwRQx9kI1/8gnE1NTw==" />
+  
+  
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+
+  
+    <meta name="description" content="本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。">
+    <meta property="og:title" content="关于RSS订阅二三事">
+    <meta property="og:description" content="本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      关于RSS订阅二三事 | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tools">
+  
+  <div class="tools-item">
+    <span class="toggle-icon"></span><a href="/" >✦ Home ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/about" >✦ About ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/posts" >✦ Archive ✦</a>
+  </div>
+  
+  <div class="tools-item">
+    <a href="/links" >✦ Friends ✦</a>
+  </div>
+  
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toolsNav = document.getElementById('tools');
+    if (!toolsNav) return;
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      const toggleIcon = toolsNav.querySelector('.toggle-icon');
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener('click', function(event) {
+          event.stopPropagation();
+          toolsNav.classList.toggle('open');
+        });
+      }
+
+      document.addEventListener('click', function(event) {
+        if (!toolsNav.contains(event.target) && toolsNav.classList.contains('open')) {
+          toolsNav.classList.remove('open');
+        }
+      });
+    }
+  });
+</script>
+
+<article >
+    <h1 data-pagefind-meta="title" t>关于RSS订阅二三事</h1>
+    <div id="post-meta">
+        <time datetime="2024-06-12 00:00:00 &#43;0800 CST">
+            2024-06-12
+            <span> ‧ 2644</span>
+            <span>words</span>
+            ‧ <span> </span>
+            
+                    
+                    <a href="/tags/guidebook">＃Guidebook</a>
+                    
+            
+        </time>
+        
+        <div id="post-description">
+            本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。
+        </div>
+        
+    </div>
+
+    
+    
+<div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+    <details>
+        <summary>📑 Table of Contents</summary>
+        <div>
+            <aside>
+                
+                
+                <nav id="TableOfContentsMobile"> <nav id="TableOfContents">
+  <ul>
+    <li><a href="#我们为什么要用rss阅读">我们为什么要用RSS阅读？</a></li>
+    <li><a href="#rss阅读器">RSS阅读器</a></li>
+    <li><a href="#更重要的其实是rss订阅源">更重要的其实是RSS订阅源</a>
+      <ul>
+        <li><a href="#rsshub的使用方法">RSSHub的使用方法</a></li>
+        <li><a href="#记得定期备份订阅源">记得定期备份订阅源</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他的话">其他的话</a></li>
+  </ul>
+</nav>
+                </nav>
+            </aside>
+        </div>
+    </details>
+</div>
+<hr class="decoration-hr" id="toc-hr">
+<div class="post-toc toc-styled-pc" id="post-toc" data-pagefind-ignore>
+    <header class="post-header-pc">
+    ✦ TOC | 目录 ✦
+    </header>
+    <aside>
+        <nav id="TableOfContentsPC"> 
+            
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#我们为什么要用rss阅读">我们为什么要用RSS阅读？</a></li>
+    <li><a href="#rss阅读器">RSS阅读器</a></li>
+    <li><a href="#更重要的其实是rss订阅源">更重要的其实是RSS订阅源</a>
+      <ul>
+        <li><a href="#rsshub的使用方法">RSSHub的使用方法</a></li>
+        <li><a href="#记得定期备份订阅源">记得定期备份订阅源</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他的话">其他的话</a></li>
+  </ul>
+</nav>
+        </nav>
+    </aside>
+</div>
+
+
+<style>
+     
+    #toc-toggle {
+        display: none;
+    }
+     
+    #TableOfContents ul li:before {
+        content: "";
+        font-weight: bold;
+        margin-right: 0px;
+    }
+</style>
+    
+
+    <div id="post-content"  data-pagefind-body>
+        <p>在我的网络生活里RSS订阅是一个蛮频繁使用的东西，所以来写一篇关于RSS订阅的内容。</p>
+<h2 id="我们为什么要用rss阅读">我们为什么要用RSS阅读？</h2>
+<p>首先，关于“什么是RSS”这个问题，如果读者的了解比较空白，这篇文章讲得比我好：<a href="https://sspai.com/post/56198" target="_blank" rel="noopener noreferrer">RSS：高效率的阅读方式</a>。推荐阅读。</p>
+<p>简单来讲RSS就是一个聚合不同来源信息的订阅工具。</p>
+<p>目前我们刷的微博，小红书，都需要我们进入到它们的APP、网页里才能获取信息，某个我喜欢的博主更新了，基本上都需要下载了这个APP且开启了消息通知，我才能第一时间知晓。并且每一次我进入到这些APP和网页之中，我不可能只读到这个博主一个人的信息，我会在瀑布流里刷到各种各样我不感兴趣的内容。但实际上我只想读那一个人。</p>
+<p>而我喜欢一个博客，我需要经常进去才能知道它有没有更新，这是值得的，因为博客页面也经常包含了对方费劲心机的网页设计，比瀑布流赏心得多。只是当我有几十个喜欢读的博客，想知晓对方是否更新就会变得比较繁琐。</p>
+<p>那么RSS订阅就是来解决这个问题的。</p>
+<h2 id="rss阅读器">RSS阅读器</h2>
+<p>非常多的博客都提供RSS订阅链接，例如本站的导航栏上就有<a href="/index.xml/">订阅链接</a>，这就是一个订阅源。你的订阅对对方的网站没有任何影响，也不会有任何量化反馈。</p>
+<p>有了订阅源以后，你还需要一个阅读器。把这个源添加进入，之后每当有更新，你的阅读器中就会有所显示。关于阅读器的选择，我个人觉得是不需要太纠结精美的形式，不用搞那些花哨的。只是获取信息然后读而已。</p>
+<p>我之前在电脑上下载的是Inoreader，漂亮赏心，不过重装了一次系统后也没有想过下载回来。我发现最好的RSS阅读器还是融入到日常每天都会打开的浏览器中，我后来安装的是浏览器插件<a href="https://chromewebstore.google.com/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp" target="_blank" rel="noopener noreferrer">RSS Feed Reader</a>。</p>
+<img loading='lazy' decoding="async" src="https://lh3.googleusercontent.com/rQfCS1nX6ltv30swrcNCdwTUheBXSGOkrrmdYmCEMvRf8xfFhk8xu9IyZm-4K3Cv041jG3XGlSdw45g_JxUBboR_vQ=s800-w800-h500" alt="" 
+     class="post-image"
+
+/>
+<p>图片来源于官方的截图，不知道能不能顺利显示。我日常把它固定在了浏览器右上角，有更新就会冒出蓝点和数字。因为我至少每天都会打开浏览器，一有更新都会很快地看到。在不同的设备登录浏览器账号的话也会自动同步。所以对我来说非常实用。</p>
+<p>免费版可以添加200个订阅源，有30分钟的更新延迟。但我使用下来好像还是即时更新的。以及下面这个图是它的阅读器页面。只是希望读到想读的内容而已，我没有很高的要求：</p>
+<img loading='lazy' decoding="async" src="https://lh3.googleusercontent.com/_UzgCk7-i1b_1Mv4W-REYumd6Jc9VAYPuDuMTLvvUUpjlIeeVrhCe5oA3YJ_iRLoed74SKR0BDBKppOZ17KZsVzvlQ=s800-w800-h500" alt="" 
+     class="post-image"
+
+/>
+<h2 id="更重要的其实是rss订阅源">更重要的其实是RSS订阅源</h2>
+<p>类似我和很多友邻用的都是Hugo博客，是自带订阅源的。顺带一提，<strong>AO3只要是Tag都是有RSS订阅源提供的</strong>，对于想第一时间知道自家Fandom/CP有没有新故事的人来说非常方便。</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/1.png" alt="" 
+     class="post-image"
+
+/>
+<p>但是还有非常多的信息源是不提供订阅源的，现在的社交平台的现状就是非常封闭，例如微信公众号，它都希望你能在它的APP上进行阅读。但事实上是我既不想打开手机微信，也不想看电脑微信，我只想读特定的内容，不想被瀑布流的内容夺走注意力。</p>
+<p>那么<a href="https://docs.rsshub.app/zh/" target="_blank" rel="noopener noreferrer">RSSHub</a>项目就是来解决订阅源获取的问题的。</p>
+<h3 id="rsshub的使用方法">RSSHub的使用方法</h3>
+<p>我也不太会解释RSSHub是什么样的项目。请把它想象成一个中转站，我想通过RSS订阅一个公众号，但微信不会提供给我订阅源的，那么我就用RSSHub这个中转站，来获取它的订阅源。</p>
+<p>RSSHub可以自己部署，也可以使用公共实例。我之前尝试部署成功过，不过没多久就遗忘掉了。后来一直就使用的是公共实例（<a href="https://docs.rsshub.app/zh/guide/instances" target="_blank" rel="noopener noreferrer">rsshub.app</a>）来作为中转站，获得我想要的订阅源。</p>
+<p>公共实例是稳定的，出于去中心化的考虑，官方鼓励自部署。但对于没有部署经验，没有折腾欲望，很懒，<strong>只想快狠准读完这篇文章立刻就能得到订阅源</strong>的读者来说，推荐直接选择公共实例。</p>
+<p>我很少看公众号，我更常用的是订阅Lofter的Tag，所以在此用这个进行演示。本篇只是一个面向毫无RSSHub、订阅源获取相关知识的读者的操作指引。</p>
+<ol>
+<li>进入官方文档页面。确定你想获取哪个平台的订阅源，在文档中搜索框中进行搜索。常见SNS一般都有。</li>
+</ol>
+<blockquote>
+<p>RSSHub的官方文档地址：<a href="https://docs.rsshub.app/zh/guide/" target="_blank" rel="noopener noreferrer">https://docs.rsshub.app/zh/guide/</a></p></blockquote>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/2.png" alt="" 
+     class="post-image"
+
+/>
+<p>仔细阅读上述内容，你就得到了如上图所示的路由（Route）：<code>/lofter/tag/:name?/:type?</code>，与一些使用的方式。</p>
+<ol start="2">
+<li>将它们按照<strong>实例+路由</strong>的形式组装成你想要订阅的内容。</li>
+</ol>
+<p>我们使用的是公共实例<code>https://rsshub.app/</code>，我要订阅的是Lofter的Tag名是“逆转裁判”的“最新”内容，所以根据使用方法，我需要的路由是<code>/lofter/tag/逆转裁判/new</code>。</p>
+<p>然后进行组装后就得到了订阅源：<code>https://rsshub.app/lofter/tag/逆转裁判/new</code>。</p>
+<p>丢进浏览器里看看能不能顺利显示出RSS的页面（这个页面是因为安装了RSS Feed Reader才这么显示，很可能你看到的页面是一堆代码）。</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/3.png" alt="" 
+     class="post-image"
+
+/>
+<p>（其实我不看逆转裁判Tag，我只是随便想到了就用了。）</p>
+<ol start="3">
+<li>
+<p>把上述订阅源丢到你的RSS阅读器里，然后等待你想看的内容静静地冒出来吧。</p>
+</li>
+<li>
+<p>（可忽略）如果你是用了自部署RSSHub的方法，部署了一个<code>https://example.com/</code>实例，那么上面的订阅源就是<code>https://example.com/lofter/tag/逆转裁判/new</code>，很好理解吧？</p>
+</li>
+</ol>
+<h3 id="记得定期备份订阅源">记得定期备份订阅源</h3>
+<p>除了获取订阅源以外，还想提及一点是，导入进RSS阅读器中的订阅源是可以汇总导出的。</p>
+<p>前篇谈及了我重装一次系统，更换了阅读器。这事发生的很突然，不过因为我偶尔会备份一下，只丢失了后来添加的少部分订阅源。</p>
+<p>订阅源恐怕是你长期收集得来的珍贵宝物与图书馆，如果你的阅读器没有线上同步功能，我个人还是建议大家偶尔可以随手备份一下。现在订阅源的格式一般都是XLS/OPML，想换阅读器了也就是导出导入随手的事。</p>
+<img loading='lazy' decoding="async" src="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/rss/4.png" alt="" 
+     class="post-image"
+
+/>
+<h2 id="其他的话">其他的话</h2>
+<p>RSSHub的Slogan是“万物皆可RSS”。搜了一下确实有各种五花八门的路由。我在用的还有微博，因为有段时间不想上微博但是想看特定的女网友，以及噗浪和推，我实在是用得不顺手但是有网友只玩这个。只能说也算是一个网友订阅器。我订阅器里最多的还是博客，然后就是我CP的Tag。</p>
+<p>顺便一提，因为这种RSS订阅方式一般只能订阅公开内容信息流，像是微博粉丝可见是无法收到的，而很多自定义操作例如屏蔽，也是没有办法做到的。简单来说如果你订阅了AO3上逆转裁判的Tag，但你用自己的账号屏蔽掉了某个作者，但RSS这种方式是不知道的，这个作者在你订阅的Tag下发文了，你照样会收到消息。但无所谓，只是一种信息获取方式，这种小事我不在乎。只要我感兴趣的内容我可以第一时间收到就可以了。</p>
+<p>其他想说的话倒也没有了。本篇是一小时速写出来的RSS安利指南，我真的只是为了让大家都逃避进入Lofter这个垃圾网站阅读才写了这么一大堆。</p>
+
+        
+    </div>
+    <br>
+    <div style="padding-bottom:3px;"></div>
+</article>
+
+<nav class="custom-paginav">
+    
+    <a class="custom-paginav-prev" href="/posts/fetfc/">
+        <span class="custom-paginav-title">« Prev</span><br>
+        <span>Fanfic Elysium：The Final Cut</span>
+    </a>
+    
+    
+    <a class="custom-paginav-next" href="/posts/archiveandlink/">
+        <span class="custom-paginav-title">Next »</span><br>
+        <span>鱼鱼小家的装修笔记</span>
+    </a>
+    
+</nav>
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+<div id="comments" class="comments" data-pagefind-ignore>
+    <style>
+    :root {
+        --waline-color: unset;
+        --waline-bgcolor-light: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline" data-pagefind-ignore></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
+            admin: 'admin',
+        }
+    });
+</script>
+
+</div>
+
+
+    <div>
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+    <script src="/js/clipboard.js"></script>
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
+
+
+
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </main>
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+
+    </body></html>

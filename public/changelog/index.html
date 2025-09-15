@@ -1,15 +1,394 @@
-<!doctype html><html lang=zh-cn><head><meta name=robots content="noindex,nofollow,noarchive"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/main.260a366e640dee9479f69155a552bdc3b7689c978017755b5624991a2c1a2e54d6a2d662a5c0e8d0044a4bf57b565f287f00963f2d512207caf178c2c73144e9.css integrity="sha512-Jgo2bmQN7pR59pFVpVK9w7donJeAF3VbViSZGiwaLlTWotZipcDo0ARKS/V7Vl8ofwCWPy1RIgfK8XjCxzFE6Q=="><link rel=stylesheet href=https://static.zeoseven.com/zsft/69/main/result.css><link rel=stylesheet href=https://fontsapi.zeoseven.com/46/main/result.css><link rel=stylesheet href=/fonts/stdgt/result.css><link id=hljs-theme rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js></script><meta name=description content="📠 更新日志 / Changelog
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.dc3ca18d3ff4df59931e80edcc04c2f5024c8f60a7ff23936cd466a6f02019f54c6ab699cb337f932110d056a9db7ea7c21a35a70450c7d908d7ff209c4d4d4f.css" integrity="sha512-3DyhjT/031mTHoDtzATC9QJMj2Cn/yOTbNRmpvAgGfVMaraZyzN/kyEQ0Fap236nwho1pwRQx9kI1/8gnE1NTw==" />
+  
+  
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+
+  
+    <meta name="description" content="📠 更新日志 / Changelog
 2025/06 更新情况汇总
 
 
-更广泛使用的Fancybox我用起来实在很痛苦，最后引入了view-image实现图片放大。只有2kb大小，你值得拥有jpg"><meta property="og:title" content="站点更新日志 Changelog"><meta property="og:description" content="📠 更新日志 / Changelog
+更广泛使用的Fancybox我用起来实在很痛苦，最后引入了view-image实现图片放大。只有2kb大小，你值得拥有jpg">
+    <meta property="og:title" content="站点更新日志 Changelog">
+    <meta property="og:description" content="📠 更新日志 / Changelog
 2025/06 更新情况汇总
 
 
-更广泛使用的Fancybox我用起来实在很痛苦，最后引入了view-image实现图片放大。只有2kb大小，你值得拥有jpg"><meta property="og:image" content><title>站点更新日志 Changelog | 再會，謝謝所有的魚</title><script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".blur").forEach(function(e){e.addEventListener("click",function(){e.classList.toggle("revealed")})})})</script><link rel="shortcut icon" type=image/x-icon href=/cat/240f9f9b.gif><script defer>function toggleMenu(e){const t=e.nextElementSibling,n=document.querySelectorAll(".menu-content");n.forEach(e=>{e!==t&&(e.style.display="none")}),t.style.display==="none"||t.style.display===""?t.style.display="table-row":t.style.display="none"}</script></head><div id=theme-toggle class=theme-toggle style=position:fixed;top:20px;right:20px;display:flex;gap:5px;z-index:999><div id=light-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.25a.75.75.0 01.75.75v2.25a.75.75.0 01-1.5.0V3a.75.75.0 01.75-.75zM7.5 12a4.5 4.5.0 119 0 4.5 4.5.0 01-9 0zM18.894 6.166a.75.75.0 00-1.06-1.06l-1.591 1.59a.75.75.0 101.06 1.061l1.591-1.59zM21.75 12a.75.75.0 01-.75.75h-2.25a.75.75.0 010-1.5H21a.75.75.0 01.75.75zm-3.916 6.894a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 10-1.061 1.06l1.59 1.591zM12 18a.75.75.0 01.75.75V21a.75.75.0 01-1.5.0v-2.25A.75.75.0 0112 18zM7.758 17.303a.75.75.0 00-1.061-1.06l-1.591 1.59a.75.75.0 001.06 1.061l1.591-1.59zM6 12a.75.75.0 01-.75.75H3a.75.75.0 010-1.5h2.25A.75.75.0 016 12zm.697-4.243a.75.75.0 001.06-1.06l-1.59-1.591a.75.75.0 00-1.061 1.06l1.59 1.591z"/></svg></div><div id=dark-btn><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M9.528 1.718a.75.75.0 01.162.819A8.97 8.97.0 009 6a9 9 0 009 9 8.97 8.97.0 003.463-.69.75.75.0 01.981.98 10.503 10.503.0 01-9.694 6.46c-5.799.0-10.5-4.7-10.5-10.5.0-4.368 2.667-8.112 6.46-9.694a.75.75.0 01.818.162z" clip-rule="evenodd"/></svg></div></div><script>const lightBtn=document.getElementById("light-btn"),darkBtn=document.getElementById("dark-btn"),themeToggle=document.getElementById("theme-toggle");let currentTheme=localStorage.getItem("theme")||"auto";if(currentTheme==="auto"){const e=window.matchMedia("(prefers-color-scheme: dark)").matches;currentTheme=e?"dark":"light"}document.body.setAttribute("a",currentTheme),document.body.classList.add(currentTheme+"-mode");function updateHighlightTheme(){const e=document.getElementById("hljs-theme"),t=document.body.getAttribute("a");if(!e)return;t==="dark"?e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css":e.href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css"}const updateIcons=()=>{currentTheme==="light"?(lightBtn.style.display="block",darkBtn.style.display="none"):(lightBtn.style.display="none",darkBtn.style.display="block")};updateIcons(),updateHighlightTheme();const toggleTheme=()=>{currentTheme==="light"?(document.body.classList.remove("light-mode"),document.body.classList.add("dark-mode"),currentTheme="dark"):(document.body.classList.remove("dark-mode"),document.body.classList.add("light-mode"),currentTheme="light"),localStorage.setItem("theme",currentTheme),document.body.setAttribute("a",currentTheme),updateIcons(),updateHighlightTheme()};themeToggle.addEventListener("click",toggleTheme),window.addEventListener("scroll",()=>{const t=document.documentElement.scrollTop||document.body.scrollTop,n=document.documentElement.scrollHeight||document.body.scrollHeight,s=window.innerHeight||document.documentElement.clientHeight,e=t/(n-s)*100;e>=10&&e<=40?themeToggle.style.opacity=(1-(e-10)/30).toFixed(2):e>40?themeToggle.style.opacity=0:themeToggle.style.opacity=1})</script><body a=auto><main class=page-content aria-label=Content><div class=w><link rel=stylesheet href=/css/_about-nav.css><header><div class=header-container><div class=header-inner><div class=header-left><img src=/cat/tumblrcat.png alt=Icon class=header-img><div><span id=nav data-pagefind-ignore><ul><li><a href=/>Home</a></li><li><a href=/about>About</a></li><li><a href=/posts>Archive</a></li><li><a href=/links>Friends</a></li></ul></span></div></div><div class=header-content><article><div id=post-content><h2 id=-更新日志--changelog>📠 更新日志 / Changelog</h2><h3 id=202506-更新情况汇总>2025/06 更新情况汇总</h3><ul><li><p>更广泛使用的Fancybox我用起来实在很痛苦，最后引入了<a href=https://tokinx.github.io/ViewImage/ target=_blank rel="noopener noreferrer">view-image</a>实现图片放大。只有2kb大小，你值得拥有jpg</p></li><li><p>改了一些七七八八有的没的（？）对了，把CP视频放在Archive里了</p></li><li><p><input disabled type=checkbox> <strong>想写一个能塞更多东西的Archive List。</strong></p></li></ul><hr><details><summary>「 往期装修日志，内容过长折叠 」</summary><h3 id=20250522>2025/05/22</h3><p>修改了目录、导航栏和Status Cafe的样式。</p><p>现在的Status颜色就是抄动森的！这两天又上岛挖挖埋埋了开心。</p><h3 id=20250521-twemoji的应用>2025/05/21 Twemoji的应用</h3><ol><li>又做了一个小小的tools bar放一些书签搜索之类的链接，因为不想放在上方主栏目里（太长了）。<mark>be like：</mark></li></ol><center><img loading=lazy decoding=async src=/blog/Snipaste_2025-05-21_12-12-29.png alt="Tools Bar" class=post-image>
-Tools Bar</center><ol start=2><li>因为嫌弃默认emoji不好看所以搜索了一下，找到了<a href=https://github.com/jakejarvis/hugo-mod-twemoji target=_blank rel="noopener noreferrer">hugo-mod-twemoji</a>这个库！😉twemoji没有描边好看多了！</li></ol><p>指路：<a href=/posts/2025-05-23-Twemoji>《如何在Hugo博客中使用Twemoji🍻》</a></p><h3 id=20250520-网页加载速度问题>2025/05/20 网页加载速度问题</h3><p>终于找到时间狠狠研究了一番到底是为什么我的网页加载速度比之前慢了很多，原来是：</p><ol><li><p>ZeoSeven里有一个字体的CDN出了问题于是一直定向到<code>127.0.0.1</code>，找不到导致阻塞。</p></li><li><p>把站内一些script挪了一下，不要全放在head里面，之前就是没想好怎么放比较好才一股脑……嗯。</p></li><li><p>我在<code>&lt;head></code>里放了太多外部字体了，这个是最主要的问题。实际上我全站只用了3个中文字体2个英文字体吧，把多余的中文字体删掉了。而且汇文那个系列的字体文件超级巨大，我本来是下载的字体，发现压缩后还有8M多轻轻破碎了，我只有英文导航栏用了一下，决定删掉改用外部字体了。</p></li></ol><p>处理完之后加载速度快了不少。</p><p>又及：</p><ul><li>修改了各类标题字体为上图东观体<code>STDongGuanTi</code>。</li><li>新增了<a href=/bookmarks>Bookmarks</a>页面。</li></ul><h3 id=20250514>2025/05/14</h3><ul><li>整理了Tag，做了Tag页。</li><li>改了翻页键。</li><li>用了这里的英文字体：<a href=https://478.neocities.org/catalog/ target=_blank rel="noopener noreferrer">Fonts Catalog</a>，moe&mldr; :3</li></ul><h3 id=20250512>2025/05/12</h3><ul><li>换了个首页样式，重写了about页面（及其layout）:3</li><li>奶牛猫图片来自：<a href="https://www.tumblr.com/snailspng/718136009412509696/i-love-your-blog-so-much-exactly-my-type-of?source=share" target=_blank rel="noopener noreferrer">snailspng</a>（鼠标悬浮逃跑效果很可爱吧，which means “再会”（这么说谁懂。</li><li>新增了代码代码复制与高亮。</li></ul><p>接下来打算做Tag页（finally。</p><h3 id=20250416>2025/04/16</h3><ul><li>增加了移动端目录。</li><li>增加了<a href=/search>搜索</a>页面。</li><li>整理了以往的主题，放进了<a href=/collection>小东西博物馆</a>。</li><li>修改了博客背景图（夜间模式像魔女之家！用的背景在copyright部分都标注了）</li></ul><p>以及存一下Pagefind的生成索引代码：<code>npx pagefind --source public --bundle-dir search</code>。不要每次都去小爱笔记里翻了！</p><h3 id=20250414>2025/04/14</h3><ul><li>恢复了RSS输出，根据<a href=https://zhen-shi.github.io/p/hugo-content-protect-tips/ target=_blank rel="noopener noreferrer">薯饼的文章</a>修改了输出摘要部分。</li><li>在Archive内增加了版权部份的说明（为什么加在这里，因为放在首页太挤了0v0）。</li><li>修改日夜切换按钮</li></ul><h3 id=20250319>2025/03/19</h3><p>给自己加了个Sidebar但不知道加了有啥用（喂）。</p><h3 id=20250318>2025/03/18</h3><ul><li>修改首页布局，增加了猫猫图片。修改了Archive页面显示。之前内容也太长了一点！</li><li>正文字体改为思源黑体（<code>Noto Sans CJK SC</code>）。</li></ul><h3 id=20250123>2025/01/23</h3><p>由于博客被saveweb的聚合页未经问询直接收录，并在要求删掉收录时被对方称为“极端女权”（可见<a href=https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/image.png target=_blank rel="noopener noreferrer">图片</a>），所以关闭了RSS订阅源。</p><h4 id=具体做法>具体做法</h4><p>删除<code>public</code>文件夹中的<code>index.xml</code>，并在<code>config.toml</code>中加入以下内容：</p><div class=highlight><pre tabindex=0><code>[outputs]
-home = [&#34;HTML&#34;]</code></pre><button class=copy-code-button type=button title=Copy>
-<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75.0 010 1.5h-1.5a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-1.5a.75.75.0 011.5.0v1.5A1.75 1.75.0 019.25 16h-7.5A1.75 1.75.0 010 14.25v-7.5z"/><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784.0 6.75.0h7.5C15.216.0 16 .784 16 1.75v7.5A1.75 1.75.0 0114.25 11h-7.5A1.75 1.75.0 015 9.25v-7.5zm1.75-.25a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-7.5a.25.25.0 00-.25-.25h-7.5z"/></svg></button></div><h3 id=20250108>2025/01/08</h3><p>新增<a href=/collection>Collection</a>页面，放一些萌萌的小东西。</p><p>新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。</p><p>修改了评论区的配色，Waline这什么神经刀配色，定义八百个颜色全都用得这么丑。</p><h3 id=20250105>2025/01/05</h3><ul><li><input disabled type=checkbox> 整理文件结构</li><li><input checked disabled type=checkbox> 加一个导航栏替代back to home</li><li><input checked disabled type=checkbox> 增加页脚字数统计</li><li><input checked disabled type=checkbox> 图片放大解决！</li></ul><h3 id=20241229>2024/12/29</h3><p>又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？</p><h4 id=往期主题>往期主题</h4><ul><li><a href=https://rainy-9ie.pages.dev/ target=_blank rel="noopener noreferrer">桌面风格</a>：与当前主题一起，魔改自No Style Please主题。</li><li><a href=https://luna-gregueria.vercel.app/ target=_blank rel="noopener noreferrer">适合野餐的春天</a>：非常美丽的 Luna 主题。</li><li><a href=https://shining.vercel.app/ target=_blank rel="noopener noreferrer">闪闪惹人爱</a>：由 Stack 主题魔改。</li><li><a href=https://gruvbox-theme.vercel.app target=_blank rel="noopener noreferrer">秋冬落叶一般</a>：Gruvbox 主题。</li></ul><h3 id=todo>TODO</h3><ul><li><input checked disabled type=checkbox> 无序列表错行问题</li><li><input disabled type=checkbox> 修改鼠标指针</li><li><input disabled type=checkbox> 修改表格之类的基础样式问题</li><li><input checked disabled type=checkbox> 适配移动端（只能说微微适配啦…）</li><li><input checked disabled type=checkbox> 修改夜晚主题配色</li></ul><h3 id=20241203>2024/12/03</h3><p>新增了Cafe页面，用的是<a href>Status Cafe</a>挂件。</p><p>参考了这个教程：<a href=https://bechnokid.neocities.org/resources/tut_statuscafefeed target=_blank rel="noopener noreferrer">Creating a Feed Reader from StatusCafe</a></p><h3 id=20241123>2024/11/23</h3><p>博客大装修了一番。</p><blockquote><p><strong>Resource Credit</strong></p><ul><li><p>图标来源<a href=https://pixelsafari.neocities.org/favicon/ target=_blank rel="noopener noreferrer">Pixel Safari</a></p></li><li><p>页面设计来源<a href=https://codepen.io/aeon-flexx-dead-girl/pen/RwXmbdQ target=_blank rel="noopener noreferrer">aeon flexx</a></p></li></ul></blockquote><h3 id=装修笔记索引>装修笔记索引</h3><blockquote><p><a href=/posts/archiveandlink/>1. 鱼鱼小家的装修笔记</a></p><p><a href=/posts/decoration/>2. Stack 主题及 Waline 评论区装修笔记</a></p><p><a href=/posts/hugo-luna/>3. Luna 主题装修笔记</a></p></blockquote><h3 id=2022-12-17>2022-12-17</h3><p>主题更换为<a href=https://github.com/schnerring/hugo-theme-gruvbox target=_blank rel="noopener noreferrer">Gruvbox</a>，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：</p><ol><li>将目录修改为默认显示</li><li>配置了 Waline 评论区并修改了配色</li><li>为文章配置了中文字数显示，增加页脚统计</li><li>成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在<code>layouts\partials\comments.html</code>里加了<code>&lt;style></code>标签写样式来解决的这个问题</li></ol><p>因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲<code>hugo</code>生成新的<code>public</code>文件夹，建一个 Public 仓库，把<code>public</code>文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。</p><h3 id=2022-09-14>2022-09-14</h3><p>文章页面打开时实在过分卡顿，排查原因，查到<a href=https://segmentfault.com/a/1190000002970056 target=_blank rel="noopener noreferrer">一篇文章</a>谈到是背景图片显示方式<code>background-attachment: fixed;</code>导致的，一口气注释掉。</p><p>原文提供的优化方法试了几次都会导致字重显示有误（怀疑是<code>::before</code>的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行<code>will-change: auto;</code>应付一下就算完事了，谁知道起不起效果，不管你了！</p><p>不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢<a href=https://blog.mysto.cyou/posts/211028-blognewtheme/ target=_blank rel="noopener noreferrer">咖啡冰河的文章</a>：</p><div class=highlight><pre tabindex=0><code>    img.wl-emoji,
+更广泛使用的Fancybox我用起来实在很痛苦，最后引入了view-image实现图片放大。只有2kb大小，你值得拥有jpg">
+    <meta property="og:image" content="">
+  
+
+  <title>
+    
+      站点更新日志 Changelog | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+
+<link rel="stylesheet" href="/css/_about-nav.css">
+
+<header>
+    <div class="header-container">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                <div  >
+  <span id="nav" data-pagefind-ignore>
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+
+            </div>
+            <div class="header-content">
+                <article>
+                    <div id="post-content">
+                        <h2 id="-更新日志--changelog">📠 更新日志 / Changelog</h2>
+<h3 id="202506-更新情况汇总">2025/06 更新情况汇总</h3>
+<ul>
+<li>
+<p>更广泛使用的Fancybox我用起来实在很痛苦，最后引入了<a href="https://tokinx.github.io/ViewImage/" target="_blank" rel="noopener noreferrer">view-image</a>实现图片放大。只有2kb大小，你值得拥有jpg</p>
+</li>
+<li>
+<p>改了一些七七八八有的没的（？）对了，把CP视频放在Archive里了</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>想写一个能塞更多东西的Archive List。</strong></p>
+</li>
+</ul>
+<hr>
+<details>
+<summary>
+「 往期装修日志，内容过长折叠 」
+</summary>
+<h3 id="20250522">2025/05/22</h3>
+<p>修改了目录、导航栏和Status Cafe的样式。</p>
+<p>现在的Status颜色就是抄动森的！这两天又上岛挖挖埋埋了开心。</p>
+<h3 id="20250521-twemoji的应用">2025/05/21 Twemoji的应用</h3>
+<ol>
+<li>又做了一个小小的tools bar放一些书签搜索之类的链接，因为不想放在上方主栏目里（太长了）。<mark>be like：</mark></li>
+</ol>
+<center>
+<img loading='lazy' decoding="async" src="/blog/Snipaste_2025-05-21_12-12-29.png" alt="Tools Bar" 
+     class="post-image"
+
+/>
+Tools Bar</center>
+<ol start="2">
+<li>因为嫌弃默认emoji不好看所以搜索了一下，找到了<a href="https://github.com/jakejarvis/hugo-mod-twemoji" target="_blank" rel="noopener noreferrer">hugo-mod-twemoji</a>这个库！😉twemoji没有描边好看多了！</li>
+</ol>
+<p>指路：<a href="/posts/2025-05-23-Twemoji">《如何在Hugo博客中使用Twemoji🍻》</a></p>
+<h3 id="20250520-网页加载速度问题">2025/05/20 网页加载速度问题</h3>
+<p>终于找到时间狠狠研究了一番到底是为什么我的网页加载速度比之前慢了很多，原来是：</p>
+<ol>
+<li>
+<p>ZeoSeven里有一个字体的CDN出了问题于是一直定向到<code>127.0.0.1</code>，找不到导致阻塞。</p>
+</li>
+<li>
+<p>把站内一些script挪了一下，不要全放在head里面，之前就是没想好怎么放比较好才一股脑……嗯。</p>
+</li>
+<li>
+<p>我在<code>&lt;head&gt;</code>里放了太多外部字体了，这个是最主要的问题。实际上我全站只用了3个中文字体2个英文字体吧，把多余的中文字体删掉了。而且汇文那个系列的字体文件超级巨大，我本来是下载的字体，发现压缩后还有8M多轻轻破碎了，我只有英文导航栏用了一下，决定删掉改用外部字体了。</p>
+</li>
+</ol>
+<p>处理完之后加载速度快了不少。</p>
+<p>又及：</p>
+<ul>
+<li>修改了各类标题字体为上图东观体<code>STDongGuanTi</code>。</li>
+<li>新增了<a href="/bookmarks">Bookmarks</a>页面。</li>
+</ul>
+<h3 id="20250514">2025/05/14</h3>
+<ul>
+<li>整理了Tag，做了Tag页。</li>
+<li>改了翻页键。</li>
+<li>用了这里的英文字体：<a href="https://478.neocities.org/catalog/" target="_blank" rel="noopener noreferrer">Fonts Catalog</a>，moe&hellip; :3</li>
+</ul>
+<h3 id="20250512">2025/05/12</h3>
+<ul>
+<li>换了个首页样式，重写了about页面（及其layout）:3</li>
+<li>奶牛猫图片来自：<a href="https://www.tumblr.com/snailspng/718136009412509696/i-love-your-blog-so-much-exactly-my-type-of?source=share" target="_blank" rel="noopener noreferrer">snailspng</a>（鼠标悬浮逃跑效果很可爱吧，which means “再会”（这么说谁懂。</li>
+<li>新增了代码代码复制与高亮。</li>
+</ul>
+<p>接下来打算做Tag页（finally。</p>
+<h3 id="20250416">2025/04/16</h3>
+<ul>
+<li>增加了移动端目录。</li>
+<li>增加了<a href="/search">搜索</a>页面。</li>
+<li>整理了以往的主题，放进了<a href="/collection">小东西博物馆</a>。</li>
+<li>修改了博客背景图（夜间模式像魔女之家！用的背景在copyright部分都标注了）</li>
+</ul>
+<p>以及存一下Pagefind的生成索引代码：<code>npx pagefind --source public --bundle-dir search</code>。不要每次都去小爱笔记里翻了！</p>
+<h3 id="20250414">2025/04/14</h3>
+<ul>
+<li>恢复了RSS输出，根据<a href="https://zhen-shi.github.io/p/hugo-content-protect-tips/" target="_blank" rel="noopener noreferrer">薯饼的文章</a>修改了输出摘要部分。</li>
+<li>在Archive内增加了版权部份的说明（为什么加在这里，因为放在首页太挤了0v0）。</li>
+<li>修改日夜切换按钮</li>
+</ul>
+<h3 id="20250319">2025/03/19</h3>
+<p>给自己加了个Sidebar但不知道加了有啥用（喂）。</p>
+<h3 id="20250318">2025/03/18</h3>
+<ul>
+<li>修改首页布局，增加了猫猫图片。修改了Archive页面显示。之前内容也太长了一点！</li>
+<li>正文字体改为思源黑体（<code>Noto Sans CJK SC</code>）。</li>
+</ul>
+<h3 id="20250123">2025/01/23</h3>
+<p>由于博客被saveweb的聚合页未经问询直接收录，并在要求删掉收录时被对方称为“极端女权”（可见<a href="https://pub-219f59729cc7474d97beb0f99a13e6bd.r2.dev/picture/2025/image.png" target="_blank" rel="noopener noreferrer">图片</a>），所以关闭了RSS订阅源。</p>
+<h4 id="具体做法">具体做法</h4>
+<p>删除<code>public</code>文件夹中的<code>index.xml</code>，并在<code>config.toml</code>中加入以下内容：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>[outputs]
+home = [&#34;HTML&#34;]</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><h3 id="20250108">2025/01/08</h3>
+<p>新增<a href="/collection">Collection</a>页面，放一些萌萌的小东西。</p>
+<p>新增了摩卡色的夜间模式，右上角圆点可以点击！但还在寻找这个圆点的优雅代替品。</p>
+<p>修改了评论区的配色，Waline这什么神经刀配色，定义八百个颜色全都用得这么丑。</p>
+<h3 id="20250105">2025/01/05</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 整理文件结构</li>
+<li><input checked="" disabled="" type="checkbox"> 加一个导航栏替代back to home</li>
+<li><input checked="" disabled="" type="checkbox"> 增加页脚字数统计</li>
+<li><input checked="" disabled="" type="checkbox"> 图片放大解决！</li>
+</ul>
+<h3 id="20241229">2024/12/29</h3>
+<p>又改了主题…！希望有时间继续装修成像手写一点的电子手账风格（？</p>
+<h4 id="往期主题">往期主题</h4>
+<ul>
+<li><a href="https://rainy-9ie.pages.dev/" target="_blank" rel="noopener noreferrer">桌面风格</a>：与当前主题一起，魔改自No Style Please主题。</li>
+<li><a href="https://luna-gregueria.vercel.app/" target="_blank" rel="noopener noreferrer">适合野餐的春天</a>：非常美丽的 Luna 主题。</li>
+<li><a href="https://shining.vercel.app/" target="_blank" rel="noopener noreferrer">闪闪惹人爱</a>：由 Stack 主题魔改。</li>
+<li><a href="https://gruvbox-theme.vercel.app" target="_blank" rel="noopener noreferrer">秋冬落叶一般</a>：Gruvbox 主题。</li>
+</ul>
+<h3 id="todo">TODO</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 无序列表错行问题</li>
+<li><input disabled="" type="checkbox"> 修改鼠标指针</li>
+<li><input disabled="" type="checkbox"> 修改表格之类的基础样式问题</li>
+<li><input checked="" disabled="" type="checkbox"> 适配移动端（只能说微微适配啦…）</li>
+<li><input checked="" disabled="" type="checkbox"> 修改夜晚主题配色</li>
+</ul>
+<h3 id="20241203">2024/12/03</h3>
+<p>新增了Cafe页面，用的是<a href="">Status Cafe</a>挂件。</p>
+<p>参考了这个教程：<a href="https://bechnokid.neocities.org/resources/tut_statuscafefeed" target="_blank" rel="noopener noreferrer">Creating a Feed Reader from StatusCafe
+</a></p>
+<h3 id="20241123">2024/11/23</h3>
+<p>博客大装修了一番。</p>
+<blockquote>
+<p><strong>Resource Credit</strong></p>
+<ul>
+<li>
+<p>图标来源<a href="https://pixelsafari.neocities.org/favicon/" target="_blank" rel="noopener noreferrer">Pixel Safari</a></p>
+</li>
+<li>
+<p>页面设计来源<a href="https://codepen.io/aeon-flexx-dead-girl/pen/RwXmbdQ" target="_blank" rel="noopener noreferrer">aeon flexx</a></p>
+</li>
+</ul></blockquote>
+<h3 id="装修笔记索引">装修笔记索引</h3>
+<blockquote>
+<p><a href="/posts/archiveandlink/">1. 鱼鱼小家的装修笔记</a></p>
+<p><a href="/posts/decoration/">2. Stack 主题及 Waline 评论区装修笔记</a></p>
+<p><a href="/posts/hugo-luna/">3. Luna 主题装修笔记</a></p></blockquote>
+<h3 id="2022-12-17">2022-12-17</h3>
+<p>主题更换为<a href="https://github.com/schnerring/hugo-theme-gruvbox" target="_blank" rel="noopener noreferrer">Gruvbox</a>，因为懒所以没有配置右下角的提问箱也没有写装修笔记（喂），主要改动有：</p>
+<ol>
+<li>将目录修改为默认显示</li>
+<li>配置了 Waline 评论区并修改了配色</li>
+<li>为文章配置了中文字数显示，增加页脚统计</li>
+<li>成功把评论区的表情给改大了。不知为何在 CSS 文件里写样式，本地预览生效但推上去却不显示，所以最终是在<code>layouts\partials\comments.html</code>里加了<code>&lt;style&gt;</code>标签写样式来解决的这个问题</li>
+</ol>
+<p>因为不太理解 Git 分支到底怎么更新，我现在驯服这个主题的方式把主题仓库拉下来，更新文章后敲<code>hugo</code>生成新的<code>public</code>文件夹，建一个 Public 仓库，把<code>public</code>文件夹的内容复制过来，更新仓库，把这个仓库作为站点仓库，而非像过去那样把主题仓库作为站点仓库。</p>
+<h3 id="2022-09-14">2022-09-14</h3>
+<p>文章页面打开时实在过分卡顿，排查原因，查到<a href="https://segmentfault.com/a/1190000002970056" target="_blank" rel="noopener noreferrer">一篇文章</a>谈到是背景图片显示方式<code>background-attachment: fixed;</code>导致的，一口气注释掉。</p>
+<p>原文提供的优化方法试了几次都会导致字重显示有误（怀疑是<code>::before</code>的原因），最终也没有找到能够让图片不滚动的方法，图片滚动好像又会导致渲染不及时所以下滑时有短暂的大闪白光效果（）？，所以加了一行<code>will-change: auto;</code>应付一下就算完事了，谁知道起不起效果，不管你了！</p>
+<p>不知道为什么表情变得奇大无比，于是修改了评论区表情的大小和显示方式，现在悬停在它们身上可以获得放大效果，超可爱。感谢<a href="https://blog.mysto.cyou/posts/211028-blognewtheme/" target="_blank" rel="noopener noreferrer">咖啡冰河的文章</a>：</p>
+
+<div class="highlight">
+    <pre tabindex="0"><code>    img.wl-emoji,
     img.vemoji {
         width: 38px;
         vertical-align: sub;
@@ -19,10 +398,686 @@ home = [&#34;HTML&#34;]</code></pre><button class=copy-code-button type=button t
     img.wl-emoji:hover,
     img.vemoji:hover {
         transform: scale(1.75);
-    }</code></pre><button class=copy-code-button type=button title=Copy>
-<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75.0 010 1.5h-1.5a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-1.5a.75.75.0 011.5.0v1.5A1.75 1.75.0 019.25 16h-7.5A1.75 1.75.0 010 14.25v-7.5z"/><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784.0 6.75.0h7.5C15.216.0 16 .784 16 1.75v7.5A1.75 1.75.0 0114.25 11h-7.5A1.75 1.75.0 015 9.25v-7.5zm1.75-.25a.25.25.0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25.0 00.25-.25v-7.5a.25.25.0 00-.25-.25h-7.5z"/></svg></button></div><h3 id=2022-09-10>2022-09-10</h3><p>由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。</p><h4 id=关于版权>关于版权</h4><ol><li>感谢又快又好用的<a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel="noopener noreferrer">Stack</a>主题</li><li>感谢 Home 页的九十年代小猫咪：<a href=https://webneko.net/?white target=_blank rel="noopener noreferrer">It&rsquo;s Neko!</a></li><li>如果你也想要一个站点标题图片：<a href=https://textanim.com/ target=_blank rel="noopener noreferrer">textanim</a></li><li>背景与页脚图片（一个美丽的站点）：<a href=https://cinni.net/web.html#blinkies target=_blank rel="noopener noreferrer">cinni.net</a></li></ol><h3 id=2022-08-30>2022-08-30</h3><p>取消了 Channel.io 聊天气泡.</p><h3 id=2022-07-24>2022-07-24</h3><p>根据芋阿圆的笔记增加了文章段首空两格的 Feature.</p><h3 id=2022-05-24>2022-05-24</h3><p>终于把消失很久的聊天小气泡加上，虽然没有人找我聊天啦 💬</p><h3 id=2022-05-22>2022-05-22</h3><p>终于把页脚的心头大患 Run Time 给改了实现了所有想要的 Feature 了，小鸟立誓再也不会打开装修页面了 😤VS code 也卸载了（假的），再见！</p><h3 id=2022-05-19>2022-05-19</h3><p>经过爆破艰难地更新了船新版本的 Luna，获取了浮动 Toc 并立誓再也不更新主题了</p><h3 id=2022-05-05>2022-05-05</h3><p>站点主题从 Stack 更换为 Luna</p></details><h3 id=2021-11-14-建站日>2021-11-14 建站日</h3><p>拥有了自己的第一个私人博客。</p></div><br><script src=https://unpkg.com/@waline/client@v2/dist/waline.js></script><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=comments class=comments data-pagefind-ignore><style>:root{--waline-color:unset;--waline-bgcolor-light:unset}.wl-card{border:0 solid #eee}.wl-card .wl-quote{border-inline-start:0 dashed rgba(237,237,237,.5)}.wl-card-item{position:relative;display:flex;padding:.2em}.wl-addr{display:none !important;color:transparent !important}.wl-content .vemoji,.wl-content .wl-emoji{display:inline-block;vertical-align:baseline;height:3.4em !important;margin:-.125em .25em}img.wl-emoji,img.vemoji{vertical-align:sub;transition:ease-out .6s}img.wl-emoji:hover,img.vemoji:hover{transform:scale(1.8) !important}.wl-header{display:flex;overflow:hidden;padding:0 4px;border-bottom:0 dashed var(--waline-border-color);border-top-left-radius:0;border-top-right-radius:0}.wl-btn.primary{border-color:transparent !important;background:Peru;color:#fff}@media(max-width:580px){.wl-header-item:not(:last-child){border-bottom:0 dashed var(--waline-border-color)}}:root{--waline-theme-color:Peru;--waline-active-color:Peru;--waline-light-grey:unset;--waline-info-color:unset;--waline-border:0px solid peru}[data-waline] a{color:var(--link-color)}.wl-card .wl-badge{display:inline-block;margin-inline-end:1em;padding:0 .3em;border:2px solid peru;border-radius:4px;color:peru;font-weight:700;font-size:65%}.wl-editor:focus,.wl-input:focus{background:0 0}.wl-panel{background-color:#f2ede6;border:#a38f7d solid 1px;background-image:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.8)),url(/site/bg-rain2_5color1.gif);background-repeat:repeat}body[a=dark] .wl-panel{background-image:none !important;background-color:rgba(23,14,14,.38) !important}.wl-card .wl-delete,.wl-card .wl-like,.wl-card .wl-reply,.wl-card .wl-edit,.wl-card span.wl-nick,.wl-empty,.wl-admin-actions,[data-waline] p{color:unset}.wl-info .wl-text-number{color:unset;font-size:.75em}.wl-editor,.wl-input{font-family:inherit;font-size:80%}</style><div id=waline data-pagefind-ignore></div><script>Waline.init({el:"#waline",serverURL:"https://co.gregueria.icu/",emoji:["https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif","https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs","https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png"],requiredMeta:["name","email","url"],dark:!0,locale:{placeholder:"(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！",admin:"admin"}})</script></div></div></div></div></header><hr class=decoration-hr><footer class=site-footer><section class=copyright>&copy; 2021 - 2025
-<a href=https://gregueria.icu/>再會，謝謝所有的魚 </a>· <i class="fas fa-bell"></i><a id=days>0</a> Days<br><span>All rights reserved.</span></section><script>var s1="2021-11-12",s1=new Date(s1.replace(/-/g,"/")),s2=new Date,days=s2.getTime()-s1.getTime(),number_of_days=parseInt(days/(1e3*60*60*24));document.getElementById("days").innerHTML=number_of_days</script><script src=/js/clipboard.js></script><script>document.addEventListener("DOMContentLoaded",function(){hljs.highlightAll()})</script></footer><script src=/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js integrity="sha256-OjfnrZnqF2pdNE+2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin=anonymous></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("post-content");e&&window.ViewImage?ViewImage.init("#post-content img:not([no-view]):not(.emoji):not(#emoji)"):e?console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?"):console.log("Current page does not have #post-content. ViewImage initialization skipped.")})</script><script>document.querySelectorAll("#post-content > img.post-image").forEach(e=>{const t=e.nextSibling;if(t&&t.nodeType===Node.TEXT_NODE&&t.textContent.trim()!==""){const n=document.createElement("figure");n.className="single-image-figure",e.replaceWith(n),n.appendChild(e);const s=document.createElement("figcaption");s.className="image-caption",s.textContent=t.textContent.trim(),n.appendChild(s),t.remove()}})</script><script>(function(){const a="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX",o="向我提问！",r="看到就会回复 :D",c="#ffffff",l="var(--shadow)",d="#ffffff",n=document.createElement("div"),e=document.createElement("div");e.innerText=o,document.body.append(e),n.innerHTML+=`
-    <iframe src="${a}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `;let s=!1,i=!0;e.onclick=()=>{i&&(i=!1,document.body.append(n)),s?(t(n,{top:"100%",bottom:"unset",visibility:"hidden"}),t(e,{bottom:"0px"}),e.innerText=o):(t(n,{top:"unset",bottom:"0px",visibility:"visible"}),t(e,{bottom:"400px"}),e.innerText=r),s=!s},t(e,{position:"fixed",bottom:"0px",right:"0px",background:l,color:c,"font-size":"14px","border-top-left-radius":"10px",padding:"5px 10px",cursor:"pointer"}),t(n,{position:"fixed",top:"100%",right:"0px",width:"300px",height:"400px",background:d,"z-index":"11"});function t(e,t){for(let n in t)e.style[n]=t[n]}})()</script></div></main><script>document.querySelectorAll("#post-content > img.post-image").forEach(e=>{const t=e.nextSibling;if(t&&t.nodeType===Node.TEXT_NODE&&t.textContent.trim()!==""){const n=document.createElement("figure");n.className="single-image-figure",e.replaceWith(n),n.appendChild(e);const s=document.createElement("figcaption");s.className="image-caption",s.textContent=t.textContent.trim(),n.appendChild(s),t.remove()}})</script><script>(function(){const a="https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX",o="向我提问！",r="看到就会回复 :D",c="#ffffff",l="var(--shadow)",d="#ffffff",n=document.createElement("div"),e=document.createElement("div");e.innerText=o,document.body.append(e),n.innerHTML+=`
-    <iframe src="${a}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `;let s=!1,i=!0;e.onclick=()=>{i&&(i=!1,document.body.append(n)),s?(t(n,{top:"100%",bottom:"unset",visibility:"hidden"}),t(e,{bottom:"0px"}),e.innerText=o):(t(n,{top:"unset",bottom:"0px",visibility:"visible"}),t(e,{bottom:"400px"}),e.innerText=r),s=!s},t(e,{position:"fixed",bottom:"0px",right:"0px",background:l,color:c,"font-size":"14px","border-top-left-radius":"10px",padding:"5px 10px",cursor:"pointer"}),t(n,{position:"fixed",top:"100%",right:"0px",width:"300px",height:"400px",background:d,"z-index":"11"});function t(e,t){for(let n in t)e.style[n]=t[n]}})()</script><script src=/js/twemoji.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){twemoji.parse(document.body,{base:"/my-emojis/",folder:"svg",ext:".svg"})})</script></body></html>
+    }</code></pre>
+    <button class="copy-code-button" type="button" title="Copy">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+        </svg>
+    </button>
+</div><h3 id="2022-09-10">2022-09-10</h3>
+<p>由于 Luna 实在难以驾驭，所以换回了又快又好用的 Stack 主题噗哈哈哈 XD！对主题一番装修，人家的 CSS 知识还没法照顾到移动端的适配，希望不要出太大差错。</p>
+<h4 id="关于版权">关于版权</h4>
+<ol>
+<li>感谢又快又好用的<a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener noreferrer">Stack</a>主题</li>
+<li>感谢 Home 页的九十年代小猫咪：<a href="https://webneko.net/?white" target="_blank" rel="noopener noreferrer">It&rsquo;s Neko!</a></li>
+<li>如果你也想要一个站点标题图片：<a href="https://textanim.com/" target="_blank" rel="noopener noreferrer">textanim</a></li>
+<li>背景与页脚图片（一个美丽的站点）：<a href="https://cinni.net/web.html#blinkies" target="_blank" rel="noopener noreferrer">cinni.net</a></li>
+</ol>
+<h3 id="2022-08-30">2022-08-30</h3>
+<p>取消了 Channel.io 聊天气泡.</p>
+<h3 id="2022-07-24">2022-07-24</h3>
+<p>根据芋阿圆的笔记增加了文章段首空两格的 Feature.</p>
+<h3 id="2022-05-24">2022-05-24</h3>
+<p>终于把消失很久的聊天小气泡加上，虽然没有人找我聊天啦 💬</p>
+<h3 id="2022-05-22">2022-05-22</h3>
+<p>终于把页脚的心头大患 Run Time 给改了实现了所有想要的 Feature 了，小鸟立誓再也不会打开装修页面了 😤VS code 也卸载了（假的），再见！</p>
+<h3 id="2022-05-19">2022-05-19</h3>
+<p>经过爆破艰难地更新了船新版本的 Luna，获取了浮动 Toc 并立誓再也不更新主题了</p>
+<h3 id="2022-05-05">2022-05-05</h3>
+<p>站点主题从 Stack 更换为 Luna</p>
+</details>
+<h3 id="2021-11-14-建站日">2021-11-14 建站日</h3>
+<p>拥有了自己的第一个私人博客。</p>
+
+                    </div>
+                <br>
+                
+                
+                
+                <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+                <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+                
+                <div id="comments" class="comments" data-pagefind-ignore>
+                    <style>
+    :root {
+        --waline-color: unset;
+        --waline-bgcolor-light: unset;
+    }
+    .wl-card {
+        border: 0px solid #eee;
+    }
+
+    .wl-card .wl-quote {
+        border-inline-start: 0px dashed rgba(237, 237, 237, .5);
+    }
+
+    .wl-card-item {
+        position: relative;
+        display: flex;
+        padding: 0.2em;
+    }
+
+    .wl-addr {
+        display: none !important;
+        color: transparent !important;
+    }
+
+    .wl-content .vemoji,
+    .wl-content .wl-emoji {
+        display: inline-block;
+        vertical-align: baseline;
+        height: 3.4em !important;
+        margin: -0.125em 0.25em;
+    }
+
+    img.wl-emoji,
+    img.vemoji {
+        vertical-align: sub;
+        transition: ease-out 0.6s;
+    }
+
+    img.wl-emoji:hover,
+    img.vemoji:hover {
+        transform: scale(1.8) !important;
+    }
+
+    .wl-header {
+        display: flex;
+        overflow: hidden;
+        padding: 0 4px;
+        border-bottom: 0px dashed var(--waline-border-color);
+        border-top-left-radius: 0em;
+        border-top-right-radius: 0em;
+    }
+
+    .wl-btn.primary {
+        border-color: transparent !important;
+        background: Peru;
+        color: white;
+    }
+
+    @media (max-width: 580px) {
+        .wl-header-item:not(:last-child) {
+            border-bottom: 0px dashed var(--waline-border-color);
+        }
+    }
+
+    :root {
+        --waline-theme-color: Peru;
+        --waline-active-color: Peru;
+        --waline-light-grey: unset;
+        --waline-info-color: unset;
+         
+        --waline-border: 0px solid peru;
+    }
+    [data-waline] a {
+        color:  var(--link-color);
+    }
+
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-inline-end: 1em;
+        padding: 0 .3em;
+        border: 2px solid peru;
+        border-radius: 4px;
+        color: peru;
+        font-weight: bold;
+        font-size: 65%;
+    }
+
+    .wl-editor:focus,
+    .wl-input:focus {
+        background: transparent;
+    }
+
+    .wl-panel {
+        background-color: rgb(242, 237, 230);
+         
+         
+         
+        border: rgb(163, 143, 125) solid 1px;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.8)),
+                url('/site/bg-rain2_5color1.gif');
+        background-repeat: repeat;
+    }
+    body[a="dark"] .wl-panel {
+        background-image: none !important;
+        background-color: rgba(23, 14, 14, 0.38) !important;
+    }
+
+    .wl-card .wl-delete,
+    .wl-card .wl-like,
+    .wl-card .wl-reply,
+    .wl-card .wl-edit,
+    .wl-card span.wl-nick,
+    .wl-empty, .wl-admin-actions,
+    [data-waline] p {
+        color: unset;
+    }
+
+    .wl-info .wl-text-number {
+        color: unset;
+        font-size: .75em;
+    }
+    .wl-editor, .wl-input {
+    font-family: inherit;
+        font-size: 80%;
+    }
+
+</style>
+<div id="waline" data-pagefind-ignore></div>
+<script>
+    Waline.init({
+        el: "#waline",
+        serverURL: "https://co.gregueria.icu/",
+        emoji: [
+            "https://cdn.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+            "https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs",
+            "https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png",
+        ],
+        requiredMeta: ["name", "email", "url"],
+        dark: true,
+        locale: {
+            placeholder: '(つ´ω`)つ评论区开了防护模式，因此评论不会第一时间显示出来。但这里有小豆泥表情，依然欢迎肆无忌惮地使用！',
+            admin: 'admin',
+        }
+    });
+</script>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<hr class="decoration-hr">
+
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+    <script src="/js/clipboard.js"></script>
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
+
+
+
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+
+            </div>
+        </main>
+    
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+    </body>
+</html>

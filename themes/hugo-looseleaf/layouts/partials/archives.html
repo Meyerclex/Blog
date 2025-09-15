@@ -1,0 +1,64 @@
+<div class="postslist">
+    <div class="post-head-wrapper-text-only">
+        {{- $type := .Type -}}
+        {{- $scratch := newScratch -}}
+        {{- $articles_cat := (where (where .Site.RegularPages "Type" $type) "Params.hidden" "!=" true) -}}
+        {{- $articles_cat_count := len $articles_cat -}}
+        {{- range (where (where .Site.RegularPages "Type" $type) "Params.hidden" "!=" true) -}}
+        {{- $scratch.Add "allwordcount" .WordCount -}}
+        {{- end -}}
+    </div>
+
+    <div class="content">
+        {{/* ===== Paginator ===== */}}
+        {{ $pages := where (where .Site.RegularPages "Type" .Type) "Params.hidden" "!=" true }}
+        {{ $paginator := .Paginate $pages 20 }}
+
+        {{/* ===== Yearly archive: 预先计算每年的文章总数（仅包含可见文章）===== */}}
+        {{- $yearlyCount := newScratch -}}
+        {{- range ($pages.GroupByDate "2006") -}}
+            {{- $yearlyCount.Set .Key (len .Pages) -}}
+        {{- end -}}
+
+        <div>
+            {{- $currentYear := now.Format "2006" | int -}}
+            {{- range $paginator.Pages.GroupByDate "2006" }}
+                {{- $articles_yearly := .Pages -}}
+                {{- $articles_yearly_count := $yearlyCount.Get .Key -}}
+                {{- $year := .Key | int -}}
+
+                {{ if and (gt $articles_yearly_count 0) }}
+                <h3 class="archive--year">
+                    {{ .Key }} / {{ $articles_yearly_count }} {{ if ne $articles_cat_count 1 }}entries{{ else }}entry{{ end }}
+                </h3>
+
+                {{ if eq $year $currentYear }}
+                    <ul>
+                    {{- range $articles_yearly }}
+                        <li>
+                        <span>{{ .Date.Format "01-02" }}</span>&emsp;
+                        <a href="{{ .RelPermalink }}">
+                            {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
+                        </a>
+                        </li>
+                    {{- end }}
+                    </ul>
+                {{ else }}
+                    <ul>
+                        {{- range $articles_yearly }}
+                        <li>
+                            <span>{{ .Date.Format "01-02" }}</span>&emsp;
+                            <a href="{{ .RelPermalink }}">
+                            {{ if .Draft }}{{ i18n "draft" }}{{ end }}{{ .Title }}
+                            </a>
+                        </li>
+                        {{- end }}
+                    </ul>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+
+    {{ partial "pagination.html" . }}
+</div>

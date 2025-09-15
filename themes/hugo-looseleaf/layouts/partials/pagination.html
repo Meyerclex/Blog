@@ -1,0 +1,81 @@
+<nav class="pagination">
+  {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}">◀️</a>
+  {{ end }}
+
+  {{ range .Paginator.Pagers }}
+    <a href="{{ .URL }}" class="{{ if eq . .Paginator }}active{{ end }}">
+      {{ .PageNumber }}
+    </a>
+  {{ end }}
+
+  {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}">▶️</a>
+  {{ end }}
+</nav>
+<script>
+// 获取需要动态更新的容器
+const postslistContainer = document.getElementById('postslist');
+const paginationNav = document.getElementById('pagination-nav');
+
+if (postslistContainer && paginationNav) {
+    document.addEventListener('click', function(event) {
+        // 检查点击的元素是否是分页链接
+        const target = event.target.closest('#pagination-nav a');
+
+        // 如果点击的不是分页链接，直接返回
+        if (!target) return;
+
+        // 阻止默认的链接跳转行为
+        event.preventDefault();
+        
+        // 获取下一页的 URL
+        const newUrl = target.href;
+
+        // 使用 Fetch API 获取新页面的内容
+        fetch(newUrl)
+            .then(response => response.text())
+            .then(html => {
+                // 创建一个临时 div 来解析返回的 HTML
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = html;
+
+                // 提取新的文章列表和分页器内容
+                const newPostslist = tempDiv.querySelector('#postslist');
+                const newPagination = tempDiv.querySelector('#pagination-nav');
+
+                if (newPostslist && newPagination) {
+                    // 替换当前页面内容
+                    postslistContainer.innerHTML = newPostslist.innerHTML;
+                    paginationNav.innerHTML = newPagination.innerHTML;
+
+                    // 可选：平滑滚动到页面顶部
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    // 更新浏览器 URL，不引起页面刷新
+                    history.pushState({}, '', newUrl);
+                }
+            })
+            .catch(error => console.error('Error fetching the new page:', error));
+    });
+}
+</script>
+<style>
+    .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+@media (min-width: 768px) {
+    .postslist .content {
+        min-height: 680px; /* 在桌面端设置最小高度 */
+    }
+}
+</style>
