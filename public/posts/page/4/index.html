@@ -262,30 +262,34 @@
     </div>
 
     <nav class="pagination">
-  
-    <a href="/posts/page/3/">◀️</a>
-  
+    
+        <a href="/posts/page/3/">◀️</a>
+    
 
-  
-    <a href="/posts/" class="">
-      1
-    </a>
-  
-    <a href="/posts/page/2/" class="">
-      2
-    </a>
-  
-    <a href="/posts/page/3/" class="">
-      3
-    </a>
-  
-    <a href="/posts/page/4/" class="">
-      4
-    </a>
-  
+    
+        <a href="/posts/" class="">
+            1
+        </a>
+    
+        <a href="/posts/page/2/" class="">
+            2
+        </a>
+    
+        <a href="/posts/page/3/" class="">
+            3
+        </a>
+    
+        <a href="/posts/page/4/" class="">
+            4
+        </a>
+    
 
-  
+    
+        <a href="#" class="disabled">📌</a>
+    
 </nav>
+
+
 <script>
 
 const postslistContainer = document.getElementById('postslist');
@@ -337,7 +341,7 @@ if (postslistContainer && paginationNav) {
     .pagination {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
 }
 
@@ -345,11 +349,17 @@ if (postslistContainer && paginationNav) {
     display: block;
     padding: 8px 12px;
     text-decoration: none;
+    font-size: 90%;  
 }
 @media (min-width: 768px) {
     .postslist .content {
         min-height: 680px;  
     }
+}
+.pagination a.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
 }
 </style>
 </div>

@@ -1,18 +1,24 @@
 <nav class="pagination">
-  {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}">◀️</a>
-  {{ end }}
+    {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}">◀️</a>
+    {{ else }}
+        <a href="#" class="disabled">📍</a>
+    {{ end }}
 
-  {{ range .Paginator.Pagers }}
-    <a href="{{ .URL }}" class="{{ if eq . .Paginator }}active{{ end }}">
-      {{ .PageNumber }}
-    </a>
-  {{ end }}
+    {{ range .Paginator.Pagers }}
+        <a href="{{ .URL }}" class="{{ if eq . .Paginator }}active{{ end }}">
+            {{ .PageNumber }}
+        </a>
+    {{ end }}
 
-  {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}">▶️</a>
-  {{ end }}
+    {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}">▶️</a>
+    {{ else }}
+        <a href="#" class="disabled">📌</a>
+    {{ end }}
 </nav>
+
+
 <script>
 // 获取需要动态更新的容器
 const postslistContainer = document.getElementById('postslist');
@@ -64,7 +70,7 @@ if (postslistContainer && paginationNav) {
     .pagination {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
 }
 
@@ -72,10 +78,16 @@ if (postslistContainer && paginationNav) {
     display: block;
     padding: 8px 12px;
     text-decoration: none;
+    font-size: 90%; /* 这里添加了 font-size 规则 */
 }
 @media (min-width: 768px) {
     .postslist .content {
         min-height: 680px; /* 在桌面端设置最小高度 */
     }
+}
+.pagination a.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
 }
 </style>
