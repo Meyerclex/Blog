@@ -334,7 +334,6 @@ details {
 }
 
 .w {
-  max-width: 740px;
   margin: 0 auto;
   padding: 1rem 2rem;
 }
@@ -481,7 +480,7 @@ img.float-img50 {
   }
 
   .w {
-    max-width: 740px;
+    max-width: 840px;
     margin: 0 auto;
     padding: 1rem 0.5rem;
   }
@@ -650,7 +649,7 @@ ul p {
 
 /* 现有的 .w 样式 */
 .w {
-  max-width: 740px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 1rem 2rem;
   position: relative; /* 使得子元素的绝对定位相对于它 */
@@ -658,7 +657,7 @@ ul p {
 
 @media (max-width: 768px) {
   .w {
-    max-width: 740px;
+    max-width: 840px;
     margin: 0 auto;
     padding: 1rem 0.5rem;
   }
