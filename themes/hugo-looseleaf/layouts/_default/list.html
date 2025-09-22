@@ -1,8 +1,44 @@
 {{ define "main" }}
-{{ partial "nav.html" .}}
+{{ $aboutNav := resources.Get "css/_about-nav.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $aboutNav.RelPermalink }}">
+<style>
 
-<h1>{{ .Title }}</h1>
+</style>
 
-{{ .Content }}
-{{ partial "post_list.html" (dict "context" . "section" .Section)}}
+<header>
+    <div class="header-container" style="min-height: 70vh">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                {{ partial "nav_index" . }}
+            </div>
+            <div class="header-content">
+            <h2>{{ .Title }}</h2>
+            <div id="taxonomy-list" >
+                {{- $posts := .Pages }}
+                {{- $posts = where $posts "Params.draft" "ne" true }}
+                {{- $posts = where $posts "Params.hidden" "ne" true }}
+                {{- range $post := $posts }}
+                <div class="tags" >
+                    <a href="{{ $post.Permalink | relURL }}"><span class="tag">＃ {{ $post.Title }} </span></a>
+                </div>
+                {{- end }}
+
+
+            </div>
+                <div class="taxonomy-content">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<style>
+    .w {
+    min-width: 780px;
+}
+</style>
+
+<hr class="decoration-hr">
+{{ partial "footer.html" . }}
 {{ end }}
