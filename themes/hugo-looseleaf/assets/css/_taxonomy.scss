@@ -1,6 +1,8 @@
 
 // Tag
 
+
+
 #taxonomy-list {
   display: flex;
   flex-wrap: wrap; /* 允许换行 */
@@ -23,7 +25,7 @@
 
 #taxonomy-list .tags .tag {
   border: solid 1px var(--color-bg-code);
-  background: var(--neodb-card-color);
+  background: var(--term-btn-bg);
   border-radius: 5px;
   padding: 5px 10px;
 }

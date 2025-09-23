@@ -1,5 +1,7 @@
 
 /* --- 全局 TOC 样式 --- */
+
+
 .toc {
   padding: 1rem;
   border: thin solid var(--text-color);
@@ -82,7 +84,7 @@
     border: 1px solid var(--color-bg-code);
     padding: 0.75rem;
     border-radius: 6px;
-    background-color: var(--neodb-card-color);
+    background-color: var(--term-btn-bg);
   }
 
   .post-toc-mobile summary {

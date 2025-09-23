@@ -70,6 +70,14 @@
   --bubble-box-shadow: #74507c;
 }
 
+:root {
+  --term-btn-bg: rgba(255, 245, 245, 0.505);
+}
+
+[a="dark"] {
+  --term-btn-bg: rgba(35, 18, 53, 0.65);
+}
+
 // 应用主题样式
 body[a="dark"] {
   position: relative; /* 确保伪元素的定位不受其他元素影响 */
@@ -562,7 +570,7 @@ ul p {
   margin: 1rem 0;
   line-height: 1.6;
   border-radius: 5px;
-  background: var(--neodb-card-color);
+  background: var(--term-btn-bg);
   border: 1px solid var(--color-bg-code);
   overflow: hidden;
 }
@@ -711,7 +719,7 @@ th, td {
 }
 
 th {
-  background-color: var(--neodb-card-color);
+  background-color: var(--term-btn-bg);
   border-bottom: 1px solid var(--color-bg-code);
   border-radius: 8px 8px 0 0; /* 顶部标题栏圆角 */
   font-weight: normal;
