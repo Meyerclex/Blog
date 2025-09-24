@@ -22,17 +22,17 @@
         </div>
       </div>
           </div>
-          <div id="post-list-wrapper">
-              <div id="post-list">
-              {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 13 }}
-              {{ range $paginator.Pages }}
-                  <div class="post-item">
-                      <a href="{{ .Permalink }}" class="post-link">{{ .Title }}</a>
-                      <span class="post-date">{{ .Date.Format "Jan 02" }}</span>
-                  </div>
-              {{ end }}
-              </div>
-              {{ if gt $paginator.TotalPages 1 }}
+            <div id="post-list-wrapper">
+                <div id="post-list">
+                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 13 }}
+                {{ range (where $paginator.Pages "Params.hidden" "!=" true) }}
+                    <div class="post-item">
+                        <a href="{{ .Permalink }}" class="post-link">{{ .Title }}</a>
+                        <span class="post-date">{{ .Date.Format "Jan 02" }}</span>
+                    </div>
+                {{ end }}
+                </div>
+                {{ if gt $paginator.TotalPages 1 }}
                 <div class="pagination">
                 <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ else }}#{{ end }}" class="pagination-link{{ if not $paginator.HasPrev }} disabled{{ end }}">Prev</a>
 
@@ -42,8 +42,8 @@
 
                 <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ else }}#{{ end }}" class="pagination-link{{ if not $paginator.HasNext }} disabled{{ end }}">Next</a>
                 </div>
-              {{ end }}
-          </div>
+                {{ end }}
+            </div>
         </div>
       </div>
     </div>
