@@ -9,3 +9,37 @@
 </div>
 
 
+<style>
+    .header-inner .header-left li {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 100%;
+        margin: 0;
+        text-transform: lowercase;
+    }
+    .header-inner .header-left li {
+    padding: 0 0rem;
+}
+    .header-inner .header-left li a {
+        /* background: var(--bg-color); */
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+    .header-inner .header-left li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
+.header-inner .header-left ul {
+  margin-top: 70px;
+  min-width: 10vh;
+ }
+@media (max-width: 768px) {
+ .header-inner .header-left li {
+    text-align: center; /* 移动端文字居中 */
+  }
+  .header-inner .header-left ul {
+    margin-top: 10px;
+    min-width: auto;
+}
+}
+</style>

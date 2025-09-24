@@ -40,7 +40,13 @@
   margin-right: 10px;
 }
 #term .header-container {
-  padding: 5em 0;
+  padding: 0em 0;
+}
+@media screen and (max-width: 600px) { 
+   #term .header-container {
+    padding: 0em 0; 
+}
+
 }
 
 .tags a:hover {
@@ -55,7 +61,10 @@
   */
   transition: box-shadow 0.5s ease; /* 只为阴影添加过渡动画 */
 }
-
+.tags a {
+  color: var(--talk-bubble-border-text-color);
+  font-size: 90%;
+}
 .tag:hover {
   /* 悬停时的样式 - 弥散且无偏移的阴影 */
   box-shadow: 0 0 15px var(--mark); /* 水平偏移 0，垂直偏移 0，模糊半径 15px，扩散半径 0，颜色透明度 0.3 */

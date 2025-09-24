@@ -2,104 +2,69 @@
 <header>
     <div class="header-container">
         <div class="header-inner">
-            <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
-            <div class="header-content">
-                <h1 id="special-h1">
-                    <span class="h1-pc">再會，<br>謝謝所有的魚</span>
-                    <span class="h1-mobile">再會，<br>謝謝所有<br>的魚</span>
-                </h1>
-                {{ partial "nav_index.html" . }}
-            </div>
+                    <div class="site-title">再會，謝謝所有的魚🍃</div>
+                    <div>
+                        <ul>
+                            {{ range .Site.Menus.main }}
+                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                            {{ end }}
+                        </ul>
+                        
+                    </div>
         </div>
     </div>
 </header>
 
 
+<!--{{ partial "sidebar.html" . }}-->
+{{ partial "footer.html" . }}
+
 <style>
+.header-inner {
+    /* width: 200px; */
+}
+    
+.site-title {
+    text-align: left;
+    font-family: "NanoOldSong-A";
+    font-weight: normal;
+        color: var(--talk-bubble-border-text-color);
+        font-size: 140%;
+            margin-left: -5px;
+
+}
+    .header-inner li {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 100%;
+        margin: 0;
+        text-transform: lowercase;
+        
+    }
+    .header-inner li {
+    padding: 0 0rem;
+}
+    .header-inner ul li a {
+        /* background: var(--bg-color); */
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+    ul li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
 
     .header-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        height: 85vh;
     }
-
-    .header-inner {
-        display: flex;
-        align-items: center;
+    .copyright {
+        color: var(--talk-bubble-border-text-color);
     }
-
-    .header-img {
-        width: 230px;
-        object-fit: cover;
-        object-position: center;
-        filter: drop-shadow(10px 2px 0px var(--index-shadow));
-        margin: -1em -1.6em -1em -1em;
-        /* 不要 z-index: -1，确保图片可以响应 hover */
-        transition: transform 0.2s ease;
-        animation: none;
-
-        /* 禁止选中拖拽 */
-        user-select: none;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-    }
-
-
-
-    .header-content {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    .header-content h1 {
-        filter: drop-shadow(4px 2px 0px var(--index-shadow));
-        letter-spacing: -5px;
-        margin: 0 0 -0.2em -0.6em;
-        font-size: 45px;
-        line-height: 1em;
-    }
-
-    /* 保证 nav 始终在最前层 */
-    #nav {
-        position: relative;
-        z-index: 10;
-    }
-
-    #nav ul li {
-        padding: 0 0.5rem 0 0;
-        margin: 0 0 -0.3em -1em;
-        text-transform: lowercase;
-        font-family: Courier New, cursive;
-        letter-spacing: 0em;
-    }
-
-    #nav ul li a:hover {
-        background-color: var(--mark);
-    }
-    /* 默认显示 PC 版，隐藏移动版 */
-    .h1-mobile {
-        display: none;
-    }
-    .h1-pc {
-        display: inline;
-    }
-
-    /* 小屏幕时：显示移动版，隐藏 PC 版 */
-    @media screen and (max-width: 600px) {
-        .h1-mobile {
-            display: inline;
-        }
-        .h1-pc {
-            display: none;
-        }
-    }
-
+    
 </style>
 
-<!--{{ partial "sidebar.html" . }}-->
-{{ partial "footer.html" . }}
 {{ end }}
+

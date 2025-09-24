@@ -1,30 +1,273 @@
 {{ define "main" }}
 {{ $aboutNav := resources.Get "css/_about-nav.scss" | toCSS }}
 <link rel="stylesheet" href="{{ $aboutNav.RelPermalink }}">
+<body>
+  <div class="main-container">
+    <div class="content-wrapper">
+      <ul>
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+
+      <div class="centered-div">
+        <div class="content-div">
+          <div id="post-list-wrapper">
+              <div class="tag-header">
+                <a href="/tags/" class="back-link">/tags/</a><span class="tags-name">{{ .Title }}</span>
+              </div>
+              <div id="post-list">
+              {{ $paginator := .Paginate .Pages 13 }}
+              {{ range $paginator.Pages }}
+                  <div class="post-item">
+                      <a href="{{ .Permalink }}" class="post-link">{{ .Title }}</a>
+                      <span class="post-date">{{ .Date.Format "Jan 02" }}</span>
+                  </div>
+              {{ end }}
+              </div>
+              {{ if gt $paginator.TotalPages 1 }}
+                <div class="pagination">
+                <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ else }}#{{ end }}" class="pagination-link{{ if not $paginator.HasPrev }} disabled{{ end }}">Prev</a>
+                {{ range $paginator.Pagers }}
+                <a href="{{ .URL }}" class="pagination-link{{ if eq . $paginator }} active{{ end }}">{{ .PageNumber }}</a>
+                {{ end }}
+                <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ else }}#{{ end }}" class="pagination-link{{ if not $paginator.HasNext }} disabled{{ end }}">Next</a>
+                </div>
+              {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
 <style>
+    .tag-header a, .tags-name {
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+
+/* 字体设置 */
+body {
+    font-family: "Zen Maru Gothic";
+    font-weight: normal;
+}
+
+/* 博客主要内容容器 */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    position: relative;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-div {
+    z-index: 7;
+    width: 780px;
+    height: 500px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+}
+
+/* 导航列表样式 */
+.content-wrapper ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.content-wrapper ul li {
+    margin: 0 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+}
+
+.content-wrapper ul li a {
+    color: var(--talk-bubble-border-text-color);
+    text-transform: lowercase;
+}
+
+.content-wrapper ul li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
+
+/* 帖子列表样式 */
+#post-list-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    margin-left: 10px;
+    position: relative;
+}
+
+#post-list {
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+}
+
+.post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    font-size: 90%;
+}
+
+.post-item a {
+    color: var(--talk-bubble-border-text-color);
+}
+
+.post-item a:hover {
+    background-color: var(--bg-color);
+}
+
+.post-date {
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--bg-color);
+}
+
+/* 标签头部样式 */
+.tag-header {
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: var(--talk-bubble-border-text-color);
+}
+
+.tag-header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tag-header .tags-name {
+    font-weight: bold;
+    color: var(--talk-bubble-border-text-color);
+    /* text-transform: capitalize; */
+}
+
+/* 分页器样式 */
+.pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.pagination a {
+    color: var(--talk-bubble-border-text-color);
+}
+
+.pagination-link {
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--talk-bubble-border-text-color);
+    background-color: var(--bg-color);
+    white-space: nowrap;
+}
+
+.pagination-link.active {
+    background-color: var(--talk-bubble-border-text-color);
+    color: var(--bg-color);
+}
+
+body[a="dark"] .pagination-link.active {
+    background-color: #bc8faf !important;
+    color: var(--bg-color);
+}
+
+.pagination-link.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+    .main-container,
+    .content-wrapper,
+    .centered-div {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-wrapper ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 5px 0;
+    }
+
+    .content-wrapper ul li {
+        margin: 0px 0;
+    }
+
+    #post-list-wrapper {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        overflow-y: visible;
+        padding: 0 10px;
+    }
+
+    .centered-div {
+        border-radius: 0;
+    }
+
+    .post-item {
+        margin: 5px 0;
+        padding: 0 10px;
+    }
+
+    .note-box {
+        display: none;
+    }
+
+    .pagination {
+        position: static;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .tag-header {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
 
 </style>
-<header id="term" style="min-height: 70vh">
-    <div class="header-container">
-        <div class="header-inner" >
-            <div class="header-left">
-                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
-                {{ partial "nav_index" . }}
-            </div>
-            <div class="header-content">
-                <h2>
-                    <a href="{{ .Data.Plural | urlize | relURL }}">{{ .Data.Plural | title }}</a> / {{ .Title }}
-                </h2>
-                <div id="term-list">
-                {{ partial "post_list.html" (dict "context" .)}}
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
 <hr class="decoration-hr">
 {{ partial "footer.html" . }}
 {{ end }}

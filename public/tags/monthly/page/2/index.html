@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.02e5f28f03542a67a688b331db1d1240cd3134c9478dcd4f15a57f09d118f50d90dbf9550d5cdd18d1d4b9e691c64e2a6db456c8eec91dba828f6e61ea725c59.css" integrity="sha512-AuXyjwNUKmemiLMx2x0SQM0xNMlHjc1PFaV/CdEY9Q2Q2/lVDVzdGNHUueaRxk4qbbRWyO7JHbqCj25h6nJcWQ==" />
+  
+  
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/467/main/result.css' />
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/305/main/result.css' />
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+
+  
+
+  <title>
+    
+      Monthly | 再會，謝謝所有的魚
+    
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+
+<link rel="stylesheet" href="/css/_about-nav.css">
+<body>
+  <div class="main-container">
+    <div class="content-wrapper">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+          <li><a href="/posts">Archive</a></li>
+        
+          <li><a href="/links">Friends</a></li>
+        
+      </ul>
+
+      <div class="centered-div">
+        <div class="content-div">
+          <div id="post-list-wrapper">
+              <div class="tag-header">
+                <a href="/tags/" class="back-link">/tags/</a><span class="tags-name">Monthly</span>
+              </div>
+              <div id="post-list">
+              
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/8tips/" class="post-link">生活的撇步也应逐一记录</a>
+                      <span class="post-date">Apr 28</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/maco/" class="post-link">神压在了你身上</a>
+                      <span class="post-date">Mar 27</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/chosenfamily/" class="post-link">战士的选择</a>
+                      <span class="post-date">Mar 08</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/safeandhealthy/" class="post-link">如果生病，一个人</a>
+                      <span class="post-date">Sep 10</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/thekitchen/" class="post-link">我的厨房</a>
+                      <span class="post-date">Aug 17</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/living-alone/" class="post-link">当我们谈论独居时</a>
+                      <span class="post-date">Aug 08</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/all-alone/" class="post-link">是问题构成了这个世界</a>
+                      <span class="post-date">Jul 07</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/rent/" class="post-link">拉断一根尼龙绳</a>
+                      <span class="post-date">Jun 14</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/bird-valley/" class="post-link">小鸟半月刊</a>
+                      <span class="post-date">Apr 13</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/decisiontostay/" class="post-link">而这使你充满了决心</a>
+                      <span class="post-date">Mar 29</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/2023-03-24/" class="post-link">做六分片观众</a>
+                      <span class="post-date">Mar 24</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/messy-stuff/" class="post-link">我所拥有的相对丰饶的实体生活</a>
+                      <span class="post-date">Jan 27</span>
+                  </div>
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/2023-1-3/" class="post-link">未来属于勇敢的人</a>
+                      <span class="post-date">Jan 04</span>
+                  </div>
+              
+              </div>
+              
+                <div class="pagination">
+                <a href="/tags/monthly/" class="pagination-link">Prev</a>
+                
+                <a href="/tags/monthly/" class="pagination-link">1</a>
+                
+                <a href="/tags/monthly/page/2/" class="pagination-link active">2</a>
+                
+                <a href="/tags/monthly/page/3/" class="pagination-link">3</a>
+                
+                <a href="/tags/monthly/page/4/" class="pagination-link">4</a>
+                
+                <a href="/tags/monthly/page/3/" class="pagination-link">Next</a>
+                </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<style>
+    .tag-header a, .tags-name {
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+
+ 
+body {
+    font-family: "Zen Maru Gothic";
+    font-weight: normal;
+}
+
+ 
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    position: relative;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-div {
+    z-index: 7;
+    width: 780px;
+    height: 500px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+}
+
+ 
+.content-wrapper ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.content-wrapper ul li {
+    margin: 0 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+}
+
+.content-wrapper ul li a {
+    color: var(--talk-bubble-border-text-color);
+    text-transform: lowercase;
+}
+
+.content-wrapper ul li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
+
+ 
+#post-list-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    margin-left: 10px;
+    position: relative;
+}
+
+#post-list {
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+}
+
+.post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    font-size: 90%;
+}
+
+.post-item a {
+    color: var(--talk-bubble-border-text-color);
+}
+
+.post-item a:hover {
+    background-color: var(--bg-color);
+}
+
+.post-date {
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--bg-color);
+}
+
+ 
+.tag-header {
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: var(--talk-bubble-border-text-color);
+}
+
+.tag-header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tag-header .tags-name {
+    font-weight: bold;
+    color: var(--talk-bubble-border-text-color);
+     
+}
+
+ 
+.pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.pagination a {
+    color: var(--talk-bubble-border-text-color);
+}
+
+.pagination-link {
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--talk-bubble-border-text-color);
+    background-color: var(--bg-color);
+    white-space: nowrap;
+}
+
+.pagination-link.active {
+    background-color: var(--talk-bubble-border-text-color);
+    color: var(--bg-color);
+}
+
+body[a="dark"] .pagination-link.active {
+    background-color: #bc8faf !important;
+    color: var(--bg-color);
+}
+
+.pagination-link.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+ 
+@media (max-width: 768px) {
+    .main-container,
+    .content-wrapper,
+    .centered-div {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-wrapper ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 5px 0;
+    }
+
+    .content-wrapper ul li {
+        margin: 0px 0;
+    }
+
+    #post-list-wrapper {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        overflow-y: visible;
+        padding: 0 10px;
+    }
+
+    .centered-div {
+        border-radius: 0;
+    }
+
+    .post-item {
+        margin: 5px 0;
+        padding: 0 10px;
+    }
+
+    .note-box {
+        display: none;
+    }
+
+    .pagination {
+        position: static;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .tag-header {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+
+</style>
+<hr class="decoration-hr">
+
+
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 2021 - 2025
+        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <a id="days">0</a> Days<br>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span>All rights reserved.</span>
+
+    </section>
+
+    
+    <script>
+        var s1 = '2021-11-12'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        var s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+    </script>
+
+    
+    
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll(); 
+        });
+
+    </script>
+
+</footer>
+
+
+
+
+<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const postContent = document.getElementById('post-content');
+
+        if (postContent && window.ViewImage) {
+            
+            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
+        } else if (!postContent) {
+            
+            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
+
+
+
+
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+
+            </div>
+        </main>
+    
+
+<script>
+    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
+  const nextNode = img.nextSibling;
+  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
+    const wrapper = document.createElement('figure');
+    wrapper.className = 'single-image-figure';
+    img.replaceWith(wrapper);
+    wrapper.appendChild(img);
+    
+    const caption = document.createElement('figcaption');
+    caption.className = 'image-caption';
+    caption.textContent = nextNode.textContent.trim();
+    wrapper.appendChild(caption);
+    
+    nextNode.remove(); 
+  }
+});
+</script>
+
+<script>
+    ;(function () {
+        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
+        const Wording1 = "向我提问！"
+        const Wording2 = "看到就会回复 :D"
+        const TagTextColor = "#ffffff"
+        const TagBgColor = "var(--shadow)"
+        const BodyBgColor = "#ffffff"
+
+        const $container = document.createElement("div")
+        const $button = document.createElement("div")
+
+        $button.innerText = Wording1
+        document.body.append($button)
+
+        $container.innerHTML += `
+    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+  `
+        let isOpen = false
+        let isFirst = true
+        $button.onclick = () => {
+            if (isFirst) {
+                isFirst = false
+                document.body.append($container)
+            }
+            if (!isOpen) {
+                useStyle($container, {
+                    top: "unset",
+                    bottom: "0px",
+                    visibility: "visible"
+                })
+                useStyle($button, {
+                    bottom: "400px"
+                })
+                $button.innerText = Wording2
+            } else {
+                useStyle($container, {
+                    top: "100%",
+                    bottom: "unset",
+                    visibility: "hidden"
+                })
+                useStyle($button, {
+                    bottom: "0px"
+                })
+                $button.innerText = Wording1
+            }
+            isOpen = !isOpen
+        }
+        useStyle($button, {
+            position: "fixed",
+            bottom: "0px",
+            right: "0px",
+            background: TagBgColor,
+            color: TagTextColor,
+            "font-size": "14px",
+            "border-top-left-radius": "10px",
+            padding: "5px 10px",
+            cursor: "pointer"
+        })
+        useStyle($container, {
+            position: "fixed",
+            top: "100%",
+            right: "0px",
+            width: "300px",
+            height: "400px",
+            background: BodyBgColor,
+            "z-index": "11"
+        })
+
+        function useStyle (dom, style) {
+            for (let sKey in style) {
+                dom.style[sKey] = style[sKey]
+            }
+        }
+    })()
+</script>
+
+
+    
+    <script src="/js/twemoji.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '\/my-emojis\/', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+    </body>
+</html>
