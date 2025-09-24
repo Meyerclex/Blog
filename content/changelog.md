@@ -9,7 +9,7 @@ layout: diary
 
 ## 📠 更新日志 / Changelog
 
-## 2025/09/24 新的Archive
+### 2025/09/24 新的Archive
 
 风格统一的事后面再说吧，先萌了。
 
