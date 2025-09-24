@@ -38,3 +38,7 @@
     isListGroupByDate = false
     isShowFooter      = true
 
+[caches]
+  [caches.getremote]
+    dir = ":resourceDir/_gen/assets/getremote"
+    maxAge = "168h"

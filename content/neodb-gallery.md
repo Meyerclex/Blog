@@ -9,5 +9,3 @@ comment: true
 ---
 
 ## testing
-
-{{< neodb_gallery movie complete 5 >}}

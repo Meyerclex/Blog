@@ -11,12 +11,6 @@
     <loc>http://localhost:1313/posts/2025-09-22/</loc>
     <lastmod>2025-09-22T10:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/monthly/</loc>
-    <lastmod>2025-09-22T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2025-09-23/</loc>
-    <lastmod>2025-09-22T00:00:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/random-thoughts/</loc>
     <lastmod>2025-09-07T00:00:00+08:00</lastmod>
   </url><url>
@@ -33,6 +27,9 @@
     <lastmod>2025-08-15T11:37:48+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/memory/</loc>
+    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/monthly/</loc>
     <lastmod>2025-08-11T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-08-02-memory/</loc>

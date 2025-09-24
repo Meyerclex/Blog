@@ -7,7 +7,9 @@
 :root {
   --bg-color: rgba(249, 247, 241, 0.84);
   --bg-color-hover: rgba(253, 241, 207, 0.8);
-  --text-color: #38383c;
+  // --text-color: #38383c;
+  --site-name: #38383c;
+  --text-color: #564e3c;
   --secondary-text-color: #666666;
   --link-color: #1a89ae;
   --blockquote-color: #466060;
@@ -41,6 +43,7 @@
 [a="dark"] {
   --bg-color: rgba(35, 18, 53, 0.78);
   --bg-color-hover: rgba(81, 44, 126, 0.74);
+  --site-name: #F8F4E1;
   --text-color: #F8F4E1;
   --secondary-text-color: rgba(241, 231, 209, 0.82);
   --link-color: #B6CBBD;
@@ -82,6 +85,10 @@
 body[a="dark"] {
   position: relative; /* 确保伪元素的定位不受其他元素影响 */
   //@include dark-appearance;
+}
+
+.h1-mobile, .h1-pc {
+  color: var(--site-name);
 }
 
 /* 使用伪元素创建固定背景 */
