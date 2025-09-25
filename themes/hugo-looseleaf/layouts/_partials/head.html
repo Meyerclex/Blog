@@ -14,6 +14,15 @@
   {{ end }}
   <!-- 预加载关键字体 -->
   <!-- 样式表（异步加载） -->
+     <!-- 明朝 -->
+  <link rel="preload" as="style" crossorigin
+      href="https://fontsapi.zeoseven.com/256/main/result.css"
+      onload="this.rel='stylesheet'"
+      onerror="this.href='https://fontsapi-storage.zeoseven.com/256/main/result.css'" />
+  <noscript>
+      <link rel="stylesheet" href="https://fontsapi.zeoseven.com/256/main/result.css" />
+  </noscript>
+  <!--  -->
 <!-- 字体 Noto Sans CJK SC -->
   <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
 <!--  YEFONTXiaoShiTou 汉仪小石头-->
@@ -23,7 +32,7 @@
   <!-- 兼容无 JS -->
   <!--  上图东观体  -->
   <link rel="stylesheet" href="/fonts/stdgt/result.css">
-  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/467/main/result.css' />
+  <!-- <link rel='stylesheet' href='https://fontsapi.zeoseven.com/467/main/result.css' /> -->
   <link rel='stylesheet' href='https://fontsapi.zeoseven.com/305/main/result.css' />
 
 
@@ -34,7 +43,6 @@
 
   <!-- Highlight.js 核心库 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-
 
 
 
