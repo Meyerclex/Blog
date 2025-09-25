@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.ea121379fa9cbaecb586c0dea1b0d5682bf7b6108fe29d4432ef263203bc6c3693dfb6d57cd22cd6b7b967d4b33582caa0046d512274ea8938cc76f6facc6d7c.css" integrity="sha512-6hITefqcuuy1hsDeobDVaCv3thCP4p1EMu8mMgO8bDaT37bVfNIs1re5Z9SzNYLKoARtUSJ06ok4zHb2&#43;sxtfA==" />
+  <link rel="stylesheet" href="/css/main.02e5f28f03542a67a688b331db1d1240cd3134c9478dcd4f15a57f09d118f50d90dbf9550d5cdd18d1d4b9e691c64e2a6db456c8eec91dba828f6e61ea725c59.css" integrity="sha512-AuXyjwNUKmemiLMx2x0SQM0xNMlHjc1PFaV/CdEY9Q2Q2/lVDVzdGNHUueaRxk4qbbRWyO7JHbqCj25h6nJcWQ==" />
   
   
   
@@ -22,7 +22,8 @@
   
   
   <link rel="stylesheet" href="/fonts/stdgt/result.css">
-
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/467/main/result.css' />
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/305/main/result.css' />
 
 
   
@@ -181,74 +182,271 @@
             <div class="w">
 
 <link rel="stylesheet" href="/css/_about-nav.css">
+<body>
+  <div class="main-container">
+    <div class="content-wrapper">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+          <li><a href="/posts">Archive</a></li>
+        
+          <li><a href="/links">Friends</a></li>
+        
+      </ul>
+
+      <div class="centered-div">
+        <div class="content-div">
+          <div id="post-list-wrapper">
+              <div class="tag-header">
+                <a href="/tags/" class="back-link">/tags/</a><span class="tags-name">Statement</span>
+              </div>
+              <div id="post-list">
+              
+              
+                  <div class="post-item">
+                      <a href="http://localhost:1313/posts/statement-2025-01-25/" class="post-link">🆕 关于本站停止RSS输出及相关事件说明 🆕</a>
+                      <span class="post-date">Jan 25</span>
+                  </div>
+              
+              </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
 <style>
+    .tag-header a, .tags-name {
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+
+ 
+body {
+    font-family: "Zen Maru Gothic";
+    font-weight: normal;
+}
+
+ 
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    position: relative;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-div {
+    z-index: 7;
+    width: 780px;
+    height: 500px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+}
+
+ 
+.content-wrapper ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.content-wrapper ul li {
+    margin: 0 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+}
+
+.content-wrapper ul li a {
+    color: var(--talk-bubble-border-text-color);
+    text-transform: lowercase;
+}
+
+.content-wrapper ul li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
+
+ 
+#post-list-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    margin-left: 10px;
+    position: relative;
+}
+
+#post-list {
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+}
+
+.post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    font-size: 90%;
+}
+
+.post-item a {
+    color: var(--talk-bubble-border-text-color);
+}
+
+.post-item a:hover {
+    background-color: var(--bg-color);
+}
+
+.post-date {
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--bg-color);
+}
+
+ 
+.tag-header {
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: var(--talk-bubble-border-text-color);
+}
+
+.tag-header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tag-header .tags-name {
+    font-weight: bold;
+    color: var(--talk-bubble-border-text-color);
+     
+}
+
+ 
+.pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.pagination a {
+    color: var(--talk-bubble-border-text-color);
+}
+
+.pagination-link {
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--talk-bubble-border-text-color);
+    background-color: var(--bg-color);
+    white-space: nowrap;
+}
+
+.pagination-link.active {
+    background-color: var(--talk-bubble-border-text-color);
+    color: var(--bg-color);
+}
+
+body[a="dark"] .pagination-link.active {
+    background-color: #bc8faf !important;
+    color: var(--bg-color);
+}
+
+.pagination-link.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+ 
+@media (max-width: 768px) {
+    .main-container,
+    .content-wrapper,
+    .centered-div {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-wrapper ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 5px 0;
+    }
+
+    .content-wrapper ul li {
+        margin: 0px 0;
+    }
+
+    #post-list-wrapper {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        overflow-y: visible;
+        padding: 0 10px;
+    }
+
+    .centered-div {
+        border-radius: 0;
+    }
+
+    .post-item {
+        margin: 5px 0;
+        padding: 0 10px;
+    }
+
+    .note-box {
+        display: none;
+    }
+
+    .pagination {
+        position: static;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .tag-header {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
 
 </style>
-<header id="term" style="min-height: 70vh">
-    <div class="header-container">
-        <div class="header-inner" >
-            <div class="header-left">
-                <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
-                <div  >
-  <span id="nav" data-pagefind-ignore>
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/about">About</a></li>
-      
-        <li><a href="/posts">Archive</a></li>
-      
-        <li><a href="/links">Friends</a></li>
-      
-    </ul>
-  </span>
-</div>
-
-
-
-            </div>
-            <div class="header-content">
-                <h2>
-                    <a href="/tags">Tags</a> / Statement
-                </h2>
-                <div id="term-list">
-                
-
-
-  
- 
-
-<ul><li>
-        <span>2025-01-25</span>
-        <a href="/posts/statement-2025-01-25/">🆕 关于本站停止RSS输出及相关事件说明 🆕</a>
-    </li>
-    
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
 <hr class="decoration-hr">
 
 
