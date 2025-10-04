@@ -108,32 +108,14 @@ body[a="dark"]::before {
   pointer-events: none; /* 让背景不会影响交互 */
 }
 
-
-//薄荷巧克力暗色背景
-//body[a="dark"] {
-//background-color: #6d695c;
-//background-image:
-//        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-//        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-//        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
-//        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)) !important;
-//background-size: 70px 120px;
-//@include dark-appearance;
-//}
 body[a="light"] {
   //@include light-appearance;
   background-color: var(--bg-color);
   background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.5)),
   url("/site/bg_note_haha_1.gif");
-  //background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/site/tumblr_inline_mxq6a1O6341qfwxgn.png");
   background-repeat: repeat;
   background-size: auto;
   background-attachment: fixed;
-  //米白格子背景图
-  //background-image:
-  //        linear-gradient(rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px),
-  //        linear-gradient(90deg, rgba(228, 228, 228, 0.6) 1px, rgba($bg-light, 0) 1px);
-  //background-size: 10px 10px, 10px 10px;
 }
 
 body {

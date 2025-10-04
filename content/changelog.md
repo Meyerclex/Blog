@@ -3,7 +3,7 @@ title: 站点更新日志 Changelog
 description:
 date: 2021-06-28
 slug: changelog
-toc: true
+toc: false
 layout: diary
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 小鱼和她的朋友们
+title: 🍟 小鱼和她的朋友们
 description:
 date: 2021-06-28
 toc: false
@@ -30,7 +30,6 @@ margin: 15px 0;
 }
 </style>
 
-## 小鱼和她的朋友们
 
 - [咖啡冰河](https://blog.mysto.cyou) / [晴空](https://www.summeringway.icu/) / [小球飞鱼](https://mantyke.icu/) / [超新星电台](https://supernovaradio.live/) / [山月](https://sanguok.com/)
 

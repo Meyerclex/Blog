@@ -1,12 +1,10 @@
 ---
-title: lilian's room
+title: ⛳ 关于我 , May 2025
 toc: false
 layout: diary
 comment: false
 slug: about
 ---
-
-## ⛳ 关于我 , May 2025
 
 嗨你好，这里是我的博客。这时是2025年5月，因为博客装修了，所以我重写了About页面。
 

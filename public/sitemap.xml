@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/fanpage/</loc>
+    <lastmod>2025-09-27T12:00:00+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/media-box/</loc>
     <lastmod>2025-09-22T10:00:00+08:00</lastmod>
   </url><url>
@@ -350,9 +353,9 @@
     <loc>http://localhost:1313/collection/</loc>
     <lastmod>2020-01-05T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/bookmarks/</loc>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/bookmarks/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url><url>
