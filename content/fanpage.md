@@ -75,7 +75,7 @@ src="/blog/byung.jpeg" >
 <p>是<mark><a target="_blank"  href="https://movie.douban.com/subject/24736299/">《侠女：剑的记忆》</mark></a></p>
 <img src="/blog/IMG_4905.GIF" alt="" class="pic">
 <p>在这个....5分多的古装影片当中</p>
-<p>小饼演员在这里又漂亮，又好笑</p>
+<p>小饼演员又漂亮，又好笑</p>
 <p>分明在演一个爱慕虚荣贪恋荣华富贵的角色</p>
 <p>却不知怎么从头到尾都泪盈盈的！</p>
 <p>看得观众指不定会纳闷，</p>
