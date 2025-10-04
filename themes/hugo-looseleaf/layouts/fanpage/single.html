@@ -6,41 +6,6 @@
 
 {{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
 {{ $viewImageJS := resources.Get "js/view-image.min.js" }}
-
-<link href="https://478.neocities.org/catalog/fonts.css" rel="stylesheet">
-<body  id="page-top">
-
-<section class="layout">
-  <div class="header"><a href="/posts/">back link</a></div>
-  <div class="leftSide"></div>
-  <div class="body">
-
-{{ .Content }}
-
-  </div>
-  <div class="rightSide"></div>
-  <div class="footer"></div>
-</section>
-    {{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
-    <script src="{{ $twemojiJS.RelPermalink }}"></script>
-    <script>
-       document.addEventListener('DOMContentLoaded', function() {
-            twemoji.parse(document.body, {
-            base: '{{ "/my-emojis/" | relURL }}', 
-            folder: 'svg', 
-            ext: '.svg' 
-            });
-            });
-    </script>
-    <script src="{{ $viewImageJS.RelPermalink }}"></script>
-    <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // 同时对 class="pic" 的图片 和 .half-width-centered 容器内的图片启用放大功能
-                window.ViewImage.init("img.pic, .half-width-centered img"); 
-            });
-    </script>
-</body>
-
 <style>
 @import url("https://fontsapi.zeoseven.com/703/main/result.css");
 
@@ -211,4 +176,39 @@ ease;
     }
 }
 </style>
+<link href="https://478.neocities.org/catalog/fonts.css" rel="stylesheet">
+<body  id="page-top">
+
+<section class="layout">
+  <div class="header"><a href="/posts/">back link</a></div>
+  <div class="leftSide"></div>
+  <div class="body">
+
+{{ .Content }}
+
+  </div>
+  <div class="rightSide"></div>
+  <div class="footer"></div>
+</section>
+    {{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
+    <script src="{{ $twemojiJS.RelPermalink }}"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+            base: '{{ "/my-emojis/" | relURL }}', 
+            folder: 'svg', 
+            ext: '.svg' 
+            });
+            });
+    </script>
+    <script src="{{ $viewImageJS.RelPermalink }}"></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 同时对 class="pic" 的图片 和 .half-width-centered 容器内的图片启用放大功能
+                window.ViewImage.init("img.pic, .half-width-centered img"); 
+            });
+    </script>
+</body>
+
+
 
