@@ -22,7 +22,7 @@ src="/blog/byung.jpeg" >
   
 <p>小饼大电影，绝赞热映中！</p>
 <p>
-  <a href="https://movie.douban.com/subject/4092781/" target="_blank" rel="noopener noreferrer">no other choice 🫧</a>
+ <mark> <a href="https://movie.douban.com/subject/4092781/" target="_blank" rel="noopener noreferrer">no other choice </mark> 🫧</a> 
 </p>
   <img src="/blog/IMG_5590.JPG" class="pic">
 
@@ -115,7 +115,7 @@ src="/blog/byung.jpeg" >
 <p>它和《侠女：剑的记忆》同在我的第三推荐的影片位置上</p>
 <p>为什么最终没有进入前三名？</p>
 <p>主要是因为我没有找到好用的动图啦^^</p>
-<p>我们小饼- 金萍儿 - 在影片中，虽然算不上秀色可餐、倾国倾城，但也是有几分姿色的</p>
+<p>我们小饼 - 金萍儿 - 在影片中，虽然算不上秀色可餐、倾国倾城，但也是有几分姿色的</p>
 <p>那么，时间不多了，快去看吧。</p>
 
 <br>
