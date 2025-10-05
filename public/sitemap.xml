@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/2025-10-05/</loc>
+    <lastmod>2025-10-04T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/monthly/</loc>
+    <lastmod>2025-10-04T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-10-04T00:00:00+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/fanpage/</loc>
     <lastmod>2025-09-27T12:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/media-box/</loc>
-    <lastmod>2025-09-22T10:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-09-22T10:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-09-22/</loc>
@@ -30,9 +36,6 @@
     <lastmod>2025-08-15T11:37:48+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/memory/</loc>
-    <lastmod>2025-08-11T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/monthly/</loc>
     <lastmod>2025-08-11T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-08-02-memory/</loc>
@@ -175,9 +178,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/safeandhealthy/</loc>
     <lastmod>2023-09-10T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/about-ver/</loc>
-    <lastmod>2021-11-25T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/thekitchen/</loc>
     <lastmod>2023-08-17T00:00:00+08:00</lastmod>
