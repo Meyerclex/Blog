@@ -86,18 +86,13 @@
     justify-content: center;
 }
 .footer { grid-area: footer; }
-/* end 新增 Grid 布局 */
 
-
-body {
-
-}
  .post-item {
     display: flex;
     justify-content: space-between; /* 标题和日期分别在两端 */
     align-items: center;
     margin: 10px 20px;
-      font-size: 85%;
+    font-size: 95%;
 }
 
 .post-item a {
@@ -201,7 +196,7 @@ body {
 /* 侧边栏内的链接样式 */
 #sidebar1 a, #sidebar1 a:visited {
   display: block;
-  font-size: 70%;
+  font-size: 75%;
   white-space: nowrap;
   margin: 5px 0px;
   padding: 2px;
@@ -229,14 +224,14 @@ body[a="dark"] #sidebar1 a:hover {
 
 #post-list {
   /* 设置固定高度，这是滚动的前提 */
-  height: calc(100% - 40px); /* 减去分页器的高度，确保列表可以滚动 */
+  height: calc(90% - 40px); /* 减去分页器的高度，确保列表可以滚动 */
   overflow-y: scroll;
 }
 
 /* 分页器样式 */
 .pagination {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   right: 0;
   display: flex;
   gap: 8px;
