@@ -2,14 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/2025-10-05/</loc>
-    <lastmod>2025-10-04T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/monthly/</loc>
-    <lastmod>2025-10-04T00:00:00+08:00</lastmod>
+    <loc>http://localhost:1313/tags/pebble/</loc>
+    <lastmod>2025-10-15T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-10-04T00:00:00+08:00</lastmod>
+    <lastmod>2025-10-15T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-10-15/</loc>
+    <lastmod>2025-10-15T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
+    <lastmod>2025-10-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/monthly/</loc>
+    <lastmod>2025-10-05T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-10-05/</loc>
+    <lastmod>2025-10-05T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fanpage/</loc>
     <lastmod>2025-09-27T12:00:00+08:00</lastmod>
@@ -56,9 +65,6 @@
     <loc>http://localhost:1313/posts/june-06-thoughts/</loc>
     <lastmod>2025-06-08T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2025-05-23T00:00:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/2025-05-23-twemoji/</loc>
     <lastmod>2025-05-23T00:00:00+08:00</lastmod>
   </url><url>
@@ -67,9 +73,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/2025-05-13/</loc>
     <lastmod>2025-05-13T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/pebble/</loc>
-    <lastmod>2025-04-28T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-04-28/</loc>
     <lastmod>2025-04-28T00:00:00+08:00</lastmod>
