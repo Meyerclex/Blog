@@ -1,0 +1,214 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>a fanpage for byung ^^</title><meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="icon" type="image/png" href="/my-emojis/svg/1f380.svg">
+<link rel="shortcut icon" href="/my-emojis/svg/1f380.svg">
+
+{{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
+{{ $viewImageJS := resources.Get "js/view-image.min.js" }}
+<style>
+@import url("https://fontsapi.zeoseven.com/703/main/result.css");
+
+:root {
+    --p-color: rgb(119, 80, 42);
+    --mark-color: rgb(250, 230, 230);
+    --line-color: #c1a6a4;
+}
+body {
+  //@include light-appearance;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+  url("/site/tumblr_inline_mxq6a1O6341qfwxgn.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  font-family: 'Courier New',"Maruko Gothic CJKsc", Courier, monospace; text-align: center;
+      color: var(--p-color);
+}
+body p {
+    font-size: 14px;
+}
+mark {
+    background-color: var(--mark-color);
+    border-radius: 4px;
+    color: var(--p-color);
+}
+a {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--line-color);
+    color: var(--p-color);
+    text-underline-offset: 2px;
+}
+
+
+.layout {
+  width: 100%;
+
+  display: grid;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
+}
+
+.header { 
+    grid-area: header; 
+    padding: 10px;
+    margin: 10px;
+    /* text-align: left;  */
+}
+.leftSide { grid-area: leftSide; }
+.body { grid-area: body; padding: 0 30px;}
+.rightSide { grid-area: rightSide; }
+.footer { grid-area: footer; }
+
+.camera-container {
+    margin: 0 auto;
+    position: relative;
+    /* ✅ 修正：容器尺寸设置为原图的 40% */
+    width: 274px; 
+    height: 179.6px;
+        transform: translate(0px, 0px); 
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(4px 4px 5px #fdf8e3);
+}
+.camera-container:hover {
+    transform: translate(5px, 5px) scale(1.05); /* Y 轴向上移动 10px，整体轻微放大 */
+
+    filter: drop-shadow(8px 8px 10px #c6c2b1);
+}
+.camera-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 100% 确保它填满新的小容器 */
+    width: 100%; 
+    height: 100%;
+    
+    background-image: url('/site/camera.png'); 
+    /* ✅ 修正：使用 100% 100% 强制背景图填满，因为我们已经确保容器尺寸比例正确，不会扭曲 */
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    z-index: 10; 
+}
+
+.photo-behind {
+    position: absolute;
+    /* ❗ 注意：内部照片的位置和尺寸也需要按比例缩小 */
+    width: 60%; /* 假设原 150px * 0.4 = 60px */
+    height: 60%; /* 假设原 100px * 0.4 = 40px */
+    top: 50px; /* 假设原 40px * 0.4 = 16px */
+    left: 11px; /* 假设原 50px * 0.4 = 20px */
+    z-index: 5; 
+    object-fit: cover;
+}
+    img.emoji {
+    height: 1.5em; /* 如果需要像毛象一样大，则height和width都设置为1.8em */
+    width: 1.5em;
+    margin: 0 .15em; 
+    vertical-align: -0.4em; /* 表情在文字间对齐可以微调 */
+    border-radius: 0px;
+    }
+.byung2 {
+    width: 80%;
+    filter: drop-shadow(5px 5px 0px #ffc2f3);
+}
+.pic {
+    display: block;
+    margin: 1.5em auto 0.5em auto;
+    max-width: 35%;
+    border: 2px solid #9fc0be;
+    box-shadow: 4px 4px 0 0 #9fc0be;
+    border-radius: 8px;
+    transition: box-shadow 0.3s 
+ease;
+}
+@media (max-width: 768px) {
+  .pic {
+    max-width: 80%;
+  }
+}
+.decoration-hr, article hr {
+  border: none;
+  height: 16px;
+  background-image: url(/site/hr.gif);
+  background-size: auto 100%;
+  /*
+  the width of the image will be automatically determined
+  while the height will be 100% of the element width (in this case its 50px)
+  */
+  background-repeat: no-repeat; /* the bg wont repeat */
+  background-position: center; /* bg will be centered */
+  image-rendering: pixelated;
+}
+
+
+.half-width-centered {
+    display: flex;
+    gap: 20px; /* 两图间的间隙 */
+    margin: 20px auto; /* 关键：实现容器的水平居中 */
+    justify-content: center;
+}
+
+.half-width-centered img {
+    width: 25%; /* 每张图片占据 50% 宽度 */
+    height: auto;
+    flex-shrink: 0;
+        border: 2px solid #9fc0be;
+    box-shadow: 4px 4px 0 0 #9fc0be;
+    border-radius: 8px;
+}
+
+/* 移动端适配：小屏幕上变为上下堆叠 */
+@media (max-width: 768px) {
+    .half-width-centered {
+        flex-direction: column;
+        gap: 15px;
+        max-width: 80%;
+        margin: 15px auto;
+    }
+    
+    .half-width-centered img {
+        width: 100%;
+    }
+}
+</style>
+<link href="https://478.neocities.org/catalog/fonts.css" rel="stylesheet">
+<body  id="page-top">
+
+<section class="layout">
+  <div class="header"><a href="/posts/">back link</a></div>
+  <div class="leftSide"></div>
+  <div class="body">
+
+{{ .Content }}
+
+  </div>
+  <div class="rightSide"></div>
+  <div class="footer"></div>
+</section>
+    {{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
+    <script src="{{ $twemojiJS.RelPermalink }}"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+            base: '{{ "/my-emojis/" | relURL }}', 
+            folder: 'svg', 
+            ext: '.svg' 
+            });
+            });
+    </script>
+    <script src="{{ $viewImageJS.RelPermalink }}"></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 同时对 class="pic" 的图片 和 .half-width-centered 容器内的图片启用放大功能
+                window.ViewImage.init("img.pic, .half-width-centered img"); 
+            });
+    </script>
+</body>
+
+
+

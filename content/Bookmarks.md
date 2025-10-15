@@ -1,9 +1,10 @@
 ---
-title: Bookmarks / Resource
+title: Bookmarks | 书签
 layout: "diary"
 slug: bookmarks
 comment: false
-last_edit: May 26, 2025
+last_edit: October 05, 2025
+toc: false
 ---
 
 
@@ -47,6 +48,7 @@ last_edit: May 26, 2025
 - [ramdons](https://ramdons.tumblr.com/post/688554623970246657/my-friend-wanted-me-to-upload-my-current-theme)：tumblr themes
 - [layoutit.com](https://layoutit.com/)：layouts生成，但我不会用（……
 - [petrapixel's layout generator](https://petrapixel.neocities.org/layout-generator/)：非常易懂且移动端友好的Layout生成器，虽然布局类型很少，但假如想从头开始布局应该会是不错的开始。
+- [CSS Layout Generator](https://layout.bradwoods.io/)：最近在用的CSS Layout生成器
 
 ## CSS pattern / Graphics
 

@@ -1,13 +1,15 @@
 ---
-title: 站点更新日志 Changelog
+title: 📠 更新日志 / Changelog
 description:
 date: 2021-06-28
 slug: changelog
-toc: true
+toc: false
 layout: diary
 ---
 
-## 📠 更新日志 / Changelog
+### 2025/10/04 Fanpage
+
+创建了小饼[Fanpage♡](/fanpage/)，虽然是古法手搓ugly code但写得特别开心（？）
 
 ### 2025/09/24 新的Archive
 

@@ -1,5 +1,5 @@
 ---
-title: 小鱼和她的朋友们
+title: 🍟 小鱼和她的朋友们
 description:
 date: 2021-06-28
 toc: false
@@ -30,11 +30,10 @@ margin: 15px 0;
 }
 </style>
 
-## 小鱼和她的朋友们
 
 - [咖啡冰河](https://blog.mysto.cyou) / [晴空](https://www.summeringway.icu/) / [小球飞鱼](https://mantyke.icu/) / [超新星电台](https://supernovaradio.live/) / [山月](https://sanguok.com/)
 
-- [白天](https://luoshui.icu/) / [山茶花舍](https://irithys.com/) / [深海鱼拒绝触礁](https://trails-of-isara.vercel.app/) / [东俄勒冈群山](https://houdini.eu.org/) 
+- [白天](https://luoshui.icu/) / [山茶花舍](https://irithys.com/) / [深海鱼拒绝触礁](https://trails-of-isara.vercel.app/) / [东俄勒冈群山](https://houdini.eu.org/) / [鹅玉](https://ro3or.com/)
 
 - [呆呆不是槑](http://graugris.icu/) / [圆面包如何逃离狐口](https://sunnkynews.icu/) / [冷酷蹦迪](https://www.hezicola.com/) / [天堂错误文件](https://naturaleki.one/) 
 
