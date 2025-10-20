@@ -7,9 +7,6 @@ last_edit: October 05, 2025
 toc: false
 ---
 
-
-## Bookmarks / Resource
-
 - [我是走廊，张亦绚](https://nathaliechang.wixsite.com/nathaliechang/home)：张女士的博客，竟然还是高频更新😮
 - **字体**：[ZeoSeven](https://fonts.zeoseven.com/) / [fonts catalog](https://478.neocities.org/catalog/) 
 - [香港公共图书馆](https://sls.hkpl.gov.hk/digital-collection/tc/collection.html) / [HKMS 香港地图](https://www.hkmapservice.gov.hk/OneStopSystem/home)
@@ -66,6 +63,7 @@ toc: false
 - [dice.nengu.jp](https://dice.nengu.jp/)
 - <A href="http://1kbsozai.com" target="_blank">1キロバイトの素材屋さん</A>
 - 蛋卷推荐的[拍立得生成器](https://notchtools.com/polaroid-photo-generator)和[万花筒生成器](https://repper.app/design/)
+- [Emoji融合](https://emojikitchen.dev/)
 
 ## others 
 
