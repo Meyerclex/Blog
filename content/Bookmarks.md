@@ -29,7 +29,7 @@ toc: false
 - [ribo.zone - free stuff for you](https://ribo.zone/free/)：layouts, code snippets...
 - [designfreaks](https://designfreaks.net/goodies/resources/)：made by Nick and Danny, sharing their designs and graphics
 - [cherie.nekoweb.org](https://cherie.nekoweb.org/resources/)
-- [ViewImage](https://tokinx.github.io/ViewImage/#id-demo)：现在正在用的图片放大方案，比fancybox简洁得多。
+
 
 ## Layouts / Themes ...
 
@@ -83,6 +83,9 @@ toc: false
 - Adobe Media Encoder：视频码率压缩等等。
 - [pyVideoTrans](https://pyvideotrans.com/)：视频、音频、字幕处理，会议多语言音频转文字/SRT字幕都非常好用。使用后发现连粤语转文字都可以做到（即使发音语言没有粤语），很惊喜。从讯飞听见省一笔。
 - SpaceSniffer：磁盘空间清理工具，只有2.2MB大小值得拥有。
+- [ViewImage](https://tokinx.github.io/ViewImage/#id-demo)：现在正在用的图片放大方案，比fancybox简洁得多。
+- [fuse.js]: 现在同人博客在用的搜索工具，相对来说比较模糊，暂时搞不太懂它对中文的匹配是怎么一回事。
+
 
 ## Widget
 
