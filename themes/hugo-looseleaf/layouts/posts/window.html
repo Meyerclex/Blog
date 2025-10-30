@@ -319,22 +319,35 @@ border-left: dashed 0px;
     padding: 0;
     margin: 0;
   }
-  
+
   .grid-layout {
-      height: auto; /* 移动端高度自适应 */
+    height: auto; /* 移动端高度自适应 */
   }
 
-  /* 导航列表样式 */
+  /* 导航列表容器样式：横向排列并居中 */
   .content-wrapper ul {
-    flex-direction: column;
+    /* 保持 display: flex;（从 PC 端继承） */
+    justify-content: center; /* ✨ 保持：整体居中 */
     align-items: center;
-    margin: 5px 0;
+    /* 调整边距 */
+    margin: 10px 0; 
   }
 
   /* 导航列表项的间距 */
   .content-wrapper ul li {
-    margin: 0px 0;
+    /* ✨ 调整：设置左右间距，实现“单个分散” */
+    margin: 0 1em; 
+    padding: 0; 
+    font-size: small; 
   }
+  
+  /* ✨ 移除中括号：确保没有 ::before 和 ::after 样式块 */
+  /* 如果之前的 CSS 文件里有以下内容，请确保移除或注释掉：
+  .content-wrapper ul li::before,
+  .content-wrapper ul li::after {
+    content: "..." 
+  }
+  */
 
   /* 侧边栏和文章列表样式 */
   #sidebar1,
@@ -371,6 +384,7 @@ border-left: dashed 0px;
     padding: 0 10px;
   }
 }
+/* 另一个媒体查询块，保持不变 */
 @media (max-width: 768px) {
   /* 重置所有主要容器的 Flexbox 布局 */
   .main-container,
@@ -411,7 +425,7 @@ border-left: dashed 0px;
         margin: 0 auto;
         padding: 0.5rem 0.5rem;
     }
-   
+    
 }
 </style>
 {{- partial "footer.html" . -}}
