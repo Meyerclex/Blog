@@ -2,24 +2,60 @@
 <header>
     <div class="header-container">
         <div class="header-inner">
-                    <div class="site-title">再會，謝謝所有的魚🍃</div>
+                    <div class="title">
+                        <div class="head-img">
+                            <img src="/site/1.jpg" alt="Header Image" class="header-img-content">
+                        </div>  
+                    </div>
                     <div>
                         <ul>
                             {{ range .Site.Menus.main }}
                             <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                             {{ end }}
                         </ul>
-                        
+                    
                     </div>
         </div>
     </div>
 </header>
 
 
-<!--{{ partial "sidebar.html" . }}-->
 {{ partial "footer.html" . }}
 
 <style>
+/* 容器样式：用于限制最大宽度和添加边框 */
+.head-img {
+    /* PC 端最大尺寸限制 */
+    max-width: 262px;
+    border: dashed 1px;
+    margin-bottom: 5px;
+    /* 移除背景图相关的属性 */
+
+}
+
+/* 图片本身样式：实现自适应和滤镜效果 */
+.header-img-content {
+    width: 100%;
+    height: auto; 
+    display: block; 
+    filter: sepia(40%) hue-rotate(0deg) saturate(1) brightness(0.95) opacity(1);
+        border-radius: 0px!important;
+}
+
+/* 针对手机端进行自适应调整 */
+@media (max-width: 768px) {
+    .head-img {
+        /* 在手机端，容器宽度占视口宽度 90% */
+        width: 90vw; 
+        
+        /* 确保在手机端居中显示 */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* 其他样式保持不变 */
 .header-inner {
     /* width: 200px; */
 }
@@ -67,4 +103,3 @@
 </style>
 
 {{ end }}
-
