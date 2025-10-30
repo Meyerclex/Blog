@@ -454,11 +454,6 @@ img.float-img50 {
 
 /* 手机端适配：布局变为单列 */
 @media (max-width: 768px) {
-  body {
-    background-image:
-            linear-gradient(rgba(73, 6, 6, 0.93), rgba(0, 0, 0, 0.95)),
-            url("/site/tumblr_1d04ca11032168b7f51f4f1f1c1a936b_43682731_250.png");
-  }
   .main-container {
     flex-direction: column;
     /* 改为垂直排列 */
