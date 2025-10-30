@@ -304,10 +304,13 @@ border-left: dashed 0px;
     color: var(--talk-bubble-border-text-color);
 }
 /* --- 手机端样式 --- */
+
+
+/* --- 手机端样式 --- */
 @media (max-width: 768px) {
   /* 重置所有主要容器的 Flexbox 布局 */
-  .grid-layout, /* 新增 */
-  .main, /* 新增 */
+  .grid-layout, 
+  .main, 
   .main-container,
   .content-wrapper,
   .centered-div,
@@ -315,49 +318,65 @@ border-left: dashed 0px;
     display: block;
     width: 100%;
     height: auto;
-    /* 移除通用 padding 和 margin */
     padding: 0;
     margin: 0;
   }
 
   .grid-layout {
-    height: auto; /* 移动端高度自适应 */
+    height: auto; 
   }
 
   /* 导航列表容器样式：横向排列并居中 */
-  .content-wrapper ul {
-    /* 保持 display: flex;（从 PC 端继承） */
-    justify-content: center; /* ✨ 保持：整体居中 */
-    align-items: center;
-    /* 调整边距 */
-    margin: 10px 0; 
-  }
+.content-wrapper ul {
+        justify-content: center; 
+        align-items: center;
+        margin: 10px 0; 
+        /* 增加负外边距来抵消 li 的 margin，这样 li 才能对齐 ul 的边缘（可选，但通常有助于解决边距问题） */
+        margin-left: -1em; 
+        margin-right: -1em; 
+    }
 
-  /* 导航列表项的间距 */
-  .content-wrapper ul li {
-    /* ✨ 调整：设置左右间距，实现“单个分散” */
-    margin: 0 1em; 
-    padding: 0; 
-    font-size: small; 
+    /* 导航列表项的间距 */
+    .content-wrapper ul li {
+        /* ✨ 关键：使用左右外边距分隔项目，并且让首尾元素的 hover 区域向外扩展 */
+        margin: 0 1em; /* 使用 1em 外边距实现分散效果 */
+        padding: 0; 
+        font-size: small; 
+    }
+
+  /* **修改：** 侧边栏容器 - 横向排列，换行，并居左对齐 */
+  #sidebar1 {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; /* ✨ 已修改为居左对齐 */
+    width: 100%;
+    height: auto;
+    margin-top: 20px; 
+    margin-bottom: 0; 
+    padding: 0 10px;
   }
   
-  /* ✨ 移除中括号：确保没有 ::before 和 ::after 样式块 */
-  /* 如果之前的 CSS 文件里有以下内容，请确保移除或注释掉：
-  .content-wrapper ul li::before,
-  .content-wrapper ul li::after {
-    content: "..." 
+  /* 侧边栏链接 - 调整为按钮样式，增加间距 */
+  #sidebar1 a, #sidebar1 a:visited {
+    display: block;
+    white-space: normal;
+    margin: 5px 5px; 
+    padding: 4px 8px; 
+    font-size: 75%;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--bg-color);
+    color: var(--text-color);
   }
-  */
 
   /* 侧边栏和文章列表样式 */
-  #sidebar1,
   #post-list-wrapper,
   #post-list {
     width: 100%;
     height: auto;
     margin: 0;
-    overflow-y: visible; /* 禁用滚动 */
-    padding: 0 0px; /* 为内容添加左右内边距 */
+    overflow-y: visible; 
+    padding: 0 0px; 
   }
   
   /* 为文章列表项添加左右内边距 */
@@ -384,6 +403,11 @@ border-left: dashed 0px;
     padding: 0 10px;
   }
 }
+
+
+
+
+
 /* 另一个媒体查询块，保持不变 */
 @media (max-width: 768px) {
   /* 重置所有主要容器的 Flexbox 布局 */

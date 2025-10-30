@@ -623,10 +623,13 @@ border-left: dashed 0px;
     color: var(--talk-bubble-border-text-color);
 }
  
+
+
+ 
 @media (max-width: 768px) {
    
-  .grid-layout,  
-  .main,  
+  .grid-layout, 
+  .main, 
   .main-container,
   .content-wrapper,
   .centered-div,
@@ -634,44 +637,65 @@ border-left: dashed 0px;
     display: block;
     width: 100%;
     height: auto;
-     
     padding: 0;
     margin: 0;
   }
 
   .grid-layout {
-    height: auto;  
+    height: auto; 
   }
 
    
-  .content-wrapper ul {
+.content-wrapper ul {
+        justify-content: center; 
+        align-items: center;
+        margin: 10px 0; 
+         
+        margin-left: -1em; 
+        margin-right: -1em; 
+    }
+
      
-    justify-content: center;  
-    align-items: center;
-     
-    margin: 10px 0; 
-  }
+    .content-wrapper ul li {
+         
+        margin: 0 1em;  
+        padding: 0; 
+        font-size: small; 
+    }
 
    
-  .content-wrapper ul li {
-     
-    margin: 0 1em; 
-    padding: 0; 
-    font-size: small; 
+  #sidebar1 {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-start;  
+    width: 100%;
+    height: auto;
+    margin-top: 20px; 
+    margin-bottom: 0; 
+    padding: 0 10px;
   }
   
    
-   
+  #sidebar1 a, #sidebar1 a:visited {
+    display: block;
+    white-space: normal;
+    margin: 5px 5px; 
+    padding: 4px 8px; 
+    font-size: 75%;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
 
    
-  #sidebar1,
   #post-list-wrapper,
   #post-list {
     width: 100%;
     height: auto;
     margin: 0;
-    overflow-y: visible;  
-    padding: 0 0px;  
+    overflow-y: visible; 
+    padding: 0 0px; 
   }
   
    
@@ -698,6 +722,11 @@ border-left: dashed 0px;
     padding: 0 10px;
   }
 }
+
+
+
+
+
  
 @media (max-width: 768px) {
    
