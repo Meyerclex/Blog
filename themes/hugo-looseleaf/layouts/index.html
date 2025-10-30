@@ -27,7 +27,7 @@
 .head-img {
     /* PC 端最大尺寸限制 */
     max-width: 262px;
-    border: dashed 1px;
+    /* border: dashed 1px; */
     margin-bottom: 5px;
     /* 移除背景图相关的属性 */
 
@@ -38,10 +38,28 @@
     width: 100%;
     height: auto; 
     display: block; 
-    filter: sepia(40%) hue-rotate(0deg) saturate(1) brightness(0.95) opacity(1);
         border-radius: 0px!important;
+        -webkit-mask-image: 
+        linear-gradient(to top, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to bottom, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to left, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to right, black calc(100% - 10px), transparent 100%);
+    
+    /* 调整遮罩位置和大小，使其覆盖边缘 */
+    -webkit-mask-position: top, bottom, left, right;
+    -webkit-mask-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    -webkit-mask-composite: source-in; /* 确保遮罩正确组合 */
+    mask-composite: intersect; /* 标准属性 */
 }
-
+/* 默认的滤镜 */
+.header-img-content {
+    filter: sepia(50%) hue-rotate(0deg) saturate(1) brightness(0.95) opacity(1);
+    transition: filter 0.5s ease; /* 添加过渡效果 */
+}
+/* 悬停时恢复原状 */
+.header-img-content:hover {
+    filter: none; /* 移除所有滤镜 */
+}
 /* 针对手机端进行自适应调整 */
 @media (max-width: 768px) {
     .head-img {
@@ -89,7 +107,9 @@
     font-weight: bold;
     margin-right: 0px;
 }
-
+    ul {
+        padding: 0 0 0 7px;
+    }
     .header-container {
         display: flex;
         justify-content: center;

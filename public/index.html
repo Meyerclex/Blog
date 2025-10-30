@@ -601,7 +601,7 @@
 .head-img {
      
     max-width: 262px;
-    border: dashed 1px;
+     
     margin-bottom: 5px;
      
 
@@ -612,10 +612,28 @@
     width: 100%;
     height: auto; 
     display: block; 
-    filter: sepia(40%) hue-rotate(0deg) saturate(1) brightness(0.95) opacity(1);
         border-radius: 0px!important;
+        -webkit-mask-image: 
+        linear-gradient(to top, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to bottom, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to left, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to right, black calc(100% - 10px), transparent 100%);
+    
+     
+    -webkit-mask-position: top, bottom, left, right;
+    -webkit-mask-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    -webkit-mask-composite: source-in;  
+    mask-composite: intersect;  
 }
-
+ 
+.header-img-content {
+    filter: sepia(50%) hue-rotate(0deg) saturate(1) brightness(0.95) opacity(1);
+    transition: filter 0.5s ease;  
+}
+ 
+.header-img-content:hover {
+    filter: none;  
+}
  
 @media (max-width: 768px) {
     .head-img {
@@ -663,7 +681,9 @@
     font-weight: bold;
     margin-right: 0px;
 }
-
+    ul {
+        padding: 0 0 0 7px;
+    }
     .header-container {
         display: flex;
         justify-content: center;
