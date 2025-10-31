@@ -7,15 +7,28 @@ toc: false
 layout: diary
 ---
 
-### 2025/10/30 
+### 2025/10/31
 
 冬天了，换了一个冬天一点的首页。更改了各种导航栏的移动端显示。
 
 在阅读[《中文网页中的字体选型及开发指南》](https://weixiang.github.io/posts/the-font-selection-and-development-guide-in-chinese-web-pages/)，决定近段时间要统一一下博客的各种CSS。
 
-- [ ] 字体大小统一。现在大多数时候是用百分比来放大缩小，实在太丑陋了。
+- [x] 修改博客字体。
 - [ ] 表格CSS重写一下。
 - [ ] 换一个信息量大一点的首页。
+
+```
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont,"Hiragino Sans GB", "PingFang SC",   Tahoma, Verdana,
+    "Segoe UI",  "Helvetica Neue", 
+    "Microsoft YaHei", "Source Han Sans SC VF",  Heiti, "黑体", 
+    "Noto Sans CJK SC", sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+```
 
 ![就是爱画图](/blog/1030.png)
 
