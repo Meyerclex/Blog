@@ -4,11 +4,11 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 body {
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Noto Sans CJK SC", "Source Han Sans SC VF",  sans-serif;
-  font-weight: normal;
-  letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC VF", "Noto Sans CJK SC", sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.5px;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family:  "Huiwen-mincho",'STDongGuanTi',"Huiwen-mincho", sans-serif;
@@ -42,13 +42,13 @@ a:hover {
   font-family: 'STDongGuanTi',"Noto Sans CJK SC" !important;
 }
 code {
-  font-family: ui-monospace, // San Francisco Mono on macOS and iOS
-  "Cascadia Mono", "Segoe UI Mono", // Newer Windows monospace fonts that
-    // are optionally installed. Most likely
-    // to be rendered in Consolas
-  "Liberation Mono", // Recently updated
-  Menlo, Monaco, Consolas, // A few sensible system font choices
-  monospace // The final fallback for rendering in monospace.;
+    font-family: 
+        ui-monospace, /* macOS/iOS/Newer Windows UI Mono */
+        "Cascadia Mono", 
+        Menlo, 
+        Consolas, /* Windows 经典等宽字体 */
+        "Courier New", 
+        monospace; /* 最终回退 */
 }
 .last-edit-time {
   font-size: 90%;
