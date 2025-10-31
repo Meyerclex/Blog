@@ -3,17 +3,28 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
 }
+
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: -apple-system, BlinkMacSystemFont,"Hiragino Sans GB", "PingFang SC",   Tahoma, Verdana,
-    "Segoe UI",  "Helvetica Neue", 
-    "STXihei", "华文细黑",
-    "Microsoft YaHei", "Source Han Sans SC VF",  Heiti, "黑体", 
-    "Noto Sans CJK SC", sans-serif;
-    font-weight: normal;
+    /* 1. Mac 西文补偿：优先使用经典、饱满的字体 */
+    font-family: 
+        'Lucida Grande', 'Lucida Sans Unicode', /* 学习 AO3，提升 Mac 西文的视觉字重 */
+        -apple-system, BlinkMacSystemFont, /* Mac 原生 UI 回退 */
+        Tahoma, Verdana, /* Windows/跨平台 西文加粗补偿 */
+        "Segoe UI", "Helvetica Neue", /* Windows/Mac 默认西文 UI 回退 */
+        /* 2. 中文部分（保持您的偏好） */
+        "PingFang SC", "Hiragino Sans GB", /* 您的偏好：让这些字体参与到西文渲染中 */
+        "Microsoft YaHei", /* Windows 中文核心 */
+        "STXihei", "华文细黑", Heiti, "黑体", SimSun, "宋体", /* 兼容性回退 */
+        "Source Han Sans SC VF", "Noto Sans CJK SC", /* 开源回退 */
+        sans-serif;
+        
+    font-weight: normal; /* 保持 normal (400) */
     letter-spacing: 0.5px;
 }
+
+
 h1,h2,h3,h4,h5,h6 {
   font-family:  "Huiwen-mincho",'STDongGuanTi',"Huiwen-mincho", sans-serif;
   margin-bottom: 0;
