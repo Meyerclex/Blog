@@ -46,6 +46,7 @@ toc: false
 - [layoutit.com](https://layoutit.com/)：layouts生成，但我不会用（……
 - [petrapixel's layout generator](https://petrapixel.neocities.org/layout-generator/)：非常易懂且移动端友好的Layout生成器，虽然布局类型很少，但假如想从头开始布局应该会是不错的开始。
 - [CSS Layout Generator](https://layout.bradwoods.io/)：最近在用的CSS Layout生成器
+- [nomnomnami's theme](https://nomnomnami.com/templates/#personal)
 
 ## CSS pattern / Graphics
 
@@ -64,6 +65,7 @@ toc: false
 - <A href="http://1kbsozai.com" target="_blank">1キロバイトの素材屋さん</A>
 - 蛋卷推荐的[拍立得生成器](https://notchtools.com/polaroid-photo-generator)和[万花筒生成器](https://repper.app/design/)
 - [Emoji融合](https://emojikitchen.dev/)
+- [CSS Stripes Generator](https://stripesgenerator.com/)
 
 ## others 
 

@@ -411,11 +411,6 @@
 
 <nav class="custom-paginav">
     
-    <a class="custom-paginav-prev" href="/posts/2025-11-07-%E5%8D%9A%E5%AE%A2%E5%9B%9B%E5%91%A8%E5%B9%B4/">
-        <span class="custom-paginav-title">« Prev</span><br>
-        <span></span>
-    </a>
-    
     
     <a class="custom-paginav-next" href="/posts/%E4%BA%BA%E7%94%9F%E5%B7%AE%E7%94%9F%E7%9A%84%E5%85%AB%E6%9C%88%E4%BB%BD%E6%80%8E%E4%B9%88%E8%BF%87/">
         <span class="custom-paginav-title">Next »</span><br>
@@ -588,8 +583,8 @@
 <footer class="site-footer">
     <section class="copyright">
         &copy; 2021 - 2025
-        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
-        <a id="days">0</a> Days<br>
+        <a href="http://localhost:1313/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <span id="site-uptime">0 Days</span><br>
         
         
         
@@ -813,17 +808,22 @@
         
         
         <span>All rights reserved.</span>
-
+       
     </section>
 
     
-    <script>
+<script>
         var s1 = '2021-11-12'; 
         s1 = new Date(s1.replace(/-/g, "/"));
         var s2 = new Date();
         var days = s2.getTime() - s1.getTime();
-        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
-        document.getElementById('days').innerHTML = number_of_days;
+        var total_days = parseInt(days / (1000 * 60 * 60 * 24));
+        const DAYS_IN_YEAR = 365.25;
+        var years = Math.floor(total_days / DAYS_IN_YEAR);
+        var remaining_days = Math.round(total_days % DAYS_IN_YEAR); 
+        var output_text = years + ' 年 ' + remaining_days + ' 天';
+        document.getElementById('site-uptime').innerHTML = output_text;
+
     </script>
 
     

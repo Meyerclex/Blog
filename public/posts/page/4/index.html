@@ -190,44 +190,356 @@
             <div class="w">
 
 <link rel="stylesheet" href="/css/_archive-list-nav.css">
-<body>
-  <div class="grid-layout main-container">
-    
-    <header class="header content-wrapper">
-      <ul>
-        
-          <li><a href="/">Home</a></li>
-        
-          <li><a href="/about">About</a></li>
-        
-          <li><a href="/posts">Archive</a></li>
-        
-          <li><a href="/links">Friends</a></li>
-        
-      </ul>
-    </header>
 
-    <main class="main">
-      <div class="centered-div">
-        <div class="content-div">
-          
-          <aside id="sidebar1">
+
+<div class="header-container" id="mobile-nav">
+    <div class="header-inner">
+        <div class="header-left">
+            <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+            <div  >
+  <span id="nav" data-pagefind-ignore>
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+<style>
+    .header-inner .header-left li {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 100%;
+        margin: 0;
+        text-transform: lowercase;
+    }
+    .header-inner .header-left li {
+    padding: 0 0rem;
+}
+    .header-inner .header-left li a {
+         
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+    .header-inner .header-left li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
+.header-inner .header-left ul {
+
+ }
+@media (max-width: 768px) {
+ .header-inner .header-left li {
+    text-align: center;  
+  }
+  .header-inner .header-left ul {
+    margin-top: 10px;
+    min-width: auto;
+}
+}
+</style>
+        </div>
+    </div>
+</div>
+
+
+<h1 id="list-title-h1">Archive</h1>
+<body>
+<div class="main-container">
+    <div id="page_posts" class="window active page_posts" style="">
+        <div class="window-content">
+            <div class="postslist">
+    <div class="post-head-wrapper-text-only"></div>
+
+    <div class="content">
+        
+        
+        
+
+        <div>
+                <h3 class="archive--year">
+                    2022 / 10 entries
+                </h3>
+
+                
+                    <ul>
+                        <li>
+                            <span>12-17</span>&emsp;
+                            <a href="/posts/gruvbox/">
+                            换上秋冬色系新主题
+                            </a>
+                        </li>
+                        <li>
+                            <span>12-11</span>&emsp;
+                            <a href="/posts/portrait/">
+                            一个现实生活卧底的画像
+                            </a>
+                        </li>
+                        <li>
+                            <span>11-22</span>&emsp;
+                            <a href="/posts/audio-1122/">
+                            读段楚传玩儿：清风明月
+                            </a>
+                        </li>
+                        <li>
+                            <span>11-12</span>&emsp;
+                            <a href="/posts/1st/">
+                            博客一周年，谢谢所有的鱼！
+                            </a>
+                        </li>
+                        <li>
+                            <span>11-07</span>&emsp;
+                            <a href="/posts/2022-11-07-%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/">
+                            多情剑客无情剑
+                            </a>
+                        </li>
+                        <li>
+                            <span>10-17</span>&emsp;
+                            <a href="/posts/lovestory/">
+                            我借爱的轻翼飞过院墙
+                            </a>
+                        </li>
+                        <li>
+                            <span>09-10</span>&emsp;
+                            <a href="/posts/%E9%97%AA%E9%97%AA%E6%83%B9%E4%BA%BA%E7%88%B1/">
+                            换回旧主题，闪闪惹人爱
+                            </a>
+                        </li>
+                        <li>
+                            <span>08-30</span>&emsp;
+                            <a href="/posts/hackingbegin/">
+                            Let the Hacking begin！
+                            </a>
+                        </li>
+                        <li>
+                            <span>07-17</span>&emsp;
+                            <a href="/posts/hades/">
+                            In the Name of Hades！
+                            </a>
+                        </li>
+                        <li>
+                            <span>04-06</span>&emsp;
+                            <a href="/posts/april2022/">
+                            病情反复，仍需酒神庇护
+                            </a>
+                        </li>
+                    </ul>
+                    
+                
             
-            <div class=""><a href="/tags" target="_blank" >Tags | 标签</a></div>
+        </div>
+    </div>
+
+    <nav class="pagination">
+    
+        <a href="/posts/page/3/">◀️</a>
+    
+
+    
+        <a href="/posts/" class="">
+            1
+        </a>
+    
+        <a href="/posts/page/2/" class="">
+            2
+        </a>
+    
+        <a href="/posts/page/3/" class="">
+            3
+        </a>
+    
+        <a href="/posts/page/4/" class="">
+            4
+        </a>
+    
+
+    
+        <a href="#" class="disabled">📌</a>
+    
+</nav>
+
+
+<script>
+
+const postslistContainer = document.getElementById('postslist');
+const paginationNav = document.getElementById('pagination-nav');
+
+if (postslistContainer && paginationNav) {
+    document.addEventListener('click', function(event) {
+        
+        const target = event.target.closest('#pagination-nav a');
+
+        
+        if (!target) return;
+
+        
+        event.preventDefault();
+        
+        
+        const newUrl = target.href;
+
+        
+        fetch(newUrl)
+            .then(response => response.text())
+            .then(html => {
+                
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = html;
+
+                
+                const newPostslist = tempDiv.querySelector('#postslist');
+                const newPagination = tempDiv.querySelector('#pagination-nav');
+
+                if (newPostslist && newPagination) {
+                    
+                    postslistContainer.innerHTML = newPostslist.innerHTML;
+                    paginationNav.innerHTML = newPagination.innerHTML;
+
+                    
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    
+                    history.pushState({}, '', newUrl);
+                }
+            })
+            .catch(error => console.error('Error fetching the new page:', error));
+    });
+}
+</script>
+<style>
+    .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    font-size: 90%;  
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+
+}
+@media (min-width: 768px) {
+    .postslist .content {
+        min-height: 680px;  
+    }
+}
+.pagination a.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+}
+</style>
+</div>
+        </div>
+    </div>
+    <div class="note menu-float" style="flex: 0 0 45%;">
+        <div class="header-container" id="pc-nav">
+            <div class="header-inner">
+                <div class="header-left">
+                    <img src="/cat/tumblrcat.png" alt="Icon" class="header-img">
+                    <div  >
+  <span id="nav" data-pagefind-ignore>
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/posts">Archive</a></li>
+      
+        <li><a href="/links">Friends</a></li>
+      
+    </ul>
+  </span>
+</div>
+
+
+<style>
+    .header-inner .header-left li {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 100%;
+        margin: 0;
+        text-transform: lowercase;
+    }
+    .header-inner .header-left li {
+    padding: 0 0rem;
+}
+    .header-inner .header-left li a {
+         
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+    .header-inner .header-left li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
+.header-inner .header-left ul {
+
+ }
+@media (max-width: 768px) {
+ .header-inner .header-left li {
+    text-align: center;  
+  }
+  .header-inner .header-left ul {
+    margin-top: 10px;
+    min-width: auto;
+}
+}
+</style>
+                </div>
+            </div>
+        </div>
+        <div class="note__item">
+            <div id="copyright" class="note__list"
+            >
+                
+                <h3 style="margin-top: 0.5em;">🍞 本站版权说明</h3>
+                <style>
+img {
+border-radius: 0px;
+}
+</style>
+<p>博客作者保留对文章内容的所有权利。</p>
+<p>All rights reserved.</p>
+<p><strong>💫 使用素材鸣谢 Resource Credit</strong></p>
+<ul>
+<li><a href="http://sozaiya405.chu.jp/405" target="_blank" rel="noopener noreferrer">「素材屋405番地」</a></li>
+<li><a href="http://cairovercoat.tumblr.com/tagged/pixel&#43;pattern" target="_blank" rel="noopener noreferrer">bg by cairovercoat</a></li>
+<li><a href="https://scripted.neocities.org/#" target="_blank" rel="noopener noreferrer">scripted resources</a></li>
+</ul>
+
+                
+            </div>
+        </div>
+        <div id="small-nav">
             
-            <div class=""><a href="/bookmarks" target="_blank" >Bookmarks | 书签</a></div>
+            <div class="small-nav-item"><a href="/tags" target="_blank" >Tags | 标签</a></div>
             
-            <div class=""><a href="/changelog" target="_blank" >Changelog | 更新日志</a></div>
+            <div class="small-nav-item"><a href="/bookmarks" target="_blank" >Bookmarks | 书签</a></div>
             
-            <div class=""><a href="/collection" target="_blank" >Museum | 博物馆</a></div>
+            <div class="small-nav-item"><a href="/changelog" target="_blank" >Changelog | 更新日志</a></div>
             
-            <div class=""><a href="/search" target="_blank" >Search | 搜索</a></div>
+            <div class="small-nav-item"><a href="/collection" target="_blank" >Museum | 博物馆</a></div>
             
-            <div class=""><a href="/fanpage" target="_blank" >Fanpage ♡</a></div>
+            <div class="small-nav-item"><a href="/search" target="_blank" >Search | 搜索</a></div>
             
-            <div>
-              <div id="mumblebox" class="pc-m">
-                <div class=""> <div class="talktext">
+            <div class="small-nav-item"><a href="/fanpage" target="_blank" >Fanpage ♡</a></div>
+            
+        </div>
+        <hr class="decoration-hr">
+<div class="talk-bubble tri-right round right-in is-hidden"> <div class="talktext">
 
     <div id="feed-reader"></div>
     <script>
@@ -320,517 +632,9 @@
     </script>
 </div>
 </div>
-              </div>
-            </div>
-          </aside>
-
-          <section id="post-list-wrapper">
-
-            <div id="post-list">
-              
-              
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/fetfc/" class="post-link">Fanfic Elysium：The Final Cut</a>
-                      <span class="post-date">Jun 11</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/2024-05-17/" class="post-link">《九龙城寨之围城》是一部烂电影</a>
-                      <span class="post-date">May 17</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/8tips/" class="post-link">生活的撇步也应逐一记录</a>
-                      <span class="post-date">Apr 28</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/aboutfic/" class="post-link">小说大事记事簿</a>
-                      <span class="post-date">Apr 08</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/maco/" class="post-link">神压在了你身上</a>
-                      <span class="post-date">Mar 27</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/chosenfamily/" class="post-link">战士的选择</a>
-                      <span class="post-date">Mar 08</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/disc/" class="post-link">而为什么我选择了月经盘</a>
-                      <span class="post-date">Dec 16</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/23/" class="post-link">23岁，两周年，谢谢所有的鱼</a>
-                      <span class="post-date">Dec 15</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/all-about-steam-deck/" class="post-link">关于我知道的Steam Deck的一切</a>
-                      <span class="post-date">Nov 29</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/safeandhealthy/" class="post-link">如果生病，一个人</a>
-                      <span class="post-date">Sep 10</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/thekitchen/" class="post-link">我的厨房</a>
-                      <span class="post-date">Aug 17</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/living-alone/" class="post-link">当我们谈论独居时</a>
-                      <span class="post-date">Aug 08</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/all-alone/" class="post-link">是问题构成了这个世界</a>
-                      <span class="post-date">Jul 07</span>
-                  </div>
-                  
-              
-
-
-            </div>
-  
-            
-              <div class="pagination">
-                <a href="/posts/page/3/" class="pagination-link">Prev</a>
-                
-                <a href="/posts/" class="pagination-link">1</a>
-                
-                <a href="/posts/page/2/" class="pagination-link">2</a>
-                
-                <a href="/posts/page/3/" class="pagination-link">3</a>
-                
-                <a href="/posts/page/4/" class="pagination-link active">4</a>
-                
-                <a href="/posts/page/5/" class="pagination-link">5</a>
-                
-                <a href="/posts/page/6/" class="pagination-link">6</a>
-                
-                <a href="/posts/page/5/" class="pagination-link">Next</a>
-              </div>
-            
-          </section>
-        </div>
-      </div>
-    </main>
-  </div>
+    </div>
+</div>
 </body>
-
-
-<style>
-.grid-layout {
-  width: 100%;
-  display: grid;
-   
-  grid:
-    "header" auto
-    "main" 1fr
-    "footer" auto
-    / 1fr;  
-  gap: 8px;  
-  
-   
-  height: 85vh;  
-  justify-content: center;  
-  align-items: unset;  
-  position: relative;
-}
-
-.header { grid-area: header; }
-.main { 
-    grid-area: main; 
-    display: flex;  
-    justify-content: center;
-}
-.footer { grid-area: footer; }
-
- .post-item {
-    display: flex;
-    justify-content: space-between;  
-    align-items: center;
-    margin: 10px 20px;
-    font-size: 95%;
-}
-
-.post-item a {
-    color: var(--talk-bubble-border-text-color);
-     
-  
-}
-.post-item a:hover {
-    background-color: var(--bg-color);
-}
- .post-date {
-        font-family: 'Courier New', Courier, monospace;
-        background: var(--bg-color);
-}
-#post-list {
-  height: 100%; 
-  overflow-y: scroll; 
-   
-}
-     
-.content-wrapper {
-  display: flex;
-  flex-direction: column;  
-  align-items: center;  
-   
-}
-
- 
-.content-wrapper ul {
-  display: flex;
-  list-style-type: none;  
-  padding: 0;
-  margin: 0 0 10px 0;  
-}
-
- 
-.content-wrapper ul li {
-  margin: 0 10px;  
-  font-family: 'Courier New', Courier, monospace;
-  font-size: small;
-}
-
-.content-wrapper ul li a {
-  color: var(--talk-bubble-border-text-color);
-        text-transform: lowercase;
-
-}
-.content-wrapper ul li:before {
-    content: " ";
-    font-weight: bold;
-    margin-right: 0px;
-}
-
- 
- 
-
-
- 
-.centered-div {
-    
-  width: 780px;
-   
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-   
-}
-
- 
-.header {
-  width: 100%;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
- 
-.content-div {
-   
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-
-}
-
- 
-#sidebar1 {
-  width: 140px;
-  height: 100%;
-  margin-top: 30px;
-}
-
- 
-#post-list {
-  flex-grow: 1;  
-  height: 100%;
-  margin-left: 10px;
-}
-
- 
-#sidebar1 a, #sidebar1 a:visited {
-  display: block;
-  font-size: 75%;
-  white-space: nowrap;
-  margin: 5px 0px;
-  padding: 2px;
-  text-align: center;
-  text-transform: uppercase;
-  background: var(--bg-color);
-  color: var(--text-color);
-}
-
-#sidebar1 a:hover {
-    background-color: #ece8d7;
-}
-
-body[a="dark"] #sidebar1 a:hover {
-    background-color: #4a114382;
-}
-
-#post-list-wrapper {
-  flex-grow: 1;  
-  height: 100%;
-  margin-left: 10px;
-   
-  position: relative;
-}
-
-#post-list {
-   
-  height: calc(90% - 40px);  
-  overflow-y: scroll;
-}
-
- 
-.pagination {
-  position: absolute;
-  bottom: 0px;
-  right: 0;
-  display: flex;
-  gap: 8px;
-  font-size: small;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.pagination a {
-  color: var(--talk-bubble-border-text-color);
-
-}
-.pagination-link {
-  text-decoration: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  color: var(--talk-bubble-border-text-color);
-  background-color:var(--bg-color);
-}
-
-.pagination-link.active {
-  background-color: var(--talk-bubble-border-text-color);
-  color: var(--bg-color);
-}
-
-body[a="dark"] .pagination-link.active {
-  background-color: #bc8faf !important; 
-  color: var(--bg-color);
-}
-
-.pagination-link.disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.5;
-}
-.note-box {
-  width: 150px;
-    border: dashed  1px ;
-border-left: dashed 0px;
-   
-  border-radius: 5px;
-  padding: 10px;
-   
-  transform: rotate(2deg); 
-  position: absolute; 
-  top: 55%; 
-  left: calc(50% + 385px); 
-}
-
-.note-box p {
-  font-size: 75%;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.statuscafe-entry {
-    margin-top: 10px;
-    border: dashed  1px ;
-    font-size: 85%;
-}
-.mumble-time {
-  font-size: 80%;
-  white-space: nowrap;
-}
-.pagination-link {
-     
-    white-space: nowrap;
-}
-
-.site-footer {
-    color: var(--talk-bubble-border-text-color);
-}
- 
-
-
- 
-@media (max-width: 768px) {
-   
-  .grid-layout, 
-  .main, 
-  .main-container,
-  .content-wrapper,
-  .centered-div,
-  .content-div {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-  }
-
-  .grid-layout {
-    height: auto; 
-  }
-
-   
-.content-wrapper ul {
-        justify-content: center; 
-        align-items: center;
-        margin: 10px 0; 
-         
-        margin-left: -1em; 
-        margin-right: -1em; 
-    }
-
-     
-    .content-wrapper ul li {
-         
-        margin: 0 1em;  
-        padding: 0; 
-        font-size: small; 
-    }
-
-   
-  #sidebar1 {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: flex-start;  
-    width: 100%;
-    height: auto;
-    margin-top: 20px; 
-    margin-bottom: 0; 
-     
-  }
-  
-   
-  #sidebar1 a, #sidebar1 a:visited {
-    display: block;
-    white-space: normal;
-    margin: 5px 5px; 
-    padding: 4px 8px; 
-    font-size: 75%;
-    text-align: center;
-    text-transform: uppercase;
-    background: var(--bg-color);
-    color: var(--text-color);
-  }
-
-   
-  #post-list-wrapper,
-  #post-list {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    overflow-y: visible; 
-    padding: 0 0px; 
-  }
-  
-   
-  .post-item {
-    margin: 5px 0;
-    padding: 4px 10px;
-  }
-
-   
-  .centered-div {
-    border-radius: 0;
-  }
-  
-   
-  .note-box {
-    display: none;
-  }
-
-   
-  .pagination {
-    position: static;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 0 10px;
-  }
-}
-
-
-
-
-
- 
-@media (max-width: 768px) {
-   
-  .main-container,
-  .content-wrapper,
-  .centered-div {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-  }
-
-   
-  .content-div {
-    display: flex;
-    flex-direction: column;
-  }
-
-   
-  #sidebar1 {
-    order: 2;  
-    width: 100%;
-    height: auto;
-    margin: 20px 0 0 0;  
-  }
-
-  
-
-  #post-list-wrapper {
-    order: 1;  
-    width: 100%;
-    height: auto;
-    margin: 0;
-    overflow-y: visible;  
-  }
-      .w {
-        max-width: 840px;
-        margin: 0 auto;
-        padding: 0.5rem 0.5rem;
-    }
-    
-}
-</style>
 
 <footer class="site-footer">
     <section class="copyright">
@@ -1060,7 +864,7 @@ border-left: dashed 0px;
         
         
         <span>All rights reserved.</span>
-
+       
     </section>
 
     

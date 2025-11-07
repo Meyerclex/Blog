@@ -323,6 +323,7 @@
 <li><a href="https://layoutit.com/" target="_blank" rel="noopener noreferrer">layoutit.com</a>：layouts生成，但我不会用（……</li>
 <li><a href="https://petrapixel.neocities.org/layout-generator/" target="_blank" rel="noopener noreferrer">petrapixel&rsquo;s layout generator</a>：非常易懂且移动端友好的Layout生成器，虽然布局类型很少，但假如想从头开始布局应该会是不错的开始。</li>
 <li><a href="https://layout.bradwoods.io/" target="_blank" rel="noopener noreferrer">CSS Layout Generator</a>：最近在用的CSS Layout生成器</li>
+<li><a href="https://nomnomnami.com/templates/#personal" target="_blank" rel="noopener noreferrer">nomnomnami&rsquo;s theme</a></li>
 </ul>
 <h2 id="css-pattern--graphics">CSS pattern / Graphics</h2>
 <ul>
@@ -341,6 +342,7 @@
 <li><A href="http://1kbsozai.com" target="_blank">1キロバイトの素材屋さん</A></li>
 <li>蛋卷推荐的<a href="https://notchtools.com/polaroid-photo-generator" target="_blank" rel="noopener noreferrer">拍立得生成器</a>和<a href="https://repper.app/design/" target="_blank" rel="noopener noreferrer">万花筒生成器</a></li>
 <li><a href="https://emojikitchen.dev/" target="_blank" rel="noopener noreferrer">Emoji融合</a></li>
+<li><a href="https://stripesgenerator.com/" target="_blank" rel="noopener noreferrer">CSS Stripes Generator</a></li>
 </ul>
 <h2 id="others">others</h2>
 <ul>
@@ -410,8 +412,8 @@ ul li:before {
 <footer class="site-footer">
     <section class="copyright">
         &copy; 2021 - 2025
-        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
-        <a id="days">0</a> Days<br>
+        <a href="http://localhost:1313/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <span id="site-uptime">0 Days</span><br>
         
         
         
@@ -635,17 +637,22 @@ ul li:before {
         
         
         <span>All rights reserved.</span>
-
+       
     </section>
 
     
-    <script>
+<script>
         var s1 = '2021-11-12'; 
         s1 = new Date(s1.replace(/-/g, "/"));
         var s2 = new Date();
         var days = s2.getTime() - s1.getTime();
-        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
-        document.getElementById('days').innerHTML = number_of_days;
+        var total_days = parseInt(days / (1000 * 60 * 60 * 24));
+        const DAYS_IN_YEAR = 365.25;
+        var years = Math.floor(total_days / DAYS_IN_YEAR);
+        var remaining_days = Math.round(total_days % DAYS_IN_YEAR); 
+        var output_text = years + ' 年 ' + remaining_days + ' 天';
+        document.getElementById('site-uptime').innerHTML = output_text;
+
     </script>
 
     
