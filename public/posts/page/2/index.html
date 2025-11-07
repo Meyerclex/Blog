@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.74d2bad8baea141dcbb06ee0065a12ce61c375ba3c5fa70ee05059df04986f47275f8f606ae0d00d7adf94445f4f5cdde7cad57ef35e3d4220a142ab16f210dd.css" integrity="sha512-dNK62LrqFB3LsG7gBloSzmHDdbo8X6cO4FBZ3wSYb0cnX49gauDQDXrflERfT1zd58rVfvNePUIgoUKrFvIQ3Q==" />
+  <link rel="stylesheet" href="/css/main.7f9971e8e95c4b4ac815e3dd9d127c06f76467a33871313588d2d228567f82ca5b09f41998415b4240585ee671b3855fd61bd81ba89cd712c75f4d259f66ac45.css" integrity="sha512-f5lx6OlcS0rIFePdnRJ8BvdkZ6M4cTE1iNLSKFZ/gspbCfQZmEFbQkBYXuZxs4Vf1hvYG6ic1xLHX00ln2asRQ==" />
   
   
   
@@ -331,6 +331,12 @@
               
               
                   <div class="post-item">
+                      <a href="http://localhost:1313/posts/june-06-thoughts/" class="post-link">June 08, Random Thoughts</a>
+                      <span class="post-date">Jun 08</span>
+                  </div>
+                  
+              
+                  <div class="post-item">
                       <a href="http://localhost:1313/posts/2025-05-23-twemoji/" class="post-link">如何在Hugo博客中使用Twemoji🍻</a>
                       <span class="post-date">May 23</span>
                   </div>
@@ -399,12 +405,6 @@
                   <div class="post-item">
                       <a href="http://localhost:1313/posts/2025-01-21/" class="post-link">但那天曾实在华丽地邂逅</a>
                       <span class="post-date">Jan 21</span>
-                  </div>
-                  
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/2025-01-15/" class="post-link">2024年度院线电影颁奖典礼</a>
-                      <span class="post-date">Jan 15</span>
                   </div>
                   
               
@@ -835,8 +835,10 @@ border-left: dashed 0px;
 <footer class="site-footer">
     <section class="copyright">
         &copy; 2021 - 2025
-        <a href="https://gregueria.icu/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
-        <a id="days">0</a> Days<br>
+        <a href="http://localhost:1313/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
+        <span id="site-uptime">0 Days</span><br>
+        
+        
         
         
         
@@ -1062,13 +1064,18 @@ border-left: dashed 0px;
     </section>
 
     
-    <script>
+<script>
         var s1 = '2021-11-12'; 
         s1 = new Date(s1.replace(/-/g, "/"));
         var s2 = new Date();
         var days = s2.getTime() - s1.getTime();
-        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
-        document.getElementById('days').innerHTML = number_of_days;
+        var total_days = parseInt(days / (1000 * 60 * 60 * 24));
+        const DAYS_IN_YEAR = 365.25;
+        var years = Math.floor(total_days / DAYS_IN_YEAR);
+        var remaining_days = Math.round(total_days % DAYS_IN_YEAR); 
+        var output_text = years + ' 年 ' + remaining_days + ' 天';
+        document.getElementById('site-uptime').innerHTML = output_text;
+
     </script>
 
     

@@ -6,8 +6,8 @@
 <footer class="site-footer">
     <section class="copyright">
         &copy; 2021 -{{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }} {{ .Site.Params.footer.since }} - {{ end }} {{ now.Format "2006" }}
-        <a href="https://gregueria.icu/"> {{ $.Site.Title }} </a> · <i class="fas fa-bell"> </i>
-        <a id="days">0</a> Days<br>
+        <a href="{{ $.Site.BaseURL }}"> {{ $.Site.Title }} </a> · <i class="fas fa-bell"> </i>
+        <span id="site-uptime">0 Days</span><br>
         {{$scratch := newScratch}}
         {{ range (where .Site.Pages "Kind" "page") }}
         {{$scratch.Add "total" .WordCount}}
@@ -21,13 +21,18 @@
     </section>
 
     <!-- 计算网站启动以来的天数 -->
-    <script>
+<script>
         var s1 = '2021-11-12'; // 设置建站日期
         s1 = new Date(s1.replace(/-/g, "/"));
         var s2 = new Date();
         var days = s2.getTime() - s1.getTime();
-        var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
-        document.getElementById('days').innerHTML = number_of_days;
+        var total_days = parseInt(days / (1000 * 60 * 60 * 24));
+        const DAYS_IN_YEAR = 365.25;
+        var years = Math.floor(total_days / DAYS_IN_YEAR);
+        var remaining_days = Math.round(total_days % DAYS_IN_YEAR); 
+        var output_text = years + ' 年 ' + remaining_days + ' 天';
+        document.getElementById('site-uptime').innerHTML = output_text;
+
     </script>
 
     <!-- copy code -->
