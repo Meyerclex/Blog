@@ -6,7 +6,16 @@
         <description>Recent content in Memory on 再會，謝謝所有的魚</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 04 Nov 2025 00:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/memory/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Fri, 07 Nov 2025 00:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/memory/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+            <title>博客四周年，只要真心就可以</title>
+            <link>http://localhost:1313/posts/4th/</link>
+            <pubDate>Fri, 07 Nov 2025 00:00:00 +0800</pubDate>
+            
+            <guid>http://localhost:1313/posts/4th/</guid>
+            <description>07 Nov | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
+        </item>
+        
         <item>
             <title>请问真的不能带狗进来吗？</title>
             <link>http://localhost:1313/posts/2025-11-04/</link>
@@ -896,15 +905,6 @@
             
             <guid>http://localhost:1313/posts/we-will-be-fine/</guid>
             <description>24 Apr | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
-        </item>
-        
-        <item>
-            <title></title>
-            <link>http://localhost:1313/posts/2025-11-07-%E5%8D%9A%E5%AE%A2%E5%9B%9B%E5%91%A8%E5%B9%B4/</link>
-            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-            
-            <guid>http://localhost:1313/posts/2025-11-07-%E5%8D%9A%E5%AE%A2%E5%9B%9B%E5%91%A8%E5%B9%B4/</guid>
-            <description>01 Jan | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
         </item>
         
     </channel>
