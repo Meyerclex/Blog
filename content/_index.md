@@ -36,7 +36,7 @@ draft = false
 
 **so long**
 
-**thanks for all the fishes**
+**thanks for all the fish**
 
 **<center>🧸 me... </center>**
 
