@@ -66,7 +66,7 @@
             top: 38%; 
             left: 47%;
             transform: translate(-50%, -50%); 
-            z-index: 30; /* 默认在图标 (40+) 下方 */
+            z-index: 30; /* PC端默认在图标 (40+) 下方 */
             width: 50%;
             padding-left: 15px;
             text-align: left;
@@ -202,7 +202,8 @@
 
             .scaling-group {
                 width: min(70vh, 70vw); 
-                aspect-ratio: 3 / 4; 
+                aspect-ratio: 3 / 4;
+                top: 42%; /* 关键修改：将主体中心向上移动到 45% */
             }
 
             .notebook-text {
@@ -214,7 +215,7 @@
             top: 38%; 
             left: 47%;
             transform: translate(-50%, -50%); 
-            z-index: 30; 
+            z-index: 50; /* 关键修改：在移动端始终将 z-index 设置为高于图标 (40+) 的值 */
             width: 70%;
             padding-left: 15px;
             text-align: left;
