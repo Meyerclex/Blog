@@ -116,7 +116,8 @@
         .item-link::after {
             content: attr(data-title); /* 使用 data-title 中的内容作为提示文本 */
             position: absolute;
-            
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: lowercase;
             /* --- 调整定位到图标图片上部 --- */
             top: 80%; /* 从图标容器顶部向下偏移 15% */
             bottom: auto; /* 确保不被之前的 bottom 覆盖 */
