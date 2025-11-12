@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head>
+<html lang="zh-CN"><head>
 	<meta name="generator" content="Hugo 0.148.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta charset="utf-8" />
@@ -186,637 +186,345 @@
         }
     });
 
-</script><body a="auto">
-        <main class="page-content" aria-label="Content">
-            <div class="w">
-<header>
-    <div class="header-container">
-        <div class="header-inner">
-                        <div class="head-img">
-                            <img src="/site/1.jpg" alt="Header Image" class="header-img-content">
-                        </div>  
-                    <div>
-                        <div class="title">gregueria.icu</div>
-                        <ul>
-                            
-                            <li><a href="/">Home</a></li>
-                            
-                            <li><a href="/about">About</a></li>
-                            
-                            <li><a href="/posts">Archive</a></li>
-                            
-                            <li><a href="/links">Friends</a></li>
-                            
-                        </ul>
-                    
-                    </div>
-        </div>
-    </div>
-</header>
-
-
-
-
-<footer class="site-footer">
-    <section class="copyright">
-        &copy; 2021 - 2025
-        <a href="http://localhost:1313/"> 再會，謝謝所有的魚 </a> · <i class="fas fa-bell"> </i>
-        <span id="site-uptime">0 Days</span><br>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <span>All rights reserved.</span>
-       
-    </section>
-
-    
-<script>
-        var s1 = '2021-11-12'; 
-        s1 = new Date(s1.replace(/-/g, "/"));
-        var s2 = new Date();
-        var days = s2.getTime() - s1.getTime();
-        var total_days = parseInt(days / (1000 * 60 * 60 * 24));
-        const DAYS_IN_YEAR = 365.25;
-        var years = Math.floor(total_days / DAYS_IN_YEAR);
-        var remaining_days = Math.round(total_days % DAYS_IN_YEAR); 
-        var output_text = years + ' 年 ' + remaining_days + ' 天';
-        document.getElementById('site-uptime').innerHTML = output_text;
-
-    </script>
-
-    
-    
-
-    <script>
-        
-        document.addEventListener("DOMContentLoaded", function () {
-            hljs.highlightAll(); 
-        });
-
-    </script>
-
-</footer>
-
-
-
-
-<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        const postContent = document.getElementById('post-content');
-
-        if (postContent && window.ViewImage) {
-            
-            ViewImage.init('#post-content img:not([no-view]):not(.emoji):not(#emoji)');
-        } else if (!postContent) {
-            
-            console.log("Current page does not have #post-content. ViewImage initialization skipped.");
-        } else {
-            
-            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+</script><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | 再會，謝謝所有的魚</title>
+    <style>
+        
+        :root {
+             
+            --mark: #18be70; 
         }
-    });
-</script>
+
+        a:hover {
+            background-color: transparent;
+            border-radius: none;
+        }
+        .index-container {
+             
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; 
+            z-index: 10;
+            
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .scaling-group {
+            position: relative; 
+            width: min(55vh, 55vw); 
+            aspect-ratio: 3 / 4; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .notebook-content-group {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .notebook-img {
+            filter: grayscale(20%) sepia(20%);  
+            position: absolute;
+            width: 60%; 
+            height: 60%; 
+            top: 10%;
+            left: 20%;
+            z-index: 20; 
+            pointer-events: none; 
+            rotate: 5deg;
+        }
+
+        .notebook-text {
+            position: absolute;
+            top: 38%; 
+            left: 47%;
+            transform: translate(-50%, -50%); 
+            z-index: 30;  
+            width: 50%;
+            padding-left: 15px;
+            text-align: left;
+            rotate:5deg;
+            color: rgb(27, 110, 165); 
+        }
+
+        .notebook-text p {
+            margin: 5px 5px;
+            line-height: 1.2;
+            font-size: 1.vw; 
+            position: relative;  
+            transition: filter 0.3s ease-out; 
+        }
+
+         
+        .notebook-text p:hover {
+            z-index: 1000;  
+            filter: drop-shadow(0 0 10px var(--mark));
+        }
+
+        .item-link {
+            position: absolute;
+            display: block;
+            width: 25%; 
+            z-index: 40; 
+            transition: transform 0.3s ease-out, filter 0.3s ease-out;
+            filter: none;
+            cursor: pointer;
+        }
+
+         
+        .item-link img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(20%) sepia(20%);  
+            transition: filter 0.3s ease-out;  
+        }
+
+         
+        .item-link:hover img {
+            filter: none;
+        }
+        
+         
+        .item-link::after {
+            content: attr(data-title);  
+            position: absolute;
+            
+             
+            top: 80%;  
+            bottom: auto;  
+            left: 50%;
+            transform: translateX(-50%); 
+            visibility: hidden;
+            opacity: 0;
+            background-color: #18be70;
+            color: #000000; 
+            border-radius: 0px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 90;  
+            pointer-events: none;
+        }
+
+        .item-link:hover::after {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+         
+        .item-1 { top: 0%; left: -10%; width: 45%; z-index: 19; transform: rotate(-15deg); } 
+        .item-1:hover {
+            transform: scale(1.1) rotate(-25deg);
+            filter: drop-shadow(0 0 10px var(--mark));
+            z-index: 45;
+        }
+        
+         
+        .item-2 { bottom: 20%; right: 5%; width: 40%; transform: rotate(15deg);  } 
+        .item-2:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 10px var(--mark));
+            z-index: 41;
+        }
+        
+         
+        .item-3 { bottom: 46%; right: -20%; width: 40%; transform: translateX(-50%) rotate(15deg); } 
+        .item-3:hover {
+            transform: translateX(-50%) scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 10px var(--mark));
+            z-index: 41;
+        }
+
+         
+        .item-4 { bottom: 25%; left: -5%; width: 40%; transform: rotate(-10deg); } 
+        .item-4:hover {
+            transform: scale(1.1) rotate(-5deg);
+            filter: drop-shadow(0 0 20px var(--mark));
+            z-index: 41;
+        }
+
+         
+        .item-5 { bottom: 31%; left: 25%; width: 35%; transform: translateY(-50%) rotate(10deg); z-index: 21; } 
+        .item-5:hover {
+             
+            filter: drop-shadow(0 0 10px var(--mark));
+            z-index: 41;
+        }
+
+         
+        .item-6 { bottom: 0%; left: 40%; transform: translateY(50%) rotate(7deg); z-index: 14; }
+        .item-6:hover {
+            transform: translateY(50%) scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 10px var(--mark));
+            z-index: 41;
+        }
 
 
 
+        @media (max-width: 768px) {
 
+            .notebook-img {
+                top: 0%;
+                left: 0;
+            width: 100%; 
+            height: 100%; 
+            z-index: 20; 
+            pointer-events: none; 
+            rotate: 0deg;        }
 
-<script>
-    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
-  const nextNode = img.nextSibling;
-  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
-    const wrapper = document.createElement('figure');
-    wrapper.className = 'single-image-figure';
-    img.replaceWith(wrapper);
-    wrapper.appendChild(img);
-    
-    const caption = document.createElement('figcaption');
-    caption.className = 'image-caption';
-    caption.textContent = nextNode.textContent.trim();
-    wrapper.appendChild(caption);
-    
-    nextNode.remove(); 
+            .scaling-group {
+                width: min(70vh, 70vw); 
+                aspect-ratio: 3 / 4; 
+            }
+
+            .notebook-text {
+                font-size: 3.5vw; 
+            }
+
+            .notebook-text {
+            position: absolute;
+            top: 38%; 
+            left: 47%;
+            transform: translate(-50%, -50%); 
+            z-index: 30; 
+            width: 70%;
+            padding-left: 15px;
+            text-align: left;
+            rotate: 0deg;
+            color: rgb(27, 110, 165); 
+        }
+
+            .item-link {
+                width: 35%; 
+            }
+            
+             
+            .item-1 { top: 20%; left: -20%; z-index: 41; width: 45%; transform: rotate(-15deg); } 
+            .item-2 { bottom: 10%; right: -10%; width: 40%; transform: rotate(15deg); } 
+            .item-3 { bottom: 40%; right: -35%; width: 40%; transform: translateX(-50%) rotate(15deg); }
+            .item-4 { bottom: 0%; left: 0%; width: 40%; transform: rotate(-10deg); } 
+            .item-5 { bottom: 0%; left: 40%; width: 35%; transform: translateY(-50%) rotate(10deg); }
+            .item-6 { bottom: 0%; left: 40%; transform: translateY(50%) rotate(7deg); }
+
+            
+            .item-1:hover { transform: scale(1.1) rotate(-25deg); } 
+
+            .item-2:hover, .item-3:hover, .item-4:hover, .item-5:hover, .item-6:hover {
+                 
+                filter: drop-shadow(0 0 10px var(--mark));
+                z-index: 41;
+            }
+                        .item-link::after {
+                visibility: visible;
+                opacity: 1;
+                 
+                font-size: 0.8rem;
+                padding: 2px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="index-container">
+        
+        <div class="scaling-group"> 
+            
+            <div class="notebook-content-group">
+                
+                <img src="/png/paper2.png" alt="Notebook" class="notebook-img">
+                
+                <div class="notebook-text">
+                    <style>
+
+  .fo {
+  font-size: 90%;
+}
+
+  @media (max-width: 968px) {
+  img.float-img35 {
+    width: 21%!important;
+    /*max-width: 50%;*/
+    margin: 0 0.5em !important;
   }
-});
-</script>
+ img.float-img35 {
+    width: 30%;
+    margin: 0 0.5rem;
+    /*float: right;*/
+}
 
-<script>
-    ;(function () {
-        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
-        const Wording1 = "向我提问！"
-        const Wording2 = "看到就会回复 :D"
-        const TagTextColor = "#ffffff"
-        const TagBgColor = "var(--shadow)"
-        const BodyBgColor = "#ffffff"
-
-        const $container = document.createElement("div")
-        const $button = document.createElement("div")
-
-        $button.innerText = Wording1
-        document.body.append($button)
-
-        $container.innerHTML += `
-    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `
-        let isOpen = false
-        let isFirst = true
-        $button.onclick = () => {
-            if (isFirst) {
-                isFirst = false
-                document.body.append($container)
-            }
-            if (!isOpen) {
-                useStyle($container, {
-                    top: "unset",
-                    bottom: "0px",
-                    visibility: "visible"
-                })
-                useStyle($button, {
-                    bottom: "400px"
-                })
-                $button.innerText = Wording2
-            } else {
-                useStyle($container, {
-                    top: "100%",
-                    bottom: "unset",
-                    visibility: "hidden"
-                })
-                useStyle($button, {
-                    bottom: "0px"
-                })
-                $button.innerText = Wording1
-            }
-            isOpen = !isOpen
-        }
-        useStyle($button, {
-            position: "fixed",
-            bottom: "0px",
-            right: "0px",
-            background: TagBgColor,
-            color: TagTextColor,
-            "font-size": "14px",
-            "border-top-left-radius": "10px",
-            padding: "5px 10px",
-            cursor: "pointer"
-        })
-        useStyle($container, {
-            position: "fixed",
-            top: "100%",
-            right: "0px",
-            width: "300px",
-            height: "400px",
-            background: BodyBgColor,
-            "z-index": "11"
-        })
-
-        function useStyle (dom, style) {
-            for (let sKey in style) {
-                dom.style[sKey] = style[sKey]
-            }
-        }
-    })()
-</script>
-
-
-
-<style>
-    .title {
-        font-family: 'Courier New', Courier, monospace;
-        margin: 5px;
-        color: var(--talk-bubble-border-text-color);
-    }
- 
-.head-img {
-     
-    max-width: 262px;
-     
-    margin-bottom: 5px;
-     
+.box-welcome p {
+    /*padding: 8px 12px;*/
+    line-height: 1.35;
+    /*font-size: 90%;*/
+}
 
 }
 
- 
-.header-img-content {
-    width: 100%;
-    height: auto; 
-    display: block; 
-        border-radius: 0px!important;
-        -webkit-mask-image: 
-        linear-gradient(to top, black calc(100% - 10px), transparent 100%),
-        linear-gradient(to bottom, black calc(100% - 10px), transparent 100%),
-        linear-gradient(to left, black calc(100% - 10px), transparent 100%),
-        linear-gradient(to right, black calc(100% - 10px), transparent 100%);
-    
-     
-    -webkit-mask-position: top, bottom, left, right;
-    -webkit-mask-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-    -webkit-mask-composite: source-in;  
-    mask-composite: intersect;  
-}
- 
-.header-img-content {
-    filter: sepia(50%) hue-rotate(0deg) saturate(1) brightness(0.95) opacity(1);
-    transition: filter 0.5s ease;  
-}
- 
-.header-img-content:hover {
-    filter: none;  
-}
- 
-@media (max-width: 768px) {
-    .head-img {
-         
-        width: 90vw; 
-        
-         
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
 
 
- 
-.header-inner {
-     
-}
-    
-.site-title {
-    text-align: left;
-    font-family: "Huiwen-mincho";
-    font-weight: normal;
-        color: var(--talk-bubble-border-text-color);
-        font-size: 140%;
-            margin-left: -5px;
-
-}
-    .header-inner li {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 100%;
-        margin: 0;
-        text-transform: lowercase;
-        
-    }
-    .header-inner li {
-    padding: 0 0rem;
-}
-    .header-inner ul li a {
-         
-        color: var(--talk-bubble-border-text-color);
-        font-size: 90%;
-    }
-    ul li:before {
-    content: " ";
-    font-weight: bold;
-    margin-right: 0px;
-}
-    ul {
-        padding: 0 0 0 7px;
-    }
-    .header-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 85vh;
-    }
-    .copyright {
-        color: var(--talk-bubble-border-text-color);
-    }
-    
 </style>
+<p><strong>so long</strong></p>
+<p><strong>thanks for all the fishes</strong></p>
+<p><strong><center>🧸 me&hellip; </center></strong></p>
+<!-- <img src="/img/8422aeec14319a67.jpeg" class="float-img35" style="padding-bottom: 2px!important;"> -->
+<div class="fo">
+<p>我是鱼鱼，爱与和平同人女一枚！</p>
+<p>我喜欢小动物，很会修东西</p>
+<p>爱喝热美式，我的面包体是ISTJ</p>
+<p>我喜欢看电视，近视600度，欣赏的作家是张亦绚</p>
+<p>冬天快乐。</p>
+</div>
+<div style="clear: both;"></div>
 
+                </div>
+                
+                <a href="/about" class="item-link item-1" data-item="1" data-title="About"><img src="/png/1.png" alt="档案"></a>
+                <a href="/links" class="item-link item-2" data-item="2" data-title="Friends"><img src="/png/2.png" alt="项目"></a>
+                <a href="/fanpage/byung" class="item-link item-3" data-item="3" data-title="Fanpage"><img src="/png/3.png" alt="联系"></a>
+                <a href="/posts" class="item-link item-4" data-item="4" data-title="Archive"><img src="/png/4.png" alt="画廊"></a>
+                <a class="item-link item-5" data-item="5" data-title=""><img src="/png/word.png" alt=""></a>
+                
 
             </div>
-        </main>
-    
 
-<script>
-    document.querySelectorAll('#post-content > img.post-image').forEach(img => {
-  const nextNode = img.nextSibling;
-  if (nextNode && nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() !== '') {
-    const wrapper = document.createElement('figure');
-    wrapper.className = 'single-image-figure';
-    img.replaceWith(wrapper);
-    wrapper.appendChild(img);
-    
-    const caption = document.createElement('figcaption');
-    caption.className = 'image-caption';
-    caption.textContent = nextNode.textContent.trim();
-    wrapper.appendChild(caption);
-    
-    nextNode.remove(); 
-  }
-});
-</script>
-
-<script>
-    ;(function () {
-        const CboxUrl = "https://www3.cbox.ws/box/?boxid=3522873&boxtag=LBkamX"
-        const Wording1 = "向我提问！"
-        const Wording2 = "看到就会回复 :D"
-        const TagTextColor = "#ffffff"
-        const TagBgColor = "var(--shadow)"
-        const BodyBgColor = "#ffffff"
-
-        const $container = document.createElement("div")
-        const $button = document.createElement("div")
-
-        $button.innerText = Wording1
-        document.body.append($button)
-
-        $container.innerHTML += `
-    <iframe src="${CboxUrl}" width="100%" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-  `
-        let isOpen = false
-        let isFirst = true
-        $button.onclick = () => {
-            if (isFirst) {
-                isFirst = false
-                document.body.append($container)
-            }
-            if (!isOpen) {
-                useStyle($container, {
-                    top: "unset",
-                    bottom: "0px",
-                    visibility: "visible"
-                })
-                useStyle($button, {
-                    bottom: "400px"
-                })
-                $button.innerText = Wording2
-            } else {
-                useStyle($container, {
-                    top: "100%",
-                    bottom: "unset",
-                    visibility: "hidden"
-                })
-                useStyle($button, {
-                    bottom: "0px"
-                })
-                $button.innerText = Wording1
-            }
-            isOpen = !isOpen
-        }
-        useStyle($button, {
-            position: "fixed",
-            bottom: "0px",
-            right: "0px",
-            background: TagBgColor,
-            color: TagTextColor,
-            "font-size": "14px",
-            "border-top-left-radius": "10px",
-            padding: "5px 10px",
-            cursor: "pointer"
-        })
-        useStyle($container, {
-            position: "fixed",
-            top: "100%",
-            right: "0px",
-            width: "300px",
-            height: "400px",
-            background: BodyBgColor,
-            "z-index": "11"
-        })
-
-        function useStyle (dom, style) {
-            for (let sKey in style) {
-                dom.style[sKey] = style[sKey]
-            }
-        }
-    })()
-</script>
-
+        </div> 
+        
+    </div>
 
     
-    <script src="/js/twemoji.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            twemoji.parse(document.body, {
-                base: '\/my-emojis\/', 
-                folder: 'svg', 
-                ext: '.svg' 
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            const notebookText = document.querySelector('.notebook-text');
+            
+            
+            if (window.innerWidth > 768 && notebookText) {
+                
+                notebookText.addEventListener('mouseenter', () => {
+                    
+                    notebookText.style.zIndex = '900'; 
+                });
+
+                notebookText.addEventListener('mouseleave', () => {
+                    
+                    notebookText.style.zIndex = '30';
+                });
+            }
         });
     </script>
-    </body>
+
+</body>
 </html>

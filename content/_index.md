@@ -5,6 +5,11 @@ draft = false
 +++
 
 <style>
+
+  .fo {
+  font-size: 90%;
+}
+
   @media (max-width: 968px) {
   img.float-img35 {
     width: 21%!important;
@@ -23,16 +28,31 @@ draft = false
     /*font-size: 90%;*/
 }
 
+}
+
 
 
 </style>
 
-**🧸 About me**<img src="/img/8422aeec14319a67.jpeg" class="float-img35" style="padding-bottom: 2px!important;">
+**so long**
 
-是鱼鱼，爱与和平同人女一枚！
+**thanks for all the fishes**
 
-我喜欢小动物，很会修东西，爱喝热美式，<span class="blur">我的面包体是ISTJ，喜欢看电视，近视600度，欣赏的作家是张亦绚，我是射手座！！（没人想知道那么多啦）</span>
+**<center>🧸 me... </center>**
 
-这个博客里所有的事，都是在这张桌子上写出来的。
+<!-- <img src="/img/8422aeec14319a67.jpeg" class="float-img35" style="padding-bottom: 2px!important;"> -->
 
+<div class="fo">
+
+我是鱼鱼，爱与和平同人女一枚！
+
+我喜欢小动物，很会修东西
+
+爱喝热美式，我的面包体是ISTJ
+
+我喜欢看电视，近视600度，欣赏的作家是张亦绚
+
+冬天快乐。
+
+</div>
 <div style="clear: both;"></div>

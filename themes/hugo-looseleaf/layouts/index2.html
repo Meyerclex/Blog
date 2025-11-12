@@ -1,0 +1,129 @@
+{{ define "main" }}
+<header>
+    <div class="header-container">
+        <div class="header-inner">
+                        <div class="head-img">
+                            <img src="/site/1.jpg" alt="Header Image" class="header-img-content">
+                        </div>  
+                    <div>
+                        <div class="title">gregueria.icu</div>
+                        <ul>
+                            {{ range .Site.Menus.main }}
+                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                            {{ end }}
+                        </ul>
+                    
+                    </div>
+        </div>
+    </div>
+</header>
+
+
+{{ partial "footer.html" . }}
+
+<style>
+    .title {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 5px;
+        color: var(--talk-bubble-border-text-color);
+    }
+/* 容器样式：用于限制最大宽度和添加边框 */
+.head-img {
+    /* PC 端最大尺寸限制 */
+    max-width: 262px;
+    /* border: dashed 1px; */
+    margin-bottom: 5px;
+    /* 移除背景图相关的属性 */
+
+}
+
+/* 图片本身样式：实现自适应和滤镜效果 */
+.header-img-content {
+    width: 100%;
+    height: auto; 
+    display: block; 
+        border-radius: 0px!important;
+        -webkit-mask-image: 
+        linear-gradient(to top, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to bottom, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to left, black calc(100% - 10px), transparent 100%),
+        linear-gradient(to right, black calc(100% - 10px), transparent 100%);
+    
+    /* 调整遮罩位置和大小，使其覆盖边缘 */
+    -webkit-mask-position: top, bottom, left, right;
+    -webkit-mask-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    -webkit-mask-composite: source-in; /* 确保遮罩正确组合 */
+    mask-composite: intersect; /* 标准属性 */
+}
+/* 默认的滤镜 */
+.header-img-content {
+    filter: sepia(50%) hue-rotate(0deg) saturate(1) brightness(0.95) opacity(1);
+    transition: filter 0.5s ease; /* 添加过渡效果 */
+}
+/* 悬停时恢复原状 */
+.header-img-content:hover {
+    filter: none; /* 移除所有滤镜 */
+}
+/* 针对手机端进行自适应调整 */
+@media (max-width: 768px) {
+    .head-img {
+        /* 在手机端，容器宽度占视口宽度 90% */
+        width: 90vw; 
+        
+        /* 确保在手机端居中显示 */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* 其他样式保持不变 */
+.header-inner {
+    /* width: 200px; */
+}
+    
+.site-title {
+    text-align: left;
+    font-family: "Huiwen-mincho";
+    font-weight: normal;
+        color: var(--talk-bubble-border-text-color);
+        font-size: 140%;
+            margin-left: -5px;
+
+}
+    .header-inner li {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 100%;
+        margin: 0;
+        text-transform: lowercase;
+        
+    }
+    .header-inner li {
+    padding: 0 0rem;
+}
+    .header-inner ul li a {
+        /* background: var(--bg-color); */
+        color: var(--talk-bubble-border-text-color);
+        font-size: 90%;
+    }
+    ul li:before {
+    content: " ";
+    font-weight: bold;
+    margin-right: 0px;
+}
+    ul {
+        padding: 0 0 0 7px;
+    }
+    .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+    }
+    .copyright {
+        color: var(--talk-bubble-border-text-color);
+    }
+    
+</style>
+
+{{ end }}
