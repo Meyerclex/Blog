@@ -1,0 +1,19 @@
+<div class="goods">
+    {{ range .Site.Data.goods.goods }}
+    <div class="goods-bankuai">
+        <img loading="lazy" class="whitey" src="{{ .image }}" alt="{{ .title }}">
+        <div class="goods-info">
+        <div class="goods-title">
+            <div style="text-align: center;">
+                <span>{{ .title }}</span>
+            </div>
+        </div>
+        <div class="goods-note">
+            {{ .description }}
+        </div>
+        </div>
+    </div>
+    {{ else }}
+    <p>Nothing here...</p>
+    {{ end }}
+</div>

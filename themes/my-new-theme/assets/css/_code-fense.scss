@@ -1,0 +1,78 @@
+code {
+  background-color: var(--color-bg-code);
+  font-size: 90%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+code:not(pre > code) {
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+code.has-jax {
+  -webkit-font-smoothing: antialiased;
+  background: inherit !important;
+  border: none !important;
+  font-size: 100%;
+}
+
+pre {
+  border: 1px solid var(--color-bg-code);
+  border-radius: 4px;
+  padding: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  max-height: 400px;
+}
+
+pre code.hljs {
+  display: block;
+  padding: 0;
+  max-height: 350px;
+}
+
+.highlight {
+  position: relative;
+}
+
+.copy-code-button {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 50%);
+  border: none;
+  border-radius: 6px;
+  padding: 0 5px 5px 5px;
+  font-size: 1rem;
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  top: 10px;
+  margin: 10px;
+  transition: opacity 0.2s ease;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+}
+
+.copy-code-button > svg {
+  fill: var(--white);
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus,
+pre:active ~ .copy-code-button,
+pre:focus ~ .copy-code-button,
+div.highlight:active > .copy-code-button,
+div.highlight:focus > .copy-code-button {
+  opacity: 1;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>{{ .Title }} | {{ site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <link rel="icon" type="image/png" href="/icons/u1f496_u1f3d4-ufe0f.png">
+    <link rel="shortcut icon" href="/icons/u1f496_u1f3d4-ufe0f.png">
+    
+    <link href="https://478.neocities.org/catalog/fonts.css" rel="stylesheet">
+    
+    {{ $scss := resources.Get "css/_fanpage.scss" }}
+    {{ $style := $scss | css.Sass (dict "targetPath" "css/fanpage-style.css") }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    
+    {{ block "head" . }}{{ end }} 
+</head>
+
+<body a="{{ $.Site.Params.theme_config.appearance | default "auto" }}" id="page-top">
+    <section class="layout">
+        <div class="header"><a href="/posts/">back link</a></div> 
+        
+        <div class="leftSide"></div>
+        <div class="body">
+            {{- block "main" . }}{{- end }}
+        </div>
+        <div class="rightSide"></div>
+        
+        <div class="footer"></div> 
+    </section>
+
+    {{ $twemojiJS := resources.Get "js/twemoji.min.js" }}
+    {{ $viewImageJS := resources.Get "js/view-image.min.js" }}
+    
+    <script src="{{ $twemojiJS.RelPermalink }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            twemoji.parse(document.body, {
+                base: '{{ "/my-emojis/" | relURL }}', 
+                folder: 'svg', 
+                ext: '.svg' 
+            });
+        });
+    </script>
+    <script src="{{ $viewImageJS.RelPermalink }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 同时对 class="pic" 的图片 和 .half-width-centered 容器内的图片启用放大功能
+            window.ViewImage.init("img.pic, .half-width-centered img"); 
+        });
+    </script>
+    
+    {{- if .Params.custom_js -}}
+        {{- range .Params.custom_js -}}
+            {{ $js := resources.Get (print "js/" . ".js") }}
+            <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+        {{- end -}}
+    {{- end -}}
+    
+    {{ block "footer" . }}{{ end }}
+</body>
+</html>

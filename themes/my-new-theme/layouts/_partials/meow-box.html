@@ -1,0 +1,38 @@
+{{- if .Site.Params.meowBox.enabled }}
+<div id="meow-box" style="border-radius: 10px;">
+    {{- $images := .Site.Params.meowBox.images -}}
+    {{- if gt (len $images) 0 }}
+    <img id="meow-image" src="{{ index $images 0 }}" alt="Meow" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
+    {{- end }}
+<!--    此处为点击按钮，如需要加入像素图标，则在img的src中填入路径  -->
+    <button onclick="toggleMeowImage()" id="meow-btn">
+        <img src="/cat/cat75.gif" style="border-radius:0; margin:0; max-width:50%;">
+        meow
+    </button>
+</div>
+
+<script>
+    let images = [
+        {{ range $index, $img := .Site.Params.meowBox.images }}
+    "{{ $img }}",
+        {{ end }}
+    ];
+    let currentIndex = 0;
+
+    // 预加载图片
+    function preloadImages() {
+        images.forEach(image => {
+            const img = new Image(); // 创建一个新的 Image 对象
+            img.src = image; // 将图片源设置为路径，这会自动开始加载图片
+        });
+    }
+
+    function toggleMeowImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById("meow-image").src = images[currentIndex];
+    }
+
+    // 页面加载时预加载图片
+    preloadImages();
+</script>
+{{- end }}

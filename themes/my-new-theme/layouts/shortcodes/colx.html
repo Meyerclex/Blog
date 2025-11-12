@@ -1,0 +1,10 @@
+{{ $cols := split .Inner "||" }}
+{{ $lang := .Params }}
+
+<div class="cols__row">
+{{ range $indCol,$col := $cols }}
+   <div class="cols__column" {{ with $lang }} lang="{{ index $lang $indCol }}"{{ end }}>
+   {{ . | $.Page.RenderString (dict "display" "block") }}
+   </div>
+{{ end }}
+</div>

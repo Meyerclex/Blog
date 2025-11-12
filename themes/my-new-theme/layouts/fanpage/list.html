@@ -1,0 +1,55 @@
+{{ define "main" }}
+    <article class="list-container">
+        
+
+
+        <section class="fanpage-content-list">
+            
+            <a href="/fanpage/byung/"><div class="camera">
+            <img class="photo1" src="/blog/IMG_4590.GIF" > 
+            <div class="frame"></div>  
+            </div>
+            <p>click to the fanpage for byung ^^↗️</p></a>
+            <style>
+               .fanpage-content-list a {
+                   text-decoration-line: none;
+                }
+            .camera {
+                width: 250px; 
+                height: 250px; 
+                transform: translate(0px, 0px); 
+                transition: transform 0.3s ease, filter 0.3s ease;
+                filter: drop-shadow(4px 4px 5px #fdf8e3);
+                margin: 0 auto;
+                position: relative;
+            }
+            .camera:hover {
+                transform: translate(5px, 5px) scale(1.05); 
+                filter: drop-shadow(8px 8px 10px #c6c2b1);
+            }
+            .frame {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%; 
+                height: 100%;
+                background-image: url('/blog/tum.png'); /* 修改为相机图片的路径 */
+                background-size: 100% 100%; 
+                background-repeat: no-repeat;
+                z-index: 10; 
+            }
+            .photo1 {
+                width: 53%; 
+                height: 53%;
+                top: 80px; 
+                left: 50px;
+                z-index: 5; 
+                position: absolute;
+                object-fit: cover;
+            }
+            </style>
+
+        </section>
+
+    </article>
+{{ end }}

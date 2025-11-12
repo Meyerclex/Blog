@@ -1,0 +1,40 @@
+{{ if .Params.toc | default true }}
+<div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+    <details>
+        <summary>📑 Table of Contents</summary>
+        <div>
+            <aside>
+                {{ $emtLiPtrn := "(?s)<ul>\\s<li>\\s<ul>(.*)</li>\\s</ul>" }}
+                {{ $rplcEmtLi := "<ul>$1" }}
+                <nav id="TableOfContentsMobile"> {{ .TableOfContents | replaceRE $emtLiPtrn $rplcEmtLi | safeHTML }}
+                </nav>
+            </aside>
+        </div>
+    </details>
+</div>
+<hr class="decoration-hr" id="toc-hr">
+<div class="post-toc toc-styled-pc" id="post-toc" data-pagefind-ignore>
+    <header class="post-header-pc">
+    ✦ TOC | 目录 ✦
+    </header>
+    <aside>
+        <nav id="TableOfContentsPC"> {{ $emtLiPtrn := "(?s)<ul>\\s<li>\\s<ul>(.*)</li>\\s</ul>" }}
+            {{ $rplcEmtLi := "<ul>$1" }}
+                {{ .TableOfContents | replaceRE $emtLiPtrn $rplcEmtLi | safeHTML }}
+        </nav>
+    </aside>
+</div>
+{{ end }}
+
+<style>
+    /* 为防止意外，隐藏旧的 #toc-toggle */
+    #toc-toggle {
+        display: none;
+    }
+    /* 你之前加的 ul li:before 样式 */
+    #TableOfContents ul li:before {
+        content: "";
+        font-weight: bold;
+        margin-right: 0px;
+    }
+</style>
