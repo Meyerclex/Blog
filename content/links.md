@@ -31,7 +31,7 @@ margin: 15px 0;
 </style>
 
 
-- [咖啡冰河](https://blog.mysto.cyou) / [晴空](https://www.summeringway.icu/) / [小球飞鱼](https://mantyke.icu/) / [超新星电台](https://supernovaradio.live/) / [山月](https://sanguok.com/)
+- [咖啡冰河](https://blog.mysto.cyou) / [晴空](https://www.summeringway.icu/) / [小球飞鱼](https://mantyke.icu/) / [超新星电台](https://supernovaradio.live/) / [山月](https://sanguok.com/) / [伏枥之间](https://www.leehenry.top/)
 
 - [白天](https://luoshui.icu/) / [山茶花舍](https://irithys.com/) / [深海鱼拒绝触礁](https://trails-of-isara.vercel.app/) / [东俄勒冈群山](https://houdini.eu.org/) / [鹅玉](https://ro3or.com/)
 
@@ -48,6 +48,12 @@ margin: 15px 0;
 - [Zoeash](https://writee.org/zoeash/) / [A Purrception](https://tortie.me/) / [Velas电波站](https://www.velasx.com) / [甜鱼/Ayu](https://ayu.land) / [Muko](https://oaad.iceco.icu/)
 
 - [Kawa1Planet](https://kawa1planet.fun/) / [Χαρυβδις](https://kharybdism.xyz/) / [Shadows of the Sun](https://rovingsun.wordpress.com/) / [suica](https://suicablog.cobaltkiss.blue/) / [PXXELS](https://pxxels.neocities.org/)
+
+### more...
+
+我想，在过去一年中由于博客有留言骚扰，非常担心为友链带去麻烦，因此一直不太敢和感兴趣的朋友交换链接。不过在新的周年，我想这件事应该得到改变。仍想要和可以友善对话的朋友交换链接，也希望友链是了解的开始。
+
+依然，希望你也是对小动物友好的人！
 
 ### info
 
