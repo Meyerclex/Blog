@@ -1,88 +1,469 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.7f9971e8e95c4b4ac815e3dd9d127c06f76467a33871313588d2d228567f82ca5b09f41998415b4240585ee671b3855fd61bd81ba89cd712c75f4d259f66ac45.css" integrity="sha512-f5lx6OlcS0rIFePdnRJ8BvdkZ6M4cTE1iNLSKFZ/gspbCfQZmEFbQkBYXuZxs4Vf1hvYG6ic1xLHX00ln2asRQ==" />
+  
+  
+  
+     
+  <link rel="preload" as="style" crossorigin
+      href="https://fontsapi.zeoseven.com/256/main/result.css"
+      onload="this.rel='stylesheet'"
+      onerror="this.href='https://fontsapi-storage.zeoseven.com/256/main/result.css'" />
+  <noscript>
+      <link rel="stylesheet" href="https://fontsapi.zeoseven.com/256/main/result.css" />
+  </noscript>
+  
+
+  <link rel="stylesheet" href="https://static.zeoseven.com/zsft/69/main/result.css">
+
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/46/main/result.css' />
+
+
+  
+  
+  <link rel="stylesheet" href="/fonts/stdgt/result.css">
+  
+  <link rel='stylesheet' href='https://fontsapi.zeoseven.com/305/main/result.css' />
+
+
+  
+  
+  
+  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+
+
+  
+
+  <title>
     
-    <title>Fanpages | 再會，謝謝所有的魚</title>
-    <meta name="description" content="">
+      Fanpages - 再會，謝謝所有的魚
     
-    <link rel="icon" type="image/png" href="/icons/u1f496_u1f3d4-ufe0f.png">
-    <link rel="shortcut icon" href="/icons/u1f496_u1f3d4-ufe0f.png">
+  </title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".blur").forEach(function (el) {
+        el.addEventListener("click", function () {
+          el.classList.toggle("revealed");
+        });
+      });
+    });
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cat/240f9f9b.gif" />
+  
+  
+
+
+
+  <script defer>
+    function toggleMenu(element) {
+      const content = element.nextElementSibling;
+      const allContents = document.querySelectorAll('.menu-content');
+
+      
+      allContents.forEach(item => {
+        
+        if (item !== content) {
+          item.style.display = 'none';
+        }
+      });
+
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'table-row';  
+      } else {
+        content.style.display = 'none';  
+      }
+    }
+  </script>
+
+
+</head>
+
+<div id="theme-toggle" class="theme-toggle" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 5px; z-index: 999;">
+    <div id="light-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+        </svg>
+    </div>
+    <div id="dark-btn" style="">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+</div>
+
+
+<script>
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const themeToggle = document.getElementById('theme-toggle');
+
     
+    let currentTheme = localStorage.getItem('theme') || 'auto';
+    if (currentTheme === 'auto') {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        currentTheme = prefersDarkScheme ? 'dark' : 'light';
+    }
+    document.body.setAttribute('a', currentTheme);
+    document.body.classList.add(currentTheme + '-mode');
+
+
+    function updateHighlightTheme() {
+        const hljsLink = document.getElementById("hljs-theme");
+        const mode = document.body.getAttribute("a");
+        if (!hljsLink) return;
+
+        if (mode === "dark") {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark.min.css";
+        } else {
+            hljsLink.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css";
+        }
+    }
+
+    
+    const updateIcons = () => {
+        if (currentTheme === 'light') {
+            lightBtn.style.display = 'block';
+            darkBtn.style.display = 'none';
+        } else {
+            lightBtn.style.display = 'none';
+            darkBtn.style.display = 'block';
+        }
+    };
+    updateIcons();
+    updateHighlightTheme(); 
+    
+    const toggleTheme = () => {
+        if (currentTheme === 'light') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            currentTheme = 'dark';
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            currentTheme = 'light';
+        }
+        localStorage.setItem('theme', currentTheme);
+        document.body.setAttribute('a', currentTheme);
+        updateIcons();
+        updateHighlightTheme(); 
+    };
+
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+
+        if (scrollPercent >= 10 && scrollPercent <= 40) {
+            themeToggle.style.opacity = (1 - (scrollPercent - 10) / 30).toFixed(2);
+        } else if (scrollPercent > 40) {
+            themeToggle.style.opacity = 0;
+        } else {
+            themeToggle.style.opacity = 1;
+        }
+    });
+
+</script><head>
     <link href="https://478.neocities.org/catalog/fonts.css" rel="stylesheet">
     
     
-    
     <link rel="stylesheet" href="/css/fanpage-style.css">
-    
-     
 </head>
 
 <body a="auto" id="page-top">
     <section class="layout">
-        <div class="header"><a href="/posts/">back link</a></div> 
-        
+
         <div class="leftSide"></div>
-        <div class="body">
-    <article class="list-container">
         
-
-
-        <section class="fanpage-content-list">
-            
-            <a href="/fanpage/byung/"><div class="camera">
-            <img class="photo1" src="/blog/IMG_4590.GIF" > 
-            <div class="frame"></div>  
+        <div class="body">
+    <nav class="single-nav">
+        <a href="/">Home</a> | 
+        <a href="/posts/">Archive</a>  
+    </nav>
+        <hr class="decoration-hr">
+    
+    <div class="list-wrapper">
+        
+        <div class="fanpage-entry-container">
+            <div class="fanpage-entry"> 
+                <div class="entry-image-area">
+                    <img class="star-photo" src="/png/3.png" alt="byung-hun Photo">
+                </div>
+                <div class="entry-info-area">
+                    <h3 class="entry-nickname">byung-hun</h3>
+                    <p class="entry-bio">一款李小饼，又名李叔叔。 <br>这张图片来自电影《爱的蹦极》。是不是很可爱？ <br><br> 写过一些李叔叔电影的Fanfic，要看吗？（是有些可怕的小说。） <br> 📖 <a href="https://archiveofourown.org/works/69834541" target="_blank" rel="noopener noreferrer">《沙发客》</a> ｜ <a href="https://archiveofourown.org/works/73931451" target="_blank" rel="noopener noreferrer">《爱的箴言》</a> <br> <br> 👉 这里还有新鲜出炉的Fanvid一枚：<a href="https://www.bilibili.com/video/BV1GxCMBSE8v/" target="_blank" rel="noopener noreferrer">《Bad Guy》</a> <br>是电影《好坏怪》剪辑。他变成坏小子了。 <br><br> 李叔叔有太多萌图怪图，我的博客可放不下这么多啊？去看他的账号吧，嗯，有好好经营呢。他可不是什么落伍的老年人，很爱玩手机的。</p>
+                    <ul class="entry-stats">
+                        
+                        <li>🌇 <a href="https://www.instagram.com/byunghun0712/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        
+                        <li>星座: Cancer</li>
+                        
+                    </ul>
+                        <div class="entry-link-wrapper">
+                        <a href="/fanpage/byung/" class="entry-button" >
+                            ✨点击进入李叔叔的介绍页～! 
+                        </a>
+                    </div>
+                        <br>
+                                            <p><strong>更多有关的博客文章：</strong></p>
+                      <ul class="relate-posts-li">
+                        
+                        <li><a href="/posts/2025-09-22/">《大人，这是我的综艺报告》</a></li>
+                        
+                        <li><a href="/posts/2025-10-29-noc/">《关于电影《无可奈何》，实在没办法了！》</a></li>
+                        
+                        <li><a href="/posts/2025-11-04/">《请问真的不能带狗进来吗？》</a></li>
+                        
+                    </ul>
+                </div>
             </div>
-            <p>click to the fanpage for byung ^^↗️</p></a>
-            <style>
-               .fanpage-content-list a {
-                   text-decoration-line: none;
-                }
-            .camera {
-                width: 250px; 
-                height: 250px; 
-                transform: translate(0px, 0px); 
-                transition: transform 0.3s ease, filter 0.3s ease;
-                filter: drop-shadow(4px 4px 5px #fdf8e3);
-                margin: 0 auto;
-                position: relative;
+
+        </div>
+        
+    </div>
+    
+    <style>
+        :root {
+            --pink-light: #ffeef2cd;
+            --pink-medium: #fcf4b8;
+            --pink-dark: #e9d5df;
+            --bg-color: #fcf6f9;
+            --card-bg: #fff7f78e;
+            --main-text-color: #2c3e50;
+            --stats-text-color: #5d3587;
+            --hr-color: #ddd;
+            --font-family: 'Inter', sans-serif;
+        }
+
+        [a="dark"] {
+            --pink-light: #57105f55;
+            --pink-medium: #ff99cc;
+            --pink-dark: #ffcce6;
+            --bg-color: #121212; 
+            --card-bg: var(--neodb-card-color);
+            --main-text-color: #e0e0e0;
+            --stats-text-color: #ffdae3;
+            --hr-color: #333;
+        }
+        
+        .list-wrapper {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .fanpage-entry-container {
+            margin: 25px 0;
+            padding: 0;
+        }
+
+        .fanpage-entry {
+            display: flex;
+            align-items: center; 
+            background-color: var(--card-bg); 
+            
+            border: none;
+            box-shadow: none;
+
+            border-bottom: 1px solid var(--pink-light); 
+            border-radius: 0; 
+            padding: 20px 0; 
+            
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            position: relative;
+        }
+        
+        .entry-image-area {
+            flex-shrink: 0; 
+            width: 140px; 
+             
+            margin-right: 20px;
+            box-shadow: none; 
+            margin-left: 20px; 
+        }
+        
+        .star-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: drop-shadow(4px 4px 0px var(--shadow));
+            transition: transform 0.3s ease-out;
+        }
+        @media (min-width: 601px) {
+            .star-photo:hover {
+                transform: scale(1.2) rotate(7deg);  
             }
-            .camera:hover {
-                transform: translate(5px, 5px) scale(1.05); 
-                filter: drop-shadow(8px 8px 10px #c6c2b1);
+        }
+        .entry-info-area {
+            flex-grow: 1;
+            text-align: left !important; 
+        }
+
+        .entry-nickname {
+            font-size: 1.2rem;
+            
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-align: left !important; 
+        }
+
+        .entry-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;  
+            margin-bottom: 15px;
+            text-align: left !important; 
+        }
+
+
+        .entry-stats {
+            list-style: none;
+            list-style-type: none !important;
+            padding-left: 0;
+            margin: 0 0 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start !important; 
+        }
+
+        .entry-stats li {
+            font-size: 0.85rem;
+            background-color: var(--pink-light);
+            
+            padding: 4px 8px;
+            border-radius: 4px; 
+            font-weight: 500;
+        }
+
+        .entry-stats li a {
+             
+             
+        }
+        
+        .entry-link-wrapper {
+             text-align: left !important; 
+        }
+
+        .entry-button {
+            display: inline-block; 
+            text-decoration: none; 
+            background-color: var(--talk-bubble-bg);
+            color: var(--talk-bubble-border-text-color)!important;
+            padding: 8px 16px; 
+            border: none;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 1px 0 var(--bubble-box-shadow); 
+            text-align: left !important; 
+            margin-top: 5px;
+        }
+
+        .entry-button:hover:not([disabled]) {
+            
+            transform: translateY(-0.5px);
+            
+        }
+        a:hover {
+            border-radius: 15px;
+        }
+        .entry-stats li:before {
+            content: ""!important;
+            font-weight: bold;
+            margin-right: 3px;
+        }
+        .relate-posts-li li a {
+            text-decoration: none;
+        }
+        .relate-posts-li li::before{
+            content: "✦";
+            font-size: 0.85em;
+            line-height: 0.2em;
+            vertical-align: super;
+            color: var(--p-text);
+        }
+        .entry-button[disabled] {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            box-shadow: 0 1px 0 #999;
+            pointer-events: none; 
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .body {
+                padding: 0 0px;
             }
-            .frame {
-                position: absolute;
-                top: 0;
-                left: 0;
+            .fanpage-entry {
+                flex-direction: column; 
+                align-items: flex-start; 
+                padding: 15px;
+            }
+            
+            .entry-image-area {
+                margin: 0 0 15px 0; 
+                width: 120px; 
+                align-self: center !important; 
+            }
+
+            .entry-info-area {
+                text-align: center !important; 
                 width: 100%; 
-                height: 100%;
-                background-image: url('/blog/tum.png');  
-                background-size: 100% 100%; 
-                background-repeat: no-repeat;
-                z-index: 10; 
             }
-            .photo1 {
-                width: 53%; 
-                height: 53%;
-                top: 80px; 
-                left: 50px;
-                z-index: 5; 
-                position: absolute;
-                object-fit: cover;
+
+            .entry-nickname {
+                text-align: center !important; 
             }
-            </style>
 
-        </section>
+            .entry-bio {
+                text-align: center !important; 
+            }
+            
+            .entry-stats {
+                justify-content: center !important; 
+            }
+            
+            .entry-link-wrapper {
+                width: 100%;
+                text-align: center !important; 
+            }
 
-    </article>
+            .entry-button {
+                width: auto; 
+                margin-top: 10px;
+                text-align: center !important; 
+            }
+        }
+    </style>
 
         </div>
         <div class="rightSide"></div>
-        
-        <div class="footer"></div> 
+    
     </section>
 
     
@@ -104,6 +485,6 @@
             
             window.ViewImage.init("img.pic, .half-width-centered img"); 
         });
-    </script>
-</body>
+    </script></body>
+
 </html>

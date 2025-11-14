@@ -3,7 +3,19 @@
 :root {
   --p-color: rgb(119, 80, 42);
   --mark-color: rgb(250, 230, 230);
-  --line-color: #c1a6a4; }
+  --line-color: #c1a6a4;
+  --camera-shadow:#c6c2b1; }
+
+:root {
+  --talk-bubble-bg: #fdf8e3;
+  --talk-bubble-border-text-color: #807256;
+  --bubble-box-shadow: #f3ebd9; }
+
+[a="dark"] {
+  --p-color: #F8F4E1;
+  --mark-color: rgb(48, 32, 67);
+  --line-color: #a465ae;
+  --camera-shadow:#4c1d53; }
 
 body {
   background-color: var(--bg-color);
@@ -13,7 +25,7 @@ body {
   background-attachment: fixed;
   font-family: 'Courier New',"Maruko Gothic CJKsc", Courier, monospace;
   text-align: center;
-  color: var(--p-color); }
+  color: var(--p-color) !important; }
 
 body p {
   font-size: 14px; }
@@ -29,6 +41,9 @@ a {
   text-decoration-color: var(--line-color);
   color: var(--p-color);
   text-underline-offset: 2px; }
+
+a:visited {
+  color: var(--p-color); }
 
 .layout {
   width: 100%;
@@ -63,12 +78,12 @@ a {
   height: 179.6px;
   transform: translate(0px, 0px);
   transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(4px 4px 5px #fdf8e3); }
+  filter: drop-shadow(4px 4px 5px var(--camera-shadow)); }
 
 .camera-container:hover {
   transform: translate(5px, 5px) scale(1.05);
   /* Y 轴向上移动 10px，整体轻微放大 */
-  filter: drop-shadow(8px 8px 10px #c6c2b1); }
+  filter: drop-shadow(8px 8px 10px var(--camera-shadow)); }
 
 .camera-frame {
   position: absolute;
@@ -164,3 +179,12 @@ img.emoji {
     margin: 15px auto; }
   .half-width-centered img {
     width: 100%; } }
+
+.single-nav {
+  margin: 15px 0;
+  text-align: center;
+  /* 居中显示 */
+  font-size: 90%;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-bottom: 5px; }

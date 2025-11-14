@@ -5,7 +5,6 @@ type: "fanpage"
 slug: "byung"
 ---
 
-    
 <p>hi, friend. <br>welcome to my little fanpage for <mark>Byung</mark> ♡</p>
 <p>there isn’t much here yet,</p>
 <p>but maybe someday... we’ll see ^^</p>
