@@ -48,5 +48,26 @@
         {{- end -}}
     {{- end -}}
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 检查 ViewImage 对象是否可用
+        if (window.ViewImage) {
+            // 针对 fanpage 页面中的 .star-photo 图片进行初始化。
+            // 仅对具有 star-photo 类的 img 标签应用 ViewImage
+            const imageSelector = '.star-photo:not([no-view]):not(.emoji):not(#emoji)';
+            const starPhotos = document.querySelectorAll(imageSelector);
 
+            if (starPhotos.length > 0) {
+                // 如果页面上有 star-photo 图片，则初始化 ViewImage
+                ViewImage.init(imageSelector);
+            } else {
+                // 如果没有找到 star-photo 图片，可以选择性地记录一条信息
+                console.log("No .star-photo images found. ViewImage initialization skipped.");
+            }
+        } else {
+            // 如果 ViewImage 对象未找到，则发出警告
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
 </html>

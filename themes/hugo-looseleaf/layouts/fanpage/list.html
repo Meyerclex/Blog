@@ -26,7 +26,7 @@
                         </a>
                     </div>
                         <br>
-                                            <p><strong>更多有关的博客文章：</strong></p>
+                     <p><strong>更多有关的博客文章：</strong></p>
                       <ul class="relate-posts-li">
                         {{ range .related_posts }}
                         <li>{{ . | markdownify | safeHTML }}</li>
@@ -255,4 +255,5 @@
             }
         }
     </style>
+
 {{ end }}
