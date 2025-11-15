@@ -191,37 +191,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> | 再會，謝謝所有的魚</title>
     <style>
-        
         :root {
-             
-            --mark: #18be70; 
+            --mark: #18be70;
         }
 
         a:hover {
             background-color: transparent;
             border-radius: none;
         }
+
         .index-container {
-             
             position: relative;
-             
             min-height: 70vh;
             top: 10vh;
             z-index: 10;
-            
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            padding-bottom: 50px;
         }
 
         .scaling-group {
-             
-            position: absolute; 
-            width: min(55vh, 55vw); 
-            aspect-ratio: 3 / 4; 
+            position: absolute;
+            width: min(55vh, 55vw);
+            aspect-ratio: 3 / 4;
             top: 50%;
-            left: 45%;
+            left: 50%;
             transform: translate(-50%, -50%);
         }
 
@@ -234,89 +230,85 @@
         }
 
         .notebook-img {
-            filter: grayscale(20%) sepia(20%);  
+            filter: grayscale(20%) sepia(20%);
             position: absolute;
-            width: 60%; 
-            height: 60%; 
+            width: 60%;
+            height: 60%;
             top: 10%;
             left: 20%;
-            z-index: 20; 
-            pointer-events: none; 
+            z-index: 20;
+            pointer-events: none;
             rotate: 5deg;
         }
 
         .notebook-text {
             position: absolute;
-            top: 38%; 
+            top: 38%;
             left: 47%;
-            transform: translate(-50%, -50%); 
-            z-index: 30;  
+            transform: translate(-50%, -50%);
+            z-index: 30;
             width: 50%;
             padding-left: 15px;
             text-align: left;
             rotate:5deg;
-            color: rgb(27, 110, 165); 
+             
+            color: rgb(27, 110, 165);
         }
 
         .notebook-text p {
             margin: 5px 5px;
             line-height: 1.2;
-            font-size: 1.vw; 
-            position: relative;  
-            transition: filter 0.3s ease-out; 
+            font-size: 1.vw;
+            position: relative;
+            transition: filter 0.3s ease-out;
         }
 
-         
         .notebook-text p:hover {
-            z-index: 1000;  
+            z-index: 1000;
             filter: drop-shadow(0 0 10px var(--mark));
         }
 
         .item-link {
             position: absolute;
             display: block;
-            width: 25%; 
-            z-index: 40; 
+            width: 25%;
+            z-index: 40;
             transition: transform 0.3s ease-out, filter 0.3s ease-out;
             filter: none;
             cursor: pointer;
         }
 
-         
         .item-link img {
             width: 100%;
             height: auto;
             display: block;
-            filter: grayscale(20%) sepia(20%);  
-            transition: filter 0.3s ease-out;  
+            filter: grayscale(20%) sepia(20%);
+            transition: filter 0.3s ease-out;
         }
 
-         
         .item-link:hover img {
             filter: none;
         }
-        
-         
+
         .item-link::after {
-            content: attr(data-title);  
+            content: attr(data-title);
             position: absolute;
             font-family: 'Courier New', Courier, monospace;
             text-transform: lowercase;
-             
-            top: 80%;  
-            bottom: auto;  
+            top: 80%;
+            bottom: auto;
             left: 50%;
-            transform: translateX(-50%); 
+            transform: translateX(-50%);
             visibility: hidden;
             opacity: 0;
             background-color: #18be70;
-            color: #000000; 
+            color: #000000;
             border-radius: 0px;
             font-size: 0.7rem;
             white-space: nowrap;
             padding: 1px 4px;
             transition: opacity 0.3s, visibility 0.3s;
-            z-index: 90;  
+            z-index: 90;
             pointer-events: none;
         }
 
@@ -324,67 +316,59 @@
             visibility: visible;
             opacity: 1;
         }
-        
-         
-        .item-1 { top: 0%; left: -10%; width: 45%; z-index: 19; transform: rotate(-15deg); } 
+
+        .item-1 { top: 0%; left: -10%; width: 45%; z-index: 19; transform: rotate(-15deg); }
         .item-1:hover {
             transform: scale(1.1) rotate(-25deg);
             filter: drop-shadow(0 0 10px var(--mark));
             z-index: 45;
         }
-        
-         
-        .item-2 { bottom: 20%; right: 5%; width: 40%; transform: rotate(15deg);  } 
+
+        .item-2 { bottom: 20%; right: 5%; width: 40%; transform: rotate(15deg); }
         .item-2:hover {
             transform: scale(1.1) rotate(5deg);
             filter: drop-shadow(0 0 10px var(--mark));
             z-index: 41;
         }
-        
-         
-        .item-3 { bottom: 46%; right: -20%; width: 40%; transform: translateX(-50%) rotate(15deg); } 
+
+        .item-3 { bottom: 46%; right: -20%; width: 40%; transform: translateX(-50%) rotate(15deg); }
         .item-3:hover {
             transform: translateX(-50%) scale(1.1) rotate(5deg);
             filter: drop-shadow(0 0 10px var(--mark));
             z-index: 41;
         }
 
-         
-        .item-4 { bottom: 25%; left: -5%; width: 40%; transform: rotate(-10deg); } 
+        .item-4 { bottom: 25%; left: -5%; width: 40%; transform: rotate(-10deg); }
         .item-4:hover {
             transform: scale(1.1) rotate(-5deg);
-            filter: drop-shadow(0 0 20px var(--mark));
+            filter: drop_shadow(0 0 20px var(--mark));
             z-index: 41;
         }
 
-         
-        .item-5 { bottom: 31%; left: 25%; width: 35%; transform: translateY(-50%) rotate(10deg); z-index: 21; } 
+        .item-5 { bottom: 31%; left: 25%; width: 35%; transform: translateY(-50%) rotate(10deg); z-index: 21; }
         .item-5:hover {
-             
             filter: drop-shadow(0 0 10px var(--mark));
             z-index: 41;
         }
 
-         
         .tool-bubble-desktop {
-            position: absolute;  
-            top: -20%; 
-            left: 67%; 
-            width: 80%; 
-            aspect-ratio: 1/1;  
-            transform: translateY(50%) rotate(6deg); 
+            position: absolute;
+            top: -20%;
+            left: 67%;
+            width: 80%;
+            aspect-ratio: 1/1;
+            transform: translateY(50%) rotate(6deg);
             z-index: 14;
             background-image: url('/png/paper5.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-         
         .tool-menu-desktop {
             position: absolute;
-            top: 10%; 
-            left: 24%;  
-            width: 60%; 
+            top: 10%;
+            left: 20%;
+            width: 60%;
             height: 60%;
             display: flex;
             flex-direction: column;
@@ -392,151 +376,349 @@
             align-items: self-start;
             gap: 4px;
             text-align: center;
-            rotate: 0deg;  
-            color: #0d4469; 
-            font-size: min(1.3vw, 1.3vh);
+            rotate: 0deg;
+            color: #0d4469;
+            font-size: min(1.4vw, 1.4vh);
             font-weight: bold;
         }
-        
+
         .tool-item a {
             text-decoration: none;
             color: inherit;
             display: block;
             padding: 1px 40px;
-
         }
 
         .tool-item a:hover {
             text-decoration: underline;
             background-color: transparent;
         }
-        
-         
-        .tool-list-mobile-flow {
-            display: none;  
-            padding: 20px;
-            margin-top: 0; 
-            min-height: 100vh;
+
+        .latest-posts-desktop-container {
+            position: absolute;
+            left: -45%;
+            top: 37%;
+            width: 250px;
+            max-height: 70vh;
+            overflow-y: auto;
+            padding: 2px 10px;
+            background-color: var(--talk-bubble-bg);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+            transform: rotate(-4deg);
+            z-index: 0;
+            transition: opacity 0.3s;
         }
-        
+
+        .latest-posts-desktop-container h3 {
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: var(--text-color);
+            border-bottom: 2px solid #903a38;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            margin-top: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .latest-posts-desktop-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .latest-posts-desktop-container li {
+            margin-bottom: 8px;
+        }
+        .latest-posts-desktop-container li:before {
+            content: "→ ";
+            color: #903a38;
+            margin-right: 0px;
+        }
+
+        .latest-posts-desktop-container a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            padding: 3px 5px;
+            border-radius: 4px;
+        }
+        .latest-posts-desktop-container a:hover {
+            text-decoration: underline;
+            padding: 3px 5px;
+            border-radius: 4px;
+        }
+
+
+        .latest-posts-desktop-container a::before {
+
+        }
+
+        .tool-list-mobile-flow {
+            display: none;
+            padding: 10px;
+            margin-top: 0;
+            min-height: 100vh;
+            margin-bottom: 20px;
+        }
+
         .tool-menu-mobile-flow {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 15px;
             padding: 10px;
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .tool-menu-mobile-flow .small-nav-item {
             text-align: center;
             padding: 10px 5px;
         }
 
+        .latest-posts-mobile-container {
+            display: none;
+            position: relative;
+            width: 90%;
+            margin: 50px auto 30px auto;
+            padding: 40px 25px;
+            background-image: url('/png/paper8.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            transform: rotate(-1deg);
+        }
+
+        .latest-posts-mobile-container h3 {
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            color: #d9534f;
+            text-align: center;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .latest-posts-mobile-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .latest-posts-mobile-container li {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .latest-posts-mobile-container a {
+            color: #0d4469;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .latest-posts-mobile-container a:hover {
+            text-decoration: underline;
+        }
+
+        .latest-posts-mobile-container a::before {
+            content: "→ ";
+            color: #d9534f;
+        }
+
         @media (max-width: 768px) {
+
+            .latest-posts-desktop-container {
+                display: none;
+            }
+            .index-container {
+                position: relative;
+                min-height: 62vh;
+                top: 13vh;
+                z-index: 10;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                padding-bottom: 20px;
+            }
+             
+            .latest-posts-mobile-container {
+                display: block;
+                position: relative;
+                width: 90%;
+                margin: 50px auto 0px auto;
+                padding: 15px 10px 20px 10px;
+                background-image: none;
+                background-color: var(--talk-bubble-bg);
+                border-radius: 10px;
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+                transform: none;
+            }
+
+            .latest-posts-mobile-container h3 {
+                font-family: 'Courier New', Courier, monospace;
+                text-transform: uppercase;
+                font-size: 1rem;
+                color: var(--text-color);
+                border-bottom: 2px solid #903a38;
+                padding-bottom: 5px;
+                margin: 5px;
+                text-align: center;
+                font-weight: bold;
+            }
+            
+             
+            .latest-posts-mobile-container li {
+                margin-bottom: 8px;
+                text-align: left;
+            }
+            .latest-posts-mobile-container li:before {
+                content: "→ ";
+                color: #903a38;
+                margin-right: 5px; 
+            }
+
+            .latest-posts-mobile-container a {
+                color: var(--text-color);
+                text-decoration: none;
+                display: inline; 
+                padding: 0; 
+                font-size: 0.9rem;
+            }
+            .latest-posts-mobile-container a:hover {
+                text-decoration: underline;
+            }
+            .latest-posts-mobile-container a::before {
+                content: none; 
+            }
+
             .scaling-group {
                 left: 50%;
+                width: min(70vh, 70vw);
+                top: 40%;
             }
+
             .notebook-img {
                 top: 0%;
                 left: 0;
-                width: 100%; 
-                height: 100%; 
-                z-index: 20; 
-                pointer-events: none; 
+                width: 100%;
+                height: 100%;
                 rotate: 0deg;
             }
 
-            .scaling-group {
-                width: min(70vh, 70vw); 
-                aspect-ratio: 3 / 4;
-                top: 40%; 
-            }
-
             .notebook-text {
-                font-size: 3.5vw; 
-                top: 38%; 
+                font-size: 3.5vw;
+                top: 38%;
                 left: 47%;
-                transform: translate(-50%, -50%); 
-                z-index: 50; 
+                transform: translate(-50%, -50%);
+                z-index: 50;
                 width: 70%;
                 padding-left: 15px;
                 rotate: 0deg;
             }
 
             .item-link {
-                width: 35%; 
+                width: 35%;
             }
-            
-             
-            .item-1 { top: 20%; left: -20%; z-index: 41; width: 45%; transform: rotate(-15deg); } 
-            .item-2 { bottom: 10%; right: -10%; width: 40%; transform: rotate(15deg); } 
+
+            .item-1 { top: 20%; left: -20%; z-index: 41; width: 45%; transform: rotate(-15deg); }
+            .item-2 { bottom: 10%; right: -10%; width: 40%; transform: rotate(15deg); }
             .item-3 { bottom: 40%; right: -35%; width: 40%; transform: translateX(-50%) rotate(15deg); }
-            .item-4 { bottom: 0%; left: 0%; width: 40%; transform: rotate(-10deg); } 
+            .item-4 { bottom: 0%; left: 0%; width: 40%; transform: rotate(-10deg); }
             .item-5 { bottom: 0%; left: 40%; width: 35%; transform: translateY(-50%) rotate(10deg); }
 
-             
-            .tool-bubble-desktop {
-                display: none; 
-            }
-            
-             
-            .tool-list-mobile-flow {
-                display: block; 
-                position: relative;
-                width: 70%; 
-                margin: 0px auto 100px auto;  
-                padding: 50px 30px; 
-                aspect-ratio: 5 / 1;  
-                background-image: url('/png/paper8.webp');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                transform: rotate(0deg); 
-                min-height: auto; 
-            }
-            .tool-menu-mobile-flow a {
-                color: #0d4469;
-            padding: 1px 5px;
-            }
-            .tool-menu-mobile-flow {
-                display: flex;  
-                flex-direction: column;
-                gap: 3px;
-                padding: 20px 30px;
-                font-size: 85%; 
-                max-width: 100%;
-                margin: 0 20px;
-                align-items: flex-start;  
-                transform: rotate(0deg);  
-                grid-template-columns: none;  
-            }
-            
-             
-            .tool-menu-mobile-flow .small-nav-item {
-                background-color: transparent;
-                text-align: left;
-                width: 100%;
-            }
-                    .tool-item a::before {
-            content: "✦";
-            font-size: 0.85em;
-            line-height: 0.2em;
-            vertical-align: super;
-            margin-right: 7px;
-        }
-             
-            .item-1:hover { transform: scale(1.1) rotate(-25deg); } 
-
+            .item-1:hover { transform: scale(1.1) rotate(-25deg); }
             .item-2:hover, .item-3:hover, .item-4:hover, .item-5:hover {
                 filter: drop-shadow(0 0 10px var(--mark));
                 z-index: 41;
             }
+
             .item-link::after {
                 visibility: visible;
                 opacity: 1;
                 font-size: 0.8rem;
                 padding: 2px 5px;
+            }
+
+            .tool-bubble-desktop {
+                display: none;
+            }
+
+             
+            .tool-list-mobile-flow {
+                display: block;
+                position: relative;
+                width: 90%;
+                margin: 0px auto 50px auto;
+                padding: 15px 10px 20px 10px;
+                min-height: auto;
+                transform: none;
+
+                 
+                background-color: transparent; 
+                background-image: none;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .tool-list-mobile-flow h3 {
+                font-family: 'Courier New', Courier, monospace;
+                text-transform: uppercase;
+                font-size: 1rem;
+                color: var(--text-color);
+                border-bottom: 2px solid #903a38;
+                padding-bottom: 5px;
+                margin: 5px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+             
+            .tool-menu-mobile-flow {
+                display: flex; 
+                flex-wrap: wrap; 
+                gap: 8px;  
+                padding: 5px 0;
+                max-width: 100%;
+                margin: 0;
+            }
+
+             
+            .tool-item a {
+                display: inline-block;  
+                white-space: nowrap; 
+                
+                color: var(--text-color); 
+                 
+                background: transparent; 
+                border: 1px solid var(--text-color);  
+                border-radius: 9999px;  
+                box-shadow: none;
+                
+                padding: 4px 10px; 
+                font-size: 80%; 
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+            }
+            
+            .tool-item a:hover {
+                background-color: var(--talk-bubble-bg);  
+                 
+                text-decoration: none;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            }
+
+             
+            .tool-item a::before {
+                content: none;
             }
         }
     </style>
@@ -544,13 +726,13 @@
 <body>
 
     <div class="index-container">
-        
-        <div class="scaling-group"> 
-            
+
+        <div class="scaling-group">
+
             <div class="notebook-content-group">
-                
-                <img src="/png/paper2.png" alt="Notebook" class="notebook-img">
-                
+
+                <img src="/png/paper2.png" alt="Notebook" onerror="this.onerror=null;this.src='https://placehold.co/400x400/f0f0f0/333333?text=Paper'" class="notebook-img">
+
                 <div class="notebook-text">
                     <style>
 
@@ -595,14 +777,13 @@
 <div style="clear: both;"></div>
 
                 </div>
-                
-                <a href="/about" class="item-link item-1" data-item="1" data-title="About"><img src="/png/1.png" alt="档案"></a>
-                <a href="/links" class="item-link item-2" data-item="2" data-title="Friends"><img src="/png/2.png" alt="项目"></a>
-                <a href="/fanpage/" class="item-link item-3" data-item="3" data-title="Fanpage" target="_blank" rel="noopener noreferrer"><img src="/png/3.png" alt="联系"></a>
-                <a href="/posts" class="item-link item-4" data-item="4" data-title="Archive"><img src="/png/4.png" alt="画廊"></a>
-                <a class="item-link item-5" data-item="5" data-title=""><img src="/png/word.png" alt=""></a>
-                
-                
+
+                <a href="/about" class="item-link item-1" data-item="1" data-title="About"><img src="/png/1.png" alt="档案" onerror="this.onerror=null;this.src='https://placehold.co/100x100/999999/ffffff?text=A'"></a>
+                <a href="/links" class="item-link item-2" data-item="2" data-title="Friends"><img src="/png/2.png" alt="项目" onerror="this.onerror=null;this.src='https://placehold.co/100x100/999999/ffffff?text=B'"></a>
+                <a href="/fanpage/" class="item-link item-3" data-item="3" data-title="Fanpage" target="_blank" rel="noopener noreferrer"><img src="/png/3.png" alt="联系" onerror="this.onerror=null;this.src='https://placehold.co/100x100/999999/ffffff?text=C'"></a>
+                <a href="/posts" class="item-link item-4" data-item="4" data-title="Archive"><img src="/png/4.png" alt="画廊" onerror="this.onerror=null;this.src='https://placehold.co/100x100/999999/ffffff?text=D'"></a>
+                <a class="item-link item-5" data-item="5" data-title=""><img src="/png/word.png" alt="" onerror="this.onerror=null;this.src='https://placehold.co/100x100/999999/ffffff?text=E'"></a>
+
                 <div class="tool-bubble-desktop" data-title="Tools">
                     <div class="tool-menu-desktop">
                         
@@ -619,10 +800,40 @@
                     </div>
                 </div>
 
+                <div class="latest-posts-desktop-container">
+                    <h3>Latest Posts</h3>
+                    <ul>
+                        
+                        <li><a href="http://localhost:1313/posts/4th/" title="博客四周年，只要真心就可以">博客四周年，只要真心就可以</a></li>
+                        
+                        <li><a href="http://localhost:1313/posts/2025-11-04/" title="请问真的不能带狗进来吗？">请问真的不能带狗进来吗？</a></li>
+                        
+                        <li><a href="http://localhost:1313/posts/2025-10-29-noc/" title="关于电影《无可奈何》，实在没办法了！">关于电影《无可奈何》，实在没办法了！</a></li>
+                        
+                        <li><a href="http://localhost:1313/posts/2025-10-15/" title="两次出闲置经历小记">两次出闲置经历小记</a></li>
+                        
+                    </ul>
+                </div>
+
             </div>
 
-        </div> 
-        
+        </div>
+
+    </div>
+
+    <div class="latest-posts-mobile-container">
+        <h3>Latest Posts</h3>
+        <ul>
+            
+            <li><a href="http://localhost:1313/posts/4th/" title="博客四周年，只要真心就可以">博客四周年，只要真心就可以</a></li>
+            
+            <li><a href="http://localhost:1313/posts/2025-11-04/" title="请问真的不能带狗进来吗？">请问真的不能带狗进来吗？</a></li>
+            
+            <li><a href="http://localhost:1313/posts/2025-10-29-noc/" title="关于电影《无可奈何》，实在没办法了！">关于电影《无可奈何》，实在没办法了！</a></li>
+            
+            <li><a href="http://localhost:1313/posts/2025-10-15/" title="两次出闲置经历小记">两次出闲置经历小记</a></li>
+            
+        </ul>
     </div>
 
     
@@ -642,21 +853,16 @@
         </div>
     </div>
 
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const notebookText = document.querySelector('.notebook-text');
-            
-            
+
             if (window.innerWidth > 768 && notebookText) {
-                
                 notebookText.addEventListener('mouseenter', () => {
-                    
-                    notebookText.style.zIndex = '900'; 
+                    notebookText.style.zIndex = '900';
                 });
 
                 notebookText.addEventListener('mouseleave', () => {
-                    
                     notebookText.style.zIndex = '30';
                 });
             }
