@@ -387,5 +387,26 @@ src="/blog/byung.jpeg" >
             window.ViewImage.init("img.pic, .half-width-centered img"); 
         });
     </script></body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        if (window.ViewImage) {
+            
+            
+            const imageSelector = '.star-photo:not([no-view]):not(.emoji):not(#emoji)';
+            const starPhotos = document.querySelectorAll(imageSelector);
 
+            if (starPhotos.length > 0) {
+                
+                ViewImage.init(imageSelector);
+            } else {
+                
+                console.log("No .star-photo images found. ViewImage initialization skipped.");
+            }
+        } else {
+            
+            console.warn("ViewImage object not found. Is view-image.min.js loaded correctly?");
+        }
+    });
+</script>
 </html>

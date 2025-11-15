@@ -158,10 +158,6 @@ target = "_blank"
 name = "Search | 搜索"
 link = "/search"
 target = "_blank"
-[[params.tool]]
-name = "Fanpage ♡"
-link = "/fanpage"
-target = "_blank"
 
 [outputs]
 home = ["HTML", "RSS"]

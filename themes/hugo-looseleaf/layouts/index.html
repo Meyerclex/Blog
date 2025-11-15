@@ -17,13 +17,11 @@
             border-radius: none;
         }
         .index-container {
-            /* background-color: #754d4d;  */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden; 
+            /* 关键修改: 移除 fixed 定位，改为相对定位，并设置最小高度 */
+            position: relative;
+            /* width: 100vw; */
+            min-height: 70vh;
+            top: 10vh;
             z-index: 10;
             
             -webkit-user-select: none;
@@ -33,11 +31,12 @@
         }
 
         .scaling-group {
-            position: relative; 
+            /* 保持相对定位，用于中心定位 */
+            position: absolute; 
             width: min(55vh, 55vw); 
             aspect-ratio: 3 / 4; 
             top: 50%;
-            left: 50%;
+            left: 45%;
             transform: translate(-50%, -50%);
         }
 
@@ -130,6 +129,7 @@
             border-radius: 0px;
             font-size: 0.7rem;
             white-space: nowrap;
+            padding: 1px 4px;
             transition: opacity 0.3s, visibility 0.3s;
             z-index: 90; /* 确保在最顶层 */
             pointer-events: none;
@@ -180,49 +180,104 @@
             z-index: 41;
         }
 
-        /* item-6: 添加初始倾斜（需结合 translateY）*/
-        .item-6 { bottom: 0%; left: 40%; transform: translateY(50%) rotate(7deg); z-index: 14; }
-        .item-6:hover {
-            transform: translateY(50%) scale(1.1) rotate(5deg);
-            filter: drop-shadow(0 0 10px var(--mark));
-            z-index: 41;
+        /* PC 端工具气泡样式 (现在是 DIV，使用 background-image) */
+        .tool-bubble-desktop {
+            position: absolute; /* 保持相对于 scaling-group 绝对定位 */
+            top: -20%; 
+            left: 67%; 
+            width: 80%; 
+            aspect-ratio: 1/1; /* 确保气泡容器比例正确 */
+            transform: translateY(50%) rotate(6deg); 
+            z-index: 14;
+            background-image: url('/png/paper5.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* PC 端气泡内的工具链接容器 */
+        .tool-menu-desktop {
+            position: absolute;
+            top: 10%; 
+            left: 24%; /* 居中内容 */
+            width: 60%; 
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: self-start;
+            gap: 4px;
+            text-align: center;
+            rotate: 0deg; /* 抵消气泡容器的 rotate(7deg) */
+            color: #0d4469; 
+            font-size: min(1.3vw, 1.3vh);
+            font-weight: bold;
+        }
+        
+        .tool-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 1px 40px;
+
         }
 
-
+        .tool-item a:hover {
+            text-decoration: underline;
+            background-color: transparent;
+        }
+        
+        /* 移动端瀑布流容器 - 默认样式 (PC端隐藏) */
+        .tool-list-mobile-flow {
+            display: none; /* 默认在 PC 端隐藏 */
+            padding: 20px;
+            margin-top: 0; 
+            min-height: 100vh;
+        }
+        
+        .tool-menu-mobile-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 瀑布流/自适应列 */
+            gap: 15px;
+            padding: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .tool-menu-mobile-flow .small-nav-item {
+            text-align: center;
+            padding: 10px 5px;
+        }
 
         @media (max-width: 768px) {
-
+            .scaling-group {
+                left: 50%;
+            }
             .notebook-img {
                 top: 0%;
                 left: 0;
-            width: 100%; 
-            height: 100%; 
-            z-index: 20; 
-            pointer-events: none; 
-            rotate: 0deg;        }
+                width: 100%; 
+                height: 100%; 
+                z-index: 20; 
+                pointer-events: none; 
+                rotate: 0deg;
+            }
 
             .scaling-group {
                 width: min(70vh, 70vw); 
                 aspect-ratio: 3 / 4;
-                top: 40%; /* 关键修改：将主体中心向上移动到 45% */
+                top: 40%; 
             }
 
             .notebook-text {
                 font-size: 3.5vw; 
+                top: 38%; 
+                left: 47%;
+                transform: translate(-50%, -50%); 
+                z-index: 50; 
+                width: 70%;
+                padding-left: 15px;
+                rotate: 0deg;
             }
-
-            .notebook-text {
-            position: absolute;
-            top: 38%; 
-            left: 47%;
-            transform: translate(-50%, -50%); 
-            z-index: 50; /* 关键修改：在移动端始终将 z-index 设置为高于图标 (40+) 的值 */
-            width: 70%;
-            padding-left: 15px;
-            text-align: left;
-            rotate: 0deg;
-            color: rgb(27, 110, 165); 
-        }
 
             .item-link {
                 width: 35%; 
@@ -234,20 +289,67 @@
             .item-3 { bottom: 40%; right: -35%; width: 40%; transform: translateX(-50%) rotate(15deg); }
             .item-4 { bottom: 0%; left: 0%; width: 40%; transform: rotate(-10deg); } 
             .item-5 { bottom: 0%; left: 40%; width: 35%; transform: translateY(-50%) rotate(10deg); }
-            .item-6 { bottom: 0%; left: 40%; transform: translateY(50%) rotate(7deg); }
 
+            /* 移动端隐藏桌面气泡 */
+            .tool-bubble-desktop {
+                display: none; 
+            }
             
+            /* 移动端工具列表样式: 模拟贴在页底的纸张 */
+            .tool-list-mobile-flow {
+                display: block; 
+                position: relative;
+                width: 70%; 
+                margin: 0px auto 100px auto; /* 居中并增加底部边距 */
+                padding: 50px 30px; 
+                aspect-ratio: 5 / 1; /* 给予纸张一个形状 */
+                background-image: url('/png/paper8.webp');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transform: rotate(0deg); 
+                min-height: auto; 
+            }
+            .tool-menu-mobile-flow a {
+                color: #0d4469;
+            padding: 1px 5px;
+            }
+            .tool-menu-mobile-flow {
+                display: flex; /* 强制垂直列表流 */
+                flex-direction: column;
+                gap: 3px;
+                padding: 20px 30px;
+                font-size: 85%; 
+                max-width: 100%;
+                margin: 0 20px;
+                align-items: flex-start; /* 左对齐 */
+                transform: rotate(0deg); /* 抵消容器倾斜，让文本更“正” */
+                grid-template-columns: none; /* 移除 grid 布局 */
+            }
+            
+            /* 移动端链接项样式：移除方块/边框 */
+            .tool-menu-mobile-flow .small-nav-item {
+                background-color: transparent;
+                text-align: left;
+                width: 100%;
+            }
+                    .tool-item a::before {
+            content: "✦";
+            font-size: 0.85em;
+            line-height: 0.2em;
+            vertical-align: super;
+            margin-right: 7px;
+        }
+            /* 保留其他移动端样式 */
             .item-1:hover { transform: scale(1.1) rotate(-25deg); } 
 
-            .item-2:hover, .item-3:hover, .item-4:hover, .item-5:hover, .item-6:hover {
-                /* transform: scale(1.1) rotate(5deg); */
+            .item-2:hover, .item-3:hover, .item-4:hover, .item-5:hover {
                 filter: drop-shadow(0 0 10px var(--mark));
                 z-index: 41;
             }
-                        .item-link::after {
+            .item-link::after {
                 visibility: visible;
                 opacity: 1;
-                /* top: 100%;  */
                 font-size: 0.8rem;
                 padding: 2px 5px;
             }
@@ -273,12 +375,29 @@
                 <a href="/fanpage/" class="item-link item-3" data-item="3" data-title="Fanpage" target="_blank" rel="noopener noreferrer"><img src="/png/3.png" alt="联系"></a>
                 <a href="/posts" class="item-link item-4" data-item="4" data-title="Archive"><img src="/png/4.png" alt="画廊"></a>
                 <a class="item-link item-5" data-item="5" data-title=""><img src="/png/word.png" alt=""></a>
-                <!-- <a href="/shop" class="item-link item-6" data-item="6" data-title="商店"><img src="/png/6.png" alt="商店"></a> -->
+                
+                <!-- PC 端工具气泡容器 (现在是 DIV，使用 background-image) -->
+                <div class="tool-bubble-desktop" data-title="Tools">
+                    <div class="tool-menu-desktop">
+                        {{ range .Site.Params.tool }}
+                        <div class="tool-item"><a href="{{ .link }}" target="{{ .target }}" >{{ .name }}</a></div>
+                        {{ end }}
+                    </div>
+                </div>
 
             </div>
 
         </div> 
         
+    </div>
+
+    <!-- 移动端瀑布流工具列表 -->
+    <div class="tool-list-mobile-flow">
+        <div class="tool-menu-mobile-flow">
+            {{ range .Site.Params.tool }}
+            <div class="tool-item"><a href="{{ .link }}" target="{{ .target }}" >{{ .name }}</a></div>
+            {{ end }}
+        </div>
     </div>
 
     <!-- JavaScript to dynamically raise .notebook-text z-index only on p hover (PC only) -->

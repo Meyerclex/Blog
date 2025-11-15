@@ -203,12 +203,10 @@
         }
         .index-container {
              
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden; 
+            position: relative;
+             
+            min-height: 70vh;
+            top: 10vh;
             z-index: 10;
             
             -webkit-user-select: none;
@@ -218,11 +216,12 @@
         }
 
         .scaling-group {
-            position: relative; 
+             
+            position: absolute; 
             width: min(55vh, 55vw); 
             aspect-ratio: 3 / 4; 
             top: 50%;
-            left: 50%;
+            left: 45%;
             transform: translate(-50%, -50%);
         }
 
@@ -315,6 +314,7 @@
             border-radius: 0px;
             font-size: 0.7rem;
             white-space: nowrap;
+            padding: 1px 4px;
             transition: opacity 0.3s, visibility 0.3s;
             z-index: 90;  
             pointer-events: none;
@@ -366,48 +366,103 @@
         }
 
          
-        .item-6 { bottom: 0%; left: 40%; transform: translateY(50%) rotate(7deg); z-index: 14; }
-        .item-6:hover {
-            transform: translateY(50%) scale(1.1) rotate(5deg);
-            filter: drop-shadow(0 0 10px var(--mark));
-            z-index: 41;
+        .tool-bubble-desktop {
+            position: absolute;  
+            top: -20%; 
+            left: 67%; 
+            width: 80%; 
+            aspect-ratio: 1/1;  
+            transform: translateY(50%) rotate(6deg); 
+            z-index: 14;
+            background-image: url('/png/paper5.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+         
+        .tool-menu-desktop {
+            position: absolute;
+            top: 10%; 
+            left: 24%;  
+            width: 60%; 
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: self-start;
+            gap: 4px;
+            text-align: center;
+            rotate: 0deg;  
+            color: #0d4469; 
+            font-size: min(1.3vw, 1.3vh);
+            font-weight: bold;
+        }
+        
+        .tool-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 1px 40px;
+
         }
 
-
+        .tool-item a:hover {
+            text-decoration: underline;
+            background-color: transparent;
+        }
+        
+         
+        .tool-list-mobile-flow {
+            display: none;  
+            padding: 20px;
+            margin-top: 0; 
+            min-height: 100vh;
+        }
+        
+        .tool-menu-mobile-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  
+            gap: 15px;
+            padding: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .tool-menu-mobile-flow .small-nav-item {
+            text-align: center;
+            padding: 10px 5px;
+        }
 
         @media (max-width: 768px) {
-
+            .scaling-group {
+                left: 50%;
+            }
             .notebook-img {
                 top: 0%;
                 left: 0;
-            width: 100%; 
-            height: 100%; 
-            z-index: 20; 
-            pointer-events: none; 
-            rotate: 0deg;        }
+                width: 100%; 
+                height: 100%; 
+                z-index: 20; 
+                pointer-events: none; 
+                rotate: 0deg;
+            }
 
             .scaling-group {
                 width: min(70vh, 70vw); 
                 aspect-ratio: 3 / 4;
-                top: 40%;  
+                top: 40%; 
             }
 
             .notebook-text {
                 font-size: 3.5vw; 
+                top: 38%; 
+                left: 47%;
+                transform: translate(-50%, -50%); 
+                z-index: 50; 
+                width: 70%;
+                padding-left: 15px;
+                rotate: 0deg;
             }
-
-            .notebook-text {
-            position: absolute;
-            top: 38%; 
-            left: 47%;
-            transform: translate(-50%, -50%); 
-            z-index: 50;  
-            width: 70%;
-            padding-left: 15px;
-            text-align: left;
-            rotate: 0deg;
-            color: rgb(27, 110, 165); 
-        }
 
             .item-link {
                 width: 35%; 
@@ -419,20 +474,67 @@
             .item-3 { bottom: 40%; right: -35%; width: 40%; transform: translateX(-50%) rotate(15deg); }
             .item-4 { bottom: 0%; left: 0%; width: 40%; transform: rotate(-10deg); } 
             .item-5 { bottom: 0%; left: 40%; width: 35%; transform: translateY(-50%) rotate(10deg); }
-            .item-6 { bottom: 0%; left: 40%; transform: translateY(50%) rotate(7deg); }
 
+             
+            .tool-bubble-desktop {
+                display: none; 
+            }
             
+             
+            .tool-list-mobile-flow {
+                display: block; 
+                position: relative;
+                width: 70%; 
+                margin: 0px auto 100px auto;  
+                padding: 50px 30px; 
+                aspect-ratio: 5 / 1;  
+                background-image: url('/png/paper8.webp');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                transform: rotate(0deg); 
+                min-height: auto; 
+            }
+            .tool-menu-mobile-flow a {
+                color: #0d4469;
+            padding: 1px 5px;
+            }
+            .tool-menu-mobile-flow {
+                display: flex;  
+                flex-direction: column;
+                gap: 3px;
+                padding: 20px 30px;
+                font-size: 85%; 
+                max-width: 100%;
+                margin: 0 20px;
+                align-items: flex-start;  
+                transform: rotate(0deg);  
+                grid-template-columns: none;  
+            }
+            
+             
+            .tool-menu-mobile-flow .small-nav-item {
+                background-color: transparent;
+                text-align: left;
+                width: 100%;
+            }
+                    .tool-item a::before {
+            content: "✦";
+            font-size: 0.85em;
+            line-height: 0.2em;
+            vertical-align: super;
+            margin-right: 7px;
+        }
+             
             .item-1:hover { transform: scale(1.1) rotate(-25deg); } 
 
-            .item-2:hover, .item-3:hover, .item-4:hover, .item-5:hover, .item-6:hover {
-                 
+            .item-2:hover, .item-3:hover, .item-4:hover, .item-5:hover {
                 filter: drop-shadow(0 0 10px var(--mark));
                 z-index: 41;
             }
-                        .item-link::after {
+            .item-link::after {
                 visibility: visible;
                 opacity: 1;
-                 
                 font-size: 0.8rem;
                 padding: 2px 5px;
             }
@@ -500,11 +602,44 @@
                 <a href="/posts" class="item-link item-4" data-item="4" data-title="Archive"><img src="/png/4.png" alt="画廊"></a>
                 <a class="item-link item-5" data-item="5" data-title=""><img src="/png/word.png" alt=""></a>
                 
+                
+                <div class="tool-bubble-desktop" data-title="Tools">
+                    <div class="tool-menu-desktop">
+                        
+                        <div class="tool-item"><a href="/tags" target="_blank" >Tags | 标签</a></div>
+                        
+                        <div class="tool-item"><a href="/bookmarks" target="_blank" >Bookmarks | 书签</a></div>
+                        
+                        <div class="tool-item"><a href="/changelog" target="_blank" >Changelog | 更新日志</a></div>
+                        
+                        <div class="tool-item"><a href="/collection" target="_blank" >Museum | 博物馆</a></div>
+                        
+                        <div class="tool-item"><a href="/search" target="_blank" >Search | 搜索</a></div>
+                        
+                    </div>
+                </div>
 
             </div>
 
         </div> 
         
+    </div>
+
+    
+    <div class="tool-list-mobile-flow">
+        <div class="tool-menu-mobile-flow">
+            
+            <div class="tool-item"><a href="/tags" target="_blank" >Tags | 标签</a></div>
+            
+            <div class="tool-item"><a href="/bookmarks" target="_blank" >Bookmarks | 书签</a></div>
+            
+            <div class="tool-item"><a href="/changelog" target="_blank" >Changelog | 更新日志</a></div>
+            
+            <div class="tool-item"><a href="/collection" target="_blank" >Museum | 博物馆</a></div>
+            
+            <div class="tool-item"><a href="/search" target="_blank" >Search | 搜索</a></div>
+            
+        </div>
     </div>
 
     
