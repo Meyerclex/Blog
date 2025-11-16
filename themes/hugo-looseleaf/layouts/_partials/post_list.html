@@ -42,19 +42,4 @@
     {{ end }}
 </ul>
 
-<!--<ul>-->
-<!--    {{- range $post := $posts -}}-->
-<!--    <div class="post_list">-->
-<!--        <div class="post_list_header">-->
-<!--            <a class="post_list_title" href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>-->
-<!--            <span class="post_list_time">{{- ($post.Date | time.Format site.Params.theme_config.date_format) }}</span>-->
-<!--        </div>-->
-<!--        <div class="post_list_sum">{{ $post.Description }}</div>-->
-<!--    </div>-->
-<!--    {{ end }}-->
-<!--    {{- if and .show_more $limit_exceeded }}-->
-<!--    <li><a href="{{ .show_more_url | relURL }}">{{ .show_more_text | default "Show more..." }}</a></li>-->
-<!--    {{ end }}-->
-<!--</ul>-->
-
 {{ end }}
