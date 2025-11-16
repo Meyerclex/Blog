@@ -1,262 +1,276 @@
 {{ define "main" }}
-    <nav class="single-nav">
-        <a href="/">Home</a> | 
-        <a href="/posts/">Archive</a>  
-    </nav>
-        <hr class="decoration-hr">
-    
-    <div class="list-wrapper">
-        {{ range .Site.Data.fanpage.stars }}
-        <div class="fanpage-entry-container">
-            <div class="fanpage-entry"> 
-                <div class="entry-image-area">
-                    <img class="star-photo" src="{{ .image_url }}" alt="{{ .nickname }} Photo">
-                </div>
-                <div class="entry-info-area">
-                    <h3 class="entry-nickname">{{ .nickname }}</h3>
-                    <p class="entry-bio">{{ .bio | markdownify | safeHTML }}</p>
-                    <ul class="entry-stats">
-                        {{ range .stats }}
-                        <li>{{ . | markdownify | safeHTML }}</li>
-                        {{ end }}
-                    </ul>
-                        <div class="entry-link-wrapper">
-                        <a href="{{ .url }}" class="entry-button" {{ if .is_placeholder }}disabled{{ end }}>
-                            {{ .button_text }}
-                        </a>
-                    </div>
-                        <br>
-                     <p><strong>更多有关的博客文章：</strong></p>
-                      <ul class="relate-posts-li">
-                        {{ range .related_posts }}
-                        <li>{{ . | markdownify | safeHTML }}</li>
-                        {{ end }}
-                    </ul>
-                </div>
+<nav class="single-nav">
+<a href="/">Home</a> |
+<a href="/posts/">Archive</a>
+
+</nav>
+
+<hr class="decoration-hr">
+
+<div class="list-wrapper">
+    {{ range .Site.Data.fanpage.stars }}
+    <div class="fanpage-entry-container">
+        <div class="fanpage-entry"> 
+            <div class="entry-image-area">
+                <img class="star-photo" src="{{ .image_url }}" alt="{{ .nickname }} Photo">
             </div>
-
+            <div class="entry-info-area">
+                <h3 class="entry-nickname">{{ .nickname }}</h3>
+                <p class="entry-bio">{{ .bio | markdownify | safeHTML }}</p>
+                <ul class="entry-stats">
+                    {{ range .stats }}
+                    <li>{{ . | markdownify | safeHTML }}</li>
+                    {{ end }}
+                </ul>
+                    <div class="entry-link-wrapper">
+                    <a href="{{ .url }}" class="entry-button" {{ if .is_placeholder }}disabled{{ end }}>
+                        {{ .button_text }}
+                    </a>
+                </div>
+                    <br>
+                 <p><strong>更多有关的博客文章：</strong></p>
+                  <ul class="relate-posts-li">
+                    {{ range .related_posts }}
+                    <li>{{ . | markdownify | safeHTML }}</li>
+                    {{ end }}
+                </ul>
+            </div>
         </div>
-        {{ end }}
+
     </div>
+    {{ end }}
+</div>
+
+<style>
+    :root {
+        --pink-light: #ffeef2cd;
+        --pink-medium: #fcf4b8;
+        --pink-dark: #e9d5df;
+        --bg-color: #fcf6f9;
+        --card-bg: #fff7f78e;
+        --main-text-color: #2c3e50;
+        --stats-text-color: #5d3587;
+        --hr-color: #ddd;
+        --font-family: 'Inter', sans-serif;
+        --bd:  #c3b1b664;
+        --disable: #ccc;
+    }
+
+    [a="dark"] {
+        --pink-light: #57105f55;
+        --pink-medium: #ff99cc;
+        --pink-dark: #ffcce6;
+        --bg-color: #121212; 
+        --card-bg: var(--neodb-card-color);
+        --main-text-color: #e0e0e0;
+        --stats-text-color: #ffdae3;
+        --hr-color: #333;
+        --bd:  #5f407cbc;
+        --disable: #363535;
+    }
     
-    <style>
-        :root {
-            --pink-light: #ffeef2cd;
-            --pink-medium: #fcf4b8;
-            --pink-dark: #e9d5df;
-            --bg-color: #fcf6f9;
-            --card-bg: #fff7f78e;
-            --main-text-color: #2c3e50;
-            --stats-text-color: #5d3587;
-            --hr-color: #ddd;
-            --font-family: 'Inter', sans-serif;
-        }
+    .list-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 5px;
+    }
 
-        [a="dark"] {
-            --pink-light: #57105f55;
-            --pink-medium: #ff99cc;
-            --pink-dark: #ffcce6;
-            --bg-color: #121212; 
-            --card-bg: var(--neodb-card-color);
-            --main-text-color: #e0e0e0;
-            --stats-text-color: #ffdae3;
-            --hr-color: #333;
+    .fanpage-entry-container {
+        margin: 25px 0;
+        padding: 10px;
+    }
+
+    .fanpage-entry {
+        background-color: var(--card-bg); 
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid var(--pink-light); 
+        border-radius: 10px; 
+        padding: 25px ; 
+        border: 1px solid var(--bd);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        position: relative;
+    }
+    /* 清除浮动，防止父元素高度塌陷 */
+    .fanpage-entry::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .entry-image-area {
+        float: left; /* 桌面端图片向左浮动 */
+        flex-shrink: 0; 
+        width: 160px; 
+        /* overflow: hidden; */
+        margin-right: 20px;
+        box-shadow: none; 
+        margin-left: 20px; 
+    }
+    
+    .star-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: drop-shadow(4px 4px 0px var(--shadow));
+        transition: transform 0.3s ease-out;
+    }
+    @media (min-width: 601px) {
+        .star-photo:hover {
+            transform: scale(1.2) rotate(7deg); /* 放大并倾斜 */
         }
+    }
+    .entry-info-area {
+        flex-grow: 1;
+        text-align: left !important; 
+    }
+
+    .entry-nickname {
+        font-size: 1.2rem;
         
-        .list-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+        margin-top: 0;
+        margin-bottom: 5px;
+        text-align: left !important; 
+    }
 
-        .fanpage-entry-container {
-            margin: 25px 0;
-            padding: 0;
-        }
+    .entry-bio {
+        font-size: 0.95rem;
+        line-height: 1.6; /* 增加行高，视觉上拉开段落间距 */
+        margin-bottom: 15px;
+        text-align: left !important; 
+    }
 
+
+    .entry-stats {
+        list-style: none;
+        list-style-type: none !important;
+        padding-left: 0;
+        margin: 0 0 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start !important; 
+    }
+
+    .entry-stats li {
+        font-size: 0.85rem;
+        background-color: var(--pink-light);
+        
+        padding: 4px 8px;
+        border-radius: 4px; 
+        font-weight: 500;
+    }
+
+    .entry-stats li a {
+        /* color: var(--main-text-color) !important; */
+        /* text-decoration: none; */
+    }
+    
+    .entry-link-wrapper {
+         text-align: left !important; 
+    }
+
+    .entry-button {
+        display: inline-block; 
+        text-decoration: none; 
+        background-color: var(--talk-bubble-bg);
+        color: var(--talk-bubble-border-text-color)!important;
+        padding: 8px 16px; 
+        border: none;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+        box-shadow: 0 1px 0 var(--bubble-box-shadow); 
+        text-align: left !important; 
+        margin-top: 5px;
+    }
+
+    .entry-button:hover:not([disabled]) {
+        
+        transform: translateY(-0.5px);
+        
+    }
+    a:hover {
+        border-radius: 15px;
+    }
+    .entry-stats li:before {
+        content: ""!important;
+        font-weight: bold;
+        margin-right: 3px;
+    }
+    .relate-posts-li li a {
+        text-decoration: none;
+    }
+    .relate-posts-li li::before{
+        content: "✦";
+        font-size: 0.85em;
+        line-height: 0.2em;
+        vertical-align: super;
+        color: var(--p-text);
+    }
+    .entry-button[disabled] {
+        background-color: var(--disable);
+        color: #666;
+        cursor: not-allowed;
+        box-shadow: 0 1px 0 #999;
+        pointer-events: none; 
+        margin-top: 5px;
+    }
+
+    @media (max-width: 600px) {
+        .body {
+            padding: 0 0px;
+        }
         .fanpage-entry {
-            display: flex;
-            align-items: center; 
-            background-color: var(--card-bg); 
-            
-            border: none;
-            box-shadow: none;
-
-            border-bottom: 1px solid var(--pink-light); 
-            border-radius: 0; 
-            padding: 20px 0; 
-            
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-            position: relative;
+            flex-direction: column; 
+            align-items: flex-start; 
+            padding: 15px;
+            display: flex; /* 移动端恢复 flex 布局，以实现堆叠 */
         }
         
         .entry-image-area {
-            flex-shrink: 0; 
-            width: 160px; 
-            /* overflow: hidden; */
-            margin-right: 20px;
-            box-shadow: none; 
-            margin-left: 20px; 
+            float: none; /* 移动端清除浮动 */
+            margin: 0 0 15px 0; 
+            width: 120px; 
+            align-self: center !important; 
         }
-        
-        .star-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: drop-shadow(4px 4px 0px var(--shadow));
-            transition: transform 0.3s ease-out;
-        }
-        @media (min-width: 601px) {
-            .star-photo:hover {
-                transform: scale(1.2) rotate(7deg); /* 放大并倾斜 */
-            }
-        }
+
         .entry-info-area {
-            flex-grow: 1;
-            text-align: left !important; 
+            text-align: center !important; 
+            width: 100%; 
         }
 
         .entry-nickname {
-            font-size: 1.2rem;
-            
-            margin-top: 0;
-            margin-bottom: 5px;
-            text-align: left !important; 
+            text-align: center !important; 
         }
 
         .entry-bio {
-            font-size: 0.95rem;
-            line-height: 1.6; /* 增加行高，视觉上拉开段落间距 */
-            margin-bottom: 15px;
-            text-align: left !important; 
+            text-align: center !important; 
         }
-
-
+        
         .entry-stats {
-            list-style: none;
-            list-style-type: none !important;
-            padding-left: 0;
-            margin: 0 0 15px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: flex-start !important; 
-        }
-
-        .entry-stats li {
-            font-size: 0.85rem;
-            background-color: var(--pink-light);
-            
-            padding: 4px 8px;
-            border-radius: 4px; 
-            font-weight: 500;
-        }
-
-        .entry-stats li a {
-            /* color: var(--main-text-color) !important; */
-            /* text-decoration: none; */
+            justify-content: center !important; 
         }
         
         .entry-link-wrapper {
-             text-align: left !important; 
+            width: 100%;
+            text-align: center !important; 
         }
 
         .entry-button {
-            display: inline-block; 
-            text-decoration: none; 
-            background-color: var(--talk-bubble-bg);
-            color: var(--talk-bubble-border-text-color)!important;
-            padding: 8px 16px; 
-            border: none;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            box-shadow: 0 1px 0 var(--bubble-box-shadow); 
-            text-align: left !important; 
-            margin-top: 5px;
+            width: auto; 
+            margin-top: 10px;
+            text-align: center !important; 
         }
+        .relate-posts-li {
+            text-align: left;
+        }
+    }
+</style>
 
-        .entry-button:hover:not([disabled]) {
-            
-            transform: translateY(-0.5px);
-            
-        }
-        a:hover {
-            border-radius: 15px;
-        }
-        .entry-stats li:before {
-            content: ""!important;
-            font-weight: bold;
-            margin-right: 3px;
-        }
-        .relate-posts-li li a {
-            text-decoration: none;
-        }
-        .relate-posts-li li::before{
-            content: "✦";
-            font-size: 0.85em;
-            line-height: 0.2em;
-            vertical-align: super;
-            color: var(--p-text);
-        }
-        .entry-button[disabled] {
-            background-color: #ccc;
-            color: #666;
-            cursor: not-allowed;
-            box-shadow: 0 1px 0 #999;
-            pointer-events: none; 
-            margin-top: 5px;
-        }
-
-        @media (max-width: 600px) {
-            .body {
-                padding: 0 0px;
-            }
-            .fanpage-entry {
-                flex-direction: column; 
-                align-items: flex-start; 
-                padding: 15px;
-            }
-            
-            .entry-image-area {
-                margin: 0 0 15px 0; 
-                width: 120px; 
-                align-self: center !important; 
-            }
-
-            .entry-info-area {
-                text-align: center !important; 
-                width: 100%; 
-            }
-
-            .entry-nickname {
-                text-align: center !important; 
-            }
-
-            .entry-bio {
-                text-align: center !important; 
-            }
-            
-            .entry-stats {
-                justify-content: center !important; 
-            }
-            
-            .entry-link-wrapper {
-                width: 100%;
-                text-align: center !important; 
-            }
-
-            .entry-button {
-                width: auto; 
-                margin-top: 10px;
-                text-align: center !important; 
-            }
-            .relate-posts-li {
-                text-align: left;
-            }
-        }
-    </style>
+<hr class="decoration-hr">
+{{ partial "footer.html" . }}
 
 {{ end }}
