@@ -29,12 +29,18 @@
     {{ partial "toc.html" . }}
     {{ end }}
 
-    <div id="post-content"  data-pagefind-body>
-        {{ .Content | safeHTML }}
-        {{ if .Params.search }}
-        {{ partial "pagefind.html" . }}
-        {{ end }}
-    </div>
+<div id="post-content"  data-pagefind-body>
+    {{ $emojiPattern := `:([A-Za-z0-9_-]+):` }}
+    {{ $tableWrapper := printf "<div class=\"table-wrapper\">${1}</div>" }}
+    {{ .Content     
+        | replaceRE $emojiPattern `<img class="emojis" src="/img/emoji/$1.png" alt=":$1:" loading="lazy">`     
+        | replaceRE "(<table>(?:.|\n)+?</table>)" $tableWrapper     
+        | safeHTML 
+    }}
+    {{ if .Params.search }}
+    {{ partial "pagefind.html" . }}
+    {{ end }}
+</div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>

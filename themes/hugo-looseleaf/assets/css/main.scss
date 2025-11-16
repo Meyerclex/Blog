@@ -686,8 +686,14 @@ img.emoji {
   vertical-align: -0.2em;
   border-radius: 0px;
 }
-
-
+/* 确保使用 em 单位，以实现良好的移动端适配 */
+img.emojis {
+  height:        3em;  
+  width:         3em;
+  margin:        0 .15em; 
+  vertical-align: -0.2em; 
+  border-radius: 0px;
+}
 table {
   width: 100%; /* PC 端表格占据可用宽度 */
   margin-bottom: 1em; /* 表格下方留白 */
