@@ -3,7 +3,7 @@
         .single-nav {
             color: #e47d4d;
             text-align: center;
-            text-shadow: 0px 0px 4px #fff20089;
+            /* text-shadow: 0px 0px 4px #fff20089; */
 
         }
         .title-img p {
@@ -170,8 +170,24 @@
                     </div>
                 `;
             }
+            
+            // 缓存 feed-reader 元素
+            const feedReaderElement = document.getElementById("feed-reader");
+            
+            // 插入内容到 DOM
+            if (feedReaderElement) {
+                feedReaderElement.innerHTML = html;
 
-            document.getElementById("feed-reader").innerHTML = html;
+                // 新增一行注释提示一下
+                // 调用 twemoji 解析新插入的动态内容
+                if (typeof twemoji !== 'undefined') {
+                    twemoji.parse(feedReaderElement, {
+                        base: '{{ "/my-emojis/" | relURL }}',
+                        folder: 'svg',
+                        ext: '.svg'
+                    });
+                }
+            }
         });
 </script>
     </div>
@@ -236,6 +252,7 @@
     </div>
 </div>
 </div>
+
 <hr class="decoration-hr">
 {{- partial "footer.html" . -}}
 {{ end }}

@@ -192,7 +192,7 @@
         .single-nav {
             color: #e47d4d;
             text-align: center;
-            text-shadow: 0px 0px 4px #fff20089;
+             
 
         }
         .title-img p {
@@ -359,8 +359,24 @@
                     </div>
                 `;
             }
+            
+            
+            const feedReaderElement = document.getElementById("feed-reader");
+            
+            
+            if (feedReaderElement) {
+                feedReaderElement.innerHTML = html;
 
-            document.getElementById("feed-reader").innerHTML = html;
+                
+                
+                if (typeof twemoji !== 'undefined') {
+                    twemoji.parse(feedReaderElement, {
+                        base: '\/my-emojis\/',
+                        folder: 'svg',
+                        ext: '.svg'
+                    });
+                }
+            }
         });
 </script>
     </div>
@@ -836,6 +852,7 @@
     </div>
 </div>
 </div>
+
 <hr class="decoration-hr">
 
 <footer class="site-footer">
