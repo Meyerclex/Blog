@@ -13,3 +13,4 @@ header_image: "/site/1.jpg"
 header_height: "120px"
 ---
 
+^^只是一篇测试文件。
