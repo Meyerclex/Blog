@@ -7,10 +7,10 @@ description: ""
 hidden: true
 draft: false
 comment: true
-layout: "testing"
+layout: "table"
+header_image: "/blog/blife.gif"
+header_height: "200px"
 ---
-
-<center>♦︎  ♦︎  ♦︎</center>
 
 **So Long,**
 

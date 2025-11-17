@@ -62,6 +62,7 @@ spotify_embed = "https://open.spotify.com/embed/album/1inrucS0iHVHroJVf1jMWg?utm
 show_mumble = false
 headerEmoji = "🍞"
 enableGitInfo = true
+defaultHeaderImage = "/blog/IMG_7174.jpg"
 
 [params.theme_config]
 appearance        = "auto" #light, dark
@@ -147,7 +148,7 @@ name = "Bookmarks | 书签"
 link = "/bookmarks"
 target = "_blank"
 [[params.tool]]
-name = "Changelog | 更新日志"
+name = "Changelog | 日志"
 link = "/changelog"
 target = "_blank"
 [[params.tool]]
@@ -166,3 +167,4 @@ home = ["HTML", "RSS"]
 tag = "tags"
 #series = "series"
 #category = "categories"
+

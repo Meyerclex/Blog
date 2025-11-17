@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{- $style := resources.Get "css/_wide.scss" | toCSS (dict "outputStyle" "compressed") -}}
+{{- $style_linked := $style.RelPermalink -}}
+<style>
+    :root {
+        /* 保留默认高度变量，作为备用 */
+        --title-bg-height: 120px; 
+    }
+</style>
+<link rel="stylesheet" href="{{ $style_linked }}">
+<div class="archive">
+    <nav class="single-nav">
+        <a href="/">Home</a> | 
+        <a href="/about/">About</a> |
+        <a href="/links/">Friends</a>  |
+        <a href="/fanpage/">Fanpage</a>  
+    </nav>
+    
+    {{ $bgImage := .Params.header_image }}
+    {{ if not $bgImage }}
+        {{ $bgImage = "var(--title-bg-image)" }}
+    {{ else }}
+        {{ $bgImage = $bgImage | relURL }}
+    {{ end }}
+
+    {{ $bgHeight := default "var(--title-bg-height)" .Params.header_height }}
+    
+    <div class="title-img" style="background-image: url('{{ $bgImage }}'); height: {{ $bgHeight }}; display: flex; align-items: center;">
+        <h1 class="post-title" style="margin: 0; padding-left: 20px;">{{ .Title }}</h1>
+        </div>
+
+    <div class="table-content">
+        {{ .Content }}
+    </div>
+</div>
+
+<hr class="decoration-hr">
+{{- partial "footer.html" . -}}
+{{ end }}

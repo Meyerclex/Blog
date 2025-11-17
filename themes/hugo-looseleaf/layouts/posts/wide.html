@@ -1,110 +1,13 @@
 {{ define "main" }}
+{{- $style := resources.Get "css/_wide.scss" | toCSS (dict "outputStyle" "compressed") -}}
+{{- $style_linked := $style.RelPermalink -}}
 <style>
-        .single-nav {
-            color: #e47d4d;
-            text-align: center;
-            /* text-shadow: 0px 0px 4px #fff20089; */
-            font-size: 95%;
-        }
-        .title-img p {
-            color: #f9f2f2!important;
-            text-shadow: 0px 0px 4px #0c2235;
-        }
-        :root {
-            --bg: #ffffff3e;
-            --bd: #e2b9b939;
-            --ft: #e3d9d935;
-        }
-        [a="dark"] {
-            --bg: #00000051;
-            --bd: #231c4eb8;
-            --ft: #38050535;
-
-        }
-        .w {
-            max-width: 640px;
-        }
-        .archive {
-            border-radius: 10px;
-            border: 1px solid var(--bd);
-            padding: 20px 0;
-            margin: 10px 30px;
-
-            background-color: var(--bg);
-            /* --------------------------------- 新增：毛玻璃效果 --------------------------------- */
-            /* 添加背景模糊滤镜 */
-            backdrop-filter: blur(2px);
-
-        }
-        .postslist {
-            padding: 0px 20px;
-        }
-        ul li:before {
-            content: "";
-            font-weight: bold;
-            margin-right: 3px;
-        }
-
-        .title-img {
-            /* 移除 background-image 和 filter，现在由伪元素处理 */
-            /* background-image: url(/blog/IMG_7174.jpg); */
-            height: 120px;
-            /* background-size: 100%; */
-            /* background-position: 90%; */
-            padding: 0;
-            box-sizing: border-box;
-            margin-top: .5em;
-            position: relative; /* 允许伪元素相对于它定位 */
-            overflow: hidden; /* 裁剪伪元素超出部分，防止圆角被破坏 */
-
-            /* 保留 mask-image */
-            mask-image: linear-gradient(to bottom,
-                                        transparent 0%,
-                                        black 15%,
-                                        black 85%,
-                                        transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom,
-                                                transparent 0%,
-                                                black 15%,
-                                                black 85%,
-                                                transparent 100%);
-        }
-
-        .title-img::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url(/blog/IMG_7174.jpg); /* 背景图片现在在这里 */
-            background-size: 100%; /* 保持图片大小设置 */
-            background-position: 90%; /* 保持图片位置设置 */
-            z-index: -1; /* 将伪元素放在内容下面 */
-
-            /* 原始的 CSS Filter 应用到伪元素上 */
-            filter: brightness(1.25) contrast(0.55) grayscale(0.08) hue-rotate(0deg) sepia(0.2) url(#dither);
-            /* SVG Filter Dynamic Parameters - 假设你已经定义了 #dither */
-        }
-
-        /* 暗黑模式下的滤镜，同样应用到伪元素 */
-        [a="dark"] .title-img::before {
-            filter: brightness(0.35) contrast(1.0) grayscale(0.41) hue-rotate(0deg) sepia(0.15) url(#dither);
-            /* SVG Filter Dynamic Parameters - 假设你已经定义了 #dither */
-        }
-
-        li {
-            padding: 0 0rem;
-        }
-    @media (max-width: 768px) {
-            .archive {
-                margin: 10px 0px;
-                padding: 20px 0;
-
-            }
-        }
-    </style>
-
+    :root {
+        --title-bg-image: url("/blog/IMG_7174.jpg");
+        --title-bg-height: 120px;
+    }
+</style>
+<link rel="stylesheet" href="{{ $style_linked }}">
 <div class="archive">
     <nav class="single-nav">
         <a href="/">Home</a> | 
