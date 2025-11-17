@@ -1,34 +1,64 @@
 ---
-title: 🍟 小鱼和她的朋友们
-description:
+title: "小鱼和她的朋友们"
+description: "" 
 date: 2021-06-28
 toc: false
-layout: "diary"
-comment: false
+comment: true
+type: "posts"
+layout: "table" 
+header_image: "/site/bg6.jpg"
+header_height: "120px"
 ---
 
 <style>
-.header-content {
-    display: flex
-;
-    flex-direction: column;
-    gap: 15px;
-}
-.header-content li p {
+.table-content li p {
 color: peru;
 }
-.header-content li {
+.table-content li {
 margin: 15px 0;
 }
-.header-content ul li:before {
-    content: "·";
-    font-weight: bold;
-    margin-right: 3px;
+.table-content ul li:before {
+    content: "✦";
+    font-size: 0.75em;
+    line-height: 0.2em;
+    vertical-align: super;
+    color: peru;
 }
-.header-content li p a {
+.table-content li p a {
     margin: 5px;
 }
+/* 步骤 1: 设置父元素相对定位 */
+.title-img {
+    position: relative; /* 确保伪元素可以相对于它进行定位 */
+    /* 移除 HTML 中内联的 background-image 样式 */
+}
+
+/* 步骤 2: 在伪元素上创建背景和滤镜 */
+.title-img::before {
+    content: ""; /* 伪元素必须有 content 才能显示 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 确保它位于标题 h1 之下 */
+    
+    /* 重新应用背景图样式 */
+    background-image: url('/site/1.jpg'); 
+    background-size: 100% auto;
+    background-position: center;
+
+    /* 应用滤镜到伪元素 */
+    filter: brightness(0.9) contrast(1) grayscale(0.2) hue-rotate(0deg) sepia(0.2) url(#dither);
+}
+
+/* 暗色模式滤镜 */
+[a="dark"] .title-img::before {
+    filter: brightness(0.6) contrast(1.0) grayscale(0.1) hue-rotate(0deg) sepia(0.15) url(#dither);
+}
 </style>
+
+<hr class="decoration-hr">
 
 
 - [咖啡冰河](https://blog.mysto.cyou) / [晴空](https://www.summeringway.icu/) / [小球飞鱼](https://mantyke.icu/) / [超新星电台](https://supernovaradio.live/) / [山月](https://sanguok.com/) / [伏枥之间](https://www.leehenry.top/)

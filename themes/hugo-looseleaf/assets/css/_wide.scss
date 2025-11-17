@@ -76,8 +76,8 @@
             width: 100%;
             height: 100%;
             background-image: var(--title-bg-image);
-            background-size: 100%;
-            background-position: 90%;
+            background-size: 100% auto!important; /* 宽度100%，高度自动缩放 */
+            background-position: center; /* <-- 确保图片的中心点对齐到容器的中心点 */
             z-index: -1; 
             filter: brightness(1.25) contrast(0.55) grayscale(0.08) hue-rotate(0deg) sepia(0.2) url(#dither);
         }
