@@ -5,7 +5,7 @@ type: posts
 layout: table
 comment: false
 slug: about
-header_image: "/site/bg6.jpg"
+header_image: "/blog/IMG_7174.jpg"
 header_height: "120px"
 ---
 

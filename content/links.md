@@ -6,7 +6,7 @@ toc: false
 comment: true
 type: "posts"
 layout: "table" 
-header_image: "/site/bg6.jpg"
+header_image: "/site/1.jpg"
 header_height: "120px"
 ---
 
