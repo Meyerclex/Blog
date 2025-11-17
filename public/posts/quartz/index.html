@@ -9,7 +9,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.f63369f8b3855aa35f22236d235aa9cbcea32439721531720a54bcb11cda566f6aecfb2cdbeb7ecbf78a3ab780b6f2159f62304e7fb8cbee5eb9184057ae3aae.css" integrity="sha512-9jNp&#43;LOFWqNfIiNtI1qpy86jJDlyFTFyClS8sRzaVm9q7Pss2&#43;t&#43;y/eKOreAtvIVn2IwTn&#43;4y&#43;5euRhAV646rg==" />
+  <link rel="stylesheet" href="/css/main.c811db625015b3b3886c986c9102eaf1b2c4f80f4bafcebb0c7959c3265621d7a6fc7a444af8cbc3e987be5aa8c5b5bf649c3acab5bef49698ac7c4d74a67a31.css" integrity="sha512-yBHbYlAVs7OIbJhskQLq8bLE&#43;A9Lr867DHlZwyZWIdem/HpESvjLw&#43;mHvlqoxbW/ZJw6yrW&#43;9JaYrHxNdKZ6MQ==" />
   
   
   
@@ -38,10 +38,9 @@
   
   
   
-  <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+<link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
 
 
 
@@ -333,8 +332,10 @@
 </style>
     
 
-    <div id="post-content"  data-pagefind-body>
-        <p>先放上成果：<a href="https://c.gregueria.icu" target="_blank" rel="noopener noreferrer">Lyin&rsquo;s Room</a>。</p>
+<div id="post-content"  data-pagefind-body>
+    
+    
+    <p>先放上成果：<a href="https://c.gregueria.icu" target="_blank" rel="noopener noreferrer">Lyin&rsquo;s Room</a>。</p>
 <p>前段时间在象上刷到<a href="https://github.com/jackyzha0/quartz" target="_blank" rel="noopener noreferrer">Quartz</a>，算是一个支持Obsidian双链玩法的博客？点了收藏之后今天适逢周六，刚好呢又到了晚上十一点（人家的一个不干正事又不打算睡觉的时间），虽然呢也没有什么笔记要整理，但是就是看到漂亮的东西想试一试。搭建并不算难，而且很漂亮！于是来写一下笔记记录过程。</p>
 <p><em>第一步：BGM - In Motion启动！Let the hacking begin！</em></p>
 <p>首先来讲一下我对Quartz的使用感受。它的框架也是基于Hugo啦，这直接降低了我的心理负担，因为算是一个很熟悉的东西。</p>
@@ -407,7 +408,7 @@
 </div><p>如果遇到报错：</p>
 
 <div class="highlight">
-    <pre tabindex="0"><code>go install: github.com/jackyzha0/hugo-obsidian@latest: module github.com/jackyzha0/hugo-obsidian: Get &#34;https://proxy.golang.org/github.com/jackyzha0/hugo-obsidian/@v/list&#34;: dial tcp 142.251.42.241:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.</code></pre>
+    <pre tabindex="0"><code>go install: github.com/jackyzha0/hugo-obsidian@latest: module github.com/jackyzha0/hugo-obsidian: Get &#34;https://proxy.golang.org/github.com/jackyzha0/hugo-obsidian/@v/list&#34;: dial tcp 142.251.42.241<img class="emojis" src="/img/emoji/443.png" alt=":443:" loading="lazy"> connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.</code></pre>
     <button class="copy-code-button" type="button" title="Copy">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
             <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
@@ -448,7 +449,7 @@ make serve</code></pre>
 <p>关于子域名我是这么干的：</p>
 <ol>
 <li>在仓库根目录<code>Add file</code>，写一个文件名为<code>CNAME</code>且没有后缀的文件。在里面写入你要绑定的域名：<code>c.gregueria.icu</code>。</li>
-<li>然后去DNS设置里，子域名记录，记录类型为<code>CNAME</code>，<code>   IP地址/目标主机：</code>你的GitHub用户名.github.io`。</li>
+<li>然后去DNS设置里，子域名记录，记录类型为<code>CNAME</code>，<code>   IP地址/目标主机：</code>你的GitHub用户名.github.io`。</li>
 <li>然后去<code>Setting &gt; Pages &gt; Custom domain</code>把你的域名写好，保存。</li>
 </ol>
 <p>大功告成！</p>
@@ -462,8 +463,8 @@ make serve</code></pre>
 <li>人家哪有那么多笔记要放啊？！！！</li>
 </ol>
 
-        
-    </div>
+    
+</div>
     <br>
     <div style="padding-bottom:3px;"></div>
 </article>
@@ -871,8 +872,6 @@ make serve</code></pre>
         
         
         
-        
-        
         <span>All rights reserved.</span>
 
     </section>
@@ -908,10 +907,12 @@ make serve</code></pre>
 </footer>
 
 
-
-
-<script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous"></script>
-
+  
+  
+  
+  
+  <script src="/js/view-image.min.3a37e7ad99ea176a5d344fb612f82d2626b9083ede87d3f54d7d592dc8231230.js" integrity="sha256-OjfnrZnqF2pdNE&#43;2EvgtJia5CD7eh9P1TX1ZLcgjEjA=" crossorigin="anonymous" defer></script>
+  
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {

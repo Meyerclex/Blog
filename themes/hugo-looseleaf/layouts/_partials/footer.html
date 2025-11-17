@@ -50,13 +50,15 @@
 
 </footer>
 
-{{ $scriptViewImage := resources.Get "js/view-image.min.js" }}
-{{ if $scriptViewImage }}
-{{ $scriptViewImage = $scriptViewImage | js.Build | resources.Fingerprint }}
-<script src="{{ $scriptViewImage.RelPermalink }}" integrity="{{ $scriptViewImage.Data.Integrity }}" crossorigin="anonymous"></script>
-{{ else }}
+{{ if eq $.Page.Kind "page" }}
+  {{ $scriptViewImage := resources.Get "js/view-image.min.js" }}
+  {{ if $scriptViewImage }}
+  {{/* 注释：js.Build 和 resources.Fingerprint 保持不变，确保资源处理正常 */}}
+  {{ $scriptViewImage = $scriptViewImage | js.Build | resources.Fingerprint }}
+  <script src="{{ $scriptViewImage.RelPermalink }}" integrity="{{ $scriptViewImage.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ else }}
+  {{ end }}
 {{ end }}
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         // 检查页面是否存在 #post-content 元素

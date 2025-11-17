@@ -78,6 +78,7 @@ toc: false
 - [neocities.org](https://neocities.org/browse?tag=fonts)
 - [32-Bit Cafe](https://32bit.cafe/)
 - [screenfly](https://screenfly.org/)：检查网站在不同屏幕/设备上的显示效果
+- [图片抖动处理](https://doodad.dev/dither-me-this/)
 
 ## Tools / Web
 
