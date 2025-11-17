@@ -5,9 +5,13 @@
             /* text-shadow: 0px 0px 4px #fff20089; */
             font-size: 95%;
         }
-        .title-img p,.title-img h1, .title-img span {
+        .title-img p,
+        .title-img h1, 
+        .title-img h2, 
+        .title-img h3, 
+        .title-img span {
             color: #f9f2f2!important;
-            text-shadow: 0px 0px 4px #0c2235;
+            text-shadow: 0px 0px 4px #0c22356e;
         }
         .title-img h1 {
             padding: 0 10px;
@@ -79,9 +83,10 @@
             background-size: 100% auto!important; /* 宽度100%，高度自动缩放 */
             background-position: center; /* <-- 确保图片的中心点对齐到容器的中心点 */
             z-index: -1; 
+        }
+        .title-img::before {
             filter: brightness(1.25) contrast(0.55) grayscale(0.08) hue-rotate(0deg) sepia(0.2) url(#dither);
         }
-
         [a="dark"] .title-img::before {
             filter: brightness(0.35) contrast(1.0) grayscale(0.41) hue-rotate(0deg) sepia(0.15) url(#dither);
         }

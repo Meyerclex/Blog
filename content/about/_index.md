@@ -1,9 +1,12 @@
 ---
 title: ⛳ 关于我 , May 2025
 toc: false
-layout: diary
+type: posts
+layout: table
 comment: false
 slug: about
+header_image: "/site/bg6.jpg"
+header_height: "120px"
 ---
 
 嗨你好，这里是我的博客。这时是2025年5月，因为博客装修了，所以我重写了About页面。
@@ -20,3 +23,20 @@ slug: about
 
 我在2021年开始写这个博客，如今域名续费到了2028年2月。因此我想，在未来的几年里，我都将在这里继续书写。希望我书写下来的幻想，经验与勇气，可以帮到读到它们的任何人。
 
+
+
+<style>
+    .title-img::before {
+    content: ""; /* 伪元素必须有 content 才能显示 */
+    background-image: url('/blog/IMG_7174.jpg'); 
+    background-size: 100% auto;
+    background-position: center;
+    /* 应用滤镜到伪元素 */
+    filter: brightness(1.2) contrast(0.61) grayscale(0.2) hue-rotate(0deg) sepia(0.2) url(#dither);
+}
+
+/* 暗色模式滤镜 */
+[a="dark"] .title-img::before {
+    filter: brightness(0.6) contrast(1.0) grayscale(0.1) hue-rotate(0deg) sepia(0.15) url(#dither);
+}
+</style>

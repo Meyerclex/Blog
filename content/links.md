@@ -1,5 +1,5 @@
 ---
-title: "小鱼和她的朋友们"
+title: "🍰 小鱼和她的朋友们"
 description: "" 
 date: 2021-06-28
 toc: false
@@ -36,20 +36,11 @@ margin: 15px 0;
 /* 步骤 2: 在伪元素上创建背景和滤镜 */
 .title-img::before {
     content: ""; /* 伪元素必须有 content 才能显示 */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* 确保它位于标题 h1 之下 */
-    
-    /* 重新应用背景图样式 */
     background-image: url('/site/1.jpg'); 
     background-size: 100% auto;
     background-position: center;
-
     /* 应用滤镜到伪元素 */
-    filter: brightness(0.9) contrast(1) grayscale(0.2) hue-rotate(0deg) sepia(0.2) url(#dither);
+    filter: brightness(1) contrast(1) grayscale(0.2) hue-rotate(0deg) sepia(0.2) url(#dither);
 }
 
 /* 暗色模式滤镜 */
@@ -57,9 +48,6 @@ margin: 15px 0;
     filter: brightness(0.6) contrast(1.0) grayscale(0.1) hue-rotate(0deg) sepia(0.15) url(#dither);
 }
 </style>
-
-<hr class="decoration-hr">
-
 
 - [咖啡冰河](https://blog.mysto.cyou) / [晴空](https://www.summeringway.icu/) / [小球飞鱼](https://mantyke.icu/) / [超新星电台](https://supernovaradio.live/) / [山月](https://sanguok.com/) / [伏枥之间](https://www.leehenry.top/)
 
