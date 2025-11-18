@@ -48,7 +48,6 @@
         <span style="color: peru; user-select: none; text-shadow: 0px 0px 4px #ffffff6e;"><center>◆ ◆ ◆</center></span>
         {{ .Content }}
     </div>
-    
                 <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">
 
                     {{ if .Params.tags }}
@@ -56,8 +55,6 @@
                     <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">＃{{ . }}</a>
                     {{ end }}
                     {{ end }}
-
-
                     {{ with .Params.last_edit }}
                     last edited:
                     {{ . }}
@@ -77,7 +74,6 @@
                     </a>
                     {{ end }}
                 </nav> -->
-                <br>
                 {{ if .Params.comment | default true }}
                 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
                 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />

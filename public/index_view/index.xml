@@ -898,7 +898,7 @@
         </item>
         
         <item>
-            <title>小鱼和她的朋友们</title>
+            <title>🍰 小鱼和她的朋友们</title>
             <link>http://localhost:1313/links/</link>
             <pubDate>Mon, 28 Jun 2021 00:00:00 +0800</pubDate>
             
@@ -913,24 +913,6 @@
             
             <guid>http://localhost:1313/posts/we-will-be-fine/</guid>
             <description>24 Apr | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
-        </item>
-        
-        <item>
-            <title>testing</title>
-            <link>http://localhost:1313/testing/</link>
-            <pubDate>Sun, 05 Jan 2020 00:00:00 +0800</pubDate>
-            
-            <guid>http://localhost:1313/testing/</guid>
-            <description>05 Jan | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
-        </item>
-        
-        <item>
-            <title>⛳ 关于我 , May 2025</title>
-            <link>http://localhost:1313/aboutme/</link>
-            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-            
-            <guid>http://localhost:1313/aboutme/</guid>
-            <description>01 Jan | 「再會，謝謝所有的魚」更新了一篇博客 🍰</description>
         </item>
         
     </channel>
