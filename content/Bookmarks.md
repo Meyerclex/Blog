@@ -66,6 +66,7 @@ toc: false
 - 蛋卷推荐的[拍立得生成器](https://notchtools.com/polaroid-photo-generator)和[万花筒生成器](https://repper.app/design/)
 - [Emoji融合](https://emojikitchen.dev/)
 - [CSS Stripes Generator](https://stripesgenerator.com/)
+- [CSS Pattern](https://pattern.monster/)
 
 ## others 
 
