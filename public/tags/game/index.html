@@ -184,301 +184,146 @@
 
 </script><body a="auto">
         <main class="page-content" aria-label="Content">
-            <div class="w">
+            <div class="w"><style>
+    :root {
+         
+        --title-bg-height: 120px; 
+        --title-bg-image: url("/blog/IMG_7174.jpg");
 
-<link rel="stylesheet" href="/css/_about-nav.css">
-<body>
-  <div class="main-container">
-    <div class="content-wrapper">
-      <ul>
-        
-          <li><a href="/">Home</a></li>
-        
-          <li><a href="/about">About</a></li>
-        
-          <li><a href="/posts">Archive</a></li>
-        
-          <li><a href="/links">Friends</a></li>
-        
-      </ul>
-
-      <div class="centered-div">
-        <div class="content-div">
-          <div id="post-list-wrapper">
-              <div class="tag-header">
-                <a href="/tags/" class="back-link">/tags/</a><span class="tags-name">Game</span>
-              </div>
-              <div id="post-list">
-              
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/lovestory/" class="post-link">我借爱的轻翼飞过院墙</a>
-                      <span class="post-date">Oct 17</span>
-                  </div>
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/cooladult/" class="post-link">还有三十年时间做Cool Adult</a>
-                      <span class="post-date">Sep 26</span>
-                  </div>
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/hackingbegin/" class="post-link">Let the Hacking begin！</a>
-                      <span class="post-date">Aug 30</span>
-                  </div>
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/hades/" class="post-link">In the Name of Hades！</a>
-                      <span class="post-date">Jul 17</span>
-                  </div>
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/deathlove/" class="post-link">死亡的拟态色泽璀璨</a>
-                      <span class="post-date">Jun 29</span>
-                  </div>
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/55yearslater/" class="post-link">55年后我们更加相爱</a>
-                      <span class="post-date">Jan 03</span>
-                  </div>
-              
-                  <div class="post-item">
-                      <a href="http://localhost:1313/posts/guide-for-drunkard/" class="post-link">《指南》说：“尽管去吧，祝你好运”</a>
-                      <span class="post-date">Oct 15</span>
-                  </div>
-              
-              </div>
-              
-          </div>
+    }
+</style>
+<link rel="stylesheet" href="/css/_wide.css">
+                
+                <style>
+                    #toc-hr {
+                        display: none;
+                    }
+                    .post-toc-mobile {
+                        display: none;
+                    }
+                </style>
+                
+<div class="post-toc-mobile" id="post-toc-mobile" data-pagefind-ignore>
+    <details>
+        <summary>📑 Table of Contents</summary>
+        <div>
+            <aside>
+                
+                
+                <nav id="TableOfContentsMobile"> <nav id="TableOfContents"></nav>
+                </nav>
+            </aside>
         </div>
-      </div>
-    </div>
-  </div>
-</body>
+    </details>
+</div>
+<hr class="decoration-hr" id="toc-hr">
+<div class="post-toc toc-styled-pc" id="post-toc" data-pagefind-ignore>
+    <header class="post-header-pc">
+    ✦ 目录 ✦
+    </header>
+    <aside>
+        <nav id="TableOfContentsPC"> 
+            
+                <nav id="TableOfContents"></nav>
+        </nav>
+    </aside>
+</div>
 
 
 <style>
-    .tag-header a, .tags-name {
-        color: var(--talk-bubble-border-text-color);
-        font-size: 90%;
-    }
-
-
- 
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
-    width: 100%;
-    position: relative;
-}
-
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.centered-div {
-    z-index: 7;
-    width: 780px;
-    height: 500px;
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.content-div {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    z-index: 6;
-}
-
- 
-.content-wrapper ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 10px 0;
-}
-
-.content-wrapper ul li {
-    margin: 0 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: small;
-}
-
-.content-wrapper ul li a {
-    color: var(--talk-bubble-border-text-color);
-    text-transform: lowercase;
-}
-
-.content-wrapper ul li:before {
-    content: " ";
-    font-weight: bold;
-    margin-right: 0px;
-}
-
- 
-#post-list-wrapper {
-    flex-grow: 1;
-    height: 100%;
-    margin-left: 10px;
-    position: relative;
-}
-
-#post-list {
-    height: calc(100% - 40px);
-    overflow-y: scroll;
-}
-
-.post-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 20px;
-    font-size: 90%;
-}
-
-.post-item a {
-    color: var(--talk-bubble-border-text-color);
-}
-
-.post-item a:hover {
-    background-color: var(--bg-color);
-}
-
-.post-date {
-    font-family: 'Courier New', Courier, monospace;
-    background: var(--bg-color);
-}
-
- 
-.tag-header {
-    margin-bottom: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
-    color: var(--talk-bubble-border-text-color);
-}
-
-.tag-header a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.tag-header .tags-name {
-    font-weight: bold;
-    color: var(--talk-bubble-border-text-color);
      
-}
-
- 
-.pagination {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    gap: 8px;
-    font-size: small;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.pagination a {
-    color: var(--talk-bubble-border-text-color);
-}
-
-.pagination-link {
-    text-decoration: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    color: var(--talk-bubble-border-text-color);
-    background-color: var(--bg-color);
-    white-space: nowrap;
-}
-
-.pagination-link.active {
-    background-color: var(--talk-bubble-border-text-color);
-    color: var(--bg-color);
-}
-
-body[a="dark"] .pagination-link.active {
-    background-color: #bc8faf !important;
-    color: var(--bg-color);
-}
-
-.pagination-link.disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.5;
-}
-
- 
-@media (max-width: 768px) {
-    .main-container,
-    .content-wrapper,
-    .centered-div {
-        display: block;
-        width: 100%;
-        height: auto;
-        padding: 0;
-        margin: 0;
-    }
-
-    .content-div {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .content-wrapper ul {
-        flex-direction: column;
-        align-items: center;
-        margin: 5px 0;
-    }
-
-    .content-wrapper ul li {
-        margin: 0px 0;
-    }
-
-    #post-list-wrapper {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        overflow-y: visible;
-        padding: 0 10px;
-    }
-
-    .centered-div {
-        border-radius: 0;
-    }
-
-    .post-item {
-        margin: 5px 0;
-        padding: 0 10px;
-    }
-
-    .note-box {
+    #toc-toggle {
         display: none;
     }
-
-    .pagination {
-        position: static;
-        justify-content: center;
-        margin-top: 20px;
-        padding: 0 10px;
+     
+    #TableOfContents ul li:before {
+        content: "";
+        font-weight: bold;
+        margin-right: 0px;
     }
-
-    .tag-header {
-        text-align: center;
-        margin: 20px 0;
-    }
-}
-
 </style>
-<hr class="decoration-hr">
+                
+<div class="archive">
+    <nav class="single-nav">
+        <a href="/">Home</a> | 
+        <a href="/posts/">Archive</a> | 
+        <a href="/about/">About</a> |
+        <a href="/links/">Friends</a> 
+            </nav>
+    
+    
+    
+        
+    
 
+    
+    
+    <div class="title-img" style="background-image: url('var%28--title-bg-image%29'); height: ZgotmplZ; 
+    display: flex; align-items: center;
+    background-size: 100% auto;    
+      background-position: center;"
+    >
+        <h2 class="post-title" style="margin: 0; padding-left: 20px;">Game</h2>
+        </div>
+
+    <div class="table-content">
+        <span style="color: peru; user-select: none; text-shadow: 0px 0px 4px #ffffff6e;"><center>◆ ◆ ◆</center></span>
+      <div class="centered-div">
+        <div class="content-div">
+          <div id="post-list-wrapper">
+              <div class="tag-header">
+                <a href="/tags/" class="back-link">/tags/</a><span class="tags-name">Game</span>
+              </div>
+              <div id="post-list">
+              
+                
+                
+                    <div class="post-item">
+                        <span class="post-date">10-17</span>
+                        <a href="http://localhost:1313/posts/lovestory/" class="post-link">我借爱的轻翼飞过院墙</a>
+                    </div>
+                
+                    <div class="post-item">
+                        <span class="post-date">09-26</span>
+                        <a href="http://localhost:1313/posts/cooladult/" class="post-link">还有三十年时间做Cool Adult</a>
+                    </div>
+                
+                    <div class="post-item">
+                        <span class="post-date">08-30</span>
+                        <a href="http://localhost:1313/posts/hackingbegin/" class="post-link">Let the Hacking begin！</a>
+                    </div>
+                
+                    <div class="post-item">
+                        <span class="post-date">07-17</span>
+                        <a href="http://localhost:1313/posts/hades/" class="post-link">In the Name of Hades！</a>
+                    </div>
+                
+                    <div class="post-item">
+                        <span class="post-date">06-29</span>
+                        <a href="http://localhost:1313/posts/deathlove/" class="post-link">死亡的拟态色泽璀璨</a>
+                    </div>
+                
+                    <div class="post-item">
+                        <span class="post-date">01-03</span>
+                        <a href="http://localhost:1313/posts/55yearslater/" class="post-link">55年后我们更加相爱</a>
+                    </div>
+                
+                    <div class="post-item">
+                        <span class="post-date">10-15</span>
+                        <a href="http://localhost:1313/posts/guide-for-drunkard/" class="post-link">《指南》说：“尽管去吧，祝你好运”</a>
+                    </div>
+                
+              
+              </div>
+              
+              
+          </div>
+        </div>
+    </div>
+
+</div>
+
+<hr class="decoration-hr">
 
 <footer class="site-footer">
     <section class="copyright">
@@ -858,7 +703,6 @@ body[a="dark"] .pagination-link.active {
         }
     })()
 </script>
-
 
 
             </div>
