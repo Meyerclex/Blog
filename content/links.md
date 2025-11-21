@@ -84,4 +84,4 @@ margin: 15px 0;
 简介（如需）：您首页的奶牛猫图片转发大使
 ```
 
-:blobcatmelt: 友友如果有名称/链接需要更换，可以随时联系我喔（`Email：lin@gregueria.icu`）。
+:neocat_cute_reach:友友如果有名称/链接需要更换，可以随时联系我喔（`Email：lin@gregueria.icu`）。

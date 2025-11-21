@@ -46,8 +46,20 @@
         </div>
 
     <div class="table-content">
-        <span style="color: peru; user-select: none; text-shadow: 0px 0px 4px #ffffff6e;"><center>◆ ◆ ◆</center></span>
-        {{ .Content }}
+        <span style="color: peru; user-select: none; text-shadow: 0px 0px 4px #ffffff6e;">
+            <center>◆ ◆ ◆</center></span>
+                    <div id="post-content" data-pagefind-body>
+                        {{/* 定义替换模式和包裹容器 */}}
+                        {{ $emojiPattern := `:([A-Za-z0-9_-]+):` }}
+                        {{ $tableWrapper := printf "<div class=\"table-wrapper\">${1}</div>" }}
+                        
+                        {{/* 对内容进行替换和包裹 */}}
+                        {{ .Content     
+                            | replaceRE $emojiPattern `<img class="emojis" src="/img/emoji/$1.png" alt=":$1:" loading="lazy">`     
+                            | replaceRE "(<table>(?:.|\n)+?</table>)" $tableWrapper     
+                            | safeHTML 
+                        }}
+                    </div>
     </div>
                 <p class="last-edit-time" style="text-align: right; color: var(--secondary-text-color);">
 
