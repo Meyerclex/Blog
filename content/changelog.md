@@ -7,11 +7,27 @@ toc: false
 layout: diary
 ---
 
-### 2025/11/17
+### 2025/11/17 关于Type的心得和近期修改
 
-重新装修了Fanpage部分，使其成为了一个单独的Type。
+重新装修了Fanpage部分，使其成为了一个单独的Type，在此对Type和Layout又有了新的理解，原来要跨越Type更换一个页面的模板，并不需要在每个Type下都复制一份模板文件。
 
-- [ ] 改一个文章模板
+比如我希望`/posts/x.md`可以应用我写给Fanpage的模板`/fanpage/A.html`
+
+只需要Front-matter里定义`type: xxx`和`layout: A`即可。
+
+**近期修改情况：**
+
+- 新增了一个可以在题头增加图片的文章模板，有参考Mengru的主页。
+- 修改了一个剪贴风格的主页。不过不久应该会换掉。
+- 根据[xyzxy](https://xyzxy.me/p/%E8%B5%9B%E5%8D%9A%E6%88%BF%E5%AD%90%E8%A3%85%E4%BF%AE%E8%AE%A1%E5%88%924%E8%87%AA%E5%AE%9A%E4%B9%89emoji/)的教程，给自己也增加了自定义表情。很可爱也很方便！之前用的是非常不方便的Hugo Shortcode形式。
+
+---
+
+
+<details>
+<summary>
+「 往期装修日志，内容过长折叠 」
+</summary>
 
 ### 2025/10/31
 
@@ -59,14 +75,6 @@ body {
 
 ![](/blog/0915.png)
 
-
----
-
-
-<details>
-<summary>
-「 往期装修日志，内容过长折叠 」
-</summary>
 
 ### 2025/06 更新情况汇总
 
