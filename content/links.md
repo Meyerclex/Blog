@@ -64,7 +64,7 @@ margin: 15px 0;
 
 - [Missing](https://www.missingid.online/) / [Mengru](https://mengru.space/) / [Mid of Nowhere](https://notes.midofnowhere.link/)  / [Plaskier](https://blog.plaskier.icu/) / [Shixiaocaia](https://outofsea.fun/) 
 
-- [Zoeash](https://writee.org/zoeash/) / [A Purrception](https://tortie.me/) / [Velas电波站](https://www.velasx.com) / [甜鱼/Ayu](https://ayu.land) / [Muko](https://oaad.iceco.icu/)
+- [Zoeash](https://writee.org/zoeash/) / [A Purrception](https://tortie.me/) / [Velas电波站](https://www.velasx.com) / [甜鱼/Ayu](https://ayu.land) / [Muko](https://iceco.vercel.app/)
 
 - [Kawa1Planet](https://kawa1planet.fun/) / [Χαρυβδις](https://kharybdism.xyz/) / [Shadows of the Sun](https://rovingsun.wordpress.com/) / [suica](https://suicablog.cobaltkiss.blue/) / [PXXELS](https://pxxels.neocities.org/)
 
@@ -83,3 +83,5 @@ margin: 15px 0;
 
 简介（如需）：您首页的奶牛猫图片转发大使
 ```
+
+:blobcatmelt: 友友如果有名称/链接需要更换，可以随时联系我喔（`Email：lin@gregueria.icu`）。
